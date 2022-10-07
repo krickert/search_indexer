@@ -28,6 +28,16 @@ public class AsyncDownloaderRunnable implements Runnable {
     public void run() {
         logger.info("Checking to see if file exists and if it matches the md5");
         File downloadedFile = new File(destFile);
+        if (!isDownloadNeeded(downloadedFile)) {
+            return;
+        }
+        logger.info("URL: {} DOWNLOADING {}", urlToDownload.toString(), destFile);
+        Downloader downloader = new Downloader(maxTries);
+        downloader.download(urlToDownload, downloadedFile, md5);
+    }
+
+    private boolean isDownloadNeeded(File downloadedFile) {
+        boolean shouldDownload = true;
         if (Files.exists(downloadedFile.toPath())) {
             logger.info("Checking the md5 of already existing file");
             String currentMd5;
@@ -38,11 +48,11 @@ public class AsyncDownloaderRunnable implements Runnable {
             }
             if (md5.equals(currentMd5)) {
                 logger.info("File already downloaded and matches md5.  Skipping");
-                return;
+                shouldDownload = false;
+            } else {
+                logger.info("MD5 does not match and file does exist.  Overwriting file");
             }
         }
-        logger.info("URL: " + urlToDownload.toString() + " DOWNLOADING " + destFile);
-        Downloader downloader = new Downloader(maxTries);
-        downloader.download(urlToDownload, downloadedFile, md5);
+        return shouldDownload;
     }
 }
