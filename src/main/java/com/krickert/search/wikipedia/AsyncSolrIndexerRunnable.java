@@ -21,10 +21,16 @@ public class AsyncSolrIndexerRunnable implements Runnable {
     private final Logger logger = LoggerFactory.getLogger(AsyncSolrIndexerRunnable.class);
     private final BlockingQueue<SolrInputDocument> documents;
     private final AtomicBoolean keepListeningBoolean = new AtomicBoolean(true);
+    private final String userName;
+    private final String password
+            ;
 
-    public AsyncSolrIndexerRunnable(BlockingQueue<SolrInputDocument> documents, String collection) {
+    public AsyncSolrIndexerRunnable(BlockingQueue<SolrInputDocument> documents, String collection,
+                                    String userName, String password) {
         this.documents = documents;
         this.collection = collection;
+        this.userName = userName;
+        this.password = password;
     }
 
     public void stopListening() {
@@ -37,13 +43,13 @@ public class AsyncSolrIndexerRunnable implements Runnable {
     }
 
     public void insertSolrDocs() {
-        Collection<SolrInputDocument> docs = Lists.newArrayListWithExpectedSize(22000);
+        Collection<SolrInputDocument> docs = Lists.newArrayListWithExpectedSize(11000);
         while (keepListeningBoolean.get()) {
             try {
                 SolrInputDocument doc = documents.poll(5, TimeUnit.SECONDS);
                 if (doc != null) {
                     docs.add(doc);
-                    if (docs.size() >= 20000) {
+                    if (docs.size() >= 10000) {
                         addDocsToSolr(docs);
                     }
                 } else {
@@ -67,7 +73,9 @@ public class AsyncSolrIndexerRunnable implements Runnable {
             return;
         }
 
-        try (SolrClient client = (new Http2SolrClient.Builder("http://localhost:8983/solr/")).build()) {
+        try (SolrClient client = (new Http2SolrClient.Builder("http://localhost:8983/solr/"))
+                .withBasicAuthCredentials(userName, password)
+                .build()) {
             client.add(collection, docs);
             client.commit(collection);
             docs.clear();

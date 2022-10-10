@@ -1,12 +1,12 @@
 package com.krickert.search.wikipedia;
 
 import com.google.common.collect.Lists;
+import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.solr.client.solrj.beans.Field;
-import org.apache.solr.common.SolrInputDocument;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -16,29 +16,26 @@ import java.util.Collections;
 @Component
 public class WikiURLExtractor {
 
-    public static Collection<SolrInputDocument> parseUrlEntries(String pageText, String pageId) {
+    public static Collection<URLEntry> parseUrlEntries(String pageText, String pageId) {
         String[] urlElements = StringUtils.substringsBetween(pageText, "[http", "]");
         if (urlElements == null) {
             return Collections.emptyList();
         }
-        ArrayList<SolrInputDocument> urlEntries = Lists.newArrayListWithExpectedSize(urlElements.length);
+        ArrayList<URLEntry> urlEntries = Lists.newArrayListWithExpectedSize(urlElements.length);
         for (String urlElement : urlElements) {
             URLEntry entry = generateUrlEntry(urlElement);
             if (entry != null) {
-                SolrInputDocument doc = new SolrInputDocument();
-                doc.addField("url", entry.getURL());
-                doc.addField("link_description", entry.getText());
-                doc.addField("id", pageId);
-                urlEntries.add(doc);
+                urlEntries.add(entry);
             }
         }
         return urlEntries;
 
     }
 
+
     private static URLEntry generateUrlEntry(String wikiCleanedText) {
         String[] entries = StringUtils.split(wikiCleanedText, " ", 2);
-        if (entries == null) {
+        if (ArrayUtils.isEmpty(entries)) {
             return null;
         }
 

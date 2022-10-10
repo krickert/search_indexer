@@ -76,7 +76,7 @@ public class WikipediaArticleMultipartDownloader {
             String date = parseWikiDateFromFile(entry[1]);
             try {
                 URL fileToDownload = new URL(wikipediaDumpUrlPrefix + date + '/' + entry[1]);
-                String destFile = workspaceLocation + entry[1];
+                String destFile = workspaceLocation + "/" + entry[1];
                 AsyncDownloaderRunnable asyncDownloaderRunnable = new AsyncDownloaderRunnable(fileToDownload, destFile, entry[0], maxTries);
                 executorService.execute(asyncDownloaderRunnable);
                 Thread.sleep(100L);
@@ -154,8 +154,8 @@ public class WikipediaArticleMultipartDownloader {
         List<String[]> lines = parseMd5File(md5WikipediaFile, WIKI_FILE_TYPE.MULTISTREAM);
         if (lines.size() == 0) {
             logger.info("multistream is not yet available.  backing up to articles.");
+            lines = parseMd5File(md5WikipediaFile, WIKI_FILE_TYPE.ARTICLE);
         }
-        lines = parseMd5File(md5WikipediaFile, WIKI_FILE_TYPE.ARTICLE);
         return lines;
     }
 

@@ -9,5 +9,4 @@ class SearchApplicationTests {
 	@Test
 	void contextLoads() {
 	}
-
 }

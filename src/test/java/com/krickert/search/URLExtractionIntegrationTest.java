@@ -18,8 +18,8 @@ public class URLExtractionIntegrationTest {
     }
     @Test
     public void testURLExtractionResults() {
-        Collection<SolrInputDocument> entries = WikiURLExtractor.parseUrlEntries(sampleTextWithURLStrings, "1");
-        for (SolrInputDocument entry : entries) {
+        Collection<WikiURLExtractor.URLEntry> entries = WikiURLExtractor.parseUrlEntries(sampleTextWithURLStrings, "1");
+        for (WikiURLExtractor.URLEntry entry : entries) {
             System.out.println(entry);
         }
     }
