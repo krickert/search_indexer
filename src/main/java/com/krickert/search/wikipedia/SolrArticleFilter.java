@@ -47,7 +47,7 @@ public class SolrArticleFilter implements IArticleFilter {
     private final NlpExtractor dateExtractor;
     Logger logger = LoggerFactory.getLogger(SolrArticleFilter.class);
 
-    public static final DB db = DBMaker.fileDB("/Users/kristianrickert/nlp_store").executorEnable().transactionEnable().concurrencyScale(10).make();
+    public static final DB db = DBMaker.fileDB("/Users/kristianrickert/nlp_store").executorEnable().transactionEnable().concurrencyScale(20).make();
 
     private static final HTreeMap<String, NlpResults> nlpMap = (HTreeMap<String, NlpResults>) db.hashMap("nlpMap").createOrOpen();
 

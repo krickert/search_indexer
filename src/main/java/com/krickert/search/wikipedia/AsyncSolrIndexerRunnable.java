@@ -23,13 +23,17 @@ public class AsyncSolrIndexerRunnable implements Runnable {
     private final AtomicBoolean keepListeningBoolean = new AtomicBoolean(true);
     private final String userName;
     private final String password;
+    private final Integer docBufferSize;
 
+    private final Integer pollTimeout;
     public AsyncSolrIndexerRunnable(BlockingQueue<SolrInputDocument> documents, String collection,
-                                    String userName, String password, Integer docBufferSize) {
+                                    String userName, String password, Integer docBufferSize, Integer pollTimeout) {
         this.documents = documents;
         this.collection = collection;
         this.userName = userName;
         this.password = password;
+        this.docBufferSize = docBufferSize;
+        this.pollTimeout = pollTimeout;
     }
 
     public void stopListening() {
@@ -42,13 +46,13 @@ public class AsyncSolrIndexerRunnable implements Runnable {
     }
 
     public void insertSolrDocs() {
-        Collection<SolrInputDocument> docs = Lists.newArrayListWithExpectedSize(11000);
+        Collection<SolrInputDocument> docs = Lists.newArrayListWithExpectedSize(docBufferSize + (int)(docBufferSize * .1));
         while (keepListeningBoolean.get()) {
             try {
-                SolrInputDocument doc = documents.poll(5, TimeUnit.SECONDS);
+                SolrInputDocument doc = documents.poll(pollTimeout, TimeUnit.SECONDS);
                 if (doc != null) {
                     docs.add(doc);
-                    if (docs.size() >= 100) {
+                    if (docs.size() >= docBufferSize) {
                         addDocsToSolr(docs);
                     }
                 } else {

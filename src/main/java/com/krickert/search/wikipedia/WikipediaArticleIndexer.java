@@ -10,7 +10,6 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
-import java.util.Collection;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
@@ -27,6 +26,7 @@ public class WikipediaArticleIndexer {
     private final TokenNameFinderModel locationModel;
     private final TokenNameFinderModel dateModel;
     private final Integer docBufferSize;
+    private final Integer pollTimeout;
     private final Integer numberOfFileParsers;
 
     @Autowired
@@ -39,6 +39,7 @@ public class WikipediaArticleIndexer {
                                    @Qualifier("locationFinder")TokenNameFinderModel locationModel,
                                    @Qualifier("dateFinder")TokenNameFinderModel dateModel,
                                    @Value("${solr.thread.doc.buffersize}")Integer docBufferSize,
+                                   @Value("${solr.polltimeout}")Integer pollTimeout,
                                    @Value("${solr.thread.file.parsers}")Integer numberOfFileParsers) {
         this.wikipediaArticleMultipartDownloader = wikipediaArticleMultipartDownloader;
         this.opts = opts;
@@ -50,6 +51,7 @@ public class WikipediaArticleIndexer {
         this.dateModel = dateModel;
         this.docBufferSize = docBufferSize;
         this.numberOfFileParsers = numberOfFileParsers;
+        this.pollTimeout = pollTimeout;
     }
 
     public void parseResultsToSolr() throws InterruptedException {
@@ -67,7 +69,8 @@ public class WikipediaArticleIndexer {
                             personModel,
                             locationModel,
                             dateModel,
-                            docBufferSize);
+                            docBufferSize,
+                            pollTimeout);
             fileParserExecutor.execute(runnable);
         }
         //at this point all of them should be in the queue.

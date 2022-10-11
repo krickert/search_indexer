@@ -24,7 +24,6 @@ public class AsyncDumpFileProcessorRunnable implements Runnable {
     final SolrArticleFilter solrArticleFilter;
     final String username;
     final String password;
-    private final Integer docBufferSize;
     Logger logger = LoggerFactory.getLogger(AsyncDumpFileProcessorRunnable.class);
 
     public AsyncDumpFileProcessorRunnable(String file, String collectionName,
@@ -34,18 +33,17 @@ public class AsyncDumpFileProcessorRunnable implements Runnable {
                                           TokenNameFinderModel personModel,
                                           TokenNameFinderModel locationModel,
                                           TokenNameFinderModel dateModel,
-                                          Integer docBufferSize) {
+                                          Integer docBufferSize,
+                                          Integer pollTimeout) {
         this.file = file;
-        this.docBufferSize = docBufferSize;
         this.username = username;
         this.password = password;
         OrganizationExtractor organizationExtractor = new OrganizationExtractor(tokenModel, orgModel);
         PersonExtractor personExtractor = new PersonExtractor(tokenModel, personModel);
         NlpExtractor locationExtractor = new NlpExtractor(tokenModel,locationModel);
         NlpExtractor dateExtractor = new NlpExtractor(tokenModel,dateModel);
-
         BlockingQueue<SolrInputDocument> documents = new LinkedBlockingQueue<>();
-        AsyncSolrIndexerRunnable solrIndexer = new AsyncSolrIndexerRunnable(documents, collectionName, username, password, docBufferSize);
+        AsyncSolrIndexerRunnable solrIndexer = new AsyncSolrIndexerRunnable(documents, collectionName, username, password, docBufferSize, pollTimeout);
         this.solrArticleFilter = new SolrArticleFilter(documents, solrIndexer, organizationExtractor, personExtractor, locationExtractor, dateExtractor, new TokenizerME(tokenModel));
         logger.info("queued up file for processing: {}", file);
     }
