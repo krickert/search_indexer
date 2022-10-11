@@ -14,7 +14,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.Resource;
-import org.springframework.core.io.ResourceLoader;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.stereotype.Component;
 
@@ -34,6 +33,8 @@ public class OpenNlpInstaller {
     private final String openNlpFullPath;
     private final String openNlpModelPrefixUrl;
     private final SolrInstallerOptions opts;
+
+    private final PathMatchingResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
 
     @Autowired
     public OpenNlpInstaller(
@@ -68,7 +69,12 @@ public class OpenNlpInstaller {
             for (String modelUrl : openNlpModelUrlDownloads) {
                 String fileName = extractFilenameFromModelUrl(modelUrl);
                 String fullPath = savePath + "/" + fileName;
-                downloader.download(new URL(modelUrl), new File(fullPath));
+                Resource r = resolver.getResource("/models/1.5/" + fileName);
+                if (r.exists()) {
+                    FileUtils.copyURLToFile(r.getURL(), new File(fullPath));
+                } else {
+                    downloader.download(new URL(modelUrl), new File(fullPath));
+                }
                 //TODO: we're not validating the download but that's NBD for now
             }
             PathMatchingResourcePatternResolver r = new PathMatchingResourcePatternResolver();

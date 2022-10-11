@@ -3,7 +3,6 @@ package com.krickert.search;
 
 import com.krickert.search.wikipedia.WikiURLExtractor;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.solr.common.SolrInputDocument;
 import org.junit.jupiter.api.Test;
 
 import java.util.Collection;

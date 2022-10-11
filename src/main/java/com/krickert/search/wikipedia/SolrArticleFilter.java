@@ -1,16 +1,20 @@
 package com.krickert.search.wikipedia;
 
 import com.google.common.collect.Lists;
+import com.google.common.collect.Maps;
+import com.krickert.search.opennlp.NlpExtractor;
+import com.krickert.search.opennlp.NlpResults;
 import com.krickert.search.opennlp.OrganizationExtractor;
 import com.krickert.search.opennlp.PersonExtractor;
-import edu.stanford.nlp.quoteattribution.Person;
 import info.bliki.wiki.dump.IArticleFilter;
 import info.bliki.wiki.dump.Siteinfo;
 import info.bliki.wiki.dump.WikiArticle;
 import opennlp.tools.tokenize.TokenizerME;
-import opennlp.tools.tokenize.TokenizerModel;
 import org.apache.solr.common.SolrInputDocument;
 import org.apache.solr.common.StringUtils;
+import org.mapdb.DB;
+import org.mapdb.DBMaker;
+import org.mapdb.HTreeMap;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.util.CollectionUtils;
@@ -19,6 +23,7 @@ import org.wikiclean.WikiClean;
 import java.io.IOException;
 import java.util.Collection;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -30,8 +35,6 @@ public class SolrArticleFilter implements IArticleFilter {
     final static String xmlStartTag = "<text xml:space=\"preserve\">";
     final static String xmlEndTag = "</text>";
     private final static WikiClean cleaner = new WikiClean.Builder().withFooter(true).withTitle(false).build();
-    public static final String ORGANIZATIONS_NLP_2 = "organizations_nlp2";
-    public static final String TITLE_ORGANIZATIONS_NLP_2 = "title_organizations_nlp2";
     public static final String SHORT_WIKI_URL = "short_wiki_url";
     public static final String BODY = "body";
     final ExecutorService executor = Executors.newSingleThreadExecutor();
@@ -39,20 +42,30 @@ public class SolrArticleFilter implements IArticleFilter {
     private final BlockingQueue<SolrInputDocument> documents;
     private final OrganizationExtractor orgFinder;
     private final PersonExtractor personExtractor;
-    private final TokenizerModel tokenModel;
+    private final TokenizerME tokenizer;
+    private final NlpExtractor locationExtractor;
+    private final NlpExtractor dateExtractor;
     Logger logger = LoggerFactory.getLogger(SolrArticleFilter.class);
+
+    public static final DB db = DBMaker.fileDB("/Users/kristianrickert/nlp_store").executorEnable().transactionEnable().concurrencyScale(10).make();
+
+    private static final HTreeMap<String, NlpResults> nlpMap = (HTreeMap<String, NlpResults>) db.hashMap("nlpMap").createOrOpen();
 
     public SolrArticleFilter(BlockingQueue<SolrInputDocument> documents,
                              AsyncSolrIndexerRunnable solrIndexer,
                              OrganizationExtractor orgFinder,
                              PersonExtractor personExtractor,
-                             TokenizerModel tokenModel) {
+                             NlpExtractor locationExtractor,
+                             NlpExtractor dateExtractor,
+                             TokenizerME tokenizer) {
         this.documents = documents;
-        this.orgFinder = orgFinder;
         executor.execute(solrIndexer);
         this.solrIndexerRunnable = solrIndexer;
-        this.tokenModel = tokenModel;
+        this.tokenizer = tokenizer;
+        this.orgFinder = orgFinder;
         this.personExtractor = personExtractor;
+        this.locationExtractor = locationExtractor;
+        this.dateExtractor = dateExtractor;
     }
 
     private static String extractCleanTestFromWiki(WikiArticle page) {
@@ -89,38 +102,91 @@ public class SolrArticleFilter implements IArticleFilter {
         doc.addField(SHORT_WIKI_URL, "https://enwp.org/?curid=" + page.getId());
         addReferenceFields(page, doc);
 
-        TokenizerME tokenizer = new TokenizerME(tokenModel);
-        String[] textTokens = tokenizer.tokenize(plainWikiText);
-        String[] titleTokens = tokenizer.tokenize(page.getTitle());
-        addOrganizationFields(textTokens, titleTokens, doc);
-        addPersonFields(textTokens, titleTokens, doc);
+        addNlpFields(page, plainWikiText, doc);
+
         return doc;
     }
 
-    private void addPersonFields(String[] textTokens, String[] titleTokens, SolrInputDocument doc) {
+    private void addNlpFields(WikiArticle page, String plainWikiText, SolrInputDocument doc) {
+        final Map<String,Collection<String>> nlpResults = getNlpResults(page, plainWikiText, page.getId()).getResults();
+        for(String key : nlpResults.keySet()) {
+            doc.addField(key, nlpResults.get(key));
+        }
+    }
+    public NlpResults getNlpResults(WikiArticle page, String plainWikiText, String pageId) {
+        if (nlpMap.containsKey(pageId)) {
+            logger.info("returning cached entry for {}", pageId);
+            return nlpMap.get(pageId);
+        }
+        logger.info("pageId {} is not in cache for nlp data.  performing the work", pageId);
+        Map<String,Collection<String>> results = Maps.newHashMapWithExpectedSize(4);
+
+        String[] textTokens = tokenizer.tokenize(plainWikiText);
+        String[] titleTokens = tokenizer.tokenize(page.getTitle());
+        results.putAll(getOrganizationFields(textTokens, titleTokens));
+        results.putAll(getPersonFields(textTokens, titleTokens));
+        results.putAll(getLocationFields(textTokens, titleTokens));
+        results.putAll(getDateFields(textTokens, titleTokens));
+
+        NlpResults nlpResults = new NlpResults();
+        nlpResults.setResults(results);
+        logger.info("adding {}  to cache" , pageId);
+        nlpMap.put(pageId, nlpResults);
+        return nlpResults;
+    }
+
+    private Map<String,Collection<String>> getLocationFields(String[] textTokens, String[] titleTokens) {
+        Map<String, Collection<String>> results = Maps.newHashMapWithExpectedSize(4);
+        Collection<String> locationsInText  = locationExtractor.extract(textTokens);
+        if (!CollectionUtils.isEmpty(locationsInText)) {
+            results.put("body_location_nlp2", locationsInText);
+        }
+        Collection<String> locationTitle = locationExtractor.extract(titleTokens);
+        if (!CollectionUtils.isEmpty(locationTitle)) {
+            results.put("title_location_nlp2", locationTitle);
+        }
+        return results;
+    }
+    private Map<String,Collection<String>> getDateFields(String[] textTokens, String[] titleTokens) {
+        Map<String, Collection<String>> results = Maps.newHashMapWithExpectedSize(4);
+        Collection<String> datesinText = dateExtractor.extract(textTokens);
+        if (!CollectionUtils.isEmpty(datesinText)) {
+            results.put("body_dates_nlp2", datesinText);
+        }
+        Collection<String> datesInTitle = dateExtractor.extract(titleTokens);
+        if (!CollectionUtils.isEmpty(datesInTitle)) {
+            results.put("title_dates_nlp2", datesInTitle);
+        }
+        return results;
+    }
+    private Map<String,Collection<String>> getPersonFields(String[] textTokens, String[] titleTokens) {
+        Map<String, Collection<String>> results = Maps.newHashMapWithExpectedSize(4);
         Collection<String> personsInText = personExtractor.extractPersons(textTokens);
         if (!CollectionUtils.isEmpty(personsInText)) {
-            doc.addField("persons_text_nlp2", personsInText);
+            results.put("body_persons_nlp2", personsInText);
         }
         Collection<String> personsTitle = personExtractor.extractPersons(titleTokens);
         if (!CollectionUtils.isEmpty(personsTitle)) {
-            doc.addField("persons_title_nlp2", personsTitle);
+            results.put("title_persons_nlp2", personsTitle);
         }
+        return results;
     }
 
-    private void addOrganizationFields(String[] textTokens, String[] titleTokens, SolrInputDocument doc) {
+    private Map<String,Collection<String>> getOrganizationFields(String[] textTokens, String[] titleTokens) {
+        Map<String, Collection<String>> results = Maps.newHashMapWithExpectedSize(4);
         try {
             Collection<String> organizations = orgFinder.extractOrganizations(textTokens);
             if (!CollectionUtils.isEmpty(organizations)) {
-                doc.addField(ORGANIZATIONS_NLP_2, organizations);
+                results.put("body_organizations_nlp2", organizations);
             }
             Collection<String> title_organizations = orgFinder.extractOrganizations(titleTokens);
             if (!CollectionUtils.isEmpty(title_organizations)) {
-                doc.addField(TITLE_ORGANIZATIONS_NLP_2, title_organizations);
+                results.put("title_organizations_nlp2", title_organizations);
             }
         } catch (IOException e) {
             logger.error("problem with extracting organizations for " + titleTokens, e);
         }
+        return results;
     }
 
     private void addReferenceFields(WikiArticle page, SolrInputDocument doc) {

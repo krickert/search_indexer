@@ -461,18 +461,27 @@
     </analyzer>
   </fieldType>
   <field name="text" type="text_en" indexed="true" stored="true"/>
-  <field name="organizations" type="string" indexed="true" stored="true" multiValued="true"/>
-  <field name="organizations_nlp2" type="string" indexed="true" stored="true" multiValued="true"/>
-  <field name="title_organizations_nlp2" type="string" indexed="true" stored="true" multiValued="true"/>
   <!-- End of English TextField OpenNLP -->
 
   <field name="_nest_path_" type="_nest_path_"/>
   <field name="_root_" type="string" docValues="false" indexed="true" stored="false"/>
   <field name="_text_" type="text_general" multiValued="true" indexed="true" stored="false"/>
   <field name="_version_" type="plong" indexed="false" stored="false"/>
-  <field name="body" type="text_en" uninvertible="true" indexed="true" stored="true"/>
   <field name="id" type="string" multiValued="false" indexed="true" required="true" stored="true"/>
+  <field name="body" type="text_en" uninvertible="true" indexed="true" stored="true"/>
+  <field name="body_dates_nlp2" type="text_general" multiValued="true" indexed="true" stored="true"/>
+  <field name="body_location_nlp2" type="text_general" multiValued="true" indexed="true" stored="true"/>
+  <field name="body_organizations_nlp2" type="text_general" multiValued="true" indexed="true" stored="true"/>
+  <field name="body_persons_nlp2" type="text_general" multiValued="true" indexed="true" stored="true"/>
   <field name="title" type="text_en" uninvertible="true" docValues="false" indexed="true" stored="true"/>
+  <field name="title_dates_nlp2" type="text_general" multiValued="true" indexed="true" stored="true"/>
+  <field name="title_location_nlp2" type="text_general" multiValued="true" indexed="true" stored="true"/>
+  <field name="title_organizations_nlp2" type="string" multiValued="true" indexed="true" stored="true"/>
+  <field name="title_persons_nlp2" type="text_general" multiValued="true" indexed="true" stored="true"/>
+  <field name="reference_html_links" type="text_general"/>
+  <field name="reference_url_descriptions" type="text_general"/>
+  <field name="reference_urls" type="text_general"/>
+  <field name="short_wiki_url" type="text_general"/>
 
   <dynamicField name="*_txt_en_split_tight" type="text_en_splitting_tight" indexed="true" stored="true"/>
   <dynamicField name="*_descendent_path" type="descendent_path" indexed="true" stored="true"/>

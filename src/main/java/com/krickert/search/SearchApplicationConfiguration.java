@@ -1,10 +1,6 @@
 package com.krickert.search;
 
-
-import opennlp.tools.namefind.NameFinderME;
 import opennlp.tools.namefind.TokenNameFinderModel;
-import opennlp.tools.tokenize.Tokenizer;
-import opennlp.tools.tokenize.TokenizerME;
 import opennlp.tools.tokenize.TokenizerModel;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -13,13 +9,14 @@ import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.scheduling.annotation.AsyncConfigurer;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Collection;
 import java.util.concurrent.Executor;
 
 @Configuration
 public class SearchApplicationConfiguration implements AsyncConfigurer {
-
     private final PathMatchingResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
     @Override
     public Executor getAsyncExecutor() {
@@ -40,14 +37,14 @@ public class SearchApplicationConfiguration implements AsyncConfigurer {
     }
 
     @Bean(name="organizationFinder")
-    @Scope("prototype")
+    @Scope("singleton")
     public TokenNameFinderModel getOrganizationFinderModel() throws IOException {
         InputStream modelFile = resolver.getResource("/models/1.5/en-ner-organization.bin").getInputStream();
         return new TokenNameFinderModel(modelFile);
     }
 
     @Bean(name="locationFinder")
-    @Scope("prototype")
+    @Scope("singleton")
     public TokenNameFinderModel getLocationFinderModel() throws IOException {
         InputStream modelFile = resolver.getResource("/models/1.5/en-ner-location.bin").getInputStream();
         return new TokenNameFinderModel(modelFile);
@@ -59,4 +56,13 @@ public class SearchApplicationConfiguration implements AsyncConfigurer {
         InputStream modelFile = resolver.getResource("/models/1.5/en-ner-person.bin").getInputStream();
         return new TokenNameFinderModel(modelFile);
     }
+
+    @Bean(name="dateFinder")
+    @Scope("singleton")
+    public TokenNameFinderModel getDateFinder() throws IOException {
+        InputStream modelFile = resolver.getResource("/models/1.5/en-ner-date.bin").getInputStream();
+        return new TokenNameFinderModel(modelFile);
+    }
+
+
 }

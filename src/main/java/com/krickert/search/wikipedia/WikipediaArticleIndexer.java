@@ -1,16 +1,16 @@
 package com.krickert.search.wikipedia;
 
 import com.krickert.search.installer.SolrInstallerOptions;
-import com.krickert.search.opennlp.OrganizationExtractor;
-import com.krickert.search.opennlp.PersonExtractor;
-import edu.stanford.nlp.quoteattribution.Person;
+import opennlp.tools.namefind.TokenNameFinderModel;
 import opennlp.tools.tokenize.TokenizerModel;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
+import java.util.Collection;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
@@ -21,38 +21,53 @@ public class WikipediaArticleIndexer {
     private final WikipediaArticleMultipartDownloader wikipediaArticleMultipartDownloader;
     private final SolrInstallerOptions opts;
     private final Boolean isParseWikiResults;
-    private final OrganizationExtractor organizationExtractor;
     private final TokenizerModel tokenizerModel;
-    private final PersonExtractor personExtractor;
+    private final TokenNameFinderModel personModel;
+    private final TokenNameFinderModel orgModel;
+    private final TokenNameFinderModel locationModel;
+    private final TokenNameFinderModel dateModel;
+    private final Integer docBufferSize;
+    private final Integer numberOfFileParsers;
 
     @Autowired
     public WikipediaArticleIndexer(WikipediaArticleMultipartDownloader wikipediaArticleMultipartDownloader,
                                    @Value("${parse.wikiresults}") Boolean isParseWikiResults,
                                    SolrInstallerOptions opts,
-                                   OrganizationExtractor organizationExtractor,
                                    TokenizerModel tokenizerModel,
-                                   PersonExtractor personExtractor) {
+                                   @Qualifier("organizationFinder") TokenNameFinderModel orgModel,
+                                   @Qualifier("personFinder")TokenNameFinderModel personModel,
+                                   @Qualifier("locationFinder")TokenNameFinderModel locationModel,
+                                   @Qualifier("dateFinder")TokenNameFinderModel dateModel,
+                                   @Value("${solr.thread.doc.buffersize}")Integer docBufferSize,
+                                   @Value("${solr.thread.file.parsers}")Integer numberOfFileParsers) {
         this.wikipediaArticleMultipartDownloader = wikipediaArticleMultipartDownloader;
         this.opts = opts;
         this.isParseWikiResults = isParseWikiResults;
-        this.organizationExtractor = organizationExtractor;
+        this.orgModel = orgModel;
         this.tokenizerModel = tokenizerModel;
-        this.personExtractor = personExtractor;
+        this.personModel = personModel;
+        this.locationModel = locationModel;
+        this.dateModel = dateModel;
+        this.docBufferSize = docBufferSize;
+        this.numberOfFileParsers = numberOfFileParsers;
     }
 
     public void parseResultsToSolr() throws InterruptedException {
         if (!isParseWikiResults) {
             return;
         }
-        ExecutorService fileParserExecutor = Executors.newFixedThreadPool(8);
+        ExecutorService fileParserExecutor = Executors.newFixedThreadPool(numberOfFileParsers);
         for (String file : wikipediaArticleMultipartDownloader.getPageDumpFiles()) {
             AsyncDumpFileProcessorRunnable runnable =
                     new AsyncDumpFileProcessorRunnable(file, opts.getSolrCollectionName(),
                             opts.getSolrUserName(),
                             opts.getSolrPassword(),
-                            organizationExtractor,
                             tokenizerModel,
-                            personExtractor);
+                            orgModel,
+                            personModel,
+                            locationModel,
+                            dateModel,
+                            docBufferSize);
             fileParserExecutor.execute(runnable);
         }
         //at this point all of them should be in the queue.
