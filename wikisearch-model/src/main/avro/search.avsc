@@ -1,0 +1,64 @@
+{
+  "type": "record",
+  "name": "PipelineDocument",
+  "namespace": "com.krickert.search.model",
+  "fields": [
+    {
+      "name": "id",
+      "type": "long",
+      "required": true
+    },
+    {
+      "name": "title",
+      "type": "string",
+      "required": true
+    },
+    {
+      "name": "body",
+      "type": "string"
+    },
+    {
+      "name": "body_raw",
+      "type": "string"
+    },
+    {
+      "name": "revision_id",
+      "type": "long",
+      "required": true
+    },
+    {
+      "name": "custom",
+      "type": {
+        "type": "map",
+        "values": "string"
+      }
+    },
+    {
+      "name": "creation_date",
+      "type": "long"
+    },
+    {
+      "name": "last_modified",
+      "type": "long"
+    },
+    {
+      "name": "document_type",
+      "doc": "Enumerated list of what type of document this is",
+      "type": {
+        "type": "enum",
+        "name": "PipelineDocumentType",
+        "symbols": [
+          "ARTICLE",
+          "LIST",
+          "DRAFT",
+          "WIKIPEDIA",
+          "TEMPLATE",
+          "FILE"
+        ]
+      }
+    }
+  ]
+}
+
+
+

@@ -1,0 +1,47 @@
+{
+  "type": "record",
+  "name": "ParsedWikiArticle",
+  "namespace": "com.krickert.search.model",
+  "fields": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": true
+    },
+    {
+      "name": "title",
+      "type": ["null", "string"]
+    },
+    {
+      "name": "text",
+      "type": ["null", "string"],
+      "required": false
+    },
+    {
+      "name": "namespace_code",
+      "type": "int",
+      "default": -666,
+      "required": false
+    },
+    {
+      "name": "namespace",
+      "type": ["null", "string"],
+      "required": false
+    },
+    {
+      "name": "timestamp",
+      "type": ["null", "string"]
+    },
+    {
+      "name": "revision_id",
+      "type": "string"
+    },
+    {
+      "name": "site_info",
+      "type": "ParsedSiteInfo"
+    }
+  ]
+}
+
+
+

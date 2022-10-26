@@ -1,0 +1,24 @@
+{
+  "type": "record",
+  "name": "ParsedSiteInfo",
+  "namespace": "com.krickert.search.model",
+  "fields": [
+    {
+      "name": "sitename",
+      "type": "string",
+      "required": "true"
+    },
+    {
+      "name": "base",
+      "type": "string"
+    },
+    {
+      "name": "generator",
+      "type": "string"
+    },
+    {
+      "name": "character_case",
+      "type": "string"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+micronaut:
+  executors:
+    consumer:
+      type: fixed
+      nThreads: 25
+  application:
+    name: wikiDumpFileProcessor
+kafka:
+  key:
+    serializer: org.apache.kafka.common.serialization.UUIDSerializer
+    deserializer: org.apache.kafka.common.serialization.UUIDDeserializer
+  value:
+    serializer: io.confluent.kafka.streams.serdes.avro.SpecificAvroSerializer
+    deserializer: io.confluent.kafka.streams.serdes.avro.SpecificAvroDeserializer
+
+  enabled: true
+  schema.registry.url: http://localhost:8081
