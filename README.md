@@ -1,5 +1,8 @@
 # search_indexer
 
+Here's a cartoon showing what this does:
+!(cartoon for managers|docs/arch_diagramssearch_indexer-StreamFlow.drawio.png)
+
 ## install directions
 Install this by first launching the standard servers needed for this app:
 * Kafka
