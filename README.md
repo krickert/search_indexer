@@ -1,4 +1,15 @@
 # search_indexer
+
+## install directions
+Install this by first launching the standard servers needed for this app:
+* Kafka
+* solr
+
+Soon we will also need:
+key value document store
+each microservice be dockerized
+
+
 (in progress)
 
 Search Indexer is an open source search indexer meant to create a document indexer that scales out-of-the-box.  It's a work-in-progress aimed at the following milestones:
