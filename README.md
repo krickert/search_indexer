@@ -1,4 +1,15 @@
 # search_indexer
+
+## install directions
+Install this by first launching the standard servers needed for this app:
+* Kafka
+* solr
+
+Soon we will also need:
+key value document store
+each microservice be dockerized
+
+
 (in progress)
 
 Search Indexer is an open source search indexer meant to create a document indexer that scales out-of-the-box.  It's a work-in-progress aimed at the following milestones:
@@ -9,14 +20,29 @@ Search Indexer is an open source search indexer meant to create a document index
 4. *Allow for multiple document types to be indexed* - not started.  Move away from wikipedia and allow for more generic input of documents.
 5. *Integrate pipeline steps for search to allow for dense vector calculations* - not started.
 
-# End to end searching of wikipedia
+# Changes
+1. Moved away from installing outside services to docker.  After writing a java installer fully in java, that was an exercise for the unwise and foolish.  I'm now fully on the docker train.
+2. Added kafka integration - so much better for scaling the data. 
+3. Switched from Spring to Micronaut.  I realized that spring just has too much "freedom" and takes too long to startup.  Integrating Kafka for this use wasn't bad at all.  It's pretty quick to get components up and going fast and allows for OOTB kube deployment.  
+4. General cleanup - Further moved around components to be microservices.  So far matches what was written on the original diagram below.
+5. Avro schema.  Always been a fan.
+6. all the projects below are their own project on maven.  I'd love to move to gradle, but for now sticking with maven.
 
-If you have osx/linux, the current master branch will:
+# things to do
+* learn more about kafka topics.  About 1/2 way through some of the books, not jumping into any of the super fancy stuff yet.
+* figure out if we will use key/value storage with KTable?  I feel odd moving away from the avro binary to json,
 
-1) Download solr
-2) Install solr / create wikipedia collection
-3) download wikipedia articles
-4) index all the wikipedia articles (took 6 hours total on a macbook air M2 2022)
+# things to cache/store outside of the pipeline
+* NLP cache by revision ID key to reduce the cost of processing
+* create a feature that doesn't parse the articles outside of the raw stage if it's already in the db and marked processed
+* find a pluggable way to add enhancements to the document.  probably just by tagging and a revision ID along with some more metadata.  trying to avoid doing a SQL database and if I do, consider using the sql dumps from wikimedia.  But I want to keep this search-centric and not use that model.
+* start a document store once the document is cleaned. 
+* once we get this into solr, create https://vespa.ai/ search engine
+* also consider using weaviate
+
+# categories listed 
+a ton of documents cause redirects.  start seeing how we can get that data because the wikiparser doesn't seem to give the article id when redirecting.  It'll be cool to save that data because it's an amazing source of similarity stuff to do with the dense vectors.
+
 
 # What is the purpose project?
 
