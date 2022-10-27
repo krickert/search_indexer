@@ -4,13 +4,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>download.request.processor</groupId>
   <artifactId>download-request-processor</artifactId>
-  <version>0.1</version>
+  <version>0.1-SNAPSHOT</version>
   <packaging>${packaging}</packaging>
 
   <parent>
     <groupId>io.micronaut</groupId>
     <artifactId>micronaut-parent</artifactId>
     <version>3.7.2</version>
+    <relativePath/>
   </parent>
 
   <properties>

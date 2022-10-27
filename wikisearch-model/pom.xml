@@ -35,6 +35,7 @@
                         </goals>
                         <configuration>
                             <imports>
+                                <import>${project.basedir}/src/main/avro/url_link.avsc</import>
                                 <import>${project.basedir}/src/main/avro/wiki_site_info.avsc</import>
                                 <import>${project.basedir}/src/main/avro/wiki_raw_article.avsc</import>
                                 <import>${project.basedir}/src/main/avro/error_type.avsc</import>
@@ -43,7 +44,6 @@
                                 <import>${project.basedir}/src/main/avro/com/search.avsc</import>
                             </imports>
                             <sourceDirectory>${project.basedir}/src/main/avro/</sourceDirectory>
-                            <!--outputDirectory>${project.basedir}/src/main/java/</outputDirectory-->
                             <stringType>String</stringType>
                         </configuration>
                     </execution>

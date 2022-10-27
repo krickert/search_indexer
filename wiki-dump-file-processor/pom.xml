@@ -11,6 +11,7 @@
     <groupId>io.micronaut</groupId>
     <artifactId>micronaut-parent</artifactId>
     <version>3.7.2</version>
+    <relativePath/>
   </parent>
 
   <properties>
@@ -123,10 +124,38 @@
       <version>7.2.1</version>
     </dependency>
     <dependency>
+      <groupId>org.wikiclean</groupId>
+      <artifactId>wikiclean</artifactId>
+      <version>1.2</version>
+      <exclusions>
+        <exclusion>
+          <groupId>com.google.protobuf</groupId>
+          <artifactId>protobuf-java</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>edu.stanford.nlp</groupId>
+          <artifactId>stanford-corenlp</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.apache.ant</groupId>
+          <artifactId>ant</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>commons-io</groupId>
+      <artifactId>commons-io</artifactId>
+      <version>2.11.0</version>
+    </dependency>
+    <dependency>
       <groupId>info.bliki.wiki</groupId>
       <artifactId>bliki-core</artifactId>
       <version>3.1.0</version>
       <exclusions>
+        <exclusion>
+          <groupId>org.apache.httpcomponents</groupId>
+          <artifactId>http-client</artifactId>
+        </exclusion>
         <exclusion>
           <groupId>ch.qos.logback</groupId>
           <artifactId>*</artifactId>
@@ -139,6 +168,14 @@
       <artifactId>httpclient</artifactId>
       <version>4.5.13</version>
     </dependency>
+
+    <!-- https://mvnrepository.com/artifact/commons-codec/commons-codec -->
+    <dependency>
+      <groupId>commons-codec</groupId>
+      <artifactId>commons-codec</artifactId>
+      <version>1.15</version>
+    </dependency>
+
 
     <dependency>
       <groupId>org.apache.commons</groupId>

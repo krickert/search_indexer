@@ -18,9 +18,13 @@
       "required": false
     },
     {
+      "name": "wiki_text",
+      "type": ["null", "string"],
+      "required": false
+    },
+    {
       "name": "namespace_code",
-      "type": "int",
-      "default": -666,
+      "type": ["null", "int"],
       "required": false
     },
     {
@@ -39,7 +43,16 @@
     {
       "name": "site_info",
       "type": "ParsedSiteInfo"
+    },
+    {
+      "name": "url_ref_alt_text",
+      "type": {
+        "type": "array",
+        "items": "Link",
+        "default": []
+      }
     }
+
   ]
 }
 

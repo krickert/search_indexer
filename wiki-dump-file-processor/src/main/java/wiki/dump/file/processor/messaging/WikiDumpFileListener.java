@@ -1,4 +1,4 @@
-package wiki.dump.file.processor;
+package wiki.dump.file.processor.messaging;
 import com.krickert.search.model.DownloadedFile;
 import info.bliki.wiki.dump.WikiXMLParser;
 import io.micronaut.configuration.kafka.annotation.KafkaKey;
@@ -10,6 +10,7 @@ import jakarta.inject.Inject;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.exception.ExceptionUtils;
 import org.xml.sax.SAXException;
+import wiki.dump.file.processor.component.WikiArticleFilter;
 
 import java.io.File;
 import java.io.IOException;

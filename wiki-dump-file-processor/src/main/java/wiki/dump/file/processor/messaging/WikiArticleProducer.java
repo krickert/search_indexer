@@ -1,4 +1,4 @@
-package wiki.dump.file.processor;
+package wiki.dump.file.processor.messaging;
 import com.krickert.search.model.ParsedWikiArticle;
 import io.micronaut.configuration.kafka.annotation.KafkaClient;
 import io.micronaut.configuration.kafka.annotation.KafkaKey;

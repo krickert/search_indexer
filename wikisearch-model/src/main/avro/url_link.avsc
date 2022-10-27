@@ -1,0 +1,15 @@
+{
+  "type": "record",
+  "name": "Link",
+  "namespace": "com.krickert.search.model",
+  "fields": [
+    {
+      "name": "url",
+      "type": "string"
+    },
+    {
+      "name": "description",
+      "type": ["null", "string"]
+    }
+  ]
+}
