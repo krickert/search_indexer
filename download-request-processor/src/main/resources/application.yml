@@ -1,20 +1,19 @@
 micronaut:
+  application:
+    name: downloadRequestProcessor
   executors:
     consumer:
       type: fixed
       nThreads: 25
-  application:
-    name: downloadRequestProcessor
-kafka:
-  key:
-    serializer: org.apache.kafka.common.serialization.UUIDSerializer
-    deserializer: org.apache.kafka.common.serialization.UUIDDeserializer
-  value:
-    serializer: io.confluent.kafka.streams.serdes.avro.SpecificAvroSerializer
-    deserializer: io.confluent.kafka.streams.serdes.avro.SpecificAvroDeserializer
-
-  enabled: true
-  schema.registry.url: http://localhost:8081
+  kafka:
+    enabled: true
+    schema.registry.url: http://localhost:8081
+    key:
+      serializer: org.apache.kafka.common.serialization.UUIDSerializer
+      deserializer: org.apache.kafka.common.serialization.UUIDDeserializer
+    value:
+      serializer: io.confluent.kafka.streams.serdes.avro.SpecificAvroSerializer
+      deserializer: io.confluent.kafka.streams.serdes.avro.SpecificAvroDeserializer
 
 wikipedia:
   md5-url: https://dumps.wikimedia.org/enwiki/latest/
