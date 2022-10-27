@@ -1,0 +1,16 @@
+<project>
+  <modelVersion>4.0.0</modelVersion>
+ 
+  <groupId>com.krickert.search</groupId>
+  <artifactId>indexer-pom</artifactId>
+  <version>0.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
+
+ 
+  <modules>
+    <module>wikisearch-model</module>
+    <module>download-request-creator</module>
+    <module>download-request-processor</module>
+    <module>wiki-dump-file-processor</module>
+  </modules>
+</project>
