@@ -1,4 +1,4 @@
-package com.krickert.search.download.dump.util;
+package com.krickert.search.download.dump.component;
 
 import com.google.common.base.Preconditions;
 import com.google.common.collect.Maps;

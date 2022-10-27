@@ -1,6 +1,6 @@
-package com.krickert.search.download.dump;
+package com.krickert.search.download.dump.messaging;
 
-import com.krickert.search.download.dump.util.FileDownloader;
+import com.krickert.search.download.dump.component.FileDownloader;
 import com.krickert.search.model.DownloadFileRequest;
 import com.krickert.search.model.DownloadedFile;
 import com.krickert.search.model.ErrorCheckType;
@@ -9,7 +9,6 @@ import io.micronaut.context.annotation.Prototype;
 import io.micronaut.context.annotation.Value;
 import jakarta.inject.Inject;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.lang3.SystemUtils;
 
 import java.io.File;
 import java.net.MalformedURLException;
