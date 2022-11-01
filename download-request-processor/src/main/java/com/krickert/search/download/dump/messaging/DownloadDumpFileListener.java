@@ -20,14 +20,20 @@ import java.util.UUID;
         groupId = "download-request-listener")
 @Prototype
 public class DownloadDumpFileListener {
-    @Value("${wikipedia.download-location}")
-    String downloadLocation;
+    final String downloadLocation;
+    final FileDownloader fileDownloader;
+    final DownloadedFileProcessingProducer producer;
 
     @Inject
-    FileDownloader fileDownloader;
-
-    @Inject
-    DownloadedFileProcessingProducer producer;
+    public DownloadDumpFileListener(
+            @Value("${wikipedia.download-location}")
+            final String downloadLocation,
+            final FileDownloader fileDownloader,
+            final DownloadedFileProcessingProducer producer) {
+        this.downloadLocation = downloadLocation;
+        this.fileDownloader = fileDownloader;
+        this.producer = producer;
+    }
 
     @Topic("download-request")
     public void receive(@KafkaKey UUID uuid,

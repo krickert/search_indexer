@@ -17,12 +17,17 @@ import java.io.IOException;
 import java.util.UUID;
 
 @Slf4j
-@KafkaListener(offsetReset = OffsetReset.EARLIEST, threads = 3)
+@KafkaListener(offsetReset = OffsetReset.EARLIEST, threads = 8)
 @Prototype
 public class WikiDumpFileListener {
 
+    final WikiArticleFilter wikiArticleFilter;
+
     @Inject
-    WikiArticleFilter wikiArticleFilter;
+    public WikiDumpFileListener(WikiArticleFilter wikiArticleFilter) {
+        this.wikiArticleFilter = wikiArticleFilter;
+    }
+
 
     @Topic("wiki-dump-file")
     public void receive(@KafkaKey UUID uuid,

@@ -2,9 +2,9 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>download.request.processor</groupId>
-  <artifactId>download-request-processor</artifactId>
-  <version>0.1-SNAPSHOT</version>
+  <groupId>pipeline.document.processor</groupId>
+  <artifactId>pipeline-document-processor</artifactId>
+  <version>0.1</version>
   <packaging>${packaging}</packaging>
 
   <parent>
@@ -20,7 +20,7 @@
     <release.version>17</release.version>
     <micronaut.version>3.7.2</micronaut.version>
     <micronaut.test.resources.enabled>true</micronaut.test.resources.enabled>
-    <exec.mainClass>com.krickert.search.download.dump.DownloadRequestProcessor</exec.mainClass>
+    <exec.mainClass>com.krickert.search.pipline.article.WikiArticlePiplineCreator</exec.mainClass>
   </properties>
 
   <repositories>
@@ -117,42 +117,17 @@
       <artifactId>testcontainers</artifactId>
       <scope>test</scope>
     </dependency>
-    <!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient -->
-    <dependency>
-      <groupId>org.apache.httpcomponents.client5</groupId>
-      <artifactId>httpclient5</artifactId>
-      <version>5.2-beta1</version>
-    </dependency>
-    <!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
-    <dependency>
-      <groupId>commons-io</groupId>
-      <artifactId>commons-io</artifactId>
-      <version>2.11.0</version>
-    </dependency>
-    <!-- https://mvnrepository.com/artifact/commons-codec/commons-codec -->
-    <dependency>
-      <groupId>commons-codec</groupId>
-      <artifactId>commons-codec</artifactId>
-      <version>1.15</version>
-    </dependency>
-    <dependency>
-      <groupId>com.krickert.search</groupId>
-      <artifactId>wikisearch-model</artifactId>
-      <version>0.1-SNAPSHOT</version>
-    </dependency>
     <!-- https://mvnrepository.com/artifact/io.confluent/kafka-streams-avro-serde -->
     <dependency>
       <groupId>io.confluent</groupId>
       <artifactId>kafka-streams-avro-serde</artifactId>
       <version>7.2.2</version>
     </dependency>
-    <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
     <dependency>
-      <groupId>org.apache.commons</groupId>
-      <artifactId>commons-lang3</artifactId>
-      <version>3.12.0</version>
+      <groupId>com.krickert.search</groupId>
+      <artifactId>wikisearch-model</artifactId>
+      <version>0.1-SNAPSHOT</version>
     </dependency>
-
   </dependencies>
 
   <build>
@@ -195,8 +170,8 @@
             </path>
           </annotationProcessorPaths>
           <compilerArgs>
-            <arg>-Amicronaut.processing.group=download.request.processor</arg>
-            <arg>-Amicronaut.processing.module=download-request-processor</arg>
+            <arg>-Amicronaut.processing.group=pipeline.document.processor</arg>
+            <arg>-Amicronaut.processing.module=pipeline-document-processor</arg>
           </compilerArgs>
         </configuration>
       </plugin>

@@ -10,7 +10,7 @@
   <parent>
     <groupId>io.micronaut</groupId>
     <artifactId>micronaut-parent</artifactId>
-    <version>3.7.2</version>
+    <version>3.7.3</version>
     <relativePath/>
   </parent>
 
@@ -60,6 +60,11 @@
       <groupId>io.micronaut.kafka</groupId>
       <artifactId>micronaut-kafka</artifactId>
       <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.kafka</groupId>
+      <artifactId>kafka-clients</artifactId>
+      <version>3.3.1</version>
     </dependency>
     <dependency>
       <groupId>jakarta.annotation</groupId>
@@ -121,7 +126,7 @@
     <dependency>
       <groupId>io.confluent</groupId>
       <artifactId>kafka-streams-avro-serde</artifactId>
-      <version>7.2.1</version>
+      <version>7.2.2</version>
     </dependency>
     <dependency>
       <groupId>org.wikiclean</groupId>
@@ -175,17 +180,10 @@
       <artifactId>commons-codec</artifactId>
       <version>1.15</version>
     </dependency>
-
-
     <dependency>
       <groupId>org.apache.commons</groupId>
       <artifactId>commons-compress</artifactId>
       <version>1.21</version>
-    </dependency>
-    <dependency>
-      <groupId>commons-codec</groupId>
-      <artifactId>commons-codec</artifactId>
-      <version>1.15</version>
     </dependency>
   </dependencies>
 

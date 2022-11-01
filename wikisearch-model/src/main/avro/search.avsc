@@ -15,47 +15,38 @@
     },
     {
       "name": "body",
-      "type": "string"
-    },
-    {
-      "name": "body_raw",
-      "type": "string"
+      "type": ["null","string"],
+      "required": false
     },
     {
       "name": "revision_id",
       "type": "long",
-      "required": true
+      "required": false
     },
     {
       "name": "custom",
       "type": {
         "type": "map",
         "values": "string"
-      }
+      },
+      "required": false
     },
     {
       "name": "creation_date",
-      "type": "long"
+      "type": "long",
+      "required": true
     },
     {
       "name": "last_modified",
-      "type": "long"
+      "type": "long",
+      "required": false
     },
     {
       "name": "document_type",
-      "doc": "Enumerated list of what type of document this is",
-      "type": {
-        "type": "enum",
-        "name": "PipelineDocumentType",
-        "symbols": [
-          "ARTICLE",
-          "LIST",
-          "DRAFT",
-          "WIKIPEDIA",
-          "TEMPLATE",
-          "FILE"
-        ]
-      }
+      "doc": "single type of document this is",
+      "type": "string",
+      "required": true,
+      "default": "document"
     }
   ]
 }

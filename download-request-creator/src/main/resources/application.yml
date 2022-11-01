@@ -14,8 +14,9 @@ kafka:
 
 download:
   request-url: https://dumps.wikimedia.org/enwiki/latest/
-
+  threads: 3
 wikipedia:
   md5-url: https://dumps.wikimedia.org/enwiki/latest/
-  download-location: ${user.home}/wikidownloads/
+  download-location: /Volumes/BigDataFun/wikidownloads
+  download-name: "${wikipedia.download-location}/wikiList.md5"
   prefix-url: https://dumps.wikimedia.org/enwiki/
