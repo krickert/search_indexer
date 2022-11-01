@@ -8,6 +8,7 @@ import io.micronaut.configuration.kafka.annotation.Topic;
 import jakarta.inject.Inject;
 import jakarta.inject.Singleton;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.time.FastDateFormat;
 
 import java.util.UUID;
 
@@ -33,6 +34,12 @@ public class WikiArticleListener {
                         int partition,
                         String topic,
                         long timestamp) {
+
+        log.info("Received UUID: {} ID: {} Title: {} from partition-topic: {}-{} on {} with offset {}",
+                uuid.toString(), request.getId(), request.getTitle(),
+                partition, topic,
+                FastDateFormat.getInstance().format(timestamp),
+                offset);
         producer.sendDocument(uuid, documentMapper.mapDocument(request));
     }
 
