@@ -27,7 +27,6 @@ public class DocumentPipelineTest {
     void testRandomDataCreationSpecificData() throws FileNotFoundException {
         Iterator<Object> it = new RandomData(PipelineDocument.getClassSchema(), 1).iterator();
         GenericRecord test = (GenericRecord) it.next();
-        System.out.println(test);
         assertInstanceOf(PipelineDocument.class, SpecificData.get().deepCopy(test.getSchema(), test));
     }
 
