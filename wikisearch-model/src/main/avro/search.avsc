@@ -5,7 +5,7 @@
   "fields": [
     {
       "name": "id",
-      "type": "long",
+      "type": "string",
       "required": true
     },
     {
@@ -20,7 +20,7 @@
     },
     {
       "name": "revision_id",
-      "type": "long",
+      "type": "string",
       "required": false
     },
     {
@@ -38,8 +38,9 @@
     },
     {
       "name": "last_modified",
-      "type": "long",
-      "required": false
+      "type": ["null", "long"],
+      "required" : false,
+      "default": null
     },
     {
       "name": "document_type",
