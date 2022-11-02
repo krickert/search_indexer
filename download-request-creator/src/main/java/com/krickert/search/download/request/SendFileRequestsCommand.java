@@ -23,7 +23,7 @@ public class SendFileRequestsCommand implements Runnable {
     final DownloadMd5WikiFileService md5FileCheckService;
     @Option(names = {"-v", "--verbose"}, description = "Shows some project details")
     boolean verbose;
-    @Option(names = {"-f", "--flie-list"}, description = "sends the requests to the configured broker")
+    @Option(names = {"-f", "--flie-list"}, description = "name of a preconfigured file that's ready-to-use and already downloaded.")
     String fileList;
 
     @Inject
