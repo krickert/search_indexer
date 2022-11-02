@@ -66,6 +66,7 @@ public final class SampleAvroData {
             .setErrorType(downloadFileRequest.getErrorType())
             .build();
 
+
     public static PipelineDocument pipelineDocument = PipelineDocument.newBuilder()
             .setBody("fake_body")
             .setId("fake_id")

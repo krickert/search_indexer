@@ -1,7 +1,6 @@
 package com.krickert.search.model;
 import org.apache.avro.file.DataFileReader;
 import org.apache.avro.file.DataFileWriter;
-import org.apache.avro.generic.GenericData;
 import org.apache.avro.generic.GenericRecord;
 import org.apache.avro.io.DatumReader;
 import org.apache.avro.io.DatumWriter;
@@ -16,12 +15,11 @@ import org.junit.jupiter.api.Test;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.nio.channels.Pipe;
 import java.util.Iterator;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertInstanceOf;
-public class DocumentPipelineTest {
+public class AvroModelTests {
 
     @Test
     void testRandomDataCreationSpecificData() throws FileNotFoundException {
@@ -41,27 +39,50 @@ public class DocumentPipelineTest {
         assertInstanceOf(PipelineDocument.class, SampleAvroData.specificAvroRecordGenerator(PipelineDocument.getClassSchema()));
         assertInstanceOf(ParsedWikiArticle.class, SampleAvroData.specificAvroRecordGenerator(ParsedWikiArticle.getClassSchema()));
     }
-    @Test
-    void testSerializeToDisk() throws IOException {
-        DatumWriter<DownloadFileRequest> userDatumWriter = new SpecificDatumWriter<>(DownloadFileRequest.class);
-        DataFileWriter<DownloadFileRequest> dataFileWriter = new DataFileWriter<>(userDatumWriter);
-        DownloadFileRequest request = DownloadFileRequest.newBuilder().setErrorcheck("error-check").setErrorType(ErrorCheckType.SHA1).setFileName("sample file name").setURL("https://dummy-file.dummy-file.com/").setFileDumpDate(System.currentTimeMillis() + "").build();
 
-        File file = new File("datafilewriter.avro");
+    <T extends SpecificRecordBase> void  testSerializeToDiskHelper(T specificRecordToTest) throws IOException {
+        DatumWriter<T> userDatumWriter = new SpecificDatumWriter<>(specificRecordToTest.getSchema());
+        DataFileWriter<T> dataFileWriter = new DataFileWriter<>(userDatumWriter);
 
-        dataFileWriter.create(request.getSchema(),file);
-        dataFileWriter.append(request);
+        File file = new File(specificRecordToTest.getClass().getName());
+
+        dataFileWriter.create(specificRecordToTest.getSchema(),file);
+        dataFileWriter.append(specificRecordToTest);
         dataFileWriter.close();
 
         // Deserialize Users from disk
-        DatumReader<DownloadFileRequest> userDatumReader = new SpecificDatumReader<>(DownloadFileRequest.class);
-        DataFileReader<DownloadFileRequest> dataFileReader = new DataFileReader<>(file, userDatumReader);
-        assertEquals(request, dataFileReader.next());
+        DatumReader<T> userDatumReader = new SpecificDatumReader<>(specificRecordToTest.getSchema());
+        DataFileReader<T> dataFileReader = new DataFileReader<>(file, userDatumReader);
+        assertEquals(specificRecordToTest, dataFileReader.next());
 
         dataFileReader.close();
         FileUtils.forceDelete(file);
     }
 
+    @Test
+    void testSerializeDownloadFileToDisk() throws IOException {
+        testSerializeToDiskHelper(SampleAvroData.downloadFileRequest);
+    }
+    @Test
+    void testSerializeDownloadFileRequestToDisk() throws IOException {
+        testSerializeToDiskHelper(SampleAvroData.downloadFileRequest);
+    }
+    @Test
+    void testSerializeParsedWikiArticleToDisk() throws IOException {
+        testSerializeToDiskHelper(SampleAvroData.parsedWikiArticle);
+    }
+    @Test
+    void testSerializeParsedSiteInfoToDisk() throws IOException {
+        testSerializeToDiskHelper(SampleAvroData.parsedSiteInfo);
+    }
+    @Test
+    void testSerializePipelineDocumentToDisk() throws IOException {
+        testSerializeToDiskHelper(SampleAvroData.pipelineDocument);
+    }
+    @Test
+    void testSerializeLinkToDisk() throws IOException {
+        testSerializeToDiskHelper(SampleAvroData.link1);
+    }
 
 
 }
