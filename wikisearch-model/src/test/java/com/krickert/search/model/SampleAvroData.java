@@ -96,17 +96,20 @@ public final class SampleAvroData {
     }
 
 
-    @SuppressWarnings("unchecked")
     public static <T extends SpecificRecordBase> T specificAvroRecordGenerator(Class<T> avroClassType) {
         try {
             Field field = avroClassType.getDeclaredField("SCHEMA$");
-            GenericRecord test =
-                    (GenericRecord)new RandomData(
-                            (Schema) field.get(null), 1)
-                            .iterator().next();
-            return (T) SpecificData.get().deepCopy(test.getSchema(), test);
+            return specificAvroRecordGenerator((Schema)field.get(null));
         } catch (IllegalAccessException | NoSuchFieldException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    @SuppressWarnings("unchecked")
+    public static <T extends SpecificRecordBase> T specificAvroRecordGenerator(Schema schema) {
+            GenericRecord test =
+                    (GenericRecord)new RandomData(schema, 1)
+                            .iterator().next();
+            return (T) SpecificData.get().deepCopy(test.getSchema(), test);
     }
 }

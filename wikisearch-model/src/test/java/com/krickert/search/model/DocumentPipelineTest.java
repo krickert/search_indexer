@@ -1,6 +1,4 @@
 package com.krickert.search.model;
-
-
 import org.apache.avro.file.DataFileReader;
 import org.apache.avro.file.DataFileWriter;
 import org.apache.avro.generic.GenericData;
@@ -23,11 +21,7 @@ import java.util.Iterator;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertInstanceOf;
-
-
-
 public class DocumentPipelineTest {
-
 
     @Test
     void testRandomDataCreationSpecificData() throws FileNotFoundException {
@@ -44,13 +38,18 @@ public class DocumentPipelineTest {
     }
 
     @Test
+    void testGenericAvroGeneratorBySchema() {
+        assertInstanceOf(PipelineDocument.class, SampleAvroData.specificAvroRecordGenerator(PipelineDocument.getClassSchema()));
+        assertInstanceOf(ParsedWikiArticle.class, SampleAvroData.specificAvroRecordGenerator(ParsedWikiArticle.getClassSchema()));
+    }
+    @Test
     void testSerializeToDisk() throws IOException {
-        // Serialize user1, user2 and user3 to disk
         DatumWriter<DownloadFileRequest> userDatumWriter = new SpecificDatumWriter<>(DownloadFileRequest.class);
         DataFileWriter<DownloadFileRequest> dataFileWriter = new DataFileWriter<>(userDatumWriter);
         DownloadFileRequest request = DownloadFileRequest.newBuilder().setErrorcheck("error-check").setErrorType(ErrorCheckType.SHA1).setFileName("sample file name").setURL("https://dummy-file.dummy-file.com/").setFileDumpDate(System.currentTimeMillis() + "").build();
 
         File file = new File("datafilewriter.avro");
+
         dataFileWriter.create(request.getSchema(),file);
         dataFileWriter.append(request);
         dataFileWriter.close();
@@ -58,10 +57,8 @@ public class DocumentPipelineTest {
         // Deserialize Users from disk
         DatumReader<DownloadFileRequest> userDatumReader = new SpecificDatumReader<>(DownloadFileRequest.class);
         DataFileReader<DownloadFileRequest> dataFileReader = new DataFileReader<>(file, userDatumReader);
-        // Reuse user object by passing it to next(). This saves us from
-        // allocating and garbage collecting many objects for files with
-        // many items.
         assertEquals(request, dataFileReader.next());
+
         dataFileReader.close();
         FileUtils.forceDelete(file);
     }
