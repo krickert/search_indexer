@@ -1,6 +1,6 @@
 package com.krickert.search.pipline.article;
 
-import com.krickert.search.model.ParsedWikiArticle;
+import com.krickert.search.model.wiki.WikiArticle;
 import com.krickert.search.pipline.messaging.ParsedArticleToPipelineDocumentMapper;
 import io.micronaut.configuration.kafka.annotation.KafkaKey;
 import io.micronaut.configuration.kafka.annotation.KafkaListener;
@@ -19,17 +19,17 @@ import java.util.UUID;
 public class WikiArticleListener {
 
     final ParsedArticleToPipelineDocumentMapper documentMapper;
-    final PipelineDocumentProducer producer;
+    final PipeDocumentProducer producer;
 
     @Inject
-    public WikiArticleListener(ParsedArticleToPipelineDocumentMapper documentMapper, PipelineDocumentProducer producer) {
+    public WikiArticleListener(ParsedArticleToPipelineDocumentMapper documentMapper, PipeDocumentProducer producer) {
         this.documentMapper = documentMapper;
         this.producer = producer;
     }
 
     @Topic("wiki-parsed-article")
     public void receive(@KafkaKey UUID uuid,
-                        ParsedWikiArticle request,
+                        WikiArticle request,
                         long offset,
                         int partition,
                         String topic,

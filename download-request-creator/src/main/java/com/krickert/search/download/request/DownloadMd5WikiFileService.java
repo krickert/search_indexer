@@ -1,6 +1,7 @@
 package com.krickert.search.download.request;
 
-import com.krickert.search.model.DownloadFileRequest;
+
+import com.krickert.search.model.wiki.DownloadFileRequest;
 
 import java.util.Collection;
 

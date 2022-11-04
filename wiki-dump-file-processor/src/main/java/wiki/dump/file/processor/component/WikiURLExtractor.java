@@ -1,7 +1,7 @@
 package wiki.dump.file.processor.component;
 
 import com.google.common.collect.Lists;
-import com.krickert.search.model.Link;
+import com.krickert.search.model.wiki.Link;
 import jakarta.inject.Singleton;
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;
@@ -45,7 +45,10 @@ public class WikiURLExtractor {
         } else {
             value = entries[1];
         }
-        return new Link(url, value);
+        return Link.newBuilder()
+                .setUrl(url)
+                .setDescription(value)
+                .build();
 
     }
 

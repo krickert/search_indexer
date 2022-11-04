@@ -1,7 +1,8 @@
 package com.krickert.search.download.request;
 
-import com.krickert.search.model.DownloadFileRequest;
-import com.krickert.search.model.ErrorCheckType;
+import com.krickert.search.model.wiki.DownloadFileRequest;
+import com.krickert.search.model.wiki.ErrorCheck;
+import com.krickert.search.model.wiki.ErrorCheckType;
 import io.micronaut.cli.io.support.PathMatchingResourcePatternResolver;
 import io.micronaut.cli.io.support.Resource;
 import io.micronaut.context.annotation.Value;
@@ -11,11 +12,11 @@ import io.micronaut.http.client.annotation.Client;
 import io.micronaut.rxjava3.http.client.Rx3HttpClient;
 import jakarta.inject.Inject;
 import jakarta.inject.Singleton;
-import lombok.SneakyThrows;
-import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.io.IOException;
@@ -27,8 +28,9 @@ import java.util.NoSuchElementException;
 import static io.micronaut.http.HttpRequest.GET;
 
 @Singleton
-@Slf4j
 public class DownloadMd5WikiFileServiceImpl implements DownloadMd5WikiFileService {
+    private static final Logger log = LoggerFactory.getLogger(DownloadMd5WikiFileServiceImpl.class);
+
     final String wikipediaMd5UrlString;
     final String wikipediaPrefixUrl;
     final String wikiDownloadName;
@@ -145,9 +147,10 @@ public class DownloadMd5WikiFileServiceImpl implements DownloadMd5WikiFileServic
             if (ArrayUtils.isNotEmpty(data) && data.length == 2) {
                 String dumpFileDateStr = parseWikiDateFromFile(data[1]);
                 response.add(DownloadFileRequest.newBuilder()
-                        .setErrorType(ErrorCheckType.MD5)
-                        .setErrorcheck(data[0])
-                        .setURL(wikipediaPrefixUrl + dumpFileDateStr + "/" + data[1])
+                        .setErrorCheck(ErrorCheck.newBuilder()
+                                .setErrorCheck(data[0])
+                                .setErrorCheckType(ErrorCheckType.MD5))
+                        .setUrl(wikipediaPrefixUrl + dumpFileDateStr + "/" + data[1])
                         .setFileName(data[1])
                         .setFileDumpDate(dumpFileDateStr)
                         .build());

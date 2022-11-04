@@ -1,0 +1,6 @@
+applicationType: cli
+defaultPackage: kafka.container.test
+testFramework: junit
+sourceLanguage: java
+buildTool: maven
+features: [annotation-api, app-name, awaitility, graalvm, http-client, java-application, junit, kafka, logback, maven, netty-server, reactor, reactor-http-client, readme, serialization-jackson, shade,  picocli, picocli-java-application, picocli-junit, spring-boot-java, test-resources, yaml]

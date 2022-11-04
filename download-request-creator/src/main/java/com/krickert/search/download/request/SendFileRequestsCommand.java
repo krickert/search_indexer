@@ -1,10 +1,11 @@
 package com.krickert.search.download.request;
 
 
-import com.krickert.search.model.DownloadFileRequest;
+import com.krickert.search.model.wiki.DownloadFileRequest;
 import io.micronaut.configuration.picocli.PicocliRunner;
 
-import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import picocli.CommandLine.Command;
 import picocli.CommandLine.Option;
 
@@ -13,11 +14,12 @@ import jakarta.inject.Inject;
 import java.util.Collection;
 import java.util.UUID;
 
-@Slf4j
 @Command(name = "populate-file-requests",
         description = "checks the wikipedia page for downloads and adds new files to the queue for download.",
         mixinStandardHelpOptions = true, version = "POS")
 public class SendFileRequestsCommand implements Runnable {
+
+    private static final Logger log = LoggerFactory.getLogger(SendFileRequestsCommand.class);
 
     final DownloadRequestProducer producer;
     final DownloadMd5WikiFileService md5FileCheckService;
@@ -50,6 +52,7 @@ public class SendFileRequestsCommand implements Runnable {
         if (verbose) {
             log.debug("here: " + sendMe);
         }
+
         for(DownloadFileRequest request : sendMe) {
             producer.sendDownloadRequest(UUID.randomUUID(), request);
         }

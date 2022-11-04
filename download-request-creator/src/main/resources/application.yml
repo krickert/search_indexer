@@ -9,8 +9,21 @@ kafka:
     serializer: org.apache.kafka.common.serialization.UUIDSerializer
     deserializer: org.apache.kafka.common.serialization.UUIDDeserializer
   value:
-    serializer: io.confluent.kafka.streams.serdes.avro.SpecificAvroSerializer
-    deserializer: io.confluent.kafka.streams.serdes.avro.SpecificAvroDeserializer
+    serializer: io.confluent.kafka.serializers.protobuf.KafkaProtobufSerializer
+    deserializer: io.confluent.kafka.serializers.protobuf.KafkaProtobufDeserializer
+  producers:
+    download-request-producer:
+      specific:
+        protobuf:
+          value:
+            type: com.krickert.search.model.wiki.DownloadFileRequest
+  consumers:
+    download-request-producer:
+      specific:
+        protobuf:
+          value:
+            type: com.krickert.search.model.wiki.DownloadFileRequest
+
 
 download:
   request-url: https://dumps.wikimedia.org/enwiki/latest/

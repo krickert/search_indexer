@@ -1,0 +1,5 @@
+micronaut:
+  application:
+    name: kafkaContainerTest
+kafka:
+  enabled: true
