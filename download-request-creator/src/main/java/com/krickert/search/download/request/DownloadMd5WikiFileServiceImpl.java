@@ -3,10 +3,11 @@ package com.krickert.search.download.request;
 import com.krickert.search.model.wiki.DownloadFileRequest;
 import com.krickert.search.model.wiki.ErrorCheck;
 import com.krickert.search.model.wiki.ErrorCheckType;
-import io.micronaut.cli.io.support.PathMatchingResourcePatternResolver;
-import io.micronaut.cli.io.support.Resource;
 import io.micronaut.context.annotation.Value;
 import io.micronaut.core.io.ResourceLoader;
+import io.micronaut.core.io.ResourceResolver;
+import io.micronaut.core.io.file.FileSystemResourceLoader;
+import io.micronaut.core.io.scan.ClassPathResourceLoader;
 import io.micronaut.core.util.CollectionUtils;
 import io.micronaut.http.client.annotation.Client;
 import io.micronaut.rxjava3.http.client.Rx3HttpClient;
@@ -20,10 +21,12 @@ import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.NoSuchElementException;
+import java.util.Optional;
 
 import static io.micronaut.http.HttpRequest.GET;
 
@@ -60,11 +63,22 @@ public class DownloadMd5WikiFileServiceImpl implements DownloadMd5WikiFileServic
     public String downloadWikiMd5AsString(String fileList) {
         if (fileList != null) {
             try {
-                PathMatchingResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
-                Resource res = resolver.getResource(fileList);
-                return new String(res.getInputStream().readAllBytes());
+                ClassPathResourceLoader loader = new ResourceResolver().getLoader(ClassPathResourceLoader.class).get();
+                Optional<URL> resource = loader.getResource("classpath:" + fileList);
+                if (resource.isPresent()) {
+                    return FileUtils.readFileToString(new File(resource.get().getFile()), Charset.defaultCharset());
+                }
             } catch (NoSuchElementException | IOException e) {
-                throw new IllegalStateException("File was specified but not there.  Please make sure the file exists. File: " + fileList, e);
+                log.debug("element not found in classpath", e);
+            }
+            FileSystemResourceLoader loader = new ResourceResolver().getLoader(FileSystemResourceLoader.class).get();
+            Optional<URL> resource = loader.getResource("file:" + fileList);
+            log.debug("did we find the file? {}", resource.isPresent());
+            try {
+                return FileUtils.readFileToString(new File(resource.get().getFile()), Charset.defaultCharset());
+            } catch (NoSuchElementException | IOException e) {
+                log.error("File was specified: [{}] but does not exist in classpath or as a file.", fileList);
+                throw new RuntimeException("File was not found: " + fileList, e);
             }
         }
         File theFile = new File(wikiDownloadName);

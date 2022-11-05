@@ -11,18 +11,8 @@ kafka:
   value:
     serializer: io.confluent.kafka.serializers.protobuf.KafkaProtobufSerializer
     deserializer: io.confluent.kafka.serializers.protobuf.KafkaProtobufDeserializer
-  producers:
-    download-request-producer:
-      specific:
-        protobuf:
-          value:
-            type: com.krickert.search.model.wiki.DownloadFileRequest
-  consumers:
-    download-request-producer:
-      specific:
-        protobuf:
-          value:
-            type: com.krickert.search.model.wiki.DownloadFileRequest
+
+  specific.protobuf.value.type: com.krickert.search.model.wiki.DownloadFileRequest
 
 
 download:

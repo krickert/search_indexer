@@ -1,12 +1,3 @@
 kafka:
   enabled: true
-  schema:
-    registry:
-      url: mock://localhost:8081
-
-  consumers:
-    download-request:
-      specific:
-        protobuf:
-          value:
-            type: com.krickert.search.model.wiki.DownloadFileRequest
+  schema.registry.url: mock://localhost:8081
