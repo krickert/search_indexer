@@ -11,6 +11,7 @@ message PipeDocument {
   google.protobuf.Timestamp creation_date = 5;
   optional google.protobuf.Timestamp last_modified = 6;
   string document_type = 7;
+  map<string, string> custom = 8;
 }
 
 
