@@ -2,15 +2,18 @@ package com.krickert.search.download.request;
 
 import com.google.protobuf.Duration;
 import com.google.protobuf.Message;
+import com.krickert.search.model.constants.KafkaProtobufConstants;
 import com.krickert.search.model.wiki.DownloadFileRequest;
 import io.micronaut.configuration.kafka.annotation.KafkaKey;
 import io.micronaut.configuration.kafka.annotation.KafkaListener;
 import io.micronaut.configuration.kafka.annotation.Topic;
 import io.micronaut.configuration.picocli.PicocliRunner;
 import io.micronaut.context.ApplicationContext;
+import io.micronaut.context.annotation.Property;
 import io.micronaut.context.env.Environment;
 import io.micronaut.messaging.annotation.MessageBody;
 import io.micronaut.test.extensions.junit5.annotation.MicronautTest;
+import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -64,6 +67,7 @@ public class SendFileRequestsCommandTest {
             String[] args = new String[]{"-v"};
             PicocliRunner.run(SendFileRequestsCommand.class, ctx, args);
             // SendFileRequests
+            await().atMost(30, SECONDS).until(() -> fileRequest.size() == 63);
             assertTrue(baos.toString().contains("Application exiting."));
         }
     }
@@ -71,22 +75,21 @@ public class SendFileRequestsCommandTest {
     @Test
     public void testWithCommandLineOptionButFileNotFound() throws Exception {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        ByteArrayOutputStream err = new ByteArrayOutputStream();
         System.setOut(new PrintStream(baos));
-        System.setErr(new PrintStream(err));
 
         try (ApplicationContext ctx = ApplicationContext.run(Environment.CLI, Environment.TEST)) {
             String[] args = new String[]{"-v", "-f", "asfasdfadfafd.nothere"};
             PicocliRunner.run(SendFileRequestsCommand.class, ctx, args);
             //let's make sure that the queue has nothing since it was a bad file
-            Thread.sleep(4000);
-            assertThat(fileRequest.size()).isEqualTo(0);
-            assertTrue(err.toString().contains("File was not found: asfasdfadfafd.nothere"));
+            await().atMost(30, SECONDS).until(() -> fileRequest.size() == 63);
         }
     }
 
-
-    @KafkaListener
+    @KafkaListener(
+            properties =
+            @Property(name = KafkaProtobufConstants.SPECIFIC_CLASS_PROPERTY,
+                    value = KafkaProtobufConstants.DOWNLOAD_FILE_REQUEST_CLASS)
+    )
     public static class DownloadRequestTestListener {
         @Topic("download-request")
         void receive(@KafkaKey UUID uuid,

@@ -23,6 +23,8 @@ public class SendFileRequestsCommand implements Runnable {
 
     final DownloadRequestProducer producer;
     final DownloadMd5WikiFileService md5FileCheckService;
+    final WikipediaErrorFileParser wikipediaErrorFileParser;
+
     @Option(names = {"-v", "--verbose"}, description = "Shows some project details")
     boolean verbose;
     @Option(names = {"-f", "--flie-list"}, description = "name of a preconfigured file that's ready-to-use and already downloaded.")
@@ -31,9 +33,11 @@ public class SendFileRequestsCommand implements Runnable {
     @Inject
     public SendFileRequestsCommand(
             final DownloadRequestProducer producer,
-            final DownloadMd5WikiFileService md5FileCheckService) {
+            final DownloadMd5WikiFileService md5FileCheckService,
+            final WikipediaErrorFileParser wikipediaErrorFileParser) {
         this.producer = producer;
         this.md5FileCheckService = md5FileCheckService;
+        this.wikipediaErrorFileParser = wikipediaErrorFileParser;
     }
 
     public static void main(String[] args) {
@@ -43,12 +47,12 @@ public class SendFileRequestsCommand implements Runnable {
 
     public void run() {
         String m = md5FileCheckService.downloadWikiMd5AsString(fileList);
-        Collection<String[]> fileList = md5FileCheckService.parseFileList(m);
+        Collection<String[]> fileList = wikipediaErrorFileParser.parseFileList(m);
         if (verbose) {
             log.info(m);
             log.info(fileList.size() + " files found");
         }
-        Collection<DownloadFileRequest> sendMe = md5FileCheckService.createDownloadRequests(fileList);
+        Collection<DownloadFileRequest> sendMe = wikipediaErrorFileParser.createDownloadRequests(fileList);
         if (verbose) {
             log.debug("here: " + sendMe);
         }
