@@ -3,4 +3,4 @@ defaultPackage: com.krickert.search.download.request
 testFramework: junit
 sourceLanguage: java
 buildTool: maven
-features: [annotation-api, app-name, assertj, awaitility, graalvm, http-client, jackson-databind, java, junit, kafka, lombok, maven, picocli, picocli-java-application, picocli-junit, readme, rxjava3, rxjava3-http-client, shade, slf4j-simple, test-resources, testcontainers, yaml]
+features: [annotation-api, app-name, graalvm, http-client, jackson-databind, java, junit, kafka, maven, picocli, picocli-java-application, picocli-junit, readme, rxjava3, rxjava3-http-client, shade, slf4j-simple, test-resources, testcontainers, yaml]

@@ -1,5 +1,5 @@
 package wiki.dump.file.processor.messaging;
-import com.krickert.search.model.DownloadedFile;
+import com.krickert.search.model.wiki.DownloadedFile;
 import info.bliki.wiki.dump.WikiXMLParser;
 import io.micronaut.configuration.kafka.annotation.KafkaKey;
 import io.micronaut.configuration.kafka.annotation.KafkaListener;

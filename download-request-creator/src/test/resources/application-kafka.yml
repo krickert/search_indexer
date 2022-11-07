@@ -1,8 +1,0 @@
-kafka:
-  schema.registry.url: mock://localhost:8081
-  bootstrap:
-    servers: localhost:${random.port}
-  embedded:
-    enabled: true
-    topics:
-      - download-request

@@ -1,9 +1,9 @@
 package com.krickert.search.download.dump.messaging;
 
 import com.krickert.search.download.dump.component.FileDownloader;
-import com.krickert.search.model.DownloadFileRequest;
-import com.krickert.search.model.DownloadedFile;
-import com.krickert.search.model.ErrorCheckType;
+
+import com.krickert.search.model.wiki.DownloadFileRequest;
+import com.krickert.search.model.wiki.DownloadedFile;
 import io.micronaut.configuration.kafka.annotation.*;
 import io.micronaut.context.annotation.Prototype;
 import io.micronaut.context.annotation.Value;
@@ -44,7 +44,7 @@ public class DownloadDumpFileListener {
                         long timestamp) {
         log.debug("Got the request {} with UUID {}", request, uuid.toString());
         log.info("this {} was sent {} ago from partition {} from the {} topic at {}",
-                request.getURL(), offset, partition, topic, timestamp);
+                request.getUrl(), offset, partition, topic, timestamp);
 
         //now we're going to download the file
         downloadFileToDestination(request);
@@ -54,17 +54,16 @@ public class DownloadDumpFileListener {
         try {
             String fullFilePath = this.downloadLocation + "/" + request.getFileName();
             fileDownloader.download(
-                    new URL(request.getURL()),
+                    new URL(request.getUrl()),
                     new File(fullFilePath),
-                    request.getErrorcheck());
+                    request.getErrorCheck().getErrorCheck());
 
             log.info("******SENDING TO PROCESS: " + request.getFileName());
             producer.sendFileProcessingRequest(UUID.randomUUID(),
                     DownloadedFile.newBuilder()
                             .setFileName(request.getFileName())
                             .setFullFilePath(fullFilePath)
-                            .setErrorType(ErrorCheckType.MD5)
-                            .setErrorcheck(request.getErrorcheck())
+                            .setErrorCheck(request.getErrorCheck())
                             .setFileDumpDate(request.getFileDumpDate())
                             .setServerName("localhost")
                             .build());

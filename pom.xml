@@ -10,8 +10,8 @@
   <modules>
     <module>wikisearch-model</module>
     <module>download-request-creator</module>
-    <module>download-request-processor</module>
+    <!--module>download-request-processor</module>
     <module>wiki-dump-file-processor</module>
-    <module>pipeline-document-processor</module>
+    <module>pipeline-document-processor</module-->
   </modules>
 </project>

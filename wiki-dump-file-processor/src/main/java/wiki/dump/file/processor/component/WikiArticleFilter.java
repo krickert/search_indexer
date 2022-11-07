@@ -1,8 +1,5 @@
 package wiki.dump.file.processor.component;
 
-import com.google.common.base.Preconditions;
-import com.krickert.search.model.ParsedSiteInfo;
-import com.krickert.search.model.ParsedWikiArticle;
 import info.bliki.wiki.dump.IArticleFilter;
 import info.bliki.wiki.dump.Siteinfo;
 import info.bliki.wiki.dump.WikiArticle;
@@ -34,25 +31,25 @@ public class WikiArticleFilter implements IArticleFilter {
     public void process(WikiArticle article, Siteinfo siteinfo) throws IOException {
         log.info("Sending {}:{}", article.getId(),article.getTitle());
         producer.sendParsedArticleProcessingRequest(UUID.randomUUID(),
-                ParsedWikiArticle.newBuilder()
+                com.krickert.search.model.wiki.WikiArticle.newBuilder()
                         .setId(article.getId())
                         .setNamespace(article.getNamespace())
                         .setNamespaceCode(article.getIntegerNamespace())
                         .setRevisionId(article.getRevisionId())
                         .setSiteInfo(
-                                ParsedSiteInfo.newBuilder()
+                                com.krickert.search.model.wiki.WikiSiteInfo.newBuilder()
                                         .setBase(siteinfo.getBase())
                                         .setGenerator(siteinfo.getGenerator())
-                                        .setSitename(siteinfo.getSitename())
+                                        .setSiteName(siteinfo.getSitename())
                                         .setCharacterCase(siteinfo.getCharacterCase())
                                         .build())
                         .setWikiText(article.getText())
                         .setText(
                                 cleaner.extractCleanTestFromWiki(article.getText()))
-                        .setTimestamp(article.getTimeStamp())
+                        .setDumpTimestamp(article.getTimeStamp())
                         .setTitle(article.getTitle())
                         .setRevisionId(article.getRevisionId())
-                        .setUrlRefAltText(urlExtractor.parseUrlEntries(article.getText()))
+                        .addAllUrlReferences(urlExtractor.parseUrlEntries(article.getText()))
                         .build());
     }
 }

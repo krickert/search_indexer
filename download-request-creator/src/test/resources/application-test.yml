@@ -1,6 +1,3 @@
-download:
-  request-url: mock://localhost/enwiki/latest/
-wikipedia:
-  md5-url: mock://localhost/enwiki/latest/
-  download-location: ./testdata/wikidownloads/
-  prefix-url: mock://test/enwiki/
+kafka:
+  enabled: true
+  schema.registry.url: mock://localhost:8081

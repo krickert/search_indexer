@@ -1,0 +1,17 @@
+syntax = "proto3";
+package com.krickert.search.model.pipe;
+option java_multiple_files = true;
+import "google/protobuf/timestamp.proto";
+
+message PipeDocument {
+  string id = 1;
+  string title = 2;
+  optional string body = 3;
+  optional string revision_id = 4;
+  google.protobuf.Timestamp creation_date = 5;
+  optional google.protobuf.Timestamp last_modified = 6;
+  string document_type = 7;
+  map<string, string> custom = 8;
+}
+
+
