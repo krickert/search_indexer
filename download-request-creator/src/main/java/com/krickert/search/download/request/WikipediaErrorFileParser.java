@@ -13,6 +13,7 @@ import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 
 @Singleton
 public class WikipediaErrorFileParser {
@@ -32,8 +33,8 @@ public class WikipediaErrorFileParser {
             fileList = parseFileList(m, WIKI_FILE_TYPE.ARTICLE);
         }
         if (CollectionUtils.isEmpty(fileList)) {
-            log.error("no valid files found.  Exiting.");
-            System.exit(-1);
+            log.warn("no valid files found.  latest dumps might not be ready");
+            return Collections.emptyList();
         }
         return fileList;
     }
@@ -58,6 +59,7 @@ public class WikipediaErrorFileParser {
         } else if (fileType == WIKI_FILE_TYPE.ARTICLE) {
             return isArticleFile(fileName);
         } else {
+            log.error("unsupported and impossible file type");
             return false;
         }
     }

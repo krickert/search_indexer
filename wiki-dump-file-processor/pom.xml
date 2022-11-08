@@ -122,10 +122,10 @@
       <artifactId>wikisearch-model</artifactId>
       <version>0.1-SNAPSHOT</version>
     </dependency>
-    <!-- https://mvnrepository.com/artifact/io.confluent/kafka-streams-avro-serde -->
+    <!-- https://mvnrepository.com/artifact/io.confluent/kafka-streams-protobuf-serde -->
     <dependency>
       <groupId>io.confluent</groupId>
-      <artifactId>kafka-streams-avro-serde</artifactId>
+      <artifactId>kafka-streams-protobuf-serde</artifactId>
       <version>7.2.2</version>
     </dependency>
     <dependency>

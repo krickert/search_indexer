@@ -10,8 +10,8 @@ kafka:
     serializer: org.apache.kafka.common.serialization.UUIDSerializer
     deserializer: org.apache.kafka.common.serialization.UUIDDeserializer
   value:
-    serializer: io.confluent.kafka.streams.serdes.avro.SpecificAvroSerializer
-    deserializer: io.confluent.kafka.streams.serdes.avro.SpecificAvroDeserializer
+    serializer: io.confluent.kafka.serializers.protobuf.KafkaProtobufSerializer
+    deserializer: io.confluent.kafka.serializers.protobuf.KafkaProtobufDeserializer
 
   enabled: true
   schema.registry.url: http://localhost:8081

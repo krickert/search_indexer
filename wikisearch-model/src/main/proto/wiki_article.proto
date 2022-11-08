@@ -27,6 +27,8 @@ message DownloadedFile {
   ErrorCheck error_check = 3;
   string file_dump_date = 4;
   optional string server_name = 5;
+  google.protobuf.Timestamp download_start = 6;
+  google.protobuf.Timestamp download_end = 7;
 }
 
 message WikiSiteInfo {
@@ -41,6 +43,17 @@ message Link {
   optional string description = 2;
 }
 
+enum WikiType {
+  ARTICLE = 0;
+  CATEGORY = 1;
+  LIST = 2;
+  DRAFT = 3;
+  WIKIPEDIA = 4;
+  TEMPLATE = 5;
+  FILE = 6;
+  REDIRECT = 7;
+}
+
 message WikiArticle {
   string id = 1;
   string title = 2;
@@ -52,4 +65,6 @@ message WikiArticle {
   string revision_id = 8;
   WikiSiteInfo site_info = 9;
   repeated Link url_references = 10;
+  WikiType wiki_type = 11;
+  google.protobuf.Timestamp date_parsed = 12;
 }

@@ -3,16 +3,11 @@ package com.krickert.search.download.request;
 import io.micronaut.context.annotation.Requires;
 import io.micronaut.context.annotation.Value;
 import io.micronaut.context.env.Environment;
-import io.micronaut.core.io.ResourceLoader;
-import io.micronaut.core.io.ResourceResolver;
-import io.micronaut.core.io.file.FileSystemResourceLoader;
-import io.micronaut.core.io.scan.ClassPathResourceLoader;
 import io.micronaut.http.client.annotation.Client;
 import io.micronaut.rxjava3.http.client.Rx3HttpClient;
 import jakarta.inject.Inject;
 import jakarta.inject.Singleton;
 import org.apache.commons.io.FileUtils;
-import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -32,15 +27,18 @@ public class DownloadMd5WikiFileServiceImpl implements DownloadMd5WikiFileServic
 
     final String wikiDownloadName;
     final Rx3HttpClient client;
+    final boolean freshCopy;
 
     @Inject
     public DownloadMd5WikiFileServiceImpl(
             @Value("${wikipedia.download-name}")
             String wikiDownloadName,
+            @Value("${wikipedia.fresh-copy}") boolean freshCopy,
             @Client("${download.request-url}")
             Rx3HttpClient client) {
         this.wikiDownloadName = wikiDownloadName;
         this.client = client;
+        this.freshCopy = freshCopy;
     }
 
     @Override
@@ -56,13 +54,15 @@ public class DownloadMd5WikiFileServiceImpl implements DownloadMd5WikiFileServic
             } else {
                 wikiFileName = fileList;
             }
-        } else if (isNotEmpty(wikiDownloadName)) {
+        } else if (isNotEmpty(wikiDownloadName) && !freshCopy) {
             Optional<String> configFileContents = readFileAsString(wikiDownloadName);
             if (configFileContents.isPresent()) {
                 return configFileContents.get();
             } else {
                 wikiFileName = wikiDownloadName;
             }
+        } else if (freshCopy && isNotEmpty(wikiDownloadName)) {
+            wikiFileName = wikiDownloadName;
         } else {
             wikiFileName = "wikiList.md5";
         }
