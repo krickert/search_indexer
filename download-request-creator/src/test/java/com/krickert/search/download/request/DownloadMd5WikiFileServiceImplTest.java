@@ -24,11 +24,11 @@ class DownloadMd5WikiFileServiceImplTest {
 
     @Inject
     DownloadMd5WikiFileServiceImplTest(Rx3HttpClient client) {
-        DownloadMd5WikiFileServiceImpl service = new DownloadMd5WikiFileServiceImpl("wikiList.md5", client);
+        DownloadMd5WikiFileServiceImpl service = new DownloadMd5WikiFileServiceImpl("wikiList.md5", false, client);
         DownloadMd5WikiFileServiceImpl spied = Mockito.spy(service);
         Mockito.doReturn(MicronautFileUtil.readFileAsString("wikiList.md5").get()).when(spied).retrieveWikiDumpFileContentsFromWikipedia();
         this.mock = spied;
-        DownloadMd5WikiFileServiceImpl service2 = new DownloadMd5WikiFileServiceImpl(null, client);
+        DownloadMd5WikiFileServiceImpl service2 = new DownloadMd5WikiFileServiceImpl(null, false, client);
         DownloadMd5WikiFileServiceImpl spied2 = Mockito.spy(service2);
         Mockito.doReturn(MicronautFileUtil.readFileAsString("wikiListNoMultistream.md5").get()).when(spied2).retrieveWikiDumpFileContentsFromWikipedia();
         this.mock2 = spied2;

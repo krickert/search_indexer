@@ -20,3 +20,4 @@ wikipedia:
   download-location: /Volumes/BigDataFun/wikidownloads
   download-name: "${wikipedia.download-location}/wikiList.md5"
   prefix-url: https://dumps.wikimedia.org/enwiki/
+  fresh-copy: true
