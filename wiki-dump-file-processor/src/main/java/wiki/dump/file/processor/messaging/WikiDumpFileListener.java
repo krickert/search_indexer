@@ -1,10 +1,12 @@
 package wiki.dump.file.processor.messaging;
+import com.krickert.search.model.constants.KafkaProtobufConstants;
 import com.krickert.search.model.wiki.DownloadedFile;
 import info.bliki.wiki.dump.WikiXMLParser;
 import io.micronaut.configuration.kafka.annotation.KafkaKey;
 import io.micronaut.configuration.kafka.annotation.KafkaListener;
 import io.micronaut.configuration.kafka.annotation.OffsetReset;
 import io.micronaut.configuration.kafka.annotation.Topic;
+import io.micronaut.context.annotation.Property;
 import io.micronaut.context.annotation.Prototype;
 import jakarta.inject.Inject;
 import lombok.extern.slf4j.Slf4j;
@@ -17,7 +19,9 @@ import java.io.IOException;
 import java.util.UUID;
 
 @Slf4j
-@KafkaListener(offsetReset = OffsetReset.EARLIEST, threads = 8)
+@KafkaListener(offsetReset = OffsetReset.EARLIEST, threads = 8,
+        properties = @Property(name = KafkaProtobufConstants.SPECIFIC_CLASS_PROPERTY,
+                value = KafkaProtobufConstants.DOWNLOADED_FILE_CLASS))
 @Prototype
 public class WikiDumpFileListener {
 
