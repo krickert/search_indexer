@@ -33,6 +33,11 @@
             </exclusions>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+            <version>3.23.1</version>
+        </dependency>
         <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-text -->
         <dependency>
             <groupId>org.apache.commons</groupId>
@@ -45,6 +50,7 @@
             <artifactId>protobuf-java</artifactId>
             <version>3.21.9</version>
         </dependency>
+
     </dependencies>
     <build>
         <plugins>
