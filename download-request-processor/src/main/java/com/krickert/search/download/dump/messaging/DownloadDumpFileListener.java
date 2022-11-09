@@ -4,7 +4,6 @@ import com.google.protobuf.Timestamp;
 import com.krickert.search.download.dump.component.FileDownloader;
 
 import com.krickert.search.model.constants.KafkaProtobufConstants;
-import com.krickert.search.model.util.ProtobufUtils;
 import com.krickert.search.model.wiki.DownloadFileRequest;
 import com.krickert.search.model.wiki.DownloadedFile;
 import io.micronaut.configuration.kafka.annotation.*;
@@ -12,7 +11,8 @@ import io.micronaut.context.annotation.Property;
 import io.micronaut.context.annotation.Prototype;
 import io.micronaut.context.annotation.Value;
 import jakarta.inject.Inject;
-import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.net.InetAddress;
@@ -23,13 +23,14 @@ import java.util.UUID;
 
 import static com.krickert.search.model.util.ProtobufUtils.now;
 
-@Slf4j
 @KafkaListener(threads = 3,
         groupId = "download-request-listener",
         properties = @Property(name = KafkaProtobufConstants.SPECIFIC_CLASS_PROPERTY,
                 value = KafkaProtobufConstants.DOWNLOAD_FILE_REQUEST_CLASS))
 @Prototype
 public class DownloadDumpFileListener {
+    private static final Logger log = LoggerFactory.getLogger(DownloadDumpFileListener.class);
+
     final String downloadLocation;
     final FileDownloader fileDownloader;
     final DownloadedFileProcessingProducer producer;
