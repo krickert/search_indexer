@@ -1,4 +1,4 @@
-package wiki.dump.file.processor.component;
+package com.krickert.search.wiki.dump.file.component;
 
 import com.google.common.collect.Lists;
 import com.krickert.search.model.wiki.Link;

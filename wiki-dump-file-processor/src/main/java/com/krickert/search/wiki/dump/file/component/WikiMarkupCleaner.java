@@ -1,4 +1,4 @@
-package wiki.dump.file.processor.component;
+package com.krickert.search.wiki.dump.file.component;
 
 import jakarta.inject.Singleton;
 import org.wikiclean.WikiClean;

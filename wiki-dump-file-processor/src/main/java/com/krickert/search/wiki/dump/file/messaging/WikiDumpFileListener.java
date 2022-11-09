@@ -1,4 +1,4 @@
-package wiki.dump.file.processor.messaging;
+package com.krickert.search.wiki.dump.file.messaging;
 import com.krickert.search.model.constants.KafkaProtobufConstants;
 import com.krickert.search.model.wiki.DownloadedFile;
 import info.bliki.wiki.dump.WikiXMLParser;
@@ -13,7 +13,7 @@ import org.apache.commons.lang3.exception.ExceptionUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.xml.sax.SAXException;
-import wiki.dump.file.processor.component.WikiArticleFilter;
+import com.krickert.search.wiki.dump.file.component.WikiArticleFilter;
 
 import java.io.File;
 import java.io.IOException;
