@@ -9,8 +9,6 @@ micronaut:
   application:
     name: wikiDumpFileProcessor
 kafka:
-  bootstrap:
-    servers: 192.168.86.43:9092
   key:
     serializer: org.apache.kafka.common.serialization.UUIDSerializer
     deserializer: org.apache.kafka.common.serialization.UUIDDeserializer
@@ -18,4 +16,4 @@ kafka:
     serializer: io.confluent.kafka.serializers.protobuf.KafkaProtobufSerializer
     deserializer: io.confluent.kafka.serializers.protobuf.KafkaProtobufDeserializer
   enabled: true
-  schema.registry.url: http://192.168.86.43:8081
+  schema.registry.url: http://localhost:8081

@@ -86,8 +86,7 @@ class WikiDumpFileProcessorTest {
     )
     public static class DownloadRequestTestListener {
         @Topic("wiki-parsed-article")
-        void receive(@KafkaKey UUID uuid,
-                     WikiArticle request,
+        void receive(WikiArticle request,
                      long offset,
                      int partition,
                      String topic,
