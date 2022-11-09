@@ -1,4 +1,4 @@
-package wiki.dump.file.processor;
+package com.krickert.search.wiki.dump.file;
 
 import io.micronaut.runtime.Micronaut;
 

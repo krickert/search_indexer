@@ -7,17 +7,17 @@ import io.micronaut.context.annotation.Value;
 import io.micronaut.context.env.Environment;
 import jakarta.inject.Inject;
 import jakarta.inject.Singleton;
-import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
 import org.apache.hc.client5.http.classic.methods.HttpGet;
 import org.apache.hc.client5.http.impl.DefaultRedirectStrategy;
 import org.apache.hc.client5.http.impl.classic.CloseableHttpClient;
 import org.apache.hc.client5.http.impl.classic.HttpClients;
-import org.apache.hc.core5.http.ClassicHttpRequest;
 import org.apache.hc.core5.http.ClassicHttpResponse;
 import org.apache.hc.core5.http.io.HttpClientResponseHandler;
 import org.jetbrains.annotations.NotNull;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -29,10 +29,12 @@ import java.util.concurrent.ConcurrentMap;
 
 import static org.apache.commons.codec.digest.DigestUtils.md5Hex;
 
-@Slf4j
 @Singleton
 @Requires(notEnv = Environment.TEST)
 public class FileDownloaderImpl implements FileDownloader {
+
+    private static final Logger log = LoggerFactory.getLogger(FileDownloaderImpl.class);
+
     private final Integer maxTries;
 
     private final ConcurrentMap<String, DownloadStatus> globalStatus = Maps.newConcurrentMap();
@@ -69,8 +71,7 @@ public class FileDownloaderImpl implements FileDownloader {
     }
 
     public File downloadFromClient(URL url, File dstFile, CloseableHttpClient httpclient) throws IOException, URISyntaxException {
-        File returnVal = httpclient.execute(new HttpGet(url.toURI()), new FileDownloadResponseHandler(dstFile));
-        return returnVal;
+        return httpclient.execute(new HttpGet(url.toURI()), new FileDownloadResponseHandler(dstFile));
     }
 
     @Override

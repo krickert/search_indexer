@@ -1,4 +1,4 @@
-package wiki.dump.file.processor.component;
+package com.krickert.search.wiki.dump.file.component;
 
 import com.krickert.search.model.wiki.WikiSiteInfo;
 import com.krickert.search.model.wiki.WikiType;
@@ -6,14 +6,12 @@ import info.bliki.wiki.dump.IArticleFilter;
 import info.bliki.wiki.dump.Siteinfo;
 import info.bliki.wiki.dump.WikiArticle;
 import io.micronaut.context.annotation.Prototype;
-import io.micronaut.scheduling.annotation.Async;
 import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import wiki.dump.file.processor.messaging.WikiArticleProducer;
+import com.krickert.search.wiki.dump.file.messaging.WikiArticleProducer;
 
 import java.io.IOException;
-import java.util.UUID;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 import static com.krickert.search.model.util.ProtobufUtils.now;

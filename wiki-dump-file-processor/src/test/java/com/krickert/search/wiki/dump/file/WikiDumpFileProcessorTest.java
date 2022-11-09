@@ -1,15 +1,12 @@
-package wiki.dump.file.processor;
+package com.krickert.search.wiki.dump.file;
 
 import com.google.protobuf.Timestamp;
 import com.krickert.search.model.constants.KafkaProtobufConstants;
 import com.krickert.search.model.util.ProtobufUtils;
 import com.krickert.search.model.wiki.*;
-import io.micronaut.configuration.kafka.annotation.KafkaKey;
 import io.micronaut.configuration.kafka.annotation.KafkaListener;
 import io.micronaut.configuration.kafka.annotation.Topic;
-import io.micronaut.configuration.kafka.reactor.KafkaReactorUtil;
 import io.micronaut.context.annotation.Property;
-import io.micronaut.core.io.ResourceLoader;
 import io.micronaut.core.io.ResourceResolver;
 import io.micronaut.core.io.scan.ClassPathResourceLoader;
 import io.micronaut.runtime.EmbeddedApplication;
@@ -86,8 +83,7 @@ class WikiDumpFileProcessorTest {
     )
     public static class DownloadRequestTestListener {
         @Topic("wiki-parsed-article")
-        void receive(@KafkaKey UUID uuid,
-                     WikiArticle request,
+        void receive(WikiArticle request,
                      long offset,
                      int partition,
                      String topic,
