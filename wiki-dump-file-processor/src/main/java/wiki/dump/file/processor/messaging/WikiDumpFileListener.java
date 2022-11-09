@@ -9,8 +9,9 @@ import io.micronaut.configuration.kafka.annotation.Topic;
 import io.micronaut.context.annotation.Property;
 import io.micronaut.context.annotation.Prototype;
 import jakarta.inject.Inject;
-import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.exception.ExceptionUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.xml.sax.SAXException;
 import wiki.dump.file.processor.component.WikiArticleFilter;
 
@@ -18,12 +19,12 @@ import java.io.File;
 import java.io.IOException;
 import java.util.UUID;
 
-@Slf4j
 @KafkaListener(offsetReset = OffsetReset.EARLIEST, threads = 8,
         properties = @Property(name = KafkaProtobufConstants.SPECIFIC_CLASS_PROPERTY,
                 value = KafkaProtobufConstants.DOWNLOADED_FILE_CLASS))
 @Prototype
 public class WikiDumpFileListener {
+    private static final Logger log = LoggerFactory.getLogger(WikiDumpFileListener.class);
 
     final WikiArticleFilter wikiArticleFilter;
 
