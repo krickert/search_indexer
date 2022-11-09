@@ -45,7 +45,7 @@ class FileDownloaderImplTest {
     @Test
     void downloadWithMd5FileIsThere() throws MalformedURLException {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        System.setErr(new PrintStream(baos));
+        System.setOut(new PrintStream(baos));
         ClassPathResourceLoader loader = new ResourceResolver().getLoader(ClassPathResourceLoader.class).get();
         Optional<URL> resource = loader.getResource("classpath:fakeDownloadedFile.txt");
         fileDownloader.download(new URL("http://www.example.com"), new File(resource.get().getFile()), "00a5f9e5b648a2dcc1f90eb692ec7115");
@@ -55,7 +55,7 @@ class FileDownloaderImplTest {
     @Test
     void downloadWithMd5() throws MalformedURLException {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        System.setErr(new PrintStream(baos));
+        System.setOut(new PrintStream(baos));
         fileDownloader.download(new URL("http://www.example.com"), new File("notTheFileBecauseMock.txt"), "00a5f9e5b648a2dcc1f90eb692ec7115");
         assertThat(baos.toString()).contains("file was downloaded successfully");
     }
