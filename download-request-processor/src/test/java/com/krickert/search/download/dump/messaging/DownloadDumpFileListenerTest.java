@@ -71,7 +71,7 @@ class DownloadDumpFileListenerTest {
     @Test
     void receive() {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        System.setErr(new PrintStream(baos));
+        System.setOut(new PrintStream(baos));
 
         downloadRequestProducer.sendDownloadRequest(UUID.randomUUID(), request1);
         downloadRequestProducer.sendDownloadRequest(UUID.randomUUID(), request2);
