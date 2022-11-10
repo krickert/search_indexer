@@ -10,7 +10,7 @@
     <groupId>com.krickert.search</groupId>
     <artifactId>indexer-pom</artifactId>
     <version>0.1-SNAPSHOT</version>
-    <relativePath>../pom.xml</relativePath>
+    <relativePath>../parent-project/pom.xml</relativePath>
   </parent>
 
   <properties>
