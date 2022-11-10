@@ -1,5 +1,6 @@
 package com.krickert.search.wiki.dump.file.component;
 
+import com.google.protobuf.Timestamp;
 import com.krickert.search.model.wiki.WikiSiteInfo;
 import com.krickert.search.model.wiki.WikiType;
 import info.bliki.wiki.dump.IArticleFilter;
@@ -12,9 +13,11 @@ import org.slf4j.LoggerFactory;
 import com.krickert.search.wiki.dump.file.messaging.WikiArticleProducer;
 
 import java.io.IOException;
+import java.time.Instant;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 import static com.krickert.search.model.util.ProtobufUtils.now;
+import static java.time.format.DateTimeFormatter.ISO_INSTANT;
 
 @Prototype
 public class WikiArticleFilter implements IArticleFilter {
@@ -56,6 +59,18 @@ public class WikiArticleFilter implements IArticleFilter {
             builder.setWikiText(article.getText())
                     .setText(cleaner.extractCleanTestFromWiki(article.getText()))
                     .addAllUrlReferences(urlExtractor.parseUrlEntries(article.getText()));
+        }
+        if (notNull(article.getTimeStamp())) {
+            try {
+                String timestampStr = article.getTimeStamp();
+                Instant in = Instant.from(ISO_INSTANT.parse(timestampStr));
+                Timestamp created = com.google.protobuf.Timestamp.newBuilder()
+                        .setSeconds(in.getEpochSecond())
+                        .setNanos(in.getNano()).build();
+                builder.setTimestamp(created);
+            } catch (RuntimeException e ) {
+                log.error("illegal format for dates", e);
+            }
         }
         return builder.setDumpTimestamp(article.getTimeStamp())
         .setTitle(article.getTitle())

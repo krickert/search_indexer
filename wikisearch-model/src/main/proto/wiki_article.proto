@@ -67,4 +67,6 @@ message WikiArticle {
   repeated Link url_references = 10;
   WikiType wiki_type = 11;
   google.protobuf.Timestamp date_parsed = 12;
+  google.protobuf.Timestamp timestamp = 13;
+
 }

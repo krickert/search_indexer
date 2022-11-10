@@ -10,10 +10,10 @@ import static org.junit.jupiter.api.Assertions.*;
 class ProtobufUtilsTest {
 
     @Test
-    void now() throws InterruptedException {
+    void nowIsNowNotThen() throws InterruptedException {
         Timestamp now = ProtobufUtils.now();
         assertThat(now).isInstanceOf(Timestamp.class);
-        Thread.sleep(100);
+        Thread.sleep(1000);//sleep 1 second so next now() is a second later.
         assertThat(ProtobufUtils.now().getSeconds() > now.getSeconds()).isTrue();
     }
 

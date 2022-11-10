@@ -1,7 +1,5 @@
 package com.krickert.search.model.constants;
 
-import com.krickert.search.model.wiki.DownloadFileRequest;
-
 public class KafkaProtobufConstants {
     public static final String SPECIFIC_CLASS_PROPERTY = "specific.protobuf.value.type";
     public static final String DOWNLOAD_FILE_REQUEST_CLASS = "com.krickert.search.model.wiki.DownloadFileRequest";

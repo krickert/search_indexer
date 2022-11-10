@@ -66,14 +66,9 @@ class WikiDumpFileProcessorTest {
                 .setDownloadEnd(ProtobufUtils.now())
                 .build();
         this.downloadedFileProcessingProducer.sendFileProcessingRequest(UUID.randomUUID(), downloadedFile);
-        await().atMost(5, SECONDS).until(() -> wikiArticles.size() > 10);
-        await().atMost(10, SECONDS).until(() -> wikiArticles.size() > 20);
-        await().atMost(50, SECONDS).until(() -> wikiArticles.size() > 100);
-        await().atMost(100, SECONDS).until(() -> wikiArticles.size() >= 360);
+        await().atMost(100, SECONDS).until(() -> wikiArticles.size() > 100);
+        await().atMost(200, SECONDS).until(() -> wikiArticles.size() >= 360);
 
-        for(WikiArticle article : wikiArticles) {
-            System.out.println(article);
-        }
     }
 
     @KafkaListener(
