@@ -1,0 +1,102 @@
+
+41466!Optical time-domain reflectometerÜGAn optical time-domain reflectometer (OTDR) is an optoelectronic instrument used to characterize an optical fiber. 
+It is the optical equivalent of an electronic time domain reflectometer which measures the impedance of the cable or transmission line under test. 
+An OTDR injects a series of optical pulses into the fiber under test and extracts, from the same end of the fiber, light that is scattered (Rayleigh backscatter) or reflected back from points along the fiber. The scattered or reflected light that is gathered back is used to characterize the optical fiber. The strength of the return pulses is measured and integrated as a function of time, and plotted as a function of length of the fiber.
+
+Reliability and quality of OTDR equipment
+
+The reliability and quality of an OTDR is based on its accuracy, measurement range, ability to resolve and measure closely spaced events, measurement speed, and ability to perform satisfactorily under various environmental extremes and after various types of physical abuse. The instrument is also judged on the basis of its cost, features provided, size, weight, and ease of use.
+
+Some of the terms often used in specifying the quality of an OTDR are as follows:
+Accuracy: Defined as the correctness of the measurement i.e., the difference between the measured value and the true value of the event being measured.
+
+Measurement range: Defined as the maximum attenuation that can be placed between the instrument and the event being measured, for which the instrument will still be able to measure the event within acceptable accuracy limits.
+
+Instrument resolution: Is a measure of how close two events can be spaced and still be recognized as two separate events. The duration of the measurement pulse and the data sampling interval create a resolution limitation for OTDRs. The shorter the pulse duration and the shorter the data sampling interval, the better the instrument resolution, but the shorter the measurement range. Resolution is also often limited when powerful reflections return to the OTDR and temporarily overload the detector. When this occurs, some time is required before the instrument can resolve a second fiber event. Some OTDR manufacturers use a ‚Äúmasking‚Äù procedure to improve resolution. The procedure shields or ‚Äúmasks‚Äù the detector from high-power fiber reflections, preventing detector overload and eliminating the need for detector recovery.
+
+Industry requirements for the reliability and quality of OTDRs are specified in the Generic Requirements for Optical Time Domain Reflectometer (OTDR) Type Equipment.
+
+Types of OTDR-like test equipment
+
+The common types of OTDR-like test equipment are:
+# Full-feature OTDR: 
+#:Full-feature OTDRs are traditional, optical time domain reflectometers. They are feature-rich and usually larger, heavier, and less portable than either the hand-held OTDR or the fiber break locator. Despite being characterized as large, their size and weight is only a fraction of that of early generation OTDRs. Often a full-feature OTDR has a main frame that can be fitted with multi-function plug-in units to perform many fiber measurement tasks. Larger color displays are common. The full-feature OTDR often has a greater measurement range than the other types of OTDR-like equipment. Often it is used in laboratories and in the field for difficult fiber measurements. Most full-feature OTDRs are powered from AC and/or a battery.
+# Hand-held OTDR and Fiber break locator: 
+#:Hand-held (formerly mini) OTDRs and fiber break locators are designed to troubleshoot fiber networks in a field environment, often using battery power. The two types of instruments cover the spectrum of approaches to fiber optic plant taken by communication providers. Hand-held, inexpensive OTDRs are intended to be easy-to-use, light-weight, sophisticated OTDRs that collect field data and perform rudimentary data analysis. They may be less feature rich than full-feature OTDRs. Often they can be used in conjunction with PC-based software to perform data collection and sophisticated data analysis. Hand-held OTDRs are commonly used to measure fiber links and locate fiber breaks, points of high loss, high reflectance, end-to-end loss, and Optical Return Loss (ORL).
+#:Fiber break locators are intended to be low-cost instruments specifically designed to determine the location of a catastrophic fiber event, e.g., fiber break, point of high reflectance, or high loss. The fiber break locator is an opto-electronic tape measure designed to measure only distance to catastrophic fiber events.
+#:In general, hand-held OTDRs and fiber break locators are lighter and smaller, simpler to operate, and more likely to employ battery power than full-feature OTDRs. The intent with hand-held OTDRs and fiber break locators is to be inexpensive enough for field technicians to be equipped with one as part of a standard tool kit.
+# RTU in RFTSs: 
+#:The RTU is the testing module of the RFTS described in Generic Requirements for Remote Fiber Testing Systems (RFTSS). An RFTS enables fiber to be automatically tested from a central location. A central computer is used to control the operation of OTDR-like test components located at key points in the fiber network. The test components scan the fiber to locate problems. If a problem is found, its location is noted and the appropriate personnel are notified to begin the repair process. The RFTS can also provide direct access to a database that contains historical information of the OTDR fiber traces and any other fiber records for the physical fiber plant.
+#:Since OTDRs and OTDR-like equipment have many uses in the communications industry, operating environments vary widely, both indoors and outdoors. Most often, however, these test sets are operated in controlled environments, accessing the fibers at their termination points on fiber distribution frames. Indoor environments include controlled areas such as central offices (COs), equipment huts, or Controlled Environment Vaults (CEVs). Use in outside environments is rarer, but may include use in a manhole, aerial platform, open trench, or splicing vehicle.
+
+OTDR data format
+
+In the late 1990s, OTDR industry representatives and the OTDR user community developed a unique data format to store and analyze OTDR fiber data. This data was based on the specifications in GR-196, Generic Requirements for Optical Time Domain Reflectometer (OTDR) Type Equipment. The goal was for the data format to be truly universal, in that it was intended to be implemented by all OTDR manufacturers. OTDR suppliers developed the software to implement the data format. As they proceeded, they identified inconsistencies in the format, along with areas of misunderstanding among users.
+
+From 1997 to 2000, a group of OTDR supplier software specialists attempted to resolve problems and inconsistencies in what was then called the ‚ÄúBellcore‚Äù OTDR Data Format. This group, called the OTDR Data Format Users Group (ODFUG), made progress. Since then, many OTDR developers continued to work with other developers to solve individual interaction problems and enable cross use between manufacturers.
+ 
+In 2011, Telcordia decided to compile industry comments on this data format into one document entitled Optical Time Domain Reflectometer (OTDR) Data Format. This Special Report (SR) summarizes the state of the Bellcore OTDR Data Format, renaming it as the Telcordia OTDR Data Format.
+ 
+The data format is intended for all OTDR-related equipment designed to save trace data and analysis information. Initial implementations require standalone software to be provided by the OTDR supplier to convert existing OTDR trace files to the SR-4731 data format and to convert files from this universal format to a format that is usable by their older OTDRs. This file conversion software can be developed by the hardware supplier, the end user, or a third party. This software also provides backward compatibility of the OTDR data format with existing equipment.
+
+The SR-4731 format describes binary data. While text information is contained in several fields, most numbers are represented as either 16-bit (2-byte) or 32-bit (4-byte) signed or unsigned integers stored as binary images. Byte ordering in this file format is explicitly low-byte ordering, as is common on Intel processor-based machines. String fields are terminated with a zero byte ‚Äú\0‚Äù. OTDR waveform data are represented as short, unsigned integer data uniformly spaced in time, in units of decibels (dB) times 1000, referenced to the maximum power level. The maximum power level is set to zero, and all waveform data points are assumed to be zero or negative (the sign bit is implied), so that the minimum power level in this format is -65.535 dB, and the minimum resolution between power level steps is 0.001 dB. In some cases, this will not provide sufficient power range to represent all waveform points. For this reason, the use of a scale factor has been introduced to expand the data point power range.
+
+See also
+
+*Optical return loss
+
+References"åR{{redirect-distinguish|OTDR|On-Train Data Recorder}}
+[[File:OTDR - Yokogawa AQ7270 - 1.jpg|thumb|An OTDR]]
+
+An '''optical time-domain reflectometer''' ('''OTDR''') is an [[optoelectronic]] instrument used to characterize an [[optical fiber]]. 
+It is the optical equivalent of an electronic [[time domain reflectometer]] which measures the [[Electrical impedance|impedance]] of the [[electrical cable|cable]] or [[transmission line]] under test. 
+An OTDR injects a series of optical pulses into the fiber under test and extracts, from the same end of the fiber, [[light]] that is scattered ([[Rayleigh scattering|Rayleigh backscatter]]) or reflected back from points along the fiber. The scattered or reflected light that is gathered back is used to characterize the optical fiber. The strength of the return pulses is measured and integrated as a function of [[time]], and plotted as a function of length of the fiber.
+
+==Reliability and quality of OTDR equipment==
+
+The reliability and quality of an OTDR is based on its accuracy, measurement range, ability to resolve and measure closely spaced events, measurement speed, and ability to perform satisfactorily under various environmental extremes and after various types of physical abuse. The instrument is also judged on the basis of its cost, features provided, size, weight, and ease of use.
+
+Some of the terms often used in specifying the quality of an OTDR are as follows:
+:'''Accuracy''': Defined as the correctness of the measurement i.e., the difference between the measured value and the true value of the event being measured.
+
+:'''Measurement range''': Defined as the maximum attenuation that can be placed between the instrument and the event being measured, for which the instrument will still be able to measure the event within acceptable accuracy limits.
+
+:'''Instrument resolution''': Is a measure of how close two events can be spaced and still be recognized as two separate events. The duration of the measurement pulse and the data sampling interval create a resolution limitation for OTDRs. The shorter the pulse duration and the shorter the data sampling interval, the better the instrument resolution, but the shorter the measurement range. Resolution is also often limited when powerful reflections return to the OTDR and temporarily overload the detector. When this occurs, some time is required before the instrument can resolve a second fiber event. Some OTDR manufacturers use a ‚Äúmasking‚Äù procedure to improve resolution. The procedure shields or ‚Äúmasks‚Äù the detector from high-power fiber reflections, preventing detector overload and eliminating the need for detector recovery.
+
+Industry requirements for the reliability and quality of OTDRs are specified in the Generic Requirements for Optical Time Domain Reflectometer (OTDR) Type Equipment.<ref name= "Telecordia Sep 2010">{{Citation|title = Generic Requirements for Optical Time Domain Reflectometer (OTDR) Type Equipment| publisher = Telcordia (Ericsson Inc)| date = Sep 2010 | url = http://telecom-info.njdepot.ericsson.net/site-cgi/ido/docs.cgi?ID=SEARCH&DOCUMENT=GR-196&| access-date = 15 April 2015}}</ref>
+
+==Types of OTDR-like test equipment==
+
+The common types of OTDR-like test equipment are:
+# '''Full-feature OTDR''': 
+#:Full-feature OTDRs are traditional, optical time domain reflectometers. They are feature-rich and usually larger, heavier, and less portable than either the hand-held OTDR or the fiber break locator. Despite being characterized as large, their size and weight is only a fraction of that of early generation OTDRs. Often a full-feature OTDR has a main frame that can be fitted with multi-function plug-in units to perform many fiber measurement tasks. Larger color displays are common. The full-feature OTDR often has a greater measurement range than the other types of OTDR-like equipment. Often it is used in laboratories and in the field for difficult fiber measurements. Most full-feature OTDRs are powered from AC and/or a battery.
+# '''Hand-held OTDR and Fiber break locator''': 
+#:Hand-held (formerly mini) OTDRs and fiber break locators are designed to troubleshoot fiber networks in a field environment, often using battery power. The two types of instruments cover the spectrum of approaches to fiber optic plant taken by communication providers. Hand-held, inexpensive OTDRs are intended to be easy-to-use, light-weight, sophisticated OTDRs that collect field data and perform rudimentary data analysis. They may be less feature rich than full-feature OTDRs. Often they can be used in conjunction with PC-based software to perform data collection and sophisticated data analysis. Hand-held OTDRs are commonly used to measure fiber links and locate fiber breaks, points of high loss, high reflectance, end-to-end loss, and Optical Return Loss (ORL).
+#:Fiber break locators are intended to be low-cost instruments specifically designed to determine the location of a catastrophic fiber event, e.g., fiber break, point of high reflectance, or high loss. The fiber break locator is an opto-electronic tape measure designed to measure only distance to catastrophic fiber events.
+#:In general, hand-held OTDRs and fiber break locators are lighter and smaller, simpler to operate, and more likely to employ battery power than full-feature OTDRs. The intent with hand-held OTDRs and fiber break locators is to be inexpensive enough for field technicians to be equipped with one as part of a standard tool kit.
+# '''RTU in RFTSs''': 
+#:The RTU is the testing module of the RFTS described in Generic Requirements for Remote Fiber Testing Systems (RFTSS).<ref name= "Telecordia Jan 2000">{{Citation|title = Generic Requirements for Remote Fiber Testing Systems (RFTSs)| publisher = Telcordia (Ericsson Inc)| date = January 2000 | url = http://telecom-info.njdepot.ericsson.net/site-cgi/ido/docs.cgi?ID=SEARCH&DOCUMENT=GR-1295&| access-date = 15 April 2015}}</ref> An RFTS enables fiber to be automatically tested from a central location. A central computer is used to control the operation of OTDR-like test components located at key points in the fiber network. The test components scan the fiber to locate problems. If a problem is found, its location is noted and the appropriate personnel are notified to begin the repair process. The RFTS can also provide direct access to a database that contains historical information of the OTDR fiber traces and any other fiber records for the physical fiber plant.
+#:Since OTDRs and OTDR-like equipment have many uses in the communications industry, operating environments vary widely, both indoors and outdoors. Most often, however, these test sets are operated in controlled environments, accessing the fibers at their termination points on fiber distribution frames. Indoor environments include controlled areas such as central offices (COs), equipment huts, or Controlled Environment Vaults (CEVs). Use in outside environments is rarer, but may include use in a manhole, aerial platform, open trench, or splicing vehicle.
+
+==OTDR data format==
+In the late 1990s, OTDR industry representatives and the OTDR user community developed a unique data format to store and analyze OTDR fiber data. This data was based on the specifications in GR-196, Generic Requirements for Optical Time Domain Reflectometer (OTDR) Type Equipment. The goal was for the data format to be truly universal, in that it was intended to be implemented by all OTDR manufacturers. OTDR suppliers developed the software to implement the data format. As they proceeded, they identified inconsistencies in the format, along with areas of misunderstanding among users.
+
+From 1997 to 2000, a group of OTDR supplier software specialists attempted to resolve problems and inconsistencies in what was then called the ‚ÄúBellcore‚Äù OTDR Data Format. This group, called the OTDR Data Format Users Group (ODFUG), made progress. Since then, many OTDR developers continued to work with other developers to solve individual interaction problems and enable cross use between manufacturers.
+ 
+In 2011, Telcordia decided to compile industry comments on this data format into one document entitled Optical Time Domain Reflectometer (OTDR) Data Format. This Special Report (SR) summarizes the state of the Bellcore OTDR Data Format, renaming it as the Telcordia OTDR Data Format.<ref name= "Telecordia July 2011">{{Citation| first =Terry | last = Donovan| title = Optical Time Domain Reflectometer (OTDR) Data Format| publisher = Telcordia (Ericsson Inc)| date = Jul 2011 | url = http://telecom-info.njdepot.ericsson.net/site-cgi/ido/docs.cgi?ID=SEARCH&DOCUMENT=SR-4731&| access-date = 15 April 2015}}</ref>
+ 
+The data format is intended for all OTDR-related equipment designed to save trace data and analysis information. Initial implementations require standalone software to be provided by the OTDR supplier to convert existing OTDR trace files to the SR-4731 data format and to convert files from this universal format to a format that is usable by their older OTDRs. This file conversion software can be developed by the hardware supplier, the end user, or a third party. This software also provides backward compatibility of the OTDR data format with existing equipment.
+
+The SR-4731 format describes binary data. While text information is contained in several fields, most numbers are represented as either 16-bit (2-byte) or 32-bit (4-byte) signed or unsigned integers stored as binary images. Byte ordering in this file format is explicitly low-byte ordering, as is common on [[Intel]] processor-based machines. String fields are terminated with a zero byte ‚Äú\0‚Äù. OTDR waveform data are represented as short, unsigned integer data uniformly spaced in time, in units of decibels (dB) times 1000, referenced to the maximum power level. The maximum power level is set to zero, and all waveform data points are assumed to be zero or negative (the sign bit is implied), so that the minimum power level in this format is -65.535 dB, and the minimum resolution between power level steps is 0.001 dB. In some cases, this will not provide sufficient power range to represent all waveform points. For this reason, the use of a scale factor has been introduced to expand the data point power range.
+
+==See also==
+{{commons category|Optical time-domain reflectometers}}
+*[[Optical return loss]]
+
+==References==
+{{Reflist}}
+
+[[Category:Fiber-optic communications]]
+[[Category:Telecommunications equipment]]
+[[Category:Fiber optics]]( 2 :2022-09-12T01:08:05ZB6727347JZ
+	Wikipedia'https://en.wikipedia.org/wiki/Main_PageMediaWiki 1.40.0-wmf.8"first-letterbæìπõ∏ÕË~jıå˙ò

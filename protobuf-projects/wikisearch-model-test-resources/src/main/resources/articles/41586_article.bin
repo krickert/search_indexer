@@ -1,0 +1,384 @@
+
+41586Propagation constant�ZThe propagation constant of a sinusoidal electromagnetic wave is a measure of the change undergone by the amplitude and phase of the wave as it propagates in a given direction. The quantity being measured can be the voltage, the current in a circuit, or a field vector such as electric field strength or flux density. The propagation constant itself measures the change per unit length, but it is otherwise dimensionless. In the context of two-port networks and their cascades, propagation constant measures the change undergone by the source quantity as it propagates from one port to the next.
+
+The propagation constant's value is expressed logarithmically, almost universally to the base e, rather than the more usual base 10 that is used in telecommunications in other situations. The quantity measured, such as voltage, is expressed as a sinusoidal phasor. The phase of the sinusoid varies with distance which results in the propagation constant being a complex number, the imaginary part being caused by the phase change.
+
+Alternative names
+
+The term "propagation constant" is somewhat of a misnomer as it usually varies strongly with ω.  It is probably the most widely used term but there are a large variety of alternative names used by various authors for this quantity.  These include transmission parameter, transmission function, propagation parameter, propagation coefficient and transmission constant.  If the plural is used, it suggests that α and β are being referenced separately but collectively as in transmission parameters, propagation parameters, etc.  In transmission line theory, α and β  are counted among the "secondary coefficients", the term secondary being used to contrast to the primary line coefficients.  The primary coefficients are the physical properties of the line, namely R,C,L and G, from which the secondary coefficients may be derived using the telegrapher's equation.  Note that in the field of transmission lines, the term transmission coefficient has a different meaning despite the similarity of name: it is the companion of the reflection coefficient.
+
+Definition
+
+The propagation constant, symbol {\gamma}, for a given system is defined by the ratio of the complex amplitude at the source of the wave to the complex amplitude at some distance x, such that,
+
+\frac{A_0}{A_x}=e^{\gamma x}
+
+Since the propagation constant is a complex quantity we can write:
+
+\gamma = \alpha +i \beta \,
+where
+* α, the real part, is called the attenuation constant
+* β, the imaginary part, is called the phase constant
+
+That β does indeed represent phase can be seen from Euler's formula:
+
+e^{i\theta}=\cos{\theta}+i\sin{\theta}\,\!
+
+which is a sinusoid which varies in phase as θ varies but does not vary in amplitude because
+
+\left|e^{i\theta}\right|\sqrt{\cos^2{\theta}+\sin^2{\theta}}
+1
+
+The reason for the use of base e is also now made clear.  The imaginary phase constant, iβ, can be added directly to the attenuation constant, α, to form a single complex number that can be handled in one mathematical operation provided they are to the same base.  Angles measured in radians require base e, so the attenuation is likewise in base e.
+
+The propagation constant for conducting lines can be calculated from the primary line coefficients by means of the relationship
+
+\gamma=\sqrt{ZY}
+
+where
+
+Z=R+i\omega L\,\!, the series impedance of the line per unit length and,
+
+Y=G+i\omega C\,\!, the shunt admittance of the line per unit length.
+
+Plane wave
+
+The propagation factor of a plane wave traveling in a linear media in the x direction is given by
+ P 
+ e^{-\gamma x} 
+where
+* \gamma 
+ \alpha + i\beta \sqrt{i \omega \mu (\sigma + i \omega \varepsilon)}\; 
+* x =  distance traveled in the x direction
+* \alpha =  attenuation constant in the units of nepers/meter
+* \beta =  phase constant in the units of radians/meter
+* \omega=  frequency in radians/second
+* \sigma =  conductivity of the media
+* \varepsilon \varepsilon' - i\varepsilon \; 
+ complex permitivity of the media
+* \mu \mu' - i\mu \; 
+ complex permeability of the media
+* i=\sqrt{-1}
+The sign convention is chosen for consistency with propagation in lossy media.  If the attenuation constant is positive, then the wave amplitude decreases as the wave propagates in the x direction.
+
+Wavelength, phase velocity, and skin depth have simple relationships to the components of the propagation constant:
+ \lambda 
+ \frac {2 \pi} \beta  \qquad  v_p \frac \omega \beta  \qquad   \delta 
+  \frac 1 \alpha  
+
+Attenuation constant
+
+In telecommunications, the term attenuation constant, also called attenuation parameter or attenuation coefficient, is the attenuation of an electromagnetic wave propagating through a medium per unit distance from the source. It is the real part of the propagation constant and is measured in nepers per metre.  A neper is approximately 8.7 dB.  Attenuation constant can be defined by the amplitude ratio
+
+\left|\frac{A_0}{A_x}\right|=e^{\alpha x}
+
+The propagation constant per unit length is defined as the natural logarithm of the ratio of the sending end current or voltage to the receiving end current or voltage.
+
+Conductive lines
+
+The attenuation constant for conductive lines can be calculated from the primary line coefficients as shown above.  For a line meeting the distortionless condition, with a conductance G in the insulator, the attenuation constant is given by
+
+\alpha=\sqrt{RG}\,\!
+
+however, a real line is unlikely to meet this condition without the addition of loading coils and, furthermore, there are some frequency dependent effects operating on the primary "constants" which cause a frequency dependence of the loss.  There are two main components to these losses, the metal loss and the dielectric loss.
+
+The loss of most transmission lines are dominated by the metal loss, which causes a frequency dependency due to finite conductivity of metals, and the skin effect inside a conductor. The skin effect causes R along the conductor to be approximately dependent on frequency according to
+
+R \propto \sqrt{\omega}
+
+Losses in the dielectric depend on the loss tangent (tan δ) of the material divided by the wavelength of the signal. Thus they are directly proportional to the frequency.
+
+\alpha_d={\tan \delta}
+
+Optical fibre
+
+The attenuation constant for a particular propagation mode in an optical fiber is the real part of the axial propagation constant.
+
+Phase constant
+
+In electromagnetic theory, the phase constant, also called phase change constant, parameter or coefficient is the imaginary component of the propagation constant for a plane wave.  It represents the change in phase per unit length along the path travelled by the wave at any instant and is equal to the real part of the angular wavenumber of the wave.  It is represented by the symbol β and is measured in units of radians per unit length.
+
+From the definition of (angular) wavenumber for TEM waves in lossless media:
+
+k \frac{2\pi}{\lambda} 
+ \beta
+
+For a transmission line, the Heaviside condition of the telegrapher's equation tells us that the wavenumber must be proportional to frequency for the transmission of the wave to be undistorted in the time domain.  This includes, but is not limited to, the ideal case of a lossless line.  The reason for this condition can be seen by considering that a useful signal is composed of many different wavelengths in the frequency domain.  For there to be no distortion of the waveform, all these waves must travel at the same velocity so that they arrive at the far end of the line at the same time as a group.  Since wave phase velocity is given by
+
+v_p \frac{\lambda}{T} 
+ \frac{f}{\tilde{\nu}} = \frac{\omega}{\beta},
+
+it is proved that β is required to be proportional to ω. In terms of primary coefficients of the line, this yields from the telegrapher's equation for a distortionless line the condition
+
+\beta = \omega \sqrt{LC},
+
+where L and C are, respectively, the inductance and capacitance per unit length of the line. However, practical lines can only be expected to approximately meet this condition over a limited frequency band.
+
+In particular, the phase constant  \beta  is not always equivalent to the wavenumber k. Generally speaking, the following relation
+
+ \beta = k 
+
+is tenable to the TEM wave (transverse electromagnetic wave) which travels in free space or TEM-devices such as the coaxial cable and two parallel wires transmission lines. Nevertheless, it is invalid to the TE wave (transverse electric wave) and TM wave  (transverse magnetic wave). For example, in a hollow waveguide where the TEM wave cannot exist but TE and TM waves can propagate,
+
+k=\frac{\omega}{c} 
+
+\beta=k\sqrt{1-\frac{\omega_c^2}{\omega^2}}
+
+Here  \omega_{c}   is the cutoff frequency. In a rectangular waveguide, the cutoff frequency is
+
+ \omega_{c} = c \sqrt{\left(\frac{n \pi}{a}\right)^2 + \left(\frac{m \pi}{b}\right) ^2}, 
+
+where m,n \ge 0 are the mode numbers for the rectangle's sides of length a and b respectively. For TE modes,  m,n \ge 0 (but  m n 
+ 0 is not allowed), while for TM modes  m,n \ge 1 .
+
+The phase velocity equals
+
+v_p\frac{\omega}{\beta}
+\frac{c}{\sqrt{1-\frac{\omega_\mathrm{c}^2}{\omega^2}}}>c 
+
+The phase constant is also an important concept in quantum mechanics because the momentum   p of a quantum is directly proportional to it, i.e.
+
+ p = \hbar \beta
+
+where  is called the reduced Planck constant (pronounced "h-bar").  It is equal to the Planck constant divided by .
+
+Filters and two-port networks
+
+The term propagation constant or propagation function is applied to filters and other two-port networks used for signal processing.  In these cases, however, the attenuation and phase coefficients are expressed in terms of nepers and radians per network section rather than per unit length.  Some authorsMatthaei et al, p49 make a distinction between per unit length measures (for which "constant" is used) and per section measures (for which "function" is used).
+
+The propagation constant is a useful concept in filter design which invariably uses a cascaded section topology.  In a cascaded topology, the propagation constant, attenuation constant and phase constant of individual sections may be simply added to find the total propagation constant etc.
+
+Cascaded networks
+
+The ratio of output to input voltage for each network is given byMatthaei et al pp51-52
+
+\frac{V_1}{V_2}=\sqrt{\frac{Z_{I1}}{Z_{I2}}}e^{\gamma_1}
+\frac{V_2}{V_3}=\sqrt{\frac{Z_{I2}}{Z_{I3}}}e^{\gamma_2}
+\frac{V_3}{V_4}=\sqrt{\frac{Z_{I3}}{Z_{I4}}}e^{\gamma_3}
+
+The terms \sqrt{\frac{Z_{In}}{Z_{Im}}} are impedance scaling termsMatthaei et al pp37-38 and their use is explained in the image impedance article.
+
+The overall voltage ratio is given by
+
+\frac{V_1}{V_4}\frac{V_1}{V_2}\cdot\frac{V_2}{V_3}\cdot\frac{V_3}{V_4}
+\sqrt{\frac{Z_{I1}}{Z_{I4}}}e^{\gamma_1+\gamma_2+\gamma_3}
+
+Thus for n cascaded sections all having matching impedances facing each other, the overall propagation constant is given by
+
+\gamma_\mathrm{total}=\gamma_1 + \gamma_2 + \gamma_3 + \cdots + \gamma_n
+
+See also
+
+The concept of penetration depth is one of many ways to describe the absorption of electromagnetic waves. For the others, and their interrelationships, see the article: Mathematical descriptions of opacity.
+* Propagation speed
+
+Notes
+
+References
+
+* .
+* Matthaei, Young, Jones Microwave Filters, Impedance-Matching Networks, and Coupling Structures McGraw-Hill 1964.
+
+External links
+
+* 
+* 
+*  Free PDF download is available. There is an updated version dated August 6, 2002."�~{{Redirect|Transmission parameter|ABCD transmission parameters|two-port network#ABCD-parameters|scattering transfer parameters|scattering parameters#Scattering transfer parameters}}
+
+The '''propagation constant''' of a sinusoidal [[electromagnetic wave]] is a measure of the change undergone by the [[amplitude]] and [[phase (waves)|phase]] of the wave as it [[wave propagation|propagates]] in a given direction. The quantity being measured can be the [[voltage]], the [[electric current|current]] in a [[electronic circuit|circuit]], or a field vector such as [[electric field strength]] or [[flux density]]. The propagation constant itself measures the change [[per unit length]], but it is otherwise dimensionless. In the context of [[Two port networks|two-port networks]] and their cascades, '''propagation constant '''measures the change undergone by the source quantity as it propagates from one port to the next.
+
+The propagation constant's value is expressed [[logarithm]]ically, almost universally to the base ''[[e (mathematical constant)|e]]'', rather than the more usual base 10 that is used in [[telecommunication]]s in other situations. The quantity measured, such as voltage, is expressed as a sinusoidal [[phasor]]. The phase of the sinusoid varies with distance which results in the propagation constant being a [[complex number]], the [[imaginary number|imaginary]] part being caused by the phase change.
+
+==Alternative names==
+
+The term "propagation constant" is somewhat of a misnomer as it usually varies strongly with ''ω''.  It is probably the most widely used term but there are a large variety of alternative names used by various authors for this quantity.  These include '''transmission parameter''', '''transmission function''', '''propagation parameter''', '''propagation coefficient''' and '''transmission constant'''.  If the plural is used, it suggests that ''α'' and ''β'' are being referenced separately but collectively as in '''transmission parameters''', '''propagation parameters''', etc.  In transmission line theory, ''α'' and ''β''  are counted among the "secondary coefficients", the term ''secondary'' being used to contrast to the ''[[primary line coefficients]]''.  The primary coefficients are the physical properties of the line, namely R,C,L and G, from which the secondary coefficients may be derived using the [[telegrapher's equation]].  Note that in the field of transmission lines, the term [[transmission coefficient]] has a different meaning despite the similarity of name: it is the companion of the [[reflection coefficient]].
+
+==Definition==
+
+The propagation constant, symbol <math>{\gamma}</math>, for a given system is defined by the ratio of the [[Phasor|complex amplitude]] at the source of the wave to the complex amplitude at some distance ''x'', such that,
+
+:<math>\frac{A_0}{A_x}=e^{\gamma x}</math>
+
+Since the propagation constant is a complex quantity we can write:
+
+:<math display="block" qid=Q1434913>\gamma = \alpha +i \beta \,</math>
+where
+* ''α'', the real part, is called the [[#Attenuation constant|attenuation constant]]
+* ''β'', the imaginary part, is called the [[#Phase constant|phase constant]]
+
+That ''β'' does indeed represent phase can be seen from [[Euler's formula]]:
+
+:<math>e^{i\theta}=\cos{\theta}+i\sin{\theta}\,\!</math>
+
+which is a sinusoid which varies in phase as ''θ'' varies but does not vary in amplitude because
+
+:<math>\left|e^{i\theta}\right|=\sqrt{\cos^2{\theta}+\sin^2{\theta}}=1</math>
+
+The reason for the use of base ''e'' is also now made clear.  The imaginary phase constant, ''iβ'', can be added directly to the attenuation constant, ''α'', to form a single complex number that can be handled in one mathematical operation provided they are to the same base.  Angles measured in radians require base ''e'', so the attenuation is likewise in base ''e''.
+
+The propagation constant for conducting lines can be calculated from the primary line coefficients by means of the relationship
+
+:<math>\gamma=\sqrt{ZY}</math>
+
+where
+
+:<math>Z=R+i\omega L\,\!</math>, the series [[Electrical impedance|impedance]] of the line per unit length and,
+
+:<math>Y=G+i\omega C\,\!</math>, the shunt [[admittance]] of the line per unit length.
+
+===Plane wave===
+The propagation factor of a plane wave traveling in a linear media in the x direction is given by
+<math display="block"> P = e^{-\gamma x} </math>
+where
+* <math display="inline">\gamma = \alpha + i\beta = \sqrt{i \omega \mu (\sigma + i \omega \varepsilon)}\; </math><ref name="Jordon&Balman">{{Citation |last1=Jordon|first1= Edward C.|last2=Balman|first2=Keith G. |year= 1968 |title= Electromagnetic Waves and Radiating Systems |edition= 2nd |publisher= Prentice-Hall }}</ref>{{rp|p=126}}
+* <math>x =</math>  distance traveled in the x direction
+* <math>\alpha =</math>  [[attenuation constant]] in the units of [[neper]]s/meter
+* <math>\beta =</math>  [[phase constant]] in the units of [[radian]]s/meter
+* <math>\omega=</math>  frequency in radians/second
+* <math>\sigma =</math>  [[Electrical resistivity and conductivity|conductivity]] of the media
+* <math>\varepsilon = \varepsilon' - i\varepsilon'' \;</math> = [[Permittivity#Complex permittivity|complex permitivity]] of the media
+* <math>\mu = \mu' - i\mu'' \;</math> = [[Permeability (electromagnetism)#Complex permeability|complex permeability]] of the media
+* <math>i=\sqrt{-1}</math>
+The sign convention is chosen for consistency with propagation in lossy media.  If the attenuation constant is positive, then the wave amplitude decreases as the wave propagates in the ''x'' direction.
+
+[[Wavelength]], [[phase velocity]], and [[skin effect|skin depth]] have simple relationships to the components of the propagation constant:
+<math display="block"> \lambda = \frac {2 \pi} \beta  \qquad  v_p = \frac \omega \beta  \qquad   \delta =  \frac 1 \alpha  </math>
+
+==Attenuation constant==
+
+In [[telecommunication]]s, the term '''attenuation constant''', also called '''attenuation parameter''' or '''[[attenuation coefficient]]''', is the attenuation of an electromagnetic wave propagating through a [[Transmission medium|medium]] per unit distance from the source. It is the real part of the propagation constant and is measured in [[neper]]s per metre.  A neper is approximately 8.7&nbsp;[[decibel|dB]].  Attenuation constant can be defined by the amplitude ratio
+
+:<math>\left|\frac{A_0}{A_x}\right|=e^{\alpha x}</math>
+
+The propagation constant per unit length is defined as the natural logarithm of the ratio of the sending end current or voltage to the receiving end current or voltage.
+
+===Conductive lines===
+
+The attenuation constant for conductive lines can be calculated from the primary line coefficients as shown above.  For a line meeting the [[Heaviside condition|distortionless condition]], with a conductance ''G'' in the insulator, the attenuation constant is given by
+
+:<math>\alpha=\sqrt{RG}\,\!</math>
+
+however, a real line is unlikely to meet this condition without the addition of [[loading coils]] and, furthermore, there are some frequency dependent effects operating on the primary "constants" which cause a frequency dependence of the loss.  There are two main components to these losses, the metal loss and the dielectric loss.
+
+The loss of most transmission lines are dominated by the metal loss, which causes a frequency dependency due to finite conductivity of metals, and the [[skin effect]] inside a conductor. The skin effect causes R along the conductor to be approximately dependent on frequency according to
+
+:<math>R \propto \sqrt{\omega}</math>
+
+Losses in the dielectric depend on the [[loss tangent]] (tan&nbsp;''δ'') of the material divided by the wavelength of the signal. Thus they are directly proportional to the frequency.
+
+:<math>\alpha_d={{\pi}\sqrt{\varepsilon_r}\over{\lambda}}{\tan \delta}</math>
+
+===Optical fibre===
+
+The attenuation constant for a particular [[propagation mode]] in an [[optical fiber]] is the real part of the axial propagation constant.
+
+==Phase constant==
+In [[electromagnetic theory]], the '''phase constant''', also called '''phase change constant''', '''parameter''' or '''coefficient''' is the imaginary component of the propagation constant for a plane wave.  It represents the change in phase per unit length along the path travelled by the wave at any instant and is equal to the [[real part]] of the [[wavenumber#In wave equations|angular wavenumber]] of the wave.  It is represented by the symbol ''β'' and is measured in units of radians per unit length.
+
+From the definition of (angular) wavenumber for TEM waves in lossless media:
+
+:<math>k = \frac{2\pi}{\lambda} = \beta</math>
+
+For a [[transmission line]], the [[Heaviside condition]] of the [[telegrapher's equation]] tells us that the wavenumber must be proportional to frequency for the transmission of the wave to be undistorted in the [[time domain]].  This includes, but is not limited to, the ideal case of a lossless line.  The reason for this condition can be seen by considering that a useful signal is composed of many different wavelengths in the frequency domain.  For there to be no distortion of the [[waveform]], all these waves must travel at the same velocity so that they arrive at the far end of the line at the same time as a [[group velocity|group]].  Since wave [[phase velocity]] is given by
+
+:<math>v_p = \frac{\lambda}{T} = \frac{f}{\tilde{\nu}} = \frac{\omega}{\beta},</math>
+
+it is proved that ''β'' is required to be proportional to ''ω''. In terms of primary coefficients of the line, this yields from the telegrapher's equation for a distortionless line the condition
+
+:<math>\beta = \omega \sqrt{LC},</math>
+
+where ''L'' and ''C'' are, respectively, the inductance and capacitance per unit length of the line. However, practical lines can only be expected to approximately meet this condition over a limited frequency band.
+
+In particular, the phase constant <math> \beta </math> is not always equivalent to the [[wavenumber]] <math>k</math>. Generally speaking, the following relation
+
+:<math> \beta = k </math>
+
+is tenable to the [[Transverse mode|TEM]] wave (transverse electromagnetic wave) which travels in free space or TEM-devices such as the [[coaxial cable]] and [[Twin-lead|two parallel wires transmission lines]]. Nevertheless, it is invalid to the [[Transverse mode|TE]] wave (transverse electric wave) and [[Transverse mode|TM]] wave  (transverse magnetic wave). For example,<ref>{{cite book |first=David |last=Pozar |author-link=David M. Pozar |year=2012 |title=Microwave Engineering |edition=4th |publisher=John Wiley &Sons |isbn=978-0-470-63155-3 |pages=62–164 }}</ref> in a hollow [[waveguide]] where the TEM wave cannot exist but TE and TM waves can propagate,
+
+:<math>k=\frac{\omega}{c} </math>
+
+:<math>\beta=k\sqrt{1-\frac{\omega_c^2}{\omega^2}}</math>
+
+Here <math> \omega_{c} </math>  is the [[cutoff frequency]]. In a rectangular waveguide, the cutoff frequency is
+
+:<math> \omega_{c} = c \sqrt{\left(\frac{n \pi}{a}\right)^2 + \left(\frac{m \pi}{b}\right) ^2}, </math>
+
+where <math>m,n \ge 0</math> are the mode numbers for the rectangle's sides of length <math>a</math> and <math>b</math> respectively. For TE modes, <math> m,n \ge 0</math> (but <math> m = n = 0</math> is not allowed), while for TM modes <math> m,n \ge 1 </math>.
+
+The phase velocity equals
+
+:<math>v_p=\frac{\omega}{\beta}=\frac{c}{\sqrt{1-\frac{\omega_\mathrm{c}^2}{\omega^2}}}>c </math>
+
+The phase constant is also an important concept in [[quantum mechanics]] because the [[momentum]]  <math> p</math> of a [[quantum]] is directly proportional to it,<ref>{{cite journal|author=Wang,Z.Y.|title=Generalized momentum equation of quantum mechanics|journal=[[Optical and Quantum Electronics]]|volume=48|pages=1–9|date=2016|doi=10.1007/s11082-015-0261-8|issue=2|s2cid=124732329}}</ref><ref>{{cite arXiv | author= Tremblay,R., Doyon,N., Beaudoin-Bertrand,J. | title = TE-TM Electromagnetic modes and states in quantum physics |eprint =1611.01472 | year = 2016 | class = quant-ph }}</ref> i.e.
+
+:<math> p = \hbar \beta</math>
+
+where {{math|''ħ''}} is called the [[reduced Planck constant]] (pronounced "h-bar").  It is equal to the [[Planck constant]] divided by {{math|2''π''}}.
+
+==Filters and two-port networks==
+The term propagation constant or propagation function is applied to [[Electronic filters|filters]] and other [[two-port network]]s used for [[signal processing]].  In these cases, however, the attenuation and phase coefficients are expressed in terms of nepers and radians per [[Electronic filter topology#Passive topologies|network section]] rather than per unit length.  Some authors<ref>Matthaei et al, p49</ref> make a distinction between per unit length measures (for which "constant" is used) and per section measures (for which "function" is used).
+
+The propagation constant is a useful concept in filter design which invariably uses a cascaded section [[Electronic filter topology|topology]].  In a cascaded topology, the propagation constant, attenuation constant and phase constant of individual sections may be simply added to find the total propagation constant etc.
+
+===Cascaded networks===
+[[Image:Adding propagation constant of filters.svg|center|thumb|750px|Three networks with arbitrary propagation constants and impedances connected in cascade.  The ''Z<sub>i</sub>'' terms represent [[image impedance]] and it is assumed that connections are between matching image impedances.]]
+
+The ratio of output to input voltage for each network is given by<ref>Matthaei et al pp51-52</ref>
+
+:<math>\frac{V_1}{V_2}=\sqrt{\frac{Z_{I1}}{Z_{I2}}}e^{\gamma_1}</math>
+:<math>\frac{V_2}{V_3}=\sqrt{\frac{Z_{I2}}{Z_{I3}}}e^{\gamma_2}</math>
+:<math>\frac{V_3}{V_4}=\sqrt{\frac{Z_{I3}}{Z_{I4}}}e^{\gamma_3}</math>
+
+The terms <math>\sqrt{\frac{Z_{In}}{Z_{Im}}}</math> are impedance scaling terms<ref>Matthaei et al pp37-38</ref> and their use is explained in the [[Image impedance#Transfer function|image impedance]] article.
+
+The overall voltage ratio is given by
+
+:<math>\frac{V_1}{V_4}=\frac{V_1}{V_2}\cdot\frac{V_2}{V_3}\cdot\frac{V_3}{V_4}=\sqrt{\frac{Z_{I1}}{Z_{I4}}}e^{\gamma_1+\gamma_2+\gamma_3}</math>
+
+Thus for ''n'' cascaded sections all having matching impedances facing each other, the overall propagation constant is given by
+
+:<math>\gamma_\mathrm{total}=\gamma_1 + \gamma_2 + \gamma_3 + \cdots + \gamma_n</math>
+
+==See also==
+The concept of penetration depth is one of many ways to describe the absorption of electromagnetic waves. For the others, and their interrelationships, see the article: [[Mathematical descriptions of opacity]].
+* [[Propagation speed]]
+
+==Notes==
+{{reflist}}
+
+==References==
+{{refbegin}}
+* {{FS1037C}}.
+* Matthaei, Young, Jones ''Microwave Filters, Impedance-Matching Networks, and Coupling Structures'' McGraw-Hill 1964.
+
+{{refend}}
+
+==External links==
+* {{Cite web|title =Propagation constant|publisher =Microwave Encyclopedia|year =2011|url =http://www.microwaves101.com/encyclopedia/propagation.cfm|format =Online|access-date =February 2, 2011|archive-url =https://web.archive.org/web/20140714170516/http://www.microwaves101.com/ENCYCLOPEDIA/propagation.cfm|archive-date =July 14, 2014|url-status =dead}}
+* {{Cite web| last =Paschotta| first =Dr. Rüdiger| title =Propagation Constant
+  | publisher =Encyclopedia of Laser Physics and Technology| year = 2011
+  | url =http://www.rp-photonics.com/propagation_constant.html
+  | format =Online| access-date =2 February 2011}}
+* {{Cite journal
+  | last =Janezic
+  | first = Michael D.
+  |author2=Jeffrey A. Jargon
+   | title = Complex Permittivity determination from Propagation Constant measurements
+  | journal =[[IEEE Microwave and Guided Wave Letters]]
+  | volume = 9
+  | issue = 2
+  | pages = 76–78
+  | date =February 1999
+  | url =http://www.eeel.nist.gov/dylan_papers/MGWL99.pdf
+  | doi = 10.1109/75.755052
+  | access-date =2 February 2011}} Free PDF download is available. There is an updated version dated August 6, 2002.
+
+[[Category:Filter theory]]
+[[Category:Physical quantities]]
+[[Category:Telecommunication theory]]
+[[Category:Electromagnetism]]
+[[Category:Electromagnetic radiation]]
+[[Category:Analog circuits]]
+[[Category:Image impedance filters]]( 2 :2022-10-20T16:57:15ZB
+1117237824JZ
+	Wikipedia'https://en.wikipedia.org/wiki/Main_PageMediaWiki 1.40.0-wmf.8"first-letterb��������j��Ś

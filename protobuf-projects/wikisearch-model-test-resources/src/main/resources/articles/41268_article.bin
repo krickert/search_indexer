@@ -1,0 +1,209 @@
+
+41268Intelligent Network≈dThe Intelligent Network (IN) is the standard network architecture specified in the ITU-T Q.1200 series recommendations. It is intended for fixed as well as mobile telecom networks. It allows operators to differentiate themselves by providing value-added services in addition to the standard telecom services such as PSTN, ISDN on fixed networks, and GSM services on mobile phones or other mobile devices.
+
+The intelligence is provided by network nodes on the service layer, distinct from the switching layer of the core network, as opposed to solutions based on intelligence in the core switches or equipment. The IN nodes are typically owned by telecommunications service providers such as a telephone company or mobile phone operator.
+
+IN is supported by the Signaling System #7 (SS7) protocol between network switching centers and other network nodes owned by network operators.
+
+Examples of IN services
+
+* Televoting
+* Call screening
+* Local number portability
+* Toll-free calls/Freephone
+* Prepaid calling
+* Account card calling
+* Virtual private networks (such as family group calling)
+* Centrex service (Virtual PBX)
+* Private-number plans (with numbers remaining unpublished in directories)
+* Universal Personal Telecommunications service (a universal personal telephone number)
+* Mass-calling service
+* Prefix free dialing from cellphones abroad
+* Seamless MMS message access from abroad
+* Reverse charging
+* Home Area Discount
+* Premium Rate calls
+* Call distribution based on various criteria associated with the call
+** Location-based routing
+** Time-based routing
+** Proportional call distribution (such as between two or more call centres or offices)
+* Call queueing
+* Call transfer
+
+History and key concepts
+
+The IN concepts, architecture and protocols were originally developed as standards by the ITU-T which is the standardization committee of the International Telecommunication Union; prior to this a number of telecommunications providers had proprietary implementations.[http://www.google.com/patents?vidUSPAT4191860 http://www.google.com/patents?vid
+USPAT4191860], Early patent for proprietary IN Services The primary aim of the IN was to enhance the core telephony services offered by traditional telecommunications networks, which usually amounted to making and receiving voice calls, sometimes with call divert. This core would then provide a basis upon which operators could build services in addition to those already present on a standard telephone exchange.
+
+A complete description of the IN emerged in a set of ITU-T standards named [http://www.itu.int/rec/T-REC-Q.1210/en/ Q.1210] to [http://www.itu.int/rec/T-REC-Q.1219/en/ Q.1219], or Capability Set One (CS-1) as they became known.  The standards defined a complete architecture including the architectural view, state machines, physical implementation and protocols.  They were universally embraced by telecom suppliers and operators, although many variants were derived for use in different parts of the world (see Variants below).
+
+Following the success of CS-1, further enhancements followed in the form of CS-2.  Although the standards were completed, they were not as widely implemented as CS-1, partly because of the increasing power of the variants, but also partly because they addressed issues which pushed traditional telephone exchanges to their limits.
+
+The major driver behind the development of the IN was the need for a more flexible way of adding sophisticated services to the existing network. Before the IN was developed, all new features and/or services had to be implemented directly in the core switch systems. This made for long release cycles as the software testing had to be extensive and thorough to prevent the network from failing. With the advent of the IN, most of these services (such as toll-free numbers and geographical number portability) were moved out of the core switch systems and into self-contained nodes, creating a modular and more secure network that allowed the service providers themselves to develop variations and value-added services to their networks without submitting a request to the core switch manufacturer and waiting for the long development process. The initial use of IN technology was for number translation services, e.g. when translating toll-free numbers to regular PSTN numbers; much more complex services have since been built on the IN, such as Custom Local Area Signaling Services (CLASS) and prepaid telephone calls.
+
+SS7 architecture
+
+The main concepts (functional view) surrounding IN services or architecture are connected with SS7 architecture:
+
+* Service Switching Function (SSF) or Service Switching Point (SSP) is co-located with the telephone exchange, and acts as the trigger point for further services to be invoked during a call.  The SSP implements the Basic Call State Machine (BCSM) which is a Finite state machine that represents an abstract view of a call from beginning to end (off hook, dialing, answer, no answer, busy, hang up, etc.).  As each state is traversed, the exchange encounters Detection Points (DPs) at which the SSP may invoke a query to the SCP to wait for further instructions on how to proceed.  This query is usually called a trigger.  Trigger criteria are defined by the operator and might include the subscriber calling number or the dialed number. The SSF is responsible for controlling calls requiring value added services.
+* Service Control Function (SCF) or Service Control Point (SCP) is a separate set of platforms that receive queries from the SSP.  The SCP contains service logic which implements the behaviour desired by the operator, i.e., the services.  During service logic processing, additional data required to process the call may be obtained from the SDF.  The logic on the SCP is created using the SCE.
+* Service Data Function (SDF) or Service Data Point (SDP) is a database that contains additional subscriber data, or other data required to process a call.  For example, the subscriber's remaining prepaid credit may be stored in the SDF to be queried in real-time during the call.  The SDF may be a separate platform or co-located with the SCP.
+* Service Management Function (SMF) or Service Management Point (SMP) is a platform or cluster of platforms that operators use to monitor and manage the IN services. It contains the management database which stores the services' configuration, collects the statistics and alarms, and stores the Call Data Reports and Event Data Reports.
+* Service Creation Environment (SCE) is the development environment used to create the services present on the SCP.  Although the standards permit any type of environment, it is fairly rare to see low level languages like C used.  Instead, proprietary graphical languages are used to enable telecom engineers to create services directly. The languages are usually of the fourth-generation type, and the engineer may use a graphical interface to build or change a service.
+* Specialized Resource Function (SRF) or Intelligent Peripheral (IP) is a node which can connect to both the SSP and the SCP and deliver special resources into the call, mostly related to voice communication, for example to play voice announcements or collect DTMF tones from the user.
+
+Protocols
+
+The core elements described above use standard protocols to communicate with each other. The use of standard protocols allows different manufacturers to concentrate on different parts of the architecture and be confident that they will all work together in any combination.
+
+The interfaces between the SSP and the SCP are SS7 based and have similarities with TCP/IP protocols.  The SS7 protocols implement much of the OSI seven-layer model.  This means that the IN standards only had to define the application layer, which is called the Intelligent Networks Application Part or INAP.  The INAP messages are encoded using ASN.1.
+
+The interface between the SCP and the SDP is defined in the standards to be an X.500 Directory Access Protocol or DAP. A more lightweight interface called LDAP has emerged from the IETF which is considerably simpler to implement, so many SCPs have implemented that instead.
+
+Variants
+
+The core CS-1 specifications were adopted and extended by other standards bodies.  European flavours were developed by ETSI, American flavours were developed by ANSI, and Japanese variants also exist.  The main reasons for producing variants in each region was to ensure interoperability between equipment manufactured and deployed locally (for example different versions of the underlying SS7 protocols exist between the regions).
+
+New functionality was also added which meant that variants diverged from each other and the main ITU-T standard.  The biggest variant was called Customised Applications for Mobile networks Enhanced Logic, or CAMEL for short.  This allowed for extensions to be made for the mobile phone environment, and allowed mobile phone operators to offer the same IN services to subscribers while they are roaming as they receive in the home network.
+
+CAMEL has become a major standard in its own right and is currently maintained by 3GPP.  The last major release of the standard was CAMEL phase 4.  It is the only IN standard currently being actively worked on.
+
+Bellcore (subsequently Telcordia Technologies) developed the Advanced Intelligent Network (AIN) as the variant of Intelligent Network for North America, and performed the standardization of the AIN on behalf of the major US operators. The original goal of AIN was AIN 1.0, which was specified in the early 1990s (AIN Release 1, Bellcore SR-NWT-002247, 1993).[http://telecom-info.njdepot.ericsson.net/site-cgi/ido/docs.cgi?IDSEARCH&DOCUMENT
+SR-NWT-002247& SR-NWT-002247] AIN 1.0 proved technically infeasible to implement, which led to the definition of simplified AIN 0.1 and AIN 0.2 specifications.  In North America, Telcordia SR-3511 (originally known as TA-1129+)[http://telecom-info.njdepot.ericsson.net/site-cgi/ido/docs.cgi?ID
+SEARCH&DOCUMENTSR-3511& SR-3511] and GR-1129-CORE protocols serve to link switches with the IN systems such as Service Control Points (SCPs) or Service Nodes.[http://telecom-info.njdepot.ericsson.net/site-cgi/ido/docs.cgi?IDSEARCH&DOCUMENT
+GR-1129& GR-1129-CORE] SR-3511 details a TCP/IP-based protocol which directly connects the SCP and Service Node.  GR-1129-CORE provides generic requirements for an ISDN-based protocol which connects the SCP to the Service Node via the SSP.
+
+Future
+
+While activity in development of IN standards has declined in recent years, there are many systems deployed across the world which use this technology.  The architecture has proved to be not only stable, but also a continuing source of revenue with new services added all the time.  Manufacturers continue to support the equipment and obsolescence is not an issue.
+
+Nevertheless, new technologies and architectures are emerging, especially in the area of VoIP and SIP. More attention is being paid to the use of APIs in preference to protocols like INAP, and new standards have emerged in the form of JAIN and Parlay.  From a technical viewpoint, the SCE is beginning to move away from its proprietary graphical origins and is moving towards a Java application server environment.
+
+The meaning of "intelligent network" is evolving in time, largely driven by breakthroughs in computation and algorithms. From networks enhanced by more flexible algorithms and more advanced protocols, to networks designed using data-driven models [https://www.mdpi.com/1424-8220/16/6/790/htm M. Kulin, C. Fortuna, E. De Poorter, D. Deschrijver and I. Moerman, Data-Driven Design of Intelligent Wireless Networks: An Overview and Tutorial, Sensors 2016, 16(6), 790; doi:10.3390/s16060790] to AI enabled networks.[https://ieeexplore.ieee.org/document/8360430 M. G. Kibria et al, Big Data Analytics, Machine Learning, and Artificial Intelligence in Next-Generation Wireless Networks, IEEE Access, Vol. 6, 17 May 2018, DOI: 10.1109/ACCESS.2018.2837692]
+
+See also
+
+* IP Multimedia Subsystem
+* Service layer
+* Value-added service
+
+Notes
+
+References
+
+* Ambrosch, W.D., Maher, A., Sasscer, B. (editors) The Intelligent Network: A Joint Study by Bell Atlantic. IBM and Siemens, Springer-Verlag, 1989. . . Also known as the green book due to the cover .
+* Faynberg, I., Gabuzda, L.R., Kaplan, M.P., and Shah, N.J. The Intelligent Network Standards: Their Application to Services, McGraw-Hill,  1997, .
+* Magedanz, T., and Popescu-Zeletin, R.. Intelligent Networks: Basic Technology, Standards and Evolution, Thompson Computer Press, 1996. .
+* Intelligent Networks By John R. Anderson, Institution of Electrical Engineers,2002. , 
+
+External links
+
+* [https://web.archive.org/web/20110724182457/http://www.item.ntnu.no/fag/ttm4130/stottelitteratur/IN.pdf Tutorial on Intelligent Networks (archived 24 July 2011)]"≤t{{Short description|Standard network architecture for telecom networks}}
+{{More footnotes|date=April 2009}}
+
+The '''Intelligent Network''' ('''IN''') is the standard [[network architecture]] specified in the ITU-T Q.1200 series recommendations.<ref>{{cite web|url=http://www.itu.int/rec/T-REC-Q.1200/en/ |title=ITU-T Q.1200 series recommendations}}</ref> It is intended for fixed as well as [[Global System for Mobile Communications|mobile]] [[telecommunication|telecom]] networks. It allows operators to differentiate themselves by providing [[value-added service]]s in addition to the standard telecom services such as [[PSTN]], [[ISDN]] on fixed networks, and [[GSM services]] on [[Mobile phone|mobile phones]] or other mobile devices.
+
+The intelligence is provided by network nodes on the [[service layer]], distinct from the [[telephone exchange|switching]] layer of the [[core network]], as opposed to solutions based on intelligence in the core [[telephone exchange|switches]] or equipment. The IN nodes are typically owned by [[telecommunications service provider]]s such as a [[telephone company]] or [[mobile phone operator]].
+
+IN is supported by the [[Signaling System 7|Signaling System #7 (SS7)]] protocol between network switching centers and other network nodes owned by network operators.
+
+==Examples of IN services==
+
+* [[Televoting]]
+* [[Call screening]]
+* [[Local number portability]]
+* [[Toll-free telephone number|Toll-free calls]]/Freephone
+* [[Prepaid telephone calls|Prepaid calling]]
+* Account card calling
+* [[Virtual private network]]s (such as family group calling)
+* [[Centrex]] service (Virtual [[Private branch exchange|PBX]])
+* Private-number plans (with numbers remaining unpublished in directories)
+* [[Universal Personal Telecommunications]] service (a universal personal telephone number)
+* Mass-calling service
+* Prefix free dialing from cellphones abroad
+* Seamless [[Multimedia Messaging Service|MMS]] message access from abroad
+* [[Collect call|Reverse charging]]
+* Home Area Discount
+* [[Premium-rate telephone number|Premium Rate]] calls
+* [[Call distribution]] based on various criteria associated with the call
+** [[Location-based routing]]
+** Time-based routing
+** Proportional call distribution (such as between two or more call centres or offices)
+* Call queueing
+* [[Call transfer]]
+
+==History and key concepts==
+The IN concepts, architecture and protocols were originally developed as standards by the [[ITU-T]] which is the [[standardization]] committee of the [[International Telecommunication Union]]; prior to this a number of telecommunications providers had proprietary implementations.<ref>[http://www.google.com/patents?vid=USPAT4191860 http://www.google.com/patents?vid=USPAT4191860], Early patent for proprietary IN Services</ref> The primary aim of the IN was to enhance the core telephony services offered by traditional telecommunications networks, which usually amounted to making and receiving voice calls, sometimes with call divert. This core would then provide a basis upon which [[Telephone company|operators]] could build services in addition to those already present on a standard [[Telephone switch|telephone exchange]].
+
+A complete description of the IN emerged in a set of [[ITU-T]] standards named [http://www.itu.int/rec/T-REC-Q.1210/en/ Q.1210] to [http://www.itu.int/rec/T-REC-Q.1219/en/ Q.1219], or Capability Set One (CS-1) as they became known.  The standards defined a complete architecture including the architectural view, state machines, physical implementation and protocols.  They were universally embraced by telecom suppliers and operators, although many variants were derived for use in different parts of the world (see [[#Variants|Variants]] below).
+
+Following the success of CS-1, further enhancements followed in the form of CS-2.  Although the standards were completed, they were not as widely implemented as CS-1, partly because of the increasing power of the variants, but also partly because they addressed issues which pushed traditional telephone exchanges to their limits.
+
+<!-- Image with unknown copyright status removed: [[File:IntelligentNetwork.jpg|thumbnail|right|300px|Intelligent Network schematic diagram]] -->
+The major driver behind the development of the IN was the need for a more flexible way of adding sophisticated services to the existing network. Before the IN was developed, all new features and/or services had to be implemented directly in the core switch systems. This made for long release cycles as the software testing had to be extensive and thorough to prevent the network from failing. With the advent of the IN, most of these services (such as toll-free numbers and geographical number portability) were moved out of the core switch systems and into self-contained nodes, creating a modular and more secure network that allowed the service providers themselves to develop variations and value-added services to their networks without submitting a request to the core switch manufacturer and waiting for the long development process. The initial use of IN technology was for number translation services, e.g. when translating toll-free numbers to regular [[PSTN]] numbers; much more complex services have since been built on the IN, such as [[Custom Local Area Signaling Services]] (CLASS) and prepaid telephone calls.
+
+==SS7 architecture==
+The main concepts (functional view) surrounding IN services or architecture are connected with [[Signaling System 7|SS7]] architecture:
+
+* ''Service Switching Function'' (SSF) or ''[[Service switching point|Service Switching Point]]'' (SSP) is co-located with the telephone exchange, and acts as the trigger point for further services to be invoked during a call.  The SSP implements the Basic Call State Machine (BCSM) which is a [[Finite state machine]] that represents an abstract view of a call from beginning to end (off hook, dialing, answer, no answer, busy, hang up, etc.).  As each state is traversed, the exchange encounters ''Detection Points (DPs)'' at which the SSP may invoke a query to the SCP to wait for further instructions on how to proceed.  This query is usually called a trigger.  Trigger criteria are defined by the operator and might include the subscriber calling number or the dialed number. The SSF is responsible for controlling calls requiring value added services.
+* ''Service Control Function'' (SCF) or ''[[Service control point|Service Control Point]]'' (SCP) is a separate set of platforms that receive queries from the SSP.  The SCP contains service logic which implements the behaviour desired by the operator, i.e., the services.  During service logic processing, additional data required to process the call may be obtained from the SDF.  The logic on the SCP is created using the SCE.
+* ''Service Data Function'' (SDF) or ''[[Service data point|Service Data Point]]'' (SDP) is a database that contains additional subscriber data, or other data required to process a call.  For example, the subscriber's remaining prepaid credit may be stored in the SDF to be queried in real-time during the call.  The SDF may be a separate platform or co-located with the SCP.
+* ''Service Management Function'' (SMF) or ''Service Management Point'' (SMP) is a platform or cluster of platforms that operators use to monitor and manage the IN services. It contains the management database which stores the services' configuration, collects the statistics and alarms, and stores the Call Data Reports and Event Data Reports.
+* ''Service Creation Environment'' (SCE) is the development environment used to create the services present on the SCP.  Although the standards permit any type of environment, it is fairly rare to see low level languages like [[C (programming language)|C]] used.  Instead, proprietary graphical languages are used to enable telecom engineers to create services directly. The languages are usually of the [[Fourth-generation programming language|fourth-generation]] type, and the engineer may use a [[graphical interface]] to build or change a service.
+* ''Specialized Resource Function'' (SRF) or ''Intelligent Peripheral'' (IP) is a node which can connect to both the SSP and the SCP and deliver special resources into the call, mostly related to voice communication, for example to play voice announcements or collect [[DTMF]] tones from the user.
+
+==Protocols==
+The core elements described above use standard protocols to communicate with each other. The use of standard protocols allows different manufacturers to concentrate on different parts of the architecture and be confident that they will all work together in any combination.
+
+The interfaces between the SSP and the SCP are [[Signalling System No. 7|SS7]] based and have similarities with [[Internet protocol suite|TCP/IP]] protocols.  The SS7 protocols implement much of the [[OSI seven-layer model]].  This means that the IN standards only had to define the [[application layer]], which is called the Intelligent Networks Application Part or [[INAP]].  The INAP messages are encoded using [[Abstract syntax notation one|ASN.1]].
+
+The interface between the SCP and the SDP is defined in the standards to be an [[X.500]] Directory Access Protocol or DAP. A more lightweight interface called [[Lightweight Directory Access Protocol|LDAP]] has emerged from the [[Internet Engineering Task Force|IETF]] which is considerably simpler to implement, so many SCPs have implemented that instead.
+
+==Variants==
+The core CS-1 specifications were adopted and extended by other standards bodies.  European flavours were developed by [[ETSI]], American flavours were developed by [[American National Standards Institute|ANSI]], and Japanese variants also exist.  The main reasons for producing variants in each region was to ensure interoperability between equipment manufactured and deployed locally (for example different versions of the underlying SS7 protocols exist between the regions).
+
+New functionality was also added which meant that variants diverged from each other and the main ITU-T standard.  The biggest variant was called [[Customised Applications for Mobile networks Enhanced Logic]], or CAMEL for short.  This allowed for extensions to be made for the [[mobile phone]] environment, and allowed [[mobile phone operator]]s to offer the same IN services to subscribers while they are [[roaming]] as they receive in the home network.
+
+CAMEL has become a major standard in its own right and is currently maintained by [[3GPP]].  The last major release of the standard was CAMEL phase 4.  It is the only IN standard currently being actively worked on.
+
+Bellcore (subsequently [[Telcordia Technologies]]) developed the '''Advanced Intelligent Network''' (AIN) as the variant of Intelligent Network for North America, and performed the standardization of the AIN on behalf of the major US operators. The original goal of AIN was AIN 1.0, which was specified in the early 1990s (''AIN Release 1'', Bellcore SR-NWT-002247, 1993).<ref>[http://telecom-info.njdepot.ericsson.net/site-cgi/ido/docs.cgi?ID=SEARCH&DOCUMENT=SR-NWT-002247& SR-NWT-002247]</ref> AIN 1.0 proved technically infeasible to implement, which led to the definition of simplified AIN 0.1 and AIN 0.2 specifications.  In North America, Telcordia SR-3511 (originally known as TA-1129+)<ref name="sr3511">[http://telecom-info.njdepot.ericsson.net/site-cgi/ido/docs.cgi?ID=SEARCH&DOCUMENT=SR-3511& SR-3511]</ref> and GR-1129-CORE protocols serve to link switches with the IN systems such as [[Service Control Point]]s (SCPs) or Service Nodes.<ref name="gr1129">[http://telecom-info.njdepot.ericsson.net/site-cgi/ido/docs.cgi?ID=SEARCH&DOCUMENT=GR-1129& GR-1129-CORE]</ref> SR-3511 details a TCP/IP-based protocol which directly connects the SCP and Service Node.<ref name="sr3511"/>  GR-1129-CORE provides generic requirements for an ISDN-based protocol which connects the SCP to the Service Node via the SSP.<ref name="gr1129"/>
+
+==Future==
+While activity in development of IN standards has declined in recent years, there are many systems deployed across the world which use this technology.  The architecture has proved to be not only stable, but also a continuing source of revenue with new services added all the time.  Manufacturers continue to support the equipment and obsolescence is not an issue.
+
+Nevertheless, new technologies and architectures are emerging, especially in the area of [[VoIP]] and [[Session Initiation Protocol|SIP]]. More attention is being paid to the use of [[Application programming interface|API]]s in preference to protocols like INAP, and new standards have emerged in the form of [[JAIN]] and [[Parlay X|Parlay]].  From a technical viewpoint, the SCE is beginning to move away from its proprietary graphical origins and is moving towards a [[Java (programming language)|Java]] [[application server]] environment.
+
+The meaning of "intelligent network" is evolving in time, largely driven by breakthroughs in computation and algorithms. From networks enhanced by more flexible algorithms and more advanced protocols, to networks designed using data-driven models <ref>[https://www.mdpi.com/1424-8220/16/6/790/htm M. Kulin, C. Fortuna, E. De Poorter, D. Deschrijver and I. Moerman, Data-Driven Design of Intelligent Wireless Networks: An Overview and Tutorial, Sensors 2016, 16(6), 790; doi:10.3390/s16060790]</ref> to AI enabled networks.<ref>[https://ieeexplore.ieee.org/document/8360430 M. G. Kibria et al, Big Data Analytics, Machine Learning, and Artificial Intelligence in Next-Generation Wireless Networks, IEEE Access, Vol. 6, 17 May 2018, DOI: 10.1109/ACCESS.2018.2837692]</ref>
+
+==See also==
+* [[IP Multimedia Subsystem]]
+* [[Service layer]]
+* [[Value-added service]]
+
+==Notes==
+{{reflist}}
+
+==References==
+* Ambrosch, W.D., Maher, A., Sasscer, B. (editors) ''The Intelligent Network: A Joint Study by Bell Atlantic. IBM and Siemens'', [[Springer Science+Business Media|Springer-Verlag]], 1989. {{ISBN|3-540-50897-X}}. {{ISBN|0-387-50897-X}}. Also known as the ''green book'' due to the cover .
+* Faynberg, I., Gabuzda, L.R., Kaplan, M.P., and Shah, N.J. ''The Intelligent Network Standards: Their Application to Services'', McGraw-Hill,  1997, {{ISBN|0-07-021422-0}}.
+* Magedanz, T., and Popescu-Zeletin, R.. ''Intelligent Networks: Basic Technology, Standards and Evolution'', Thompson Computer Press, 1996. {{ISBN|1-85032-293-7}}.
+* Intelligent Networks By John R. Anderson, Institution of Electrical Engineers,2002. {{ISBN|0-85296-977-5}}, {{ISBN|978-0-85296-977-9}}
+
+==External links==
+* [https://web.archive.org/web/20110724182457/http://www.item.ntnu.no/fag/ttm4130/stottelitteratur/IN.pdf Tutorial on Intelligent Networks (archived 24 July 2011)]
+
+{{DEFAULTSORT:Intelligent Network}}
+[[Category:ITU-T recommendations]]
+[[Category:GSM standard]]
+[[Category:Signaling System 7]]
+[[Category:Network architecture]]( 2 :2022-06-30T12:26:56ZB4076676JZ
+	Wikipedia'https://en.wikipedia.org/wiki/Main_PageMediaWiki 1.40.0-wmf.8"first-letterR`
+.http://www.google.com/patents?vid=USPAT4191860.http://www.google.com/patents?vid=USPAT4191860R1
+'http://www.itu.int/rec/T-REC-Q.1210/en/Q.1210R1
+'http://www.itu.int/rec/T-REC-Q.1219/en/Q.1219Rq
+`http://telecom-info.njdepot.ericsson.net/site-cgi/ido/docs.cgi?ID=SEARCH&DOCUMENT=SR-NWT-002247&SR-NWT-002247Re
+Zhttp://telecom-info.njdepot.ericsson.net/site-cgi/ido/docs.cgi?ID=SEARCH&DOCUMENT=SR-3511&SR-3511Rj
+Zhttp://telecom-info.njdepot.ericsson.net/site-cgi/ido/docs.cgi?ID=SEARCH&DOCUMENT=GR-1129&GR-1129-CORERÚ
++https://www.mdpi.com/1424-8220/16/6/790/htm¬M. Kulin, C. Fortuna, E. De Poorter, D. Deschrijver and I. Moerman, Data-Driven Design of Intelligent Wireless Networks: An Overview and Tutorial, Sensors 2016, 16(6), 790; doi:10.3390/s16060790RÔ
+,https://ieeexplore.ieee.org/document/8360430æM. G. Kibria et al, Big Data Analytics, Machine Learning, and Artificial Intelligence in Next-Generation Wireless Networks, IEEE Access, Vol. 6, 17 May 2018, DOI: 10.1109/ACCESS.2018.2837692R¢
+fhttps://web.archive.org/web/20110724182457/http://www.item.ntnu.no/fag/ttm4130/stottelitteratur/IN.pdf8Tutorial on Intelligent Networks (archived 24 July 2011)bºìπõêΩÛòjê≠ˆï

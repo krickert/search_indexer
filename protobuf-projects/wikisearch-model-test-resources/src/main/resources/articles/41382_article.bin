@@ -1,0 +1,202 @@
+
+41382Μ-law algorithm�+The μ-law algorithm (sometimes written mu-law, often approximated as u-law) is a companding algorithm, primarily used in 8-bit PCM digital telecommunication systems in North America and Japan. It is one of two versions of the G.711 standard from ITU-T, the other version being the similar A-law. A-law is used in regions where digital telecommunication signals are carried on E-1 circuits, e.g. Europe.
+
+Companding algorithms reduce the dynamic range of an audio signal. In analog systems, this can increase the signal-to-noise ratio (SNR) achieved during transmission; in the digital domain, it can reduce the quantization error (hence increasing the signal-to-quantization-noise ratio). These SNR increases can be traded instead for reduced bandwidth for equivalent SNR.
+
+Algorithm types
+
+The μ-law algorithm may be described in an analog form and in a quantized digital form.
+
+Continuous
+
+For a given input , the equation for μ-law encoding is
+
+F(x) = \sgn(x) \dfrac{\ln(1 + \mu |x|)}{\ln(1 + \mu)}, \quad -1 \leq x \leq 1,
+
+where  in the North American and Japanese standards, and  is the sign function. It is important to note that the range of this function is −1 to 1.
+
+μ-law expansion is then given by the inverse equation:
+
+F^{-1}(y) = \sgn(y) \dfrac{(1 + \mu)^ - 1}{\mu}, \quad -1 \leq y \leq 1.
+
+Discrete
+
+The discrete form is defined in ITU-T Recommendation G.711.
+
+G.711 is unclear about how to code the values at the limit of a range (e.g. whether +31 codes to 0xEF or 0xF0).
+However, G.191 provides example code in the C language for a μ-law encoder.[https://www.itu.int/rec/T-REC-G.191/en G.191 : Software tools for speech and audio coding standardization] The difference between the positive and negative ranges, e.g. the negative range corresponding to +30 to +1 is −31 to −2. This is accounted for by the use of 1's complement (simple bit inversion) rather than 2's complement to convert a negative value to a positive value during encoding.
+
+Implementation
+
+The μ-law algorithm may be implemented in several ways:
+;Analog: Use an amplifier with non-linear gain to achieve companding entirely in the analog domain.
+;Non-linear ADC: Use an analog-to-digital converter with quantization levels which are unequally spaced to match the μ-law algorithm.
+;Digital: Use the quantized digital version of the μ-law algorithm to convert data once it is in the digital domain.
+
+;Software/DSP
+Use the continuous version of the μ-law algorithm to calculate the companded values.
+
+Usage justification 
+
+μ-law encoding is used because speech has a wide dynamic range. In analog signal transmission, in the presence of relatively constant background noise, the finer detail is lost. Given that the precision of the detail is compromised anyway, and assuming that the signal is to be perceived as audio by a human, one can take advantage of the fact that the perceived acoustic intensity level or loudness is logarithmic by compressing the signal using a logarithmic-response operational amplifier (Weber-Fechner law). In telecommunications circuits, most of the noise is injected on the lines, thus after the compressor, the intended signal is perceived as significantly louder than the static, compared to an uncompressed source. This became a common solution, and thus, prior to common digital usage, the μ-law specification was developed to define an interoperable standard.
+
+In digital systems, this pre-existing algorithm had the effect of significantly reducing the number of bits needed to encode recognizable human voice. Using μ-law, a sample could be effectively encoded in as few as 8 bits, a sample size that conveniently matched the symbol size of most standard computers.
+
+μ-law encoding effectively reduced the dynamic range of the signal, thereby increasing the coding efficiency while biasing the signal in a way that results in a signal-to-distortion ratio that is greater than that obtained by linear encoding for a given number of bits.
+
+The μ-law algorithm is also used in the .au format, which dates back at least to the SPARCstation 1 by Sun Microsystems as the native method used by the /dev/audio interface, widely used as a de facto standard for sound on Unix systems. The au format is also used in various common audio APIs such as the classes in the sun.audio Java package in Java 1.1 and in some C# methods.
+
+This plot illustrates how μ-law concentrates sampling in the smaller (softer) values. The horizontal axis represents the byte values 0-255 and the vertical axis is the 16-bit linear decoded value of μ-law encoding.
+
+Comparison with A-law
+
+The μ-law algorithm provides a slightly larger dynamic range than the A-law at the cost of worse proportional distortions for small signals. By convention, A-law is used for an international connection if at least one country uses it.
+
+See also
+
+* Audio level compression
+* Signal compression (disambiguation)
+* G.711
+* Tapered floating point
+
+References
+
+External links
+
+* [http://www.cisco.com/en/US/tech/tk1077/technologies_tech_note09186a00801149b3.shtml Waveform Coding Techniques] – details of implementation
+* [http://focus.ti.com/lit/an/spra163a/spra163a.pdf A-Law and mu-Law Companding Implementations Using the TMS320C54x] (PDF)
+* [http://focus.ti.com/lit/an/spra634/spra634.pdf TMS320C6000 μ-Law and A-Law Companding with Software or the McBSP] (PDF)
+* [https://web.archive.org/web/20110719132013/http://hazelware.luggle.com/tutorials/mulawcompression.html A-law and μ-law realisation (in C)]"�C{{Short description|Audio companding algorithm}}
+{{more footnotes|date=May 2018}}
+{{lowercase}}
+[[File:Ulaw alaw db.svg|thumb|350px|Companding of μ-law and A-law algorithms]]
+{{Listen
+| type         = music
+| header       = Audio quality comparison
+| filename     = Mu-law audio demo.flac
+| title        = μ-law conversion
+| filename2    = Larynx-HiFi-GAN speech sample.wav
+| title2       = Original file
+}}
+The '''μ-law algorithm''' (sometimes written '''[[Mu (letter)|mu]]-law''', often [[typographic approximation|approximated]] as '''u-law''') is a [[companding]] algorithm, primarily used in 8-bit [[PCM]] [[Digital data|digital]] [[telecommunication]] systems in [[North America]] and [[Japan]]. It is one of two versions of the [[G.711]] standard from [[ITU-T]], the other version being the similar [[A-law algorithm|A-law]]. A-law is used in regions where digital telecommunication signals are carried on E-1 circuits, e.g. Europe.
+
+Companding algorithms reduce the [[dynamic range]] of an audio [[Signal (electrical engineering)|signal]]. In analog systems, this can increase the [[signal-to-noise ratio]] (SNR) achieved during transmission; in the digital domain, it can reduce the quantization error (hence increasing the signal-to-quantization-noise ratio). These SNR increases can be traded instead for reduced [[Bandwidth (signal processing)|bandwidth]] for equivalent SNR.
+
+==Algorithm types==
+The μ-law algorithm may be described in an analog form and in a quantized digital form.
+
+===Continuous===
+[[File:Mu-law function.svg|thumb|μ-law function]]
+[[File:Inverse mu-law function.svg|thumb|Inverse μ-law function]]
+
+For a given input {{mvar|x}}, the equation for μ-law encoding is<ref name="mulaw-equation">{{cite web |url=https://www.cisco.com/c/en/us/support/docs/voice/h323/8123-waveform-coding.html |title=Waveform Coding Techniques - Cisco |access-date=2020-12-07 |date=2006-02-02}}</ref>
+<math display="block">
+F(x) = \sgn(x) \dfrac{\ln(1 + \mu |x|)}{\ln(1 + \mu)}, \quad -1 \leq x \leq 1,
+</math>
+
+where {{math|1=''μ'' = 255}} in the North American and Japanese standards, and {{math|1=sgn(''x'')}} is the [[sign function]]. It is important to note that the [[Range of a function|range]] of this function is −1 to 1.
+
+μ-law expansion is then given by the inverse equation:<ref name="mulaw-equation" />
+<math display="block">
+F^{-1}(y) = \sgn(y) \dfrac{(1 + \mu)^{|y|} - 1}{\mu}, \quad -1 \leq y \leq 1.
+</math>
+
+===Discrete===
+The discrete form is defined in ITU-T Recommendation [[G.711]].<ref>{{cite web |url=http://www.itu.int/rec/dologin_pub.asp?lang=e&id=T-REC-G.711-198811-I!!PDF-E&type=items |title=ITU-T Recommendation G.711}}</ref>
+
+G.711 is unclear about how to code the values at the limit of a range (e.g. whether +31 codes to 0xEF or 0xF0).{{citation needed|date=October 2016}}
+However, G.191 provides example code in the [[C programming language|C language]] for a μ-law encoder.<ref>[https://www.itu.int/rec/T-REC-G.191/en G.191 : Software tools for speech and audio coding standardization]</ref> The difference between the positive and negative ranges, e.g. the negative range corresponding to +30 to +1 is −31 to −2. This is accounted for by the use of [[1's complement]] (simple bit inversion) rather than [[2's complement]] to convert a negative value to a positive value during encoding.
+
+{| class="wikitable"
+|+ Quantized μ-law algorithm
+! 14-bit binary linear input code !! 8-bit compressed code
+|-
+| +8158 to +4063 in 16 intervals of 256 || 0x80 + interval number
+|-
+| +4062 to +2015 in 16 intervals of 128 || 0x90 + interval number
+|-
+| +2014 to +991 in 16 intervals of 64 || 0xA0 + interval number
+|-
+| +990 to +479 in 16 intervals of 32 || 0xB0 + interval number
+|-
+| +478 to +223 in 16 intervals of 16 || 0xC0 + interval number
+|-
+| +222 to +95 in 16 intervals of 8 || 0xD0 + interval number
+|-
+| +94 to +31 in 16 intervals of 4 || 0xE0 + interval number
+|-
+| +30 to +1 in 15 intervals of 2 || 0xF0 + interval number
+|-
+| 0 || 0xFF
+|-
+| −1 || 0x7F
+|-
+| −31 to −2 in 15 intervals of 2 || 0x70 + interval number
+|-
+| −95 to −32 in 16 intervals of 4 || 0x60 + interval number
+|-
+| −223 to −96 in 16 intervals of 8 || 0x50 + interval number
+|-
+| −479 to −224 in 16 intervals of 16 || 0x40 + interval number
+|-
+| −991 to −480 in 16 intervals of 32 || 0x30 + interval number
+|-
+| −2015 to −992 in 16 intervals of 64 || 0x20 + interval number
+|-
+| −4063 to −2016 in 16 intervals of 128 || 0x10 + interval number
+|-
+| −8159 to −4064 in 16 intervals of 256 || 0x00 + interval number
+|}
+
+==Implementation==
+The μ-law algorithm may be implemented in several ways:
+;Analog: Use an amplifier with non-linear gain to achieve companding entirely in the analog domain.
+;Non-linear ADC: Use an [[analog-to-digital converter]] with quantization levels which are unequally spaced to match the μ-law algorithm.
+;Digital: Use the quantized digital version of the μ-law algorithm to convert data once it is in the digital domain.
+
+;Software/DSP
+:Use the continuous version of the μ-law algorithm to calculate the companded values.
+
+== Usage justification ==
+μ-law encoding is used because [[Speech communication|speech]] has a wide [[dynamic range]]. In analog signal transmission, in the presence of relatively constant background noise, the finer detail is lost. Given that the precision of the detail is compromised anyway, and assuming that the signal is to be perceived as audio by a human, one can take advantage of the fact that the perceived [[acoustic intensity level]] or [[loudness]] is logarithmic by compressing the signal using a logarithmic-response operational amplifier ([[Weber-Fechner law]]). In telecommunications circuits, most of the noise is injected on the lines, thus after the compressor, the intended signal is perceived as significantly louder than the static, compared to an uncompressed source. This became a common solution, and thus, prior to common digital usage, the μ-law specification was developed to define an interoperable standard.
+
+In digital systems, this pre-existing algorithm had the effect of significantly reducing the number of bits needed to encode recognizable human voice. Using μ-law, a sample could be effectively encoded in as few as 8 bits, a sample size that conveniently matched the symbol size of most standard computers.
+
+μ-law encoding effectively reduced the dynamic range of the signal, thereby increasing the [[Channel coding|coding]] efficiency while biasing the signal in a way that results in a signal-to-[[distortion]] ratio that is greater than that obtained by linear encoding for a given number of bits.
+
+[[File:Ulaw.JPG|thumb|400px|right|μ-law decoding as generated with the Sun Microsystems C-language routine g711.c commonly available on the Internet.]]
+The μ-law algorithm is also used in the [[Au file format|.au format]], which dates back at least to the [[SPARCstation 1]] by Sun Microsystems as the native method used by the /dev/audio interface, widely used as a de facto standard for sound on Unix systems. The au format is also used in various common audio [[Application programming interface|API]]s such as the classes in the sun.audio [[Java package]] in [[Java platform|Java]] 1.1 and in some [[C Sharp (programming language)|C#]] methods.
+
+This plot illustrates how μ-law concentrates sampling in the smaller (softer) values. The horizontal axis represents the byte values 0-255 and the vertical axis is the 16-bit linear decoded value of μ-law encoding.
+
+==Comparison with A-law==
+The μ-law algorithm provides a slightly larger dynamic range than the A-law at the cost of worse proportional distortions for small signals. By convention, A-law is used for an international connection if at least one country uses it.
+
+==See also==
+* [[Audio level compression]]
+* [[Signal compression (disambiguation)]]
+* [[G.711]]
+* [[Tapered floating point]]
+
+==References==
+<references/>
+{{FS1037C}}
+
+==External links==
+* [http://www.cisco.com/en/US/tech/tk1077/technologies_tech_note09186a00801149b3.shtml Waveform Coding Techniques] – details of implementation
+* [http://focus.ti.com/lit/an/spra163a/spra163a.pdf A-Law and mu-Law Companding Implementations Using the TMS320C54x] ([[PDF]])
+* [http://focus.ti.com/lit/an/spra634/spra634.pdf TMS320C6000 μ-Law and A-Law Companding with Software or the McBSP] ([[PDF]])
+* [https://web.archive.org/web/20110719132013/http://hazelware.luggle.com/tutorials/mulawcompression.html A-law and μ-law realisation (in C)]
+
+{{Compression Methods}}
+{{Compression formats}}
+
+{{DEFAULTSORT:Mu-Law Algorithm}}
+[[Category:Audio codecs]]
+[[Category:ITU-T recommendations]]( 2 :2022-10-19T22:23:59ZB13263935JZ
+	Wikipedia'https://en.wikipedia.org/wiki/Main_PageMediaWiki 1.40.0-wmf.8"first-letterRl
+&https://www.itu.int/rec/T-REC-G.191/enBG.191 : Software tools for speech and audio coding standardizationRq
+Shttp://www.cisco.com/en/US/tech/tk1077/technologies_tech_note09186a00801149b3.shtmlWaveform Coding TechniquesRt
+0http://focus.ti.com/lit/an/spra163a/spra163a.pdf@A-Law and mu-Law Companding Implementations Using the TMS320C54xRt
+.http://focus.ti.com/lit/an/spra634/spra634.pdfBTMS320C6000 μ-Law and A-Law Companding with Software or the McBSPR�
+fhttps://web.archive.org/web/20110719132013/http://hazelware.luggle.com/tutorials/mulawcompression.html#A-law and μ-law realisation (in C)b�������j����

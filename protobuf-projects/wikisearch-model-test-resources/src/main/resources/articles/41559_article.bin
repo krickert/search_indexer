@@ -1,0 +1,129 @@
+
+41559
+Plane waveï%In physics, a plane wave is a special case of wave or field: a physical quantity whose value, at any moment, is constant through any plane that is perpendicular to a fixed direction in space.  
+
+For any position \vec x in space and any time t, the value of such a field can be written as
+F(\vec x,t) = G(\vec x \cdot \vec n, t),
+where \vec n is a unit-length vector, and G(d,t) is a function that gives the field's value as dependent on only two real parameters: the time t, and the scalar-valued displacement d = \vec x \cdot \vec n of the point \vec x along the direction \vec n. The displacement is constant over each plane perpendicular to \vec n.
+
+The values of the field F may be scalars, vectors, or any other physical or mathematical quantity.  They can be complex numbers, as in a complex exponential plane wave.  
+
+When the values of F are vectors, the wave is said to be a longitudinal wave if the vectors are always  collinear with the vector \vec n, and a transverse wave if they are always orthogonal (perpendicular) to it.
+
+Special types
+
+Traveling plane wave
+
+Often the term "plane wave" refers specifically to a traveling plane wave, whose evolution in time can be described as simple translation of the field at a constant wave speed c along the direction perpendicular to the wavefronts.  Such a field can be written as  
+F(\vec x, t)=G\left(\vec x \cdot \vec n - c t\right)\,
+where G(u) is now a function of a single real parameter u d - c t, that describes the "profile" of the wave, namely the value of the field at time t 
+ 0, for each displacement d = \vec x \cdot \vec n.  In that case, \vec n is called the direction of propagation. For each displacement d, the moving plane perpendicular to \vec n at distance d + c t from the origin is called a  "wavefront".  This plane travels along the direction of propagation \vec n with velocity c; and the value of the field is then the same, and constant in time, at every one of its points. 
+
+Sinusoidal plane wave
+
+The term is also used, even more specifically, to mean a "monochromatic" or sinusoidal plane wave: a travelling plane wave whose profile G(u)is a sinusoidal function.  That is,
+F(\vec x, t)=A \sin\left(2\pi f (\vec x \cdot \vec n - c t) + \varphi\right)\,
+The parameter A, which may be a scalar or a vector, is called the amplitude of the wave; the scalar coefficient f is its "spatial frequency"; and the scalar \varphi is its "phase".
+
+A true plane wave cannot physically exist, because it would have to fill all space.  Nevertheless, the plane wave model is important and widely used in physics. The waves emitted by any source with finite extent into a large homogeneous region of space can be well approximated by plane waves when viewed over any part of that region that is sufficiently small compared to its distance from the source.  That is the case, for example, of the light waves from a distant star that arrive at a telescope.
+
+Plane standing wave 
+
+A standing wave is a field whose value can be expressed as the product of two functions, one depending only on position, the other only on time.  A plane standing wave, in particular, can be expressed as
+F(\vec x, t) = G(\vec x \cdot \vec n)\,S(t)
+where G is a function of one scalar parameter (the displacement d = \vec x \cdot \vec n) with scalar or vector values, and S is a scalar function of time.  
+
+This representation is not unique, since the same field values are obtained if S and G are scaled by reciprocal factors. If |S(t)| is bounded in the time interval of interest (which is usually the case in physical contexts), S and G can be scaled so that the maximum value of |S(t)| is 1.  Then |G(\vec x \cdot \vec n)| will be the maximum field magnitude seen at the point \vec x.
+
+Properties
+
+A plane wave can be studied by ignoring the directions perpendicular to the direction vector \vec n; that is, by considering the function G(z,t) = F(z \vec n, t) as a wave in a one-dimensional medium. 
+
+Any local operator, linear or not, applied to a plane wave yields a plane wave.  Any linear combination of plane waves with the same normal vector \vec n is also a plane wave.
+
+For a scalar plane wave in two or three dimensions, the gradient of the field is always collinear with the direction \vec n; specifically, \nabla F(\vec x,t) = \vec n\partial_1 G(\vec x \cdot \vec n, t), where \partial_1 G is the partial derivative of G with respect to the first argument. 
+
+The divergence of a vector-valued plane wave depends only on the projection of the vector G(d,t) in the direction \vec n. Specifically,
+ (\nabla \cdot F)(\vec x, t) \;=\; \vec n \cdot\partial_1G(\vec x \cdot \vec n, t)
+In particular, a transverse planar wave satisfies \nabla \cdot F = 0 for all \vec x and t.
+
+See also 
+
+*Plane wave expansion
+*Rectilinear propagation
+*Wave equation
+*Weyl expansion
+
+References
+
+Sources
+
+*
+*"Ò4{{Use American English|date=January 2019}}
+{{Short description|Type of wave propagating in 3 dimensions}}
+
+In [[physics]], a '''plane wave''' is a special case of [[wave (physics)|wave]] or [[field (physics)|field]]: a physical quantity whose value, at any moment, is constant through any plane that is perpendicular to a fixed direction in space.{{sfn|Brekhovskikh|1980|p=1-3}}  
+
+For any position <math>\vec x</math> in space and any time <math>t</math>, the value of such a field can be written as
+:<math>F(\vec x,t) = G(\vec x \cdot \vec n, t),</math>
+where <math>\vec n</math> is a [[unit vector|unit-length vector]], and <math>G(d,t)</math> is a function that gives the field's value as dependent on only two [[real number|real]] parameters: the time <math>t</math>, and the scalar-valued [[Displacement (geometry)|displacement]] <math>d = \vec x \cdot \vec n</math> of the point <math>\vec x</math> along the direction <math>\vec n</math>. The displacement is constant over each plane perpendicular to <math>\vec n</math>.
+
+The values of the field <math>F</math> may be scalars, vectors, or any other physical or mathematical quantity.  They can be [[complex numbers]], as in a [[Sinusoidal_plane_wave#Complex_exponential_form|complex exponential plane wave]].  
+
+When the values of <math>F</math> are vectors, the wave is said to be a [[longitudinal wave]] if the vectors are always  collinear with the vector <math>\vec n</math>, and a [[transverse wave]] if they are always orthogonal (perpendicular) to it.
+
+==Special types==
+
+===Traveling plane wave===
+
+[[File:Plane wave wavefronts 3D.svg|thumb|right|300px|The [[wavefront]]s of a plane wave traveling in [[3-space]]]]
+Often the term "plane wave" refers specifically to a [[traveling plane wave]], whose evolution in time can be described as simple translation of the field at a constant '''wave speed''' <math>c</math> along the direction perpendicular to the wavefronts.  Such a field can be written as  
+:<math>F(\vec x, t)=G\left(\vec x \cdot \vec n - c t\right)\,</math>
+where <math>G(u)</math> is now a function of a single real parameter <math>u = d - c t</math>, that describes the "profile" of the wave, namely the value of the field at time <math>t = 0</math>, for each displacement <math>d = \vec x \cdot \vec n</math>.  In that case, <math>\vec n</math> is called the '''direction of propagation'''. For each displacement <math>d</math>, the moving plane perpendicular to <math>\vec n</math> at distance <math>d + c t</math> from the origin is called a  "[[wavefront]]".  This plane travels along the direction of propagation <math>\vec n</math> with velocity <math>c</math>; and the value of the field is then the same, and constant in time, at every one of its points.{{sfn|Jackson|1998|p=296}} 
+
+===Sinusoidal plane wave===
+{{main|Sinusoidal plane wave}}
+
+The term is also used, even more specifically, to mean a "monochromatic" or [[sinusoidal plane wave]]: a travelling plane wave whose profile <math>G(u)</math>is a [[sinusoidal]] function.  That is,
+:<math>F(\vec x, t)=A \sin\left(2\pi f (\vec x \cdot \vec n - c t) + \varphi\right)\,</math>
+The parameter <math>A</math>, which may be a scalar or a vector, is called the [[amplitude]] of the wave; the scalar coefficient <math>f</math> is its "spatial frequency"; and the scalar <math>\varphi</math> is its "phase".
+
+A true plane wave cannot physically exist, because it would have to fill all space.  Nevertheless, the plane wave model is important and widely used in physics. The waves emitted by any source with finite extent into a large homogeneous region of space can be well approximated by plane waves when viewed over any part of that region that is sufficiently small compared to its distance from the source.  That is the case, for example, of the [[light wave]]s from a distant star that arrive at a telescope.
+
+===Plane standing wave ===
+
+A [[standing wave]] is a field whose value can be expressed as the product of two functions, one depending only on position, the other only on time.  A [[plane standing wave]], in particular, can be expressed as
+:<math>F(\vec x, t) = G(\vec x \cdot \vec n)\,S(t)</math>
+where <math>G</math> is a function of one scalar parameter (the displacement <math>d = \vec x \cdot \vec n</math>) with scalar or vector values, and <math>S</math> is a scalar function of time.  
+
+This representation is not unique, since the same field values are obtained if <math>S</math> and <math>G</math> are scaled by reciprocal factors. If <math>|S(t)|</math> is bounded in the time interval of interest (which is usually the case in physical contexts), <math>S</math> and <math>G</math> can be scaled so that the maximum value of <math>|S(t)|</math> is 1.  Then <math>|G(\vec x \cdot \vec n)|</math> will be the maximum field magnitude seen at the point <math>\vec x</math>.
+
+==Properties==
+
+A plane wave can be studied by ignoring the directions perpendicular to the direction vector <math>\vec n</math>; that is, by considering the function <math>G(z,t) = F(z \vec n, t)</math> as a wave in a one-dimensional medium. 
+
+Any [[local operator]], [[linear operator|linear]] or not, applied to a plane wave yields a plane wave.  Any linear combination of plane waves with the same normal vector <math>\vec n</math> is also a plane wave.
+
+For a scalar plane wave in two or three dimensions, the gradient of the field is always collinear with the direction <math>\vec n</math>; specifically, <math>\nabla F(\vec x,t) = \vec n\partial_1 G(\vec x \cdot \vec n, t)</math>, where <math>\partial_1 G</math> is the partial derivative of <math>G</math> with respect to the first argument. 
+
+The [[Divergence|divergence]] of a vector-valued plane wave depends only on the projection of the vector <math>G(d,t)</math> in the direction <math>\vec n</math>. Specifically,
+:<math> (\nabla \cdot F)(\vec x, t) \;=\; \vec n \cdot\partial_1G(\vec x \cdot \vec n, t)</math>
+In particular, a transverse planar wave satisfies <math>\nabla \cdot F = 0</math> for all <math>\vec x</math> and <math>t</math>.<!-- More: curl, laplacian...-->
+
+== See also ==
+{{Wiktionary}}
+*[[Plane wave expansion]]
+*[[Rectilinear propagation]]
+*[[Wave equation]]
+*[[Weyl expansion]]
+
+==References==
+{{Reflist}}
+
+==Sources==
+*{{cite book |last=Brekhovskikh |first= L. |author-link= Leonid Brekhovskikh |date=1980 |title=Waves in Layered Media |location=New York |publisher=[[Academic Press]] |isbn= 9780323161626 |edition=2}}
+*{{cite book |last=Jackson |first= John David |author-link= John David Jackson (physicist) |date= 1998 |title=[[Classical Electrodynamics (book)|Classical Electrodynamics]] |location=New York |publisher=[[Wiley (publisher)|Wiley]] |isbn= 9780471309321 |edition=3}}
+
+[[Category:Wave mechanics]]( 2 :2022-05-27T20:20:00ZB
+1090162470JZ
+	Wikipedia'https://en.wikipedia.org/wiki/Main_PageMediaWiki 1.40.0-wmf.8"first-letterb¿“¹›ðÅÙAjðäÄ”

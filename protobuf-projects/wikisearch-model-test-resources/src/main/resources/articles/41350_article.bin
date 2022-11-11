@@ -1,0 +1,132 @@
+
+41350Manchester codeá!In telecommunication and data storage, Manchester code (also known as phase encoding, or PE) is a line code in which the encoding of each data bit is either low then high, or high then low, for equal time. It is a self-clocking signal with no DC component. Consequently, electrical connections using a Manchester code are easily galvanically isolated.
+
+Manchester code derives its name from its development at the University of Manchester, where the coding was used for storing data on the magnetic drums of the Manchester Mark 1 computer.
+
+Manchester code was widely used for magnetic recording on 1600Â bpi computer tapes before the introduction of 6250Â bpi tapes which used the more efficient group-coded recording. Manchester code was used in early Ethernet physical layer standards and is still used in consumer IR protocols, RFID and near-field communication.
+
+Features 
+
+Manchester coding is a special case of binary phase-shift keying (BPSK), where the data controls the phase of a square wave carrier whose frequency is the data rate. Manchester code ensures frequent line voltage transitions, directly proportional to the clock rate; this helps clock recovery.
+
+The DC component of the encoded signal is not dependent on the data and therefore carries no information. Therefore connections may be inductively or capacitively coupled, allowing the signal to be conveyed conveniently by galvanically isolated media (e.g., Ethernet) using a network isolatorâ€”a simple one-to-one pulse transformer which cannot convey a DC component.
+
+According to Cisco, "Manchester encoding introduces some difficult frequency-related problems that make it unsuitable for use at higher data rates".
+
+There are more complex codes, such as 8B/10B encoding, that use less bandwidth to achieve the same data rate but may be less tolerant of frequency errors and jitter in the transmitter and receiver reference clocks.
+
+Encoding and decoding
+
+Manchester code always has a transition at the middle of each bit period and may (depending on the information to be transmitted) have a transition at the start of the period also. The direction of the mid-bit transition indicates the data. Transitions at the period boundaries do not carry information.  They exist only to place the signal in the correct state to allow the mid-bit transition.
+
+Conventions for representation of data
+
+There are two opposing conventions for the representations of data.
+
+The first of these was first published by G. E. Thomas in 1949 and is followed by numerous authors (e.g., Andy Tanenbaum). It specifies that for a 0 bit the signal levels will be lowâ€“high (assuming an amplitude physical encoding of the data) â€“ with a low level in the first half of the bit period, and a high level in the second half. For a 1 bit the signal levels will be highâ€“low. This is also known as Manchester II or Biphase-L code.
+
+The second convention is also followed by numerous authors (e.g., William Stallings) as well as by IEEE 802.4 (token bus) and lower speed versions of IEEE 802.3 (Ethernet) standards. It states that a logic 0 is represented by a highâ€“low signal sequence and a logic 1 is represented by a lowâ€“high signal sequence.
+
+If a Manchester encoded signal is inverted in communication, it is transformed from one convention to the other. This ambiguity can be overcome by using differential Manchester encoding.
+
+Decoding
+
+The existence of guaranteed transitions allows the signal to be self-clocking, and also allows the receiver to align correctly; the receiver can identify if it is misaligned by half a bit period, as there will no longer always be a transition during each bit period. The price of these benefits is a doubling of the bandwidth requirement compared to simpler NRZ coding schemes.
+
+Encoding
+
+Encoding conventions are as follows:
+* Each bit is transmitted in a fixed time (the "period").
+* A 0 is expressed by a low-to-high transition, a 1 by high-to-low transition (according to G. E. Thomas's convention â€“ in the IEEE 802.3 convention, the reverse is true).
+* The transitions which signify 0 or 1 occur at the midpoint of a period.
+* Transitions at the start of a period are overhead and don't signify data.
+
+See also
+
+* Coded mark inversion
+* Differential Manchester encoding
+* Binary offset carrier modulation
+
+References"ö;{{short description|Line code used in early magnetic data storage and Ethernet}}
+{{Use dmy dates|date=April 2022}}
+
+In [[telecommunication]] and [[computer data storage|data storage]], '''Manchester code''' (also known as '''phase encoding''', or '''PE''') is a [[line code]] in which the encoding of each data [[bit]] is either low then high, or high then low, for equal time. It is a [[self-clocking signal]] with no [[DC component]]. Consequently, electrical connections using a Manchester code are easily [[galvanic isolation|galvanically isolated]].
+
+Manchester code derives its name from its development at the [[University of Manchester]], where the coding was used for storing data on the magnetic drums of the [[Manchester Mark 1]] computer.
+
+Manchester code was widely used for [[magnetic recording]] on 1600&nbsp;bpi computer tapes before the introduction of 6250&nbsp;bpi tapes which used the more efficient [[group-coded recording]].<ref>{{cite web |title=Digital Magnetic Tape Recording |author-first=John J. G. |author-last=Savard |date=2018 |orig-year=2006 |work=quadibloc |url=http://www.quadibloc.com/comp/tapeint.htm |access-date=2018-07-16 |url-status=dead |archive-url=https://web.archive.org/web/20180702234956/http://www.quadibloc.com/comp/tapeint.htm |archive-date=2018-07-02 }}</ref> Manchester code was used in early [[Ethernet physical layer]] standards and is still used in [[consumer IR]] protocols, [[RFID]] and [[near-field communication]].
+
+== Features ==
+Manchester coding is a special case of [[binary phase-shift keying]] (BPSK), where the data controls the [[Phase (waves)|phase]] of a square wave [[Carrier signal|carrier]] whose frequency is the data rate. Manchester code ensures frequent line voltage transitions, directly proportional to the clock rate; this helps [[clock recovery]].
+
+The [[DC component]] of the encoded signal is not dependent on the data and therefore carries no information. Therefore connections may be [[Inductive coupling|inductively]] or [[Capacitive coupling|capacitively]] coupled, allowing the signal to be conveyed conveniently by galvanically isolated media (e.g., Ethernet) using a [[network isolator]]â€”a simple one-to-one [[pulse transformer]] which cannot convey a DC component.
+
+According to [[Cisco]], "Manchester encoding introduces some difficult frequency-related problems that make it unsuitable for use at higher data rates".<ref>{{citation |url=http://docwiki.cisco.com/wiki/Ethernet_Technologies |title=Ethernet Technologies |publisher=[[Cisco Systems]] |access-date=2017-09-12 |quote=Manchester encoding introduces some difficult frequency-related problems that make it unsuitable for use at higher data rates. |archive-url=https://web.archive.org/web/20181228005303/http://docwiki.cisco.com/wiki/Ethernet_Technologies |archive-date=2018-12-28 |url-status=dead}}</ref><!--Difficulties are in meeting [[Title 47 CFR Part 15]] and other RF emissions requirements.-->
+
+There are more complex codes, such as [[8B/10B encoding]], that use less [[bandwidth (signal processing)|bandwidth]] to achieve the same data rate but may be less tolerant of frequency errors and [[jitter]] in the transmitter and receiver reference clocks.{{citation needed|date=November 2015}}
+
+==Encoding and decoding==
+[[Image:Manchester encoding both conventions.svg|thumb|650px|An example of Manchester encoding showing both [[Manchester code#Conventions for representation of data|conventions for representation of data]]]]
+
+Manchester code always has a transition at the middle of each bit period and may (depending on the information to be transmitted) have a transition at the start of the period also. The direction of the mid-bit transition indicates the data. Transitions at the period boundaries do not carry information.  They exist only to place the signal in the correct state to allow the mid-bit transition.
+
+===Conventions for representation of data===
+There are two opposing conventions for the representations of data.
+
+The first of these was first published by G. E. Thomas in 1949 and is followed by numerous authors (e.g., [[Andrew S. Tanenbaum|Andy Tanenbaum]]).<ref name="tanenbaum">{{cite book |author-last=Tanenbaum |author-first=Andrew S. |author-link=Andrew S. Tanenbaum |title=Computer Networks |edition=4th |publisher=[[Prentice Hall]] |date=2002 |pages=[https://archive.org/details/computernetworks00tane_2/page/274 274â€“275] |isbn=0-13-066102-3 |url=https://archive.org/details/computernetworks00tane_2/page/274 }}</ref> It specifies that for a 0 bit the signal levels will be lowâ€“high (assuming an amplitude physical encoding of the data) â€“ with a low level in the first half of the bit period, and a high level in the second half. For a 1 bit the signal levels will be highâ€“low. This is also known as Manchester II or Biphase-L code.
+
+The second convention is also followed by numerous authors (e.g., [[William Stallings]])<ref name="stallings">{{cite book |author-last=Stallings |author-first=William |author-link=William Stallings |title=Data and Computer Communications |edition=7th |publisher=[[Prentice Hall]] |date=2004 |pages=[https://archive.org/details/datacomputercomm00stal_1/page/137 137â€“138] |isbn=0-13-100681-9 |url=https://archive.org/details/datacomputercomm00stal_1/page/137 }}</ref> as well as by [[IEEE 802.4]] (token bus) and lower speed versions of [[IEEE 802.3]] (Ethernet) standards. It states that a logic 0 is represented by a highâ€“low signal sequence and a logic 1 is represented by a lowâ€“high signal sequence.
+
+If a Manchester encoded signal is inverted in communication, it is transformed from one convention to the other. This ambiguity can be overcome by using [[differential Manchester encoding]].
+
+===Decoding===
+The existence of guaranteed transitions allows the signal to be self-clocking, and also allows the receiver to align correctly; the receiver can identify if it is misaligned by half a bit period, as there will no longer always be a transition during each bit period. The price of these benefits is a doubling of the bandwidth requirement compared to simpler [[non-return-to-zero|NRZ]] coding schemes.
+
+===Encoding===
+{| class="wikitable" style="text-align:center;"
+|+Encoding data using [[exclusive or]] logic (802.3 convention)<ref>{{citation |url=https://www.maximintegrated.com/en/app-notes/index.mvp/id/3435 |title=Manchester Data Encoding for Radio Communications |access-date=2018-05-28}}</ref>
+|-
+! Original data
+!
+! Clock
+!
+! Manchester value
+|-
+| rowspan=2 | 0
+| rowspan=4 | XOR <br />âŠ•
+| 0
+| rowspan=4 | =
+| 0
+|-
+| 1 || 1
+|-
+| rowspan=2 | 1
+| 0 || 1
+|-
+| 1 || 0
+|}
+
+Encoding conventions are as follows:
+* Each bit is transmitted in a fixed time (the "period").
+* A <code>0</code> is expressed by a low-to-high transition, a <code>1</code> by high-to-low transition (according to G. E. Thomas's convention â€“ in the IEEE 802.3 convention, the reverse is true).<ref name="Manchesterencoding">{{Cite journal |author-last1=Forster |author-first1=R. |title=Manchester encoding: Opposing definitions resolved |doi=10.1049/esej:20000609 |journal=Engineering Science & Education Journal |volume=9 |issue=6 |pages=278â€“280 |date=2000}}</ref>
+* The transitions which signify <code>0</code> or <code>1</code> occur at the midpoint of a period.
+* Transitions at the start of a period are overhead and don't signify data.
+
+==See also==
+* [[Coded mark inversion]]
+* [[Differential Manchester encoding]]
+* [[Binary offset carrier modulation]]
+
+==References==
+{{Reflist}}
+{{refbegin}}
+{{FS1037C MS188}}
+{{refend}}
+
+{{Bit-encoding}}
+
+[[Category:Line codes]]
+[[Category:Department of Computer Science, University of Manchester]]( 2 :2022-04-17T23:47:30ZB10363JZ
+	Wikipedia'https://en.wikipedia.org/wiki/Main_PageMediaWiki 1.40.0-wmf.8"first-letterRJ
+=https://archive.org/details/computernetworks00tane_2/page/274	274â€“275RJ
+=https://archive.org/details/datacomputercomm00stal_1/page/137	137â€“138b½“¹›¨¯†Ãj’Îò’

@@ -1,0 +1,146 @@
+
+41402NeperÚThe neper (symbol: Np) is a logarithmic unit for ratios of measurements of physical field and power quantities, such as gain and loss of electronic signals. The unit's name is derived from the name of John Napier, the inventor of logarithms. As is the case for the decibel and bel, the neper is a unit defined in the international standard ISO 80000. It is not part of the International System of Units (SI), but is accepted for use alongside the SI.
+
+Definition
+
+Like the decibel, the neper is a unit in a logarithmic scale. While the bel uses the decadic (base-10) logarithm to compute ratios, the neper uses the natural logarithm, based on Euler's number (). The value in nepers of a ratio of two signal amplitudes or root-power quantities is given by 
+
+L_{\rm Np} = \ln\frac{x_1}{x_2}, 
+
+where x_1 and x_2 are the signal amplitudes, and  is the natural logarithm. The value in nepers of a ratio of two power quantities is given by
+
+L_{\rm Np} = \frac{1}{2} \ln\frac{p_1}{p_2}, 
+
+where p_1 and p_2 are the signal powers.
+
+In the International System of Quantities, the neper is defined as .[http://iopscience.iop.org/article/10.1088/0026-1394/30/5/010/pdf Thor, A. J. (1994). New International Standards for Quantities and Units. Metrologia, 30(5), 517.]
+
+Units
+
+The neper is defined in terms of ratios of field quantities â€” also called root-power quantities â€” (for example, voltage or current amplitudes in electrical circuits, or pressure in acoustics), whereas the decibel was originally defined in terms of power ratios.  A power ratio 10 log r dB is equivalent to a field-quantity ratio 20 log r dB, since power in a linear system is proportional to the square (Joule's laws) of the amplitude.  Hence the decibel and the neper have a fixed ratio to each other:
+
+1\ \text{Np} = 20 \log_{10} e\ \text{dB} \approx \text{8.685889638 dB} \,
+
+and
+
+1\ \mathrm{dB} = \frac{1}{20} \ln(10)\ \mathrm{Np} \approx \text{0.115129255 Np}. \,
+
+The (voltage) level ratio is
+
+\begin{align}
+L & = 10 \log_{10} \frac{x_1^2}{x_2^2} & \text{dB} \\
+  & = 10 \log_{10} {\left(\frac{x_1}{x_2}\right)}^2 & \text{dB} \\
+  & = 20 \log_{10} \frac{x_1}{x_2} & \text{dB} \\
+  & = \ln \frac{x_1}{x_2} & \text{Np}. \\
+\end{align}
+
+Like the decibel, the neper is a dimensionless unit. The International Telecommunication Union (ITU) recognizes both units. Only the neper is coherent with the SI.ISO 80000-3:2007 Â§0.5
+
+Applications
+
+The neper is a natural linear unit of relative difference, meaning in nepers (logarithmic units) relative differences add rather than multiply. This property is shared with logarithmic units in other bases, such as the bel.
+
+The derived units decineper (1 dNp 0.1 neper) and centineper (1 cNp 
+ 0.01 neper) are also used. The centineper for root-power quantities corresponds to a log point or log percentage, see .
+
+See also 
+
+*Nat (unit)
+
+References 
+
+Works 
+
+* 
+
+Further reading 
+
+* 
+* 
+
+External links 
+
+*[https://web.archive.org/web/20140716201523/http://www.microwaves101.com/ENCYCLOPEDIA/neper.cfm What's a neper?]
+*[http://www.sengpielaudio.com/calculator-neper.htm Conversion of level gain and loss: neper, decibel, and bel]
+*[https://web.archive.org/web/20140429141423/http://www.microwaves101.com/encyclopedia/transmission_loss.cfm Calculating transmission line losses]"ó6[[File:John Napier.jpg|thumb|[[John Napier]] after whom the unit is named]]
+{{short description|Logarithmic unit for ratios of measurements of physical field and power quantities}}
+{{other uses}}
+{{refimprove|date=December 2018}}
+The '''neper''' (symbol: '''Np''') is a [[logarithmic unit]] for [[ratio]]s of measurements of physical field and power quantities, such as [[gain (electronics)|gain]] and loss of electronic signals. The unit's name is derived from the name of [[John Napier]], the inventor of logarithms. As is the case for the [[decibel]] and [[Bel (unit)|bel]], the neper is a unit defined in the [[international standard]] [[ISO 80000]]. It is not part of the [[International System of Units]] (SI), but is accepted for use alongside the SI.<ref name="BIPM">{{Cite book|url=https://www.bipm.org/documents/20126/41483022/SI-Brochure-9-EN.pdf/2d2b50bf-f2b4-9661-f402-5f9d66e4b507 |archive-url=https://ghostarchive.org/archive/20221009/https://www.bipm.org/documents/20126/41483022/SI-Brochure-9-EN.pdf/2d2b50bf-f2b4-9661-f402-5f9d66e4b507 |archive-date=2022-10-09 |url-status=live|title=The International System of Units (SI).|publisher=[[International Bureau of Weights and Measures]]|year=2019|edition=9|pages=145â€“146}}</ref>
+
+==Definition==
+Like the [[decibel]], the neper is a unit in a [[logarithmic scale]]. While the bel uses the decadic (base-10) [[logarithm]] to compute ratios, the neper uses the [[natural logarithm]], based on [[Euler's number]] ({{nowrap|[[e (mathematical constant)|''e'']] â‰ˆ 2.71828}}). The value in nepers of a ratio of two signal amplitudes or [[root-power quantity|root-power quantities]] is given by<ref name=IEC> {{cite techreport |title=Letter symbols to be used in electrical technology - Part 3: Logarithmic and related quantities, and their units |number=[[IEC 60027-3]]:2002|type=International standard |institution= International Electrotechnical Commission |date=2002-07-19}}</ref>
+:<math>
+L_{\rm Np} = \ln\frac{x_1}{x_2}, 
+</math>
+
+where <math>x_1</math> and <math>x_2</math> are the signal amplitudes, and {{math|ln}} is the natural logarithm. The value in nepers of a ratio of two [[power quantity|power quantities]] is given by<ref name=IEC/>
+:<math>
+L_{\rm Np} = \frac{1}{2} \ln\frac{p_1}{p_2}, 
+</math>
+
+where <math>p_1</math> and <math>p_2</math> are the signal powers.
+
+In the [[International System of Quantities]], the neper is defined as {{nowrap|1=1 Np = 1}}.<ref>[http://iopscience.iop.org/article/10.1088/0026-1394/30/5/010/pdf Thor, A. J. (1994). New International Standards for Quantities and Units. Metrologia, 30(5), 517.]</ref>
+
+==Units==
+{{main|Level (logarithmic quantity)}}
+
+The neper is defined in terms of ratios of [[power, root-power, and field quantities|field quantities]] â€” also called ''root-power quantities'' â€” (for example, [[voltage]] or [[Current (electricity)|current]] amplitudes in electrical circuits, or [[sound pressure|pressure]] in [[acoustics]]), whereas the decibel was originally defined in terms of [[power (physics)|power]] ratios.  A power ratio 10 log ''r'' dB is equivalent to a field-quantity ratio 20 log ''r'' dB, since power in a linear system is proportional to the square ([[Joule's first law|Joule's laws]]) of the amplitude.  Hence the decibel and the neper have a fixed ratio to each other:
+
+:<math>
+1\ \text{Np} = 20 \log_{10} e\ \text{dB} \approx \text{8.685889638 dB} \,
+</math>
+
+and
+
+:<math>
+1\ \mathrm{dB} = \frac{1}{20} \ln(10)\ \mathrm{Np} \approx \text{0.115129255 Np}. \,
+</math>
+
+The (voltage) level ratio is
+
+:<math>
+\begin{align}
+L & = 10 \log_{10} \frac{x_1^2}{x_2^2} & \text{dB} \\
+  & = 10 \log_{10} {\left(\frac{x_1}{x_2}\right)}^2 & \text{dB} \\
+  & = 20 \log_{10} \frac{x_1}{x_2} & \text{dB} \\
+  & = \ln \frac{x_1}{x_2} & \text{Np}. \\
+\end{align}
+</math>
+
+Like the decibel, the neper is a dimensionless unit. The [[International Telecommunication Union]] (ITU) recognizes both units. Only the neper is [[coherence (units of measurement)|coherent]] with the SI.<ref>[[ISO 80000]]-3:2007 Â§0.5</ref>
+
+==Applications==
+The neper is a natural linear unit of [[relative difference]], meaning in nepers (logarithmic units) relative differences add rather than multiply. This property is shared with logarithmic units in other bases, such as the bel.
+
+The derived units decineper (1 dNp = 0.1 neper) and '''centineper''' (1 cNp = 0.01 neper) are also used.<ref>{{cite book |title=Glossary of Telecommunication Terms |date=1980 |publisher=General Services Administration, Federal Supply Service |page=73 |url=https://www.google.com/books/edition/Glossary_of_Telecommunication_Terms/3cQ65jxbaTAC?hl=en&gbpv=1&pg=PA73 |language=en}}</ref> The centineper for root-power quantities corresponds to a [[log point]] or log percentage, see {{section link|Relative change and difference#Logarithmic scale}}.<ref name="Blythe2020">{{cite journal |last1=Karjus |first1=Andres |last2=Blythe |first2=Richard A. |last3=Kirby |first3=Simon |last4=Smith |first4=Kenny |title=Quantifying the dynamics of topical fluctuations in language |journal=Language Dynamics and Change |date=10 February 2020 |volume=10 |issue=1 |pages=86â€“125 |doi=10.1163/22105832-01001200 |s2cid=46928080 |url=https://brill.com/view/journals/ldc/10/1/article-p86_5.xml}}</ref>
+
+== See also ==
+*[[Nat (unit)]]
+
+== References ==
+{{Reflist}}
+
+== Works ==
+[[File:Napier, John â€“ Mirifici logarithmorum canonis constructio, 1825 â€“ BEIC 6555650.jpg|thumb|''Mirifici logarithmorum canonis constructi''o, 1825]]
+* {{Cite book|title=Mirifici logarithmorum canonis constructio|volume=|publisher=Librairie scientifique Hermann et C.ie|location=Paris|year=1825|language=fr|url=https://gutenberg.beic.it/webclient/DeliveryManager?pid=6555650}}
+
+== Further reading ==
+* {{cite journal |author-last=Tuffentsammer |author-first=Karl |title=Das Dezilog, eine BrÃ¼cke zwischen Logarithmen, Dezibel, Neper und Normzahlen |language=de |trans-title=The decilog, a bridge between logarithms, decibel, neper and preferred numbers |journal=VDI-Zeitschrift |volume=98 |date=1956 |pages=267â€“274}}
+* {{cite book |title=Logarithmen, Normzahlen, Dezibel, Neper, Phon - natÃ¼rlich verwandt! |language=de |trans-title=Logarithms, preferred numbers, decibel, neper, phon - naturally related! |author-first=Eugen |author-last=Paulin |date=2007-09-01 |url=http://www.rechenschieber.org/Normzahlen.pdf |access-date=2016-12-18 |url-status=live |archive-url=https://web.archive.org/web/20161218223050/http://www.rechenschieber.org/Normzahlen.pdf |archive-date=2016-12-18}}
+
+==External links ==
+*[https://web.archive.org/web/20140716201523/http://www.microwaves101.com/ENCYCLOPEDIA/neper.cfm What's a neper?]
+*[http://www.sengpielaudio.com/calculator-neper.htm Conversion of level gain and loss: neper, decibel, and bel]
+*[https://web.archive.org/web/20140429141423/http://www.microwaves101.com/encyclopedia/transmission_loss.cfm Calculating transmission line losses]
+
+{{SI units}}
+
+[[Category:Units of measurement]]
+[[Category:Logarithmic scales of measurement]]( 2 :2022-10-25T19:06:15ZB34599227JZ
+	Wikipedia'https://en.wikipedia.org/wiki/Main_PageMediaWiki 1.40.0-wmf.8"first-letterR¥
+@http://iopscience.iop.org/article/10.1088/0026-1394/30/5/010/pdfaThor, A. J. (1994). New International Standards for Quantities and Units. Metrologia, 30(5), 517.Rq
+^https://web.archive.org/web/20140716201523/http://www.microwaves101.com/ENCYCLOPEDIA/neper.cfmWhat's a neper?Ro
+1http://www.sengpielaudio.com/calculator-neper.htm:Conversion of level gain and loss: neper, decibel, and belR’
+jhttps://web.archive.org/web/20140429141423/http://www.microwaves101.com/encyclopedia/transmission_loss.cfm$Calculating transmission line lossesb½“¹›øƒ™Üj§çàš

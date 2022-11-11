@@ -1,0 +1,324 @@
+
+41317	Line code°BIn telecommunication, a line code is a pattern of voltage, current, or photons used to represent digital data transmitted down a communication channel or written to a storage medium. This repertoire of signals is usually called a constrained code in data storage systems. 
+Some signals are more prone to error than others as the physics of the communication channel or storage medium constrains the repertoire of signals that can be used reliably.
+
+Common line encodings are unipolar, polar, bipolar, and Manchester code.
+
+Transmission and storage 
+
+After line coding, the signal is put through a physical communication channel, either a transmission medium or data storage medium.Karl Paulsen. [http://www.tvtechnology.com/media-servers/0150/coding-for-magnetic-storage-mediums/186738 "Coding for Magnetic Storage Mediums"] .2007. The most common physical channels are:
+* the line-coded signal can directly be put on a transmission line, in the form of variations of the voltage or current (often using differential signaling).
+* the line-coded signal (the baseband signal) undergoes further pulse shaping (to reduce its frequency bandwidth) and then is modulated (to shift its frequency) to create an RF signal that can be sent through free space.
+* the line-coded signal can be used to turn on and off a light source in free-space optical communication, most commonly used in an infrared remote control.
+* the line-coded signal can be printed on paper to create a bar code.
+* the line-coded signal can be converted to magnetized spots on a hard drive or tape drive.
+* the line-coded signal can be converted to pits on an optical disc.
+
+Some of the more common binary line codes include:
+
+Each line code has advantages and disadvantages. Line codes are chosen to meet one or more of the following criteria:
+* Minimize transmission hardware
+* Facilitate synchronization
+* Ease error detection and correction
+* Achieve a target spectral density
+* Eliminate a DC component
+
+Disparity 
+
+Most long-distance communication channels cannot reliably transport a DC component. The DC component is also called the disparity, the bias, or the DC coefficient. The disparity of a bit pattern is the difference in the number of one bits vs the number of zero bits. The running disparity is the running total of the disparity of all previously transmitted bits. The simplest possible line code, unipolar, gives too many errors on such systems, because it has an unbounded DC component.
+
+Most line codes eliminate the DC component such codes are called DC-balanced, zero-DC, or DC-free. There are three ways of eliminating the DC component:
+
+* Use a constant-weight code. Each transmitted code word in a constant-weight code is designed such that every code word that contains some positive or negative levels also contains enough of the opposite levels, such that the average level over each code word is zero. Examples of constant-weight codes include Manchester code and Interleaved 2 of 5.
+* Use a paired disparity code. Each code word in a paired disparity code that averages to a negative level is paired with another code word that averages to a positive level. The transmitter keeps track of the running DC buildup, and picks the code word that pushes the DC level back towards zero. The receiver is designed so that either code word of the pair decodes to the same data bits. Examples of paired disparity codes include alternate mark inversion, 8b/10b and 4B3T.
+* Use a scrambler. For example, the scrambler specified in  for 64b/66b encoding.
+
+Polarity 
+
+Bipolar line codes have two polarities, are generally implemented as RZ, and have a radix of three since there are three distinct output levels (negative, positive and zero). One of the principle advantages of this type of code is that it can eliminate any DC component. This is important if the signal must pass through a transformer or a long transmission line.
+
+Unfortunately, several long-distance communication channels have polarity ambiguity. Polarity-insensitive line codes compensate in these channels.
+
+There are three ways of providing unambiguous reception of 0 and 1 bits over such channels:
+* Pair each code word with the polarity-inverse of that code word. The receiver is designed so that either code word of the pair decodes to the same data bits. Examples include alternate mark inversion, Differential Manchester encoding, coded mark inversion and Miller encoding.
+* differential coding each symbol relative to the previous symbol. Examples include MLT-3 encoding and NRZI.
+* Invert the whole stream when inverted syncwords are detected
+
+Run-length limited codes
+
+For reliable clock recovery at the receiver, a run-length limitation may be imposed on the generated channel sequence, i.e., the maximum number of consecutive ones or zeros is bounded to a reasonable number. A clock period is recovered by observing transitions in the received sequence, so that a maximum run length guarantees sufficient transitions to assure clock recovery quality.
+
+RLL codes are defined by four main parameters: m, n, d, k. The first two, m/n, refer to the rate of the code, while the remaining two specify the minimal d and maximal k number of zeroes between consecutive ones. This is used in both telecommunication and storage systems that move a medium past a fixed recording head.
+
+Specifically, RLL bounds the length of stretches (runs) of repeated bits during which the signal does not change.  If the runs are too long, clock recovery is difficult; if they are too short, the high frequencies might be attenuated by the communications channel.  By modulating the data, RLL reduces the timing uncertainty in decoding the stored data, which would lead to the possible erroneous insertion or removal of bits when reading the data back. This mechanism ensures that the boundaries between bits can always be accurately found (preventing bit slip), while efficiently using the media to reliably store the maximal amount of data in a given space.
+
+Early disk drives used very simple encoding schemes, such as RLL (0,1) FM code, followed by RLL (1,3) MFM code which were widely used in hard disk drives until the mid-1980s and are still used in digital optical discs such as CD, DVD, MD, Hi-MD and Blu-ray using EFM and EFMPLus codes. Higher density RLL (2,7) and RLL (1,7) codes became the de facto standards for hard disks by the early 1990s.
+
+Synchronization 
+
+Line coding should make it possible for the receiver to synchronize itself to the phase of the received signal. If the clock recovery is not ideal, then the signal to be decoded will not be sampled at the optimal times. This will increase the probability of error in the received data.
+
+Biphase line codes require at least one transition per bit time. This makes it easier to synchronize the transceivers and detect errors, however, the baud rate is greater than that of NRZ codes.
+
+Other considerations 
+
+A line code will typically reflect technical requirements of the transmission medium, such as optical fiber or shielded twisted pair.  These requirements are unique for each medium, because each one has different behavior related to interference, distortion, capacitance and attenuation.
+
+Common line codes 
+
+* 2B1Q
+* 4B3T
+* 4B5B
+* 6b/8b encoding
+* 8b/10b encoding
+* 64b/66b encoding
+* 128b/130b encoding
+* Alternate mark inversion (AMI)
+* Coded mark inversion (CMI)
+* EFMPlus, used in DVDs
+* Eight-to-fourteen modulation (EFM), used in compact discs
+* Hamming code
+* Hybrid ternary code
+* Manchester code and differential Manchester
+* Mark and space
+* MLT-3 encoding
+* Modified AMI codes: B8ZS, B6ZS, B3ZS, HDB3
+* Modified frequency modulation, Miller encoding and delay encoding
+* Non-return-to-zero (NRZ)
+* Non-return-to-zero, inverted (NRZI)
+* Pulse-position modulation
+* Return-to-zero (RZ)
+* TC-PAM
+
+Optical line codes
+
+* Alternate-Phase Return-to-Zero (APRZ)
+* Carrier-Suppressed Return-to-Zero (CSRZ)
+* Three of Six, Fiber Optical (TS-FO)
+
+See also 
+
+* Physical layer
+* Self-synchronizing code and bit synchronization
+
+References 
+
+* 
+
+External links
+
+* [https://web.archive.org/web/20130418052107/http://www.electronics.dit.ie/staff/amoloney/lecture-9.pdf Line Coding Lecture No. 9] 
+* [http://www.fiberoptics4sale.com/wordpress/line-coding-in-digital-communication/ Line Coding in Digital Communication]
+* [https://www.ac.uma.es/~guille/codsim2.0/ CodSim 2.0: Open source simulator for Digital Data Communications Model at the University of Malaga written in HTML]"’~{{short description|Pattern used within a communications system to represent digital data}}
+{{stack|
+[[File:NRZcode.png|thumb|An example of coding a binary signal using rectangular [[pulse-amplitude modulation]] with polar [[non-return-to-zero]] code]]
+[[File:Ami encoding.svg|thumb|An example of [[bipolar encoding]], or AMI.]]
+[[File:Manchester code.svg|thumb|Encoding of 11011000100 in [[Manchester encoding]] ]]
+[[File:Differential_manchester_encoding_Workaround.svg|thumb|An example of [[differential Manchester encoding]]]]
+[[File:Biphase Mark Code.svg|thumb|An example of [[biphase mark code]] ]]
+[[File:MLT3encoding.svg|thumb|An example of [[MLT-3 encoding]]]]
+}}
+{{Modulation techniques}}
+
+In [[telecommunication]], a '''line code''' is a pattern of voltage, current, or photons used to represent digital data [[transmission (telecommunications)|transmitted]] down a [[communication channel]] or written to a [[storage medium]]. This repertoire of signals is usually called a '''constrained code''' in data storage systems.<ref>{{Cite journal 
+|journal= IEEE Communications Magazine
+|date=2022
+|title=Innovation in Constrained Codes
+|author=K. Schouhamer Immink
+|author-link=Kees Schouhamer Immink 
+|url=https://www.researchgate.net/publication/362866105
+|access-date=2022-10-05
+}}</ref> 
+Some signals are more prone to error than others as the physics of the communication channel or storage medium constrains the repertoire of signals that can be used reliably.<ref name="optics">{{Cite journal 
+|journal= IEEE Journal on Selected Areas in Communications
+|volume=19
+|date=2001
+|title=A Survey of Codes for Optical Disk Recording
+|author=K. Schouhamer Immink
+|author-link=Kees Schouhamer Immink 
+|url=https://www.researchgate.net/publication/3234561
+|pages=751â€“764
+|access-date=2018-02-05
+}}</ref>
+
+Common line encodings are [[Unipolar encoding|unipolar]], [[Polar encoding|polar]], [[Bipolar encoding|bipolar]], and [[Manchester code]].
+
+== Transmission and storage ==
+After line coding, the signal is put through a physical communication channel, either a [[transmission medium]] or [[data storage medium]].<ref name="paulsen">Karl Paulsen. [http://www.tvtechnology.com/media-servers/0150/coding-for-magnetic-storage-mediums/186738 "Coding for Magnetic Storage Mediums"] {{Webarchive|url=https://web.archive.org/web/20140521215946/http://www.tvtechnology.com/media-servers/0150/coding-for-magnetic-storage-mediums/186738 |date=2014-05-21 }}.2007.</ref><ref>{{citation|author1=Abdullatif Glass |author2=Nidhal Abdulaziz |author3=and Eesa Bastaki |url=http://ro.uow.edu.au/cgi/viewcontent.cgi?article=1285&context=dubaipapers|title=Slope line coding for telecommunication networks|year=2007|page=1537|journal=IEEE International Conference on Signal Processing and Communication|publisher=IEEE|location=Dubai|quote=Line codes ... facilitates the transmission of data over telecommunication and computer networks and its storage in multimedia systems.}}</ref> The most common physical channels are:
+* the line-coded signal can directly be put on a [[transmission line]], in the form of variations of the voltage or current (often using [[differential signaling]]).
+* the line-coded signal (the ''[[baseband]] signal'') undergoes further [[pulse shaping]] (to reduce its frequency bandwidth) and then is [[modulation|modulated]] (to shift its frequency) to create an ''[[RF signal]]'' that can be sent through free space.
+* the line-coded signal can be used to turn on and off a light source in [[free-space optical communication]], most commonly used in an infrared [[remote control]].
+* the line-coded signal can be printed on paper to create a [[bar code]].
+* the line-coded signal can be converted to magnetized spots on a [[hard drive]] or [[tape drive]].
+* the line-coded signal can be converted to pits on an [[optical disc]].
+
+Some of the more common binary line codes include:
+{| class="wikitable"
+|-
+! Signal !! Comments !! 1 state !! 0 state
+|-
+| NRZâ€“L || [[Non-return-to-zero]] level. This is the standard positive logic signal format used in digital circuits.
+| forces a high level
+| forces a low level
+|-
+| NRZâ€“M || Non-return-to-zero mark
+| forces a transition
+| does nothing (keeps sending the previous level)
+|-
+| NRZâ€“S  || Non-return-to-zero space
+| does nothing (keeps sending the previous level)
+| forces a transition
+|-
+| RZ  || Return to zero
+| goes high for half the bit period and returns to low
+| stays low for the entire period
+|-
+| Biphaseâ€“L  || Manchester. Two consecutive bits of the same type force a transition at the beginning of a bit period.
+| forces a negative transition in the middle of the bit
+| forces a positive transition in the middle of the bit
+|-
+| Biphaseâ€“M || Variant of Differential Manchester. There is always a transition halfway between the conditioned transitions.
+| forces a transition
+| keeps level constant
+|-
+| Biphaseâ€“S  || Differential Manchester used in Token Ring. There is always a transition halfway between the conditioned transitions.
+| keeps level constant
+| forces a transition
+|-
+| Differential Manchester (Alternative)|| Need a Clock, always a transition in the middle of the clock period
+| is represented by no transition.
+| is represented by a transition at the beginning of the clock period.
+|-
+| Bipolar || The positive and negative pulses alternate.
+| forces a positive or negative pulse for half the bit period
+| keeps a zero level during bit period
+|}
+
+[[File:Digital signal encoding formats-en.svg|framed|center|An arbitrary bit pattern in various binary line code formats]]
+
+Each line code has advantages and disadvantages. Line codes are chosen to meet one or more of the following criteria:
+* Minimize transmission hardware
+* Facilitate synchronization
+* Ease error detection and correction
+* Achieve a target [[spectral density]]
+* Eliminate a [[DC component]]
+
+== Disparity ==
+Most long-distance communication channels cannot reliably transport a [[DC component]]. The DC component is also called the ''disparity'', the ''bias'', or the [[DC coefficient]]. The disparity of a bit pattern is the difference in the number of one bits vs the number of zero bits. The ''running disparity'' is the [[running total]] of the disparity of all previously transmitted bits.<ref>{{cite document |author=Jens KrÃ¶ger |url=https://www.psi.ch/mu3e/ThesesEN/BachelorKroeger.pdf |archive-url=https://ghostarchive.org/archive/20221009/https://www.psi.ch/mu3e/ThesesEN/BachelorKroeger.pdf |archive-date=2022-10-09 |url-status=live |title=Data Transmission at High Rates via Kapton Flexprints for the Mu3e Experiment |date=2014 |page=16}}</ref> The simplest possible line code, [[Unipolar encoding|unipolar]], gives too many errors on such systems, because it has an unbounded DC component.
+
+Most line codes eliminate the DC component{{snd}} such codes are called [[DC-balanced]], zero-DC, or DC-free. There are three ways of eliminating the DC component:
+
+* Use a [[constant-weight code]]. Each transmitted [[code word]] in a constant-weight code is designed such that every code word that contains some positive or negative levels also contains enough of the opposite levels, such that the average level over each code word is zero. Examples of constant-weight codes include [[Manchester code]] and [[Interleaved 2 of 5]].
+* Use a [[paired disparity code]]. Each code word in a paired disparity code that averages to a negative level is paired with another code word that averages to a positive level. The transmitter keeps track of the running DC buildup, and picks the code word that pushes the DC level back towards zero. The receiver is designed so that either code word of the pair decodes to the same data bits. Examples of paired disparity codes include [[alternate mark inversion]], [[8b/10b]] and [[4B3T]].
+* Use a [[scrambler]]. For example, the scrambler specified in {{IETF RFC | 2615}} for [[64b/66b encoding]].
+
+== Polarity ==
+Bipolar line codes have two polarities, are generally implemented as RZ, and have a radix of three since there are three distinct output levels (negative, positive and zero). One of the principle advantages of this type of code is that it can eliminate any DC component. This is important if the signal must pass through a transformer or a long transmission line.
+
+Unfortunately, several long-distance communication channels have polarity ambiguity. Polarity-insensitive line codes compensate in these channels.<ref>
+{{cite patent |inventor=Peter E. K. Chow. |url=https://www.google.com.ar/patents/US4387366 |country=US |number=4387366 |title=Code converter for polarity-insensitive transmission systems |pubdate=1983}}
+</ref><ref>
+{{citation |author=David A. Glanzer |publisher=[[Fieldbus Foundation]] |url=http://www.fieldbus.org/images/stories/enduserresources/technicalreferences/documents/wiringinstallationguide.pdf |archive-url=https://ghostarchive.org/archive/20221009/http://www.fieldbus.org/images/stories/enduserresources/technicalreferences/documents/wiringinstallationguide.pdf |archive-date=2022-10-09 |url-status=live |title=Fieldbus Application Guide ... Wiring and Installation |section=4.7 Polarity |page=10}}
+</ref><ref>
+{{cite book |author1=George C. Clark Jr. |author2=J. Bibb Cain |url=https://books.google.com/books?id=wgzyBwAAQBAJ |title=Error-Correction Coding for Digital Communications |date=2013 |page=255 |isbn=9781489921741 |publisher=Springer Science & Business Media |quote=When PSK data modulation is used, the potential exists for an ambiguity in the polarity of the received channel symbols. This problem can be solved in one of two ways. First ... a so-called ''transparent'' code. ...}}
+</ref><ref>
+{{cite book |author=Prakash C. Gupta |url=https://books.google.com/books?id=Zr1nAgAAQBAJ |title=Data Communications and Computer Networks |date=2013 |page=13 |isbn=9788120348646 |publisher=PHI Learning Pvt. Ltd. |quote=Another benefit of differential encoding is its insensitivity to polarity of the signal. ... If the leads of a twisted pair are accidentally reversed...}}
+</ref>
+There are three ways of providing unambiguous reception of 0 and 1 bits over such channels:
+* Pair each code word with the polarity-inverse of that code word. The receiver is designed so that either code word of the pair decodes to the same data bits. Examples include [[alternate mark inversion]], [[Differential Manchester encoding]], [[coded mark inversion]] and [[Miller encoding]].
+* [[differential coding]] each symbol relative to the previous symbol. Examples include [[MLT-3 encoding]] and [[NRZI]].
+* Invert the whole stream when inverted [[syncword]]s are detected
+
+==Run-length limited codes==
+For reliable [[clock recovery]] at the receiver, a [[Run-length limited|run-length limitation]] may be imposed on the generated channel sequence, i.e., the maximum number of consecutive ones or zeros is bounded to a reasonable number. A clock period is recovered by observing transitions in the received sequence, so that a maximum run length guarantees sufficient transitions to assure clock recovery quality.
+
+RLL codes are defined by four main parameters: ''m'', ''n'', ''d'', ''k''. The first two, ''m''/''n'', refer to the rate of the code, while the remaining two specify the minimal ''d'' and maximal ''k'' number of zeroes between consecutive ones. This is used in both [[telecommunication]] and storage systems that move a medium past a fixed [[recording head]].<ref>{{Cite journal 
+|journal=Proceedings of the IEEE
+|volume=78 
+|issue=11 
+|date=December 1990 |title=Runlength-Limited Sequences
+|author=Kees Schouhamer Immink
+|author-link=Kees Schouhamer Immink 
+|url=https://www.researchgate.net/publication/2984369
+|pages=1745â€“1759
+|quote=A detailed description is furnished of the limiting properties of runlength limited sequences.
+ |doi=10.1109/5.63306}}</ref>
+
+Specifically, RLL bounds the length of stretches (runs) of repeated bits during which the signal does not change.  If the runs are too long, clock recovery is difficult; if they are too short, the high frequencies might be attenuated by the communications channel.  By [[Modulation|modulating]] the [[data]], RLL reduces the timing uncertainty in decoding the stored data, which would lead to the possible erroneous insertion or removal of bits when reading the data back. This mechanism ensures that the boundaries between bits can always be accurately found (preventing [[bit slip]]), while efficiently using the media to reliably store the maximal amount of data in a given space.
+
+Early disk drives used very simple encoding schemes, such as RLL (0,1) FM code, followed by RLL (1,3) MFM code which were widely used in [[hard disk drive]]s until the mid-1980s and are still used in digital optical discs such as [[CD]], [[DVD]], [[Minidisc|MD]], [[Hi-MD]] and [[Blu-ray]] using [[Eight-to-Fourteen Modulation|EFM]] and [[EFMPLus]] codes.<ref>{{Cite journal 
+|journal=IEEE Transactions on Consumer Electronics
+|volume=CE-41 
+|date=1995
+|title=EFMPlus: The Coding Format of the MultiMedia Compact Disc
+|author=Kees Schouhamer Immink
+|author-link=Kees Schouhamer Immink 
+|url=https://www.researchgate.net/publication/3179483
+|pages=491â€“497
+|quote=A high-density alternative to EFM is described.}}</ref> Higher density RLL (2,7) and RLL (1,7) codes became the [[de facto standard]]s for hard disks by the early 1990s.{{citation needed|date=August 2019}}
+
+== Synchronization ==
+{{main|Clock recovery}}
+
+Line coding should make it possible for the receiver to synchronize itself to the [[Phase (waves)|phase]] of the received signal. If the clock recovery is not ideal, then the signal to be decoded will not be sampled at the optimal times. This will increase the probability of error in the received data.
+
+Biphase line codes require at least one transition per bit time. This makes it easier to synchronize the transceivers and detect errors, however, the baud rate is greater than that of NRZ codes.
+
+== Other considerations ==
+A line code will typically reflect technical requirements of the transmission medium, such as [[optical fiber]] or [[shielded twisted pair]].  These requirements are unique for each medium, because each one has different behavior related to interference, distortion, capacitance and attenuation.<ref>{{Cite book|url=https://books.google.com/books?id=On_Hh23IXDUC&pg=PA284 |title=Network Dictionary |last=Dong |first=Jielin |date=2007 |publisher=Javvin Technologies Inc. |isbn=9781602670006 |language=en |page=284}}</ref>
+
+== Common line codes ==
+{{Div col|colwidth=30em}}
+* [[2B1Q]]
+* [[4B3T]]
+* [[4B5B]]
+* [[6b/8b encoding]]
+* [[8b/10b encoding]]
+* [[64b/66b encoding]]
+* [[128b/130b encoding]]
+* [[Alternate mark inversion]] (AMI)
+* [[Coded mark inversion]] (CMI)
+* [[EFMPlus]], used in [[DVD]]s
+* [[Eight-to-fourteen modulation]] (EFM), used in [[compact disc]]s
+* [[Hamming code]]
+* [[Hybrid ternary code]]
+* [[Manchester code]] and [[Differential Manchester encoding|differential Manchester]]
+* [[Mark and space]]
+* [[MLT-3 encoding]]
+* [[Modified AMI code]]s: B8ZS, B6ZS, B3ZS, HDB3
+* [[Modified frequency modulation]], Miller encoding and delay encoding
+* [[Non-return-to-zero]] (NRZ)
+* [[Non-return-to-zero, inverted]] (NRZI)
+* [[Pulse-position modulation]]
+* [[Return-to-zero]] (RZ)
+* [[TC-PAM]]
+{{div col end}}
+
+===Optical line codes===
+* [[Alternate-Phase Return-to-Zero]] (APRZ)
+* [[Carrier-Suppressed Return-to-Zero]] (CSRZ)
+* [[IEEE 1355#Slice: TS-FO-02|Three of Six, Fiber Optical]] (TS-FO)
+
+== See also ==
+* [[Physical layer]]
+* [[Self-synchronizing code]] and bit synchronization
+
+== References ==
+{{reflist}}
+* {{FS1037C MS188}}
+
+==External links==
+* [https://web.archive.org/web/20130418052107/http://www.electronics.dit.ie/staff/amoloney/lecture-9.pdf Line Coding Lecture No. 9] 
+* [http://www.fiberoptics4sale.com/wordpress/line-coding-in-digital-communication/ Line Coding in Digital Communication]
+* [https://www.ac.uma.es/~guille/codsim2.0/ CodSim 2.0: Open source simulator for Digital Data Communications Model at the University of Malaga written in HTML]
+
+{{Bit-encoding}}
+
+[[Category:Line codes|*]]
+[[Category:Physical layer protocols]]
+[[Category:Coding theory]]( 2 :2022-10-15T22:25:48ZB10728040JZ
+	Wikipedia'https://en.wikipedia.org/wiki/Main_PageMediaWiki 1.40.0-wmf.8"first-letterR‚
+Yhttp://www.tvtechnology.com/media-servers/0150/coding-for-magnetic-storage-mediums/186738%"Coding for Magnetic Storage Mediums"R‚
+ehttps://web.archive.org/web/20130418052107/http://www.electronics.dit.ie/staff/amoloney/lecture-9.pdfLine Coding Lecture No. 9Rw
+Ohttp://www.fiberoptics4sale.com/wordpress/line-coding-in-digital-communication/$Line Coding in Digital CommunicationRŸ
+(https://www.ac.uma.es/~guille/codsim2.0/sCodSim 2.0: Open source simulator for Digital Data Communications Model at the University of Malaga written in HTMLb½“¹›èïç]jìæ¬š
