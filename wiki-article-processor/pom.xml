@@ -109,8 +109,8 @@
             </path>
           </annotationProcessorPaths>
           <compilerArgs>
-            <arg>-Amicronaut.processing.group=wiki.dump.file.processor</arg>
-            <arg>-Amicronaut.processing.module=wiki-dump-file-processor</arg>
+            <arg>-Amicronaut.processing.group=com.krickert.search</arg>
+            <arg>-Amicronaut.processing.module=wiki-article-processor</arg>
           </compilerArgs>
         </configuration>
       </plugin>

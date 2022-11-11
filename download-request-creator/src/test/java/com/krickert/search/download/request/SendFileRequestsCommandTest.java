@@ -88,7 +88,8 @@ public class SendFileRequestsCommandTest {
     @KafkaListener(
             properties =
             @Property(name = KafkaProtobufConstants.SPECIFIC_CLASS_PROPERTY,
-                    value = KafkaProtobufConstants.DOWNLOAD_FILE_REQUEST_CLASS)
+                    value = KafkaProtobufConstants.DOWNLOAD_FILE_REQUEST_CLASS),
+            groupId="test-download-request-listener"
     )
     public static class DownloadRequestTestListener {
         @Topic("download-request")

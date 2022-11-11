@@ -85,7 +85,7 @@
             </path>
           </annotationProcessorPaths>
           <compilerArgs>
-            <arg>-Amicronaut.processing.group=download.request.processor</arg>
+            <arg>-Amicronaut.processing.group=com.krickert.search</arg>
             <arg>-Amicronaut.processing.module=download-request-processor</arg>
           </compilerArgs>
         </configuration>

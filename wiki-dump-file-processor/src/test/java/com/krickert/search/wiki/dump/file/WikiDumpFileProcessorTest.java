@@ -74,7 +74,8 @@ class WikiDumpFileProcessorTest {
     @KafkaListener(
             properties =
             @Property(name = KafkaProtobufConstants.SPECIFIC_CLASS_PROPERTY,
-                    value = KafkaProtobufConstants.WIKIARTICLE_CLASS)
+                    value = KafkaProtobufConstants.WIKIARTICLE_CLASS),
+            clientId = "test-client-wiki-dump"
     )
     public static class DownloadRequestTestListener {
         @Topic("wiki-parsed-article")

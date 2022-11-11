@@ -27,7 +27,6 @@
     <relativePath/>
   </parent>
   <modules>
-    <module>wikisearch-model</module>
     <module>download-request-creator</module>
     <module>download-request-processor</module>
     <module>wiki-dump-file-processor</module>
@@ -62,6 +61,14 @@
       <artifactId>protobuf-java</artifactId>
       <version>${protobuf.version}</version>
     </dependency>
+    <!-- https://mvnrepository.com/artifact/org.junit.platform/junit-platform-runner -->
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-engine</artifactId>
+      <version>5.9.1</version>
+      <scope>test</scope>
+    </dependency>
+
     <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
     <dependency>
       <groupId>org.apache.commons</groupId>

@@ -3,11 +3,9 @@ package com.krickert.search.model.util;
 import com.google.protobuf.Timestamp;
 import org.junit.jupiter.api.Test;
 
-import java.sql.Time;
-
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
-class ProtobufUtilsTest {
+
+public class ProtobufUtilsTest {
 
     @Test
     void nowIsNowNotThen() throws InterruptedException {

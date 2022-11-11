@@ -64,12 +64,7 @@
       <artifactId>micronaut-serde-jackson</artifactId>
       <scope>compile</scope>
     </dependency>
-    <dependency>
-      <groupId>com.krickert.search</groupId>
-      <artifactId>wikisearch-model</artifactId>
-      <version>${project.version}</version>
-      <scope>compile</scope>
-    </dependency>
+
     <dependency>
       <groupId>io.micronaut</groupId>
       <artifactId>micronaut-http-client</artifactId>
@@ -78,6 +73,12 @@
     <dependency>
       <groupId>io.micronaut</groupId>
       <artifactId>micronaut-http-server-netty</artifactId>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.krickert.search</groupId>
+      <artifactId>wikisearch-model</artifactId>
+      <version>0.1-SNAPSHOT</version>
       <scope>compile</scope>
     </dependency>
   </dependencies>
@@ -96,7 +97,7 @@
         <artifactId>maven-compiler-plugin</artifactId>
         <configuration>
           <!-- Uncomment to enable incremental compilation -->
-          <!-- <useIncrementalCompilation>false</useIncrementalCompilation> -->
+          <useIncrementalCompilation>false</useIncrementalCompilation>
 
           <annotationProcessorPaths combine.children="append">
             <path>
