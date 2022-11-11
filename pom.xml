@@ -27,6 +27,7 @@
     <relativePath/>
   </parent>
   <modules>
+    <module>wikisearch-model</module>
     <module>download-request-creator</module>
     <module>download-request-processor</module>
     <module>wiki-dump-file-processor</module>
