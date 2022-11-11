@@ -71,14 +71,6 @@ class WikiDumpFileProcessorTest {
         this.downloadedFileProcessingProducer.sendFileProcessingRequest(UUID.randomUUID(), downloadedFile);
         await().atMost(100, SECONDS).until(() -> wikiArticles.size() > 100);
         await().atMost(200, SECONDS).until(() -> wikiArticles.size() >= 360);
-        //dump the first 5 for testing
-        wikiArticles.forEach((item) -> {
-            try {
-                item.writeTo(new FileOutputStream(new File(item.getId() + "_article.bin")));
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-        });
 
     }
 
