@@ -1,0 +1,121 @@
+
+41306Lambert's cosine law�2In optics, Lambert's cosine law says that the radiant intensity or luminous intensity observed from an ideal diffusely reflecting surface or ideal diffuse radiator is directly proportional to the cosine of the angle θ between the direction of the incident light and the surface normal; I I0cos(θ).RCA Electro-Optics Handbook, p.18 ffModern Optical Engineering, Warren J. Smith, McGraw-Hill, p. 228, 256 The law is also known as the cosine emission law  or Lambert's emission law. It is named after Johann Heinrich Lambert, from his Photometria, published in 1760.
+
+A surface which obeys Lambert's law is said to be Lambertian, and exhibits Lambertian reflectance. Such a surface has the same radiance when viewed from any angle. This means, for example, that to the human eye it has the same apparent brightness (or luminance). It has the same radiance because, although the emitted power from a given area element is reduced by the cosine of the emission angle, the solid angle, subtended by surface visible to the viewer, is reduced by the very same amount. Because the ratio between power and solid angle is constant, radiance (power per unit solid angle per unit projected source area) stays the same.
+
+Lambertian scatterers and radiators
+
+When an area element is radiating as a result of being illuminated by an external source, the irradiance (energy or photons/time/area) landing on that area element will be proportional to the cosine of the angle between the illuminating source and the normal. A Lambertian scatterer will then scatter this light according to the same cosine law as a Lambertian emitter. This means that although the radiance of the surface depends on the angle from the normal to the illuminating source, it will not depend on the angle from the normal to the observer. For example, if the moon were a Lambertian scatterer, one would expect to see its scattered brightness appreciably diminish towards the terminator due to the increased angle at which sunlight hit the surface. The fact that it does not diminish illustrates that the moon is not a Lambertian scatterer, and in fact tends to scatter more light into the oblique angles than a Lambertian scatterer.
+
+The emission of a Lambertian radiator does not depend on the amount of incident radiation, but rather from radiation originating in the emitting body itself. For example, if the sun were a Lambertian radiator, one would expect to see a constant brightness across the entire solar disc. The fact that the sun exhibits limb darkening in the visible region illustrates that it is not a Lambertian radiator. A black body is an example of a Lambertian radiator.
+
+Details of equal brightness effect
+
+The situation for a Lambertian surface (emitting or scattering) is illustrated in Figures 1 and 2.  For conceptual clarity we will think in terms of photons rather than energy or luminous energy. The wedges in the circle each represent an equal angle dΩ, of an arbitrarily chosen size, and for a Lambertian surface, the number of photons per second emitted into each wedge is proportional to the area of the wedge.
+
+The length of each wedge is the product of the diameter of the circle and cos(θ). The maximum rate of photon emission per unit solid angle is along the normal, and diminishes to zero for θ = 90°. In mathematical terms, the radiance along the normal is I photons/(s·m2·sr) and the number of photons per second emitted into the vertical wedge is . The number of photons per second emitted into the wedge at angle θ is .
+
+Figure 2 represents what an observer sees. The observer directly above the area element will be seeing the scene through an aperture of area dA0 and the area element dA will subtend a (solid) angle of dΩ0, which is a portion of the observer's total angular field-of-view of the scene. Since the wedge size dΩ was chosen arbitrarily, for convenience we may assume without loss of generality that it coincides with the solid angle subtended by the aperture when "viewed" from the locus of the emitting area element dA. Thus the normal observer will then be recording the same  photons per second emission derived above and will measure a radiance of
+
+I_0=\frac{I\, d\Omega\, dA}{d\Omega_0\, dA_0}
+  photons/(s·m2·sr).
+
+The observer at angle θ to the normal will be seeing the scene through the same aperture of area dA0 (still corresponding to a dΩ wedge) and from this oblique vantage the area element dA is foreshortened and will subtend a (solid) angle of dΩ0 cos(θ).  This observer will be recording  photons per second, and so will be measuring a radiance of
+
+I_0=\frac{I \cos(\theta)\, d\Omega\, dA}{d\Omega_0\, \cos(\theta)\, dA_0}
+=\frac{I\, d\Omega\, dA}{d\Omega_0\, dA_0}
+  photons/(s·m2·sr),
+
+which is the same as the normal observer.
+
+Relating peak luminous intensity and luminous flux 
+
+In general, the luminous intensity of a point on a surface varies by direction; for a Lambertian surface, that distribution is defined by the cosine law, with peak luminous intensity in the normal direction. Thus when the Lambertian assumption holds, we can calculate the total luminous flux, F_\text{tot}, from the peak luminous intensity, I_{\max}, by integrating the cosine law:
+\begin{align}
+F_\text{tot} &= \int_0^{2\pi} \int_0^{\pi/2} \cos(\theta) \, I_{\max}\, \sin(\theta)\,d\theta\,d\phi\\
+&= 2\pi\cdot I_{\max}\int_0^{\pi/2}\cos(\theta)\sin(\theta)\,d\theta \\
+&= 2\pi\cdot I_{\max}\int_0^{\pi/2}\frac{\sin(2\theta)}{2}\,d\theta
+\end{align}
+and so
+F_\text{tot}=\pi\,\mathrm{sr}\cdot I_{\max}
+where \sin(\theta) is the determinant of the Jacobian matrix for the unit sphere, and realizing that I_{\max} is luminous flux per steradian.Incropera and DeWitt, Fundamentals of Heat and Mass Transfer, 5th ed., p.710. Similarly, the peak intensity will be 1/(\pi\,\mathrm{sr}) of the total radiated luminous flux. For Lambertian surfaces, the same factor of \pi\,\mathrm{sr} relates luminance to luminous emittance, radiant intensity to radiant flux, and radiance to radiant emittance. Radians and steradians are, of course, dimensionless and so "rad" and "sr" are included only for clarity.
+
+Example: A surface with a luminance of say 100 cd/m2 (= 100 nits, typical PC monitor) will, if it is a perfect Lambert emitter, have a luminous emittance of 100π lm/m2. If its area is 0.1 m2 (~19" monitor) then the total light emitted, or luminous flux, would thus be 31.4 lm.
+
+See also
+
+* Transmittance
+* Reflectivity
+* Passive solar building design
+* Sun path
+
+References"�D{{Short description|Description in optics of the angular dependency of the radiant intensity of a radiant surface}}{{Redirect|Lambert's law|for the concept in logic|Lambert's law (logic)}}
+{{Refimprove|date=December 2009}}
+In [[optics]], '''Lambert's cosine law''' says that the [[radiant intensity]] or [[luminous intensity]] observed from an ideal [[diffuse reflection|diffusely reflecting]] surface or ideal diffuse radiator is [[directly proportional]] to the [[cosine]] of the angle ''θ'' between the direction of the incident light and the [[Normal (geometry)|surface normal; I = I<sub>0</sub>cos(''θ'')]].<ref name = "RCAEOH">RCA Electro-Optics Handbook, p.18 ff</ref><ref name="SmithW">Modern Optical Engineering, Warren J. Smith, McGraw-Hill, p.&nbsp;228, 256</ref> The law is also known as the '''cosine emission law'''<ref>{{cite book | title=Introduction to Optics | publisher=[[Prentice Hall]] | last=Pedrotti & Pedrotti | date=1993 | isbn=0135015456 | url-access=registration | url=https://archive.org/details/introductiontoop00pedr }}</ref>  or '''Lambert's emission law'''. It is named after [[Johann Heinrich Lambert]], from his ''[[Photometria]]'', published in 1760.<ref>{{cite book | last=Lambert | first=Johann Heinrich | title=Photometria, sive de mensura et gradibus luminis, colorum et umbrae | publisher=Eberhard Klett | date=1760 | url=https://www.e-rara.ch/zut/content/titleinfo/2814923}}</ref>
+
+A surface which obeys Lambert's law is said to be ''Lambertian'', and exhibits [[Lambertian reflectance]]. Such a surface has the same [[radiance]] when viewed from any angle. This means, for example, that to the human eye it has the same apparent brightness (or [[luminance]]). It has the same radiance because, although the emitted power from a given area element is reduced by the cosine of the emission angle, the solid angle, subtended by surface visible to the viewer, is reduced by the very same amount. Because the ratio between power and solid angle is constant, radiance (power per unit solid angle per unit projected source area) stays the same.
+
+==Lambertian scatterers and radiators==
+
+When an area element is radiating as a result of being illuminated by an external source, the [[irradiance]] (energy or photons/time/area) landing on that area element will be proportional to the cosine of the angle between the illuminating source and the normal. A Lambertian scatterer will then scatter this light according to the same cosine law as a Lambertian emitter. This means that although the radiance of the surface depends on the angle from the normal to the illuminating source, it will not depend on the angle from the normal to the observer. For example, if the [[moon]] were a Lambertian scatterer, one would expect to see its scattered brightness appreciably diminish towards the [[terminator (solar)|terminator]] due to the increased angle at which sunlight hit the surface. The fact that it does not diminish illustrates that the moon is not a Lambertian scatterer, and in fact tends to scatter more light into the [[oblique angle]]s than a Lambertian scatterer.
+
+The emission of a Lambertian radiator does not depend on the amount of incident radiation, but rather from radiation originating in the emitting body itself. For example, if the [[sun]] were a Lambertian radiator, one would expect to see a constant brightness across the entire solar disc. The fact that the sun exhibits [[limb darkening]] in the visible region illustrates that it is not a Lambertian radiator. A [[black body]] is an example of a Lambertian radiator.
+
+==Details of equal brightness effect==
+
+<div style="float: right">
+{|
+|-
+| [[Image:Lambert Cosine Law 1.svg|frame|right|Figure 1: Emission rate (photons/s) in a normal and off-normal direction. The number of photons/sec directed into any wedge is proportional to the area of the wedge.]]
+|-
+| [[Image:Lambert Cosine Law 2.svg|frame|right|Figure 2: Observed intensity (photons/(s·m<sup>2</sup>·sr)) for a normal and off-normal observer; ''dA''<sub>0</sub> is the area of the observing aperture and ''d''Ω is the solid angle subtended by the aperture from the viewpoint of the emitting area element.]]
+|}
+</div>
+The situation for a Lambertian surface (emitting or scattering) is illustrated in Figures 1 and 2.  For conceptual clarity we will think in terms of [[photon]]s rather than [[energy]] or [[luminous energy]]. The wedges in the [[circle]] each represent an equal angle ''d''Ω, of an arbitrarily chosen size, and for a Lambertian surface, the number of photons per second emitted into each wedge is proportional to the area of the wedge.
+
+The length of each wedge is the product of the [[diameter]] of the circle and cos(''θ''). The maximum rate of photon emission per unit [[solid angle]] is along the normal, and diminishes to zero for ''θ'' = 90°. In mathematical terms, the [[radiance]] along the normal is ''I''&nbsp;photons/(s·m<sup>2</sup>·sr) and the number of photons per second emitted into the vertical wedge is {{nowrap|''I'' ''d''Ω ''dA''}}. The number of photons per second emitted into the wedge at angle ''θ'' is {{nowrap|''I'' cos(''θ'') ''d''Ω ''dA''}}.
+
+Figure 2 represents what an observer sees. The observer directly above the area element will be seeing the scene through an aperture of area ''dA''<sub>0</sub> and the area element ''dA'' will subtend a (solid) angle of ''d''Ω<sub>0</sub>, which is a portion of the observer's total angular field-of-view of the scene. Since the wedge size ''d''Ω was chosen arbitrarily, for convenience we may assume without loss of generality that it coincides with the solid angle subtended by the aperture when "viewed" from the locus of the emitting area element dA. Thus the normal observer will then be recording the same {{nowrap|''I'' ''d''Ω ''dA''}} photons per second emission derived above and will measure a radiance of
+
+:<math>
+I_0=\frac{I\, d\Omega\, dA}{d\Omega_0\, dA_0}
+</math>  photons/(s·m<sup>2</sup>·sr).
+
+The observer at angle ''θ'' to the normal will be seeing the scene through the same aperture of area ''dA''<sub>0</sub> (still corresponding to a ''d''Ω wedge) and from this oblique vantage the area element ''dA'' is foreshortened and will subtend a (solid) angle of ''d''Ω<sub>0</sub>&nbsp;cos(''θ'').  This observer will be recording {{nowrap|''I'' cos(''θ'') ''d''Ω ''dA''}} photons per second, and so will be measuring a radiance of
+
+:<math>
+I_0=\frac{I \cos(\theta)\, d\Omega\, dA}{d\Omega_0\, \cos(\theta)\, dA_0}
+=\frac{I\, d\Omega\, dA}{d\Omega_0\, dA_0}
+</math>  photons/(s·m<sup>2</sup>·sr),
+
+which is the same as the normal observer.
+
+== Relating peak luminous intensity and luminous flux ==
+
+In general, the [[luminous intensity]] of a point on a surface varies by direction; for a Lambertian surface, that distribution is defined by the cosine law, with peak luminous intensity in the normal direction. Thus when the Lambertian assumption holds, we can calculate the total [[luminous flux]], <math>F_\text{tot}</math>, from the peak [[luminous intensity]], <math>I_{\max}</math>, by integrating the cosine law:
+<math display="block">\begin{align}
+F_\text{tot} &= \int_0^{2\pi} \int_0^{\pi/2} \cos(\theta) \, I_{\max}\, \sin(\theta)\,d\theta\,d\phi\\
+&= 2\pi\cdot I_{\max}\int_0^{\pi/2}\cos(\theta)\sin(\theta)\,d\theta \\
+&= 2\pi\cdot I_{\max}\int_0^{\pi/2}\frac{\sin(2\theta)}{2}\,d\theta
+\end{align}</math>
+and so
+:<math>F_\text{tot}=\pi\,\mathrm{sr}\cdot I_{\max}</math>
+where <math>\sin(\theta)</math> is the determinant of the [[Jacobian matrix]] for the [[unit sphere]], and realizing that <math>I_{\max}</math> is luminous flux per [[steradian]].<ref>Incropera and DeWitt, ''Fundamentals of Heat and Mass Transfer'', 5th ed., p.710.</ref> Similarly, the peak intensity will be <math>1/(\pi\,\mathrm{sr})</math> of the total radiated luminous flux. For Lambertian surfaces, the same factor of <math>\pi\,\mathrm{sr}</math> relates [[luminance]] to [[luminous emittance]], [[radiant intensity]] to [[radiant flux]], and [[radiance]] to [[radiant emittance]].{{citation needed| date=June 2013}} Radians and steradians are, of course, dimensionless and so "rad" and "sr" are included only for clarity.
+
+Example: A surface with a luminance of say 100&nbsp;cd/m<sup>2</sup> (= 100 nits, typical PC monitor) will, if it is a perfect Lambert emitter, have a luminous emittance of 100π lm/m<sup>2</sup>. If its area is 0.1 m<sup>2</sup> (~19" monitor) then the total light emitted, or luminous flux, would thus be 31.4 lm.
+
+==See also==
+* [[Transmittance]]
+* [[Reflectivity]]
+* [[Passive solar building design]]
+* [[Sun path]]
+
+== References ==
+<references/>
+
+{{DEFAULTSORT:Lambert's Cosine Law}}
+[[Category:Radiometry]]
+[[Category:Photometry]]
+[[Category:3D computer graphics]]
+[[Category:Scattering]]( 2 :2022-07-30T09:07:04ZB2442687JZ
+	Wikipedia'https://en.wikipedia.org/wiki/Main_PageMediaWiki 1.40.0-wmf.8"first-letterb�����j�铗

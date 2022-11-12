@@ -1,0 +1,165 @@
+
+41409Network interface device‚7Two simple NIDs, carrying six lines each, on the outside of a building
+Abschlusspunkt LinienTechnik (APL, "Demarcation point")
+
+In telecommunications, a network interface device (NID; also known by several other names) is a device that serves as the demarcation point between the carrier's local loop and the customer's premises wiring. Outdoor telephone NIDs also provide the subscriber with access to the station wiring and serve as a convenient test point for verification of loop integrity and of the subscriber's inside wiring.
+
+Naming 
+
+Generically, an NID may also be called a network interface unit (NIU), telephone network interface (TNI), system network interface (SNI), or telephone network box.
+
+Australia's National Broadband Network uses the term network termination device or NTD.
+
+A smartjack is a type of NID with capabilities beyond simple electrical connection, such as diagnostics.
+
+An optical network terminal (ONT) is a type of NID used with fiber-to-the-premises applications.
+
+Wiring termination 
+
+The simplest NIDs are essentially just a specialized set of wiring terminals. These will typically take the form of a small, weather-proof box, mounted on the outside of the building. The telephone line from the telephone company will enter the NID and be connected to one side. The customer connects their wiring to the other side. A single NID enclosure may contain termination for a single line or multiple lines.
+
+In its role as the demarcation point (dividing line), the NID separates the telephone company's equipment from the customer's wiring and equipment. The telephone company owns the NID itself, and all wiring up to it. Anything past the NID is the customer's responsibility. To facilitate this, there is typically a test jack inside the NID. Accessing the test jack disconnects the customer premises wiring from the public switched telephone network and allows the customer to plug a "known good" telephone into the jack to isolate trouble. If the telephone works at the test jack, the problem is the customer's wiring, and the customer is responsible for repair. If the telephone does not work, the line is faulty and the telephone company is responsible for repair.
+
+Most NIDs also include "circuit protectors", which are surge protectors for a telephone line. They protect customer wiring, equipment, and personnel from any transient energy on the line, such as from a lightning strike to a telephone pole.
+
+Simple NIDs contain no digital logic; they are "dumb" devices. They have no capabilities beyond wiring termination, circuit protection, and providing a place to connect test equipment.
+
+Smartjack 
+
+T-1 circuits, in two shelves; a 66 block is on the left
+
+Several types of NIDs provide more than just a terminal for the connection of wiring. Such NIDs are colloquially called smartjacks or Intelligent Network Interface Devices (INIDs) as an indication of their built-in "intelligence", as opposed to a simple NID, which is just a wiring device. Smartjacks are typically used for more complicated types of telecommunications service, such as T1 lines. Plain old telephone service lines generally cannot be equipped with smartjacks.
+
+Despite the name, most smartjacks are much more than a simple telephone jack. One common form for a smartjack is a printed circuit board with a face plate on one edge, mounted in an enclosure.
+
+A smartjack may provide signal conversion, converting codes and protocols (e.g. framing types) to the type needed by the customer equipment. It may buffer and/or regenerate the signal, to compensate for signal degradation from line transmission, similar to what a repeater does.
+
+Smartjacks also typically provide diagnostic capabilities. A very common capability provided by a smartjack is loopback, such that the signal from the telephone company is transmitted back to the telephone company. This allows the company to test the line from the central telephone exchange, without the need to have test equipment at the customer site. The telephone company usually has the ability to remotely activate loopback, without even needing personnel at the customer site. When looped back, the customer equipment is disconnected from the line.
+
+Additional smartjack diagnostic capabilities include alarm indication signal, which reports trouble at one end of the line to the far end. This helps the telephone company know if trouble is present in the line, the smartjack, or customer equipment. Indicator lights to show configuration, status, and alarms are also common.
+
+Smartjacks typically derive their operating power from the telephone line, rather than relying on premises electrical power, although this is not a universal rule.
+
+Optical network terminals 
+
+In fiber-to-the-premises systems, the signal is transmitted to the customer premises using fiber optic technologies. Unlike many conventional telephone technologies, this does not provide power for premises equipment, nor is it suitable for direct connection to customer equipment. An optical network terminal (ONT) is used to terminate the fiber optic line, demultiplex the signal into its component parts (voice telephone, television, and Internet access), and provide power to customer telephones. As the ONT must derive its power from the customer premises electrical supply, many ONTs have the option for a battery backup in order to maintain service in the event of a power outage.
+
+Environmental conditions 
+
+According to Telcordia GR-49, requirements for telecommunications NIDs vary based on three categories of environmental conditions:
+
+# Normal conditions: This refers to a normal environment that is expected in most areas of any service provider. Temperatures are expected to be in the range of , and humidity is expected to be less than 90% RH. No unusual contamination is expected.
+# Severe climatic conditions: These cover environments more severe than those of a normal environment (i.e., higher humidity, high lightning activity, exposure to salt-laden atmosphere, and exposure to contaminants). Temperatures are expected to be in the range of , and humidity may exceed 90% RH. Jacks installed in NIDs in such environments are known to become contaminated and develop low insulation resistances and low dielectric breakdown voltages when subjected to high humidity. These problems can cause noisy lines or even service outages.
+# Flooded conditions: These cover areas of a service provider prone to flooding, such as in coastal or flood plain locations. After a flooding incident, temperature is expected to be in the range of , and humidity may exceed 90% RH. The requirements are not to determine if the NID will function during a flood, but to review the ability of the NID to function after the flood has subsided.
+
+Service providers must decide which condition best suits their application.
+
+See also 
+
+* Channel service unit
+* CSU/DSU
+* Customer premises equipment
+* Customer premises wiring
+* Data service unit
+* Local exchange carrier
+* Main distribution frame
+* Network termination
+* Point of appearance
+* User‚Äìnetwork interface
+
+Citations 
+
+General references 
+
+* 
+* 
+* 
+* 
+*"”S{{Short description|Device that separates the carrier's wiring from the customer's}}
+{{Distinguish|Network Device Interface|Network interface controller}}
+{{More footnotes|date=June 2010}}
+[[file:Network interface device ameritech.jpg|thumb|upright|Two simple NIDs, carrying six lines each, on the outside of a building]]
+[[file:apl germany.jpeg|thumb|upright|A German copper phone line termination box called ''[[:de:Abschlusspunkt Linientechnik|Abschlusspunkt LinienTechnik]]'' (APL, "[[Demarcation point]]")]]
+
+In [[telecommunication]]s, a '''network interface device''' ('''NID'''; also known by several other names) is a device that serves as the [[demarcation point]] between the carrier's [[local loop]] and the customer's [[on-premises wiring|premises wiring]]. Outdoor telephone NIDs also provide the subscriber with access to the station wiring and serve as a convenient test point for verification of loop integrity and of the subscriber's inside wiring.
+
+== Naming ==
+Generically, an NID may also be called a '''network interface unit''' (NIU),<ref name="1037cDEF" /> '''telephone network interface''' (TNI), '''system network interface''' (SNI), or '''telephone network box'''.
+
+Australia's [[National Broadband Network]] uses the term ''[[Network Termination Device (NBN)|network termination device]]'' or NTD.
+
+A '''smartjack''' is a type of NID with capabilities beyond simple electrical connection, such as diagnostics.
+
+An ''[[#Optical network terminals|optical network terminal]]'' (ONT) is a type of NID used with [[fiber-to-the-premises]] applications.
+
+== Wiring termination ==
+The simplest NIDs are essentially just a specialized set of wiring [[terminal (electronics)|terminal]]s. These will typically take the form of a small, weather-proof box, mounted on the outside of the building. The [[telephone line]] from the [[telephone company]] will enter the NID and be connected to one side. The customer connects their wiring to the other side. A single NID enclosure may contain termination for a single line or multiple lines.
+
+In its role as the demarcation point (dividing line), the NID separates the telephone company's equipment from the customer's wiring and equipment. The telephone company owns the NID itself, and all wiring up to it. Anything past the NID is the customer's responsibility. To facilitate this, there is typically a test jack inside the NID. Accessing the test jack disconnects the customer premises wiring from the [[public switched telephone network]] and allows the customer to plug a "known good" [[telephone]] into the jack to isolate trouble. If the telephone works at the test jack, the problem is the customer's wiring, and the customer is responsible for repair. If the telephone does not work, the line is faulty and the telephone company is responsible for repair.
+
+Most NIDs also include "circuit protectors", which are [[surge protector]]s for a telephone line. They protect customer wiring, equipment, and personnel from any transient [[energy]] on the line, such as from a [[lightning]] strike to a [[telephone pole]].
+
+Simple NIDs contain no [[digital logic]]; they are "dumb" devices. They have no capabilities beyond wiring termination, circuit protection, and providing a place to connect test equipment.
+
+== Smartjack ==
+[[file:Network Interface Unit.jpg|thumb|upright|Three smartjacks for [[Digital Signal 1|T-1]] circuits, in two shelves; a [[66 block]] is on the left]]
+
+Several types of NIDs provide more than just a terminal for the connection of wiring. Such NIDs are colloquially called ''smartjacks'' or [[Intelligent Network Interface Device]]s (INIDs) as an indication of their built-in "intelligence", as opposed to a simple NID, which is just a wiring device. Smartjacks are typically used for more complicated types of telecommunications service, such as [[Digital Signal 1|T1 lines]]. [[Plain old telephone service]] lines generally cannot be equipped with smartjacks.
+
+Despite the name, most smartjacks are much more than a simple [[telephone jack]]. One common form for a smartjack is a [[printed circuit board]] with a face plate on one edge, mounted in an enclosure.
+
+A smartjack may provide signal conversion, converting codes and protocols (e.g. framing types) to the type needed by the customer equipment. It may buffer and/or regenerate the signal, to compensate for signal degradation from line transmission, similar to what a [[repeater]] does.
+
+Smartjacks also typically provide diagnostic capabilities. A very common capability provided by a smartjack is [[loopback]], such that the signal from the telephone company is transmitted back to the telephone company. This allows the company to test the line from the central [[telephone exchange]], without the need to have test equipment at the customer site. The telephone company usually has the ability to remotely activate loopback, without even needing personnel at the customer site. When looped back, the customer equipment is disconnected from the line.
+
+Additional smartjack diagnostic capabilities include [[alarm indication signal]], which reports trouble at one end of the line to the far end. This helps the telephone company know if trouble is present in the line, the smartjack, or customer equipment. Indicator lights to show configuration, status, and alarms are also common.
+
+Smartjacks typically derive their operating power from the telephone line, rather than relying on premises electrical power, although this is not a universal rule.
+
+== Optical network terminals ==
+[[File:Tellabs ONT611 inside.jpeg|thumb|An optical network terminal mounted to the outside of a building, with the cover open]]
+
+In fiber-to-the-premises systems, the signal is transmitted to the customer premises using [[fiber optic]] technologies. Unlike many conventional telephone technologies, this does not provide power for premises equipment, nor is it suitable for direct connection to customer equipment. An '''optical network terminal''' (ONT) is used to terminate the fiber optic line, [[multiplexing|demultiplex]] the signal into its component parts (voice [[telephone]], [[television]], and [[Internet access]]), and provide power to customer telephones. As the ONT must derive its power from the customer premises electrical supply, many ONTs have the option for a [[battery (electricity)|battery]] backup in order to maintain service in the event of a [[power outage]].<ref name="whatont" />
+
+== Environmental conditions ==
+According to [[Telcordia]] GR-49, requirements for telecommunications NIDs vary based on three categories of environmental conditions:<ref name="Telcordia"/>
+
+# Normal conditions: This refers to a normal environment that is expected in most areas of any service provider. Temperatures are expected to be in the range of {{convert|-20|to|32|¬∞C}}, and humidity is expected to be less than 90% RH. No unusual contamination is expected.
+# Severe climatic conditions: These cover environments more severe than those of a normal environment (i.e., higher humidity, high lightning activity, exposure to salt-laden atmosphere, and exposure to contaminants). Temperatures are expected to be in the range of {{convert|-40|to|43|¬∞C}}, and humidity may exceed 90% RH. Jacks installed in NIDs in such environments are known to become contaminated and develop low insulation resistances and low dielectric breakdown voltages when subjected to high humidity. These problems can cause noisy lines or even service outages.
+# Flooded conditions: These cover areas of a service provider prone to flooding, such as in coastal or flood plain locations. After a flooding incident, temperature is expected to be in the range of {{convert|4.5|to|38|¬∞C|0}}, and humidity may exceed 90% RH. The requirements are not to determine if the NID will function during a flood, but to review the ability of the NID to function after the flood has subsided.
+
+Service providers must decide which condition best suits their application.
+
+== See also ==
+* [[Channel service unit]]
+* [[CSU/DSU]]
+* [[Customer premises equipment]]
+* [[Customer premises wiring]]
+* [[Data service unit]]
+* [[Local exchange carrier]]
+* [[Main distribution frame]]
+* [[Network termination]]
+* [[Point of appearance]]
+* [[User‚Äìnetwork interface]]
+
+== Citations ==
+{{reflist|refs=
+<ref name="1037cDEF">{{cite web |title=network interface device |work=Federal Standard 1037C |publisher=[[National Telecommunications and Information Administration]] |location=United States |url=http://www.its.bldrdoc.gov/fs-1037/dir-024/_3522.htm |date=1996-08-23 }}</ref>
+<ref name="whatont">{{cite web |title=What is an Optical Network Terminal (ONT)? |publisher=Verizon Communications, Inc. |url=https://www22.verizon.com/foryourhome/fttprepair/nr/common/SupportDetail.aspx?case=c29587 |archive-url=https://web.archive.org/web/20121006164612/https://www22.verizon.com/foryourhome/fttprepair/nr/common/SupportDetail.aspx?case=c29587 |archive-date=2012-10-06 }}</ref>
+<ref name="Telcordia">[http://telecom-info.njdepot.ericsson.net/site-cgi/ido/docs.cgi?ID=SEARCH&DOCUMENT=GR-49& GR-49-CORE ''Generic Requirements for Outdoor Telecommunication Network Interface Devices (NIDs)''], Telcordia.</ref>
+}}
+
+== General references ==
+{{refbegin}}
+* {{cite web |title=Network Interface Device |publisher=Verizon Communications, Inc. |url=http://www22.verizon.com/wholesale/solutions/solution/NIDs.html |access-date=2009-06-03 }}
+* {{cite web |title=Network Interface Device (NID) V9.0 |publisher=Qwest Communications International |url=http://www.qwest.com/wholesale/pcat/nid.html |access-date=2009-06-03 }}
+* {{cite web |title=Functional Criteria for the DS1 Interface Connector |publisher=BellSouth |date=June 1993 |url=http://www.aniesoft.com/guides/TR-73569.pdf |archive-url=https://ghostarchive.org/archive/20221009/http://www.aniesoft.com/guides/TR-73569.pdf |archive-date=2022-10-09 |url-status=live |access-date=2009-06-03 }}
+* {{cite web |title=Testing, Repairing and Installing Home telephone Wiring&nbsp;‚Äì Network Interface Device |publisher=Public Service Commission of Wisconsin |url=http://psc.wi.gov/utilityinfo/tele/teleConsumer/nid.htm |access-date=2009-06-03 |archive-url=https://web.archive.org/web/20090511224521/http://psc.wi.gov/utilityinfo/tele/teleConsumer/nid.htm |archive-date=2009-05-11 |url-status=dead }}
+* {{cite web |title=Checking the service at the Optical Network Terminal (ONT) |publisher=Verizon Communications, Inc. |url=https://www.verizon.com/support/residential/internet/fiosinternet/troubleshooting/connection+issues/questionsone/128000.htm |access-date=2009-06-03 }}
+{{refend}}
+
+[[Category:Fiber to the premises]]
+[[Category:Local loop]]
+[[Category:Telephony equipment]]( 2 :2022-10-09T22:21:40ZB42425010JZ
+	Wikipedia'https://en.wikipedia.org/wiki/Main_PageMediaWiki 1.40.0-wmf.8"first-letterRæ
+Xhttp://telecom-info.njdepot.ericsson.net/site-cgi/ido/docs.cgi?ID=SEARCH&DOCUMENT=GR-49&bGR-49-CORE ''Generic Requirements for Outdoor Telecommunication Network Interface Devices (NIDs)''bìΩõË»ÀªjÙíçö

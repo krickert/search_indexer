@@ -1,0 +1,152 @@
+
+41316Linear polarization�In electrodynamics, linear polarization or plane polarization of electromagnetic radiation is a confinement of the electric field vector or magnetic field vector to a given plane along the direction of propagation. The term linear polarization (French: polarisation rectiligne) was coined by Augustin-Jean Fresnel in 1822.A. Fresnel, "Mémoire sur la double réfraction que les rayons lumineux éprouvent en traversant les aiguilles de cristal de roche suivant les directions parallèles à l'axe", read 9 December 1822; printed in H. de Senarmont, E. Verdet, and L. Fresnel (eds.), Oeuvres complètes d'Augustin Fresnel, vol. 1 (1866), pp.731–51; translated as "Memoir on the double refraction that light rays undergo in traversing the needles of quartz in the directions parallel to the axis", , 2021 (open access); §9. See polarization and plane of polarization for more information.
+
+The orientation of a linearly polarized electromagnetic wave is defined by the direction of the electric field vector.  For example, if the electric field vector is vertical (alternately up and down as the wave travels) the radiation is said to be vertically polarized.
+
+Mathematical description
+
+The classical sinusoidal plane wave solution of the electromagnetic wave equation for the electric and magnetic fields is (cgs units)
+ 
+ \mathbf{E} ( \mathbf{r} , t ) = \mid\mathbf{E}\mid  \mathrm{Re} \left \{  |\psi\rangle  \exp \left [ i \left  ( kz-\omega t  \right ) \right ] \right \}  
+
+ \mathbf{B} ( \mathbf{r} , t ) = \hat { \mathbf{z} } \times \mathbf{E} ( \mathbf{r} , t )/c   
+
+for the magnetic field, where k is the wavenumber,
+
+ \omega_{ }^{ } = c k
+
+is the angular frequency of the wave, and  c  is the speed of light.
+
+Here   \mid\mathbf{E}\mid     is the amplitude of the field and
+
+   |\psi\rangle  \ \stackrel{\mathrm{def}}{}\  \begin{pmatrix} \psi_x  \\ \psi_y   \end{pmatrix} 
+   \begin{pmatrix} \cos\theta \exp \left ( i \alpha_x \right )   \\ \sin\theta \exp \left ( i \alpha_y \right )   \end{pmatrix}   
+
+is the Jones vector in the x-y plane.
+
+The wave is linearly polarized when the phase angles  \alpha_x^{ } , \alpha_y  are equal,
+
+    \alpha_x  \alpha_y \ \stackrel{\mathrm{def}}{
+}\   \alpha    .
+
+This represents a wave polarized at an angle  \theta     with respect to the x axis. In that case, the Jones vector can be written
+
+   |\psi\rangle  =   \begin{pmatrix} \cos\theta    \\ \sin\theta   \end{pmatrix} \exp \left ( i \alpha \right )   .
+
+The state vectors for linear polarization in x or y are special cases of this state vector.
+
+If unit vectors are defined such that
+
+   |x\rangle  \ \stackrel{\mathrm{def}}{=}\    \begin{pmatrix} 1    \\ 0  \end{pmatrix}    
+
+and
+
+   |y\rangle  \ \stackrel{\mathrm{def}}{=}\    \begin{pmatrix} 0    \\ 1  \end{pmatrix}    
+
+then the polarization state can be written in the "x-y basis" as
+
+   |\psi\rangle   \cos\theta \exp \left ( i \alpha \right ) |x\rangle + \sin\theta \exp \left ( i \alpha \right ) |y\rangle 
+ \psi_x |x\rangle + \psi_y |y\rangle .
+
+See also 
+
+*Sinusoidal plane-wave solutions of the electromagnetic wave equation
+*Polarization
+**Circular polarization
+**Elliptical polarization
+**Plane of polarization
+*Photon polarization
+
+References
+
+*
+
+External links
+
+*[https://www.youtube.com/watch?v=oDwqUgDFe94 Animation of Linear Polarization (on YouTube) ]
+*[https://www.youtube.com/watch?v=Q0qrU4nprB0 Comparison of Linear Polarization with Circular and Elliptical Polarizations (YouTube Animation)]"�&{{Short description|Electromagnetic radiation special case}}
+{{Use American English|date=March 2021}}
+{{Use mdy dates|date=March 2021}}
+{{More footnotes|date=May 2020}}
+[[File:Linear polarization schematic.png|162px|thumb|right|Diagram of the electric field of a light wave (blue), linear-polarized along a plane (purple line), and consisting of two orthogonal, in-phase components (red and green waves)]]
+
+In [[electrodynamics]], '''linear polarization''' or '''plane polarization''' of [[electromagnetic radiation]] is a confinement of the [[electric field]] vector or [[magnetic field]] vector to a given plane along the direction of propagation. The term ''linear polarization'' (French: ''polarisation rectiligne'') was coined by [[Augustin-Jean Fresnel]] in 1822.<ref name=fresnel-1822z>A. Fresnel, "Mémoire sur la double réfraction que les rayons lumineux éprouvent en traversant les aiguilles de cristal de roche suivant les directions parallèles à l'axe", read 9&nbsp;December 1822; printed in H.&nbsp;de Senarmont, E.&nbsp;Verdet, and L.&nbsp;Fresnel (eds.), ''Oeuvres complètes d'Augustin Fresnel'', vol.&nbsp;1 (1866), pp.{{nnbsp}}731–51; translated as "Memoir on the double refraction that light rays undergo in traversing the needles of quartz in the directions parallel to the axis", {{Zenodo|4745976}}, 2021 (open&nbsp;access); §9.</ref> See ''[[Polarization (waves)|polarization]]'' and ''[[plane of polarization]]'' for more information.
+
+The orientation of a linearly polarized electromagnetic wave is defined by the direction of the [[electric field]] vector.<ref name="Shapira,">{{cite book   
+  | last = Shapira
+  | first = Joseph 
+  |author2=Shmuel Y. Miller
+   | title = CDMA radio with repeaters
+  | publisher = Springer
+  | date = 2007
+  | pages = 73
+  | url = https://books.google.com/books?id=Yd56YZY1RpAC&q=%5Bpolarization+of+radio+waves%5D&pg=PA73
+  | isbn = 978-0-387-26329-8}}</ref>  For example, if the electric field vector is vertical (alternately up and down as the wave travels) the radiation is said to be vertically polarized.
+
+==Mathematical description==
+The [[Classical physics|classical]] [[sinusoidal]] plane wave solution of the [[electromagnetic wave equation]] for the [[Electric field|electric]] and [[Magnetic field|magnetic]] fields is (cgs units)
+ 
+:<math> \mathbf{E} ( \mathbf{r} , t ) = \mid\mathbf{E}\mid  \mathrm{Re} \left \{  |\psi\rangle  \exp \left [ i \left  ( kz-\omega t  \right ) \right ] \right \}  </math>
+
+:<math> \mathbf{B} ( \mathbf{r} , t ) = \hat { \mathbf{z} } \times \mathbf{E} ( \mathbf{r} , t )/c   </math>
+
+for the magnetic field, where k is the [[wavenumber]],
+
+:<math> \omega_{ }^{ } = c k</math>
+
+is the [[angular frequency]] of the wave, and <math> c </math> is the [[speed of light]].
+
+Here <math>  \mid\mathbf{E}\mid    </math> is the [[amplitude]] of the field and
+
+:<math>   |\psi\rangle  \ \stackrel{\mathrm{def}}{=}\  \begin{pmatrix} \psi_x  \\ \psi_y   \end{pmatrix} =   \begin{pmatrix} \cos\theta \exp \left ( i \alpha_x \right )   \\ \sin\theta \exp \left ( i \alpha_y \right )   \end{pmatrix}   </math>
+
+is the [[Jones vector]] in the x-y plane.
+
+The wave is linearly polarized when the phase angles <math> \alpha_x^{ } , \alpha_y </math> are equal,
+
+:<math>    \alpha_x =  \alpha_y \ \stackrel{\mathrm{def}}{=}\   \alpha    </math>.
+
+This represents a wave polarized at an angle <math> \theta    </math> with respect to the x axis. In that case, the Jones vector can be written
+
+:<math>   |\psi\rangle  =   \begin{pmatrix} \cos\theta    \\ \sin\theta   \end{pmatrix} \exp \left ( i \alpha \right )   </math>.
+
+The state vectors for linear polarization in x or y are special cases of this state vector.
+
+If unit vectors are defined such that
+
+:<math>   |x\rangle  \ \stackrel{\mathrm{def}}{=}\    \begin{pmatrix} 1    \\ 0  \end{pmatrix}    </math>
+
+and
+
+:<math>   |y\rangle  \ \stackrel{\mathrm{def}}{=}\    \begin{pmatrix} 0    \\ 1  \end{pmatrix}    </math>
+
+then the polarization state can be written in the "x-y basis" as
+
+:<math>   |\psi\rangle  =  \cos\theta \exp \left ( i \alpha \right ) |x\rangle + \sin\theta \exp \left ( i \alpha \right ) |y\rangle = \psi_x |x\rangle + \psi_y |y\rangle </math>.
+
+== See also ==
+*[[Sinusoidal plane-wave solutions of the electromagnetic wave equation]]
+*[[Polarization (waves)|Polarization]]
+**[[Circular polarization]]
+**[[Elliptical polarization]]
+**[[Plane of polarization]]
+*[[Photon polarization]]
+
+==References==
+*{{cite book |author=Jackson, John D.|title=Classical Electrodynamics (3rd ed.)|publisher=Wiley|date=1998|isbn=0-471-30932-X}}
+
+{{Reflist}}
+
+==External links==
+*[https://www.youtube.com/watch?v=oDwqUgDFe94 Animation of Linear Polarization (on YouTube) ]
+*[https://www.youtube.com/watch?v=Q0qrU4nprB0 Comparison of Linear Polarization with Circular and Elliptical Polarizations (YouTube Animation)]
+
+{{FS1037C}}
+
+[[Category:Polarization (waves)]]
+
+[[ja:直線偏光]]
+[[pl:Polaryzacja_fali#Polaryzacja_liniowa]]( 2 :2022-06-06T23:36:47ZB47308JZ
+	Wikipedia'https://en.wikipedia.org/wiki/Main_PageMediaWiki 1.40.0-wmf.8"first-letterR]
++https://www.youtube.com/watch?v=oDwqUgDFe94.Animation of Linear Polarization (on YouTube) R�
++https://www.youtube.com/watch?v=Q0qrU4nprB0`Comparison of Linear Polarization with Circular and Elliptical Polarizations (YouTube Animation)b��ض�#j����

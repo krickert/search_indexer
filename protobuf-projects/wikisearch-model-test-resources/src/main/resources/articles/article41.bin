@@ -1,0 +1,408 @@
+
+41285Interoperability�Interoperability is a characteristic of a product or system to work with other products or systems. While the term was initially defined for information technology or systems engineering services to allow for information exchange,Institute of Electrical and Electronics Engineers. IEEE Standard Computer Dictionary: A Compilation of IEEE Standard Computer Glossaries. New York, NY: 1990. a broader definition takes into account social, political, and organizational factors that impact system-to-system performance.Slater, T. [http://www.ncoic.org/what-is-interoperability "What is Interoperability?"] , [http://www.ncoic.org/ Network Centric Operations Industry Consortium - NCOIC] , 2012
+
+Types of interoperability include syntactic interoperability, where two systems can communicate with each other, and cross-domain interoperability, where multiple organizations work together and exchange information.
+
+Types
+
+If two or more systems use common data formats and communication protocols and are capable of communicating with each other, they exhibit syntactic interoperability. XML and SQL are examples of common data formats and protocols. Lower-level data formats also contribute to syntactic interoperability, ensuring that alphabetical characters are stored in the same ASCII or a Unicode format in all the communicating systems.
+
+Beyond the ability of two or more computer systems to exchange information, semantic interoperability is the ability to automatically interpret the information exchanged meaningfully and accurately in order to produce useful results as defined by the end users of both systems. To achieve semantic interoperability, both sides must refer to a common information exchange reference model. The content of the information exchange requests are unambiguously defined: what is sent is the same as what is understood.
+
+Cross-domain interoperability involves multiple social, organizational, political, legal entities working together for a common interest or information exchange.Slater, T. [https://www.ncoic.org/cross-domain-interoperability "Cross-Domain Interoperability"] , [https://www.ncoic.org/home Network Centric Operations Industry Consortium - NCOIC] , 2013
+
+Interoperability and open standards
+
+Interoperability implies exchanges between a range of products, or similar products from several different vendors, or even between past and future revisions of the same product. Interoperability may be developed post-facto, as a special measure between two products, while excluding the rest, by using open standards. When a vendor is forced to adapt its system to a dominant system that is not based on Open standards, it is compatibility, not interoperability.
+
+Open standards
+
+Open standards rely on a broadly consultative and inclusive group including representatives from vendors, academics and others holding a stake in the development that discusses and debate the technical and economic merits, demerits and feasibility of a proposed common protocol. After the doubts and reservations of all members are addressed, the resulting common document is endorsed as a common standard. This document may be subsequently released to the public, and henceforth becomes an open standard. It is usually published and is available freely or at a nominal cost to any and all comers, with no further encumbrances. Various vendors and individuals (even those who were not part of the original group) can use the standards document to make products that implement the common protocol defined in the standard and are thus interoperable by design, with no specific liability or advantage for customers for choosing one product over another on the basis of standardized features. The vendors' products compete on the quality of their implementation, user interface, ease of use, performance, price, and a host of other factors, while keeping the customer's data intact and transferable even if he chooses to switch to another competing product for business reasons.
+
+Post facto interoperability
+
+Post facto interoperability may be the result of the absolute market dominance of a particular product in contravention of any applicable standards, or if any effective standards were not present at the time of that product's introduction. The vendor behind that product can then choose to ignore any forthcoming standards and not co-operate in any standardization process at all, using its near-monopoly to insist that its product sets the de facto standard by its very market dominance. This is not a problem if the product's implementation is open and minimally encumbered, but it may well be both closed and heavily encumbered (e.g. by patent claims). Because of the network effect, achieving interoperability with such a product is both critical for any other vendor if it wishes to remain relevant in the market, and difficult to accomplish because of lack of cooperation on equal terms with the original vendor, who may well see the new vendor as a potential competitor and threat. The newer implementations often rely on clean-room reverse engineering in the absence of technical data to achieve interoperability. The original vendors may provide such technical data to others, often in the name of encouraging competition, but such data is invariably encumbered, and may be of limited use. Availability of such data is not equivalent to an open standard, because:
+# The data is provided by the original vendor on a discretionary basis, and the vendor has every interest in blocking the effective implementation of competing solutions, and may subtly alter or change its product, often in newer revisions, so that competitors' implementations are almost, but not quite completely interoperable, leading customers to consider them unreliable or of lower quality. These changes may not be passed on to other vendors at all, or passed on after a strategic delay, maintaining the market dominance of the original vendor.
+# The data itself may be encumbered, e.g. by patents or pricing, leading to a dependence of all competing solutions on the original vendor, and possibly leading a revenue stream from the competitors' customers back to the original vendor. This revenue stream is the result of the original product's market dominance and not a result of any innate superiority.
+# Even when the original vendor is genuinely interested in promoting a healthy competition (so that he may also benefit from the resulting innovative market), post-facto interoperability may often be undesirable as many defects or quirks can be directly traced back to the original implementation's technical limitations. Although in an open process, anyone may identify and correct such limitations, and the resulting cleaner specification may be used by all vendors, this is more difficult post-facto, as customers already have valuable information and processes encoded in the faulty but dominant product, and other vendors are forced to replicate those faults and quirks for the sake of preserving interoperability even if they could design better solutions. Alternatively, it can be argued that even open processes are subject to the weight of past implementations and imperfect past designs and that the power of the dominant vendor to unilaterally correct or improve the system and impose the changes to all users facilitates innovation.
+# Lack of an open standard can also become problematic for the customers, as in the case of the original vendor's inability to fix a certain problem that is an artifact of technical limitations in the original product. The customer wants that fault fixed, but the vendor has to maintain that faulty state, even across newer revisions of the same product, because that behavior is a de facto standard and many more customers would have to pay the price of any interoperability issues caused by fixing the original problem and introducing new behavior.
+
+Government 
+
+eGovernment 
+
+Speaking from an e-government perspective, interoperability refers to the collaboration ability of cross-border services for citizens, businesses and public administrations. Exchanging data can be a challenge due to language barriers, different specifications of formats, varieties of categorizations and other hindrances.
+
+If data is interpreted differently, collaboration is limited, takes longer and is inefficient. For instance, if a citizen of country A wants to purchase land in country B, the person will be asked to submit the proper address data. Address data in both countries include full name details, street name and number as well as a postal code. The order of the address details might vary. In the same language, it is not an obstacle to order the provided address data; but across language barriers, it becomes difficult. If the language uses a different writing system it is almost impossible if no translation tools are available.
+
+Flood risk management 
+
+Interoperability is used by researchers in the context of urban flood risk management.  Cities and urban areas worldwide are expanding, which creates complex spaces with many interactions between the environment, infrastructure and people.  To address this complexity and manage water in urban areas appropriately, a system of systems approach to water and flood control is necessary. In this context, interoperability is important to facilitate system-of-systems thinking, and is defined as: "the ability of any water management system to redirect water and make use of other system(s) to maintain or enhance its performance function during water exceedance events." By assessing the complex properties of urban infrastructure systems, particularly the interoperability between the drainage systems and other urban systems (e.g. infrastructure such as transport), it could be possible to expand the capacity of the overall system to manage flood water towards achieving improved urban flood resilience.
+
+Military forces
+
+Force interoperability is defined in NATO as the ability of the forces of two or more nations to train, exercise and operate effectively together in the execution of assigned missions and tasks. Additionally NATO defines interoperability more generally as the ability to act together coherently, effectively and efficiently to achieve Allied tactical, operational and strategic objectives.[http://nso.nato.int/nso/zPublic/ap/aap6/AAP-6.pdf NATO Glossary of Terms and Definitions, NATO AAP-06]
+
+At the strategic level, interoperability is an enabler for coalition building. It facilitates meaningful contributions by coalition partners. At this level, interoperability issues center on harmonizing world views, strategies, doctrines, and force structures. Interoperability is an element of coalition willingness to work together over the long term to achieve and maintain shared interests against common threats. Interoperability at the operational and tactical levels is where strategic interoperability and technological interoperability come together to help allies shape the environment, manage crises, and win wars. The benefits of interoperability at the operational and tactical levels generally derive from the interchangeability of force elements and units. Technological interoperability reflects the interfaces between organizations and systems. It focuses on communications and computers but also involves the technical capabilities of systems and the resulting mission compatibility between the systems and data of coalition partners. At the technological level, the benefits of interoperability come primarily from their impacts at the operational and tactical levels in terms of enhancing flexibility.Interoperability: A continuing Challenge in Coalition Air Operations - Chapter 2 “A broad Definition of Interoperability”, by Myron Hura, Gary McLeod, James Schneider and others, RAND Monograph Report, 2000, [http://www.rand.org/content/dam/rand/pubs/monograph_reports/MR1235/MR1235.chap2.pdf] 
+ 
+Public safety
+
+Interoperability is an important issue for law enforcement, fire fighting, EMS, and other public health and safety departments, because first responders need to be able to communicate during wide-scale emergencies. It has been a major area of investment and research over the last 12 years.Allen, D. K., Karanasios, S., & Norman, A. (2013). Information sharing and interoperability: the case of major incident management. European Journal of Information Systems, 10.1057/ejis.2013.8.Baldini, G. (2010). Report of the workshop on “Interoperable communications for Safety and Security”. Ispra: European Commission, Joint Research Centre (JRC), Institute for the Protection and Security of the Citizen. Traditionally, agencies could not exchange information because they operated widely disparate hardware that was incompatible. Agencies' information systems such as computer-aided dispatch systems (CAD) and records management systems (RMS) functioned largely in isolation, so-called information islands. Agencies tried to bridge this isolation with inefficient, stop-gap methods while large agencies began implementing limited interoperable systems. These approaches were inadequate and, in the US, the lack of interoperability in the public safety realm become evident during the 9/11 attacks on the Pentagon and World Trade Center structures. Further evidence of a lack of interoperability surfaced when agencies tackled the aftermath of the Hurricane Katrina disaster.
+
+In contrast to the overall national picture, some states, including Utah, have already made great strides forward. The Utah Highway Patrol and other departments in Utah have created a statewide data sharing network using technology from a company based in Bountiful, Utah, [https://web.archive.org/web/20180710230842/https://www.fatpot.com/ FATPOT Technologies].
+
+The Commonwealth of Virginia is one of the leading states in the United States in improving interoperability and is continually recognized as a National Best Practice by the Department of Homeland Security (DHS). Virginia's proven practitioner-driven governance structure ensures that all the right players are involved in decision making, training and exercises, and planning efforts. The Interoperability Coordinator leverages a regional structure to better allocate grant funding around the Commonwealth so that all areas have an opportunity to improve communications interoperability. Virginia's strategic plan for communications is updated yearly to include new initiatives for the Commonwealth – all projects and efforts are tied to this plan, which is aligned with the National Emergency Communications Plan, authored by the Department of Homeland Security's Office of Emergency Communications (OEC).
+
+The State of Washington seeks to enhance interoperability statewide. The State Interoperability Executive Committee (SIEC), established by the legislature in 2003, works to assist emergency responder agencies (police, fire, sheriff, medical, hazmat, etc.) at all levels of government (city, county, state, tribal, federal) to define interoperability for their local region.
+
+Washington recognizes collaborating on system design and development for wireless radio systems enables emergency responder agencies to efficiently provide additional services, increase interoperability, and reduce long-term costs.
+
+This work saves the lives of emergency personnel and the citizens they serve.
+
+The U.S. government is making an effort to overcome the nation's lack of public safety interoperability. The Department of Homeland Security's Office for Interoperability and Compatibility (OIC) is pursuing the SAFECOM and CADIP and Project 25 programs, which are designed to help agencies as they integrate their CAD and other IT systems.
+
+The OIC launched CADIP in August 2007. This project will partner the OIC with agencies in several locations, including Silicon Valley. This program will use case studies to identify the best practices and challenges associated with linking CAD systems across jurisdictional boundaries. These lessons will create the tools and resources public safety agencies can use to build interoperable CAD systems and communicate across local, state, and federal boundaries.
+
+As regulator for interoperability 
+
+Governance entities can increase interoperability through their legislative and executive powers. For instance, in 2021 the European Commission, after commissioning two impact assessment studies and a technology analysis study, proposed the implementation of a standardization – for iterations of USB-C – of phone charger products, which may increase interoperability along with convergence and convenience for consumers while decreasing resource-needs, redundancy and electronic waste.
+
+Commerce and Industries 
+
+Information technology and computers 
+
+Desktop
+
+The desktop interoperability (also known as interop) is a sub-section of the software interoperability. In the early days, the focus of ‘interop’ was to integrate web-applications with other web-applications. Over time, open-system ‘containers’ were developed to create a virtual desktop environment in which these applications could be registered and then communicate with each other using simple pub/sub patterns. Rudimentary UI capabilities were also supported allowing windows to be grouped with other windows. Today, the desktop interoperability has evolved into full-service interop platforms which include container support, basic exchange between web and web, but also native support for other application types and advanced window management. The very latest interop platforms also include application services such as universal search, notifications, user permissions and preferences, 3rd party application connectors and language adapters for in-house applications.
+
+Information search
+
+Search interoperability refers to the ability of two or more information collections to be searched by a single query.
+
+Specifically related to web-based search, the challenge of interoperability stems from the fact designers of web resources typically have little or no need to concern themselves with exchanging information with other web resources. Federated Search technology, which does not place format requirements on the data owner, has emerged as one solution to search interoperability challenges. In addition, standards, such as OAI-PMH, RDF, and SPARQL, have emerged recently that also help address the issue of search interoperability related to web resources. Such standards also address broader topics of interoperability, such as allowing data mining.
+
+Software
+
+With respect to software, the term interoperability is used to describe the capability of different programs to exchange data via a common set of exchange formats, to read and write the same file formats, and to use the same protocols. (The ability to execute the same binary code on different processor platforms is 'not' contemplated by the definition of interoperability.) The lack of interoperability can be a consequence of a lack of attention to standardization during the design of a program. Indeed, interoperability is not taken for granted in the non-standards-based portion of the computing world.
+
+According to ISO/IEC 2382-01, Information Technology Vocabulary, Fundamental Terms, interoperability is defined as follows: "The capability to communicate, execute programs, or transfer data among various functional units in a manner that requires the user to have little or no knowledge of the unique characteristics of those units".
+
+Note that the definition is somewhat ambiguous because the user of a program can be another program and, if the latter is a portion of the set of program that is required to be interoperable, it might well be that it does need to have knowledge of the characteristics of other units.
+
+This definition focuses on the technical side of interoperability, while it has also been pointed out that interoperability is often more of an organizational issue: often interoperability has a significant impact on the organizations concerned, raising issues of ownership (do people want to share their data? or are they dealing with information silos?), labor relations (are people prepared to undergo training?) and usability. In this context, a more apt definition is captured in the term business process interoperability.
+
+Interoperability can have important economic consequences; for example, research has estimated the cost of inadequate interoperability in the U.S. capital facilities industry to be $15.8 billion a year. If competitors' products are not interoperable (due to causes such as patents, trade secrets or coordination failures), the result may well be monopoly or market failure. For this reason, it may be prudent for user communities or governments to take steps to encourage interoperability in various situations. At least 30 international bodies and countries have implemented eGovernment-based interoperability framework initiatives called e-GIF while in the United States there is the NIEM initiative. Standards Defining Organizations (SDOs) provide open public software specifications to facilitate interoperability; examples include the Oasis-Open organization and buildingSMART (formerly the International Alliance for Interoperability). As far as user communities, Neutral Third Party is creating standards for business process interoperability. Another example of a neutral party is the RFC documents from the Internet Engineering Task Force (IETF).
+
+The OSLC (Open Service for Lifecycle Collaboration) community is working on finding a common standard in order that software tools can share and exchange data e.g. bugs, tasks, requirements etc. The final goal is to agree on an open standard for interoperability of open source ALM tools.
+
+Java is a great example of an interoperable programming language that allows for programs to be written once and run anywhere with a Java Virtual Machine.Write once, run anywhere One writing a program in Java, so long as it does not use system-specific functionality, will maintain interoperability with all machines that have a Java Virtual Machine. There are many implementations of the Java Virtual Machine, such as Oracle, IBM, Android, etc... If a Java Virtual Machine is created to specification, applications will maintain compatibility because while the implementation is different, the underlying language interfaces are the same.
+
+Achieving software
+
+Software interoperability is achieved through five interrelated ways:
+# Product testing
+#: Products produced to a common standard, or to a sub-profile thereof, depend on the clarity of the standards, but there may be discrepancies in their implementations that system or unit testing may not uncover. This requires that systems formally be tested in a production scenario – as they will be finally implemented – to ensure they actually will intercommunicate as advertised, i.e. they are interoperable. Interoperable product testing is different from conformance-based product testing as conformance to a standard does not necessarily engender interoperability with another product which is also tested for conformance.
+# Product engineering
+#: Implements the common standard, or a sub-profile thereof, as defined by the industry/community partnerships with the specific intention of achieving interoperability with other software implementations also following the same standard or sub-profile thereof.
+# Industry/community partnership
+#: Industry-community partnerships, either domestic or international, sponsor standard workgroups with the purpose to define a common standard that may be used to allow software systems to intercommunicate for a defined purpose. At times an industry/community will sub-profile an existing standard produced by another organization to reduce options and thus making interoperability more achievable for implementations.
+# Common technology and IP
+#: The use of a common technology or IP may speed up and reduce the complexity of interoperability by reducing variability between components from different sets of separately developed software products and thus allowing them to intercommunicate more readily. This technique has some of the same technical results as using a common vendor product to produce interoperability. The common technology can come through 3rd party libraries or open-source developments.
+# Standard implementation
+#: Software interoperability requires a common agreement that is normally arrived at via an industrial, national or international standard.
+
+Each of these has an important role in reducing variability in intercommunication software and enhancing a common understanding of the end goal to be achieved.
+
+Market dominance and power 
+
+Interoperability tends to be regarded as an issue for experts and its implications for daily living are sometimes underrated. The European Union Microsoft competition case shows how interoperability concerns important questions of power relationships. In 2004, the European Commission found that Microsoft had abused its market power by deliberately restricting interoperability between Windows work group servers and non-Microsoft work group servers. By doing so, Microsoft was able to protect its dominant market position for work group server operating systems, the heart of corporate IT networks. Microsoft was ordered to disclose complete and accurate interface documentation, which will enable rival vendors to compete on an equal footing (the interoperability remedy). As of June 2005, the Commission is market testing a new proposal by Microsoft to do this, having rejected previous proposals as insufficient.
+
+Interoperability has also surfaced in the software patent debate in the European Parliament (June–July 2005). Critics claim that because patents on techniques required for interoperability are kept under RAND (reasonable and non-discriminatory licensing) conditions, customers will have to pay license fees twice: once for the product and, in the appropriate case, once for the patent-protected program the product uses.
+
+Manufacturing 
+
+Interoperability has become a common challenge within the manufacturing field in recent years particularly due to legacy systems, and the integration of manufacturing processes under the directive of promoting Industry 4.0. Interoperability has become a cornerstone of manufacturing policy and directives alongside autonomy and sustainability which can be identified within the German Federal policy of 2030 Vision for Industrie 4.0. The current pressing challenge for interoperability is closely linked to that of standardization and the implementation of best practices, which have prevented the driving of I4.0 to link manufacturing throughout the supply chain. Research into the current challenges have indicated that there is a gap within the IT and application landscapes of manufacturing enterprises, which present challenges for the linking of systems and flow of data. 
+
+Medical industry
+
+New technology is being introduced in hospitals and labs at an ever-increasing rate. The need for plug-and-play interoperability – the ability to take a medical device out of its box and easily make it work with one's other devices – has attracted great attention from both healthcare providers and industry.
+
+Increasingly, medical devices like incubators and imaging systems feature software that integrates at the point of care and with electronic systems, such as electronic medical records. At the 2016 Regulatory Affairs Professionals Society (RAPS) meeting, experts in the field like Angela N. Johnson with GE Healthcare and representative of the United States Food and Drug Administration provided practical seminars in how companies developing new medical devices, and hospitals installing them, can work more effectively to align interoperable software systems.
+
+Railways 
+
+Railways have greater or lesser interoperability depending on conforming to standards of gauge, couplings, brakes, signalling, communications, loading gauge, structure gauge, and operating rules, to mention a few parameters. For passenger rail service, different railway platform height and width clearance standards may also cause interoperability problems.
+
+North American freight and intercity passenger railroads are highly interoperable, but systems in Europe, Asia, Africa, Central and South America, and Australia are much less so. The parameter most difficult to overcome (at reasonable cost) is incompatibility of gauge, though variable gauge axle systems are increasingly used.
+
+Telecommunications 
+
+In telecommunication, the term can be defined as:
+
+#The ability to provide services to and accept services from other systems, and to use the services exchanged to enable them to operate effectively together. ITU-T provides standards for international telecommunications. 
+#The condition achieved among communications-electronics systems or items of communications-electronics equipment when information or services can be exchanged directly and satisfactorily between them and/or their users. The degree of interoperability should be defined when referring to specific cases.
+
+In two-way radio, interoperability is composed of three dimensions:
+
+* compatible communications paths (compatible frequencies, equipment and signaling),
+* radio system coverage or adequate signal strength, and;
+* scalable capacity.
+
+Organizations dedicated to interoperability
+
+Many organizations are dedicated to interoperability. All have in common that they want to push the development of the World Wide Web towards the semantic web. Some concentrate on eGovernment, eBusiness or data exchange in general. Internationally, Network Centric Operations Industry Consortium facilitates global interoperability across borders, language and technical barriers. In Europe, for instance, the European Commission and its IDABC program issue the European Interoperability Framework. IDABC was succeeded by the ISA program. They also initiated the Semantic Interoperability Centre Europe (SEMIC.EU). A [https://web.archive.org/web/20080331053219/http://www.eulis.org/index.html European Land Information Service] (EULIS) was established in 2006, as a consortium of European National Land Registers. The aim of the service is to establish a single portal through which customers are provided with access to information about individual properties, about land and property registration services, and about the associated legal environment. In the United States, the government's CORE.gov service provides a collaboration environment for component development, sharing, registration, and reuse and related to this is the [http://www.NIEM.gov National Information Exchange Model (NIEM)] work and component repository. The National Institute of Standards and Technology serves as an agency for measurement standards.
+
+See also
+
+; Computer and information technology
+*Architecture of Interoperable Information Systems
+*List of computer standards
+*Model Driven Interoperability, framework  
+*Semantic Web, standard for making Internet data machine readable
+
+; Business
+*Business interoperability interface, between an organization's systems and processes
+*Enterprise interoperability, ability to link activities in an efficient and competitive way
+
+; Other 
+*Collaboration, general concept
+*Polytely, problem solving
+*Universal Data Element Framework, information indexing 
+
+References
+
+External links
+
+*[http://cyber.law.harvard.edu/interop/pdfs/interop-breaking-barriers.pdf "When and How Interoperability Drives Innovation," by Urs Gasser and John Palfrey]
+*[https://web.archive.org/web/20070912061034/http://www.cimit.org/orfuture.html CIMIT - Center for Integration of Medicine and Innovative Technology - the MD PnP Program on Medical Device Interoperability]
+*[https://web.archive.org/web/20190106202013/http://www.iocenter.eu/ GIC - The Greek Interoperability Centre: A Research Infrastructure for Interoperability in eGovernment and eBusiness, in SE Europe and the Mediterranean]
+*[http://www.sisostds.org/ Simulation Interoperability Standards Organization (SISO)]
+*[http://www.catcomtec.com Catalyst Communications]
+*[http://www.ariadne.ac.uk/issue24/interoperability Interoperability: What is it and why should I want it? Ariadne 24 (2000)]
+*[http://www.gridwiseac.org/pdfs/constitution_whitepaper_v1_1.pdf Interoperability Constitution - DOE's GridWise Architecture Council]
+*[http://www.gridwiseac.org/pdfs/interopframework_v1_1.pdf Interoperability Context-Setting Framework - DOE's GridWise Architecture Council]
+*[http://www.gridwiseac.org/pdfs/gwac_decisionmakerchecklist.pdf Decision Maker's Interoperability Checklist - DOE's GridWise Architecture Council]
+*[http://www.ibis.uni-oldenburg.de// OA Journal on Interoperability in Business Information Systems] 
+*[http://www.iol.unh.edu/ University of New Hampshire Interoperability Laboratory] - premier research facility on interoperability of computer networking technologies
+*[https://web.archive.org/web/20070926225814/http://sutor.com/newsite/blog-open/?p=1260 Interoperability vs. intraoperability: your open choice] on Bob Sutor blog, 6 December 2006
+*[https://web.archive.org/web/20070304002654/http://www.law.ed.ac.uk/ahrc/script%2Ded/vol3-4/jondet.asp La France v. Apple: who’s the dadvsi in DRMs?], Nicolas Jondet (University of Edinburgh), SCRIPT-ed, December 2006
+*[http://www.ecis.eu ECIS] European Committee for Interoperable Systems
+*Gradmann, Stefan. [https://web.archive.org/web/20160829012217/http://www.nationaalarchief.nl/kennisbank/interoperability-a-key-concept-for-large-scale-persistent-digital-libraries-2009 INTEROPERABILITY. A key concept for large scale, persistent digital libraries.]
+*[http://www.dlorg.eu/ DL.org] Digital Library Interoperability, Best Practices and Modelling Foundations"��{{Short description|Ability of systems to work with each other}}
+{{Use American English|date = March 2019}}
+{{lead too short|date=December 2016}}
+
+'''Interoperability''' is a characteristic of a product or system to work with other products or systems.<ref>{{cite web |others=Copyright AFUL under CC BY-SA |url=http://interoperability-definition.info/en/ |title=Definition of Interoperability |website=dedicated website for a Definition of Interoperability at interoperability-definition.info |access-date=2017-03-13 |archive-date=2017-03-14 |archive-url=https://web.archive.org/web/20170314064547/http://interoperability-definition.info/en/ |url-status=dead }}</ref> While the term was initially defined for [[information technology]] or [[systems engineering]] services to allow for information exchange,<ref>Institute of Electrical and Electronics Engineers. IEEE Standard Computer Dictionary: A Compilation of IEEE Standard Computer Glossaries. New York, NY: 1990.</ref> a broader definition takes into account social, political, and organizational factors that impact system-to-system performance.<ref>Slater, T. [http://www.ncoic.org/what-is-interoperability "What is Interoperability?"] {{Webarchive|url=https://web.archive.org/web/20140714143139/http://www.ncoic.org/what-is-interoperability |date=2014-07-14 }}, [http://www.ncoic.org/ ''Network Centric Operations Industry Consortium - NCOIC''] {{Webarchive|url=https://web.archive.org/web/20171120213045/http://www.ncoic.org/what-is-interoperability |date=2017-11-20 }}, 2012</ref>
+
+Types of interoperability include '''syntactic interoperability''', where two systems can communicate with each other, and [[cross-domain interoperability]], where multiple organizations work together and exchange information.
+
+==Types==
+If two or more systems use common [[File format|data format]]s and [[communication protocol]]s and are capable of communicating with each other, they exhibit ''syntactic interoperability''. [[XML]] and [[SQL]] are examples of common data formats and protocols. Lower-level data formats also contribute to syntactic interoperability, ensuring that alphabetical characters are stored in the same [[ASCII]] or a [[Unicode]] format in all the communicating systems.
+
+Beyond the ability of two or more computer systems to exchange information, [[semantic interoperability]] is the ability to automatically interpret the information exchanged meaningfully and accurately in order to produce useful results as defined by the end users of both systems. To achieve semantic interoperability, both sides must refer to a common information exchange reference model. The content of the information exchange requests are unambiguously defined: what is sent is the same as what is understood.
+
+[[Cross-domain interoperability]] involves multiple social, organizational, political, legal entities working together for a common interest or information exchange.<ref>Slater, T. [https://www.ncoic.org/cross-domain-interoperability "Cross-Domain Interoperability"] {{Webarchive|url=https://web.archive.org/web/20160826110009/https://www.ncoic.org/cross-domain-interoperability |date=2016-08-26 }}, [https://www.ncoic.org/home ''Network Centric Operations Industry Consortium - NCOIC''] {{Webarchive|url=https://web.archive.org/web/20130506134432/https://www.ncoic.org/home |date=2013-05-06 }}, 2013</ref>
+
+==Interoperability and open standards==
+Interoperability implies exchanges between a range of products, or similar products from several different vendors, or even between past and future revisions of the same product. Interoperability may be developed ''[[wikt:ex post facto|post-facto]]'', as a special measure between two products, while excluding the rest, by using [[open standard]]s.{{elucidate|reason=How does using an open standard exclude others?|date=April 2022}} When a vendor is forced to adapt its system to a dominant system that is not based on Open standards, it is [[Computer compatibility|compatibility]], not interoperability.{{cn|date=April 2022}}
+
+===Open standards===
+{{Main|Open standard}}
+Open standards rely on a broadly consultative and inclusive group including representatives from vendors, academics and others holding a stake in the development that discusses and debate the technical and economic merits, demerits and feasibility of a proposed common protocol. After the doubts and reservations of all members are addressed, the resulting common document is endorsed as a ''common standard''. This document may be subsequently released to the public, and henceforth becomes an ''open standard''. It is usually published and is available freely or at a nominal cost to any and all comers, with ''no further encumbrances''. Various vendors and individuals (even those who were not part of the original group) can use the standards document to make products that implement the common protocol defined in the standard and are thus ''interoperable by design'', with no specific liability or advantage for customers for choosing one product over another on the basis of standardized features. The vendors' products compete on the quality of their implementation, user interface, ease of use, performance, price, and a host of other factors, while keeping the customer's data intact and transferable even if he chooses to switch to another competing product for business reasons.
+
+===''Post facto'' interoperability===
+{{Original research|section|date=August 2016}}
+''Post facto'' interoperability may be the result of the absolute market dominance of a particular product in contravention of any applicable standards, or if any effective standards were not present at the time of that product's introduction. The vendor behind that product can then choose to ''ignore'' any forthcoming standards and not co-operate in any standardization process at all, using its near-monopoly to insist that its product sets the ''de facto'' standard by its very market dominance. This is not a problem if the product's implementation is open ''and'' minimally encumbered, but it may well be both closed and heavily encumbered (e.g. by patent claims). Because of the [[network effect]], achieving interoperability with such a product is both critical for any other vendor if it wishes to remain relevant in the market, and difficult to accomplish because of lack of cooperation on equal terms with the original vendor, who may well see the new vendor as a potential competitor and threat. The newer implementations often rely on [[clean-room reverse engineering]] in the absence of technical data to achieve interoperability. The original vendors may provide such technical data to others, often in the name of ''encouraging competition'', but such data is invariably encumbered, and may be of limited use. Availability of such data is ''not'' equivalent to an open standard, because:
+# The data is provided by the original vendor on a discretionary basis, and the vendor has every interest in blocking the effective implementation of competing solutions, and may subtly alter or change its product, often in newer revisions, so that competitors' implementations are almost, but not quite completely interoperable, leading customers to consider them unreliable or of lower quality. These changes may not be passed on to other vendors at all, or passed on after a strategic delay, maintaining the market dominance of the original vendor.
+# The data itself may be encumbered, e.g. by patents or pricing, leading to a dependence of all competing solutions on the original vendor, and possibly leading a revenue stream from the competitors' customers back to the original vendor. This revenue stream is the result of the original product's market dominance and not a result of any innate superiority.
+# Even when the original vendor is genuinely interested in promoting a healthy competition (so that he may also benefit from the resulting innovative market), post-facto interoperability may often be undesirable as many defects or quirks can be directly traced back to the original implementation's technical limitations. Although in an open process, anyone may identify and correct such limitations, and the resulting cleaner specification may be used by all vendors, this is more difficult post-facto, as customers already have valuable information and processes encoded in the faulty but dominant product, and other vendors are forced to replicate those faults and quirks for the sake of preserving interoperability even if they could design better solutions. Alternatively, it can be argued that even open processes are subject to the weight of past implementations and imperfect past designs and that the power of the dominant vendor to unilaterally correct or improve the system and impose the changes to all users facilitates innovation.
+# Lack of an open standard can also become problematic for the customers, as in the case of the original vendor's inability to fix a certain problem that is an artifact of technical limitations in the original product. The customer wants that fault fixed, but the vendor has to maintain that faulty state, even across newer revisions of the same product, because that behavior is a de facto standard and many more customers would have to pay the price of any interoperability issues caused by fixing the original problem and introducing new behavior.
+
+== Government ==
+
+=== eGovernment ===
+Speaking from an e-government perspective, interoperability refers to the collaboration ability of cross-border services for citizens, businesses and public administrations. Exchanging data can be a challenge due to language barriers, different specifications of formats, varieties of categorizations and other hindrances.
+
+If data is interpreted differently, collaboration is limited, takes longer and is inefficient. For instance, if a citizen of country A wants to purchase land in country B, the person will be asked to submit the proper address data. Address data in both countries include full name details, street name and number as well as a [[postal code]]. The order of the address details might vary. In the same language, it is not an obstacle to order the provided address data; but across language barriers, it becomes difficult. If the language uses a different [[writing system]] it is almost impossible if no translation tools are available.
+
+=== Flood risk management ===
+Interoperability is used by researchers in the context of urban [[flood risk management]].<ref>{{Cite journal|last1=Vercruysse|first1=Kim|last2=Dawson|first2=David A.|last3=Wright|first3=Nigel|title=Interoperability: A conceptual framework to bridge the gap between multifunctional and multisystem urban flood management|journal=Journal of Flood Risk Management|language=en|pages=e12535|doi=10.1111/jfr3.12535|issn=1753-318X|year=2019|volume=12|doi-access=free}}</ref>  Cities and urban areas worldwide are expanding, which creates complex spaces with many interactions between the environment, infrastructure and people.  To address this complexity and manage water in urban areas appropriately, a [[system of systems]] approach to water and [[flood control]] is necessary. In this context, interoperability is important to facilitate system-of-systems thinking, and is defined as: "the ability of any water management system to redirect water and make use of other system(s) to maintain or enhance its performance function during water exceedance events."<ref>{{citation |title=Achieving Urban Flood Resilience in an Uncertain Future  |year=2019 |doi=10.3390/w11051082|doi-access=free |last1=Fenner |first1=Richard |last2=o'Donnell |first2=Emily |last3=Ahilan |first3=Sangaralingam |last4=Dawson |first4=David |last5=Kapetas |first5=Leon |last6=Krivtsov |first6=Vladimir |last7=Ncube |first7=Sikhululekile |last8=Vercruysse |first8=Kim |journal=Water |volume=11 |issue=5 |page=1082 }}</ref> By assessing the complex properties of urban infrastructure systems, particularly the interoperability between the [[drainage]] systems and other urban systems (e.g. infrastructure such as transport), it could be possible to expand the capacity of the overall system to manage flood water towards achieving improved urban flood resilience.<ref>{{Cite web|url=http://www.urbanfloodresilience.ac.uk/|title=Urban Flood Resilience|website=www.urbanfloodresilience.ac.uk|language=en-GB|access-date=2019-05-15}}</ref>
+
+===Military forces===
+{{anchor| Military}}
+''Force interoperability'' is defined in NATO as the ability of the forces of two or more nations to train, exercise and operate effectively together in the execution of assigned missions and tasks. Additionally NATO defines interoperability more generally as the ability to act together coherently, effectively and efficiently to achieve Allied tactical, operational and strategic objectives.<ref>[http://nso.nato.int/nso/zPublic/ap/aap6/AAP-6.pdf NATO Glossary of Terms and Definitions, NATO AAP-06]{{dead link|date=April 2017 |bot=InternetArchiveBot |fix-attempted=yes }}</ref>
+
+At the strategic level, interoperability is an enabler for coalition building. It facilitates meaningful contributions by coalition partners. At this level, interoperability issues center on harmonizing world views, strategies, doctrines, and force structures. Interoperability is an element of coalition willingness to work together over the long term to achieve and maintain shared interests against common threats. Interoperability at the operational and tactical levels is where strategic interoperability and technological interoperability come together to help allies shape the environment, manage crises, and win wars. The benefits of interoperability at the operational and tactical levels generally derive from the interchangeability of force elements and units. ''Technological interoperability'' reflects the interfaces between organizations and systems. It focuses on communications and computers but also involves the technical capabilities of systems and the resulting mission compatibility between the systems and data of coalition partners. At the technological level, the benefits of interoperability come primarily from their impacts at the operational and tactical levels in terms of enhancing flexibility.<ref>Interoperability: A continuing Challenge in Coalition Air Operations - Chapter 2 “A broad Definition of Interoperability”, by Myron Hura, Gary McLeod, James Schneider and others, RAND Monograph Report, 2000, [http://www.rand.org/content/dam/rand/pubs/monograph_reports/MR1235/MR1235.chap2.pdf] {{Webarchive|url=https://web.archive.org/web/20131019111733/http://www.rand.org/content/dam/rand/pubs/monograph_reports/MR1235/MR1235.chap2.pdf |date=2013-10-19 }}</ref><!--[[User:Kvng/RTH]]-->
+ 
+===Public safety===
+Interoperability is an important issue for [[police|law enforcement]], [[fire fighting]], [[Emergency medical services|EMS]], and other public health and safety departments, because first responders need to be able to communicate during wide-scale emergencies. It has been a major area of investment and research over the last 12 years.<ref>Allen, D. K., Karanasios, S., & Norman, A. (2013). Information sharing and interoperability: the case of major incident management. European Journal of Information Systems, 10.1057/ejis.2013.8.</ref><ref>Baldini, G. (2010). Report of the workshop on “Interoperable communications for Safety and Security”. Ispra: European Commission, Joint Research Centre (JRC), Institute for the Protection and Security of the Citizen.</ref> Traditionally, agencies could not exchange information because they operated widely disparate hardware that was incompatible.<ref>{{Cite news|url=https://www.firerescue1.com/fire-products/communications/interoperability/articles/424190-Interoperability-system-bridges-communications-gap/|title=Interoperability system bridges communications gap|newspaper=FireRescue1|access-date=2017-01-25}}</ref> Agencies' information systems such as computer-aided dispatch systems (CAD) and records management systems (RMS) functioned largely in isolation, so-called ''information islands''. Agencies tried to bridge this isolation with inefficient, stop-gap methods while large agencies began implementing limited interoperable systems. These approaches were inadequate and, in the US, the lack of interoperability in the public safety realm become evident during the [[9/11 attacks]]<ref>{{cite web|last=Grier|first=Robin|title=Interoperability Solutions|url=http://www.catcomtec.com/index.php?option=com_content&view=article&id=19&Itemid=34|work=Interoperability|publisher=Catalyst Communications|access-date=28 May 2011}}</ref> on the Pentagon and World Trade Center structures. Further evidence of a lack of interoperability surfaced when agencies tackled the aftermath of the Hurricane Katrina disaster.
+
+In contrast to the overall national picture, some states, including Utah, have already made great strides forward. The [[Utah Highway Patrol]] and other departments in Utah have created a statewide [[data sharing]] network using technology from a company based in [[Bountiful, Utah]], [https://web.archive.org/web/20180710230842/https://www.fatpot.com/ FATPOT Technologies].
+
+The Commonwealth of Virginia is one of the leading states in the United States in improving interoperability and is continually recognized as a National Best Practice by the Department of Homeland Security (DHS).{{Citation needed|date=August 2016}} Virginia's proven practitioner-driven governance structure ensures that all the right players are involved in decision making, training and exercises, and planning efforts.{{Citation needed|date=August 2016}} The Interoperability Coordinator leverages a regional structure to better allocate grant funding around the Commonwealth so that all areas have an opportunity to improve communications interoperability. Virginia's strategic plan for communications is updated yearly to include new initiatives for the Commonwealth&nbsp;– all projects and efforts are tied to this plan, which is aligned with the National Emergency Communications Plan, authored by the Department of Homeland Security's Office of Emergency Communications (OEC).
+
+The State of Washington<ref>{{cite web|url=http://www.governor.wa.gov|title=Governor Jay Inslee - Washington State|access-date=12 August 2016}}</ref> seeks to enhance interoperability statewide. The State Interoperability Executive Committee<ref>{{cite web|url=http://www.siec.wa.gov|title=SIEC|access-date=12 August 2016}}</ref> (SIEC), established by the legislature in 2003, works to assist emergency responder agencies (police, fire, sheriff, medical, hazmat, etc.) at all levels of government (city, county, state, tribal, federal) to define interoperability for their local region.
+
+Washington recognizes collaborating on system design and development for wireless radio systems enables emergency responder agencies to efficiently provide additional services, increase interoperability, and reduce long-term costs.
+
+This work saves the lives of emergency personnel and the citizens they serve.
+
+The U.S. government is making an effort to overcome the nation's lack of public safety interoperability. The Department of Homeland Security's [[Office for Interoperability and Compatibility]] (OIC) is pursuing the SAFECOM<ref>{{cite web|url=http://www.safecomprogram.gov/|title=SAFECOM - Homeland Security|access-date=12 August 2016|archive-url=https://web.archive.org/web/20141221211800/http://www.safecomprogram.gov/|archive-date=2014-12-21|url-status=dead}}</ref> and [[CADIP]] and [[Project 25]] programs, which are designed to help agencies as they integrate their CAD and other IT systems.
+
+The OIC launched CADIP in August 2007. This project will partner the OIC with agencies in several locations, including [[Silicon Valley]]. This program will use case studies to identify the best practices and challenges associated with linking CAD systems across jurisdictional boundaries. These lessons will create the tools and resources public safety agencies can use to build interoperable CAD systems and communicate across local, state, and federal boundaries.
+
+=== As regulator for interoperability ===
+Governance entities can increase interoperability through their legislative and executive powers. For instance, in 2021 the [[European Commission]], after commissioning two impact assessment studies and a [[product analysis|technology analysis]] study, proposed the implementation of a [[standardization]] – for iterations of [[USB-C]] – of [[phone charger]] products, which may increase interoperability along with convergence and convenience for consumers while decreasing resource-needs, redundancy and [[electronic waste]].<ref>{{cite news |title=Apple opposes EU plans to make common charger port for all devices |url=https://www.theguardian.com/world/2021/sep/23/apple-opposes-eu-plans-to-make-common-charger-port-for-all-devices |access-date=19 October 2021 |work=The Guardian |date=23 September 2021 |language=en}}</ref><ref>{{cite news |last1=Peltier |first1=Elian |title=In a setback for Apple, the European Union seeks a common charger for all phones. |url=https://www.nytimes.com/2021/09/23/business/european-union-apple-charging-port.html |access-date=19 October 2021 |work=The New York Times |date=23 September 2021}}</ref><ref>{{cite web |title=One common charging solution for all |url=https://ec.europa.eu/growth/sectors/electrical-engineering/red-directive/common-charger_en |website=Internal Market, Industry, Entrepreneurship and SMEs - European Commission |access-date=19 October 2021 |language=en |date=5 July 2016}}</ref>
+
+== Commerce and Industries ==
+
+=== Information technology and computers ===
+
+====Desktop====
+{{Unreferenced section|date=March 2019}}
+
+The desktop interoperability (also known as interop) is a sub-section of the software interoperability. In the early days, the focus of ‘interop’ was to integrate web-applications with other web-applications. Over time, open-system ‘containers’ were developed to create a virtual desktop environment in which these applications could be registered and then communicate with each other using simple pub/sub patterns. Rudimentary UI capabilities were also supported allowing windows to be grouped with other windows. Today, the desktop interoperability has evolved into full-service interop platforms which include container support, basic exchange between web and web, but also native support for other application types and advanced window management. The very latest interop platforms also include application services such as universal search, notifications, user permissions and preferences, 3rd party application connectors and language adapters for in-house applications.
+
+====Information search====
+Search interoperability refers to the ability of two or more information collections to be searched by a single query.
+
+Specifically related to web-based search, the challenge of interoperability stems from the fact designers of web resources typically have little or no need to concern themselves with exchanging information with other web resources. [[Federated Search]] technology, which does not place format requirements on the data owner, has emerged as one solution to search interoperability challenges. In addition, standards, such as [[OAI-PMH]], [[Resource Description Framework|RDF]], and [[SPARQL]], have emerged recently that also help address the issue of search interoperability related to web resources. Such standards also address broader topics of interoperability, such as allowing data mining.
+
+====Software====
+[[Image:Interoperable software.png|250px|thumb|Interoperability: playing the two role network game, when one of the player clients (top left) runs under [[Sun Microsystems]] and another under [[GNU Classpath]] with [[JamVM]]. The applications execute the same [[bytecode]] and interoperate using the standard [[RMI-IIOP]] messages for communication]]
+{{Main|Language interoperability|Semantic interoperability}}
+
+With respect to [[software]], the term ''interoperability'' is used to describe the capability of different programs to exchange data via a common set of exchange formats, to read and write the same [[file format]]s, and to use the same [[protocol (computing)|protocol]]s. (The ability to execute the same [[executable|binary code]] on different [[Central processing unit|processor]] platforms is 'not' contemplated by the definition of interoperability.) The lack of interoperability can be a consequence of a lack of attention to [[standardization]] during the design of a program. Indeed, interoperability is not taken for granted in the non-standards-based portion of the computing world.<ref>{{Cite book|title=The Official Guide to the SSCP Book|last=Gordon and Hernandez|publisher=SYBEX|isbn=978-1119278634|date=2016-05-16}}</ref>
+
+According to ISO/IEC 2382-01, ''Information Technology Vocabulary, Fundamental Terms'', interoperability is defined as follows: "The capability to communicate, execute programs, or transfer data among various functional units in a manner that requires the user to have little or no knowledge of the unique characteristics of those units".<ref>{{cite web|url=http://jtc1sc36.org/doc/36N0646.pdf|title=Proposed Draft Technical Report for: ISO/IEC xxxxx, Information technology -- Learning, education, and training -- Management and delivery -- Specification and use of extensions and profiles|author=SC36 Secretariat|date=2003-11-13|publisher=ISO/IEC JTC1 SC36|archive-url=https://web.archive.org/web/20071129034634/http://old.jtc1sc36.org/doc/36N0646.pdf|archive-date=2007-11-29|url-status=dead|access-date=12 August 2016}}</ref>
+
+Note that the definition is somewhat ambiguous because the ''user'' of a program can be another program and, if the latter is a portion of the set of program that is required to be interoperable, it might well be that it does need to have knowledge of the characteristics of other units.
+
+This definition focuses on the technical side of interoperability, while it has also been pointed out{{By whom|date=August 2016}} that interoperability is often more of an organizational issue: often interoperability has a significant impact on the organizations concerned, raising issues of ownership (do people want to share their data? or are they dealing with [[information silo]]s?), labor relations (are people prepared to undergo training?) and usability. In this context, a more apt definition is captured in the term ''[[business process interoperability]]''.
+
+Interoperability can have important [[economic]] consequences; for example, research has estimated the cost of inadequate interoperability in the U.S. capital facilities industry to be $15.8 billion a year.<ref>{{cite report|author1=MP Gallaher|author2=AC O’Connor|author3=JL Dettbarn, Jr.|author4=LT Gilday|date=August 2004|title=Cost Analysis of Inadequate Interoperability in the U.S. Capital Facilities Industry|url=http://nvlpubs.nist.gov/nistpubs/gcr/2004/NIST.GCR.04-867.pdf|publisher=National Institute of Standards and Technology|page=iv|access-date=2012-04-19|archive-url=https://web.archive.org/web/20160204225252/http://nvlpubs.nist.gov/nistpubs/gcr/2004/NIST.GCR.04-867.pdf|archive-date=2016-02-04|url-status=dead}}</ref> If competitors' products are not interoperable (due to causes such as [[patent]]s, [[trade secret]]s or [[Coordination failure (economics)|coordination failures]]), the result may well be [[monopoly]] or [[market failure]]. For this reason, it may be prudent for user communities or governments to take steps to encourage interoperability in various situations. At least 30 international bodies and countries have implemented [[eGovernment]]-based interoperability framework initiatives called [[e-GIF]] while in the United States there is the [[NIEM]] initiative.<ref>{{cite web |url=https://lists.oasis-open.org/archives/tgf/201101/pdf00010.pdf |archive-url=https://ghostarchive.org/archive/20221009/https://lists.oasis-open.org/archives/tgf/201101/pdf00010.pdf |archive-date=2022-10-09 |url-status=live |title=e-Government Interoperability A comparative analysis of 30 countries |publisher=CS Transform |year=2010 |access-date=21 January 2016}}</ref> Standards Defining Organizations (SDOs) provide open public software specifications to facilitate interoperability; examples include the [[Oasis-Open]] organization and [[buildingSMART]] (formerly the International Alliance for Interoperability). As far as user communities, [[Neutral Third Party]] is creating standards for business process interoperability. Another example of a neutral party is the [[Request for Comments|RFC]] documents from the [[Internet Engineering Task Force]] (IETF).
+
+The OSLC<ref>{{cite web|url=http://open-services.net/|title=Open Services for Lifecycle Collaboration|access-date=12 August 2016}}</ref> (Open Service for Lifecycle Collaboration) community is working on finding a common standard in order that software tools can share and exchange data e.g. bugs, tasks, requirements etc. The final goal is to agree on an open standard for interoperability of open source [[Application Lifecycle Management|ALM]] tools.<ref>{{cite web|url=http://www.slideshare.net/olberger/presentation-icssea2011|title=OSLC (Open Services for Lifecycle Collaboration): open standard for i…|date=30 November 2011|access-date=12 August 2016}}</ref>
+
+Java is a great example of an interoperable programming language that allows for programs to be written once and run anywhere with a Java Virtual Machine.<ref>[[Write once, run anywhere]]</ref>{{better source|date=May 2018}} One writing a program in Java, so long as it does not use system-specific functionality, will maintain interoperability with all machines that have a Java Virtual Machine. There are many implementations of the Java Virtual Machine, such as Oracle, IBM, Android, etc... If a Java Virtual Machine is created to specification, applications will maintain compatibility because while the implementation is different, the underlying language interfaces are the same.<ref>{{Cite book|url=https://www.safaribooksonline.com/library/view/clojure-programming/9781449310387/ch09.html|title=9. Java and JVM Interoperability [Book]|language=en}}</ref>
+
+=====Achieving software=====
+Software interoperability is achieved through five interrelated ways:
+# Product testing
+#: Products produced to a common standard, or to a sub-profile thereof, depend on the clarity of the standards, but there may be discrepancies in their implementations that system or unit testing may not uncover. This requires that systems formally be tested in a production scenario&nbsp;– as they will be finally implemented&nbsp;– to ensure they actually will intercommunicate as advertised, i.e. they are interoperable. Interoperable product testing is different from conformance-based product testing as conformance to a standard does not necessarily engender interoperability with another product which is also tested for conformance.
+# Product engineering
+#: Implements the common standard, or a sub-profile thereof, as defined by the industry/community partnerships with the specific intention of achieving interoperability with other software implementations also following the same standard or sub-profile thereof.
+# Industry/community partnership
+#: Industry-community partnerships, either domestic or international, sponsor standard workgroups with the purpose to define a common standard that may be used to allow software systems to intercommunicate for a defined purpose. At times an industry/community will sub-profile an existing standard produced by another organization to reduce options and thus making interoperability more achievable for implementations.
+# Common technology and IP
+#: The use of a common technology or IP may speed up and reduce the complexity of interoperability by reducing variability between components from different sets of separately developed software products and thus allowing them to intercommunicate more readily. This technique has some of the same technical results as using a common vendor product to produce interoperability. The common technology can come through 3rd party libraries or open-source developments.
+# Standard implementation
+#: Software interoperability requires a common agreement that is normally arrived at via an industrial, national or international [[standardisation|standard]].
+
+Each of these has an important role in reducing variability in intercommunication software and enhancing a common understanding of the end goal to be achieved.
+
+===Market dominance and power ===
+Interoperability tends to be regarded as an issue for experts and its implications for daily living are sometimes underrated. The [[European Union Microsoft competition case]] shows how interoperability concerns important questions of power relationships. In 2004, the European Commission found that Microsoft had abused its market power by deliberately restricting interoperability between Windows work group servers and non-Microsoft work group servers. By doing so, Microsoft was able to protect its dominant market position for work group server operating systems, the heart of corporate IT networks. Microsoft was ordered to disclose complete and accurate interface documentation, which will enable rival vendors to compete on an equal footing (''the interoperability remedy''). As of June 2005, the Commission is market testing a new proposal by Microsoft to do this, having rejected previous proposals as insufficient.
+
+Interoperability has also surfaced in the [[software patent debate]] in the [[European Parliament]] (June–July 2005). Critics claim that because patents on techniques required for interoperability are kept under RAND (reasonable and non-discriminatory licensing) conditions, customers will have to pay license fees twice: once for the product and, in the appropriate case, once for the patent-protected program the product uses.
+
+=== Manufacturing ===
+Interoperability has become a common challenge within the manufacturing field in recent years particularly due to legacy systems, and the integration of manufacturing processes under the directive of promoting Industry 4.0.<ref name=":0">{{Cite journal |last=Keller |first=Matthias |date=2021 |title=I4.0 Strategy and Policy Integration in The German Machining Industry |url=https://www.researchgate.net/publication/359005363 |journal=KU Leuven}}</ref> Interoperability has become a cornerstone of manufacturing policy and directives alongside autonomy and sustainability which can be identified within the German Federal policy of 2030 Vision for Industrie 4.0. The current pressing challenge for interoperability is closely linked to that of standardization and the implementation of best practices, which have prevented the driving of I4.0 to link manufacturing throughout the supply chain. Research into the current challenges have indicated that there is a gap within the IT and application landscapes of manufacturing enterprises, which present challenges for the linking of systems and flow of data.<ref name=":0" /> 
+
+===Medical industry===
+New technology is being introduced in [[hospitals]] and labs at an ever-increasing rate. The need for ''[[plug-and-play]]'' interoperability&nbsp;– the ability to take a medical device out of its box and easily make it work with one's other devices&nbsp;– has attracted great attention from both healthcare providers and industry.
+
+Increasingly, medical devices like incubators and imaging systems feature software that integrates at the point of care and with electronic systems, such as electronic medical records. At the 2016 Regulatory Affairs Professionals Society (RAPS) meeting, experts in the field like Angela N. Johnson with GE Healthcare and representative of the United States Food and Drug Administration provided practical seminars in how companies developing new medical devices, and hospitals installing them, can work more effectively to align interoperable software systems.<ref>{{cite web|url=http://www.assurx.com/raps-preview-fda-cdrh-director-shuren-talks-priorities/ |title= RAPS Preview: FDA CDRH Director Shuren Talks Priorities |date= September 19, 2016 |access-date= April 8, 2017}}</ref>
+
+=== Railways ===
+{{anchor| Railways}}
+
+Railways have greater or lesser interoperability depending on conforming to standards of [[Track gauge|gauge]], [[Railway coupling|couplings]], [[brake (railway)|brakes]], [[Railway signal|signalling]], [[communications]], [[loading gauge]], [[structure gauge]], and [[Railway signalling#Operating rules|operating rules]], to mention a few parameters. For passenger rail service, different [[railway platform height]] and [[platform gap|width clearance]] standards may also cause interoperability problems.
+
+North American freight and intercity passenger railroads are highly interoperable, but systems in Europe, Asia, Africa, Central and South America, and Australia are much less so. The parameter most difficult to overcome (at reasonable cost) is incompatibility of gauge, though [[variable gauge]] axle systems are increasingly used.
+
+=== Telecommunications ===
+In [[telecommunication]], the term can be defined as:
+
+#The ability to provide services to and accept services from other systems, and to use the services exchanged to enable them to operate effectively together. [[ITU-T]] provides standards for international telecommunications. 
+#The condition achieved among [[communications-electronics]] systems or items of communications-electronics equipment when [[information]] or services can be exchanged directly and satisfactorily between them and/or their users. The degree of interoperability should be defined when referring to specific cases.<ref>{{FS1037C MS188}}</ref><ref>{{DODDIC}}</ref>
+
+In [[two-way radio]], interoperability is composed of three dimensions:
+
+* compatible communications paths (compatible frequencies, equipment and signaling),
+* radio system coverage or adequate signal strength, and;
+* scalable capacity.
+
+==Organizations dedicated to interoperability==
+Many organizations are dedicated to interoperability. All have in common that they want to push the development of the World Wide Web towards the semantic web.{{dubious|date=March 2014}} Some concentrate on eGovernment, eBusiness or data exchange in general. Internationally, [[Network Centric Operations Industry Consortium]] facilitates global interoperability across borders, language and technical barriers. In Europe, for instance, the European Commission and its [[IDABC]] program issue the [[European Interoperability Framework]]. IDABC was succeeded by the [[eGovernment in Europe#Interoperability Solutions for European Public Administrations (ISA)|ISA]] program. They also initiated the [[Semantic Interoperability Centre Europe]] (SEMIC.EU). A [https://web.archive.org/web/20080331053219/http://www.eulis.org/index.html European Land Information Service] (EULIS) was established in 2006, as a consortium of European National Land Registers. The aim of the service is to establish a single portal through which customers are provided with access to information about individual properties, about land and property registration services, and about the associated legal environment.<ref>{{cite web|url=http://www.eulis.org/aims.html|title=Welcome - EULIS|first=Erskine|last=Design|access-date=12 August 2016|archive-url=https://web.archive.org/web/20160917042036/http://eulis.org/aims.html|archive-date=17 September 2016|url-status=dead|df=dmy-all}}</ref> In the United States, the government's CORE.gov service provides a collaboration environment for component development, sharing, registration, and reuse and related to this is the [http://www.NIEM.gov National Information Exchange Model (NIEM)] work and component repository. The [[National Institute of Standards and Technology]] serves as an agency for measurement standards.
+
+==See also==
+{{div col|colwidth=30em}}
+; Computer and information technology
+*[[Architecture of Interoperable Information Systems]]
+*[[List of computer standards]]
+*[[Model Driven Interoperability]], framework  
+*[[Semantic Web]], standard for making Internet data machine readable
+
+; Business
+*[[Business interoperability interface]], between an organization's systems and processes
+*[[Enterprise interoperability]], ability to link activities in an efficient and competitive way
+
+; Other 
+*[[Collaboration]], general concept
+*[[Polytely]], problem solving
+*[[Universal Data Element Framework]], information indexing 
+{{div col end}}
+
+==References==
+{{reflist}}
+
+==External links==
+{{External links|date=August 2016}}
+*[http://cyber.law.harvard.edu/interop/pdfs/interop-breaking-barriers.pdf "When and How Interoperability Drives Innovation," by Urs Gasser and John Palfrey]
+*[https://web.archive.org/web/20070912061034/http://www.cimit.org/orfuture.html CIMIT - Center for Integration of Medicine and Innovative Technology - the MD PnP Program on Medical Device Interoperability]
+*[https://web.archive.org/web/20190106202013/http://www.iocenter.eu/ GIC - The Greek Interoperability Centre: A Research Infrastructure for Interoperability in eGovernment and eBusiness, in SE Europe and the Mediterranean]
+*[http://www.sisostds.org/ Simulation Interoperability Standards Organization (SISO)]
+*[http://www.catcomtec.com Catalyst Communications]
+*[http://www.ariadne.ac.uk/issue24/interoperability Interoperability: What is it and why should I want it? Ariadne 24 (2000)]
+*[http://www.gridwiseac.org/pdfs/constitution_whitepaper_v1_1.pdf Interoperability Constitution - DOE's GridWise Architecture Council]
+*[http://www.gridwiseac.org/pdfs/interopframework_v1_1.pdf Interoperability Context-Setting Framework - DOE's GridWise Architecture Council]
+*[http://www.gridwiseac.org/pdfs/gwac_decisionmakerchecklist.pdf Decision Maker's Interoperability Checklist - DOE's GridWise Architecture Council]
+*[http://www.ibis.uni-oldenburg.de// OA Journal on Interoperability in Business Information Systems] {{Webarchive|url=https://web.archive.org/web/20161014095614/http://www.ibis.uni-oldenburg.de/ |date=2016-10-14 }}
+*[http://www.iol.unh.edu/ University of New Hampshire Interoperability Laboratory] - premier research facility on interoperability of computer networking technologies
+*[https://web.archive.org/web/20070926225814/http://sutor.com/newsite/blog-open/?p=1260 Interoperability vs. intraoperability: your open choice] on Bob Sutor blog, 6 December 2006
+*[https://web.archive.org/web/20070304002654/http://www.law.ed.ac.uk/ahrc/script%2Ded/vol3-4/jondet.asp La France v. Apple: who’s the dadvsi in DRMs?], Nicolas Jondet (University of Edinburgh), [[SCRIPT-ed]], December 2006
+*[http://www.ecis.eu ECIS] European Committee for Interoperable Systems
+*Gradmann, Stefan. [https://web.archive.org/web/20160829012217/http://www.nationaalarchief.nl/kennisbank/interoperability-a-key-concept-for-large-scale-persistent-digital-libraries-2009 INTEROPERABILITY. A key concept for large scale, persistent digital libraries.]
+*[http://www.dlorg.eu/ DL.org] Digital Library Interoperability, Best Practices and Modelling Foundations
+
+[[Category:Interoperability| ]]
+[[Category:Computing terminology]]
+[[Category:Telecommunications engineering]]
+[[Category:Product testing]]( 2 :2022-10-25T20:43:10ZB7903804JZ
+	Wikipedia'https://en.wikipedia.org/wiki/Main_PageMediaWiki 1.40.0-wmf.8"first-letterRL
+-http://www.ncoic.org/what-is-interoperability"What is Interoperability?"RS
+http://www.ncoic.org/:''Network Centric Operations Industry Consortium - NCOIC''RV
+3https://www.ncoic.org/cross-domain-interoperability"Cross-Domain Interoperability"RX
+https://www.ncoic.org/home:''Network Centric Operations Industry Consortium - NCOIC''Rh
+1http://nso.nato.int/nso/zPublic/ap/aap6/AAP-6.pdf3NATO Glossary of Terms and Definitions, NATO AAP-06RW
+Shttp://www.rand.org/content/dam/rand/pubs/monograph_reports/MR1235/MR1235.chap2.pdf RY
+Bhttps://web.archive.org/web/20180710230842/https://www.fatpot.com/FATPOT TechnologiesRo
+Jhttps://web.archive.org/web/20080331053219/http://www.eulis.org/index.html!European Land Information ServiceRA
+http://www.NIEM.gov*National Information Exchange Model (NIEM)R�
+Ghttp://cyber.law.harvard.edu/interop/pdfs/interop-breaking-barriers.pdfQ"When and How Interoperability Drives Innovation," by Urs Gasser and John PalfreyR�
+Mhttps://web.archive.org/web/20070912061034/http://www.cimit.org/orfuture.html|CIMIT - Center for Integration of Medicine and Innovative Technology - the MD PnP Program on Medical Device InteroperabilityR�
+Bhttps://web.archive.org/web/20190106202013/http://www.iocenter.eu/�GIC - The Greek Interoperability Centre: A Research Infrastructure for Interoperability in eGovernment and eBusiness, in SE Europe and the MediterraneanRU
+http://www.sisostds.org/9Simulation Interoperability Standards Organization (SISO)R3
+http://www.catcomtec.comCatalyst CommunicationsR}
+1http://www.ariadne.ac.uk/issue24/interoperabilityHInteroperability: What is it and why should I want it? Ariadne 24 (2000)R�
+?http://www.gridwiseac.org/pdfs/constitution_whitepaper_v1_1.pdfCInteroperability Constitution - DOE's GridWise Architecture CouncilR�
+8http://www.gridwiseac.org/pdfs/interopframework_v1_1.pdfPInteroperability Context-Setting Framework - DOE's GridWise Architecture CouncilR�
+>http://www.gridwiseac.org/pdfs/gwac_decisionmakerchecklist.pdfQDecision Maker's Interoperability Checklist - DOE's GridWise Architecture CouncilRd
+"http://www.ibis.uni-oldenburg.de//>OA Journal on Interoperability in Business Information SystemsRR
+http://www.iol.unh.edu/7University of New Hampshire Interoperability LaboratoryR�
+Uhttps://web.archive.org/web/20070926225814/http://sutor.com/newsite/blog-open/?p=12607Interoperability vs. intraoperability: your open choiceR�
+ehttps://web.archive.org/web/20070304002654/http://www.law.ed.ac.uk/ahrc/script%2Ded/vol3-4/jondet.asp/La France v. Apple: who’s the dadvsi in DRMs?R
+http://www.ecis.euECISR�
+�https://web.archive.org/web/20160829012217/http://www.nationaalarchief.nl/kennisbank/interoperability-a-key-concept-for-large-scale-persistent-digital-libraries-2009NINTEROPERABILITY. A key concept for large scale, persistent digital libraries.R
+http://www.dlorg.eu/DL.orgb���jޔ�

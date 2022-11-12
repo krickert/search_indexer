@@ -1,0 +1,161 @@
+
+41343Magneto-optic effect�2A magneto-optic effect is any one of a number of phenomena in which an electromagnetic wave propagates through a medium that has been altered by the presence of a quasistatic magnetic field.   In such a medium, which is also called gyrotropic or gyromagnetic, left- and right-rotating elliptical polarizations can propagate at different speeds, leading to a number of important phenomena.  When light is transmitted through a layer of magneto-optic material, the result is called the Faraday effect: the plane of polarization can be rotated, forming a Faraday rotator.  The results of reflection from a magneto-optic material are known as the magneto-optic Kerr effect (not to be confused with the nonlinear Kerr effect).
+
+In general, magneto-optic effects break time reversal symmetry  locally (i.e. when only the propagation of light, and not the source of the magnetic field, is considered) as well as Lorentz reciprocity, which is a necessary condition to construct devices such as optical isolators (through which light passes in one direction but not the other).
+
+Two gyrotropic materials with reversed rotation directions of the two principal polarizations, corresponding to complex-conjugate ε tensors for lossless media, are called optical isomers.
+
+Gyrotropic permittivity
+
+In particular, in a magneto-optic material the presence of a  magnetic field (either externally applied or because the material itself is ferromagnetic) can cause a change in the permittivity tensor ε of the material. The ε becomes anisotropic, a 3×3 matrix, with complex off-diagonal components,  depending of course on the frequency ω of incident light. If the absorption losses can be neglected, ε is a Hermitian matrix. The resulting  principal axes become complex as well, corresponding to elliptically-polarized light where left- and right-rotating polarizations can travel at different speeds (analogous to birefringence).
+
+More specifically, for the case where absorption losses can be neglected, the most general form of Hermitian ε is:
+
+\varepsilon = \begin{pmatrix}
+\varepsilon_{xx}' & \varepsilon_{xy}' + i g_z & \varepsilon_{xz}' - i g_y \\
+\varepsilon_{xy}' - i g_z & \varepsilon_{yy}' & \varepsilon_{yz}' + i g_x \\
+\varepsilon_{xz}' + i g_y & \varepsilon_{yz}' - i g_x & \varepsilon_{zz}' \\
+\end{pmatrix}
+
+or equivalently the relationship between the displacement field D and the electric field E is:
+
+\mathbf{D} \varepsilon \mathbf{E} 
+ \varepsilon' \mathbf{E} + i \mathbf{E} \times \mathbf{g}
+
+where \varepsilon' is a real symmetric matrix and \mathbf{g} = (g_x,g_y,g_z) is a real pseudovector called the gyration vector, whose magnitude is generally small compared to the eigenvalues of \varepsilon'. The direction of g is called the axis of gyration of the material.  To first order, g is proportional to the applied magnetic field:
+
+\mathbf{g} = \varepsilon_0 \chi^{(m)} \mathbf{H}
+
+where \chi^{(m)} \! is the magneto-optical susceptibility (a scalar in isotropic media, but more generally a tensor).  If this susceptibility itself depends upon the electric field, one can obtain a nonlinear optical effect of magneto-optical parametric generation (somewhat analogous to a Pockels effect whose strength is controlled by the applied magnetic field).
+
+The simplest case to analyze is the one in which g is a principal axis (eigenvector) of \varepsilon', and the other two eigenvalues of \varepsilon' are identical.  Then, if we let g lie in the z direction for simplicity, the ε tensor simplifies to the form:
+
+\varepsilon = \begin{pmatrix}
+\varepsilon_1 & + i g_z & 0 \\
+ - i g_z & \varepsilon_1 & 0 \\
+0 & 0 & \varepsilon_2 \\
+\end{pmatrix}
+
+Most commonly, one considers light propagating in the z direction (parallel to g).  In this case the solutions are elliptically polarized electromagnetic waves with phase velocities 1 / \sqrt{\mu(\varepsilon_1 \pm g_z)} (where μ is the magnetic permeability).  This difference in phase velocities leads to the Faraday effect.
+
+For light propagating purely perpendicular to the axis of gyration, the properties are known as the Cotton-Mouton effect and used for a Circulator.
+
+Kerr rotation and Kerr ellipticity
+
+Kerr rotation and Kerr ellipticity are changes in the polarization of incident light which comes in contact with a gyromagnetic material. Kerr rotation is a rotation in the plane of polarization of transmitted light, and Kerr ellipticity is the ratio of the major to minor axis of the ellipse traced out by elliptically polarized light on the plane through which it propagates. Changes in the orientation of polarized incident light can be quantified using these two properties.
+
+According to classical physics, the speed of light varies with the permittivity of a material:
+
+v_p = \frac{1}{\sqrt{\epsilon \mu}} 
+
+where v_p is the velocity of light through the material, \epsilon is the material permittivity, and \mu is the material permeability.  Because the permittivity is anisotropic, polarized light of different orientations will travel at different speeds.
+
+This can be better understood if we consider a wave of light that is circularly polarized (seen to the right). If this wave interacts with a material at which the horizontal component (green sinusoid) travels at a different speed than the vertical component (blue sinusoid), the two components will fall out of the 90 degree phase difference (required for circular polarization) changing the Kerr ellipticity.
+
+A change in Kerr rotation is most easily recognized in linearly polarized light, which can be separated into two circularly polarized components: Left-handed circular polarized (LHCP) light and right-handed circular polarized (RHCP) light. The anisotropy of the magneto-optic material permittivity causes a difference in the speed of LHCP and RHCP light, which will cause a change in the angle of polarized light. Materials that exhibit this property are known as birefringent.
+
+From this rotation, we can calculate the difference in orthogonal velocity components, find the anisotropic permittivity, find the gyration vector, and calculate the applied magnetic field \mathbf{H}.
+
+See also
+
+*Zeeman effect
+*QMR effect
+*Magneto-optic Kerr effect
+*Faraday effect
+*Voigt Effect
+*Photoelectric effect
+
+References
+
+* Federal Standard 1037C and from MIL-STD-188
+* 
+* 
+* 
+*  
+*  
+* [http://magnetooptics.phy.bme.hu/research/topics/broad-band-magneto-optical-spectroscopy/ Broad band magneto-optical spectroscopy]"�F{{Confusing|date=July 2010}}
+
+A '''magneto-optic effect''' is any one of a number of phenomena in which an [[electromagnetic wave]] propagates through a medium that has been altered by the presence of a quasistatic [[magnetic field]].   In such a medium, which is also called '''gyrotropic''' or '''gyromagnetic''', left- and right-rotating elliptical polarizations can propagate at different speeds, leading to a number of important phenomena.  When light is transmitted through a layer of magneto-optic material, the result is called the [[Faraday effect]]: the plane of [[Polarization (waves)|polarization]] can be rotated, forming a [[Faraday rotator]].  The results of reflection from a magneto-optic material are known as the [[magneto-optic Kerr effect]] (not to be confused with the [[nonlinear optics|nonlinear]] [[Kerr effect]]).
+
+In general, magneto-optic effects break [[time reversal symmetry]]  locally (i.e. when only the propagation of light, and not the source of the magnetic field, is considered) as well as [[Lorentz reciprocity]], which is a necessary condition to construct devices such as [[Faraday isolator|optical isolator]]s (through which light passes in one direction but not the other).
+
+Two gyrotropic materials with reversed rotation directions of the two principal polarizations, corresponding to complex-conjugate ε tensors for lossless media, are called [[optical isomer]]s.
+
+==Gyrotropic permittivity==
+
+In particular, in a magneto-optic material the presence of a  magnetic field (either externally applied or because the material itself is [[ferromagnetism|ferromagnetic]]) can cause a change in the [[permittivity]] tensor ε of the material. The ε becomes anisotropic, a 3×3 matrix, with [[complex number|complex]] off-diagonal components,  depending of course on the frequency ω of incident light. If the absorption losses can be neglected, ε is a [[Hermitian matrix]]. The resulting  [[Optical axis|principal axes]] become complex as well, corresponding to elliptically-polarized light where left- and right-rotating polarizations can travel at different speeds (analogous to [[birefringence]]).
+
+More specifically, for the case where absorption losses can be neglected, the most general form of Hermitian ε is:
+
+:<math>\varepsilon = \begin{pmatrix}
+\varepsilon_{xx}' & \varepsilon_{xy}' + i g_z & \varepsilon_{xz}' - i g_y \\
+\varepsilon_{xy}' - i g_z & \varepsilon_{yy}' & \varepsilon_{yz}' + i g_x \\
+\varepsilon_{xz}' + i g_y & \varepsilon_{yz}' - i g_x & \varepsilon_{zz}' \\
+\end{pmatrix}</math>
+
+or equivalently the relationship between the [[Electric displacement field|displacement field]] '''D''' and the [[electric field]] '''E''' is:
+
+:<math>\mathbf{D} = \varepsilon \mathbf{E} = \varepsilon' \mathbf{E} + i \mathbf{E} \times \mathbf{g}</math>
+
+where <math>\varepsilon'</math> is a real [[symmetric matrix]] and <math>\mathbf{g} = (g_x,g_y,g_z)</math> is a real [[pseudovector]] called the '''gyration vector''', whose magnitude is generally small compared to the eigenvalues of <math>\varepsilon'</math>. The direction of '''g''' is called the '''axis of gyration''' of the material.  To first order, '''g''' is proportional to the applied [[magnetic field]]:
+
+:<math>\mathbf{g} = \varepsilon_0 \chi^{(m)} \mathbf{H}</math>
+
+where <math>\chi^{(m)} \!</math> is the [[magneto-optical susceptibility]] (a [[scalar (physics)|scalar]] in isotropic media, but more generally a [[tensor]]).  If this susceptibility itself depends upon the electric field, one can obtain a [[nonlinear optics|nonlinear optical]] effect of [[magneto-optical parametric generation]] (somewhat analogous to a [[Pockels effect]] whose strength is controlled by the applied magnetic field).
+
+The simplest case to analyze is the one in which '''g''' is a principal axis (eigenvector) of <math>\varepsilon'</math>, and the other two eigenvalues of <math>\varepsilon'</math> are identical.  Then, if we let '''g''' lie in the ''z'' direction for simplicity, the ε tensor simplifies to the form:
+
+:<math>\varepsilon = \begin{pmatrix}
+\varepsilon_1 & + i g_z & 0 \\
+ - i g_z & \varepsilon_1 & 0 \\
+0 & 0 & \varepsilon_2 \\
+\end{pmatrix}</math>
+
+Most commonly, one considers light propagating in the ''z'' direction (parallel to '''g''').  In this case the solutions are elliptically polarized electromagnetic waves with [[phase velocity|phase velocities]] <math>1 / \sqrt{\mu(\varepsilon_1 \pm g_z)}</math> (where μ is the [[magnetic permeability]]).  This difference in phase velocities leads to the Faraday effect.
+
+For light propagating purely perpendicular to the axis of gyration, the properties are known as the [[Cotton-Mouton effect]] and used for a [[Circulator]].
+
+===Kerr rotation and Kerr ellipticity===
+Kerr rotation and Kerr ellipticity are changes in the polarization of incident light which comes in contact with a gyromagnetic material. Kerr rotation is a rotation in the plane of polarization of transmitted light, and Kerr ellipticity is the ratio of the major to minor axis of the ellipse traced out by [[Elliptical polarization|elliptically]] polarized light on the plane through which it propagates. Changes in the orientation of polarized incident light can be quantified using these two properties.
+
+[[Image:Circular.Polarization.Circularly.Polarized.Light With.Components Right.Handed.svg|thumb|Circular Polarized Light]]
+According to classical physics, the speed of light varies with the permittivity of a material:
+
+<math>v_p = \frac{1}{\sqrt{\epsilon \mu}} </math>
+
+where <math>v_p</math> is the velocity of light through the material, <math>\epsilon</math> is the material permittivity, and <math>\mu</math> is the material permeability.  Because the permittivity is anisotropic, polarized light of different orientations will travel at different speeds.
+
+This can be better understood if we consider a wave of light that is circularly polarized (seen to the right). If this wave interacts with a material at which the horizontal component (green sinusoid) travels at a different speed than the vertical component (blue sinusoid), the two components will fall out of the 90 degree phase difference (required for circular polarization) changing the Kerr ellipticity.
+
+A change in Kerr rotation is most easily recognized in linearly polarized light, which can be separated into two [[Circular polarization|circularly polarized]] components: Left-handed circular polarized (LHCP) light and right-handed circular polarized (RHCP) light. The anisotropy of the magneto-optic material permittivity causes a difference in the speed of LHCP and RHCP light, which will cause a change in the angle of polarized light. Materials that exhibit this property are known as [[Birefringence|birefringent]].
+
+From this rotation, we can calculate the difference in orthogonal velocity components, find the anisotropic permittivity, find the gyration vector, and calculate the applied magnetic field<ref>{{cite journal |last1=Garcia-Merino |first1=J. A. |title=Magneto-conductivity and magnetically-controlled nonlinear optical transmittance in multi-wall carbon nanotubes |journal=Optics Express |volume=24 |issue=17 |pages=19552–19557 |doi=10.1364/OE.24.019552 |url=https://www.osapublishing.org/oe/abstract.cfm?uri=oe-24-17-19552|doi-access=free }}</ref> <math>\mathbf{H}</math>.
+
+==See also==
+*[[Zeeman effect]]
+*[[QMR effect]]
+*[[Magneto-optic Kerr effect]]
+*[[Faraday effect]]
+*[[Voigt Effect]]
+*[[Photoelectric effect]]
+
+==References==
+{{Reflist}}
+* [[Federal Standard 1037C]] and from [[MIL-STD-188]]
+* {{cite book|author1=Lev Davídovich Landau|author2=Evgeniĭ Mikhaĭlovich Lifshit︠s︡|title=Electrodynamics of continuous media|url=https://books.google.com/books?id=sxAJAQAAIAAJ|access-date=3 June 2012|year=1960|publisher=Pergamon Press|page=82}}
+* {{cite book|last=Jackson|first=John David|title=Classical electrodynamics|year=1998|publisher=Wiley|location=New York|isbn=978-0471309321|edition=3rd|pages=6–10}}
+* {{cite journal|last=Jonsson|first=Fredrik|author2=Flytzanis, Christos|title=Optical parametric generation and phase matching in magneto-optic media|journal=Optics Letters|date=1 November 1999|volume=24|issue=21|pages=1514|doi=10.1364/OL.24.001514|bibcode = 1999OptL...24.1514J }}
+* {{cite journal|last=Pershan|first=P. S.|title=Magneto-Optical Effects|journal=Journal of Applied Physics|date=1 January 1967|volume=38|issue=3|pages=1482|doi=10.1063/1.1709678|bibcode = 1967JAP....38.1482P }} 
+* {{cite journal|last=Freiser|first=M.|title=A survey of magnetooptic effects|journal=IEEE Transactions on Magnetics|date=1 June 1968|volume=4|issue=2|pages=152–161|doi=10.1109/TMAG.1968.1066210|bibcode = 1968ITM.....4..152F }} 
+* [http://magnetooptics.phy.bme.hu/research/topics/broad-band-magneto-optical-spectroscopy/ Broad band magneto-optical spectroscopy]
+
+{{FS1037C}}
+{{Authority control}}
+
+[[Category:Optical phenomena]]
+[[Category:Electric and magnetic fields in matter]]
+[[Category:Magneto-optic effects| ]]
+
+[[de:Magnetooptik#Magnetooptische Effekte]]( 2 :2022-11-03T01:38:19ZB6596197JZ
+	Wikipedia'https://en.wikipedia.org/wiki/Main_PageMediaWiki 1.40.0-wmf.8"first-letterR�
+Xhttp://magnetooptics.phy.bme.hu/research/topics/broad-band-magneto-optical-spectroscopy/'Broad band magneto-optical spectroscopyb�����yj����
