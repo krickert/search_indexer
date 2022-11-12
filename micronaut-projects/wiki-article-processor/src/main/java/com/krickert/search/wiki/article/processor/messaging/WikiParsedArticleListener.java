@@ -13,6 +13,8 @@ import jakarta.inject.Inject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.UUID;
+
 import static com.krickert.search.model.util.ProtobufUtils.createKey;
 
 
@@ -33,7 +35,7 @@ public class WikiParsedArticleListener {
 
 
     @Topic("wiki-parsed-article")
-    public void receive(@KafkaKey String key,
+    public void receive(@KafkaKey UUID key,
                         WikiArticle request,
                         long offset,
                         int partition,

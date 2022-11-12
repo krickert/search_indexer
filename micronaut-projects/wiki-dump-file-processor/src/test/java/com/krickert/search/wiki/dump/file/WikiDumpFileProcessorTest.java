@@ -23,6 +23,7 @@ import java.util.Optional;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
+import static com.krickert.search.model.util.ProtobufUtils.createKey;
 import static java.util.concurrent.TimeUnit.SECONDS;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.awaitility.Awaitility.await;
@@ -66,7 +67,7 @@ class WikiDumpFileProcessorTest {
                 .setDownloadStart(start)
                 .setDownloadEnd(ProtobufUtils.now())
                 .build();
-        this.downloadedFileProcessingProducer.sendFileProcessingRequest(downloadedFile.getFileName(), downloadedFile);
+        this.downloadedFileProcessingProducer.sendFileProcessingRequest(createKey(downloadedFile.getFileName()), downloadedFile);
         await().atMost(100, SECONDS).until(() -> wikiArticles.size() > 100);
         await().atMost(200, SECONDS).until(() -> wikiArticles.size() >= 367);
     }

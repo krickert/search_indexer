@@ -11,6 +11,7 @@ import org.junit.jupiter.api.Test;
 import java.io.File;
 import java.io.IOException;
 import java.util.Collection;
+import java.util.UUID;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -84,5 +85,12 @@ public class ProtobufUtilsTest {
                 .isEqualTo(request2OnDisk);
         FileUtils.forceDelete(result0);
         FileUtils.forceDelete(result1);
+    }
+
+    @Test
+    void testCreateKey() {
+        String key1 = "41250";
+        UUID key = ProtobufUtils.createKey(key1);
+        assertThat(key).isNotNull();
     }
 }

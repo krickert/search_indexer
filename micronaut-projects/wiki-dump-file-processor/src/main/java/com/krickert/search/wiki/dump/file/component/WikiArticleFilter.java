@@ -17,6 +17,7 @@ import java.io.IOException;
 import java.time.Instant;
 
 import static com.google.common.base.Preconditions.checkNotNull;
+import static com.krickert.search.model.util.ProtobufUtils.createKey;
 import static com.krickert.search.model.util.ProtobufUtils.now;
 import static java.time.format.DateTimeFormatter.ISO_INSTANT;
 
@@ -39,7 +40,7 @@ public class WikiArticleFilter implements IArticleFilter {
     public void process(WikiArticle article, Siteinfo siteinfo) throws IOException {
         log.info("Sending {}:{}", article.getId(),article.getTitle());
         com.krickert.search.model.wiki.WikiArticle protoArticle = createWikiArticleProto(article, siteinfo);
-        producer.sendParsedArticleProcessingRequest(protoArticle.getId(), protoArticle);
+        producer.sendParsedArticleProcessingRequest(createKey(protoArticle.getId()), protoArticle);
     }
 
 

@@ -10,8 +10,8 @@ micronaut:
     name: wikiDumpFileProcessor
 kafka:
   key:
-    serializer: org.apache.kafka.common.serialization.StringSerializer
-    deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    serializer: org.apache.kafka.common.serialization.UUIDSerializer
+    deserializer: org.apache.kafka.common.serialization.UUIDDeserializer
   value:
     serializer: io.confluent.kafka.serializers.protobuf.KafkaProtobufSerializer
     deserializer: io.confluent.kafka.serializers.protobuf.KafkaProtobufDeserializer

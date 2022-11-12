@@ -6,6 +6,8 @@ import io.micronaut.configuration.kafka.annotation.Topic;
 import io.micronaut.context.annotation.Property;
 import org.apache.kafka.clients.producer.ProducerConfig;
 
+import java.util.UUID;
+
 @KafkaClient(id = "wiki-article-producer",
         properties = {
                 @Property(name = ProducerConfig.COMPRESSION_TYPE_CONFIG, value = "lz4"),
@@ -18,5 +20,5 @@ import org.apache.kafka.clients.producer.ProducerConfig;
 public interface WikiArticleProducer {
 
     @Topic("wiki-parsed-article")
-    void sendParsedArticleProcessingRequest(@KafkaKey String key, WikiArticle request);
+    void sendParsedArticleProcessingRequest(@KafkaKey UUID key, WikiArticle request);
 }

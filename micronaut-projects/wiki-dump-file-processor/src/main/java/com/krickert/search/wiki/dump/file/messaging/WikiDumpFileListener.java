@@ -36,7 +36,7 @@ public class WikiDumpFileListener {
 
 
     @Topic("wiki-dump-file")
-    public void receive(@KafkaKey String key,
+    public void receive(@KafkaKey UUID key,
                         DownloadedFile request,
                         long offset,
                         int partition,

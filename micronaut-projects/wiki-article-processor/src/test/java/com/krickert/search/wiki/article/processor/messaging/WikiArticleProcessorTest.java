@@ -2,6 +2,8 @@ package com.krickert.search.wiki.article.processor.messaging;
 
 import com.krickert.search.model.constants.KafkaProtobufConstants;
 import com.krickert.search.model.pipe.PipeDocument;
+import com.krickert.search.model.test.util.TestDataHelper;
+import com.krickert.search.model.util.ProtobufUtils;
 import com.krickert.search.wiki.article.processor.component.PipelineDocumentMapper;
 import io.micronaut.configuration.kafka.annotation.KafkaListener;
 import io.micronaut.configuration.kafka.annotation.Topic;
@@ -16,6 +18,8 @@ import jakarta.inject.Inject;
 
 import java.util.concurrent.ConcurrentLinkedQueue;
 
+import static com.krickert.search.model.util.ProtobufUtils.createKey;
+import static java.util.concurrent.TimeUnit.SECONDS;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.awaitility.Awaitility.await;
 
@@ -33,7 +37,7 @@ class WikiArticleProcessorTest {
     EmbeddedApplication<?> application;
 
     @Inject
-    PipeDocumentProducer producer;
+    WikiArticleProcessingProducer producer;
 
     final static PipelineDocumentMapper mapper = new PipelineDocumentMapper();
 
@@ -42,6 +46,20 @@ class WikiArticleProcessorTest {
         Assertions.assertTrue(application.isRunning());
     }
 
+
+    @Test
+    void testPipeDocumentProcessing() {
+        TestDataHelper.createFewHunderedArticles()
+                .forEach((wikiArticle) ->
+                        producer.sendFileProcessingRequest(
+                                createKey(wikiArticle),
+                                wikiArticle));
+        await().atMost(30, SECONDS).until(() -> pipeDocuments.size() > 20);
+        await().atMost(60, SECONDS).until(() -> pipeDocuments.size() > 100);
+        await().atMost(90, SECONDS).until(() -> pipeDocuments.size() == 367);
+
+
+    }
 
 
 

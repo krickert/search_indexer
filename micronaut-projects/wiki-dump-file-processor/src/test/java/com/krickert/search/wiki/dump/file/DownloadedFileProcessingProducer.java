@@ -9,5 +9,5 @@ import java.util.UUID;
 @KafkaClient(id = "downloaded-file-producer")
 public interface DownloadedFileProcessingProducer {
     @Topic("wiki-dump-file")
-    void sendFileProcessingRequest(@KafkaKey String key, DownloadedFile request);
+    void sendFileProcessingRequest(@KafkaKey UUID key, DownloadedFile request);
 }
