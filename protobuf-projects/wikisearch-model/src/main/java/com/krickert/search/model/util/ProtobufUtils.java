@@ -2,12 +2,17 @@ package com.krickert.search.model.util;
 
 import com.google.protobuf.Message;
 import com.google.protobuf.Timestamp;
+import com.krickert.search.model.pipe.PipeDocument;
+import com.krickert.search.model.wiki.DownloadFileRequest;
+import com.krickert.search.model.wiki.DownloadedFile;
+import com.krickert.search.model.wiki.WikiArticle;
 
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.time.Instant;
 import java.util.Collection;
+import java.util.UUID;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class ProtobufUtils {
@@ -34,5 +39,22 @@ public class ProtobufUtils {
                 throw new RuntimeException(e);
             }
         });
+    }
+
+    public static UUID createKey(String id) {
+        return UUID.nameUUIDFromBytes(id.getBytes());
+    }
+
+    public static UUID createKey(DownloadedFile downloadedFile) {
+        return createKey(downloadedFile.getFileName());
+    }
+    public static UUID createKey(DownloadFileRequest downloadFileRequest) {
+        return createKey(downloadFileRequest.getFileName());
+    }
+    public static UUID createKey(WikiArticle wikiArticle) {
+        return createKey(wikiArticle.getId());
+    }
+    public static UUID createKey(PipeDocument pipeDocument) {
+        return createKey(pipeDocument.getId());
     }
 }

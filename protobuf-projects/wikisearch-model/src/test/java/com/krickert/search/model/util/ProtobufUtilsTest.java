@@ -4,13 +4,11 @@ import com.google.protobuf.Timestamp;
 import com.krickert.search.model.wiki.DownloadFileRequest;
 import com.krickert.search.model.wiki.ErrorCheck;
 import com.krickert.search.model.wiki.ErrorCheckType;
-import com.krickert.search.model.wiki.WikiSiteInfo;
 import org.apache.commons.io.FileUtils;
 import org.assertj.core.util.Lists;
 import org.junit.jupiter.api.Test;
 
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Collection;
 
@@ -86,6 +84,5 @@ public class ProtobufUtilsTest {
                 .isEqualTo(request2OnDisk);
         FileUtils.forceDelete(result0);
         FileUtils.forceDelete(result1);
-
     }
 }
