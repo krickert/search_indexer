@@ -9,6 +9,8 @@ import java.nio.file.*;
 import java.util.*;
 import java.util.stream.Stream;
 
+import static java.nio.file.FileSystems.newFileSystem;
+
 public class TestDataHelper {
     public final Collection<WikiArticle> fewHunderedArticles = createFewHunderedArticles();
 
@@ -44,9 +46,11 @@ public class TestDataHelper {
         if (uri.getScheme().equals("jar")) {
             FileSystem fileSystem = null;
             try {
-                fileSystem = FileSystems.newFileSystem(uri, Collections.<String, Object>emptyMap());
+                fileSystem = newFileSystem(uri, Collections.<String, Object>emptyMap());
             } catch (IOException e) {
                 throw new RuntimeException(e);
+            } catch (FileSystemAlreadyExistsException e) {
+                fileSystem = FileSystems.getFileSystem(uri);
             }
             myPath = fileSystem.getPath(directory);
         } else {
