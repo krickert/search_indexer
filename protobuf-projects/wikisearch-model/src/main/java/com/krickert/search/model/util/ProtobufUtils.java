@@ -46,10 +46,10 @@ public class ProtobufUtils {
     }
 
     public static UUID createKey(DownloadedFile downloadedFile) {
-        return createKey(downloadedFile.getFileName());
+        return createKey(downloadedFile.getErrorCheck().getErrorCheck());
     }
     public static UUID createKey(DownloadFileRequest downloadFileRequest) {
-        return createKey(downloadFileRequest.getFileName());
+        return UUID.randomUUID();
     }
     public static UUID createKey(WikiArticle wikiArticle) {
         return createKey(wikiArticle.getId());

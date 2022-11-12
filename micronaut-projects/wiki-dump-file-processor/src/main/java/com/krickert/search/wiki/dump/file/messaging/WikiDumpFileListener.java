@@ -36,13 +36,12 @@ public class WikiDumpFileListener {
 
 
     @Topic("wiki-dump-file")
-    public void receive(@KafkaKey UUID key,
-                        DownloadedFile request,
+    public void receive(DownloadedFile request,
                         long offset,
                         int partition,
                         String topic,
                         long timestamp) {
-        log.debug("Got the request {} with key {}", request, key);
+        log.debug("Got the request {} ", request);
         log.info("this {} was sent {} ago from partition {} from the {} topic at {}",
                 request.getFullFilePath(), offset, partition, topic, timestamp);
 
