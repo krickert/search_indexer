@@ -1,9 +1,12 @@
 package com.krickert.search.wiki.article.processor.messaging;
 import com.krickert.search.model.pipe.PipeDocument;
 import io.micronaut.configuration.kafka.annotation.KafkaClient;
+import io.micronaut.configuration.kafka.annotation.KafkaKey;
 import io.micronaut.configuration.kafka.annotation.Topic;
 import io.micronaut.context.annotation.Property;
 import org.apache.kafka.clients.producer.ProducerConfig;
+
+import java.util.UUID;
 
 @KafkaClient(id = "search-document-producer",
         properties = {
@@ -16,6 +19,6 @@ import org.apache.kafka.clients.producer.ProducerConfig;
         })
 public interface PipeDocumentProducer {
 
-    @Topic("search-document")
-    void sendSearchDocument(PipeDocument request);
+    @Topic("pipe-document")
+    void sendPipeDocument(@KafkaKey UUID key, PipeDocument request);
 }

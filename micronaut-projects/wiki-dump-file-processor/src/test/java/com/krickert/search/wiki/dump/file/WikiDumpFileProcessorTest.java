@@ -4,6 +4,7 @@ import com.google.protobuf.Timestamp;
 import com.krickert.search.model.constants.KafkaProtobufConstants;
 import com.krickert.search.model.util.ProtobufUtils;
 import com.krickert.search.model.wiki.*;
+import io.micronaut.configuration.kafka.annotation.KafkaKey;
 import io.micronaut.configuration.kafka.annotation.KafkaListener;
 import io.micronaut.configuration.kafka.annotation.Topic;
 import io.micronaut.context.annotation.Property;
@@ -17,9 +18,6 @@ import org.junit.jupiter.api.Assertions;
 
 import jakarta.inject.Inject;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
 import java.net.URL;
 import java.util.Optional;
 import java.util.UUID;
@@ -68,10 +66,10 @@ class WikiDumpFileProcessorTest {
                 .setDownloadStart(start)
                 .setDownloadEnd(ProtobufUtils.now())
                 .build();
-        this.downloadedFileProcessingProducer.sendFileProcessingRequest(UUID.randomUUID(), downloadedFile);
+        this.downloadedFileProcessingProducer.sendFileProcessingRequest(downloadedFile.getFileName(), downloadedFile);
         await().atMost(100, SECONDS).until(() -> wikiArticles.size() > 100);
-        await().atMost(200, SECONDS).until(() -> wikiArticles.size() >= 360);
-
+        await().atMost(200, SECONDS).until(() -> wikiArticles.size() >= 367);
+        ProtobufUtils.saveProtocoBufsToDisk("article", wikiArticles);
     }
 
     @KafkaListener(
@@ -86,7 +84,8 @@ class WikiDumpFileProcessorTest {
                      long offset,
                      int partition,
                      String topic,
-                     long timestamp) {
+                     long timestamp,
+                     @KafkaKey String key) {
             wikiArticles.add(request);
         }
 

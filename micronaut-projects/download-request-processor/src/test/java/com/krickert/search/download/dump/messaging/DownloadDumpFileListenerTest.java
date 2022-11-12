@@ -21,6 +21,7 @@ import java.io.PrintStream;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
+import static com.krickert.search.model.util.ProtobufUtils.createKey;
 import static java.util.concurrent.TimeUnit.SECONDS;
 import static org.apache.commons.io.FileUtils.forceDelete;
 import static org.assertj.core.api.Assertions.assertThat;
@@ -73,9 +74,9 @@ class DownloadDumpFileListenerTest {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         System.setOut(new PrintStream(baos));
 
-        downloadRequestProducer.sendDownloadRequest(UUID.randomUUID(), request1);
-        downloadRequestProducer.sendDownloadRequest(UUID.randomUUID(), request2);
-        downloadRequestProducer.sendDownloadRequest(UUID.randomUUID(), request3);
+        downloadRequestProducer.sendDownloadRequest(createKey(request3), request1);
+        downloadRequestProducer.sendDownloadRequest(createKey(request3), request2);
+        downloadRequestProducer.sendDownloadRequest(createKey(request3), request3);
         await().atMost(30, SECONDS).until(() -> results.size() == 3);
 
         assertThat(baos.toString())

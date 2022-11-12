@@ -7,6 +7,7 @@ import info.bliki.wiki.dump.IArticleFilter;
 import info.bliki.wiki.dump.Siteinfo;
 import info.bliki.wiki.dump.WikiArticle;
 import io.micronaut.context.annotation.Prototype;
+import io.micronaut.core.util.StringUtils;
 import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -37,7 +38,8 @@ public class WikiArticleFilter implements IArticleFilter {
     @Override
     public void process(WikiArticle article, Siteinfo siteinfo) throws IOException {
         log.info("Sending {}:{}", article.getId(),article.getTitle());
-        producer.sendParsedArticleProcessingRequest(createWikiArticleProto(article, siteinfo));
+        com.krickert.search.model.wiki.WikiArticle protoArticle = createWikiArticleProto(article, siteinfo);
+        producer.sendParsedArticleProcessingRequest(protoArticle.getId(), protoArticle);
     }
 
 
@@ -74,13 +76,17 @@ public class WikiArticleFilter implements IArticleFilter {
         }
         return builder.setDumpTimestamp(article.getTimeStamp())
         .setTitle(article.getTitle())
-        .setWikiType(findWikiCategory(article.getTitle()))
+        .setWikiType(findWikiCategory(article.getTitle(), article.getText()))
         .setDateParsed(now())
         .build();
     }
 
-    private WikiType findWikiCategory(String title) {
-        if (title.contains("REDIRECT")) {
+    private WikiType findWikiCategory(String title, String wikiBody) {
+        if (title.contains("REDIRECT")
+                || (StringUtils.isNotEmpty(wikiBody) &&
+                    ( wikiBody.startsWith("#REDIRECT ")
+                    || wikiBody.startsWith("#redirect "))))
+        {
             return WikiType.REDIRECT;
         } else if (title.startsWith("Category:")) {
             return WikiType.CATEGORY;

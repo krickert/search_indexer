@@ -4,6 +4,7 @@ import com.google.protobuf.Timestamp;
 import com.krickert.search.download.dump.component.FileDownloader;
 
 import com.krickert.search.model.constants.KafkaProtobufConstants;
+import com.krickert.search.model.util.ProtobufUtils;
 import com.krickert.search.model.wiki.DownloadFileRequest;
 import com.krickert.search.model.wiki.DownloadedFile;
 import io.micronaut.configuration.kafka.annotation.*;
@@ -21,6 +22,7 @@ import java.net.URL;
 import java.net.UnknownHostException;
 import java.util.UUID;
 
+import static com.krickert.search.model.util.ProtobufUtils.createKey;
 import static com.krickert.search.model.util.ProtobufUtils.now;
 
 @KafkaListener(threads = 3,
@@ -50,13 +52,13 @@ public class DownloadDumpFileListener {
     }
 
     @Topic("download-request")
-    public void receive(@KafkaKey UUID uuid,
+    public void receive(@KafkaKey UUID key,
                         DownloadFileRequest request,
                         long offset,
                         int partition,
                         String topic,
                         long timestamp) {
-        log.debug("Got the request {} with UUID {}", request, uuid.toString());
+        log.debug("Got the request {} with key {}", request, key);
         log.info("this {} was sent {} ago from partition {} from the {} topic at {}",
                 request.getUrl(), offset, partition, topic, timestamp);
 
@@ -74,7 +76,8 @@ public class DownloadDumpFileListener {
                     request.getErrorCheck().getErrorCheck());
             Timestamp downloadedEnd = now();
             log.info("******SENDING TO PROCESS: " + request.getFileName());
-            producer.sendFileProcessingRequest(UUID.randomUUID(),
+            producer.sendFileProcessingRequest(
+                    createKey(request),
                     DownloadedFile.newBuilder()
                             .setFileName(request.getFileName())
                             .setFullFilePath(fullFilePath)

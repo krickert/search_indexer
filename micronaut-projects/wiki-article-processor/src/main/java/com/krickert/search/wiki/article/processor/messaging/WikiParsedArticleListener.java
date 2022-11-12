@@ -1,5 +1,6 @@
 package com.krickert.search.wiki.article.processor.messaging;
 import com.krickert.search.model.constants.KafkaProtobufConstants;
+import com.krickert.search.model.util.ProtobufUtils;
 import com.krickert.search.model.wiki.WikiArticle;
 import com.krickert.search.wiki.article.processor.component.PipelineDocumentMapper;
 import io.micronaut.configuration.kafka.annotation.KafkaKey;
@@ -12,11 +13,12 @@ import jakarta.inject.Inject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.UUID;
+import static com.krickert.search.model.util.ProtobufUtils.createKey;
+
 
 @KafkaListener(offsetReset = OffsetReset.EARLIEST, threads = 8,
         properties = @Property(name = KafkaProtobufConstants.SPECIFIC_CLASS_PROPERTY,
-                value = KafkaProtobufConstants.DOWNLOADED_FILE_CLASS))
+                value = KafkaProtobufConstants.WIKIARTICLE_CLASS))
 @Prototype
 public class WikiParsedArticleListener {
     private static final Logger log = LoggerFactory.getLogger(WikiParsedArticleListener.class);
@@ -31,16 +33,18 @@ public class WikiParsedArticleListener {
 
 
     @Topic("wiki-parsed-article")
-    public void receive(@KafkaKey UUID uuid,
+    public void receive(@KafkaKey String key,
                         WikiArticle request,
                         long offset,
                         int partition,
                         String topic,
                         long timestamp) {
-        log.debug("Got the request {} with UUID {}", request, uuid.toString());
+        log.debug("Got the request {} with key {}", request, key);
         log.info("this {}:{} was sent with offset {} from partition {} from the {} topic at {}",
                 request.getId(), request.getTitle(), offset, partition, topic, timestamp);
 
-        pipeDocumentProducer.sendSearchDocument(pipeDocumentMapper.mapWikiArticleToPipeDocument(request));
+        pipeDocumentProducer.sendPipeDocument(
+                createKey(request),
+                pipeDocumentMapper.mapWikiArticleToPipeDocument(request));
     }
 }

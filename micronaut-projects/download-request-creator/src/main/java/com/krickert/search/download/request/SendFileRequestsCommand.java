@@ -1,6 +1,7 @@
 package com.krickert.search.download.request;
 
 
+import com.krickert.search.model.util.ProtobufUtils;
 import com.krickert.search.model.wiki.DownloadFileRequest;
 import io.micronaut.configuration.picocli.PicocliRunner;
 
@@ -13,6 +14,8 @@ import jakarta.inject.Inject;
 
 import java.util.Collection;
 import java.util.UUID;
+
+import static com.krickert.search.model.util.ProtobufUtils.createKey;
 
 @Command(name = "populate-file-requests",
         description = "checks the wikipedia page for downloads and adds new files to the queue for download.",
@@ -58,7 +61,7 @@ public class SendFileRequestsCommand implements Runnable {
         }
 
         for(DownloadFileRequest request : sendMe) {
-            producer.sendDownloadRequest(UUID.randomUUID(), request);
+            producer.sendDownloadRequest(createKey(request), request);
         }
         System.out.println("Application exiting.");
 

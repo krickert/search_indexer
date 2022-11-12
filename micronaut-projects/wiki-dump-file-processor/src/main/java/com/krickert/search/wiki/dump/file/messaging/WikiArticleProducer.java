@@ -1,6 +1,7 @@
 package com.krickert.search.wiki.dump.file.messaging;
 import com.krickert.search.model.wiki.WikiArticle;
 import io.micronaut.configuration.kafka.annotation.KafkaClient;
+import io.micronaut.configuration.kafka.annotation.KafkaKey;
 import io.micronaut.configuration.kafka.annotation.Topic;
 import io.micronaut.context.annotation.Property;
 import org.apache.kafka.clients.producer.ProducerConfig;
@@ -17,5 +18,5 @@ import org.apache.kafka.clients.producer.ProducerConfig;
 public interface WikiArticleProducer {
 
     @Topic("wiki-parsed-article")
-    void sendParsedArticleProcessingRequest(WikiArticle request);
+    void sendParsedArticleProcessingRequest(@KafkaKey String key, WikiArticle request);
 }
