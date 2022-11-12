@@ -1,13 +1,13 @@
 package com.krickert.search.model.test.util;
 
 import com.krickert.search.model.wiki.WikiArticle;
-import org.apache.commons.io.FileUtils;
-import org.assertj.core.util.Lists;
 
-import java.io.File;
 import java.io.IOException;
-import java.net.URL;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.nio.file.*;
 import java.util.*;
+import java.util.stream.Stream;
 
 public class TestDataHelper {
     public final Collection<WikiArticle> fewHunderedArticles = createFewHunderedArticles();
@@ -17,24 +17,52 @@ public class TestDataHelper {
     }
 
     public static Collection<WikiArticle> createFewHunderedArticles() {
-        ClassLoader loader = Thread.currentThread().getContextClassLoader();
-        URL url = loader.getResource("articles");
-        assert url != null;
-        String path = url.getPath();
-        File[] directory = new File(path).listFiles();
-        assert directory != null;
-        List<File> filesInDir = Arrays.asList(directory);
-
-        List<WikiArticle> returnVal = Lists.newArrayList();
-        filesInDir.forEach((file) -> {
+        String directory = "/articles";
+        Stream<Path> walk = getPathsFromDirectory(directory);
+        List<WikiArticle> returnVal = new ArrayList<>();
+        walk.forEach((file) -> {
             try {
-                returnVal.add(
-                        WikiArticle.parseFrom(FileUtils.openInputStream(file)));
+                if (!file.getFileName().toString().equals("articles")) {
+                    returnVal.add(
+                            WikiArticle.parseFrom(Files.newInputStream(file)));
+                }
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
         });
         return returnVal;
+    }
+
+    private static Stream<Path> getPathsFromDirectory(String directory) {
+        URI uri = null;
+        try {
+            uri = TestDataHelper.class.getResource(directory).toURI();
+        } catch (URISyntaxException e) {
+            throw new RuntimeException(e);
+        }
+        Path myPath;
+        if (uri.getScheme().equals("jar")) {
+            FileSystem fileSystem = null;
+            try {
+                fileSystem = FileSystems.newFileSystem(uri, Collections.<String, Object>emptyMap());
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+            myPath = fileSystem.getPath(directory);
+        } else {
+            myPath = Paths.get(uri);
+        }
+        Stream<Path> walk = null;
+        try {
+            walk = Files.walk(myPath, 1);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        return walk;
+    }
+
+    public static void main(String args[]) {
+        System.out.println(createFewHunderedArticles());
     }
 
 }
