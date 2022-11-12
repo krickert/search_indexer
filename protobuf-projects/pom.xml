@@ -11,8 +11,8 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
     <modules>
-        <module>wikisearch-model-test-resources</module>
         <module>wikisearch-model</module>
+        <module>wikisearch-model-test-resources</module>
     </modules>
 
     <dependencies>
