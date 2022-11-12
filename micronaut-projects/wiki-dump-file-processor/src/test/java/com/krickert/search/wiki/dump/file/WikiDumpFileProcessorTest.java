@@ -69,7 +69,6 @@ class WikiDumpFileProcessorTest {
         this.downloadedFileProcessingProducer.sendFileProcessingRequest(downloadedFile.getFileName(), downloadedFile);
         await().atMost(100, SECONDS).until(() -> wikiArticles.size() > 100);
         await().atMost(200, SECONDS).until(() -> wikiArticles.size() >= 367);
-        ProtobufUtils.saveProtocoBufsToDisk("article", wikiArticles);
     }
 
     @KafkaListener(
