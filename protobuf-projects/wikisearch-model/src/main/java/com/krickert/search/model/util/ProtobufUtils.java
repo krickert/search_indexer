@@ -6,8 +6,8 @@ import com.krickert.search.model.pipe.PipeDocument;
 import com.krickert.search.model.wiki.DownloadFileRequest;
 import com.krickert.search.model.wiki.DownloadedFile;
 import com.krickert.search.model.wiki.WikiArticle;
+import org.apache.commons.lang3.StringUtils;
 
-import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.time.Instant;
@@ -27,14 +27,18 @@ public class ProtobufUtils {
     }
 
     public static <T extends Message> void  saveProtobufToDisk(String dst,T item) throws IOException {
-        item.writeTo(new FileOutputStream(new File(dst)));
+        item.writeTo(new FileOutputStream(dst));
     }
 
     public static <T extends Message> void saveProtocoBufsToDisk(String dstPrefix, Collection<T> items) {
+        int leftPad = ("" + items.size()).length();
+        saveProtocoBufsToDisk(dstPrefix, items, leftPad);
+    }
+    public static <T extends Message> void saveProtocoBufsToDisk(String dstPrefix, Collection<T> items, int leftPad) {
         AtomicInteger i = new AtomicInteger();
         items.forEach((item) -> {
             try {
-                saveProtobufToDisk(dstPrefix + i.getAndIncrement() + ".bin", item);
+                saveProtobufToDisk(dstPrefix + StringUtils.leftPad("" + i.getAndIncrement(), leftPad, "0") + ".bin", item);
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
