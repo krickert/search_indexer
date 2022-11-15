@@ -1,0 +1,6 @@
+applicationType: grpc
+defaultPackage: com.krickert.search
+testFramework: junit
+sourceLanguage: java
+buildTool: maven
+features: [annotation-api, app-name, assertj, awaitility, graalvm, grpc, jackson-databind, java, java-application, junit, kafka, logback, maven, readme, shade, test-resources, testcontainers, yaml]

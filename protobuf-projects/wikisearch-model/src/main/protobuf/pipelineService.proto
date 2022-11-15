@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.krickert.search.service";
+option java_outer_classname = "Pipes";
+option objc_class_prefix = "HLW";
+import "pipes.proto";
+
+package com.krickert.search;
+
+service PipeService {
+  rpc send (PipeRequest) returns (PipeReply) {}
+}
+
+message PipeRequest {
+  string name = 1;
+  com.krickert.search.model.pipe.PipeDocument document = 2;
+}
+
+message PipeReply {
+  string message = 1;
+  com.krickert.search.model.pipe.PipeDocument document = 2;
+}
+
