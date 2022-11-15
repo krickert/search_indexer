@@ -1,0 +1,23 @@
+micronaut:
+  application:
+    name: downloadRequestCreator
+
+kafka:
+  enabled: true
+  schema.registry.url: http://localhost:8081
+  key:
+    serializer: org.apache.kafka.common.serialization.UUIDSerializer
+    deserializer: org.apache.kafka.common.serialization.UUIDDeserializer
+  value:
+    serializer: io.confluent.kafka.serializers.protobuf.KafkaProtobufSerializer
+    deserializer: io.confluent.kafka.serializers.protobuf.KafkaProtobufDeserializer
+
+download:
+  request-url: https://dumps.wikimedia.org/enwiki/latest/
+  threads: 3
+wikipedia:
+  md5-url: https://dumps.wikimedia.org/enwiki/latest/
+  download-location: /Volumes/BigDataFun/wikidownloads
+  download-name: "${wikipedia.download-location}/wikiList.md5"
+  prefix-url: https://dumps.wikimedia.org/enwiki/
+  fresh-copy: true

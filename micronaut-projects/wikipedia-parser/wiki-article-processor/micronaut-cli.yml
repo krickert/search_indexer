@@ -1,0 +1,6 @@
+applicationType: messaging
+defaultPackage: wiki.dump.file.processor
+testFramework: junit
+sourceLanguage: java
+buildTool: maven
+features: [annotation-api, app-name, assertj, awaitility, graalvm, jackson-databind, java, java-application, junit, kafka, maven, readme, shade, logback, test-resources, testcontainers, yaml]

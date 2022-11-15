@@ -1,0 +1,37 @@
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>wikipedia-parser</artifactId>
+    <version>0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+    <parent>
+        <artifactId>indexer-micronaut-pom</artifactId>
+        <groupId>com.krickert.search</groupId>
+        <version>0.1-SNAPSHOT</version>
+    </parent>
+    <modules>
+        <module>download-request-creator</module>
+        <module>download-request-processor</module>
+        <module>wiki-dump-file-processor</module>
+        <module>wiki-article-processor</module>
+    </modules>
+    <build>
+    <plugins>
+    <plugin>
+        <groupId>io.micronaut.build</groupId>
+        <artifactId>micronaut-maven-plugin</artifactId>
+        <configuration>
+            <shared>true</shared>
+        </configuration>
+    </plugin>
+    </plugins>
+    </build>
+    <dependencies>
+
+
+    </dependencies>
+
+
+</project>

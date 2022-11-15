@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>download-request-processor</artifactId>
+  <version>0.1-SNAPSHOT</version>
+  <packaging>${packaging}</packaging>
+
+  <parent>
+    <groupId>com.krickert.search</groupId>
+    <artifactId>wikipedia-parser</artifactId>
+    <version>0.1-SNAPSHOT</version>
+    <relativePath>../pom.xml</relativePath>
+  </parent>
+
+  <properties>
+    <packaging>jar</packaging>
+    <micronaut.test.resources.enabled>true</micronaut.test.resources.enabled>
+    <exec.mainClass>com.krickert.search.download.dump.DownloadRequestProcessor</exec.mainClass>
+  </properties>
+
+
+  <dependencies>
+    <dependency>
+      <groupId>io.micronaut</groupId>
+      <artifactId>micronaut-http-client</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient -->
+    <dependency>
+      <groupId>org.apache.httpcomponents.client5</groupId>
+      <artifactId>httpclient5</artifactId>
+      <version>5.2-beta1</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/commons-codec/commons-codec -->
+    <dependency>
+      <groupId>commons-codec</groupId>
+      <artifactId>commons-codec</artifactId>
+      <version>1.15</version>
+    </dependency>
+    <dependency>
+      <groupId>com.krickert.search</groupId>
+      <artifactId>wikisearch-model</artifactId>
+      <version>0.1-SNAPSHOT</version>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+
+      
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <!-- Uncomment to enable incremental compilation -->
+          <!-- <useIncrementalCompilation>false</useIncrementalCompilation> -->
+
+          <annotationProcessorPaths combine.self="override">
+            <path>
+              <groupId>io.micronaut</groupId>
+              <artifactId>micronaut-inject-java</artifactId>
+              <version>${micronaut.version}</version>
+            </path>
+            <path>
+              <groupId>io.micronaut</groupId>
+              <artifactId>micronaut-graal</artifactId>
+              <version>${micronaut.version}</version>
+            </path>
+            <path>
+              <groupId>io.micronaut</groupId>
+              <artifactId>micronaut-validation</artifactId>
+              <version>${micronaut.version}</version>
+            </path>
+          </annotationProcessorPaths>
+          <compilerArgs>
+            <arg>-Amicronaut.processing.group=com.krickert.search</arg>
+            <arg>-Amicronaut.processing.module=download-request-processor</arg>
+          </compilerArgs>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>
