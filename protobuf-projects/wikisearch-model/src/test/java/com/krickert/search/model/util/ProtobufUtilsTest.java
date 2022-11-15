@@ -6,6 +6,7 @@ import com.krickert.search.model.wiki.ErrorCheck;
 import com.krickert.search.model.wiki.ErrorCheckType;
 import org.apache.commons.io.FileUtils;
 import org.assertj.core.util.Lists;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 
 import java.io.File;
@@ -16,6 +17,19 @@ import java.util.UUID;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class ProtobufUtilsTest {
+
+    public static final Collection<File> filesToDelete = Lists.newArrayList();
+
+    @AfterEach
+    void deleteAllocatedFiles() {
+        filesToDelete.forEach((file) -> {
+            try {
+                FileUtils.forceDelete(file);
+            } catch (IOException e) {
+                //windows.
+            }
+        });
+    }
 
     @Test
     void nowIsNowNotThen() throws InterruptedException {
@@ -35,22 +49,22 @@ public class ProtobufUtilsTest {
 
     @Test
     void testSaveProtoToDisk() throws IOException {
-        DownloadFileRequest request = DownloadFileRequest.newBuilder()
-                .setFileName("File Name").setUrl("someurl")
-                .setErrorCheck(ErrorCheck.newBuilder()
-                        .setErrorCheck("error check")
-                        .setErrorCheckType(ErrorCheckType.MD5).build())
-                .setFileDumpDate("20221111")
-                .setUrl("www.example.com").build();
-        ProtobufUtils.saveProtobufToDisk("somefile.bin", request);
-        File result = new File("somefile.bin");
-        assertThat(result)
-                .isNotNull()
-                .isFile();
-        DownloadFileRequest requestOnDisk = DownloadFileRequest.parseFrom(FileUtils.readFileToByteArray(result));
-        assertThat(request)
-                .isEqualTo(requestOnDisk);
-        FileUtils.forceDelete(result);
+            DownloadFileRequest request = DownloadFileRequest.newBuilder()
+                    .setFileName("File Name").setUrl("someurl")
+                    .setErrorCheck(ErrorCheck.newBuilder()
+                            .setErrorCheck("error check")
+                            .setErrorCheckType(ErrorCheckType.MD5).build())
+                    .setFileDumpDate("20221111")
+                    .setUrl("www.example.com").build();
+            ProtobufUtils.saveProtobufToDisk("somefile.bin", request);
+            File someFile = new File("somefile.bin");
+            assertThat(someFile)
+                    .isNotNull()
+                    .isFile();
+            DownloadFileRequest requestOnDisk = DownloadFileRequest.parseFrom(FileUtils.readFileToByteArray(someFile));
+            assertThat(request)
+                    .isEqualTo(requestOnDisk);
+            filesToDelete.add(someFile);
     }
 
     @Test
@@ -83,8 +97,9 @@ public class ProtobufUtilsTest {
                 .isEqualTo(request1OnDisk);
         assertThat(request2)
                 .isEqualTo(request2OnDisk);
-        FileUtils.forceDelete(result0);
-        FileUtils.forceDelete(result1);
+
+        filesToDelete.add(result0);
+        filesToDelete.add(result1);
     }
 
     @Test

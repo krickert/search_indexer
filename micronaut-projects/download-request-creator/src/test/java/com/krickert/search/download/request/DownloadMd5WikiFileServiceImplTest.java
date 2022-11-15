@@ -5,12 +5,15 @@ import io.micronaut.test.extensions.junit5.annotation.MicronautTest;
 import io.reactivex.rxjava3.core.Flowable;
 import jakarta.inject.Inject;
 import org.apache.commons.io.FileUtils;
+import org.junit.AfterClass;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
 import java.io.File;
 import java.io.IOException;
 import java.nio.charset.Charset;
+import java.util.ArrayList;
+import java.util.Collection;
 
 import static io.micronaut.http.HttpRequest.GET;
 import static org.assertj.core.api.Assertions.assertThat;
@@ -18,6 +21,18 @@ import static org.mockito.Mockito.when;
 
 @MicronautTest
 class DownloadMd5WikiFileServiceImplTest {
+
+    private static Collection<File> filesToDelete = new ArrayList<>();
+
+    @AfterClass
+    void deleteFiles() {
+        filesToDelete.forEach((file) -> {
+            try {
+                FileUtils.forceDelete(file);
+            } catch (IOException e) {
+            }
+        });
+    }
 
     private final DownloadMd5WikiFileServiceImpl mock;
     private final DownloadMd5WikiFileServiceImpl mock2;
@@ -53,11 +68,11 @@ class DownloadMd5WikiFileServiceImplTest {
 
     @Test
     void downloadWhenFileNotThere() throws IOException {
-        assertThat(
-                mock.downloadWikiMd5AsString("wikiListNotThere.md5"))
+        String result =  mock.downloadWikiMd5AsString("wikiListNotThere.md5");
+        assertThat(result)
                 .isEqualTo(MicronautFileUtil.readFileAsString("wikiListNotThere.md5").get()
                 );
-        FileUtils.forceDelete(new File("wikiListNotThere.md5"));
+        filesToDelete.add(new File("wikiListNotThere.md5"));
     }
 
     @Test

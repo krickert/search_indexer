@@ -5,6 +5,7 @@ import io.micronaut.core.io.file.FileSystemResourceLoader;
 import io.micronaut.core.io.scan.ClassPathResourceLoader;
 import jakarta.inject.Singleton;
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.IOUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -23,7 +24,7 @@ public class MicronautFileUtil {
             ClassPathResourceLoader loader = new ResourceResolver().getLoader(ClassPathResourceLoader.class).get();
             Optional<URL> resource = loader.getResource("classpath:" + commandlineFileName);
             if (resource.isPresent()) {
-                return Optional.of(FileUtils.readFileToString(new File(resource.get().getFile()), Charset.defaultCharset()));
+                return Optional.of(IOUtils.toString(resource.get().openStream(), Charset.defaultCharset()));
             }
         } catch (NoSuchElementException | IOException e) {
             log.debug("element not found in classpath", e);
@@ -32,7 +33,7 @@ public class MicronautFileUtil {
         Optional<URL> resource = loader.getResource("file:" + commandlineFileName);
         log.debug("did we find the file? {}", resource.isPresent());
         try {
-            return Optional.of(FileUtils.readFileToString(new File(resource.get().getFile()), Charset.defaultCharset()));
+            return Optional.of(IOUtils.toString(resource.get().openStream(), Charset.defaultCharset()));
         } catch (NoSuchElementException | IOException e) {
             log.error("File was specified: [{}] but does not exist in classpath or as a file.", commandlineFileName);
             return Optional.ofNullable(null);
