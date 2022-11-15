@@ -12,9 +12,59 @@ service PipeService {
   rpc send (PipeRequest) returns (PipeReply) {}
 }
 
+service PipeRegistry {
+  rpc send (PipeClientRegistrationRequest) returns (PipeClientRegistrationReply) {}
+}
+
+message PipeClientRegistrationRequest {
+  string id = 1;
+  string service_name = 2;
+  repeated string servers = 3;
+}
+
+enum PipeRegistrationStatus {
+  SUCCESS = 0;
+  FAILURE = 1;
+  WARNING = 3;
+}
+
+message PipeClientRegistrationReply {
+  PipeRegistrationStatus status = 1;
+}
+
+message FieldMapping {
+  string input_field = 1;
+  string output_field = 2;
+}
+
+enum CleanFieldAction {
+  CLEAN_WHITESPACE = 0;
+  CLEAN_HTML = 1;
+}
+
+enum NLPFieldAction {
+  SPLIT_SENTENCES = 0;
+  NER_LOCATION = 1;
+  NER_DATE = 2;
+  NER_ORGANIZATION = 3;
+  NER_PERSON = 4;
+  PART_OF_SPEECH = 5;
+}
+
+message CleanFieldMappingAction {
+  FieldMapping mapping = 1;
+  CleanFieldAction action = 2;
+}
+
+message NLPFieldMappingAction {
+  FieldMapping mapping = 1;
+  NLPFieldAction action = 2;
+}
+
 message PipeRequest {
   string name = 1;
   com.krickert.search.model.pipe.PipeDocument document = 2;
+  repeated FieldMapping field_mappings = 3;
 }
 
 message PipeReply {

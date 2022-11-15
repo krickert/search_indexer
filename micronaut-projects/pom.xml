@@ -26,11 +26,8 @@
         <relativePath/>
     </parent>
     <modules>
-        <module>download-request-creator</module>
-        <module>download-request-processor</module>
-        <module>wiki-dump-file-processor</module>
-        <module>wiki-article-processor</module>
-        <module>pipline-server</module>
+        <module>wikipedia-parser</module>
+        <module>indexer</module>
     </modules>
     <repositories>
         <repository>
@@ -180,6 +177,13 @@
             <groupId>org.apache.kafka</groupId>
             <artifactId>kafka-clients</artifactId>
             <version>${kafka.client.version}</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/io.grpc/grpc-protobuf -->
+        <dependency>
+            <groupId>io.grpc</groupId>
+            <artifactId>grpc-protobuf</artifactId>
+            <version>1.50.2</version>
         </dependency>
 
     </dependencies>
