@@ -13,6 +13,7 @@ import java.time.format.DateTimeFormatter;
 import static java.time.format.DateTimeFormatter.ISO_INSTANT;
 import static org.apache.commons.lang3.StringUtils.isNotEmpty;
 
+
 public class PipelineDocumentMapper {
 
     public PipeDocument mapWikiArticleToPipeDocument(WikiArticle wikiArticle) {

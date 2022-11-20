@@ -62,7 +62,7 @@ message NLPFieldMappingAction {
 }
 
 message PipeRequest {
-  string name = 1;
+  string id = 1;
   com.krickert.search.model.pipe.PipeDocument document = 2;
   repeated FieldMapping field_mappings = 3;
 }
