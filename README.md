@@ -11,7 +11,7 @@ The docker directory has the latest confluent platform.  It also contains a scri
 Search Indexer is an open source search indexer meant to create a document indexer that scales out-of-the-box.  It's a work-in-progress aimed at the following milestones:
 
 1. *End-to-end searching of wikipedia* - complete. Automatically download and install solr search engine.  Then it'll download all of wikipedia into solr.  Finally, it'll categorize each wiki article using OpenNLP category tagger.
-2. *Scale wikipedia indexing with kafka* - completed. Create the above steps using Spring cloud flow through 100% avro serialization/deserialization.  Create a generic document interface.
+2. *Scale wikipedia indexing with kafka* - completed. Create the above steps using Spring cloud flow through 100% protocolbuf serialization/deserialization.  Create a generic document interface.
 3. *Create multiple search engine indices* - not started.  Support for open search and an interface for other search engines.
 4. *Allow for multiple document types to be indexed* - not started.  Move away from wikipedia and allow for more generic input of documents.
 5. *Integrate pipeline steps for search to allow for dense vector calculations* - not started.
@@ -25,7 +25,7 @@ Search Indexer is an open source search indexer meant to create a document index
 
 # things to do
 * learn more about kafka topics.  About 1/2 way through some of the books, not jumping into any of the super fancy stuff yet.
-* figure out if we will use key/value storage with KTable?  I feel odd moving away from the avro binary to json,
+* figure out if we will use key/value storage with KTable?  
 * get a pipeline arch going which will allow for registering multiple pipeline services using gRPC.  The idea is to create a templated request service and the end user can create the service which is "registerd" in the application yml of the pipeline project.
 
 # things to cache/store outside of the pipeline
