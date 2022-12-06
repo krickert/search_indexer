@@ -24,7 +24,7 @@
     <dependency>
       <groupId>io.micronaut</groupId>
       <artifactId>micronaut-http-client</artifactId>
-      <scope>test</scope>
+        <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.wikiclean</groupId>

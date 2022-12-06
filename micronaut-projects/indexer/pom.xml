@@ -32,13 +32,13 @@
         <dependency>
             <groupId>io.grpc</groupId>
             <artifactId>grpc-stub</artifactId>
-            <version>1.50.2</version>
+            <version>1.51.0</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/io.grpc/grpc-api -->
         <dependency>
             <groupId>io.grpc</groupId>
             <artifactId>grpc-protobuf</artifactId>
-            <version>1.50.2</version>
+            <version>1.51.0</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/javax.annotation/javax.annotation-api -->
         <dependency>

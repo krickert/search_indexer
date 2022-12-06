@@ -26,7 +26,7 @@
         <dependency>
             <groupId>io.micronaut</groupId>
             <artifactId>micronaut-core</artifactId>
-            <version>3.7.3</version>
+            <version>3.7.4</version>
             <scope>compile</scope>
         </dependency>
         <!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
