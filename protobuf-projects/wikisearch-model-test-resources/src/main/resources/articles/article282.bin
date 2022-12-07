@@ -1,447 +1,142 @@
 
-41568Power factor��In electrical engineering, the power factor of an AC power system is defined as the ratio of the real power absorbed by the load to the apparent power flowing in the circuit.  Real power is the average of the instantaneous product of voltage and current and represents the capacity of the electricity for performing work. Apparent power is the product of RMS current and voltage. Due to energy stored in the load and returned to the source, or due to a non-linear load that distorts the wave shape of the current drawn from the source, the apparent power may be greater than the real power, so more current flows in the circuit than would be required to transfer real power alone. A power factor magnitude of less than one indicates the voltage and current are not in phase, reducing the average product of the two. A negative power factor occurs when the device (which is normally the load) generates real power, which then flows back towards the source.
+41492	Path loss�?Path loss, or path attenuation, is the reduction in power density (attenuation) of an electromagnetic wave as it propagates through space. Path loss is a major component in the analysis and design of the link budget of a telecommunication system.
 
-In an electric power system, a load with a low power factor draws more current than a load with a high power factor for the same amount of useful power transferred. The higher currents increase the energy lost in the distribution system and require larger wires and other equipment. Because of the costs of larger equipment and wasted energy, electrical utilities will usually charge a higher cost to industrial or commercial customers where there is a low power factor.
+This term is commonly used in wireless communications and signal propagation. Path loss may be due to many effects, such as free-space loss, refraction, diffraction, reflection, aperture-medium coupling loss, and absorption. Path loss is also influenced by terrain contours,  environment (urban or rural, vegetation and foliage), propagation medium (dry or moist air), the distance between the transmitter and the receiver, and the height and location of antennas.
 
-Power-factor correction increases the power factor of a load, improving efficiency for the distribution system to which it is attached. Linear loads with a low power factor (such as induction motors) can be corrected with a passive network of capacitors or inductors. Non-linear loads, such as rectifiers, distort the current drawn from the system. In such cases, active or passive power factor correction may be used to counteract the distortion and raise the power factor. The devices for correction of the power factor may be at a central substation, spread out over a distribution system, or built into power-consuming equipment.
+Causes
 
-General case
+Path loss normally includes propagation losses caused by the natural expansion of the radio wave front in free space (which usually takes the shape of an ever-increasing sphere), absorption losses (sometimes called penetration losses), when the signal passes through media not transparent to electromagnetic waves, diffraction losses when part of the radiowave front is obstructed by an opaque obstacle, and losses caused by other phenomena.
 
-The general expression for power factor is given by
+The signal radiated by a transmitter may also travel along many and different paths to a receiver simultaneously; this effect is called multipath. Multipath waves combine at the receiver antenna, resulting in a received signal that may vary widely, depending on the distribution of the intensity and relative propagation time of the waves and bandwidth of the transmitted signal. The total power of interfering waves in a Rayleigh fading scenario varies quickly as a function of space (which is known as small scale fading). Small-scale fading refers to the rapid changes in radio signal amplitude in a short period of time or distance of travel.
 
- \mbox{power factor} = P/P_a 
- P_a = I_{rms} V_{rms}   
+Loss exponent
 
-where P is the real power measured by an ideal wattmeter, I_{rms} is the rms current measured by an ideal ammeter, and V_{rms} is the rms voltage measured by an ideal voltmeter.  Apparent power, P_a, is the product of the rms current and the rms voltage.
+In the study of wireless communications, path loss can be represented by the path loss exponent, whose value is normally in the range of 2 to 4 (where 2 is for propagation in free space, 4 is for relatively lossy environments and for the case of full specular reflection from the earth surface—the so-called flat earth model). In some environments, such as buildings, stadiums and other indoor environments, the path loss exponent can reach values in the range of 4 to 6. On the other hand, a tunnel may act as a waveguide, resulting in a path loss exponent less than 2.
 
-If the load is sourcing power back toward the generator, then P and  \mbox{power factor}  will be negative.
+Path loss is usually expressed in dB. In its simplest form, the path loss can be calculated using the formula
 
-Periodic waveforms
+L = 10 n \log_{10}(d)+C
 
-If the waveforms are periodic with the same period which is much shorter than the averaging time of the physical meters, then the power factor can be computed by the following
+where L is the path loss in decibels, n is the path loss exponent, d is the distance between the transmitter and the receiver, usually measured in meters, and C is a constant which accounts for system losses.
 
- \mbox{power factor} = P/P_a 
- P_a = I_{rms} V_{rms}   
- P =\frac 1 T  \int_{t'}^{t'+T} i(t)v(t) dt 
- I_{rms}^2 =\frac 1 T \int_{t'}^{t'+T} {i(t)}^2 dt 
- V_{rms}^2 =\frac 1 T \int_{t'}^{t'+T} {v(t)}^2 dt 
+Radio engineer formula
 
-where i(t) is the instantaneous current, v(t) is the instantaneous voltage, t' is an arbitrary starting time, and T is the period of the waveforms.
+Radio and antenna engineers use the following simplified formula (derived from the Friis Transmission Formula) for the signal path loss between the feed points of two isotropic antennas in free space:
 
-Nonperiodic waveforms
+Path loss in dB: 
+L = 20 \log_{10}\left(\frac{4\pi d} \lambda \right) 
 
-If the waveforms are not periodic and the physical meters have the same averaging time, then the equations for the periodic case can be used with the exception that T is the averaging time of the meters instead of the waveform period.
+where L is the path loss in decibels, \lambda is the wavelength and d is the transmitter-receiver distance in the same units as the wavelength. Note the power density in space has no dependency on \lambda; The variable \lambda exists in the formula to account for the effective capture area of the isotropic receiving antenna.
 
-Linear time-invariant circuits 
+Prediction
 
-Linear time-invariant circuits (referred to simply as linear circuits for the rest of this article), for example, circuits consisting of combinations of resistors, inductors and capacitors have a sinusoidal response to the sinusoidal line voltage. A linear load does not change the shape of the input waveform but may change the relative timing (phase) between voltage and current, due to its inductance or capacitance.
+Calculation of the path loss is usually called prediction. Exact prediction is possible only for simpler cases, such as the above-mentioned free space propagation or the flat-earth model. For practical cases the path loss is calculated using a variety of approximations.
 
-In a purely resistive AC circuit, voltage and current waveforms are in step (or in phase), changing polarity at the same instant in each cycle. All the power entering the load is consumed (or dissipated).
+Statistical methods (also called stochastic or empirical) are based on measured and averaged losses along typical classes of radio links. Among the most commonly used such methods are Okumura–Hata, the COST Hata model, W.C.Y.Lee, etc. These are also known as radio wave propagation models and are typically used in the design of cellular networks and public land mobile networks (PLMN). For wireless communications in the very high frequency (VHF) and ultra high frequency (UHF) frequency band (the bands used by walkie-talkies, police, taxis and cellular phones), one of the most commonly used methods is that of Okumura–Hata as refined by the COST 231 project. Other well-known models are those of Walfisch–Ikegami, W. C. Y. Lee, and Erceg. For FM radio and TV broadcasting the path loss is most commonly predicted using the ITU model as described in P.1546 (successor to P.370) recommendation.
 
-Where reactive loads are present, such as with capacitors or inductors, energy storage in the loads results in a phase difference between the current and voltage waveforms. During each cycle of the AC voltage, extra energy, in addition to any energy consumed in the load, is temporarily stored in the load in electric or magnetic fields then returned to the power grid a fraction of the period later.
+Deterministic methods based on the physical laws of wave propagation are also used; ray tracing is one such method. These methods are expected to produce more accurate and reliable predictions of the path loss than the empirical methods; however, they are significantly more expensive in computational effort and depend on the detailed and accurate description of all objects in the propagation space, such as buildings, roofs, windows, doors, and walls. For these reasons they are used predominantly for short propagation paths. Among the most commonly used methods in the design of radio equipment such as antennas and feeds is the finite-difference time-domain method.
 
-Electrical circuits containing predominantly resistive loads (incandescent lamps, heating elements) have a power factor of almost 1, but circuits containing inductive or capacitive loads (electric motors, solenoid valves, transformers, fluorescent lamp ballasts, and others) can have a power factor well below 1.
+The path loss in other frequency bands (medium wave (MW), shortwave (SW or HF), microwave (SHF)) is predicted with similar methods, though the concrete algorithms and formulas may be very different from those for VHF/UHF. Reliable prediction of the path loss in the SW/HF band is particularly difficult, and its accuracy is comparable to weather predictions.
 
-In the electric power grid, reactive loads cause a continuous "ebb and flow" of nonproductive power.  A circuit with a low power factor will use a greater amount of current to transfer a given quantity of real power than a circuit with a high power factor thus causing increased losses due to resistive heating in power lines, and requiring the use of higher-rated conductors and transformers.
+Easy approximations for calculating the path loss over distances significantly shorter than the distance to the radio horizon:
 
-Definition and calculation 
+* In free space the path loss increases with 20 dB per decade (one decade is when the distance between the transmitter and the receiver increases ten times) or 6 dB per octave (one octave is when the distance between the transmitter and the receiver doubles). This can be used as a very rough first-order approximation for (microwave) communication links;
+* For signals in the UHF/VHF band propagating over the surface of the Earth the path loss increases with roughly 35–40 dB per decade (10–12 dB per octave). This can be used in cellular networks as a first guess.
 
-AC power has two components:
-* Real power or active power (P) (sometimes called average power), expressed in watts (W)
-* Reactive power (Q), usually expressed in reactive volt-amperes (var)
+Examples
 
-Together, they form the complex power (S) expressed as volt-amperes (VA). The magnitude of the complex power is the apparent power (|S|), also expressed in volt-amperes (VA).
+In cellular networks, such as UMTS and GSM, which operate in the UHF band, the value of the path loss in built-up areas can reach 110–140 dB for the first kilometer of the link between the base transceiver station (BTS) and the mobile. The path loss for the first ten kilometers may be 150–190 dB (Note: These values are very approximate and are given here only as an illustration of the range in which the numbers used to express the path loss values can eventually be, these are not definitive or binding figures—the path loss may be very different for the same distance along two different paths and it can be different even along the same path if measured at different times.)
 
-The VA and var are non-SI units mathematically identical to the watt, but are used in engineering practice instead of the watt to state what quantity is being expressed. The SI explicitly disallows using units for this purpose or as the only source of information about a physical quantity as used.
+In the radio wave environment for mobile services  the mobile antenna is close to the ground. Line-of-sight propagation (LOS) models are highly modified. The signal path from the BTS antenna normally elevated above the roof tops is refracted down into the local physical environment (hills, trees, houses) and the LOS signal seldom reaches the antenna. The environment will produce several deflections of the direct signal onto the antenna, where typically 2–5 deflected signal components will be vectorially added.
 
-The power factor is defined as the ratio of real power to apparent power. As power is transferred along a transmission line, it does not consist purely of real power that can do work once transferred to the load, but rather consists of a combination of real and reactive power, called apparent power. The power factor describes the amount of real power transmitted along a transmission line relative to the total apparent power flowing in the line..  Note 1, section 3.1.1.1, when defining the quantities for power factor, asserts that real power only flows to the load and can never be negative. As of 2013, one of the authors acknowledged that this note was incorrect, and is being revised for the next edition. See http://powerstandards.com/Shymanski/draft.pdf 
+These refraction and deflection processes cause loss of signal strength, which changes when the mobile antenna moves (Rayleigh fading), causing instantaneous variations of up to 20 dB. The network is therefore designed to provide an excess of signal strength compared to LOS of 8–25 dB depending on the nature of the physical environment, and another 10 dB to overcome the fading due to movement.
 
-The power factor can also be computed as the cosine of the angle θ by which the current waveform lags or leads the voltage waveform,.
+See also
 
-Power triangle 
+*Air mass (astronomy)
+*Radio propagation model
+*Log-distance path loss model
+*Two-ray ground-reflection model
+*Computation of radiowave attenuation in the atmosphere
 
-One can relate the various components of AC power by using the power triangle in vector space. Real power extends horizontally in the real axis and reactive power extends in the direction of the imaginary axis. Complex power (and its magnitude, apparent power) represents a combination of both real and reactive power, and therefore can be calculated by using the vector sum of these two components. We can conclude that the mathematical relationship between these components is:
+References
 
-\begin{align}
-  S &= P + jQ \\
-  |S| &= \sqrt{P^2 + Q^2} \\
-  \text{pf} &\cos{\theta} 
- \frac{P} = \cos{ \left( \arctan{ \left( \frac{Q}{P} \right) } \right) } \\
-  Q &= P \, \tan(\arccos(\text{pf}))
-\end{align}
+*
 
-As the angle θ increases with fixed total apparent power, current and voltage are further out of phase with each other. Real power decreases, and reactive power increases.
+External links
 
-Lagging, leading and unity power factors 
+*"�L{{Use American English|date = March 2019}}
+{{Short description|Signal attenuation in telecommunications}}
+{{Refimprove|date=August 2017}}
+'''Path loss''', or '''path attenuation''', is the reduction in power density ([[attenuation (electromagnetic radiation)|attenuation]]) of an [[electromagnetic wave]] as it propagates through space. Path loss is a major component in the analysis and design of the [[link budget]] of a telecommunication system.
 
-Power factor is described as leading if the current waveform is advanced in phase with respect to voltage, or lagging when the current waveform is behind the voltage waveform. A lagging power factor signifies that the load is inductive, as the load will “consume” reactive power. The reactive component Q is positive as reactive power travels through the circuit and is “consumed” by the inductive load. A leading power factor signifies that the load is capacitive, as the load “supplies” reactive power, and therefore the reactive component Q is negative as reactive power is being supplied to the circuit.
+This term is commonly used in [[wireless communications]] and [[signal propagation]]. Path loss may be due to many effects, such as [[free-space loss]], [[refraction]], [[diffraction]], [[Reflection (physics)|reflection]], [[aperture (antenna)|aperture]]-[[Transmission medium|medium]] [[coupling loss]], and [[Absorption (electromagnetic radiation)|absorption]]. Path loss is also influenced by terrain contours,  environment (urban or rural, vegetation and foliage), propagation medium (dry or moist air), the distance between the transmitter and the receiver, and the height and location of antennas.
 
-If θ is the phase angle between the current and voltage, then the power factor is equal to the cosine of the angle, \cos\theta:
-|P| = |S| \cos\theta
+==Causes==
+{{Unreferenced section|date=August 2017}}
+Path loss normally includes ''propagation losses'' caused by the natural expansion of the [[radio wave]] front in free space (which usually takes the shape of an ever-increasing sphere), ''absorption losses'' (sometimes called penetration losses), when the signal passes through media not transparent to [[electromagnetic waves]], ''[[diffraction]] losses'' when part of the radiowave front is obstructed by an opaque obstacle, and losses caused by other phenomena.
 
-Since the units are consistent, the power factor is by definition a dimensionless number between −1 and 1. When power factor is equal to 0, the energy flow is entirely reactive and stored energy in the load returns to the source on each cycle. When the power factor is 1, referred to as unity power factor, all the energy supplied by the source is consumed by the load. Power factors are usually stated as "leading" or "lagging" to show the sign of the phase angle. Capacitive loads are leading (current leads voltage), and inductive loads are lagging (current lags voltage).
+The signal radiated by a transmitter may also travel along many and different paths to a receiver simultaneously; this effect is called [[Multipath propagation|multipath]]. Multipath waves combine at the receiver antenna, resulting in a received signal that may vary widely, depending on the distribution of the intensity and relative propagation time of the waves and bandwidth of the transmitted signal. The total power of interfering waves in a [[Rayleigh fading]] scenario varies quickly as a function of space (which is known as ''small scale [[fading]]''). Small-scale fading refers to the rapid changes in radio signal amplitude in a short period of time or distance of travel.
 
-If a purely resistive load is connected to a power supply, current and voltage will change polarity in step, the power factor will be 1, and the electrical energy flows in a single direction across the network in each cycle. Inductive loads such as induction motors (any type of wound coil) consume reactive power with the current waveform lagging the voltage. Capacitive loads such as capacitor banks or buried cables generate reactive power with the current phase leading the voltage. Both types of loads will absorb energy during part of the AC cycle, which is stored in the device's magnetic or electric field, only to return this energy back to the source during the rest of the cycle.
+==Loss exponent==
+{{Unreferenced section|date=August 2017}}
+{{main|Log-distance path loss model}}
+In the study of wireless communications, path loss can be represented by the path loss exponent, whose value is normally in the range of 2 to 4 (where 2 is for propagation in [[free space]], 4 is for relatively lossy environments and for the case of full [[specular reflection]] from the earth surface&mdash;the so-called [[flat earth]] model). In some environments, such as buildings, stadiums and other indoor environments, the path loss exponent can reach values in the range of 4 to 6. On the other hand, a tunnel may act as a [[waveguide]], resulting in a path loss exponent less than 2.
 
-For example, to get 1 kW of real power, if the power factor is unity, 1 kVA of apparent power needs to be transferred (1 kW ÷ 1 1 kVA). At low values of power factor, more apparent power needs to be transferred to get the same real power. To get 1 kW of real power at 0.2 power factor, 5 kVA of apparent power needs to be transferred (1 kW ÷ 0.2 
- 5 kVA). This apparent power must be produced and transmitted to the load and is subject to losses in the production and transmission processes.
+Path loss is usually expressed in [[decibel|dB]]. In its simplest form, the path loss can be calculated using the formula
 
-Electrical loads consuming alternating current power consume both real power and reactive power. The vector sum of real and reactive power is the complex power, and its magnitude is the apparent power. The presence of reactive power causes the real power to be less than the apparent power, and so, the electric load has a power factor of less than 1.
+:<math>L = 10 n \log_{10}(d)+C</math>
 
-A negative power factor (0 to −1) can result from returning active power to the source, such as in the case of a building fitted with solar panels when surplus power is fed back into the supply.
+where <math>L</math> is the path loss in decibels, <math>n</math> is the path loss exponent, <math>d</math> is the distance between the transmitter and the receiver, usually measured in meters, and <math>C</math> is a constant which accounts for system losses.
 
-Power factor correction of linear loads 
+==Radio engineer formula==
+Radio and antenna engineers use the following simplified formula (derived from the [[Friis transmission equation|Friis Transmission Formula]]) for the signal path loss between the feed points of two [[isotropic]] antennas in free space:
 
-A high power factor is generally desirable in a power delivery system to reduce losses and improve voltage regulation at the load. Compensating elements near an electrical load will reduce the apparent power demand on the supply system. Power factor correction may be applied by an electric power transmission utility to improve the stability and efficiency of the network. Individual electrical customers who are charged by their utility for low power factor may install correction equipment to increase their power factor so as to reduce costs.
+Path loss in [[decibel|dB]]: 
+:<math>L = 20 \log_{10}\left(\frac{4\pi d} \lambda \right) </math>
 
-Power factor correction brings the power factor of an AC power circuit closer to 1 by supplying or absorbing reactive power, adding capacitors or inductors that act to cancel the inductive or capacitive effects of the load, respectively. In the case of offsetting the inductive effect of motor loads, capacitors can be locally connected. These capacitors help to generate reactive power to meet the demand of the inductive loads. This will keep that reactive power from having to flow all the way from the utility generator to the load. In the electricity industry, inductors are said to consume reactive power and capacitors are said to supply it, even though reactive power is just energy moving back and forth on each AC cycle.
+where <math>L</math> is the path loss in decibels, <math>\lambda</math> is the wavelength and <math>d</math> is the transmitter-receiver distance in the same units as the wavelength. Note the power density in space has no dependency on <math>\lambda</math>; The variable <math>\lambda</math> exists in the formula to account for the [[Antenna aperture|effective capture area]] of the isotropic receiving antenna.<ref name="Stutz">{{cite book|last1=Stutzman|first1=Warren|last2=Thiele|first2=Gary|title=Antenna Theory and Design|date=1981|publisher=John Wiley & Sons, Inc.|isbn=0-471-04458-X|page=60}}</ref>
 
-The reactive elements in power factor correction devices can create voltage fluctuations and harmonic noise when switched on or off. They will supply or sink reactive power regardless of whether there is a corresponding load operating nearby, increasing the system's no-load losses. In the worst case, reactive elements can interact with the system and with each other to create resonant conditions, resulting in system instability and severe overvoltage fluctuations. As such, reactive elements cannot simply be applied without engineering analysis.
+==Prediction==
+{{Unreferenced section|date=August 2017}}
+Calculation of the path loss is usually called ''prediction''. Exact prediction is possible only for simpler cases, such as the above-mentioned ''free space'' propagation or the ''flat-earth model''. For practical cases the path loss is calculated using a variety of approximations.
 
-An automatic power factor correction unit consists of a number of capacitors that are switched by means of contactors. These contactors are controlled by a regulator that measures power factor in an electrical network. Depending on the load and power factor of the network, the power factor controller will switch the necessary blocks of capacitors in steps to make sure the power factor stays above a selected value.
+''Statistical'' methods (also called ''stochastic'' or ''empirical'') are based on measured and averaged losses along typical classes of radio links. Among the most commonly used such methods are [[Hata Model for Urban Areas|Okumura–Hata]], the [[COST Hata model]], [[W.C.Y.Lee]], etc. These are also known as ''radio wave propagation models'' and are typically used in the design of [[cellular networks]] and [[public land mobile network]]s (PLMN). For wireless communications in the [[very high frequency]] (VHF) and [[ultra high frequency]] (UHF) frequency band (the bands used by walkie-talkies, police, taxis and cellular phones), one of the most commonly used methods is that of Okumura–Hata as refined by the [[Cost 231 Model|COST 231]] project. Other well-known models are those of Walfisch–Ikegami, [[W. C. Y. Lee]], and [[Erceg]]. For FM radio and TV broadcasting the path loss is most commonly predicted using the [[ITU]] model as described in [[P.1546]] (successor to [[P.370]]) recommendation.
 
-In place of a set of switched capacitors, an unloaded synchronous motor can supply reactive power. The reactive power drawn by the synchronous motor is a function of its field excitation. It is referred to as a synchronous condenser. It is started and connected to the electrical network. It operates at a leading power factor and puts vars onto the network as required to support a system's voltage or to maintain the system power factor at a specified level.
+Deterministic methods based on the physical laws of wave propagation are also used; [[ray tracing (physics)|ray tracing]] is one such method. These methods are expected to produce more accurate and reliable predictions of the path loss than the empirical methods; however, they are significantly more expensive in computational effort and depend on the detailed and accurate description of all objects in the propagation space, such as buildings, roofs, windows, doors, and walls. For these reasons they are used predominantly for short propagation paths. Among the most commonly used methods in the design of radio equipment such as antennas and feeds is the [[finite-difference time-domain method]].
 
-The synchronous condenser's installation and operation are identical to those of large electric motors. Its principal advantage is the ease with which the amount of correction can be adjusted; it behaves like a variable capacitor. Unlike with capacitors, the amount of reactive power supplied is proportional to voltage, not the square of voltage; this improves voltage stability on large networks.  Synchronous condensers are often used in connection with high-voltage direct-current transmission projects or in large industrial plants such as steel mills.
+The path loss in other frequency bands ([[medium wave]] (MW), [[shortwave]] (SW or HF), [[microwave]] (SHF)) is predicted with similar methods, though the concrete algorithms and formulas may be very different from those for VHF/UHF. Reliable prediction of the path loss in the SW/HF band is particularly difficult, and its accuracy is comparable to weather predictions.{{Citation needed|date=August 2007}}
 
-For power factor correction of high-voltage power systems or large, fluctuating industrial loads, power electronic devices such as the static VAR compensator or STATCOM are increasingly used. These systems are able to compensate sudden changes of power factor much more rapidly than contactor-switched capacitor banks and, being solid-state, require less maintenance than synchronous condensers.
+Easy approximations for calculating the path loss over distances significantly shorter than the distance to the [[radio horizon]]:
 
-Non-linear loads 
+* In free space the path loss increases with 20&nbsp;dB per ''decade'' (one decade is when the distance between the transmitter and the receiver increases ten times) or 6&nbsp;dB per ''octave'' (one octave is when the distance between the transmitter and the receiver doubles). This can be used as a very rough first-order approximation for (microwave) communication links;
+* For signals in the UHF/VHF band propagating over the surface of the Earth the path loss increases with roughly 35–40&nbsp;dB per decade (10–12&nbsp;dB per octave). This can be used in cellular networks as a first guess.
 
-Examples of non-linear loads on a power system are rectifiers (such as used in a power supply), and arc discharge devices such as fluorescent lamps, electric welding machines, or arc furnaces. Because current in these systems is interrupted by a switching action, the current contains frequency components that are multiples of the power system frequency. Distortion power factor is a measure of how much the harmonic distortion of a load current decreases the average power transferred to the load.
+==Examples==
+{{Unreferenced section|date=August 2017}}
+In cellular networks, such as [[UMTS]] and [[GSM]], which operate in the UHF band, the value of the path loss in built-up areas can reach 110–140&nbsp;dB for the first kilometer of the link between the [[base transceiver station]] (BTS) and the [[mobile phone|mobile]]. The path loss for the first ten kilometers may be 150–190&nbsp;dB (''Note'': These values are very approximate and are given here only as an illustration of the range in which the numbers used to express the path loss values ''can eventually be'', these are not definitive or binding figures—the path loss may be very different for the same distance along two different paths and it can be different even along the same path if measured at different times.)
 
-Non-sinusoidal components 
+In the radio wave environment for mobile services  the mobile antenna is close to the ground. [[Line-of-sight propagation]] (LOS) models are highly modified. The signal path from the BTS antenna normally elevated above the roof tops is refracted down into the local physical environment (hills, trees, houses) and the LOS signal seldom reaches the antenna. The environment will produce several deflections of the direct signal onto the antenna, where typically 2–5 deflected signal components will be vectorially added.
 
-In linear circuits having only sinusoidal currents and voltages of one frequency, the power factor arises only from the difference in phase between the current and voltage. This is "displacement power factor".
+These refraction and deflection processes cause loss of signal strength, which changes when the mobile antenna moves (Rayleigh fading), causing instantaneous variations of up to 20&nbsp;dB. The network is therefore designed to provide an excess of signal strength compared to LOS of 8–25&nbsp;dB depending on the nature of the physical environment, and another 10&nbsp;dB to overcome the fading due to movement.
 
-Non-linear loads change the shape of the current waveform from a sine wave to some other form. Non-linear loads create harmonic currents in addition to the original (fundamental frequency) AC current. This is of importance in practical power systems that contain non-linear loads such as rectifiers, some forms of electric lighting, electric arc furnaces, welding equipment, switched-mode power supplies, variable speed drives and other devices. Filters consisting of linear capacitors and inductors can prevent harmonic currents from entering the supplying system.
+==See also==
+*[[Air mass (astronomy)]]
+*[[Radio propagation model]]
+*[[Log-distance path loss model]]
+*[[Two-ray ground-reflection model]]
+*[[Computation of radiowave attenuation in the atmosphere]]
 
-To measure the real power or reactive power, a wattmeter designed to work properly with non-sinusoidal currents must be used.
+==References==
+{{Reflist}}
+*{{FS1037C MS188}}
 
-Distortion power factor 
+==External links==
+*  {{cite web | url=https://www.europeana.eu/resolve/record/9200111/83299BB8CE5435AA4953615C2812EAC4A83FE90A|title=Methods for Path loss Prediction}}
 
-The distortion power factor is the distortion component associated with the harmonic voltages and currents present in the system.
+{{Analogue TV transmitter topics}}
+{{Radio frequency propagation models}}
 
-\begin{align}
-\mbox{distortion power factor}
-& = \frac{ I_1}{I_{rms}} \\
-& = \frac{I_1} {\sqrt{I_1^2+I_2^2+I_3^2+I_4^2+\cdots}} \\
-& = \frac{1} { \sqrt{1+ \frac{I_2^2+I_3^2+I_4^2+\cdots}{I_1^2}}} \\
-& = \frac{1} {\sqrt{ 1+THD_i^2}} \\
-\end{align}
-
-\mbox{THD}_i is the total harmonic distortion of the load current. 
-THD_i \frac{\sqrt{\displaystyle\sum_{h
-2}^\infty I_h^2}} {I_1}= \frac{\sqrt{I_2^2+I_3^2+I_4^2+\cdots}} {I_1}
-
-I_1 is the fundamental component of the current and I_{\mbox{rms}} is the total current – both are root mean square-values (distortion power factor can also be used to describe individual order harmonics, using the corresponding current in place of total current). This definition with respect to total harmonic distortion assumes that the voltage stays undistorted (sinusoidal, without harmonics). This simplification is often a good approximation for stiff voltage sources (not being affected by changes in load downstream in the distribution network). Total harmonic distortion of typical generators from current distortion in the network is on the order of 1–2%, which can have larger scale implications but can be ignored in common practice.
-
-The result when multiplied with the displacement power factor (DPF) is the overall, true power factor or just power factor (PF):
-\mbox{PF} = \frac{\cos{\varphi}} {\sqrt{ 1+THD_i^2}}
-
-Distortion in three-phase networks 
-
-In practice, the local effects of distortion current on devices in a three-phase distribution network rely on the magnitude of certain order harmonics rather than the total harmonic distortion.
-
-For example, the triplen, or zero-sequence, harmonics (3rd, 9th, 15th, etc.) have the property of being in-phase when compared line-to-line. In a delta-wye transformer, these harmonics can result in circulating currents in the delta windings and result in greater resistive heating. In a wye-configuration of a transformer, triplen harmonics will not create these currents, but they will result in a non-zero current in the neutral wire. This could overload the neutral wire in some cases
-and create error in kilowatt-hour metering systems and billing revenue.  The presence of current harmonics in a transformer also result in larger eddy currents in the magnetic core of the transformer. Eddy current losses generally increase as the square of the frequency, lowering the transformer's efficiency, dissipating additional heat, and reducing its service life.
-
-Negative-sequence harmonics (5th, 11th, 17th, etc.) combine 120 degrees out of phase, similarly to the fundamental harmonic but in a reversed sequence.  In generators and motors, these currents produce magnetic fields which oppose the rotation of the shaft and sometimes result in damaging mechanical vibrations.
-
-Switched-mode power supplies 
-
-A particularly important class of non-linear loads is the millions of personal computers that typically incorporate switched-mode power supplies (SMPS) with rated output power ranging from a few watts to more than 1 kW. Historically, these very-low-cost power supplies incorporated a simple full-wave rectifier that conducted only when the mains instantaneous voltage exceeded the voltage on the input capacitors.  This leads to very high ratios of peak-to-average input current, which also lead to a low distortion power factor and potentially serious phase and neutral loading concerns.
-
-A typical switched-mode power supply first converts the AC mains to a DC bus by means of a bridge rectifier. The output voltage is then derived from this DC bus. The problem with this is that the rectifier is a non-linear device, so the input current is highly non-linear. That means that the input current has energy at harmonics of the frequency of the voltage. This presents a problem for power companies, because they cannot compensate for the harmonic current by adding simple capacitors or inductors, as they could for the reactive power drawn by a linear load. Many jurisdictions are beginning to require power factor correction for all power supplies above a certain power level.
-
-Regulatory agencies such as the EU have set harmonic limits as a method of improving power factor. Declining component cost has hastened implementation of two different methods. To comply with current EU standard EN61000-3-2, all switched-mode power supplies with output power more than 75 W must at least include passive power factor correction. 80 Plus power supply certification requires a power factor of 0.9 or more.
-
-Power factor correction (PFC) in non-linear loads 
-
-Passive PFC 
-
-The simplest way to control the harmonic current is to use a filter that passes current only at line frequency (50 or 60 Hz). The filter consists of capacitors or inductors and makes a non-linear device look more like a linear load. An example of passive PFC is a valley-fill circuit.
-
-A disadvantage of passive PFC is that it requires larger inductors or capacitors than an equivalent power active PFC circuit. Also, in practice, passive PFC is often less effective at improving the power factor.
-
-Active PFC 
-
-Active PFC is the use of power electronics to change the waveform of current drawn by a load to improve the power factor.  Some types of the active PFC are buck, boost, buck-boost and synchronous condenser.  Active power factor correction can be single-stage or multi-stage.
-
-In the case of a switched-mode power supply, a boost converter is inserted between the bridge rectifier and the main input capacitors. The boost converter attempts to maintain a constant voltage at its output while drawing a current that is always in phase with and at the same frequency as the line voltage. Another switched-mode converter inside the power supply produces the desired output voltage from the DC bus. This approach requires additional semiconductor switches and control electronics but permits cheaper and smaller passive components. It is frequently used in practice.
-
-For a three-phase SMPS, the Vienna rectifier configuration may be used to substantially improve the power factor.
-
-SMPSs with passive PFC can achieve power factor of about 0.7–0.75, SMPSs with active PFC, up to 0.99 power factor, while a SMPS without any power factor correction have a power factor of only about 0.55–0.65.
-
-Due to their very wide input voltage range, many power supplies with active PFC can automatically adjust to operate on AC power from about 100 V (Japan) to 240 V (Europe). That feature is particularly welcome in power supplies for laptops.
-
-Dynamic PFC 
-
-Dynamic power factor correction (DPFC), sometimes referred to as "real-time power factor correction," is used for electrical stabilization in cases of rapid load changes (e.g. at large manufacturing sites). DPFC is useful when standard power factor correction would cause over or under correction.  DPFC uses semiconductor switches, typically thyristors, to quickly connect and disconnect capacitors or inductors to improve power factor.
-
-Importance in distribution systems 
-
-Power factors below 1.0 require a utility to generate more than the minimum volt-amperes necessary to supply the real power (watts). This increases generation and transmission costs. For example, if the load power factor were as low as 0.7, the apparent power would be 1.4 times the real power used by the load. Line current in the circuit would also be 1.4 times the current required at 1.0 power factor, so the losses in the circuit would be doubled (since they are proportional to the square of the current). Alternatively, all components of the system such as generators, conductors, transformers, and switchgear would be increased in size (and cost) to carry the extra current. When the power factor is close to unity, for the same kVA rating of the transformer more load current can be supplied.
-
-Utilities typically charge additional costs to commercial customers who have a power factor below some limit, which is typically 0.9 to 0.95.  Engineers are often interested in the power factor of a load as one of the factors that affect the efficiency of power transmission.
-
-With the rising cost of energy and concerns over the efficient delivery of power, active PFC has become more common in consumer electronics. Current Energy Star guidelines for computers call for a power factor of ≥ 0.9 at 100% of rated output in the PC's power supply. According to a white paper authored by Intel and the U.S. Environmental Protection Agency, PCs with internal power supplies will require the use of active power factor correction to meet the ENERGY STAR 5.0 Program Requirements for Computers.
-
-In Europe, EN 61000-3-2 requires power factor correction be incorporated into consumer products.
-
-Small customers, such as households, are not usually charged for reactive power and so power factor metering equipment for such customers will not be installed.
-
-Measurement techniques 
-
-The power factor in a single-phase circuit (or balanced three-phase circuit) can be measured with the wattmeter-ammeter-voltmeter method, where the power in watts is divided by the product of measured voltage and current. The power factor of a balanced polyphase circuit is the same as that of any phase. The power factor of an unbalanced polyphase circuit is not uniquely defined.
-
-A direct reading power factor meter can be made with a moving coil meter of the electrodynamic type, carrying two perpendicular coils on the moving part of the instrument. The field of the instrument is energized by the circuit current flow. The two moving coils, A and B, are connected in parallel with the circuit load.  One coil, A, will be connected through a resistor and the second coil, B, through an inductor, so that the current in coil B is delayed with respect to current in A. At unity power factor, the current in A is in phase with the circuit current, and coil A provides maximum torque, driving the instrument pointer toward the 1.0 mark on the scale. At zero power factor, the current in coil B is in phase with circuit current, and coil B provides torque to drive the pointer towards 0. At intermediate values of power factor, the torques provided by the two coils add and the pointer takes up intermediate positions.
-
-Another electromechanical instrument is the polarized-vane type. In this instrument a stationary field coil produces a rotating magnetic field, just like a polyphase motor. The field coils are connected either directly to polyphase voltage sources or to a phase-shifting reactor if a single-phase application.  A second stationary field coil, perpendicular to the voltage coils, carries a current proportional to current in one phase of the circuit. The moving system of the instrument consists of two vanes that are magnetized by the current coil. In operation, the moving vanes take up a physical angle equivalent to the electrical angle between the voltage source and the current source. This type of instrument can be made to register for currents in both directions, giving a four-quadrant display of power factor or phase angle.
-
-Digital instruments exist that directly measure the time lag between voltage and current waveforms. Low-cost instruments of this type measure the peak of the waveforms. More sophisticated versions measure the peak of the fundamental harmonic only, thus giving a more accurate reading for phase angle on distorted waveforms. Calculating power factor from voltage and current phases is only accurate if both waveforms are sinusoidal.
-
-Power Quality Analyzers, often referred to as Power Analyzers, make a digital recording of the voltage and current waveform (typically either one phase or three phase) and accurately calculate true power (watts), apparent power (VA) power factor, AC voltage, AC current, DC voltage, DC current, frequency, IEC61000-3-2/3-12 Harmonic measurement, IEC61000-3-3/3-11 flicker measurement, individual phase voltages in delta applications where there is no neutral line, total harmonic distortion, phase and amplitude of individual voltage or current harmonics, etc.
-
-Mnemonics 
-
-English-language power engineering students are advised to remember:
-"ELI the ICE man" or "ELI on ICE" – the voltage E, leads the current I, in an inductor L. The current I leads the voltage E in a capacitor C.
-
-Another common mnemonic is "CIVIL" – in a capacitor (C) the current (I) leads voltage (V), voltage (V) leads current (I) in an inductor (L).
-
-References 
-
-External links 
-
-* ."��{{Short description|Ratio of active power to apparent power}}
-{{For|the firearms cartridge ranking system|Power factor (shooting sports)}}
-In [[electrical engineering]], the '''power factor''' of an [[AC power]] system is defined as the [[ratio]] of the ''[[real power]]'' absorbed by the [[electrical load|load]] to the ''[[apparent power]]'' flowing in the circuit.  Real power is the average of the instantaneous product of voltage and current and represents the capacity of the electricity for performing work. Apparent power is the product of [[Root mean square|RMS]] current and voltage. Due to energy stored in the load and returned to the source, or due to a non-linear load that distorts the wave shape of the current drawn from the source, the apparent power may be greater than the real power, so more current flows in the circuit than would be required to transfer real power alone. A power factor magnitude of less than one indicates the voltage and current are not in phase, reducing the average [[Product (mathematics)|product]] of the two. A negative power factor occurs when the device (which is normally the load) generates real power, which then flows back towards the source.
-
-In an electric power system, a load with a low power factor draws more current than a load with a high power factor for the same amount of useful power transferred. The higher currents increase the energy lost in the distribution system and require larger wires and other equipment. Because of the costs of larger equipment and wasted energy, electrical utilities will usually charge a higher cost to industrial or commercial customers where there is a low power factor.
-
-'''Power-factor correction''' increases the power factor of a load, improving efficiency for the distribution system to which it is attached. Linear loads with a low power factor (such as [[induction motor]]s) can be corrected with a passive network of [[capacitor]]s or [[inductor]]s. Non-linear loads, such as [[rectifier]]s, distort the current drawn from the system. In such cases, active or passive power factor correction may be used to counteract the distortion and raise the power factor. The devices for correction of the power factor may be at a central [[electrical substation|substation]], spread out over a distribution system, or built into power-consuming equipment.
-
-==General case==
-[[File:Power Factor General Case.svg|thumb|Schematic showing how power factor is calculated]]
-The general expression for power factor is given by
-
-:<math> \mbox{power factor} = P/P_a </math>
-:<math> P_a = I_{rms} V_{rms}  </math> 
-
-where <math>P</math> is the real power measured by an ideal [[wattmeter]], <math>I_{rms}</math> is the rms current measured by an ideal [[ammeter]], and <math>V_{rms}</math> is the rms voltage measured by an ideal [[voltmeter]].  Apparent power, <math>P_a</math>, is the product of the rms current and the rms voltage.
-
-If the load is sourcing power back toward the generator, then <math>P</math> and <math> \mbox{power factor} </math> will be negative.
-
-===Periodic waveforms===
-If the waveforms are periodic with the same period which is much shorter than the averaging time of the physical meters, then the power factor can be computed by the following
-
-:<math> \mbox{power factor} = P/P_a </math>
-:<math> P_a = I_{rms} V_{rms}  </math> 
-:<math> P =\frac 1 T  \int_{t'}^{t'+T} i(t)v(t) dt </math>
-:<math> I_{rms}^2 =\frac 1 T \int_{t'}^{t'+T} {i(t)}^2 dt </math>
-:<math> V_{rms}^2 =\frac 1 T \int_{t'}^{t'+T} {v(t)}^2 dt </math>
-
-where <math>i(t)</math> is the instantaneous current, <math>v(t)</math> is the instantaneous voltage, <math>t'</math> is an arbitrary starting time, and <math>T</math> is the period of the waveforms.
-
-===Nonperiodic waveforms===
-
-If the waveforms are not periodic and the physical meters have the same averaging time, then the equations for the periodic case can be used with the exception that <math>T</math> is the averaging time of the meters instead of the waveform period.
-
-{{-}}
-
-== Linear time-invariant circuits ==
-
-[[File:Power factor 0.svg|right|thumb|upright=1.36|Power flow calculated from AC voltage and current entering a load having a zero power factor ({{mvar|ϕ}}&nbsp;=&nbsp;90°, cos({{mvar|ϕ}})&nbsp;=&nbsp;0). The blue line shows the instantaneous power entering the load: all of the energy received during the first (or third) quarter cycle is returned to the grid during the second (or fourth) quarter cycle, resulting in an ''average'' power flow (light blue line) of zero.]]
-
-[[File:Power factor 0.7.svg|right|thumb|upright=1.36|Instantaneous and average power calculated from AC voltage and current for a load with a lagging power factor ({{mvar|ϕ}}&nbsp;{{=}}&nbsp;45°, cos({{mvar|ϕ}})&nbsp;≈&nbsp;0.71). The blue line (instantaneous power) shows that a portion of the energy received by the load is returned to the grid during the part of the cycle labeled {{mvar|ϕ}}.]]
-
-[[Linear time-invariant system|Linear time-invariant circuits]] (referred to simply as ''linear circuits'' for the rest of this article), for example, circuits consisting of combinations of resistors, inductors and capacitors have a sinusoidal response to the sinusoidal line voltage.<ref name="Das_2015">{{cite book | title = Power System Harmonics and Passive Filter Design | first = J. C. | last = Das | publisher = Wiley, IEEE Press | year = 2015 | page = 2 | isbn =  978-1-118-86162-2 | quote = To distinguish between linear and nonlinear loads, we may say that linear time-invariant loads are characterized so that an application of a sinusoidal voltage results in a sinusoidal flow of current.}}</ref> A linear load does not change the shape of the input waveform but may change the relative timing (phase) between voltage and current, due to its inductance or capacitance.
-
-In a purely resistive AC circuit, voltage and current waveforms are in step (or [[Phase (waves)|in phase]]), changing polarity at the same instant in each cycle. All the power entering the load is consumed (or dissipated).
-
-Where [[Reactance (electronics)|reactive]] loads are present, such as with [[capacitor]]s or [[inductor]]s, energy storage in the loads results in a phase difference between the current and voltage waveforms. During each cycle of the AC voltage, extra energy, in addition to any energy consumed in the load, is temporarily stored in the load in [[Electric field|electric]] or [[magnetic field]]s then returned to the power grid a fraction of the period later.
-
-Electrical circuits containing predominantly resistive loads (incandescent lamps, heating elements) have a power factor of almost 1, but circuits containing inductive or capacitive loads (electric motors, [[solenoid]] valves, transformers, [[Electrical ballast|fluorescent lamp ballasts]], and others) can have a power factor well below 1.
-
-In the [[electric power grid]], reactive loads cause a continuous "ebb and flow" of nonproductive power.  A circuit with a low power factor will use a greater amount of current to transfer a given quantity of real power than a circuit with a high power factor thus causing increased losses due to [[Joule heating|resistive heating]] in power lines, and requiring the use of higher-rated conductors and transformers.
-
-=== Definition and calculation ===
-[[AC_power#Instantaneous_power,_instantaneous_active_power_and_instantaneous_reactive_power_in_sinusoidal_steady-state|AC power]] has two components:
-* [[AC_power#Active_power_in_sinusoidal_steady-state|Real power or active power]] (<math>P</math>) (sometimes called average power<ref>{{Cite book|title=Introductory Circuit Analysis|last=Boylestad|first=Robert|isbn=978-0-13-097417-4|edition=10th|date=2002-03-04|page=857}}</ref>), expressed in [[watt]]s (W)
-* [[AC_power#Reactive_power_in_sinusoidal_steady-state|Reactive power]] (<math>Q</math>), usually expressed in [[volt-ampere reactive|reactive volt-amperes]] (var)<ref>{{cite web |title=SI Units – Electricity and Magnetism |publisher = International Electrotechnical Commission |url=http://www.iec.ch/zone/si/si_elecmag.htm | place = [[Switzerland|CH]] | archive-url = https://web.archive.org/web/20071211234311/http://www.iec.ch/zone/si/si_elecmag.htm#si_epo |archive-date = 2007-12-11 |access-date= 14 June 2013}}</ref>
-
-Together, they form the [[AC_power#Complex_power_in_sinusoidal_steady-state|complex power]] (<math>S</math>) expressed as [[volt-amperes]] (VA). The magnitude of the complex power is the apparent power (<math>|S|</math>), also expressed in volt-amperes (VA).
-
-The VA and var are non-SI units mathematically identical to the watt, but are used in engineering practice instead of the watt to state what [[physical quantity|quantity]] is being expressed. The [[SI]] explicitly disallows using units for this purpose or as the only source of information about a physical quantity as used.<ref>{{cite book|title=The International System of Units (SI) [SI brochure]|url=http://www.bipm.org/utils/common/pdf/si_brochure_8_en.pdf |archive-url=https://ghostarchive.org/archive/20221009/http://www.bipm.org/utils/common/pdf/si_brochure_8_en.pdf |archive-date=2022-10-09 |url-status=live|year=2006|publisher=[[BIPM]]|location=§&nbsp;5.3.2 (p.&nbsp;132, 40 in the [[PDF]] file)}}</ref>
-
-The power factor is defined as the ratio of real power to apparent power. As power is transferred along a transmission line, it does not consist purely of real power that can do work once transferred to the load, but rather consists of a combination of real and reactive power, called apparent power. The power factor describes the amount of real power transmitted along a transmission line relative to the total apparent power flowing in the line.<ref>{{Citation | publisher = [[Institute of Electrical and Electronics Engineers|IEEE]] | id = Std. 100 | title = Authoritative Dictionary of Standards Terms | edition = 7th | isbn = 978-0-7381-2601-2| year = 2000 }}</ref><ref>{{Citation | publisher = IEEE | id = Std. 1459–2000 | title = Trial-Use Standard Definitions for the Measurement of Electric Power Quantities Under Sinusoidal, Nonsinusoidal, Balanced, or Unbalanced Conditions | year = 2000 | isbn = 978-0-7381-1963-2}}.  Note 1, section 3.1.1.1, when defining the quantities for power factor, asserts that real power only flows to the load and can never be negative. As of 2013, one of the authors acknowledged that this note was incorrect, and is being revised for the next edition. See http://powerstandards.com/Shymanski/draft.pdf {{Webarchive|url=https://web.archive.org/web/20160304071333/http://powerstandards.com/Shymanski/draft.pdf |date=2016-03-04 }}</ref>
-
-The power factor can also be computed as the cosine of the angle θ by which the current waveform lags or leads the voltage waveform,<ref name="SureshKumar_2013">{{cite book | title = Electric Circuit Analysis | first = K. S. | last = Suresh Kumar | publisher = Pearson | year = 2013 | page = 8.10 | isbn = 978-8-13-179155-4}}</ref>.
-
-==== Power triangle ====
-[[File:Power triangle diagram.jpg|frameless|upright=1.68]]
-
-One can relate the various components of AC power by using the power triangle in vector space. Real power extends horizontally in the real axis and reactive power extends in the direction of the imaginary axis. Complex power (and its magnitude, apparent power) represents a combination of both real and reactive power, and therefore can be calculated by using the vector sum of these two components. We can conclude that the mathematical relationship between these components is:
-
-:<math>\begin{align}
-  S &= P + jQ \\
-  |S| &= \sqrt{P^2 + Q^2} \\
-  \text{pf} &= \cos{\theta} = \frac{P}{|S|} = \cos{ \left( \arctan{ \left( \frac{Q}{P} \right) } \right) } \\
-  Q &= P \, \tan(\arccos(\text{pf}))
-\end{align}</math>
-
-As the angle θ increases with fixed total apparent power, current and voltage are further out of phase with each other. Real power decreases, and reactive power increases.
-
-==== Lagging, leading and unity power factors ====
-Power factor is described as ''leading'' if the current waveform is advanced in phase with respect to voltage, or ''lagging'' when the current waveform is behind the voltage waveform. A lagging power factor signifies that the load is inductive, as the load will “consume” reactive power. The reactive component <math>Q</math> is positive as reactive power travels through the circuit and is “consumed” by the inductive load. A leading power factor signifies that the load is capacitive, as the load “supplies” reactive power, and therefore the reactive component <math>Q</math> is negative as reactive power is being supplied to the circuit.
-
-[[File:Lagging-Leading.jpg|frameless|upright=2.66]]
-
-If θ is the [[phase (waves)|phase angle]] between the current and voltage, then the power factor is equal to the [[Trigonometric functions|cosine]] of the angle, <math>\cos\theta</math>:
-:<math>|P| = |S| \cos\theta</math>
-
-Since the units are consistent, the power factor is by definition a [[dimensionless number]] between −1 and 1. When power factor is equal to 0, the energy flow is entirely reactive and stored energy in the load returns to the source on each cycle. When the power factor is 1, referred to as ''unity'' power factor, all the energy supplied by the source is consumed by the load. Power factors are usually stated as "leading" or "lagging" to show the sign of the phase angle. Capacitive loads are leading (current leads voltage), and inductive loads are lagging (current lags voltage).
-
-If a purely resistive load is connected to a power supply, current and voltage will change polarity in step, the power factor will be 1, and the electrical energy flows in a single direction across the network in each cycle. Inductive loads such as induction motors (any type of wound coil) consume reactive power with the current waveform lagging the voltage. Capacitive loads such as capacitor banks or buried cables generate reactive power with the current phase leading the voltage. Both types of loads will absorb energy during part of the AC cycle, which is stored in the device's magnetic or electric field, only to return this energy back to the source during the rest of the cycle.
-
-For example, to get 1&nbsp;kW of real power, if the power factor is unity, 1&nbsp;kVA of apparent power needs to be transferred (1&nbsp;kW ÷ 1 = 1&nbsp;kVA). At low values of power factor, more apparent power needs to be transferred to get the same real power. To get 1&nbsp;kW of real power at 0.2 power factor, 5&nbsp;kVA of apparent power needs to be transferred (1&nbsp;kW ÷ 0.2 = 5&nbsp;kVA). This apparent power must be produced and transmitted to the load and is subject to losses in the production and transmission processes.
-
-Electrical loads consuming [[AC power|alternating current power]] consume both real power and reactive power. The vector sum of real and reactive power is the complex power, and its magnitude is the apparent power. The presence of reactive power causes the real power to be less than the apparent power, and so, the electric load has a power factor of less than 1.
-
-A negative power factor (0 to −1) can result from returning active power to the source, such as in the case of a building fitted with solar panels when surplus power is fed back into the supply.<ref>{{Citation | title = On the resistance and electromotive forces of the electric arc |first=W. | last = Duddell | journal = Philosophical Transactions of the Royal Society A: Mathematical, Physical and Engineering Sciences|volume=203 |issue=359–371 |doi=10.1098/rsta.1904.0022  | pages = 512–15 | year = 1901 | quote = The fact that the solid arc has, at low frequencies, a negative power factor, indicates that the arc is supplying power to the alternator…| doi-access = free }}</ref><ref>{{Citation |title=Analysis of some measurement issues in bushing power factor tests in the field |first=S. |last=Zhang |journal= IEEE Transactions on Power Delivery|volume=21 |issue=3 |pages=1350–56 |date=July 2006 |quote=…(the measurement) gives both negative power factor and negative resistive current (power loss) |doi=10.1109/tpwrd.2006.874616|s2cid=39895367 }}</ref><ref>{{Citation | title = Performance of Grid-Connected Induction Generator under Naturally Commutated AC Voltage Controller |first=A. F. |last=Almarshoud |display-authors=etal |journal=Electric Power Components and Systems |volume=32 |issue=7 |pages=691–700 |year=2004 |quote=Accordingly, the generator will consume active power from the grid, which leads to negative power factor.|doi=10.1080/15325000490461064 |s2cid=110279940 }}</ref>
-
-=== Power factor correction of linear loads ===
-[[File:Blindleistungskompensation.svg|thumb|Power factor correction of linear load]]
-A high power factor is generally desirable in a power delivery system to reduce losses and improve voltage regulation at the load. Compensating elements near an electrical load will reduce the apparent power demand on the supply system. Power factor correction may be applied by an [[electric power transmission]] utility to improve the stability and efficiency of the network. Individual electrical customers who are charged by their utility for low power factor may install correction equipment to increase their power factor so as to reduce costs.
-
-Power factor correction brings the power factor of an AC power circuit closer to 1 by supplying or absorbing reactive power, adding capacitors or inductors that act to cancel the inductive or capacitive effects of the load, respectively. In the case of offsetting the inductive effect of motor loads, capacitors can be locally connected. These capacitors help to generate reactive power to meet the demand of the inductive loads. This will keep that reactive power from having to flow all the way from the utility generator to the load. In the electricity industry, inductors are said to consume reactive power and capacitors are said to supply it, even though reactive power is just energy moving back and forth on each AC cycle.
-
-The reactive elements in power factor correction devices can create voltage fluctuations and harmonic noise when switched on or off. They will supply or sink reactive power regardless of whether there is a corresponding load operating nearby, increasing the system's no-load losses. In the worst case, reactive elements can interact with the system and with each other to create resonant conditions, resulting in system instability and severe [[overvoltage]] fluctuations. As such, reactive elements cannot simply be applied without engineering analysis.
-
-[[File:Condensatorenbatterij.jpg|right|thumb|1. [[Static VAR compensator|Reactive power control relay]]; 2. Network connection points; 3. [[Fuse (electrical)|Slow-blow fuses]]; 4. Inrush-limiting [[contactor]]s; 5. [[Capacitor]]s (single-phase or three-phase units, delta-connection); 6. [[Transformer]] (for controls and ventilation fans) ]]
-
-An '''automatic power factor correction unit''' consists of a number of [[capacitor]]s that are switched by means of [[contactor]]s. These contactors are controlled by a regulator that measures power factor in an electrical network. Depending on the load and power factor of the network, the power factor controller will switch the necessary blocks of capacitors in steps to make sure the power factor stays above a selected value.
-
-In place of a set of switched [[capacitor]]s, an unloaded [[synchronous motor]] can supply reactive power. The [[reactive power]] drawn by the synchronous motor is a function of its field excitation. It is referred to as a '''[[synchronous condenser]]'''. It is started and connected to the [[electrical network]]. It operates at a leading power factor and puts [[volt-ampere reactive|vars]] onto the network as required to support a system's [[voltage]] or to maintain the system power factor at a specified level.
-
-The synchronous condenser's installation and operation are identical to those of large [[electric motor]]s. Its principal advantage is the ease with which the amount of correction can be adjusted; it behaves like a variable capacitor. Unlike with capacitors, the amount of reactive power supplied is proportional to voltage, not the square of voltage; this improves voltage stability on large networks.  Synchronous condensers are often used in connection with [[High-voltage direct current|high-voltage direct-current]] transmission projects or in large industrial plants such as [[steel mill]]s.
-
-For power factor correction of high-voltage power systems or large, fluctuating industrial loads, power electronic devices such as the [[static VAR compensator]] or [[STATCOM]] are increasingly used. These systems are able to compensate sudden changes of power factor much more rapidly than contactor-switched capacitor banks and, being solid-state, require less maintenance than synchronous condensers.
-
-== Non-linear loads ==
-Examples of non-linear loads on a power system are rectifiers (such as used in a power supply), and arc discharge devices such as [[fluorescent lamp]]s, electric [[welding]] machines, or [[arc furnace]]s. Because current in these systems is interrupted by a switching action, the current contains frequency components that are multiples of the power system frequency. ''Distortion power factor'' is a measure of how much the harmonic distortion of a load current decreases the average power transferred to the load.
-[[File:Power factor 75 2.png|right|thumb|upright=1.36|Sinusoidal voltage and non-sinusoidal current give a distortion power factor of 0.75 for this computer power supply load.]]
-
-=== Non-sinusoidal components ===
-In linear circuits having only sinusoidal currents and voltages of one frequency, the power factor arises only from the difference in phase between the current and voltage. This is "displacement power factor".<ref name="FuchsMasoum2015">{{cite book|author1=Ewald Fuchs|author2=Mohammad A. S. Masoum|title=Power Quality in Power Systems and Electrical Machines|url=https://books.google.com/books?id=wuGcBAAAQBAJ&pg=PA432|date=14 July 2015|publisher=Elsevier Science|isbn=978-0-12-800988-8|pages=432–|quote=The DPF it the cosine of the angle between these two quantities}}</ref>
-
-Non-linear loads change the shape of the current waveform from a [[sine wave]] to some other form. Non-linear loads create [[harmonic]] currents in addition to the original (fundamental frequency) AC current. This is of importance in practical power systems that contain [[non-linear]] loads such as [[rectifiers]], some forms of electric lighting, [[electric arc furnace]]s, welding equipment, [[Switched-mode power supply|switched-mode power supplies]], variable speed drives and other devices. Filters consisting of linear capacitors and inductors can prevent harmonic currents from entering the supplying system.
-
-To measure the real power or reactive power, a [[wattmeter]] designed to work properly with non-sinusoidal currents must be used.
-
-=== Distortion power factor ===
-The '''distortion power factor''' is the distortion component associated with the harmonic voltages and currents present in the system.
-:<math>
-\begin{align}
-\mbox{distortion power factor}
-& = \frac{ I_1}{I_{rms}} \\
-& = \frac{I_1} {\sqrt{I_1^2+I_2^2+I_3^2+I_4^2+\cdots}} \\
-& = \frac{1} { \sqrt{1+ \frac{I_2^2+I_3^2+I_4^2+\cdots}{I_1^2}}} \\
-& = \frac{1} {\sqrt{ 1+THD_i^2}} \\
-\end{align}
-</math>
-
-<math>\mbox{THD}_i</math> is the [[total harmonic distortion]] of the load current. 
-:<math>THD_i = \frac{\sqrt{\displaystyle\sum_{h=2}^\infty I_h^2}} {I_1}= \frac{\sqrt{I_2^2+I_3^2+I_4^2+\cdots}} {I_1}</math>
-
-<math>I_1</math> is the fundamental component of the current and <math>I_{\mbox{rms}}</math> is the total current – both are [[root mean square]]-values (distortion power factor can also be used to describe individual order harmonics, using the corresponding current in place of total current). This definition with respect to total harmonic distortion assumes that the voltage stays undistorted (sinusoidal, without harmonics). This simplification is often a good approximation for stiff voltage sources (not being affected by changes in load downstream in the distribution network). Total harmonic distortion of typical generators from current distortion in the network is on the order of 1–2%, which can have larger scale implications but can be ignored in common practice.<ref>{{Citation |url=http://ecmweb.com/power-quality/effects-harmonics-power-systems |title=Effects of Harmonics on Power Systems |first=C. |last=Sankaran |year=1999 |publisher=Electro-Test |quote=...and voltage-time relationship deviates from the pure sine function. The distortion at the point of generation is very small (about 1% to 2%), but nonetheless it exists.}}</ref>
-
-The result when multiplied with the displacement power factor (DPF) is the overall, true power factor or just power factor (PF):
-:<math>\mbox{PF} = \frac{\cos{\varphi}} {\sqrt{ 1+THD_i^2}}</math>
-
-=== Distortion in three-phase networks ===
-In practice, the local effects of distortion current on devices in a [[Three-phase electric power|three-phase distribution network]] rely on the magnitude of certain order harmonics rather than the total harmonic distortion.
-
-For example, the triplen, or zero-sequence, harmonics (3rd, 9th, 15th, etc.) have the property of being in-phase when compared line-to-line. In a [[delta-wye transformer]], these harmonics can result in circulating currents in the delta windings and result in greater [[Joule heating|resistive heating]]. In a wye-configuration of a transformer, triplen harmonics will not create these currents, but they will result in a non-zero current in the [[Ground and neutral|neutral wire]]. This could overload the neutral wire in some cases
-and create error in kilowatt-hour metering systems and billing revenue.<ref>{{Citation | chapter-url = http://www.pge.com/includes/docs/pdfs/mybusiness/customerservice/energystatus/powerquality/harmonics.pdf | title = Power System Harmonics | publisher = Pacific Gas and Electric | chapter = Single-phase load harmonics vs. three-phase load harmonics | chapter-format = [[PDF]]}}</ref><ref>{{Citation | chapter-url = http://energylogix.ca/harmonics_and_ieee.pdf | title = Harmonics and IEEE 519 | publisher = EnergyLogix Solutions | chapter = Harmonic Effects | place = [[Canada|CA]] | chapter-format = [[PDF]]}}</ref>  The presence of current harmonics in a transformer also result in larger [[eddy currents]] in the magnetic core of the transformer. Eddy current losses generally increase as the square of the frequency, lowering the transformer's efficiency, dissipating additional heat, and reducing its service life.<ref>{{Citation |url=http://ecmweb.com/power-quality/effects-harmonics-power-systems |title=Effects of Harmonics on Power Systems |first=C. |last=Sankaran |year=1999 |publisher = Electro-Test |section=Transformers}}</ref>
-
-Negative-sequence harmonics (5th, 11th, 17th, etc.) combine 120 degrees out of phase, similarly to the fundamental harmonic but in a reversed sequence.  In generators and motors, these currents produce magnetic fields which oppose the rotation of the shaft and sometimes result in damaging mechanical vibrations.<ref>{{Citation |url=http://ecmweb.com/power-quality/effects-harmonics-power-systems |title=Effects of Harmonics on Power Systems |first=C. |last=Sankaran |year=1999 |publisher=Electro-Test |section=Motors |quote=The interaction between the positive and negative sequence magnetic fields and currents produces torsional oscillations of the motor shaft. These oscillations result in shaft vibrations.}}</ref>
-
-=== Switched-mode power supplies ===
-{{Main|switched-mode power supply#Power factor}}
-A particularly important class of non-linear loads is the millions of personal computers that typically incorporate [[Switched-mode power supply|switched-mode power supplies]] (SMPS) with rated output power ranging from a few watts to more than 1&nbsp;kW. Historically, these very-low-cost power supplies incorporated a simple full-wave rectifier that conducted only when the [[Mains electricity|mains]] instantaneous voltage exceeded the voltage on the input capacitors.  This leads to very high [[peak-to-average ratio|ratios of peak-to-average]] input current, which also lead to a low distortion power factor and potentially serious phase and neutral loading concerns.
-
-A typical switched-mode power supply first converts the AC mains to a DC bus by means of a [[bridge rectifier]]. The output voltage is then derived from this DC bus. The problem with this is that the [[rectifier]] is a non-linear device, so the input current is highly non-linear. That means that the input current has energy at [[harmonic]]s of the frequency of the voltage. This presents a problem for power companies, because they cannot compensate for the harmonic current by adding simple capacitors or inductors, as they could for the reactive power drawn by a linear load. Many jurisdictions are beginning to require power factor correction for all power supplies above a certain power level.
-
-Regulatory agencies such as the [[European Union|EU]] have set harmonic limits as a method of improving power factor. Declining component cost has hastened implementation of two different methods. To comply with current EU standard EN61000-3-2, all switched-mode power supplies with output power more than 75&nbsp;W must at least include passive power factor correction. [[80 Plus]] power supply certification requires a power factor of 0.9 or more.<ref>{{Citation | url = http://www.80plus.org/ | publisher = 80 Plus | title = Certified Power Supplies and Manufacturers | section = What is an 80 PLUS certified power supply?}}</ref>
-
-=== Power factor correction (PFC) in non-linear loads ===
-
-==== Passive PFC ====
-The simplest way to control the [[Harmonics (electrical power)|harmonic]] current is to use a [[electronic filter|filter]] that passes current only at [[utility frequency|line frequency]] (50 or 60&nbsp;Hz). The filter consists of capacitors or inductors and makes a non-linear device look more like a [[linear]] load. An example of passive PFC is a [[valley-fill circuit]].
-
-A disadvantage of passive PFC is that it requires larger inductors or capacitors than an equivalent power active PFC circuit.<ref>{{Citation |url=http://www.nuvation.com/corporate/news/newsletter/fall2006/powersupply.html |publisher=Nuvation |date=Fall 2006 |title=Power Supply Design Principles: Techniques and Solutions, Part 3 |newspaper=Newsletter |first=Ben |last=Schramm |url-status=dead |archive-url=https://web.archive.org/web/20070309134617/http://www.nuvation.com/corporate/news/newsletter/fall2006/powersupply.html |archive-date=2007-03-09 }}</ref><ref>{{Citation | newspaper = Xplore | title = Quasi-active power factor correction with a variable inductive filter: theory, design and practice | volume = 18 | issue = 1 | pages = 248–255 | publisher = IEEE| doi = 10.1109/TPEL.2002.807135 | bibcode = 2003ITPE...18..248W | year = 2003 | last1 = Wolfle | first1 = W.H. | last2 = Hurley | first2 = W.G. }}</ref><ref>{{Citation |publisher=Nuigalway |type=project |url=http://www.nuigalway.ie/power_electronics/projects/quasi_active.html |place=[[Ireland|IE]] |title=Power electronics |contribution=Quasi-active Power Factor Correction: The Role of Variable Inductance |last1=Wölfle |first1=W. H. |last2=Hurley |first2=W. G.}}</ref> Also, in practice, passive PFC is often less effective at improving the power factor.<ref name="effi">{{Citation | url = http://www.xbitlabs.com/articles/coolers/display/atx-psu5_3.html | title = ATX Power Supply Units Roundup | publisher = xBit labs | quote = The power factor is the measure of reactive power. It is the ratio of active power to the total of active and reactive power. It is about 0.65 with an ordinary PSU, but PSUs with active PFC have a power factor of 0.97–0.99. […] hardware reviewers sometimes make no difference between the power factor and the efficiency factor. Although both these terms describe the effectiveness of a power supply, it is a gross mistake to confuse them. […] There is a very small effect from passive PFC – the power factor grows only from 0.65 to 0.7–0.75. | url-status = dead | archive-url = https://web.archive.org/web/20081120040707/http://www.xbitlabs.com/articles/coolers/display/atx-psu5_3.html | archive-date = 2008-11-20 }}</ref><ref>{{Citation|date=Mar 16, 2006 |publisher=Find articles |url=http://findarticles.com/p/articles/mi_m0EIN/is_2006_March_16/ai_n26797888 |archive-url=https://web.archive.org/web/20090901140721/http://findarticles.com/p/articles/mi_m0EIN/is_2006_March_16/ai_n26797888/ |url-status=dead |archive-date=September 1, 2009 |title=The Active PFC Market is Expected to Grow at an Annually Rate of 12.3% Till 2011 |quote=Higher-powered products are also likely to use active PFC, since it would be the most cost effective way to bring products into compliance with the EN standard. }}</ref><ref>{{Citation | url = http://www.techarp.com/showarticle.aspx?artno=81&pgno=1 | publisher = TECHarp | title = Power Factor Correction | quote = Passive PFC […] the power factor is low at 60–80%. […] Active PFC ... a power factor of up to 95%}}</ref><ref>{{Citation | publisher = Silverstone Technology | url = http://www.silverstonetek.com/tech/wh_pfc.php?area= | title = Why we need PFC in PSU | quote = Normally, the power factor value of electronic device without power factor correction is approximately 0.5. […] Passive PFC […] 70~80% […] Active PFC […] 90~99.9% | url-status = dead | archive-url = https://web.archive.org/web/20081222085515/http://www.silverstonetek.com/tech/wh_pfc.php?area= | archive-date = 2008-12-22 }}</ref><ref>{{Citation | publisher = Electronic products | newspaper = Taiyo | url = http://www2.electronicproducts.com/PFC_options_for_power_supplies-article-taiyo-mar2004-html.aspx | title = PFC options for power supplies | first = Tom | last = Brooks | date = Mar 2004 | quote = The disadvantages of passive PFC techniques are that they typically yield a power factor of only 0.60 to 0.70 […] Dual-stage active PFC technology [yields] a power factor typically greater than 0.98 | url-status = dead | archive-url = https://web.archive.org/web/20081202100831/http://www2.electronicproducts.com/PFC_options_for_power_supplies-article-taiyo-mar2004-html.aspx | archive-date = 2008-12-02 }}</ref>
-
-==== Active PFC ====
-[[File:Active pfc PSU packaging.png|right|thumb|Specifications taken from the packaging of a 610 W [[Power supply unit (computer)|PC power supply]] showing active PFC rating]]
-
-Active PFC is the use of [[power electronics]] to change the waveform of current drawn by a load to improve the power factor.<ref>{{Citation | publisher = Fairchild Semiconductor | year = 2004 | type = application note | number = 42047 | title = Power Factor Correction (PFC) Basics | url = http://www.fairchildsemi.com/an/AN/AN-42047.pdf | access-date = 2009-11-29 | archive-url = https://web.archive.org/web/20140611063712/http://www.fairchildsemi.com/an/AN/AN-42047.pdf | archive-date = 2014-06-11 | url-status = dead }}</ref>  Some types of the active PFC are [[Buck converter|buck]], [[Boost converter|boost]], [[Buck-boost converter|buck-boost]] and [[synchronous condenser]].  Active power factor correction can be single-stage or multi-stage.
-
-In the case of a switched-mode power supply, a [[boost converter]] is inserted between the bridge rectifier and the main input capacitors. The boost converter attempts to maintain a constant voltage at its output while drawing a current that is always in phase with and at the same frequency as the line voltage. Another switched-mode converter inside the power supply produces the desired output voltage from the DC bus. This approach requires additional semiconductor switches and control electronics but permits cheaper and smaller passive components. It is frequently used in practice.
-
-For a three-phase SMPS, the [[Vienna rectifier]] configuration may be used to substantially improve the power factor.
-
-[[Switched-mode power supply|SMPSs]] with passive PFC can achieve power factor of about 0.7–0.75, SMPSs with active PFC, up to 0.99 power factor, while a SMPS without any power factor correction have a power factor of only about 0.55–0.65.<ref>{{Citation |last1=Sugawara |first1=I. |last2=Suzuki |first2=Y. |last3=Takeuchi |first3=A. |last4=Teshima |first4=T. |contribution=Experimental studies on active and passive PFC circuits |title=INTELEC 97, 19th International Telecommunications Energy Conference |date=19–23 Oct 1997 |pages=571–78 |doi=10.1109/INTLEC.1997.646051|isbn=978-0-7803-3996-5 |s2cid=109885369 }}</ref>
-
-Due to their very wide input voltage range, many power supplies with active PFC can automatically adjust to operate on AC power from about 100&nbsp;V (Japan) to 240&nbsp;V (Europe). That feature is particularly welcome in power supplies for laptops.
-
-==== Dynamic PFC ====
-Dynamic power factor correction (DPFC), sometimes referred to as "real-time power factor correction," is used for electrical stabilization in cases of rapid load changes (e.g. at large manufacturing sites). DPFC is useful when standard power factor correction would cause over or under correction.<ref>{{Cite conference|last1=Chavez |first1=C. |last2=Houdek |first2=J. A. |title=Dynamic Harmonic Mitigation and power factor correction |publisher=IEEE |book-title= EPQU'07 |conference=9th International Conference Electrical Power Quality and Utilisation: October 9–11, 2007, Barcelona, Spain |pages=1–5 |doi=10.1109/EPQU.2007.4424144 |isbn=978-84-690-9441-9 }}</ref>  DPFC uses semiconductor switches, typically [[thyristor]]s, to quickly connect and disconnect capacitors or inductors to improve power factor.
-
-== Importance in distribution systems ==
-[[File:Condensor bank 150kV - 75MVAR.jpg|thumb|upright|75 MVAr capacitor bank in a 150 kV substation]]
-Power factors below 1.0 require a utility to generate more than the minimum volt-amperes necessary to supply the real power (watts). This increases generation and transmission costs. For example, if the load power factor were as low as 0.7, the apparent power would be 1.4 times the real power used by the load. Line current in the circuit would also be 1.4 times the current required at 1.0 power factor, so the losses in the circuit would be doubled (since they are proportional to the square of the current). Alternatively, all components of the system such as generators, conductors, transformers, and switchgear would be increased in size (and cost) to carry the extra current. When the power factor is close to unity, for the same kVA rating of the transformer more load current can be supplied.<ref>{{cite web|url=https://www.electricalclassroom.com/power-factor/|title=Power Factor – Importance, Calculation and Correction techniques|date=23 November 2018}}</ref>
-
-Utilities typically charge additional costs to commercial customers who have a power factor below some limit, which is typically 0.9 to 0.95.  Engineers are often interested in the power factor of a load as one of the factors that affect the efficiency of power transmission.
-
-With the rising cost of energy and concerns over the efficient delivery of power, active PFC has become more common in consumer electronics.<ref>{{Citation | publisher = ON Semiconductor | year = 2007 | title = Power Factor Correction Handbook | url = http://www.onsemi.com/pub_link/Collateral/HBD853-D.PDF }}</ref> Current [[Energy Star]] guidelines for computers<ref>{{Citation | place = US | url = http://www.energystar.gov/ia/partners/prod_development/revisions/downloads/computer/Version5.0_Computer_Spec.pdf | publisher = Energy Star | title = Program Requirements for Computers | edition = Version 5.0}}</ref> call for a power factor of ≥ 0.9 at 100% of rated output in the [[Power supply unit (computer)|PC's power supply]]. According to a white paper authored by Intel and the [[United States Environmental Protection Agency|U.S. Environmental Protection Agency]], PCs with internal power supplies will require the use of active power factor correction to meet the ENERGY STAR 5.0 Program Requirements for Computers.<ref>{{Citation |last1=Bolioli |first1=T. |last2=Duggirala |first2=M. |last3=Haines |first3=E. |last4=Kolappan |first4=R. |last5=Wong |first5=H. |year=2009 |publisher=Energy Star |title=Version 5.0 System Implementation |type=white paper |url=http://www.energystar.gov/ia/partners/product_specs/program_reqs/Computers_Intel_Whitepaper_Spec5.pdf |archive-url=https://ghostarchive.org/archive/20221009/http://www.energystar.gov/ia/partners/product_specs/program_reqs/Computers_Intel_Whitepaper_Spec5.pdf |archive-date=2022-10-09 |url-status=live}}</ref>
-
-In Europe, [[IEC EN 61000-3-2|EN 61000-3-2]] requires power factor correction be incorporated into consumer products.
-
-Small customers, such as households, are not usually charged for reactive power and so power factor metering equipment for such customers will not be installed.
-
-== Measurement techniques ==
-The power factor in a single-phase circuit (or balanced three-phase circuit) can be measured with the wattmeter-ammeter-voltmeter method, where the power in watts is divided by the product of measured voltage and current. The power factor of a balanced [[Polyphase system|polyphase circuit]] is the same as that of any phase. The power factor of an unbalanced polyphase circuit is not uniquely defined.
-
-A direct reading power factor meter can be made with a [[moving coil meter]] of the electrodynamic type, carrying two perpendicular coils on the moving part of the instrument. The field of the instrument is energized by the circuit current flow. The two moving coils, A and B, are connected in parallel with the circuit load.  One coil, A, will be connected through a resistor and the second coil, B, through an inductor, so that the current in coil B is delayed with respect to current in A. At unity power factor, the current in A is in phase with the circuit current, and coil A provides maximum torque, driving the instrument pointer toward the 1.0 mark on the scale. At zero power factor, the current in coil B is in phase with circuit current, and coil B provides torque to drive the pointer towards 0. At intermediate values of power factor, the torques provided by the two coils add and the pointer takes up intermediate positions.<ref>{{Citation |first1=Donald G. |last1=Fink |author1-link=Donald G. Fink |first2=H. Wayne |last2=Beaty |title=Standard Handbook for Electrical Engineers |edition=11 |publisher=McGraw-Hill |place=New York |year=1978 |isbn=978-0-07-020974-9 |page=3‐29 paragraph 80}}</ref>
-
-Another electromechanical instrument is the polarized-vane type.<ref>{{Citation |title=Manual of Electric Instruments Construction and Operating Principles |id=GET-1087A |publisher=General Electric, Meter and Instrument Department |place=Schenectady, New York |year=1949 |pages=66–68}}</ref> In this instrument a stationary field coil produces a rotating magnetic field, just like a polyphase motor. The field coils are connected either directly to polyphase voltage sources or to a phase-shifting reactor if a single-phase application.  A second stationary field coil, perpendicular to the voltage coils, carries a current proportional to current in one phase of the circuit. The moving system of the instrument consists of two vanes that are magnetized by the current coil. In operation, the moving vanes take up a physical angle equivalent to the electrical angle between the voltage source and the current source. This type of instrument can be made to register for currents in both directions, giving a four-quadrant display of power factor or phase angle.
-
-Digital instruments exist that directly measure the time lag between voltage and current waveforms. Low-cost instruments of this type measure the peak of the waveforms. More sophisticated versions measure the peak of the fundamental harmonic only, thus giving a more accurate reading for phase angle on distorted waveforms. Calculating power factor from voltage and current phases is only accurate if both waveforms are sinusoidal.<ref name=ni_white_paper>{{cite web|url=http://www.ni.com/white-paper/4278/en/|title=The Fundamentals of FFT-Based Signal Analysis and Measurement in LabVIEW and LabWindows/CVI|work=National Instruments Corporation|access-date=6 November 2017}}</ref>
-
-Power Quality Analyzers, often referred to as Power Analyzers, make a digital recording of the voltage and current waveform (typically either one phase or three phase) and accurately calculate true power (watts), apparent power (VA) power factor, AC voltage, AC current, DC voltage, DC current, frequency, IEC61000-3-2/3-12 Harmonic measurement, IEC61000-3-3/3-11 flicker measurement, individual phase voltages in delta applications where there is no neutral line, total harmonic distortion, phase and amplitude of individual voltage or current harmonics, etc.<ref name=Yokogawa_WT3000E>{{cite web|url=http://www.yokogawa.co.jp/ftp/dist/ks/catalog/en/BUWT3000E-01EN_020.pdf|title=WT3000E Series Precision Power Analyzers|work=Yokogawa Corporation|access-date=6 November 2017|archive-url=https://web.archive.org/web/20171107112155/http://www.yokogawa.co.jp/ftp/dist/ks/catalog/en/BUWT3000E-01EN_020.pdf|archive-date=7 November 2017|url-status=dead}}</ref><ref name=Fluke_1760>{{cite web|url=https://cdn.testequity.com/documents/pdf/1760-ds.pdf |archive-url=https://ghostarchive.org/archive/20221009/https://cdn.testequity.com/documents/pdf/1760-ds.pdf |archive-date=2022-10-09 |url-status=live|title=Fluke 1760 Three-Phase Power Quality Recorder |work=Fluke Corporation|access-date=6 November 2017}}</ref>
-
-== Mnemonics ==
-English-language power engineering students are advised to remember:
-"ELI the ICE man" or "ELI on ICE" – the voltage E, leads the current I, in an inductor L. The current I leads the voltage E in a capacitor C.
-
-Another common mnemonic is "CIVIL" – in a capacitor (C) the current (I) leads voltage (V), voltage (V) leads current (I) in an inductor (L).
-
-== References ==
-{{Reflist |32em}}
-
-== External links ==
-* {{Citation | url = http://www.ece.utexas.edu/~grady/POWERFAC.pdf | title = Harmonics and how they relate to power factor | publisher = U Texas }}.
-
-
-{{Electricity delivery}}
-{{Authority control}}
-
-[[Category:Electrical parameters]]
-[[Category:AC power]]
-[[Category:Electrical engineering]]
-[[Category:Engineering ratios]]( 2 :2022-11-02T17:07:04ZB
-1119641436JZ
-	Wikipedia'https://en.wikipedia.org/wiki/Main_PageMediaWiki 1.40.0-wmf.8"first-letterb�����bj�Ǌ�
+[[Category:Radio frequency propagation]]
+[[Category:Waves]]( 2 :2021-05-21T20:15:19ZB139104JZ
+	Wikipedia'https://en.wikipedia.org/wiki/Main_PageMediaWiki 1.40.0-wmf.8"first-letterb����דjש��

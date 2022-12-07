@@ -11,7 +11,7 @@ public class TestDataHelperTest {
 
     @Test
     void testGetFewHunderedArticles() {
-        Collection<WikiArticle> result = TestDataHelper.createFewHunderedArticles();
+        Collection<WikiArticle> result = TestDataHelper.getFewHunderedArticles();
         assertThat(result)
                 .isNotNull()
                 .hasSize(367);

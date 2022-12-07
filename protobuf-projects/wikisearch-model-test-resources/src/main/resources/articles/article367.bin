@@ -1,0 +1,85 @@
+
+41246Hybrid coilÇ"A hybrid coil (or bridge transformer, or sometimes hybrid) is a transformer that has three windings, and which is designed to be configured as a circuit having four ports that are conjugate in pairs.
+
+A signal arriving at one port is divided equally between the two adjacent ports but does not appear at the opposite port. In the schematic diagram, the signal into W  splits between X and Z, and no signal passes to Y. Similarly, signals into X split to W and Y with none to Z, etc.
+
+Correct operation requires matched characteristic impedance at all four ports.  Hybrids are a class of directional coupler in which the input port power is split equally between the two output ports.  Forms of hybrid other than transformer coils are possible; any format of directional coupler can be designed to be a hybrid.  These formats include transmission lines and waveguides.
+
+Explanation 
+
+The primary use of a voiceband hybrid coil is to convert between 2-wire and 4-wire operation in sequential sections of a communications circuit, for example in a four-wire terminating set.  Such conversion was necessary when repeaters were introduced in a 2-wire circuit, a frequent practice at early 20th century telephony.  Without hybrids, the output of one amplifier feeds directly into the input of the other, resulting in a howling situation (upper diagram). By using hybrids, the outputs and inputs are isolated, resulting in correct 2-wire repeater operation. Late in the century, this practice became rare but hybrids continued in use in line cards.
+
+Circuit diagrams
+
+Hybrids are realized using transformers. Two versions of transformer hybrids were used, the single transformer version providing unbalanced outputs with one end grounded, and the double transformer version providing balanced ports. 
+
+Single transformer
+
+For use in 2-wire repeaters, the single transformer version suffices, since amplifiers in the repeaters have grounded inputs and outputs. X, Y, and Z share a common ground. As shown at left, signal into W, the 2-wire port, will appear at X and Z. But since Y is bridged from center of coil to center of X and Z, no signal appears. Signal into X will appear at W and Y. But signal at Z is the difference of what appears at Y and, through the transformer coil, at W, which is zero. Similar reasoning proves both pairs, W & Y, X & Z, are conjugates.
+
+Double transformer
+
+When both the 2-wire and the 4-wire circuits must be balanced, double transformer hybrids are used, as shown at right. Signal into port W splits between X and Z, but due to reversed connection to the windings, cancel at port Y. Signal into port X goes to W and Y. But due to reversed connection to ports W and Y, Z gets no signal. Thus the pairs, W & Y, X & Z, are conjugates.
+
+Applications 
+
+Telephone hybrids are used in telephone exchanges to convert the 4-wire appearance to the 2-wire last mile connection to the subscriber's telephone.  A different kind of hybrid is used in telephone handsets to convert the four wires of the transmitter (earpiece) and receiver (microphone) to the 2-wire line connection.  This kind of hybrid is more commonly called an "induction coil" due to its derivation from high-voltage induction coils.  It does not produce a high voltage, but like the high-voltage variety, it is a step-up transformer in order to impedance match the low-impedance carbon button transmitter to the higher impedance parts of the system.  The simple induction coil later evolved into a form of hybrid as a sidetone reduction measure, or volume of microphone output that was fed back to the earpiece. Without this, the phone user's own voice would be louder in the earpiece than the other party's.Joseph Carr, Steve Winder, Stephen Bigelow, Understanding Telephone Electronics, pp. 68-70, Newnes, 2001 .Lewis Coe, The Telephone and Its Several Inventors: A History, pp. 124, 173, McFarland, 2006 .  Today, the transformer version of the hybrid has been replaced by resistor networks and compact IC versions, which use integrated circuit electronics to do the job of the hybrid coil.
+
+Radio-frequency hybrids are used to split radio signals, including television.  The splitter divides the antenna signal to feed multiple receivers.
+
+See also
+
+* Magic tee
+* Rat-race coupler
+
+References
+
+External links
+
+* Douglas Rice (2008) [http://www.dougrice.plus.com/dougnapTheory/index.htm  Modelling Telephony Hybrids as 2 Ã— 2 Matrices]"±,{{Multiple issues|
+{{more footnotes|date=May 2011}}
+{{more citations needed|date=May 2011}}
+}}
+
+[[File:HybridConjugate.jpg|thumb|120px|W and Y, X and Z are conjugate pairs]]
+
+A '''hybrid coil''' (or '''bridge transformer''', or sometimes '''hybrid''') is a [[transformer]] that has three windings, and which is designed to be configured as a [[electrical network|circuit]] having four [[port (circuit theory)|ports]] that are conjugate in pairs.
+
+A signal arriving at one port is divided equally between the two adjacent ports but does not appear at the opposite port. In the schematic diagram, the signal into W  splits between X and Z, and no signal passes to Y. Similarly, signals into X split to W and Y with none to Z, etc.
+
+Correct operation requires matched [[characteristic impedance]] at all four ports.  Hybrids are a class of [[directional coupler]] in which the input port power is split equally between the two output ports.  Forms of hybrid other than transformer coils are possible; any format of directional coupler can be designed to be a hybrid.  These formats include [[transmission line]]s and [[waveguide]]s.
+
+== Explanation ==
+[[File:TwoWireRepeater.jpg|thumb|150px|left|Using hybrids for bidirectional amplification]]The primary use of a [[voiceband]] hybrid coil is to convert between [[Two-wire circuit|2-wire]] and [[Four-wire circuit|4-wire]] operation in sequential sections of a [[information transfer|communications]] circuit, for example in a [[four-wire terminating set]].  Such conversion was necessary when [[repeater]]s were introduced in a 2-wire circuit, a frequent practice at early 20th century [[telephony]].  Without hybrids, the output of one amplifier feeds directly into the input of the other, resulting in a howling situation (upper diagram). By using hybrids, the outputs and inputs are isolated, resulting in correct 2-wire repeater operation. Late in the century, this practice became rare but hybrids continued in use in [[line card]]s.
+
+===Circuit diagrams===
+Hybrids are realized using [[transformer]]s. Two versions of transformer hybrids were used, the single transformer version providing unbalanced outputs with one end [[Ground (electricity)|grounded]], and the double transformer version providing [[Balanced circuit|balanced ports]]. [[Image:DoubleTransformerHybrid.jpg|thumb|right|180px|Wiring diagram of a double transformer hybrid]]
+
+====Single transformer====
+[[File:SingleTransformerHybrid.jpg|thumb|180px|left|Wiring diagram of a single transformer hybrid]]For use in [[Two-wire circuit|2-wire]] [[repeater]]s, the single transformer version suffices, since amplifiers in the repeaters have grounded inputs and outputs. X, Y, and Z share a [[Ground (electricity)|common ground]]. As shown at left, signal into W, the 2-wire port, will appear at X and Z. But since Y is bridged from center of coil to center of X and Z, no signal appears. Signal into X will appear at W and Y. But signal at Z is the difference of what appears at Y and, through the transformer coil, at W, which is zero. Similar reasoning proves both pairs, W & Y, X & Z, are conjugates.
+
+====Double transformer====
+When both the [[Two-wire circuit|2-wire]] and the [[Four-wire circuit|4-wire circuits]] must be [[Balanced circuit|balanced]], double transformer hybrids are used, as shown at right. Signal into port W splits between X and Z, but due to reversed connection to the windings, cancel at port Y. Signal into port X goes to W and Y. But due to reversed connection to ports W and Y, Z gets no signal. Thus the pairs, W & Y, X & Z, are conjugates.
+
+== Applications ==
+[[Telephone hybrid]]s are used in [[telephone exchange]]s to convert the 4-wire appearance to the 2-wire [[Last mile (telecommunications)|last mile]] connection to the subscriber's [[telephone]].  A different kind of hybrid is used in telephone [[handset]]s to convert the four wires of the transmitter (earpiece) and receiver (microphone) to the 2-wire line connection.  This kind of hybrid is more commonly called an "induction coil" due to its derivation from high-voltage [[induction coil]]s.  It does not produce a high voltage, but like the high-voltage variety, it is a [[step-up transformer]] in order to [[impedance matching|impedance match]] the low-impedance [[Carbon microphone|carbon button transmitter]] to the higher impedance parts of the system.  The simple induction coil later evolved into a form of hybrid as a [[sidetone]] reduction measure, or volume of microphone output that was fed back to the earpiece. Without this, the phone user's own voice would be louder in the earpiece than the other party's.<ref>Joseph Carr, Steve Winder, Stephen Bigelow, ''Understanding Telephone Electronics'', pp. 68-70, Newnes, 2001 {{ISBN|0080520030}}.</ref><ref>Lewis Coe, ''The Telephone and Its Several Inventors: A History'', pp. 124, 173, McFarland, 2006 {{ISBN|0786426098}}.</ref>  Today, the transformer version of the hybrid has been replaced by [[Power dividers and directional couplers#6 dB resistive bridge hybrid|resistor networks]] and compact IC versions, which use [[integrated circuit]] electronics to do the job of the hybrid coil.
+
+Radio-frequency hybrids are used to split radio signals, including television.  The splitter divides the [[Antenna (radio)|antenna]] signal to feed multiple receivers.
+
+==See also==
+* [[Magic tee]]
+* [[Rat-race coupler]]
+
+==References==
+{{reflist}}
+{{FS1037C MS188}}
+
+==External links==
+* Douglas Rice (2008) [http://www.dougrice.plus.com/dougnapTheory/index.htm  Modelling Telephony Hybrids as 2 Ã— 2 Matrices]
+
+{{Electric transformers}}
+
+[[Category:Electric transformers]]
+[[Category:Telecommunications equipment]]( 2 :2022-06-25T22:41:48ZB191757JZ
+	Wikipedia'https://en.wikipedia.org/wiki/Main_PageMediaWiki 1.40.0-wmf.8"first-letterRf
+4http://www.dougrice.plus.com/dougnapTheory/index.htm.Modelling Telephony Hybrids as 2 Ã— 2 Matricesb¼ö¿œ¸ÖË]j¬žÞ•

@@ -1,165 +1,137 @@
 
-41409Network interface device‚7Two simple NIDs, carrying six lines each, on the outside of a building
-Abschlusspunkt LinienTechnik (APL, "Demarcation point")
+41589Protective distribution systemö/A protective distribution system (PDS), also called protected distribution system, is a US government term for wireline or fiber-optics telecommunication system that includes terminals and adequate acoustical, electrical, electromagnetic, and physical safeguards to permit its use for the unencrypted transmission of classified information.  At one time these systems were called "approved circuits".
 
-In telecommunications, a network interface device (NID; also known by several other names) is a device that serves as the demarcation point between the carrier's local loop and the customer's premises wiring. Outdoor telephone NIDs also provide the subscriber with access to the station wiring and serve as a convenient test point for verification of loop integrity and of the subscriber's inside wiring.
+A complete protected distribution system includes the subscriber and terminal equipment and the interconnecting lines.
 
-Naming 
+Description
 
-Generically, an NID may also be called a network interface unit (NIU), telephone network interface (TNI), system network interface (SNI), or telephone network box.
+The purpose of a PDS is to deter, detect and/or make difficult physical access to the communication lines carrying national security information.
+A specification called the National Security Telecommunications and Information Systems Security Instruction (NSTISSI) 7003 was issued in December 1996 by the Committee on National Security Systems.
+Approval authority, standards, and guidance for the design, installation, and maintenance for PDS are provided by NSTISSI 7003 to U.S. government departments and agencies and their contractors and vendors. This instruction describes the requirements for all PDS installations within the U.S. and for low and medium threat locations outside the U.S.
+PDS is commonly used to protect SIPRNet and JWICS networks.
+The document superseded one numbered NASCI 4009 on Protected Distribution Systems, dated December 30, 1981, and part of a document called NACSEM 5203, that covered guidelines for facility design, using the designations "red" and "black".
 
-Australia's National Broadband Network uses the term network termination device or NTD.
+There are two types of PDS: hardened distribution systems and simple distribution systems.
 
-A smartjack is a type of NID with capabilities beyond simple electrical connection, such as diagnostics.
+Hardened distribution 
 
-An optical network terminal (ONT) is a type of NID used with fiber-to-the-premises applications.
+Hardened distribution PDSs provide significant physical protection and can be implemented in three forms:  hardened carrier PDSs, alarmed carrier PDSs and continuously viewed carrier PDSs.
 
-Wiring termination 
+Hardened carrier
 
-The simplest NIDs are essentially just a specialized set of wiring terminals. These will typically take the form of a small, weather-proof box, mounted on the outside of the building. The telephone line from the telephone company will enter the NID and be connected to one side. The customer connects their wiring to the other side. A single NID enclosure may contain termination for a single line or multiple lines.
+In a hardened carrier PDS, the data cables are installed in a carrier constructed of electrical metallic tubing (EMT), ferrous conduit or pipe, or rigid sheet steel ducting. All of the connections in a Hardened Carrier System are permanently sealed completely around all surfaces with welds, epoxy or other such sealants. If the hardened carrier is buried under ground, to secure cables running between buildings for example, the carrier containing the cables is encased in concrete.
 
-In its role as the demarcation point (dividing line), the NID separates the telephone company's equipment from the customer's wiring and equipment. The telephone company owns the NID itself, and all wiring up to it. Anything past the NID is the customer's responsibility. To facilitate this, there is typically a test jack inside the NID. Accessing the test jack disconnects the customer premises wiring from the public switched telephone network and allows the customer to plug a "known good" telephone into the jack to isolate trouble. If the telephone works at the test jack, the problem is the customer's wiring, and the customer is responsible for repair. If the telephone does not work, the line is faulty and the telephone company is responsible for repair.
+With a hardened carrier system, detection is accomplished via human inspections that are required to be performed periodically. Therefore, hardened carriers are installed below ceilings or above flooring so they can be visually inspected to ensure that no intrusions have occurred. These periodic visual inspections (PVIs) occur at a frequency dependent upon the level of threat to the environment, the security classification of the data, and the access control to the area.
 
-Most NIDs also include "circuit protectors", which are surge protectors for a telephone line. They protect customer wiring, equipment, and personnel from any transient energy on the line, such as from a lightning strike to a telephone pole.
+Alarmed carrier 
 
-Simple NIDs contain no digital logic; they are "dumb" devices. They have no capabilities beyond wiring termination, circuit protection, and providing a place to connect test equipment.
+As an alternative to conducting human visual inspections, an alarmed carrier PDS may be constructed to automate the inspection process through electronic monitoring with an alarm system. In an Alarmed Carrier PDS, the carrier system is ‚Äúalarmed‚Äù with specialized optical fibers deployed within the conduit for the purpose of sensing acoustic vibrations that usually occur when an intrusion is being attempted on the conduit in order to gain access to the cables.
 
-Smartjack 
+Alarmed carrier PDS offers several advantages over hardened carrier PDS:
 
-T-1 circuits, in two shelves; a 66 block is on the left
+#Provides continuous monitoring 24/7/365
+#Eliminates the requirement for periodic visual inspections
+#Allows the carrier to be hidden above the ceiling or below the floor, since periodic visual inspections are not required
+#Eliminates the need for the welding and epoxying of the connections
+#Eliminates the requirement for concrete encasement outdoors 
+#Eliminates the need to lock down manhole covers
+#Enables rapid redeployment for evolving network arrangements
 
-Several types of NIDs provide more than just a terminal for the connection of wiring. Such NIDs are colloquially called smartjacks or Intelligent Network Interface Devices (INIDs) as an indication of their built-in "intelligence", as opposed to a simple NID, which is just a wiring device. Smartjacks are typically used for more complicated types of telecommunications service, such as T1 lines. Plain old telephone service lines generally cannot be equipped with smartjacks.
+Legacy alarmed carrier systems monitor the carrier containing the cables being protected. More advanced systems monitor the fibers within, or intrinsic to, the cables being protected to turn those cables into sensors, which detect intrusion attempts.
 
-Despite the name, most smartjacks are much more than a simple telephone jack. One common form for a smartjack is a printed circuit board with a face plate on one edge, mounted in an enclosure.
+Depending on the government organization, utilizing an alarmed carrier PDS in conjunction with interlocking armored cable may, in some cases, allow for the elimination of the carrier systems altogether. In these instances, the cables being protected can be installed in existing conveyance (wire basket, ladder rack) or suspended cabling (on D-rings, J-Hooks, etc.).
 
-A smartjack may provide signal conversion, converting codes and protocols (e.g. framing types) to the type needed by the customer equipment. It may buffer and/or regenerate the signal, to compensate for signal degradation from line transmission, similar to what a repeater does.
+Continuously viewed carrier 
 
-Smartjacks also typically provide diagnostic capabilities. A very common capability provided by a smartjack is loopback, such that the signal from the telephone company is transmitted back to the telephone company. This allows the company to test the line from the central telephone exchange, without the need to have test equipment at the customer site. The telephone company usually has the ability to remotely activate loopback, without even needing personnel at the customer site. When looped back, the customer equipment is disconnected from the line.
+A Continuously Viewed Carrier PDS is one that is under continuous observation, 24 hours per day (including when operational). Such circuits may be grouped together, but should be separated from all non-continuously viewed circuits ensuring an open field of view. Standing orders should include the requirement to investigate any attempt to disturb the PDS. Appropriate security personnel should investigate the area of attempted penetration within 15 minutes of discovery. This type of hardened carrier is not used for Top Secret or special category information for non-U.S. UAA.
+UAA is an Uncontrolled Access Area (UAA).  Like definitions include Controlled Access Area (CAA) and Restricted Access Area (RAA). A Secure Room (SR) offers the highest degree of protection.
 
-Additional smartjack diagnostic capabilities include alarm indication signal, which reports trouble at one end of the line to the far end. This helps the telephone company know if trouble is present in the line, the smartjack, or customer equipment. Indicator lights to show configuration, status, and alarms are also common.
+Therefore, from the least protected (least secure) to the most protected is as follows:
 
-Smartjacks typically derive their operating power from the telephone line, rather than relying on premises electrical power, although this is not a universal rule.
+UAA
+RAA
+CAA
+SR
 
-Optical network terminals 
+Simple distribution 
 
-In fiber-to-the-premises systems, the signal is transmitted to the customer premises using fiber optic technologies. Unlike many conventional telephone technologies, this does not provide power for premises equipment, nor is it suitable for direct connection to customer equipment. An optical network terminal (ONT) is used to terminate the fiber optic line, demultiplex the signal into its component parts (voice telephone, television, and Internet access), and provide power to customer telephones. As the ONT must derive its power from the customer premises electrical supply, many ONTs have the option for a battery backup in order to maintain service in the event of a power outage.
+Simple distribution PDSs are afforded a reduced level of physical security protection as compared to a hardened distribution PDS. They use a simple carrier system and the following means are acceptable under NSTISSI 7003: 
+#The data cables should be installed in a carrier
+#The carrier can be constructed of any material (e.g., wood, PVT, EMT, ferrous conduit)
+#The joints and access points should be secured and be controlled by personnel cleared to the highest level of data handled by the PDS
+#The carrier is to be inspected in accordance with the requirements of NSTISSI 7003
 
-Environmental conditions 
+See also
 
-According to Telcordia GR-49, requirements for telecommunications NIDs vary based on three categories of environmental conditions:
+*National Information Systems Security Glossary
 
-# Normal conditions: This refers to a normal environment that is expected in most areas of any service provider. Temperatures are expected to be in the range of , and humidity is expected to be less than 90% RH. No unusual contamination is expected.
-# Severe climatic conditions: These cover environments more severe than those of a normal environment (i.e., higher humidity, high lightning activity, exposure to salt-laden atmosphere, and exposure to contaminants). Temperatures are expected to be in the range of , and humidity may exceed 90% RH. Jacks installed in NIDs in such environments are known to become contaminated and develop low insulation resistances and low dielectric breakdown voltages when subjected to high humidity. These problems can cause noisy lines or even service outages.
-# Flooded conditions: These cover areas of a service provider prone to flooding, such as in coastal or flood plain locations. After a flooding incident, temperature is expected to be in the range of , and humidity may exceed 90% RH. The requirements are not to determine if the NID will function during a flood, but to review the ability of the NID to function after the flood has subsided.
+References
 
-Service providers must decide which condition best suits their application.
+*"±6{{Short description|Telecommunication system by the US Government}}
+A '''protective distribution system''' ('''PDS'''), also called ''protected distribution system'', is a US government term for wireline or [[fiber-optics]] [[telecommunication]] system that includes terminals and adequate [[acoustical]], [[electrical]], [[Electromagnetism|electromagnetic]], and physical safeguards to permit its use for the unencrypted [[transmission (telecommunications)|transmission]] of [[classified information]].  At one time these systems were called "'''approved circuits'''".
 
-See also 
+A complete protected distribution system includes the subscriber and [[terminal equipment]] and the interconnecting lines.
 
-* Channel service unit
-* CSU/DSU
-* Customer premises equipment
-* Customer premises wiring
-* Data service unit
-* Local exchange carrier
-* Main distribution frame
-* Network termination
-* Point of appearance
-* User‚Äìnetwork interface
+==Description==
+The purpose of a PDS is to deter, detect and/or make difficult physical access to the communication lines carrying [[national security]] information.
+A specification called the National Security Telecommunications and Information Systems Security Instruction (NSTISSI) 7003 was issued in December 1996 by the [[Committee on National Security Systems]].<ref name="spec">{{Cite web |title= Protective distribution system |work= National Security Telecommunications and Information Systems Security Instruction number 7003 |date= December 13, 1996 |publisher= Committee on National Security Systems |url= http://www.cnss.gov/Assets/pdf/nstissi_7003.pdf |url-status=dead |archive-url= https://web.archive.org/web/20060713051217/http://www.cnss.gov/Assets/pdf/nstissi_7003.pdf |archive-date= July 13, 2006 |access-date= October 2, 2013 }}</ref>
+Approval authority, standards, and guidance for the design, installation, and maintenance for PDS are provided by NSTISSI 7003 to U.S. government departments and agencies and their contractors and vendors. This instruction describes the requirements for all PDS installations within the U.S. and for low and medium threat locations outside the U.S.
+PDS is commonly used to protect [[SIPRNet]] and [[JWICS]] networks.
+The document superseded one numbered NASCI 4009 on Protected Distribution Systems, dated December 30, 1981, and part of a document called NACSEM 5203, that covered guidelines for facility design, using the designations "red" and "black".<ref name="spec" />
 
-Citations 
+There are two types of PDS: hardened distribution systems and simple distribution systems.
 
-General references 
+==Hardened distribution ==
+Hardened distribution PDSs provide significant physical protection and can be implemented in three forms:  hardened carrier PDSs, alarmed carrier PDSs and continuously viewed carrier PDSs.
 
-* 
-* 
-* 
-* 
-*"”S{{Short description|Device that separates the carrier's wiring from the customer's}}
-{{Distinguish|Network Device Interface|Network interface controller}}
-{{More footnotes|date=June 2010}}
-[[file:Network interface device ameritech.jpg|thumb|upright|Two simple NIDs, carrying six lines each, on the outside of a building]]
-[[file:apl germany.jpeg|thumb|upright|A German copper phone line termination box called ''[[:de:Abschlusspunkt Linientechnik|Abschlusspunkt LinienTechnik]]'' (APL, "[[Demarcation point]]")]]
+===Hardened carrier===
+In a hardened carrier PDS, the data cables are installed in a carrier constructed of electrical metallic tubing ([[Electrical conduit|EMT]]), ferrous conduit or pipe, or rigid sheet steel ducting. All of the connections in a Hardened Carrier System are permanently sealed completely around all surfaces with welds, epoxy or other such sealants. If the hardened carrier is buried under ground, to secure cables running between buildings for example, the carrier containing the cables is encased in concrete.
 
-In [[telecommunication]]s, a '''network interface device''' ('''NID'''; also known by several other names) is a device that serves as the [[demarcation point]] between the carrier's [[local loop]] and the customer's [[on-premises wiring|premises wiring]]. Outdoor telephone NIDs also provide the subscriber with access to the station wiring and serve as a convenient test point for verification of loop integrity and of the subscriber's inside wiring.
+With a hardened [[carrier system]], detection is accomplished via human inspections that are required to be performed periodically. Therefore, hardened carriers are installed below ceilings or above flooring so they can be visually inspected to ensure that no intrusions have occurred. These periodic [[visual inspection]]s (PVIs) occur at a frequency dependent upon the level of threat to the environment, the security classification of the data, and the access control to the area.
 
-== Naming ==
-Generically, an NID may also be called a '''network interface unit''' (NIU),<ref name="1037cDEF" /> '''telephone network interface''' (TNI), '''system network interface''' (SNI), or '''telephone network box'''.
+=== Alarmed carrier ===
+As an alternative to conducting human visual inspections, an alarmed carrier PDS may be constructed to automate the inspection process through electronic monitoring with an alarm system. In an Alarmed Carrier PDS, the carrier system is ‚Äúalarmed‚Äù with specialized optical fibers deployed within the conduit for the purpose of sensing acoustic vibrations that usually occur when an intrusion is being attempted on the conduit in order to gain access to the cables.
 
-Australia's [[National Broadband Network]] uses the term ''[[Network Termination Device (NBN)|network termination device]]'' or NTD.
+Alarmed carrier PDS offers several advantages over hardened carrier PDS:
 
-A '''smartjack''' is a type of NID with capabilities beyond simple electrical connection, such as diagnostics.
+#Provides continuous monitoring 24/7/365
+#Eliminates the requirement for periodic visual inspections
+#Allows the carrier to be hidden above the ceiling or below the floor, since periodic visual inspections are not required
+#Eliminates the need for the welding and epoxying of the connections
+#Eliminates the requirement for concrete encasement outdoors 
+#Eliminates the need to lock down [[manhole cover]]s
+#Enables rapid redeployment for evolving network arrangements
 
-An ''[[#Optical network terminals|optical network terminal]]'' (ONT) is a type of NID used with [[fiber-to-the-premises]] applications.
+Legacy alarmed carrier systems monitor the carrier containing the cables being protected. More advanced systems monitor the fibers within, or intrinsic to, the cables being protected to turn those cables into sensors, which detect intrusion attempts.
 
-== Wiring termination ==
-The simplest NIDs are essentially just a specialized set of wiring [[terminal (electronics)|terminal]]s. These will typically take the form of a small, weather-proof box, mounted on the outside of the building. The [[telephone line]] from the [[telephone company]] will enter the NID and be connected to one side. The customer connects their wiring to the other side. A single NID enclosure may contain termination for a single line or multiple lines.
+Depending on the [[government]] organization, utilizing an alarmed carrier PDS in conjunction with interlocking armored cable may, in some cases, allow for the elimination of the carrier systems altogether. In these instances, the cables being protected can be installed in existing conveyance (wire basket, ladder rack) or suspended cabling (on D-rings, J-Hooks, etc.).
 
-In its role as the demarcation point (dividing line), the NID separates the telephone company's equipment from the customer's wiring and equipment. The telephone company owns the NID itself, and all wiring up to it. Anything past the NID is the customer's responsibility. To facilitate this, there is typically a test jack inside the NID. Accessing the test jack disconnects the customer premises wiring from the [[public switched telephone network]] and allows the customer to plug a "known good" [[telephone]] into the jack to isolate trouble. If the telephone works at the test jack, the problem is the customer's wiring, and the customer is responsible for repair. If the telephone does not work, the line is faulty and the telephone company is responsible for repair.
+=== Continuously viewed carrier ===
+A Continuously Viewed Carrier PDS is one that is under continuous observation, 24 hours per day (including when operational). Such circuits may be grouped together, but should be separated from all non-continuously viewed circuits ensuring an open field of view. Standing orders should include the requirement to investigate any attempt to disturb the PDS. Appropriate security personnel should investigate the area of attempted penetration within 15 minutes of discovery. This type of hardened carrier is not used for Top Secret or special category information for non-U.S. UAA.{{clarify|date=July 2013}}<!-- What is UAA? -->
+UAA is an Uncontrolled Access Area (UAA).  Like definitions include Controlled Access Area (CAA) and Restricted Access Area (RAA). A Secure Room (SR) offers the highest degree of protection.
 
-Most NIDs also include "circuit protectors", which are [[surge protector]]s for a telephone line. They protect customer wiring, equipment, and personnel from any transient [[energy]] on the line, such as from a [[lightning]] strike to a [[telephone pole]].
+Therefore, from the least protected (least secure) to the most protected is as follows:
 
-Simple NIDs contain no [[digital logic]]; they are "dumb" devices. They have no capabilities beyond wiring termination, circuit protection, and providing a place to connect test equipment.
+UAA
+RAA
+CAA
+SR
 
-== Smartjack ==
-[[file:Network Interface Unit.jpg|thumb|upright|Three smartjacks for [[Digital Signal 1|T-1]] circuits, in two shelves; a [[66 block]] is on the left]]
+== Simple distribution ==
 
-Several types of NIDs provide more than just a terminal for the connection of wiring. Such NIDs are colloquially called ''smartjacks'' or [[Intelligent Network Interface Device]]s (INIDs) as an indication of their built-in "intelligence", as opposed to a simple NID, which is just a wiring device. Smartjacks are typically used for more complicated types of telecommunications service, such as [[Digital Signal 1|T1 lines]]. [[Plain old telephone service]] lines generally cannot be equipped with smartjacks.
+Simple distribution PDSs are afforded a reduced level of physical security protection as compared to a hardened distribution PDS. They use a simple carrier system and the following means are acceptable under NSTISSI 7003: 
+#The data cables should be installed in a carrier
+#The carrier can be constructed of any material (e.g., wood, PVT, EMT, ferrous conduit)
+#The joints and access points should be secured and be controlled by personnel cleared to the highest level of data handled by the PDS
+#The carrier is to be inspected in accordance with the requirements of NSTISSI 7003
 
-Despite the name, most smartjacks are much more than a simple [[telephone jack]]. One common form for a smartjack is a [[printed circuit board]] with a face plate on one edge, mounted in an enclosure.
+==See also==
+*[[National Information Systems Security Glossary]]
 
-A smartjack may provide signal conversion, converting codes and protocols (e.g. framing types) to the type needed by the customer equipment. It may buffer and/or regenerate the signal, to compensate for signal degradation from line transmission, similar to what a [[repeater]] does.
+==References==
+{{Reflist}}
+*{{FS1037C}}
 
-Smartjacks also typically provide diagnostic capabilities. A very common capability provided by a smartjack is [[loopback]], such that the signal from the telephone company is transmitted back to the telephone company. This allows the company to test the line from the central [[telephone exchange]], without the need to have test equipment at the customer site. The telephone company usually has the ability to remotely activate loopback, without even needing personnel at the customer site. When looped back, the customer equipment is disconnected from the line.
-
-Additional smartjack diagnostic capabilities include [[alarm indication signal]], which reports trouble at one end of the line to the far end. This helps the telephone company know if trouble is present in the line, the smartjack, or customer equipment. Indicator lights to show configuration, status, and alarms are also common.
-
-Smartjacks typically derive their operating power from the telephone line, rather than relying on premises electrical power, although this is not a universal rule.
-
-== Optical network terminals ==
-[[File:Tellabs ONT611 inside.jpeg|thumb|An optical network terminal mounted to the outside of a building, with the cover open]]
-
-In fiber-to-the-premises systems, the signal is transmitted to the customer premises using [[fiber optic]] technologies. Unlike many conventional telephone technologies, this does not provide power for premises equipment, nor is it suitable for direct connection to customer equipment. An '''optical network terminal''' (ONT) is used to terminate the fiber optic line, [[multiplexing|demultiplex]] the signal into its component parts (voice [[telephone]], [[television]], and [[Internet access]]), and provide power to customer telephones. As the ONT must derive its power from the customer premises electrical supply, many ONTs have the option for a [[battery (electricity)|battery]] backup in order to maintain service in the event of a [[power outage]].<ref name="whatont" />
-
-== Environmental conditions ==
-According to [[Telcordia]] GR-49, requirements for telecommunications NIDs vary based on three categories of environmental conditions:<ref name="Telcordia"/>
-
-# Normal conditions: This refers to a normal environment that is expected in most areas of any service provider. Temperatures are expected to be in the range of {{convert|-20|to|32|¬∞C}}, and humidity is expected to be less than 90% RH. No unusual contamination is expected.
-# Severe climatic conditions: These cover environments more severe than those of a normal environment (i.e., higher humidity, high lightning activity, exposure to salt-laden atmosphere, and exposure to contaminants). Temperatures are expected to be in the range of {{convert|-40|to|43|¬∞C}}, and humidity may exceed 90% RH. Jacks installed in NIDs in such environments are known to become contaminated and develop low insulation resistances and low dielectric breakdown voltages when subjected to high humidity. These problems can cause noisy lines or even service outages.
-# Flooded conditions: These cover areas of a service provider prone to flooding, such as in coastal or flood plain locations. After a flooding incident, temperature is expected to be in the range of {{convert|4.5|to|38|¬∞C|0}}, and humidity may exceed 90% RH. The requirements are not to determine if the NID will function during a flood, but to review the ability of the NID to function after the flood has subsided.
-
-Service providers must decide which condition best suits their application.
-
-== See also ==
-* [[Channel service unit]]
-* [[CSU/DSU]]
-* [[Customer premises equipment]]
-* [[Customer premises wiring]]
-* [[Data service unit]]
-* [[Local exchange carrier]]
-* [[Main distribution frame]]
-* [[Network termination]]
-* [[Point of appearance]]
-* [[User‚Äìnetwork interface]]
-
-== Citations ==
-{{reflist|refs=
-<ref name="1037cDEF">{{cite web |title=network interface device |work=Federal Standard 1037C |publisher=[[National Telecommunications and Information Administration]] |location=United States |url=http://www.its.bldrdoc.gov/fs-1037/dir-024/_3522.htm |date=1996-08-23 }}</ref>
-<ref name="whatont">{{cite web |title=What is an Optical Network Terminal (ONT)? |publisher=Verizon Communications, Inc. |url=https://www22.verizon.com/foryourhome/fttprepair/nr/common/SupportDetail.aspx?case=c29587 |archive-url=https://web.archive.org/web/20121006164612/https://www22.verizon.com/foryourhome/fttprepair/nr/common/SupportDetail.aspx?case=c29587 |archive-date=2012-10-06 }}</ref>
-<ref name="Telcordia">[http://telecom-info.njdepot.ericsson.net/site-cgi/ido/docs.cgi?ID=SEARCH&DOCUMENT=GR-49& GR-49-CORE ''Generic Requirements for Outdoor Telecommunication Network Interface Devices (NIDs)''], Telcordia.</ref>
-}}
-
-== General references ==
-{{refbegin}}
-* {{cite web |title=Network Interface Device |publisher=Verizon Communications, Inc. |url=http://www22.verizon.com/wholesale/solutions/solution/NIDs.html |access-date=2009-06-03 }}
-* {{cite web |title=Network Interface Device (NID) V9.0 |publisher=Qwest Communications International |url=http://www.qwest.com/wholesale/pcat/nid.html |access-date=2009-06-03 }}
-* {{cite web |title=Functional Criteria for the DS1 Interface Connector |publisher=BellSouth |date=June 1993 |url=http://www.aniesoft.com/guides/TR-73569.pdf |archive-url=https://ghostarchive.org/archive/20221009/http://www.aniesoft.com/guides/TR-73569.pdf |archive-date=2022-10-09 |url-status=live |access-date=2009-06-03 }}
-* {{cite web |title=Testing, Repairing and Installing Home telephone Wiring&nbsp;‚Äì Network Interface Device |publisher=Public Service Commission of Wisconsin |url=http://psc.wi.gov/utilityinfo/tele/teleConsumer/nid.htm |access-date=2009-06-03 |archive-url=https://web.archive.org/web/20090511224521/http://psc.wi.gov/utilityinfo/tele/teleConsumer/nid.htm |archive-date=2009-05-11 |url-status=dead }}
-* {{cite web |title=Checking the service at the Optical Network Terminal (ONT) |publisher=Verizon Communications, Inc. |url=https://www.verizon.com/support/residential/internet/fiosinternet/troubleshooting/connection+issues/questionsone/128000.htm |access-date=2009-06-03 }}
-{{refend}}
-
-[[Category:Fiber to the premises]]
-[[Category:Local loop]]
-[[Category:Telephony equipment]]( 2 :2022-10-09T22:21:40ZB42425010JZ
-	Wikipedia'https://en.wikipedia.org/wiki/Main_PageMediaWiki 1.40.0-wmf.8"first-letterRæ
-Xhttp://telecom-info.njdepot.ericsson.net/site-cgi/ido/docs.cgi?ID=SEARCH&DOCUMENT=GR-49&bGR-49-CORE ''Generic Requirements for Outdoor Telecommunication Network Interface Devices (NIDs)''bìΩõË»ÀªjÙíçö
+[[Category:Classified information]]
+[[Category:Telecommunications systems]]( 2 :2022-08-05T06:13:39ZB36447698JZ
+	Wikipedia'https://en.wikipedia.org/wiki/Main_PageMediaWiki 1.40.0-wmf.8"first-letterbïΩõ–ÕµújìÍ≤ó
