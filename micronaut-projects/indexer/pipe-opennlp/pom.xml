@@ -69,7 +69,12 @@
       <artifactId>logback-classic</artifactId>
       <scope>provided</scope>
     </dependency>
-
+    <dependency>
+      <groupId>com.krickert.search</groupId>
+      <artifactId>wikisearch-model-test-resources</artifactId>
+      <version>0.1-SNAPSHOT</version>
+      <scope>test</scope>
+    </dependency>
 
   </dependencies>
 

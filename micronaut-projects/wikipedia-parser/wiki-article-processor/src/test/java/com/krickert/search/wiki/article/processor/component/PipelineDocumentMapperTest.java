@@ -3,7 +3,6 @@ package com.krickert.search.wiki.article.processor.component;
 import com.google.common.collect.Lists;
 import com.google.protobuf.Timestamp;
 import com.krickert.search.model.pipe.PipeDocument;
-import com.krickert.search.model.util.ProtobufUtils;
 import com.krickert.search.model.wiki.WikiArticle;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
@@ -11,10 +10,8 @@ import org.slf4j.LoggerFactory;
 
 import java.util.Collection;
 
-import static com.krickert.search.model.test.util.TestDataHelper.createFewHunderedArticles;
-import static java.util.concurrent.TimeUnit.SECONDS;
+import static com.krickert.search.model.test.util.TestDataHelper.getFewHunderedArticles;
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.awaitility.Awaitility.await;
 import static org.junit.jupiter.api.Assertions.*;
 
 class PipelineDocumentMapperTest {
@@ -30,7 +27,7 @@ class PipelineDocumentMapperTest {
 
     @Test
     void mapWikiArticleToPipeDocument() {
-        Collection<WikiArticle> articles = createFewHunderedArticles();
+        Collection<WikiArticle> articles = getFewHunderedArticles();
         assertThat(articles).isNotNull()
                 .hasSize(367);
         Collection<PipeDocument> mapperDocuments = Lists.newArrayList();

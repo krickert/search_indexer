@@ -49,7 +49,7 @@ class WikiArticleProcessorTest {
 
     @Test
     void testPipeDocumentProcessing() {
-        TestDataHelper.createFewHunderedArticles()
+        TestDataHelper.getFewHunderedArticles()
                 .forEach((wikiArticle) ->
                         producer.sendFileProcessingRequest(
                                 createKey(wikiArticle),
