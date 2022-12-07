@@ -56,7 +56,7 @@ class WikiArticleProcessorTest {
                                 wikiArticle));
         await().atMost(30, SECONDS).until(() -> pipeDocuments.size() > 20);
         await().atMost(60, SECONDS).until(() -> pipeDocuments.size() > 100);
-        await().atMost(90, SECONDS).until(() -> pipeDocuments.size() >= 367);
+        await().atMost(90, SECONDS).until(() -> pipeDocuments.size() == 377);
     }
 
 

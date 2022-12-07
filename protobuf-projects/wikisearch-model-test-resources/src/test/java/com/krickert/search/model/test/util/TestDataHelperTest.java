@@ -14,7 +14,7 @@ public class TestDataHelperTest {
         Collection<WikiArticle> result = TestDataHelper.getFewHunderedArticles();
         assertThat(result)
                 .isNotNull()
-                .hasSize(367);
+                .hasSize(377);
         result.forEach((article) -> assertThat(article)
                 .isNotNull()
                 .isInstanceOf(WikiArticle.class)

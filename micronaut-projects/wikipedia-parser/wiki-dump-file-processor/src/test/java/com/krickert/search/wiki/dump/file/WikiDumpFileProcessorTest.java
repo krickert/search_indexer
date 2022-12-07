@@ -69,7 +69,7 @@ class WikiDumpFileProcessorTest {
                 .build();
         this.downloadedFileProcessingProducer.sendFileProcessingRequest(createKey(downloadedFile.getFileName()), downloadedFile);
         await().atMost(100, SECONDS).until(() -> wikiArticles.size() > 100);
-        await().atMost(200, SECONDS).until(() -> wikiArticles.size() >= 367);
+        await().atMost(200, SECONDS).until(() -> wikiArticles.size() == 377);
     }
 
     @KafkaListener(
