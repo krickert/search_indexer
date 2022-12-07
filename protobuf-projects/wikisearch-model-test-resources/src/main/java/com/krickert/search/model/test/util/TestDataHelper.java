@@ -1,12 +1,12 @@
 package com.krickert.search.model.test.util;
 
+import com.google.common.collect.Maps;
 import com.krickert.search.model.pipe.PipeDocument;
 import com.krickert.search.model.wiki.WikiArticle;
 
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.nio.channels.Pipe;
 import java.nio.file.*;
 import java.util.*;
 import java.util.stream.Stream;
@@ -16,12 +16,28 @@ import static java.nio.file.FileSystems.newFileSystem;
 public class TestDataHelper {
     private static final Collection<WikiArticle> fewHunderedArticles = createFewHunderedArticles();
     private static final Collection<PipeDocument> fewHunderedPipeDocuments = createFewHunderedPipeDocuments();
-
+    private static final Map<String, PipeDocument> fewHunderedPipeDocumentsMap = createPipeDocumentMapById();
+    private static final Map<String, WikiArticle> fewHunderedArticlesMap = createArticleMapById();
     public static Collection<PipeDocument> getFewHunderedPipeDocuments() { return fewHunderedPipeDocuments; }
+    public static Collection<WikiArticle> getFewHunderedArticles() { return fewHunderedArticles; }
+    public static Map<String, PipeDocument> getFewHunderedPipeDocumentsMap() { return fewHunderedPipeDocumentsMap; }
+    public static Map<String, WikiArticle> getFewHunderedArticlesMap() { return fewHunderedArticlesMap; }
 
-    public static Collection<WikiArticle> getFewHunderedArticles() {
-        return fewHunderedArticles;
+
+    private static Map<String, PipeDocument> createPipeDocumentMapById() {
+        Collection<PipeDocument> docs = createFewHunderedPipeDocuments();
+        Map<String, PipeDocument> returnVal = Maps.newHashMapWithExpectedSize(docs.size());
+        docs.forEach((doc) -> returnVal.put(doc.getId(), doc));
+        return returnVal;
     }
+
+    private static Map<String, WikiArticle> createArticleMapById() {
+        Collection<WikiArticle> docs = createFewHunderedArticles();
+        Map<String, WikiArticle> returnVal = Maps.newHashMapWithExpectedSize(docs.size());
+        docs.forEach((doc) -> returnVal.put(doc.getId(), doc));
+        return returnVal;
+    }
+
 
     private static Collection<PipeDocument> createFewHunderedPipeDocuments() {
         String directory = "/pipe_documents";
@@ -84,10 +100,6 @@ public class TestDataHelper {
             throw new RuntimeException(e);
         }
         return walk;
-    }
-
-    public static void main(String args[]) {
-        System.out.println(createFewHunderedArticles());
     }
 
 }

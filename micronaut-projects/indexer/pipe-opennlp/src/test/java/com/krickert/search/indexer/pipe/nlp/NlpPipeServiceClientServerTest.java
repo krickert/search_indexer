@@ -11,10 +11,7 @@ import io.micronaut.test.extensions.junit5.annotation.MicronautTest;
 import jakarta.inject.Inject;
 import org.junit.jupiter.api.Test;
 
-import java.nio.channels.Pipe;
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.stream.Collectors;
+import java.util.Map;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -36,32 +33,29 @@ public class NlpPipeServiceClientServerTest {
 
     @Test
     void testNlpServiceSentenceExtraction() {
-        Collection<PipeDocument> fiveDocs = TestDataHelper.getFewHunderedPipeDocuments().stream().limit(5).toList();
-
-        Iterator<PipeDocument> docs = fiveDocs.iterator();
-
-        PipeDocument doc1 = docs.next();
-        PipeDocument doc2 = docs.next();
-        PipeDocument doc3 = docs.next();
-        PipeDocument doc4 = docs.next();
-        PipeDocument doc5 = docs.next();
+        Map<String, PipeDocument> docs = TestDataHelper.getFewHunderedPipeDocumentsMap();
+        PipeDocument amadeus = docs.get("41525");
+        PipeDocument luciferians = docs.get("41526");
+        PipeDocument cod = docs.get("41515");
+        PipeDocument phaseAngle = docs.get("41508");
+        PipeDocument summerSolstace = docs.get("41516");
 
 
-        PipeReply reply1 = nlpService.send(createPipeRequest(doc1));
+        PipeReply reply1 = nlpService.send(createPipeRequest(amadeus));
         assertThat(reply1).isNotNull();
-        assertThat(reply1.getDocument().getSentencesList()).hasSize(1);
-        PipeReply reply2 = nlpService.send(createPipeRequest(doc2));
+        assertThat(reply1.getDocument().getSentencesList()).hasSize(94);
+        PipeReply reply2 = nlpService.send(createPipeRequest(luciferians));
         assertThat(reply2).isNotNull();
-        assertThat(reply2.getDocument().getSentencesList()).hasSize(5);
-        PipeReply reply3 = nlpService.send(createPipeRequest(doc3));
+        assertThat(reply2.getDocument().getSentencesList()).hasSize(1);
+        PipeReply reply3 = nlpService.send(createPipeRequest(cod));
         assertThat(reply3).isNotNull();
-        assertThat(reply3.getDocument().getSentencesList()).hasSize(3);
-        PipeReply reply4 = nlpService.send(createPipeRequest(doc4));
+        assertThat(reply3.getDocument().getSentencesList()).hasSize(136);
+        PipeReply reply4 = nlpService.send(createPipeRequest(phaseAngle));
         assertThat(reply4).isNotNull();
-        assertThat(reply4.getDocument().getSentencesList()).hasSize(2);
-        PipeReply reply5 = nlpService.send(createPipeRequest(doc5));
+        assertThat(reply4.getDocument().getSentencesList()).hasSize(1);
+        PipeReply reply5 = nlpService.send(createPipeRequest(summerSolstace));
         assertThat(reply5).isNotNull();
-        assertThat(reply5.getDocument().getSentencesList()).hasSize(2);
+        assertThat(reply5.getDocument().getSentencesList()).hasSize(1);
     }
 
     private PipeRequest createPipeRequest(PipeDocument article) {
