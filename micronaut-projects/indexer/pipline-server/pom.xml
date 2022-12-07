@@ -24,6 +24,7 @@
     <dependency>
       <groupId>io.micronaut.grpc</groupId>
       <artifactId>micronaut-protobuff-support</artifactId>
+      <version>3.4.0</version>
     </dependency>
     <dependency>
       <groupId>com.krickert.search</groupId>

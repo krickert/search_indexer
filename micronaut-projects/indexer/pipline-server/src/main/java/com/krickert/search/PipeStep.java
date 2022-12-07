@@ -5,6 +5,7 @@ import com.krickert.search.service.PipeReply;
 import com.krickert.search.service.PipeRequest;
 import com.krickert.search.service.PipeServiceGrpc;
 
+
 public class PipeStep implements Step<PipeDocument, PipeDocument> {
 
     private final PipeServiceGrpc.PipeServiceBlockingStub pipeService;
