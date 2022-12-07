@@ -1,132 +1,202 @@
 
-41350Manchester code�!In telecommunication and data storage, Manchester code (also known as phase encoding, or PE) is a line code in which the encoding of each data bit is either low then high, or high then low, for equal time. It is a self-clocking signal with no DC component. Consequently, electrical connections using a Manchester code are easily galvanically isolated.
+41382Μ-law algorithm�+The μ-law algorithm (sometimes written mu-law, often approximated as u-law) is a companding algorithm, primarily used in 8-bit PCM digital telecommunication systems in North America and Japan. It is one of two versions of the G.711 standard from ITU-T, the other version being the similar A-law. A-law is used in regions where digital telecommunication signals are carried on E-1 circuits, e.g. Europe.
 
-Manchester code derives its name from its development at the University of Manchester, where the coding was used for storing data on the magnetic drums of the Manchester Mark 1 computer.
+Companding algorithms reduce the dynamic range of an audio signal. In analog systems, this can increase the signal-to-noise ratio (SNR) achieved during transmission; in the digital domain, it can reduce the quantization error (hence increasing the signal-to-quantization-noise ratio). These SNR increases can be traded instead for reduced bandwidth for equivalent SNR.
 
-Manchester code was widely used for magnetic recording on 1600 bpi computer tapes before the introduction of 6250 bpi tapes which used the more efficient group-coded recording. Manchester code was used in early Ethernet physical layer standards and is still used in consumer IR protocols, RFID and near-field communication.
+Algorithm types
 
-Features 
+The μ-law algorithm may be described in an analog form and in a quantized digital form.
 
-Manchester coding is a special case of binary phase-shift keying (BPSK), where the data controls the phase of a square wave carrier whose frequency is the data rate. Manchester code ensures frequent line voltage transitions, directly proportional to the clock rate; this helps clock recovery.
+Continuous
 
-The DC component of the encoded signal is not dependent on the data and therefore carries no information. Therefore connections may be inductively or capacitively coupled, allowing the signal to be conveyed conveniently by galvanically isolated media (e.g., Ethernet) using a network isolator—a simple one-to-one pulse transformer which cannot convey a DC component.
+For a given input , the equation for μ-law encoding is
 
-According to Cisco, "Manchester encoding introduces some difficult frequency-related problems that make it unsuitable for use at higher data rates".
+F(x) = \sgn(x) \dfrac{\ln(1 + \mu |x|)}{\ln(1 + \mu)}, \quad -1 \leq x \leq 1,
 
-There are more complex codes, such as 8B/10B encoding, that use less bandwidth to achieve the same data rate but may be less tolerant of frequency errors and jitter in the transmitter and receiver reference clocks.
+where  in the North American and Japanese standards, and  is the sign function. It is important to note that the range of this function is −1 to 1.
 
-Encoding and decoding
+μ-law expansion is then given by the inverse equation:
 
-Manchester code always has a transition at the middle of each bit period and may (depending on the information to be transmitted) have a transition at the start of the period also. The direction of the mid-bit transition indicates the data. Transitions at the period boundaries do not carry information.  They exist only to place the signal in the correct state to allow the mid-bit transition.
+F^{-1}(y) = \sgn(y) \dfrac{(1 + \mu)^ - 1}{\mu}, \quad -1 \leq y \leq 1.
 
-Conventions for representation of data
+Discrete
 
-There are two opposing conventions for the representations of data.
+The discrete form is defined in ITU-T Recommendation G.711.
 
-The first of these was first published by G. E. Thomas in 1949 and is followed by numerous authors (e.g., Andy Tanenbaum). It specifies that for a 0 bit the signal levels will be low–high (assuming an amplitude physical encoding of the data) – with a low level in the first half of the bit period, and a high level in the second half. For a 1 bit the signal levels will be high–low. This is also known as Manchester II or Biphase-L code.
+G.711 is unclear about how to code the values at the limit of a range (e.g. whether +31 codes to 0xEF or 0xF0).
+However, G.191 provides example code in the C language for a μ-law encoder.[https://www.itu.int/rec/T-REC-G.191/en G.191 : Software tools for speech and audio coding standardization] The difference between the positive and negative ranges, e.g. the negative range corresponding to +30 to +1 is −31 to −2. This is accounted for by the use of 1's complement (simple bit inversion) rather than 2's complement to convert a negative value to a positive value during encoding.
 
-The second convention is also followed by numerous authors (e.g., William Stallings) as well as by IEEE 802.4 (token bus) and lower speed versions of IEEE 802.3 (Ethernet) standards. It states that a logic 0 is represented by a high–low signal sequence and a logic 1 is represented by a low–high signal sequence.
+Implementation
 
-If a Manchester encoded signal is inverted in communication, it is transformed from one convention to the other. This ambiguity can be overcome by using differential Manchester encoding.
+The μ-law algorithm may be implemented in several ways:
+;Analog: Use an amplifier with non-linear gain to achieve companding entirely in the analog domain.
+;Non-linear ADC: Use an analog-to-digital converter with quantization levels which are unequally spaced to match the μ-law algorithm.
+;Digital: Use the quantized digital version of the μ-law algorithm to convert data once it is in the digital domain.
 
-Decoding
+;Software/DSP
+Use the continuous version of the μ-law algorithm to calculate the companded values.
 
-The existence of guaranteed transitions allows the signal to be self-clocking, and also allows the receiver to align correctly; the receiver can identify if it is misaligned by half a bit period, as there will no longer always be a transition during each bit period. The price of these benefits is a doubling of the bandwidth requirement compared to simpler NRZ coding schemes.
+Usage justification 
 
-Encoding
+μ-law encoding is used because speech has a wide dynamic range. In analog signal transmission, in the presence of relatively constant background noise, the finer detail is lost. Given that the precision of the detail is compromised anyway, and assuming that the signal is to be perceived as audio by a human, one can take advantage of the fact that the perceived acoustic intensity level or loudness is logarithmic by compressing the signal using a logarithmic-response operational amplifier (Weber-Fechner law). In telecommunications circuits, most of the noise is injected on the lines, thus after the compressor, the intended signal is perceived as significantly louder than the static, compared to an uncompressed source. This became a common solution, and thus, prior to common digital usage, the μ-law specification was developed to define an interoperable standard.
 
-Encoding conventions are as follows:
-* Each bit is transmitted in a fixed time (the "period").
-* A 0 is expressed by a low-to-high transition, a 1 by high-to-low transition (according to G. E. Thomas's convention – in the IEEE 802.3 convention, the reverse is true).
-* The transitions which signify 0 or 1 occur at the midpoint of a period.
-* Transitions at the start of a period are overhead and don't signify data.
+In digital systems, this pre-existing algorithm had the effect of significantly reducing the number of bits needed to encode recognizable human voice. Using μ-law, a sample could be effectively encoded in as few as 8 bits, a sample size that conveniently matched the symbol size of most standard computers.
+
+μ-law encoding effectively reduced the dynamic range of the signal, thereby increasing the coding efficiency while biasing the signal in a way that results in a signal-to-distortion ratio that is greater than that obtained by linear encoding for a given number of bits.
+
+The μ-law algorithm is also used in the .au format, which dates back at least to the SPARCstation 1 by Sun Microsystems as the native method used by the /dev/audio interface, widely used as a de facto standard for sound on Unix systems. The au format is also used in various common audio APIs such as the classes in the sun.audio Java package in Java 1.1 and in some C# methods.
+
+This plot illustrates how μ-law concentrates sampling in the smaller (softer) values. The horizontal axis represents the byte values 0-255 and the vertical axis is the 16-bit linear decoded value of μ-law encoding.
+
+Comparison with A-law
+
+The μ-law algorithm provides a slightly larger dynamic range than the A-law at the cost of worse proportional distortions for small signals. By convention, A-law is used for an international connection if at least one country uses it.
 
 See also
 
-* Coded mark inversion
-* Differential Manchester encoding
-* Binary offset carrier modulation
+* Audio level compression
+* Signal compression (disambiguation)
+* G.711
+* Tapered floating point
 
-References"�;{{short description|Line code used in early magnetic data storage and Ethernet}}
-{{Use dmy dates|date=April 2022}}
+References
 
-In [[telecommunication]] and [[computer data storage|data storage]], '''Manchester code''' (also known as '''phase encoding''', or '''PE''') is a [[line code]] in which the encoding of each data [[bit]] is either low then high, or high then low, for equal time. It is a [[self-clocking signal]] with no [[DC component]]. Consequently, electrical connections using a Manchester code are easily [[galvanic isolation|galvanically isolated]].
+External links
 
-Manchester code derives its name from its development at the [[University of Manchester]], where the coding was used for storing data on the magnetic drums of the [[Manchester Mark 1]] computer.
+* [http://www.cisco.com/en/US/tech/tk1077/technologies_tech_note09186a00801149b3.shtml Waveform Coding Techniques] – details of implementation
+* [http://focus.ti.com/lit/an/spra163a/spra163a.pdf A-Law and mu-Law Companding Implementations Using the TMS320C54x] (PDF)
+* [http://focus.ti.com/lit/an/spra634/spra634.pdf TMS320C6000 μ-Law and A-Law Companding with Software or the McBSP] (PDF)
+* [https://web.archive.org/web/20110719132013/http://hazelware.luggle.com/tutorials/mulawcompression.html A-law and μ-law realisation (in C)]"�C{{Short description|Audio companding algorithm}}
+{{more footnotes|date=May 2018}}
+{{lowercase}}
+[[File:Ulaw alaw db.svg|thumb|350px|Companding of μ-law and A-law algorithms]]
+{{Listen
+| type         = music
+| header       = Audio quality comparison
+| filename     = Mu-law audio demo.flac
+| title        = μ-law conversion
+| filename2    = Larynx-HiFi-GAN speech sample.wav
+| title2       = Original file
+}}
+The '''μ-law algorithm''' (sometimes written '''[[Mu (letter)|mu]]-law''', often [[typographic approximation|approximated]] as '''u-law''') is a [[companding]] algorithm, primarily used in 8-bit [[PCM]] [[Digital data|digital]] [[telecommunication]] systems in [[North America]] and [[Japan]]. It is one of two versions of the [[G.711]] standard from [[ITU-T]], the other version being the similar [[A-law algorithm|A-law]]. A-law is used in regions where digital telecommunication signals are carried on E-1 circuits, e.g. Europe.
 
-Manchester code was widely used for [[magnetic recording]] on 1600&nbsp;bpi computer tapes before the introduction of 6250&nbsp;bpi tapes which used the more efficient [[group-coded recording]].<ref>{{cite web |title=Digital Magnetic Tape Recording |author-first=John J. G. |author-last=Savard |date=2018 |orig-year=2006 |work=quadibloc |url=http://www.quadibloc.com/comp/tapeint.htm |access-date=2018-07-16 |url-status=dead |archive-url=https://web.archive.org/web/20180702234956/http://www.quadibloc.com/comp/tapeint.htm |archive-date=2018-07-02 }}</ref> Manchester code was used in early [[Ethernet physical layer]] standards and is still used in [[consumer IR]] protocols, [[RFID]] and [[near-field communication]].
+Companding algorithms reduce the [[dynamic range]] of an audio [[Signal (electrical engineering)|signal]]. In analog systems, this can increase the [[signal-to-noise ratio]] (SNR) achieved during transmission; in the digital domain, it can reduce the quantization error (hence increasing the signal-to-quantization-noise ratio). These SNR increases can be traded instead for reduced [[Bandwidth (signal processing)|bandwidth]] for equivalent SNR.
 
-== Features ==
-Manchester coding is a special case of [[binary phase-shift keying]] (BPSK), where the data controls the [[Phase (waves)|phase]] of a square wave [[Carrier signal|carrier]] whose frequency is the data rate. Manchester code ensures frequent line voltage transitions, directly proportional to the clock rate; this helps [[clock recovery]].
+==Algorithm types==
+The μ-law algorithm may be described in an analog form and in a quantized digital form.
 
-The [[DC component]] of the encoded signal is not dependent on the data and therefore carries no information. Therefore connections may be [[Inductive coupling|inductively]] or [[Capacitive coupling|capacitively]] coupled, allowing the signal to be conveyed conveniently by galvanically isolated media (e.g., Ethernet) using a [[network isolator]]—a simple one-to-one [[pulse transformer]] which cannot convey a DC component.
+===Continuous===
+[[File:Mu-law function.svg|thumb|μ-law function]]
+[[File:Inverse mu-law function.svg|thumb|Inverse μ-law function]]
 
-According to [[Cisco]], "Manchester encoding introduces some difficult frequency-related problems that make it unsuitable for use at higher data rates".<ref>{{citation |url=http://docwiki.cisco.com/wiki/Ethernet_Technologies |title=Ethernet Technologies |publisher=[[Cisco Systems]] |access-date=2017-09-12 |quote=Manchester encoding introduces some difficult frequency-related problems that make it unsuitable for use at higher data rates. |archive-url=https://web.archive.org/web/20181228005303/http://docwiki.cisco.com/wiki/Ethernet_Technologies |archive-date=2018-12-28 |url-status=dead}}</ref><!--Difficulties are in meeting [[Title 47 CFR Part 15]] and other RF emissions requirements.-->
+For a given input {{mvar|x}}, the equation for μ-law encoding is<ref name="mulaw-equation">{{cite web |url=https://www.cisco.com/c/en/us/support/docs/voice/h323/8123-waveform-coding.html |title=Waveform Coding Techniques - Cisco |access-date=2020-12-07 |date=2006-02-02}}</ref>
+<math display="block">
+F(x) = \sgn(x) \dfrac{\ln(1 + \mu |x|)}{\ln(1 + \mu)}, \quad -1 \leq x \leq 1,
+</math>
 
-There are more complex codes, such as [[8B/10B encoding]], that use less [[bandwidth (signal processing)|bandwidth]] to achieve the same data rate but may be less tolerant of frequency errors and [[jitter]] in the transmitter and receiver reference clocks.{{citation needed|date=November 2015}}
+where {{math|1=''μ'' = 255}} in the North American and Japanese standards, and {{math|1=sgn(''x'')}} is the [[sign function]]. It is important to note that the [[Range of a function|range]] of this function is −1 to 1.
 
-==Encoding and decoding==
-[[Image:Manchester encoding both conventions.svg|thumb|650px|An example of Manchester encoding showing both [[Manchester code#Conventions for representation of data|conventions for representation of data]]]]
+μ-law expansion is then given by the inverse equation:<ref name="mulaw-equation" />
+<math display="block">
+F^{-1}(y) = \sgn(y) \dfrac{(1 + \mu)^{|y|} - 1}{\mu}, \quad -1 \leq y \leq 1.
+</math>
 
-Manchester code always has a transition at the middle of each bit period and may (depending on the information to be transmitted) have a transition at the start of the period also. The direction of the mid-bit transition indicates the data. Transitions at the period boundaries do not carry information.  They exist only to place the signal in the correct state to allow the mid-bit transition.
+===Discrete===
+The discrete form is defined in ITU-T Recommendation [[G.711]].<ref>{{cite web |url=http://www.itu.int/rec/dologin_pub.asp?lang=e&id=T-REC-G.711-198811-I!!PDF-E&type=items |title=ITU-T Recommendation G.711}}</ref>
 
-===Conventions for representation of data===
-There are two opposing conventions for the representations of data.
+G.711 is unclear about how to code the values at the limit of a range (e.g. whether +31 codes to 0xEF or 0xF0).{{citation needed|date=October 2016}}
+However, G.191 provides example code in the [[C programming language|C language]] for a μ-law encoder.<ref>[https://www.itu.int/rec/T-REC-G.191/en G.191 : Software tools for speech and audio coding standardization]</ref> The difference between the positive and negative ranges, e.g. the negative range corresponding to +30 to +1 is −31 to −2. This is accounted for by the use of [[1's complement]] (simple bit inversion) rather than [[2's complement]] to convert a negative value to a positive value during encoding.
 
-The first of these was first published by G. E. Thomas in 1949 and is followed by numerous authors (e.g., [[Andrew S. Tanenbaum|Andy Tanenbaum]]).<ref name="tanenbaum">{{cite book |author-last=Tanenbaum |author-first=Andrew S. |author-link=Andrew S. Tanenbaum |title=Computer Networks |edition=4th |publisher=[[Prentice Hall]] |date=2002 |pages=[https://archive.org/details/computernetworks00tane_2/page/274 274–275] |isbn=0-13-066102-3 |url=https://archive.org/details/computernetworks00tane_2/page/274 }}</ref> It specifies that for a 0 bit the signal levels will be low–high (assuming an amplitude physical encoding of the data) – with a low level in the first half of the bit period, and a high level in the second half. For a 1 bit the signal levels will be high–low. This is also known as Manchester II or Biphase-L code.
-
-The second convention is also followed by numerous authors (e.g., [[William Stallings]])<ref name="stallings">{{cite book |author-last=Stallings |author-first=William |author-link=William Stallings |title=Data and Computer Communications |edition=7th |publisher=[[Prentice Hall]] |date=2004 |pages=[https://archive.org/details/datacomputercomm00stal_1/page/137 137–138] |isbn=0-13-100681-9 |url=https://archive.org/details/datacomputercomm00stal_1/page/137 }}</ref> as well as by [[IEEE 802.4]] (token bus) and lower speed versions of [[IEEE 802.3]] (Ethernet) standards. It states that a logic 0 is represented by a high–low signal sequence and a logic 1 is represented by a low–high signal sequence.
-
-If a Manchester encoded signal is inverted in communication, it is transformed from one convention to the other. This ambiguity can be overcome by using [[differential Manchester encoding]].
-
-===Decoding===
-The existence of guaranteed transitions allows the signal to be self-clocking, and also allows the receiver to align correctly; the receiver can identify if it is misaligned by half a bit period, as there will no longer always be a transition during each bit period. The price of these benefits is a doubling of the bandwidth requirement compared to simpler [[non-return-to-zero|NRZ]] coding schemes.
-
-===Encoding===
-{| class="wikitable" style="text-align:center;"
-|+Encoding data using [[exclusive or]] logic (802.3 convention)<ref>{{citation |url=https://www.maximintegrated.com/en/app-notes/index.mvp/id/3435 |title=Manchester Data Encoding for Radio Communications |access-date=2018-05-28}}</ref>
+{| class="wikitable"
+|+ Quantized μ-law algorithm
+! 14-bit binary linear input code !! 8-bit compressed code
 |-
-! Original data
-!
-! Clock
-!
-! Manchester value
+| +8158 to +4063 in 16 intervals of 256 || 0x80 + interval number
 |-
-| rowspan=2 | 0
-| rowspan=4 | XOR <br />⊕
-| 0
-| rowspan=4 | =
-| 0
+| +4062 to +2015 in 16 intervals of 128 || 0x90 + interval number
 |-
-| 1 || 1
+| +2014 to +991 in 16 intervals of 64 || 0xA0 + interval number
 |-
-| rowspan=2 | 1
-| 0 || 1
+| +990 to +479 in 16 intervals of 32 || 0xB0 + interval number
 |-
-| 1 || 0
+| +478 to +223 in 16 intervals of 16 || 0xC0 + interval number
+|-
+| +222 to +95 in 16 intervals of 8 || 0xD0 + interval number
+|-
+| +94 to +31 in 16 intervals of 4 || 0xE0 + interval number
+|-
+| +30 to +1 in 15 intervals of 2 || 0xF0 + interval number
+|-
+| 0 || 0xFF
+|-
+| −1 || 0x7F
+|-
+| −31 to −2 in 15 intervals of 2 || 0x70 + interval number
+|-
+| −95 to −32 in 16 intervals of 4 || 0x60 + interval number
+|-
+| −223 to −96 in 16 intervals of 8 || 0x50 + interval number
+|-
+| −479 to −224 in 16 intervals of 16 || 0x40 + interval number
+|-
+| −991 to −480 in 16 intervals of 32 || 0x30 + interval number
+|-
+| −2015 to −992 in 16 intervals of 64 || 0x20 + interval number
+|-
+| −4063 to −2016 in 16 intervals of 128 || 0x10 + interval number
+|-
+| −8159 to −4064 in 16 intervals of 256 || 0x00 + interval number
 |}
 
-Encoding conventions are as follows:
-* Each bit is transmitted in a fixed time (the "period").
-* A <code>0</code> is expressed by a low-to-high transition, a <code>1</code> by high-to-low transition (according to G. E. Thomas's convention – in the IEEE 802.3 convention, the reverse is true).<ref name="Manchesterencoding">{{Cite journal |author-last1=Forster |author-first1=R. |title=Manchester encoding: Opposing definitions resolved |doi=10.1049/esej:20000609 |journal=Engineering Science & Education Journal |volume=9 |issue=6 |pages=278–280 |date=2000}}</ref>
-* The transitions which signify <code>0</code> or <code>1</code> occur at the midpoint of a period.
-* Transitions at the start of a period are overhead and don't signify data.
+==Implementation==
+The μ-law algorithm may be implemented in several ways:
+;Analog: Use an amplifier with non-linear gain to achieve companding entirely in the analog domain.
+;Non-linear ADC: Use an [[analog-to-digital converter]] with quantization levels which are unequally spaced to match the μ-law algorithm.
+;Digital: Use the quantized digital version of the μ-law algorithm to convert data once it is in the digital domain.
+
+;Software/DSP
+:Use the continuous version of the μ-law algorithm to calculate the companded values.
+
+== Usage justification ==
+μ-law encoding is used because [[Speech communication|speech]] has a wide [[dynamic range]]. In analog signal transmission, in the presence of relatively constant background noise, the finer detail is lost. Given that the precision of the detail is compromised anyway, and assuming that the signal is to be perceived as audio by a human, one can take advantage of the fact that the perceived [[acoustic intensity level]] or [[loudness]] is logarithmic by compressing the signal using a logarithmic-response operational amplifier ([[Weber-Fechner law]]). In telecommunications circuits, most of the noise is injected on the lines, thus after the compressor, the intended signal is perceived as significantly louder than the static, compared to an uncompressed source. This became a common solution, and thus, prior to common digital usage, the μ-law specification was developed to define an interoperable standard.
+
+In digital systems, this pre-existing algorithm had the effect of significantly reducing the number of bits needed to encode recognizable human voice. Using μ-law, a sample could be effectively encoded in as few as 8 bits, a sample size that conveniently matched the symbol size of most standard computers.
+
+μ-law encoding effectively reduced the dynamic range of the signal, thereby increasing the [[Channel coding|coding]] efficiency while biasing the signal in a way that results in a signal-to-[[distortion]] ratio that is greater than that obtained by linear encoding for a given number of bits.
+
+[[File:Ulaw.JPG|thumb|400px|right|μ-law decoding as generated with the Sun Microsystems C-language routine g711.c commonly available on the Internet.]]
+The μ-law algorithm is also used in the [[Au file format|.au format]], which dates back at least to the [[SPARCstation 1]] by Sun Microsystems as the native method used by the /dev/audio interface, widely used as a de facto standard for sound on Unix systems. The au format is also used in various common audio [[Application programming interface|API]]s such as the classes in the sun.audio [[Java package]] in [[Java platform|Java]] 1.1 and in some [[C Sharp (programming language)|C#]] methods.
+
+This plot illustrates how μ-law concentrates sampling in the smaller (softer) values. The horizontal axis represents the byte values 0-255 and the vertical axis is the 16-bit linear decoded value of μ-law encoding.
+
+==Comparison with A-law==
+The μ-law algorithm provides a slightly larger dynamic range than the A-law at the cost of worse proportional distortions for small signals. By convention, A-law is used for an international connection if at least one country uses it.
 
 ==See also==
-* [[Coded mark inversion]]
-* [[Differential Manchester encoding]]
-* [[Binary offset carrier modulation]]
+* [[Audio level compression]]
+* [[Signal compression (disambiguation)]]
+* [[G.711]]
+* [[Tapered floating point]]
 
 ==References==
-{{Reflist}}
-{{refbegin}}
-{{FS1037C MS188}}
-{{refend}}
+<references/>
+{{FS1037C}}
 
-{{Bit-encoding}}
+==External links==
+* [http://www.cisco.com/en/US/tech/tk1077/technologies_tech_note09186a00801149b3.shtml Waveform Coding Techniques] – details of implementation
+* [http://focus.ti.com/lit/an/spra163a/spra163a.pdf A-Law and mu-Law Companding Implementations Using the TMS320C54x] ([[PDF]])
+* [http://focus.ti.com/lit/an/spra634/spra634.pdf TMS320C6000 μ-Law and A-Law Companding with Software or the McBSP] ([[PDF]])
+* [https://web.archive.org/web/20110719132013/http://hazelware.luggle.com/tutorials/mulawcompression.html A-law and μ-law realisation (in C)]
 
-[[Category:Line codes]]
-[[Category:Department of Computer Science, University of Manchester]]( 2 :2022-04-17T23:47:30ZB10363JZ
-	Wikipedia'https://en.wikipedia.org/wiki/Main_PageMediaWiki 1.40.0-wmf.8"first-letterRJ
-=https://archive.org/details/computernetworks00tane_2/page/274	274–275RJ
-=https://archive.org/details/datacomputercomm00stal_1/page/137	137–138b������j���
+{{Compression Methods}}
+{{Compression formats}}
+
+{{DEFAULTSORT:Mu-Law Algorithm}}
+[[Category:Audio codecs]]
+[[Category:ITU-T recommendations]]( 2 :2022-10-19T22:23:59ZB13263935JZ
+	Wikipedia'https://en.wikipedia.org/wiki/Main_PageMediaWiki 1.40.0-wmf.8"first-letterRl
+&https://www.itu.int/rec/T-REC-G.191/enBG.191 : Software tools for speech and audio coding standardizationRq
+Shttp://www.cisco.com/en/US/tech/tk1077/technologies_tech_note09186a00801149b3.shtmlWaveform Coding TechniquesRt
+0http://focus.ti.com/lit/an/spra163a/spra163a.pdf@A-Law and mu-Law Companding Implementations Using the TMS320C54xRt
+.http://focus.ti.com/lit/an/spra634/spra634.pdfBTMS320C6000 μ-Law and A-Law Companding with Software or the McBSPR�
+fhttps://web.archive.org/web/20110719132013/http://hazelware.luggle.com/tutorials/mulawcompression.html#A-law and μ-law realisation (in C)b�������j����

@@ -1,720 +1,361 @@
 
-41551Phase-shift keying��Phase-shift keying (PSK) is a digital modulation process which conveys data by changing (modulating) the phase of a constant frequency reference signal (the carrier wave). The modulation is accomplished by varying the sine and cosine inputs at a precise time. It is widely used for wireless LANs, RFID and Bluetooth communication.
+41372Sprague–Grundy theorem�oIn combinatorial game theory, the Sprague–Grundy theorem states that every impartial game under the normal play convention is equivalent to a one-heap game of nim, or to an infinite generalization of nim. It can therefore be represented as a natural number, the size of the heap in its equivalent game of nim, as an ordinal number in the infinite generalization, or alternatively as a nimber, the value of that one-heap game in an algebraic system whose addition operation combines multiple heaps to form a single equivalent heap in nim.
 
-Any digital modulation scheme uses a finite number of distinct signals to represent digital data. PSK uses a finite number of phases, each assigned a unique pattern of binary digits. Usually, each phase encodes an equal number of bits. Each pattern of bits forms the symbol that is represented by the particular phase. The demodulator, which is designed specifically for the symbol-set used by the modulator, determines the phase of the received signal and maps it back to the symbol it represents, thus recovering the original data. This requires the receiver to be able to compare the phase of the received signal to a reference signal such a system is termed coherent (and referred to as CPSK).
+The Grundy value or nim-value of any impartial game is the unique nimber that the game is equivalent to.  In the case of a game whose positions are indexed by the natural numbers (like nim itself, which is indexed by its heap sizes), the sequence of nimbers for successive positions of the game is called the nim-sequence of the game.
 
-CPSK requires a complicated demodulator, because it must extract the reference wave from the received signal and keep track of it, to compare each sample to.  Alternatively, the phase shift of each symbol sent can be measured with respect to the phase of the previous symbol sent.  Because the symbols are encoded in the difference in phase between successive samples, this is called differential phase-shift keying (DPSK).  DPSK can be significantly simpler to implement than ordinary PSK, as it is a 'non-coherent' scheme, i.e. there is no need for the demodulator to keep track of a reference wave.   A trade-off is that it has more demodulation errors.
-
-Introduction
-
-There are three major classes of digital modulation techniques used for transmission of digitally represented data:
-
-* Amplitude-shift keying (ASK)
-* Frequency-shift keying (FSK)
-* Phase-shift keying (PSK)
-
-All convey data by changing some aspect of a base signal, the carrier wave (usually a sinusoid), in response to a data signal. In the case of PSK, the phase is changed to represent the data signal. There are two fundamental ways of utilizing the phase of a signal in this way:
-
-* By viewing the phase itself as conveying the information, in which case the demodulator must have a reference signal to compare the received signal's phase against; or
-* By viewing the change in the phase as conveying information differential schemes, some of which do not need a reference carrier (to a certain extent).
-
-A convenient method to represent PSK schemes is on a constellation diagram. This shows the points in the complex plane where, in this context, the real and imaginary axes are termed the in-phase and quadrature axes respectively due to their 90° separation. Such a representation on perpendicular axes lends itself to straightforward implementation. The amplitude of each point along the in-phase axis is used to modulate a cosine (or sine) wave and the amplitude along the quadrature axis to modulate a sine (or cosine) wave.  By convention, in-phase modulates cosine and quadrature modulates sine.
-
-In PSK, the constellation points chosen are usually positioned with uniform angular spacing around a circle. This gives maximum phase-separation between adjacent points and thus the best immunity to corruption. They are positioned on a circle so that they can all be transmitted with the same energy. In this way, the moduli of the complex numbers they represent will be the same and thus so will the amplitudes needed for the cosine and sine waves. Two common examples are "binary phase-shift keying" (BPSK) which uses two phases, and "quadrature phase-shift keying" (QPSK) which uses four phases, although any number of phases may be used. Since the data to be conveyed are usually binary, the PSK scheme is usually designed with the number of constellation points being a power of two.
-
-Binary phase-shift keying (BPSK)
-
-BPSK (also sometimes called PRK, phase reversal keying, or 2PSK) is the simplest form of phase shift keying (PSK). It uses two phases which are separated by 180° and so can also be termed 2-PSK. It does not particularly matter exactly where the constellation points are positioned, and in this figure they are shown on the real axis, at 0° and 180°. Therefore, it handles the highest noise level or distortion before the demodulator reaches an incorrect decision. That makes it the most robust of all the PSKs. It is, however, only able to modulate at 1bit/symbol (as seen in the figure) and so is unsuitable for high data-rate applications. Yet there is the possibility of extending this bit/symbol, given the modulators symbol encryption / decryption logic system. 
-
-In the presence of an arbitrary phase-shift introduced by the communications channel, the demodulator (see, e.g. Costas loop)  is unable to tell which constellation point is which. As a result, the data is often differentially encoded prior to modulation.
-
-BPSK is functionally equivalent to 2-QAM modulation.
-
-Implementation
-
-The general form for BPSK follows the equation:
-
-s_n(t)   \sqrt{\frac{2E_b}{T_b}} \cos(2 \pi f t + \pi(1-n )),\quad n 
- 0,1. 
-
-This yields two phases, 0 and π.
-In the specific form, binary data is often conveyed with the following signals:
-
-s_0(t) =   \sqrt{\frac{2E_b}{T_b}} \cos(2 \pi f t + \pi )
-              = - \sqrt{\frac{2E_b}{T_b}} \cos(2 \pi f t) for binary "0"
-s_1(t) = \sqrt{\frac{2E_b}{T_b}} \cos(2 \pi f t)  for binary "1"
-
-where f is the frequency of the base band.
-
-Hence, the signal space can be represented by the single basis function
-
-\phi(t) = \sqrt{\frac{2}{T_b}} \cos(2 \pi f t) 
-
-where 1 is represented by \sqrt{E_b} \phi(t) and 0 is represented by -\sqrt{E_b} \phi(t). This assignment is arbitrary.
-
-This use of this basis function is shown at the end of the next section in a signal timing diagram. The topmost signal is a BPSK-modulated cosine wave that the BPSK modulator would produce. The bit-stream that causes this output is shown above the signal (the other parts of this figure are relevant only to QPSK). After modulation, the base band signal will be moved to the high frequency band by multiplying  \cos(2 \pi f_c t).
-
-Bit error rate
-
-The bit error rate (BER) of BPSK under additive white Gaussian noise (AWGN) can be calculated as:Communications Systems, H. Stern & S. Mahmoud, Pearson Prentice Hall, 2004, p. 283.
-
-P_b Q\left(\sqrt{\frac{2 E_b}{N_0}}\right) or P_e 
- \frac{1}{2} \operatorname{erfc} \left( \sqrt{\frac{E_b}{N_0}}\right)
-
-Since there is only one bit per symbol, this is also the symbol error rate.
-
-Quadrature phase-shift keying (QPSK)
-
-Sometimes this is known as quadriphase PSK, 4-PSK, or 4-QAM. (Although the root concepts of QPSK and 4-QAM are different, the resulting modulated radio waves are exactly the same.) QPSK uses four points on the constellation diagram, equispaced around a circle. With four phases, QPSK can encode two bits per symbol, shown in the diagram with Gray coding to minimize the bit error rate (BER) sometimes misperceived as twice the BER of BPSK.
-
-The mathematical analysis shows that QPSK can be used either to double the data rate compared with a BPSK system while maintaining the same bandwidth of the signal, or to maintain the data-rate of BPSK but halving the bandwidth needed. In this latter case, the BER of QPSK is exactly the same as the BER of BPSK and believing differently is a common confusion when considering or describing QPSK. The transmitted carrier can undergo numbers of phase changes.
-
-Given that radio communication channels are allocated by agencies such as the Federal Communications Commission giving a prescribed (maximum) bandwidth, the advantage of QPSK over BPSK becomes evident: QPSK transmits twice the data rate in a given bandwidth compared to BPSK - at the same BER. The engineering penalty that is paid is that QPSK transmitters and receivers are more complicated than the ones for BPSK. However, with modern electronics technology, the penalty in cost is very moderate.
-
-As with BPSK, there are phase ambiguity problems at the receiving end, and differentially encoded QPSK is often used in practice.
-
-Implementation
-
-The implementation of QPSK is more general than that of BPSK and also indicates the implementation of higher-order PSK. Writing the symbols in the constellation diagram in terms of the sine and cosine waves used to transmit them:
-
-s_n(t) \sqrt{\frac{2E_s}{T_s}} \cos \left(2 \pi f_c t + (2n - 1)\frac{\pi}{4}\right),\quad n 
- 1, 2, 3, 4.
-
-This yields the four phases π/4, 3π/4, 5π/4 and 7π/4 as needed.
-
-This results in a two-dimensional signal space with unit basis functions
-
-\begin{align}
-  \phi_1(t) &= \sqrt{\frac{2}{T_s}} \cos\left(2\pi f_c t\right) \\
-  \phi_2(t) &= \sqrt{\frac{2}{T_s}} \sin\left(2\pi f_c t\right)
-\end{align}
-
-The first basis function is used as the in-phase component of the signal and the second as the quadrature component of the signal.
-
-Hence, the signal constellation consists of the signal-space 4 points
-
-\begin{pmatrix} \pm\sqrt{\frac{E_s}{2}} & \pm\sqrt{\frac{E_s}{2}} \end{pmatrix}.
-
-The factors of 1/2 indicate that the total power is split equally between the two carriers.
-
-Comparing these basis functions with that for BPSK shows clearly how QPSK can be viewed as two independent BPSK signals. Note that the signal-space points for BPSK do not need to split the symbol (bit) energy over the two carriers in the scheme shown in the BPSK constellation diagram.
-
-QPSK systems can be implemented in a number of ways. An illustration of the major components of the transmitter and receiver structure are shown below.
-
-Probability of error
-
-Although QPSK can be viewed as a quaternary modulation, it is easier to see it as two independently modulated quadrature carriers. With this interpretation, the even (or odd) bits are used to modulate the in-phase component of the carrier, while the odd (or even) bits are used to modulate the quadrature-phase component of the carrier. BPSK is used on both carriers and they can be independently demodulated.
-
-As a result, the probability of bit-error for QPSK is the same as for BPSK:
-P_b = Q\left(\sqrt{\frac{2E_b}{N_0}}\right)
-
-However, in order to achieve the same bit-error probability as BPSK, QPSK uses twice the power (since two bits are transmitted simultaneously).
-
-The symbol error rate is given by:
-
-\begin{align}
- P_s &= 1 - \left( 1 - P_b \right)^2 \\
-     &= 2Q\left( \sqrt{\frac{E_s}{N_0}} \right) - \left[ Q \left( \sqrt{\frac{E_s}{N_0}} \right) \right]^2.
-\end{align}
-
-If the signal-to-noise ratio is high (as is necessary for practical QPSK systems) the probability of symbol error may be approximated:
-
-P_s \approx 2 Q \left( \sqrt{\frac{E_s}{N_0}} \right ) \operatorname{erfc} \left( \sqrt{\frac{E_s}{2N_0}} \right) 
- \operatorname{erfc} \left( \sqrt{\frac{E_b}{N_0}} \right)
-
-The modulated signal is shown below for a short segment of a random binary data-stream. The two carrier waves are a cosine wave and a sine wave, as indicated by the signal-space analysis above. Here, the odd-numbered bits have been assigned to the in-phase component and the even-numbered bits to the quadrature component (taking the first bit as number 1). The total signal the sum of the two components is shown at the bottom. Jumps in phase can be seen as the PSK changes the phase on each component at the start of each bit-period. The topmost waveform alone matches the description given for BPSK above.
-
-The binary data that is conveyed by this waveform is: 11000110.
-* The odd bits, highlighted here, contribute to the in-phase component: 1010
-* The even bits, highlighted here, contribute to the quadrature-phase component: 1001
-
-Variants
-
-Offset QPSK (OQPSK)
-
-Offset quadrature phase-shift keying (OQPSK) is a variant of phase-shift keying modulation using four different values of the phase to transmit.  It is sometimes called staggered quadrature phase-shift keying (SQPSK).
-
-Taking four values of the phase (two bits) at a time to construct a QPSK symbol can allow the phase of the signal to jump by as much as 180° at a time. When the signal is low-pass filtered (as is typical in a transmitter), these phase-shifts result in large amplitude fluctuations, an undesirable quality in communication systems. By offsetting the timing of the odd and even bits by one bit-period, or half a symbol-period, the in-phase and quadrature components will never change at the same time. In the constellation diagram shown on the right, it can be seen that this will limit the phase-shift to no more than 90° at a time. This yields much lower amplitude fluctuations than non-offset QPSK and is sometimes preferred in practice.
-
-The picture on the right shows the difference in the behavior of the phase between ordinary QPSK and OQPSK. It can be seen that in the first plot the phase can change by 180° at once, while in OQPSK the changes are never greater than 90°.
-
-The modulated signal is shown below for a short segment of a random binary data-stream. Note the half symbol-period offset between the two component waves. The sudden phase-shifts occur about twice as often as for QPSK (since the signals no longer change together), but they are less severe. In other words, the magnitude of jumps is smaller in OQPSK when compared to QPSK.
-
-SOQPSK
-
-The license-free shaped-offset QPSK (SOQPSK) is interoperable with Feher-patented QPSK (FQPSK), in the sense that an integrate-and-dump offset QPSK detector produces the same output no matter which kind of transmitter is used.
-Tom Nelson, Erik Perrins, and Michael Rice.
-[http://people.eecs.ku.edu/~esp/publications/c2005ItcCommon.pdf "Common detectors for Tier 1 modulations"] .
-
-T. Nelson, E. Perrins, M. Rice.
-[https://www.researchgate.net/publication/4213516_Common_detectors_for_shaped_offset_QPSK_(SOQPSK)_and_Feher-patented_QPSK_(FQPSK) "Common detectors for shaped offset QPSK (SOQPSK) and Feher-patented QPSK (FQPSK)"]
-
-These modulations carefully shape the I and Q waveforms such that they change very smoothly, and the signal stays constant-amplitude even during signal transitions. (Rather than traveling instantly from one symbol to another, or even linearly, it travels smoothly around the constant-amplitude circle from one symbol to the next.) SOQPSK modulation can be represented as the hybrid of QPSK and MSK: SOQPSK has the same signal constellation as QPSK, however the phase of SOQPSK is always stationary.Hill, Terrance J. "A non-proprietary, constant envelope, variant of shaped offset QPSK (SOQPSK) for improved spectral containment and detection efficiency." MILCOM 2000. 21st Century Military Communications Conference Proceedings. Vol. 1. IEEE, 2000.Li, Lifang, and M. K. Simon. [https://web.archive.org/web/20200725125818/https://pdfs.semanticscholar.org/f025/2fa31444fad6a5090527d73f87352137c9b8.pdf "Performance of coded offset quadrature phase-shift keying (OQPSK) and MIL-STD shaped OQPSK (SOQPSK) with iterative decoding."] Interplanetary Network Prog. Rep. 42 (2004).
-
-The standard description of SOQPSK-TG involves ternary symbols.Sahin, C. and Perrins, E., 2011, November. The capacity of SOQPSK-TG. In 2011-MILCOM 2011 Military Communications Conference (pp. 555-560). IEEE. SOQPSK is one of the most spread modulation schemes in application to LEO satellite communications.Saeed, N., Elzanaty, A., Almorad, H., Dahrouj, H., Al-Naffouri, T.Y. and Alouini, M.S., 2020. [https://arxiv.org/pdf/1908.09501.pdf Cubesat communications: Recent advances and future challenges.] IEEE Communications Surveys & Tutorials.
-
-π/4-QPSK
-
-This variant of QPSK uses two identical constellations which are rotated by 45° (\pi/4 radians, hence the name) with respect to one another. Usually, either the even or odd symbols are used to select points from one of the constellations and the other symbols select points from the other constellation. This also reduces the phase-shifts from a maximum of 180°, but only to a maximum of 135° and so the amplitude fluctuations of \pi/4-QPSK are between OQPSK and non-offset QPSK.
-
-One property this modulation scheme possesses is that if the modulated signal is represented in the complex domain, transitions between symbols never pass through 0. In other words, the signal does not pass through the origin. This lowers the dynamical range of fluctuations in the signal which is desirable when engineering communications signals.
-
-On the other hand, \pi/4-QPSK lends itself to easy demodulation and has been adopted for use in, for example, TDMA cellular telephone systems.
-
-The modulated signal is shown below for a short segment of a random binary data-stream. The construction is the same as above for ordinary QPSK. Successive symbols are taken from the two constellations shown in the diagram. Thus, the first symbol (1 1) is taken from the "blue" constellation and the second symbol (0 0) is taken from the "green" constellation. Note that magnitudes of the two component waves change as they switch between constellations, but the total signal's magnitude remains constant (constant envelope). The phase-shifts are between those of the two previous timing-diagrams.
-
-DPQPSK
-
-Dual-polarization quadrature phase shift keying (DPQPSK) or dual-polarization QPSK - involves the polarization multiplexing of two different QPSK signals, thus improving the spectral efficiency by a factor of 2. This is a cost-effective alternative to utilizing 16-PSK, instead of QPSK to double the spectral efficiency.j
-
-Higher-order PSK
-
-Any number of phases may be used to construct a PSK constellation but 8-PSK is usually the highest order PSK constellation deployed. With more than 8 phases, the error-rate becomes too high and there are better, though more complex, modulations available such as quadrature amplitude modulation (QAM). Although any number of phases may be used, the fact that the constellation must usually deal with binary data means that the number of symbols is usually a power of 2 to allow an integer number of bits per symbol.
-
-Bit error rate
-
-For the general M-PSK there is no simple expression for the symbol-error probability if M > 4. Unfortunately, it can only be obtained from
-
-P_s = 1 - \int_{-\pi/M}^{\pi/M} p_{\theta_r}\left(\theta_r\right)d\theta_r,
-
-where
-
-\begin{align}
-  p_{\theta_r} \left(\theta_r\right) &= \frac{1}{2\pi} e^{-2\gamma_s\sin^2\theta_r} \int_0^\infty V e^{-\frac{1}{2}\left(V - 2\sqrt{\gamma_s}\cos\theta_r\right)^2}\,dV,\\
-                                   V &= \sqrt{r_1^2 + r_2^2},\\
-                            \theta_r &= \tan^{-1}\left(\frac{r_2}{r_1}\right),\\
-                            \gamma_s &= \frac{E_s}{N_0}
-\end{align}
-and r_1 \sim N\left(\sqrt{E_s}, \frac{1}{2}N_0\right) and r_2 \sim N\left(0, \frac{1}{2} N_0\right) are each Gaussian random variables.
-
-This may be approximated for high M and high E_b/N_0 by:
-
-P_s \approx 2Q\left(\sqrt{2\gamma_s}\sin\frac{\pi}{M}\right). 
-
-The bit-error probability for M-PSK can only be determined exactly once the bit-mapping is known. However, when Gray coding is used, the most probable error from one symbol to the next produces only a single bit-error and
-
-P_b \approx \frac{1}{k} P_s. 
-
-(Using Gray coding allows us to approximate the Lee distance of the errors as the Hamming distance of the errors in the decoded bitstream, which is easier to implement in hardware.)
-
-The graph on the right compares the bit-error rates of BPSK, QPSK (which are the same, as noted above), 8-PSK and 16-PSK. It is seen that higher-order modulations exhibit higher error-rates; in exchange however they deliver a higher raw data-rate.
-
-Bounds on the error rates of various digital modulation schemes can be computed with application of the union bound to the signal constellation.
-
-Spectral efficiency
-
-Bandwidth (or spectral) efficiency of M-PSK modulation schemes increases with increasing of modulation order M (unlike, for example, M-FSK):Haykin, S., 2001. Communication Systems, John Wiley&Sons. Inc. - p. 368
-
-\rho = \frac{\log_2M}{2} \quad [(\text{bits}/\text{s}) / \text{Hz}]
-
-The same relationship holds true for M-QAM.[https://www.atlantarf.com/PSK_QAM.php Link Budget Analysis: Digital Modulation, Part 3 (www.AtlantaRF.com)]
-
-Differential phase-shift keying (DPSK)
-
-Differential encoding
-
-Differential phase shift keying (DPSK) is a common form of phase modulation that conveys data by changing the phase of the carrier wave. As mentioned for BPSK and QPSK there is an ambiguity of phase if the constellation is rotated by some effect in the communications channel through which the signal passes. This problem can be overcome by using the data to change rather than set the phase.
-
-For example, in differentially encoded BPSK a binary "1" may be transmitted by adding 180° to the current phase and a binary "0" by adding 0° to the current phase. 
-Another variant of DPSK is Symmetric Differential Phase Shift keying, SDPSK, where encoding would be +90° for a "1" and −90° for a "0".
-
-In differentially encoded QPSK (DQPSK), the phase-shifts are 0°, 90°, 180°, −90° corresponding to data "00", "01", "11", "10". This kind of encoding may be demodulated in the same way as for non-differential PSK but the phase ambiguities can be ignored. Thus, each received symbol is demodulated to one of the M points in the constellation and a comparator then computes the difference in phase between this received signal and the preceding one. The difference encodes the data as described above. Symmetric differential quadrature phase shift keying (SDQPSK) is like DQPSK, but encoding is symmetric, using phase shift values of −135°, −45°, +45° and +135°.
-
-The modulated signal is shown below for both DBPSK and DQPSK as described above. In the figure, it is assumed that the signal starts with zero phase, and so there is a phase shift in both signals at t = 0.
-
-Analysis shows that differential encoding approximately doubles the error rate compared to ordinary M-PSK but this may be overcome by only a small increase in E_b/N_0. Furthermore, this analysis (and the graphical results below) are based on a system in which the only corruption is additive white Gaussian noise (AWGN). However, there will also be a physical channel between the transmitter and receiver in the communication system. This channel will, in general, introduce an unknown phase-shift to the PSK signal; in these cases the differential schemes can yield a better error-rate than the ordinary schemes which rely on precise phase information.
-
-One of the most popular applications of DPSK is the Bluetooth standard where \pi/4-DQPSK and 8-DPSK were implemented.
-
-Demodulation
-
-For a signal that has been differentially encoded, there is an obvious alternative method of demodulation. Instead of demodulating as usual and ignoring carrier-phase ambiguity, the phase between two successive received symbols is compared and used to determine what the data must have been. When differential encoding is used in this manner, the scheme is known as differential phase-shift keying (DPSK). Note that this is subtly different from just differentially encoded PSK since, upon reception, the received symbols are not decoded one-by-one to constellation points but are instead compared directly to one another.
-
-Call the received symbol in the kth timeslot r_k and let it have phase \phi_k. Assume without loss of generality that the phase of the carrier wave is zero. Denote the additive white Gaussian noise (AWGN) term as n_k. Then
-
-r_k = \sqrt{E_s}e^{j\phi_k} + n_k.
-
-The decision variable for the k-1th symbol and the kth symbol is the phase difference between r_k and r_{k-1}. That is, if r_k is projected onto r_{k-1}, the decision is taken on the phase of the resultant complex number:
-
-r_kr_{k-1}^* = E_se^{j\left(\varphi_k - \varphi_{k-1}\right)} + \sqrt{E_s}e^{j\varphi_k}n_{k-1}^* + \sqrt{E_s}e^{-j\varphi_{k-1}}n_k + n_kn_{k-1}^*
-
-where superscript * denotes complex conjugation. In the absence of noise, the phase of this is \phi_{k}-\phi_{k-1}, the phase-shift between the two received signals which can be used to determine the data transmitted.
-
-The probability of error for DPSK is difficult to calculate in general, but, in the case of DBPSK it is:
-
-P_b = \frac{1}{2}e^{-\frac{E_b}{N_0}},G.L. Stüber, “Soft Decision Direct-Sequence DPSK Receivers,” IEEE Transactions on Vehicular Technology, vol. 37, no. 3, pp. 151–157, August 1988.
-
-which, when numerically evaluated, is only slightly worse than ordinary BPSK, particularly at higher E_b/N_0 values.
-
-Using DPSK avoids the need for possibly complex carrier-recovery schemes to provide an accurate phase estimate and can be an attractive alternative to ordinary PSK.
-
-In optical communications, the data can be modulated onto the phase of a laser in a differential way. The modulation is a laser which emits a continuous wave, and a Mach–Zehnder modulator which receives electrical binary data. For the case of BPSK, the laser transmits the field unchanged for binary '1', and with reverse polarity for '0'. The demodulator consists of a delay line interferometer which delays one bit, so two bits can be compared at one time. In further processing, a photodiode is used to transform the optical field into an electric current, so the information is changed back into its original state.
-
-The bit-error rates of DBPSK and DQPSK are compared to their non-differential counterparts in the graph to the right. The loss for using DBPSK is small enough compared to the complexity reduction that it is often used in communications systems that would otherwise use BPSK. For DQPSK though, the loss in performance compared to ordinary QPSK is larger and the system designer must balance this against the reduction in complexity.
-
-Example: Differentially encoded BPSK
-
-At the k^{\textrm{th}} time-slot call the bit to be modulated b_k, the differentially encoded bit e_k and the resulting modulated signal m_k(t). Assume that the constellation diagram positions the symbols at ±1 (which is BPSK). The differential encoder produces:
-
-\,e_k = e_{k-1} \oplus b_k
-
-where \oplus{} indicates binary or modulo-2 addition.
-
-So e_k only changes state (from binary "0" to binary "1" or from binary "1" to binary "0") if b_k is a binary "1". Otherwise it remains in its previous state. This is the description of differentially encoded BPSK given above.
-
-The received signal is demodulated to yield e_k = \pm 1 and then the differential decoder reverses the encoding procedure and produces
-
-b_k = e_k \oplus e_{k-1},
-
-since binary subtraction is the same as binary addition.
-
-Therefore, b_k1 if e_k and e_{k-1} differ and b_k
-0 if they are the same. Hence, if both e_k and e_{k-1} are inverted, b_k will still be decoded correctly. Thus, the 180° phase ambiguity does not matter.
-
-Differential schemes for other PSK modulations may be devised along similar lines. The waveforms for DPSK are the same as for differentially encoded PSK given above since the only change between the two schemes is at the receiver.
-
-The BER curve for this example is compared to ordinary BPSK on the right. As mentioned above, whilst the error rate is approximately doubled, the increase needed in E_b/N_0 to overcome this is small.  The increase in E_b/N_0 required to overcome differential modulation in coded systems, however, is larger typically about 3 dB. The performance degradation is a result of noncoherent transmission in this case it refers to the fact that tracking of the phase is completely ignored.
+The Sprague–Grundy theorem and its proof encapsulate the main results of a theory discovered independently by R. P. Sprague (1936) and P. M. Grundy (1939). Reprinted, 1964, 27: 9–11.
 
 Definitions
 
-For determining error-rates mathematically, some definitions will be needed:
+For the purposes of the Sprague–Grundy theorem, a game is a two-player sequential game of perfect information satisfying the ending condition (all games come to an end: there are no infinite lines of play) and the normal play condition (a player who cannot move loses).
 
-* E_b,            energy per bit
-* E_s = nE_b,     energy per symbol with n bits
-* T_b,            bit duration
-* T_s,            symbol duration
-* \frac{1}{2}N_0, noise power spectral density (W/Hz)
-* P_b,            probability of bit-error
-* P_s,            probability of symbol-error
+At any given point in the game, a player's position is the set of moves they are allowed to make.  As an example, we can define the zero game to be the two-player game where neither player has any legal moves.  Referring to the two players as A (for Alice) and B (for Bob), we would denote their positions as (A, B) = (\{\}, \{\}), since the set of moves each player can make is empty.
 
-Q(x) will give the probability that a single sample taken from a random process with zero-mean and unit-variance Gaussian probability density function will be greater or equal to x. It is a scaled form of the complementary Gaussian error function:
+An impartial game is one in which at any given point in the game, each player is allowed exactly the same set of moves. Normal-play nim is an example of an impartial game. In nim, there are one or more heaps of objects, and two players (we'll call them Alice and Bob), take turns choosing a heap and removing 1 or more objects from it. The winner is the player who removes the final object from the final heap.  The game is impartial because for any given configuration of pile sizes, the moves Alice can make on her turn are exactly the same moves Bob would be allowed to make if it were his turn.  In contrast, a game such as checkers is not impartial because, supposing Alice were playing red and Bob were playing black, for any given arrangement of pieces on the board, if it were Alice's turn, she would only be allowed to move the red pieces, and if it were Bob's turn, he would only be allowed to move the black pieces.
 
-Q(x) \frac{1}{\sqrt{2\pi}}\int_x^\infty e^{-\frac{1}{2}t^2} \,dt 
- \frac{1}{2} \operatorname{erfc}\left(\frac{x}{\sqrt{2}}\right),\ x \geq 0.
+Note that any configuration of an impartial game can therefore be written as a single position, because the moves will be the same no matter whose turn it is. For example, the position of the zero game can simply be written \{\}, because if it's Alice's turn, she has no moves to make, and if it's Bob's turn, he has no moves to make either.
+A move can be associated with the position it leaves the next player in. 
 
-The error rates quoted here are those in additive white Gaussian noise (AWGN). These error rates are lower than those computed in fading channels, hence, are a good theoretical benchmark to compare with.
+Doing so allows positions to be defined recursively.  For example, consider the following game of Nim played by Alice and Bob.
 
-Applications
+Example Nim Game 
 
-Owing to PSK's simplicity, particularly when compared with its competitor quadrature amplitude modulation, it is widely used in existing technologies.
+* At step 6 of the game (when all of the heaps are empty) the position is \{\}, because Bob has no valid moves to make.  We name this position *0. 
+* At step 5, Alice had exactly one option: to remove one object from heap C, leaving Bob with no moves.  Since her move leaves Bob in position *0, her position is written \{ *0 \}.  We name this position *1.
+* At step 4, Bob had two options: remove one from B or remove one from C.  Note, however, that it didn't really matter which heap Bob removed the object from: Either way, Alice would be left with exactly one object in exactly one pile. So, using our recursive definition, Bob really only has one move: *1.   Thus, Bob's position is \{*1\}.
+* At step 3, Alice had 3 options: remove two from C, remove one from C, or remove one from B.  Removing two from C leaves Bob in position *1.  Removing one from C leaves Bob with two piles, each of size one, i.e., position \{*1\}, as described in step 4. However, removing 1 from B would leave Bob with two objects in a single pile. His moves would then be *0 and  *1, so her move would result in the position \{*0, *1\}.  We call this position *2.  Alice's position is then the set of all her moves: \big\{*1, \{*1\}, *2\big\}.
+* Following the same recursive logic, at step 2, Bob's position is \big\{ \{*1, \{*1\}, *2\}, *2\big\}.
+* Finally, at step 1, Alice's position is \Big\{
+    \big\{*1, \{*1\}, *2\big\},
+    \big\{*2, \{*1, \{*1\},*2\} \big\},
+    \big\{\{*1\}, \{\{*1\}\}, \{*1, \{*1\}, *2\}\big\}
+\Big\}.
 
-The wireless LAN standard, IEEE 802.11b-1999,[http://standards.ieee.org/getieee802/download/802.11-1999.pdf IEEE Std 802.11-1999: Wireless LAN Medium Access Control (MAC) and Physical Layer (PHY) Specifications] the overarching IEEE 802.11 specification. [http://standards.ieee.org/getieee802/download/802.11b-1999.pdf IEEE Std 802.11b-1999 (R2003)] the IEEE 802.11b specification. uses a variety of different PSKs depending on the data rate required. At the basic rate of 1Mbit/s, it uses DBPSK (differential BPSK). To provide the extended rate of 2Mbit/s, DQPSK is used. In reaching 5.5Mbit/s and the full rate of 11Mbit/s, QPSK is employed, but has to be coupled with complementary code keying. The higher-speed wireless LAN standard, IEEE 802.11g-2003,[http://standards.ieee.org/getieee802/download/802.11g-2003.pdf IEEE Std 802.11g-2003] the IEEE 802.11g specification. has eight data rates: 6, 9, 12, 18, 24, 36, 48 and 54Mbit/s. The 6 and 9Mbit/s modes use OFDM modulation where each sub-carrier is BPSK modulated. The 12 and 18Mbit/s modes use OFDM with QPSK. The fastest four modes use OFDM with forms of quadrature amplitude modulation.
+Nimbers
 
-Because of its simplicity, BPSK is appropriate for low-cost passive transmitters, and is used in RFID standards such as ISO/IEC 14443 which has been adopted for biometric passports, credit cards such as American Express's ExpressPay, and many other applications.[http://www.atmel.com/dyn/resources/prod_documents/doc2056.pdf Understanding the Requirements of ISO/IEC 14443 for Type B Proximity Contactless Identification Cards], Application Note, Rev. 2056B–RFID–11/05, 2005, ATMEL.
+The special names *0, *1, and *2 referenced in our example game are called nimbers.  In general, the nimber *n corresponds to the position in a game of nim where there are exactly n objects in exactly one heap.  
+Formally, nimbers are defined inductively as follows:  *0 is \{\}, *1 \{*0\}, *2 
+ \{*0, *1\} and  for all n \geq 0, *(n+1) = *n \cup \{*n\}.
 
-Bluetooth 2 uses \pi/4-DQPSK at its lower rate (2Mbit/s) and 8-DPSK at its higher rate (3Mbit/s) when the link between the two devices is sufficiently robust. Bluetooth 1 modulates with Gaussian minimum-shift keying, a binary scheme, so either modulation choice in version 2 will yield a higher data-rate. A similar technology, IEEE 802.15.4 (the wireless standard used by ZigBee) also relies on PSK using two frequency bands: 868–915MHz with BPSK and at 2.4GHz with OQPSK.
+While the word nimber comes from the game nim, nimbers can be used to describe the positions of any finite, impartial game, and in fact, the Sprague–Grundy theorem states that every  instance of a finite, impartial game can be associated with a single nimber.
 
-Both QPSK and 8PSK are widely used in satellite broadcasting. QPSK is still widely used in the streaming of SD satellite channels and some HD channels. High definition programming is delivered almost exclusively in 8PSK due to the higher bitrates of HD video and the high cost of satellite bandwidth. The DVB-S2 standard requires support for both QPSK and 8PSK. The chipsets used in new satellite set top boxes, such as Broadcom's 7000 series support 8PSK and are backward compatible with the older standard.
+Combining Games
 
-Historically, voice-band synchronous modems such as the Bell 201, 208, and 209 and the CCITT V.26, V.27, V.29, V.32, and V.34 used PSK.
+Two games can be combined by adding their positions together.
+For example, consider another game of nim with heaps A', B', and C'.
 
-Mutual information with additive white Gaussian noise
+Example Game 2
 
-The mutual information of PSK can be evaluated in additive Gaussian noise by numerical integration of its definition. The curves of mutual information saturate to the number of bits carried by each symbol in the limit of infinite signal to noise ratio E_s/N_0. On the contrary, in the limit of small signal to noise ratios the mutual information approaches the AWGN channel capacity, which is the supremum among all possible choices of symbol statistical distributions.
+We can combine it with our first example to get a combined game with six heaps: A, B, C, A', B', and C':
 
-At intermediate values of signal to noise ratios the mutual information (MI) is well approximated by:
+Combined Game
 
-\textrm{MI} \simeq \log_2\left(\sqrt{\frac{4\pi}{e}\frac{E_s}{N_0}}\right).
+To differentiate between the two games, for the first example game, we'll label its starting position \color{blue}S, and color it blue:
+\color{blue}S 
+ \Big\{
+    \big\{*1, \{*1\}, *2\big\},
+    \big\{*2, \{*1, \{*1\},*2\} \big\},
+    \big\{\{*1\}, \{\{*1\}\}, \{*1, \{*1\}, *2\}\big\}
+\Big\}
 
-The mutual information of PSK over the AWGN channel is generally farther to the AWGN channel capacity than QAM modulation formats.
+For the second example game, we'll label the starting position \color{red}S' and color it red:
+
+\color{red}S' = \Big\{\{*1\}\Big\}.
+
+To compute the starting position of the combined game, remember that a player can either make a move in the first game, leaving the second game untouched, or make a move in the second game, leaving the first game untouched.  So the combined game's starting position is:
+
+\color{blue}S \color{black} + \color{red}S' \color{black}= 
+\Big\{
+    \color{blue}S\color{black} + \color{red} \{*1\} \color{black}
+\Big\} \cup \Big\{
+     \color{red}S'\color{black} + \color{blue}\{*1, \{*1\}, *2\} \color{black}, 
+     \color{red}S'\color{black} + \color{blue} \{*2, \{*1, \{*1\},*2\} \} \color{black},
+     \color{red}S'\color{black} + \color{blue} \{\{*1\}, \{\{*1\}\}, \{*1, \{*1\}, *2\}\} \color{black}
+\Big\}
+
+The explicit formula for adding positions is: S+S'=\{S+s'\mid s'\in S'\}\cup\{s+S'\mid s\in S\}, which means that addition is both commutative and associative.
+
+Equivalence
+ 
+Positions in impartial games fall into two outcome classes: either the next player (the one whose turn it is) wins (an \boldsymbol{\mathcal{N}}- position), or the previous player wins (a \boldsymbol{\mathcal{P}}- position).  So, for example, *0 is a \mathcal{P}-position, while *1 is an \mathcal{N}-position.
+
+Two positions G and G' are equivalent if, no matter what position H is added to them, they are always in the same outcome class.  
+Formally,
+G \approx G'  if and only if \forall H , G + H is in the same outcome class as G' + H.
+
+To use our running examples, notice that in both the first and second games above, we can show that on every turn, Alice has a move that forces Bob into a \mathcal{P}-position. Thus, both \color{blue}S and  \color{red}S' are \mathcal{N}-positions.  (Notice that in the combined game, Bob is the player with the \mathcal{N}-positions. In fact, \color{blue}S \color{black} + \color{red}S'  is a \mathcal{P}-position, which as we will see in Lemma 2, means  \color{blue} S \color{black} \approx \color{red} S'.)
+
+First Lemma
+
+As an intermediate step to proving the main theorem, we show that for every position G and every \mathcal{P}-position A, the equivalence G\approx A+G holds.  By the above definition of equivalence, this amounts to showing that G+H and A+G+H share an outcome class for all H.
+
+Suppose that G+H is a \mathcal{P}-position.  Then the previous player has a winning strategy for A+G+H: respond to moves in A according to their winning strategy for A (which exists by virtue of A being a \mathcal{P}-position), and respond to moves in G+H according to their winning strategy for G+H (which exists for the analogous reason).  So A+G+H must also be a \mathcal{P}-position.
+
+On the other hand, if G+H is an \mathcal{N}-position, then A+G+H is also an \mathcal{N}-position, because the next player has a winning strategy: choose a \mathcal{P}-position from among the G+H options, and we conclude from the previous paragraph that adding A to that position is still a \mathcal{P}-position.  Thus, in this case, A+G+H must be a \mathcal{N}-position, just like G+H.
+
+As these are the only two cases, the lemma holds.
+
+Second Lemma
+
+As a further step, we show that G\approx G' if and only if G+G' is a \mathcal{P}-position.
+
+In the forward direction, suppose that G\approx G'.  Applying the definition of equivalence with H=G, we find that G'+G (which is equal to G+G' by commutativity of addition) is in the same outcome class as G+G.  But G+G must be a \mathcal{P}-position: for every move made in one copy of G, the previous player can respond with the same move in the other copy, and so always make the last move.
+
+In the reverse direction, since AG+G' is a \mathcal{P}-position by hypothesis, it follows from the first lemma, G\approx G+A, that G\approx G+(G+G').   Similarly, since B
+G+G is also a \mathcal{P}-position, it follows from the first lemma in the form  G'\approx G'+B that G'\approx G'+(G+G).  By associativity and commutativity, the right-hand sides of these results are equal.  Furthermore, \approx is an equivalence relation because equality is an equivalence relation on outcome classes.  Via the transitivity of \approx, we can conclude that G\approx G'.
+
+Proof
+
+We prove that all positions are equivalent to a nimber by structural induction.  The more specific result, that the given game's initial position must be equivalent to a nimber, shows that the game is itself equivalent to a nimber.
+
+Consider a position G \{G_1, G_2, \ldots, G_k\}. By the induction hypothesis, all of the options are equivalent to nimbers, say G_i \approx *n_i. So let G'
+\{*n_1, *n_2, \ldots, *n_k\}.  We will show that G \approx *m, where m is the mex (minimum exclusion) of the numbers n_1, n_2, \ldots, n_k, that is, the smallest non-negative integer not equal to some n_i.
+
+The first thing we need to note is that G \approx G', by way of the second lemma. If k is zero, the claim is trivially true.  Otherwise, consider G+G'. If the next player makes a move to G_i in G, then the previous player can move to *n_i in G', and conversely if the next player makes a move in G'. After this, the position is a \mathcal{P}-position by the lemma's forward implication. Therefore, G+G' is a \mathcal{P}-position, and, citing the lemma's reverse implication, G \approx G'.
+
+Now let us show that G'+*m is a \mathcal{P}-position, which, using the second lemma once again, means that G'\approx *m. We do so by giving an explicit strategy for the previous player.
+
+Suppose that G' and *m are empty.  Then G'+*m is the null set, clearly a \mathcal{P}-position.
+
+Or consider the case that the next player moves in the component *m to the option *m' where m'. Because m was the minimum excluded number, the previous player can move in G' to *m'.  And, as shown before, any position plus itself is a \mathcal{P}-position.
+
+Finally, suppose instead that the next player moves in the component G' to the option *n_i. If n_i  then the previous player moves in *m to *n_i; otherwise, if n_i > m, the previous player moves in *n_i to *m; in either case the result is a position plus itself. (It is not possible that n_i = m because m was defined to be different from all the n_i.)
+
+In summary, we have G\approx G' and G'\approx *m.  By transitivity, we conclude that G \approx *m, as desired.
+
+Development
+
+If G is a position of an impartial game, the unique integer m such that G \approx *m is called its Grundy value, or Grundy number, and the function that assigns this value to each such position is called the Sprague–Grundy function.  R. L. Sprague and P. M. Grundy independently gave an explicit definition of this function, not based on any concept of equivalence to nim positions, and showed that it had the following properties:
+*The Grundy value of a single nim pile of size m (i.e. of the position *m) is m;
+* A position is a loss for the next player to move (i.e. a \mathcal{P}-position) if and only if its Grundy value is zero; and
+*The Grundy value of the sum of a finite set of positions is just the nim-sum of the Grundy values of its summands.
+It follows straightforwardly from these results that if a position G has a Grundy value of m, then G + H has the same Grundy value as  *m + H, and therefore belongs to the same outcome class, for any position H.   Thus, although Sprague and Grundy never explicitly stated the theorem described in this article, it follows directly from their results and is credited to them.
+These results have subsequently been developed into the field of combinatorial game theory, notably by Richard Guy, Elwyn Berlekamp, John Horton Conway and others, where they are now encapsulated in the Sprague–Grundy theorem and its proof in the form described here. The field is presented in the books Winning Ways for your Mathematical Plays and On Numbers and Games.
 
 See also
 
-* Binary offset carrier modulation
-* Differential coding
-* Modulation for an overview of all modulation schemes
-* Phase modulation (PM) the analogue equivalent of PSK
-* Polar modulation
-* PSK31
-* PSK63
-
-Notes
-
- 
+*Genus theory
+*Indistinguishability quotient
 
 References
 
-The notation and theoretical results in this article are based on material presented in the following sources:
+External links
 
-*
-*
-*"��{{short description|Type of data encoding}}
-{{Multiple issues|
-{{Manual|date=October 2022}}
-{{Technical|date=October 2022}}
-{{More footnotes|date=October 2022}}
+* [http://www.cut-the-knot.org/Curriculum/Games/Grundy.shtml Grundy's game] at cut-the-knot
+* [https://www.math.ucla.edu/~tom/Game_Theory/comb.pdf Easily readable, introductory account from the UCLA Math Department]
+* [http://sputsoft.com/blog/2009/04/the-game-of-nim.html The Game of Nim] at [http://sputsoft.com sputsoft.com]
+*"�{{short description|Every impartial game position is equivalent to a position in the game of nim}}
+{{multiple issues|
+{{more footnotes|date=June 2014}}
+{{technical|date=June 2014}}
 }}
-{{Modulation techniques}}
-'''Phase-shift keying''' ('''PSK''') is a [[digital modulation]] process which conveys [[Data (computing)|data]] by changing (modulating) the [[Phase (waves)|phase]] of a constant [[frequency]] reference [[signal]] (the [[carrier wave]]). The modulation is accomplished by varying the [[sine wave|sine]] and [[cosine wave|cosine]] inputs at a precise time. It is widely used for [[wireless LAN]]s, [[RFID]] and [[Bluetooth]] communication.
 
-Any digital modulation scheme uses a finite number of distinct signals to represent digital data. PSK uses a finite number of phases, each assigned a unique pattern of [[bit|binary digit]]s. Usually, each phase encodes an equal number of bits. Each pattern of bits forms the [[symbol rate|symbol]] that is represented by the particular phase. The [[demodulator]], which is designed specifically for the symbol-set used by the modulator, determines the phase of the received signal and maps it back to the symbol it represents, thus recovering the original data. This requires the receiver to be able to compare the phase of the received signal to a reference signal{{snd}} such a system is termed coherent (and referred to as CPSK).
+In [[combinatorial game theory]], the '''Sprague&ndash;Grundy theorem''' states that every [[impartial game]] under the [[normal play convention]] is equivalent to a one-heap game of [[nim]], or to an infinite generalization of nim. It can therefore be represented as a [[natural number]], the size of the heap in its equivalent game of nim, as an [[ordinal number]] in the infinite generalization, or alternatively as a [[nimber]], the value of that one-heap game in an algebraic system whose addition operation combines multiple heaps to form a single equivalent heap in nim.
 
-CPSK requires a complicated demodulator, because it must extract the reference wave from the received signal and keep track of it, to compare each sample to.  Alternatively, the phase shift of each symbol sent can be measured with respect to the phase of the previous symbol sent.  Because the symbols are encoded in the difference in phase between successive samples, this is called '''differential phase-shift keying (DPSK)'''.  DPSK can be significantly simpler to implement than ordinary PSK, as it is a 'non-coherent' scheme, i.e. there is no need for the demodulator to keep track of a reference wave.   A trade-off is that it has more demodulation errors.
+The '''Grundy value''' or '''nim-value''' of any impartial game is the unique nimber that the game is equivalent to.  In the case of a game whose positions are indexed by the natural numbers (like nim itself, which is indexed by its heap sizes), the sequence of nimbers for successive positions of the game is called the '''nim-sequence''' of the game.
 
-{{Further|Very minimum shift keying}}
+The Sprague–Grundy theorem and its proof encapsulate the main results of a theory discovered independently by [[Roland Sprague|R. P. Sprague]] (1936)<ref name = "SpraguePaper">{{cite journal
+ | last = Sprague | first = R. P. | author-link = Roland Sprague
+ | title = Über mathematische Kampfspiele
+ | url = http://www.jstage.jst.go.jp/article/tmj1911/41/0/41_0_438/_article
+ | journal = [[Tohoku Mathematical Journal]]
+ | language = de
+ | year = 1936
+ | volume = 41
+ | pages = 438–444
+ | zbl = 0013.29004 | jfm = 62.1070.03}}</ref> and [[Patrick Michael Grundy|P. M. Grundy]] (1939).<ref name = "GrundyPaper">{{cite journal
+ | last = Grundy | first = P. M. | author-link = Patrick Michael Grundy
+ | title = Mathematics and games
+ | journal = [[Eureka (University of Cambridge magazine)|Eureka]]
+ | url = http://www.archim.org.uk/eureka/27/games.html 
+  | year = 1939
+ | volume = 2
+ | pages = 6–8 |archive-url = https://web.archive.org/web/20070927192024/http://www.archim.org.uk/eureka/27/games.html |archive-date = 2007-09-27}} Reprinted, 1964, '''27''': 9–11.</ref>
 
-==Introduction==
-There are three major classes of [[modulation#Digital modulation methods|digital modulation]] techniques used for transmission of [[Digital data|digital]]ly represented data:
+==Definitions==
+For the purposes of the Sprague&ndash;Grundy theorem, a '''''game''''' is a two-player [[sequential game]] of [[perfect information]] satisfying the ''ending condition'' (all games come to an end: there are no infinite lines of play) and the ''normal play condition'' (a player who cannot move loses).
 
-* [[Amplitude-shift keying]] (ASK)
-* [[Frequency-shift keying]] (FSK)
-* Phase-shift keying (PSK)
+At any given point in the game, a player's '''''position''''' is the set of '''''moves''''' they are allowed to make.  As an example, we can define the ''zero game'' to be the two-player game where neither player has any legal moves.  Referring to the two players as <math>A</math> (for Alice) and <math>B</math> (for Bob), we would denote their positions as <math>(A, B) = (\{\}, \{\})</math>, since the set of moves each player can make is empty.
 
-All convey data by changing some aspect of a base signal, the [[carrier wave]] (usually a [[Sine wave|sinusoid]]), in response to a data signal. In the case of PSK, the phase is changed to represent the data signal. There are two fundamental ways of utilizing the phase of a signal in this way:
+An '''''[[impartial game]]''''' is one in which at any given point in the game, each player is allowed exactly the same set of moves. Normal-play [[nim]] is an example of an impartial game. In nim, there are one or more heaps of objects, and two players (we'll call them Alice and Bob), take turns choosing a heap and removing 1 or more objects from it. The winner is the player who removes the final object from the final heap.  The game is '''''impartial''''' because for any given configuration of pile sizes, the moves Alice can make on her turn are exactly the same moves Bob would be allowed to make if it were his turn.  In contrast, a game such as [[checkers]] is not impartial because, supposing Alice were playing red and Bob were playing black, for any given arrangement of pieces on the board, if it were Alice's turn, she would only be allowed to move the red pieces, and if it were Bob's turn, he would only be allowed to move the black pieces.
 
-* By viewing the [[Phase (waves)|phase]] itself as conveying the information, in which case the [[demodulator]] must have a reference signal to compare the received signal's phase against; or
-* By viewing the ''change'' in the phase as conveying information{{snd}} [[#Differential encoding|''differential'']] schemes, [[#Differential phase-shift keying .28DPSK.29|some]] of which do not need a reference carrier (to a certain extent).
+Note that any configuration of an impartial game can therefore be written as a single position, because the moves will be the same no matter whose turn it is. For example, the position of the ''zero game'' can simply be written <math>\{\}</math>, because if it's Alice's turn, she has no moves to make, and if it's Bob's turn, he has no moves to make either.
+A move can be associated with the position it leaves the next player in. 
 
-A convenient method to represent PSK schemes is on a [[constellation diagram]]. This shows the points in the [[complex plane]] where, in this context, the [[real number|real]] and [[imaginary number|imaginary]] axes are termed the in-phase and quadrature axes respectively due to their 90° separation. Such a representation on perpendicular axes lends itself to straightforward implementation. The amplitude of each point along the in-phase axis is used to modulate a cosine (or sine) wave and the amplitude along the quadrature axis to modulate a sine (or cosine) wave.  By convention, in-phase modulates cosine and quadrature modulates sine.
+Doing so allows positions to be defined recursively.  For example, consider the following game of Nim played by Alice and Bob.
 
-In PSK, the [[constellation diagram|constellation points]] chosen are usually positioned with uniform [[angle|angular]] spacing around a [[circle]]. This gives maximum phase-separation between adjacent points and thus the best immunity to corruption. They are positioned on a circle so that they can all be transmitted with the same energy. In this way, the moduli of the complex numbers they represent will be the same and thus so will the amplitudes needed for the cosine and sine waves. Two common examples are "binary phase-shift keying" ([[#Binary phase-shift keying (BPSK)|BPSK]]) which uses two phases, and "quadrature phase-shift keying" ([[#Quadrature phase-shift keying (QPSK)|QPSK]]) which uses four phases, although any number of phases may be used. Since the data to be conveyed are usually binary, the PSK scheme is usually designed with the number of constellation points being a [[power (mathematics)|power]] of two.
+=== {{anchor|firstExample}}Example Nim Game ===
+{{Pre|
+ Sizes of heaps  Moves
+ A B C
+ &nbsp;
+ 1 2 2           Alice takes 1 from A
+ 0 2 2           Bob   takes 1 from B 
+ 0 1 2           Alice takes 1 from C 
+ 0 1 1           Bob   takes 1 from B 
+ 0 0 1           Alice takes 1 from C
+ 0 0 0           Bob   has no moves, so Alice wins
+}}
 
-==Binary phase-shift keying (BPSK)==
-{{Anchor|BPSK}}
-[[File:BPSK Gray Coded.svg|200px|right|thumb|[[Constellation diagram]] example for BPSK]]
+* At step 6 of the game (when all of the heaps are empty) the position is <math>\{\}</math>, because Bob has no valid moves to make.  We name this position <math>*0</math>. 
+* At step 5, Alice had exactly one option: to remove one object from heap C, leaving Bob with no moves.  Since her ''move'' leaves Bob in position <math>*0</math>, her ''position'' is written <math>\{ *0 \}</math>.  We name this position <math>*1</math>.
+* At step 4, Bob had two options: remove one from B or remove one from C.  Note, however, that it didn't really matter which heap Bob removed the object from: Either way, Alice would be left with exactly one object in exactly one pile. So, using our recursive definition, Bob really only has one move: <math>*1</math>.   Thus, Bob's position is <math>\{*1\}</math>.
+* At step 3, Alice had 3 options: remove two from C, remove one from C, or remove one from B.  Removing two from C leaves Bob in position <math>*1</math>.  Removing one from C leaves Bob with two piles, each of size one, i.e., position <math>\{*1\}</math>, as described in step 4. However, removing 1 from B would leave Bob with two objects in a single pile. ''His'' moves would then be <math>*0</math> and  <math>*1</math>, so ''her'' move would result in the position <math>\{*0, *1\}</math>.  We call this position <math>*2</math>.  Alice's position is then the set of all her moves: <math>\big\{*1, \{*1\}, *2\big\}</math>.
+* Following the same recursive logic, at step 2, Bob's position is <math display="block">\big\{ \{*1, \{*1\}, *2\}, *2\big\}.</math>
+* Finally, at step 1, Alice's position is <math display="block">\Big\{
+    \big\{*1, \{*1\}, *2\big\},
+    \big\{*2, \{*1, \{*1\},*2\} \big\},
+    \big\{\{*1\}, \{\{*1\}\}, \{*1, \{*1\}, *2\}\big\}
+\Big\}.</math>
 
-BPSK (also sometimes called PRK, phase reversal keying, or 2PSK) is the simplest form of phase shift keying (PSK). It uses two phases which are separated by 180° and so can also be termed 2-PSK. It does not particularly matter exactly where the constellation points are positioned, and in this figure they are shown on the real axis, at 0° and 180°. Therefore, it handles the highest noise level or distortion before the [[demodulator]] reaches an incorrect decision. That makes it the most robust of all the PSKs. It is, however, only able to modulate at 1{{nbsp}}bit/symbol (as seen in the figure) and so is unsuitable for high data-rate applications. Yet there is the possibility of extending this bit/symbol, given the modulators symbol encryption / decryption logic system. 
+===Nimbers===
+The special names <math>*0</math>, <math>*1</math>, and <math>*2</math> referenced in our example game are called '''''[[nimber]]s'''''.  In general, the nimber <math>*n</math> corresponds to the position in a game of nim where there are exactly <math>n</math> objects in exactly one heap.  
+Formally, nimbers are defined inductively as follows:  <math>*0</math> is <math>\{\}</math>, <math>*1 = \{*0\}</math>, <math>*2 = \{*0, *1\}</math> and  for all <math>n \geq 0</math>, <math>*(n+1) = *n \cup \{*n\}</math>.
 
-In the presence of an arbitrary phase-shift introduced by the [[communications channel]], the demodulator (see, e.g. [[Costas loop]])  is unable to tell which constellation point is which. As a result, the data is often [[#Differential encoding|differentially encoded]] prior to modulation.
+While the word ''nim''ber comes from the game ''nim'', nimbers can be used to describe the positions of any finite, impartial game, and in fact, the Sprague&ndash;Grundy theorem states that every  instance of a finite, impartial game can be associated with a ''single'' nimber.
 
-BPSK is functionally equivalent to [[Quadrature amplitude modulation|2-QAM]] modulation.
+===Combining Games===
+Two games can be combined by '''''adding''''' their positions together.
+For example, consider another game of nim with heaps <math>A'</math>, <math>B'</math>, and <math>C'</math>.
 
-===Implementation===
-The general form for BPSK follows the equation:
+===={{anchor|secondExample}}Example Game 2====
+{{Pre|
+Sizes of heaps    Moves
+&nbsp;
+A' B' C'
+1  1  1           Alice takes 1 from A'
+0  1  1           Bob takes one from B'
+0  0  1           Alice takes one from C'
+0  0  0           Bob has no moves, so Alice wins.
+}}
 
-:<math>s_n(t) =   \sqrt{\frac{2E_b}{T_b}} \cos(2 \pi f t + \pi(1-n )),\quad n = 0,1. </math>
+We can combine it with our [[#firstExample|first example]] to get a combined game with six heaps: <math>A</math>, <math>B</math>, <math>C</math>, <math>A'</math>, <math>B'</math>, and <math>C'</math>:
 
-This yields two phases, 0 and π.
-In the specific form, [[binary data]] is often conveyed with the following signals:{{citation needed|date=June 2019}}
+===={{anchor|thirdExample}}Combined Game====
+{{Pre|
+ Sizes of heaps     Moves
+ A  B  C  A' B' C'  
+ &nbsp;
+ 1  2  2  1  1  1   Alice takes 1 from A
+ 0  2  2  1  1  1   Bob takes 1 from A'
+ 0  2  2  0  1  1   Alice takes 1 from B'
+ 0  2  2  0  0  1   Bob takes 1 from C'
+ 0  2  2  0  0  0   Alice takes 2 from B
+ 0  0  2  0  0  0   Bob takes 2 from C
+ 0  0  0  0  0  0   Alice has no moves, so Bob wins.
+}}
 
-:<math>s_0(t) =   \sqrt{\frac{2E_b}{T_b}} \cos(2 \pi f t + \pi )
-              = - \sqrt{\frac{2E_b}{T_b}} \cos(2 \pi f t)</math> for binary "0"
-:<math>s_1(t) = \sqrt{\frac{2E_b}{T_b}} \cos(2 \pi f t) </math> for binary "1"
+To differentiate between the two games, for the [[#firstExample|first example game]], we'll label its starting position <math>\color{blue}S</math>, and color it blue:
+<math display="block">\color{blue}S = \Big\{
+    \big\{*1, \{*1\}, *2\big\},
+    \big\{*2, \{*1, \{*1\},*2\} \big\},
+    \big\{\{*1\}, \{\{*1\}\}, \{*1, \{*1\}, *2\}\big\}
+\Big\}</math>
 
-where ''f'' is the frequency of the base band.
-
-Hence, the signal space can be represented by the single [[basis function]]
-
-:<math>\phi(t) = \sqrt{\frac{2}{T_b}} \cos(2 \pi f t) </math>
-
-where 1 is represented by <math>\sqrt{E_b} \phi(t)</math> and 0 is represented by <math>-\sqrt{E_b} \phi(t)</math>. This assignment is arbitrary.
-
-This use of this basis function is shown at the [[#timing|end of the next section]] in a signal timing diagram. The topmost signal is a BPSK-modulated cosine wave that the BPSK modulator would produce. The bit-stream that causes this output is shown above the signal (the other parts of this figure are relevant only to QPSK). After modulation, the base band signal will be moved to the high frequency band by multiplying <math> \cos(2 \pi f_c t)</math>.
-
-===Bit error rate===
-The [[bit error rate]] (BER) of BPSK under [[additive white Gaussian noise]] (AWGN) can be calculated as:<ref>Communications Systems, H. Stern & S. Mahmoud, Pearson Prentice Hall, 2004, p. 283.</ref>
-
-:<math>P_b = Q\left(\sqrt{\frac{2 E_b}{N_0}}\right)</math> or <math>P_e = \frac{1}{2} \operatorname{erfc} \left( \sqrt{\frac{E_b}{N_0}}\right)</math>
-
-Since there is only one bit per symbol, this is also the symbol error rate.
-
-==Quadrature phase-shift keying (QPSK)==
-[[File:QPSK Gray Coded.svg|200px|right|thumb|Constellation diagram for QPSK with [[Gray coding]]. Each adjacent symbol only differs by one bit.]]
-
-Sometimes this is known as ''quadriphase PSK'', 4-PSK, or 4-[[QAM]]. (Although the root concepts of QPSK and 4-QAM are different, the resulting modulated radio waves are exactly the same.) QPSK uses four points on the constellation diagram, equispaced around a circle. With four phases, QPSK can encode two bits per symbol, shown in the diagram with [[Gray coding]] to minimize the [[bit error rate]] (BER){{snd}} sometimes misperceived as twice the BER of BPSK.
-
-The mathematical analysis shows that QPSK can be used either to double the data rate compared with a BPSK system while maintaining the ''same'' [[bandwidth (signal processing)|bandwidth]] of the signal, or to ''maintain the data-rate of BPSK'' but halving the bandwidth needed. In this latter case, the BER of QPSK is ''exactly the same'' as the BER of BPSK{{snd}} and believing differently is a common confusion when considering or describing QPSK. The transmitted carrier can undergo numbers of phase changes.
-
-Given that radio communication channels are allocated by agencies such as the [[Federal Communications Commission]] giving a prescribed (maximum) bandwidth, the advantage of QPSK over BPSK becomes evident: QPSK transmits twice the data rate in a given bandwidth compared to BPSK - at the same BER. The engineering penalty that is paid is that QPSK transmitters and receivers are more complicated than the ones for BPSK. However, with modern [[electronics]] technology, the penalty in cost is very moderate.
-
-As with BPSK, there are phase ambiguity problems at the receiving end, and [[#Differential encoding|differentially encoded]] QPSK is often used in practice.
-
-===Implementation===
-The implementation of QPSK is more general than that of BPSK and also indicates the implementation of higher-order PSK. Writing the symbols in the constellation diagram in terms of the sine and cosine waves used to transmit them:
-
-:<math>s_n(t) = \sqrt{\frac{2E_s}{T_s}} \cos \left(2 \pi f_c t + (2n - 1)\frac{\pi}{4}\right),\quad n = 1, 2, 3, 4.</math>
-
-This yields the four phases π/4, 3π/4, 5π/4 and 7π/4 as needed.
-
-This results in a two-dimensional signal space with unit [[basis functions]]
-
-:<math>\begin{align}
-  \phi_1(t) &= \sqrt{\frac{2}{T_s}} \cos\left(2\pi f_c t\right) \\
-  \phi_2(t) &= \sqrt{\frac{2}{T_s}} \sin\left(2\pi f_c t\right)
-\end{align}</math>
-
-The first basis function is used as the in-phase component of the signal and the second as the quadrature component of the signal.
-
-Hence, the signal constellation consists of the signal-space 4 points
-
-:<math>\begin{pmatrix} \pm\sqrt{\frac{E_s}{2}} & \pm\sqrt{\frac{E_s}{2}} \end{pmatrix}.</math>
-
-The factors of 1/2 indicate that the total power is split equally between the two carriers.
-
-Comparing these basis functions with that for BPSK shows clearly how QPSK can be viewed as two independent BPSK signals. Note that the signal-space points for BPSK do not need to split the symbol (bit) energy over the two carriers in the scheme shown in the BPSK constellation diagram.
-
-QPSK systems can be implemented in a number of ways. An illustration of the major components of the transmitter and receiver structure are shown below.
-
-[[File:Transmisor QPSK 2.png|thumb|600px|center|Conceptual transmitter structure for QPSK. The binary data stream is split into the in-phase and quadrature-phase components. These are then separately modulated onto two orthogonal basis functions. In this implementation, two sinusoids are used. Afterwards, the two signals are superimposed, and the resulting signal is the QPSK signal. Note the use of polar [[non-return-to-zero]] encoding. These encoders can be placed before for binary data source, but have been placed after to illustrate the conceptual difference between digital and analog signals involved with digital modulation.]]
-
-[[File:Receiver QPSK.PNG|thumb|600px|center|Receiver structure for QPSK. The matched filters can be replaced with correlators. Each detection device uses a reference threshold value to determine whether a 1 or 0 is detected.]]
-
-===Probability of error===
-Although QPSK can be viewed as a quaternary modulation, it is easier to see it as two independently modulated quadrature carriers. With this interpretation, the even (or odd) bits are used to modulate the in-phase component of the carrier, while the odd (or even) bits are used to modulate the quadrature-phase component of the carrier. BPSK is used on both carriers and they can be independently demodulated.
-
-As a result, the probability of bit-error for QPSK is the same as for BPSK:
-:<math>P_b = Q\left(\sqrt{\frac{2E_b}{N_0}}\right)</math>
-
-However, in order to achieve the same bit-error probability as BPSK, QPSK uses twice the power (since two bits are transmitted simultaneously).
-
-The symbol error rate is given by:
-
-:<math>
-\begin{align}
- P_s &= 1 - \left( 1 - P_b \right)^2 \\
-     &= 2Q\left( \sqrt{\frac{E_s}{N_0}} \right) - \left[ Q \left( \sqrt{\frac{E_s}{N_0}} \right) \right]^2.
-\end{align}
+For the [[#secondExample|second example game]], we'll label the starting position <math>\color{red}S'</math> and color it red:
+<math display="block">
+\color{red}S' = \Big\{\{*1\}\Big\}.
 </math>
 
-If the [[signal-to-noise ratio]] is high (as is necessary for practical QPSK systems) the probability of symbol error may be approximated:
+To compute the starting position of the [[#thirdExample|combined game]], remember that a player can either make a move in the first game, leaving the second game untouched, or make a move in the second game, leaving the first game untouched.  So the combined game's starting position is:
+<math display="block">
+\color{blue}S \color{black} + \color{red}S' \color{black}= 
+\Big\{
+    \color{blue}S\color{black} + \color{red} \{*1\} \color{black}
+\Big\} \cup \Big\{
+     \color{red}S'\color{black} + \color{blue}\{*1, \{*1\}, *2\} \color{black}, 
+     \color{red}S'\color{black} + \color{blue} \{*2, \{*1, \{*1\},*2\} \} \color{black},
+     \color{red}S'\color{black} + \color{blue} \{\{*1\}, \{\{*1\}\}, \{*1, \{*1\}, *2\}\} \color{black}
+\Big\}
+</math>
 
-:<math>P_s \approx 2 Q \left( \sqrt{\frac{E_s}{N_0}} \right ) = \operatorname{erfc} \left( \sqrt{\frac{E_s}{2N_0}} \right) = \operatorname{erfc} \left( \sqrt{\frac{E_b}{N_0}} \right)</math>
+The explicit formula for adding positions is: <math>S+S'=\{S+s'\mid s'\in S'\}\cup\{s+S'\mid s\in S\}</math>, which means that addition is both commutative and associative.
 
-The modulated signal is shown below for a short segment of a random binary data-stream. The two carrier waves are a cosine wave and a sine wave, as indicated by the signal-space analysis above. Here, the odd-numbered bits have been assigned to the in-phase component and the even-numbered bits to the quadrature component (taking the first bit as number 1). The total signal{{snd}} the sum of the two components{{snd}} is shown at the bottom. Jumps in phase can be seen as the PSK changes the phase on each component at the start of each bit-period. The topmost waveform alone matches the description given for BPSK above.
-<br />[[File:QPSK timing diagram.png|frame|center|Timing diagram for QPSK. The binary data stream is shown beneath the time axis. The two signal components with their bit assignments are shown at the top, and the total combined signal at the bottom. Note the abrupt changes in phase at some of the bit-period boundaries.]]
+===Equivalence=== 
+Positions in impartial games fall into two '''''outcome classes''''': either the next player (the one whose turn it is) wins (an <math>\boldsymbol{\mathcal{N}}</math>'''''- position'''''), or the previous player wins (a <math>\boldsymbol{\mathcal{P}}</math>'''''- position''''').  So, for example, <math>*0</math> is a <math>\mathcal{P}</math>-position, while <math>*1</math> is an <math>\mathcal{N}</math>-position.
 
-The binary data that is conveyed by this waveform is: <span style="letter-spacing:0.5em;">11000110</span>.
-* The odd bits, highlighted here, contribute to the in-phase component: <span style="letter-spacing:0.5em;">{{bg|lightblue|1}}1{{bg|lightblue|0}}0{{bg|lightblue|0}}1{{bg|lightblue|1}}0</span>
-* The even bits, highlighted here, contribute to the quadrature-phase component: <span style="letter-spacing:0.5em;">1{{bg|lightblue|1}}0{{bg|lightblue|0}}0{{bg|lightblue|1}}1{{bg|lightblue|0}}</span>
+Two positions <math>G</math> and <math>G'</math> are '''''equivalent''''' if, no matter what position <math>H</math> is added to them, they are always in the same outcome class.  
+Formally,
+<math>G \approx G' </math> if and only if <math>\forall H </math>, <math>G + H</math> is in the same outcome class as <math>G' + H</math>.
 
-===Variants===
+To use our running examples, notice that in both the [[#firstExample|first]] and [[#secondExample|second]] games above, we can show that on every turn, Alice has a move that forces Bob into a <math>\mathcal{P}</math>-position. Thus, both <math>\color{blue}S</math> and  <math>\color{red}S'</math> are <math>\mathcal{N}</math>-positions.  (Notice that in the combined game, ''Bob'' is the player with the <math>\mathcal{N}</math>-positions. In fact, <math>\color{blue}S \color{black} + \color{red}S' </math> is a <math>\mathcal{P}</math>-position, which as we will see in Lemma 2, means <math> \color{blue} S \color{black} \approx \color{red} S'</math>.)
 
-====Offset QPSK (OQPSK)====
-[[File:Pi-by-O-QPSK Gray Coded.svg|thumb|Signal doesn't pass through the origin, because only one bit of the symbol is changed at a time.]]
+==First Lemma==
+As an intermediate step to proving the main theorem, we show that for every position <math>G</math> and every <math>\mathcal{P}</math>-position <math>A</math>, the equivalence <math>G\approx A+G</math> holds.  By the above definition of equivalence, this amounts to showing that <math>G+H</math> and <math>A+G+H</math> share an outcome class for all <math>H</math>.
 
-''Offset quadrature phase-shift keying'' (''OQPSK'') is a variant of phase-shift keying modulation using four different values of the phase to transmit.  It is sometimes called ''staggered quadrature phase-shift keying'' (''SQPSK'').
+Suppose that <math>G+H</math> is a <math>\mathcal{P}</math>-position.  Then the previous player has a winning strategy for <math>A+G+H</math>: respond to moves in <math>A</math> according to their winning strategy for <math>A</math> (which exists by virtue of <math>A</math> being a <math>\mathcal{P}</math>-position), and respond to moves in <math>G+H</math> according to their winning strategy for <math>G+H</math> (which exists for the analogous reason).  So <math>A+G+H</math> must also be a <math>\mathcal{P}</math>-position.
 
-[[File:Oqpsk phase plot.svg|thumb|Difference of the phase between QPSK and OQPSK]]
+On the other hand, if <math>G+H</math> is an <math>\mathcal{N}</math>-position, then <math>A+G+H</math> is also an <math>\mathcal{N}</math>-position, because the next player has a winning strategy: choose a <math>\mathcal{P}</math>-position from among the <math>G+H</math> options, and we conclude from the previous paragraph that adding <math>A</math> to that position is still a <math>\mathcal{P}</math>-position.  Thus, in this case, <math>A+G+H</math> must be a <math>\mathcal{N}</math>-position, just like <math>G+H</math>.
 
-Taking four values of the phase (two [[bit]]s) at a time to construct a QPSK symbol can allow the phase of the signal to jump by as much as 180° at a time. When the signal is low-pass filtered (as is typical in a transmitter), these phase-shifts result in large amplitude fluctuations, an undesirable quality in communication systems. By offsetting the timing of the odd and even bits by one bit-period, or half a symbol-period, the in-phase and quadrature components will never change at the same time. In the constellation diagram shown on the right, it can be seen that this will limit the phase-shift to no more than 90° at a time. This yields much lower amplitude fluctuations than non-offset QPSK and is sometimes preferred in practice.
+As these are the only two cases, the lemma holds.
 
-The picture on the right shows the difference in the behavior of the phase between ordinary QPSK and OQPSK. It can be seen that in the first plot the phase can change by 180° at once, while in OQPSK the changes are never greater than 90°.
+==Second Lemma==
+As a further step, we show that <math>G\approx G'</math> if and only if <math>G+G'</math> is a <math>\mathcal{P}</math>-position.
 
-The modulated signal is shown below for a short segment of a random binary data-stream. Note the half symbol-period offset between the two component waves. The sudden phase-shifts occur about twice as often as for QPSK (since the signals no longer change together), but they are less severe. In other words, the magnitude of jumps is smaller in OQPSK when compared to QPSK.
+In the forward direction, suppose that <math>G\approx G'</math>.  Applying the definition of equivalence with <math>H=G</math>, we find that <math>G'+G</math> (which is equal to <math>G+G'</math> by [[commutativity]] of addition) is in the same outcome class as <math>G+G</math>.  But <math>G+G</math> must be a <math>\mathcal{P}</math>-position: for every move made in one copy of <math>G</math>, the previous player can respond with the same move in the other copy, and so always make the last move.
 
-[[File:OQPSK timing diagram.png|frame|center|Timing diagram for offset-QPSK. The binary data stream is shown beneath the time axis. The two signal components with their bit assignments are shown the top and the total, combined signal at the bottom. Note the half-period offset between the two signal components.]]
+In the reverse direction, since <math>A=G+G'</math> is a <math>\mathcal{P}</math>-position by hypothesis, it follows from the first lemma, <math>G\approx G+A</math>, that <math>G\approx G+(G+G')</math>.   Similarly, since <math>B=G+G</math> is also a <math>\mathcal{P}</math>-position, it follows from the first lemma in the form  <math>G'\approx G'+B</math> that <math>G'\approx G'+(G+G)</math>.  By [[associativity]] and commutativity, the right-hand sides of these results are equal.  Furthermore, <math>\approx</math> is an [[equivalence relation]] because equality is an equivalence relation on outcome classes.  Via the [[Transitive relation|transitivity]] of <math>\approx</math>, we can conclude that <math>G\approx G'</math>.
 
-====SOQPSK====
-The license-free '''[[Pulse shaping|shaped]]-offset QPSK''' (SOQPSK) is interoperable with Feher-patented QPSK ('''FQPSK'''), in the sense that an integrate-and-dump offset QPSK detector produces the same output no matter which kind of transmitter is used.<ref>
-Tom Nelson, Erik Perrins, and Michael Rice.
-[http://people.eecs.ku.edu/~esp/publications/c2005ItcCommon.pdf "Common detectors for Tier 1 modulations"] {{webarchive|url=https://web.archive.org/web/20120917001949/http://people.eecs.ku.edu/~esp/publications/c2005ItcCommon.pdf |date=2012-09-17 }}.
+==Proof==
+We prove that all positions are equivalent to a nimber by [[structural induction]].  The more specific result, that the given game's initial position must be equivalent to a nimber, shows that the game is itself equivalent to a nimber.
 
-T. Nelson, E. Perrins, M. Rice.
-[https://www.researchgate.net/publication/4213516_Common_detectors_for_shaped_offset_QPSK_(SOQPSK)_and_Feher-patented_QPSK_(FQPSK) "Common detectors for shaped offset QPSK (SOQPSK) and Feher-patented QPSK (FQPSK)"]
-{{Cite book | last1 = Nelson | first1 = T. | last2 = Perrins | first2 = E. | last3 = Rice | first3 = M. | doi = 10.1109/GLOCOM.2005.1578470 | chapter = Common detectors for shaped offset QPSK (SOQPSK) and Feher-patented QPSK (FQPSK) | title = GLOBECOM '05. IEEE Global Telecommunications Conference, 2005 | pages = 5 pp | year = 2005 | isbn = 0-7803-9414-3 | s2cid = 11020777 }}
-{{ISBN|0-7803-9414-3}}
-</ref>
+Consider a position <math>G = \{G_1, G_2, \ldots, G_k\}</math>. By the induction hypothesis, all of the options are equivalent to nimbers, say <math>G_i \approx *n_i</math>. So let <math>G'=\{*n_1, *n_2, \ldots, *n_k\}</math>.  We will show that <math>G \approx *m</math>, where <math>m</math> is the [[mex (mathematics)|mex (minimum exclusion)]] of the numbers <math>n_1, n_2, \ldots, n_k</math>, that is, the smallest non-negative integer not equal to some <math>n_i</math>.
 
-These modulations carefully shape the I and Q waveforms such that they change very smoothly, and the signal stays constant-amplitude even during signal transitions. (Rather than traveling instantly from one symbol to another, or even linearly, it travels smoothly around the constant-amplitude circle from one symbol to the next.) SOQPSK modulation can be represented as the hybrid of QPSK and [[Minimum-shift keying|MSK]]: SOQPSK has the same signal constellation as QPSK, however the phase of SOQPSK is always stationary.<ref>Hill, Terrance J. "A non-proprietary, constant envelope, variant of shaped offset QPSK (SOQPSK) for improved spectral containment and detection efficiency." MILCOM 2000. 21st Century Military Communications Conference Proceedings. Vol. 1. IEEE, 2000.</ref><ref>Li, Lifang, and M. K. Simon. [https://web.archive.org/web/20200725125818/https://pdfs.semanticscholar.org/f025/2fa31444fad6a5090527d73f87352137c9b8.pdf "Performance of coded offset quadrature phase-shift keying (OQPSK) and MIL-STD shaped OQPSK (SOQPSK) with iterative decoding."] Interplanetary Network Prog. Rep. 42 (2004).</ref>
+The first thing we need to note is that <math>G \approx G'</math>, by way of the second lemma. If <math>k</math> is zero, the claim is trivially true.  Otherwise, consider <math>G+G'</math>. If the next player makes a move to <math>G_i</math> in <math>G</math>, then the previous player can move to <math>*n_i</math> in <math>G'</math>, and conversely if the next player makes a move in <math>G'</math>. After this, the position is a <math>\mathcal{P}</math>-position by the lemma's forward implication. Therefore, <math>G+G'</math> is a <math>\mathcal{P}</math>-position, and, citing the lemma's reverse implication, <math>G \approx G'</math>.
 
-The standard description of SOQPSK-TG involves [[ternary signal|ternary symbols]].<ref>Sahin, C. and Perrins, E., 2011, November. The capacity of SOQPSK-TG. In 2011-MILCOM 2011 Military Communications Conference (pp. 555-560). IEEE.</ref> SOQPSK is one of the most spread modulation schemes in application to [[Low Earth orbit|LEO]] satellite communications.<ref>Saeed, N., Elzanaty, A., Almorad, H., Dahrouj, H., Al-Naffouri, T.Y. and Alouini, M.S., 2020. [https://arxiv.org/pdf/1908.09501.pdf Cubesat communications: Recent advances and future challenges.] IEEE Communications Surveys & Tutorials.</ref>
+Now let us show that <math>G'+*m</math> is a <math>\mathcal{P}</math>-position, which, using the second lemma once again, means that <math>G'\approx *m</math>. We do so by giving an explicit strategy for the previous player.
 
-====''&pi;''/4-QPSK====
-[[File:Pi-by-4-QPSK Gray Coded.svg|thumb|right|Dual constellation diagram for π/4-QPSK. This shows the two separate constellations with identical Gray coding but rotated by 45° with respect to each other.]]
+Suppose that <math>G'</math> and <math>*m</math> are empty.  Then <math>G'+*m</math> is the null set, clearly a <math>\mathcal{P}</math>-position.
 
-This variant of QPSK uses two identical constellations which are rotated by 45° (<math>\pi/4</math> radians, hence the name) with respect to one another. Usually, either the even or odd symbols are used to select points from one of the constellations and the other symbols select points from the other constellation. This also reduces the phase-shifts from a maximum of 180°, but only to a maximum of 135° and so the amplitude fluctuations of <math>\pi/4</math>-QPSK are between OQPSK and non-offset QPSK.
+Or consider the case that the next player moves in the component <math>*m</math> to the option <math>*m'</math> where <math>m'<m</math>. Because <math>m</math> was the ''minimum'' excluded number, the previous player can move in <math>G'</math> to <math>*m'</math>.  And, as shown before, any position plus itself is a <math>\mathcal{P}</math>-position.
 
-One property this modulation scheme possesses is that if the modulated signal is represented in the complex domain, transitions between symbols never pass through 0. In other words, the signal does not pass through the origin. This lowers the dynamical range of fluctuations in the signal which is desirable when engineering communications signals.
+Finally, suppose instead that the next player moves in the component <math>G'</math> to the option <math>*n_i</math>. If <math>n_i < m</math> then the previous player moves in <math>*m</math> to <math>*n_i</math>; otherwise, if <math>n_i > m</math>, the previous player moves in <math>*n_i</math> to <math>*m</math>; in either case the result is a position plus itself. (It is not possible that <math>n_i = m</math> because <math>m</math> was defined to be different from all the <math>n_i</math>.)
 
-On the other hand, <math>\pi/4</math>-QPSK lends itself to easy demodulation and has been adopted for use in, for example, [[time-division multiple access|TDMA]] [[cellular telephone]] systems.
+In summary, we have <math>G\approx G'</math> and <math>G'\approx *m</math>.  By transitivity, we conclude that <math>G \approx *m</math>, as desired.
 
-The modulated signal is shown below for a short segment of a random binary data-stream. The construction is the same as above for ordinary QPSK. Successive symbols are taken from the two constellations shown in the diagram. Thus, the first symbol (1 1) is taken from the "blue" constellation and the second symbol (0 0) is taken from the "green" constellation. Note that magnitudes of the two component waves change as they switch between constellations, but the total signal's magnitude remains constant ([[constant envelope]]). The phase-shifts are between those of the two previous timing-diagrams.
-
-[[File:Pi-by-4-QPSK timing diagram.png|frame|center|Timing diagram for π/4-QPSK. The binary data stream is shown beneath the time axis. The two signal components with their bit assignments are shown the top and the total, combined signal at the bottom. Note that successive symbols are taken alternately from the two constellations, starting with the "blue" one.]]
-
-====DPQPSK====
-'''Dual-polarization quadrature phase shift keying''' (DPQPSK) or '''dual-polarization QPSK''' - involves the polarization multiplexing of two different QPSK signals, thus improving the spectral efficiency by a factor of 2. This is a cost-effective alternative to utilizing 16-PSK, instead of QPSK to double the spectral efficiency.j
-
-==Higher-order PSK==
-[[File:8PSK Gray Coded.svg|200px|right|thumb|Constellation diagram for 8-PSK with Gray coding]]
-
-Any number of phases may be used to construct a PSK constellation but 8-PSK is usually the highest order PSK constellation deployed. With more than 8 phases, the error-rate becomes too high and there are better, though more complex, modulations available such as [[quadrature amplitude modulation]] (QAM). Although any number of phases may be used, the fact that the constellation must usually deal with binary data means that the number of symbols is usually a power of 2 to allow an integer number of bits per symbol.
-
-===Bit error rate===
-For the general M-PSK there is no simple expression for the symbol-error probability if <math>M > 4</math>. Unfortunately, it can only be obtained from
-
-:<math>P_s = 1 - \int_{-\pi/M}^{\pi/M} p_{\theta_r}\left(\theta_r\right)d\theta_r,</math>
-
-where
-
-:<math>\begin{align}
-  p_{\theta_r} \left(\theta_r\right) &= \frac{1}{2\pi} e^{-2\gamma_s\sin^2\theta_r} \int_0^\infty V e^{-\frac{1}{2}\left(V - 2\sqrt{\gamma_s}\cos\theta_r\right)^2}\,dV,\\
-                                   V &= \sqrt{r_1^2 + r_2^2},\\
-                            \theta_r &= \tan^{-1}\left(\frac{r_2}{r_1}\right),\\
-                            \gamma_s &= \frac{E_s}{N_0}
-\end{align}</math>
-and <math>r_1 \sim N\left(\sqrt{E_s}, \frac{1}{2}N_0\right)</math> and <math>r_2 \sim N\left(0, \frac{1}{2} N_0\right)</math> are each Gaussian [[random variable]]s.
-
-[[File:PSK BER curves.svg|thumb|right|280px|Bit-error rate curves for BPSK, QPSK, 8-PSK and 16-PSK, additive white Gaussian noise channel]]
-This may be approximated for high <math>M</math> and high <math>E_b/N_0</math> by:
-
-:<math>P_s \approx 2Q\left(\sqrt{2\gamma_s}\sin\frac{\pi}{M}\right). </math>
-
-The bit-error probability for <math>M</math>-PSK can only be determined exactly once the bit-mapping is known. However, when [[Gray code|Gray coding]] is used, the most probable error from one symbol to the next produces only a single bit-error and
-
-:<math>P_b \approx \frac{1}{k} P_s. </math>
-
-(Using Gray coding allows us to approximate the [[Lee distance]] of the errors as the [[Hamming distance]] of the errors in the decoded bitstream, which is easier to implement in hardware.)
-
-The graph on the right compares the bit-error rates of BPSK, QPSK (which are the same, as noted above), 8-PSK and 16-PSK. It is seen that [[higher-order modulation]]s exhibit higher error-rates; in exchange however they deliver a higher raw data-rate.
-
-Bounds on the error rates of various digital modulation schemes can be computed with application of the [[union bound]] to the signal constellation.
-
-===Spectral efficiency===
-
-[[Spectral efficiency|Bandwidth (or spectral) efficiency]] of M-PSK modulation schemes increases with increasing of modulation order ''M'' (unlike, for example, [[Multiple frequency-shift keying|M-FSK]]):<ref>Haykin, S., 2001. Communication Systems, John Wiley&Sons. Inc. - p. 368</ref>
-
-:<math>\rho = \frac{\log_2M}{2} \quad [(\text{bits}/\text{s}) / \text{Hz}]</math>
-
-The same relationship holds true for [[Quadrature amplitude modulation|M-QAM]].<ref>[https://www.atlantarf.com/PSK_QAM.php Link Budget Analysis: Digital Modulation, Part 3 (www.AtlantaRF.com)]</ref>
-{{clear}}
-
-==Differential phase-shift keying (DPSK)==
-
-===Differential encoding===
-{{Main article|differential coding}}
-
-Differential phase shift keying (DPSK) is a common form of phase modulation that conveys data by changing the phase of the carrier wave. As mentioned for BPSK and QPSK there is an ambiguity of phase if the constellation is rotated by some effect in the [[communications channel]] through which the signal passes. This problem can be overcome by using the data to ''change'' rather than ''set'' the phase.
-
-For example, in differentially encoded BPSK a binary "1" may be transmitted by adding 180° to the current phase and a binary "0" by adding 0° to the current phase. {{anchor|SDPSK}}
-Another variant of DPSK is Symmetric Differential Phase Shift keying, SDPSK, where encoding would be +90° for a "1" and −90° for a "0".
-
-In differentially encoded QPSK (DQPSK), the phase-shifts are 0°, 90°, 180°, −90° corresponding to data "00", "01", "11", "10". This kind of encoding may be demodulated in the same way as for non-differential PSK but the phase ambiguities can be ignored. Thus, each received symbol is demodulated to one of the <math>M</math> points in the constellation and a [[comparator]] then computes the difference in phase between this received signal and the preceding one. The difference encodes the data as described above. ''Symmetric differential quadrature phase shift keying'' (SDQPSK) is like DQPSK, but encoding is symmetric, using phase shift values of −135°, −45°, +45° and +135°.
-
-The modulated signal is shown below for both DBPSK and DQPSK as described above. In the figure, it is assumed that the ''signal starts with zero phase'', and so there is a phase shift in both signals at <math>t = 0</math>.
-
-[[File:DBQPSK timing diag fixed.png|center|thumb|600px|Timing diagram for DBPSK and DQPSK. The binary data stream is above the DBPSK signal. The individual bits of the DBPSK signal are grouped into pairs for the DQPSK signal, which only changes every ''T<sub>s</sub>'' = 2''T<sub>b</sub>''.]]
-
-Analysis shows that differential encoding approximately doubles the error rate compared to ordinary <math>M</math>-PSK but this may be overcome by only a small increase in <math>E_b/N_0</math>. Furthermore, this analysis (and the graphical results below) are based on a system in which the only corruption is [[additive white Gaussian noise]] (AWGN). However, there will also be a physical channel between the transmitter and receiver in the communication system. This channel will, in general, introduce an unknown phase-shift to the PSK signal; in these cases the differential schemes can yield a ''better'' error-rate than the ordinary schemes which rely on precise phase information.
-
-One of the most popular applications of DPSK is the [[Bluetooth#Implementation|Bluetooth standard]] where <math>\pi/4</math>-DQPSK and 8-DPSK were implemented.
-
-===Demodulation===
-[[File:DPSK BER curves.svg|thumb|right|280px|BER comparison between DBPSK, DQPSK and their non-differential forms using Gray coding and operating in white noise]]
-
-For a signal that has been differentially encoded, there is an obvious alternative method of demodulation. Instead of demodulating as usual and ignoring carrier-phase ambiguity, the phase between two successive received symbols is compared and used to determine what the data must have been. When differential encoding is used in this manner, the scheme is known as differential phase-shift keying (DPSK). Note that this is subtly different from just differentially encoded PSK since, upon reception, the received symbols are ''not'' decoded one-by-one to constellation points but are instead compared directly to one another.
-
-Call the received symbol in the <math>k</math><sup>th</sup> timeslot <math>r_k</math> and let it have phase <math>\phi_k</math>. Assume without loss of generality that the phase of the carrier wave is zero. Denote the [[additive white Gaussian noise]] (AWGN) term as <math>n_k</math>. Then
-
-:<math>r_k = \sqrt{E_s}e^{j\phi_k} + n_k.</math>
-
-The decision variable for the <math>k-1</math><sup>th</sup> symbol and the <math>k</math><sup>th</sup> symbol is the phase difference between <math>r_k</math> and <math>r_{k-1}</math>. That is, if <math>r_k</math> is projected onto <math>r_{k-1}</math>, the decision is taken on the phase of the resultant complex number:
-
-:<math>r_kr_{k-1}^* = E_se^{j\left(\varphi_k - \varphi_{k-1}\right)} + \sqrt{E_s}e^{j\varphi_k}n_{k-1}^* + \sqrt{E_s}e^{-j\varphi_{k-1}}n_k + n_kn_{k-1}^*</math>
-
-where superscript * denotes [[complex conjugation]]. In the absence of noise, the phase of this is <math>\phi_{k}-\phi_{k-1}</math>, the phase-shift between the two received signals which can be used to determine the data transmitted.
-
-The probability of error for DPSK is difficult to calculate in general, but, in the case of DBPSK it is:
-
-:<math>P_b = \frac{1}{2}e^{-\frac{E_b}{N_0}},</math><ref>G.L. Stüber, “Soft Decision Direct-Sequence DPSK Receivers,” IEEE Transactions on Vehicular Technology, vol. 37, no. 3, pp. 151–157, August 1988.</ref>
-
-which, when numerically evaluated, is only slightly worse than ordinary BPSK, particularly at higher <math>E_b/N_0</math> values.
-
-Using DPSK avoids the need for possibly complex carrier-recovery schemes to provide an accurate phase estimate and can be an attractive alternative to ordinary PSK.
-
-In [[optical communications]], the data can be modulated onto the phase of a [[laser]] in a differential way. The modulation is a laser which emits a [[continuous wave]], and a [[Mach–Zehnder modulator]] which receives electrical binary data. For the case of BPSK, the laser transmits the field unchanged for binary '1', and with reverse polarity for '0'. The demodulator consists of a [[delay line interferometer]] which delays one bit, so two bits can be compared at one time. In further processing, a [[photodiode]] is used to transform the [[optical field]] into an electric current, so the information is changed back into its original state.
-
-The bit-error rates of DBPSK and DQPSK are compared to their non-differential counterparts in the graph to the right. The loss for using DBPSK is small enough compared to the complexity reduction that it is often used in communications systems that would otherwise use BPSK. For DQPSK though, the loss in performance compared to ordinary QPSK is larger and the system designer must balance this against the reduction in complexity.
-
-===Example: Differentially encoded BPSK===
-[[File:Differential Codec.png|center|500px|thumb|Differential encoding/decoding system diagram]]
-
-At the <math>k^{\textrm{th}}</math> time-slot call the bit to be modulated <math>b_k</math>, the differentially encoded bit <math>e_k</math> and the resulting modulated signal <math>m_k(t)</math>. Assume that the constellation diagram positions the symbols at ±1 (which is BPSK). The differential encoder produces:
-
-:<math>\,e_k = e_{k-1} \oplus b_k</math>
-
-where <math>\oplus{}</math> indicates [[binary addition|binary]] or [[modular arithmetic|modulo-2]] addition.
-
-[[File:Diff enc BPSK BER curves.svg|thumb|right|280px|BER comparison between BPSK and differentially encoded BPSK operating in white noise]]
-
-So <math>e_k</math> only changes state (from binary "0" to binary "1" or from binary "1" to binary "0") if <math>b_k</math> is a binary "1". Otherwise it remains in its previous state. This is the description of differentially encoded BPSK given above.
-
-The received signal is demodulated to yield <math>e_k = \pm 1</math> and then the differential decoder reverses the encoding procedure and produces
-
-:<math>b_k = e_k \oplus e_{k-1},</math>
-
-since binary subtraction is the same as binary addition.
-
-Therefore, <math>b_k=1</math> if <math>e_k</math> and <math>e_{k-1}</math> differ and <math>b_k=0</math> if they are the same. Hence, if both <math>e_k</math> and <math>e_{k-1}</math> are ''inverted'', <math>b_k</math> will still be decoded correctly. Thus, the 180° phase ambiguity does not matter.
-
-Differential schemes for other PSK modulations may be devised along similar lines. The waveforms for DPSK are the same as for differentially encoded PSK given above since the only change between the two schemes is at the receiver.
-
-The BER curve for this example is compared to ordinary BPSK on the right. As mentioned above, whilst the error rate is approximately doubled, the increase needed in <math>E_b/N_0</math> to overcome this is small.  The increase in <math>E_b/N_0</math> required to overcome differential modulation in coded systems, however, is larger{{snd}} typically about 3&nbsp;dB. The performance degradation is a result of [[noncoherent transmission]]{{snd}} in this case it refers to the fact that tracking of the phase is completely ignored.
-
-===Definitions===
-For determining error-rates mathematically, some definitions will be needed:
-
-* <math>E_b</math>,            energy per [[bit]]
-* <math>E_s = nE_b</math>,     energy per symbol with ''n'' bits
-* <math>T_b</math>,            [[bit rate|bit duration]]
-* <math>T_s</math>,            [[symbol rate|symbol duration]]
-* <math>\frac{1}{2}N_0</math>, [[signal noise|noise]] [[spectral density|power spectral density]] ([[watt|W]]/[[hertz|Hz]])
-* <math>P_b</math>,            [[probability]] of ''bit-error''
-* <math>P_s</math>,            probability of symbol-error
-
-<math>Q(x)</math> will give the probability that a single sample taken from a random process with zero-mean and unit-variance [[Normal distribution|Gaussian probability density function]] will be greater or equal to <math>x</math>. It is a scaled form of the [[Error function|complementary Gaussian error function]]:
-
-: <math>Q(x) = \frac{1}{\sqrt{2\pi}}\int_x^\infty e^{-\frac{1}{2}t^2} \,dt = \frac{1}{2} \operatorname{erfc}\left(\frac{x}{\sqrt{2}}\right),\ x \geq 0</math>.
-
-The error rates quoted here are those in [[additive white Gaussian noise]] (AWGN). These error rates are lower than those computed in [[fading channel]]s, hence, are a good theoretical benchmark to compare with.
-
-==Applications==
-Owing to PSK's simplicity, particularly when compared with its competitor [[quadrature amplitude modulation]], it is widely used in existing technologies.
-
-The [[wireless LAN]] standard, [[IEEE 802.11b-1999]],<ref name="ref80211">[http://standards.ieee.org/getieee802/download/802.11-1999.pdf IEEE Std 802.11-1999: Wireless LAN Medium Access Control (MAC) and Physical Layer (PHY) Specifications]{{snd}} the overarching IEEE 802.11 specification. {{webarchive|url=https://web.archive.org/web/20070828223638/http://standards.ieee.org/getieee802/download/802.11-1999.pdf|date=August 28, 2007}}</ref><ref name="80211b">[http://standards.ieee.org/getieee802/download/802.11b-1999.pdf IEEE Std 802.11b-1999 (R2003)]{{snd}} the IEEE 802.11b specification.</ref> uses a variety of different PSKs depending on the data rate required. At the basic rate of 1{{nbsp}}[[Mbit]]/s, it uses DBPSK (differential BPSK). To provide the extended rate of 2{{nbsp}}Mbit/s, DQPSK is used. In reaching 5.5{{nbsp}}Mbit/s and the full rate of 11{{nbsp}}Mbit/s, QPSK is employed, but has to be coupled with [[complementary code keying]]. The higher-speed wireless LAN standard, [[IEEE 802.11g-2003]],<ref name="ref80211" /><ref name="80211g">[http://standards.ieee.org/getieee802/download/802.11g-2003.pdf IEEE Std 802.11g-2003]{{snd}} the IEEE 802.11g specification.</ref> has eight data rates: 6, 9, 12, 18, 24, 36, 48 and 54{{nbsp}}Mbit/s. The 6 and 9{{nbsp}}Mbit/s modes use [[Orthogonal frequency-division multiplexing|OFDM]] modulation where each sub-carrier is BPSK modulated. The 12 and 18{{nbsp}}Mbit/s modes use OFDM with QPSK. The fastest four modes use OFDM with forms of [[quadrature amplitude modulation]].
-
-Because of its simplicity, BPSK is appropriate for low-cost passive transmitters, and is used in [[RFID]] standards such as [[ISO/IEC 14443]] which has been adopted for [[biometric passport]]s, credit cards such as [[American Express]]'s [[ExpressPay]], and many other applications.<ref>[http://www.atmel.com/dyn/resources/prod_documents/doc2056.pdf Understanding the Requirements of ISO/IEC 14443 for Type B Proximity Contactless Identification Cards], Application Note, Rev. 2056B–RFID–11/05, 2005, ATMEL.</ref>
-
-[[Bluetooth]] 2 uses <math>\pi/4</math>-DQPSK at its lower rate (2{{nbsp}}Mbit/s) and 8-DPSK at its higher rate (3{{nbsp}}Mbit/s) when the link between the two devices is sufficiently robust. Bluetooth 1 modulates with [[Minimum-shift keying|Gaussian minimum-shift keying]], a binary scheme, so either modulation choice in version 2 will yield a higher data-rate. A similar technology, [[IEEE 802.15.4]] (the wireless standard used by [[ZigBee]]) also relies on PSK using two frequency bands: 868–915{{nbsp}}[[Megahertz|MHz]] with BPSK and at 2.4{{nbsp}}[[Hertz|GHz]] with OQPSK.
-
-Both QPSK and 8PSK are widely used in satellite broadcasting. QPSK is still widely used in the streaming of SD satellite channels and some HD channels. High definition programming is delivered almost exclusively in 8PSK due to the higher bitrates of HD video and the high cost of satellite bandwidth.<ref>{{cite web |date=2014 |title=How Communications Satellites Work |url=http://planetfox.net/microwaves/howitworks.html |website=Planet Fox}}</ref> The [[DVB-S2]] standard requires support for both QPSK and 8PSK. The chipsets used in new satellite set top boxes, such as [[Broadcom]]'s 7000 series support 8PSK and are backward compatible with the older standard.<ref>{{Cite web |title=Low-Cost Satellite Set-top Box SoC - BCM7325 &#124; Broadcom |url=http://www.broadcom.com/products/set-top-box-and-media-processors/satellite/bcm7325 |url-status=dead |archive-url=https://web.archive.org/web/20150915234053/http://www.broadcom.com/products/set-top-box-and-media-processors/satellite/bcm7325 |archive-date=2015-09-15 |access-date=2015-09-08}}</ref>
-
-Historically, voice-band synchronous [[modems]] such as the Bell 201, 208, and 209 and the CCITT V.26, V.27, V.29, V.32, and V.34 used PSK.<ref>{{Cite web |title=Local and Remote Modems |url=http://www.blackbox.com/resource/files/productdetails/19558.PDF |url-status=dead |archive-url=https://web.archive.org/web/20151222112409/http://www.blackbox.com/resource/files/productdetails/19558.PDF |archive-date=December 22, 2015 |access-date=December 20, 2015 |website=Black Box |publisher=Black Box Network Services}}</ref>
-
-==Mutual information with additive white Gaussian noise==
-[[File:PSK Mutual Information in AWGN.svg|300px|right|thumb|Mutual information of PSK over the AWGN channel]]
-
-The [[mutual information]] of PSK can be evaluated in [[additive white Gaussian noise|additive Gaussian noise]] by [[numerical integration]] of its definition.<ref name=Blahut1988>{{cite book|last1=Blahut|first1=R. E.|title=Principles and Practice of Information Theory|date=1988|publisher=Addison Wesley Publishing Company|location=Boston, MA, USA|isbn=0-201-10709-0}}</ref> The curves of mutual information saturate to the number of bits carried by each symbol in the limit of infinite signal to noise ratio <math>E_s/N_0</math>. On the contrary, in the limit of small signal to noise ratios the mutual information approaches the [[Shannon–Hartley theorem|AWGN channel capacity]], which is the supremum among all possible choices of symbol statistical distributions.
-
-At intermediate values of signal to noise ratios the mutual information (MI) is well approximated by:<ref name=Blahut1988 />
-
-:<math>\textrm{MI} \simeq \log_2\left(\sqrt{\frac{4\pi}{e}\frac{E_s}{N_0}}\right).</math>
-
-The mutual information of PSK over the AWGN channel is generally farther to the AWGN channel capacity than [[Quadrature amplitude modulation#Mutual Information with AWGN|QAM]] modulation formats.
+==Development==
+If <math>G</math> is a position of an impartial game, the unique integer <math>m</math> such that <math>G \approx *m</math> is called its Grundy value, or Grundy number, and the function that assigns this value to each such position is called the Sprague–Grundy function.  R. L. Sprague and P. M. Grundy independently gave an explicit definition of this function, not based on any concept of equivalence to nim positions, and showed that it had the following properties:
+*The Grundy value of a single nim pile of size <math>m</math> (i.e. of the position <math>*m</math>) is <math>m</math>;
+* A position is a loss for the next player to move (i.e. a <math>\mathcal{P}</math>-position) if and only if its Grundy value is zero; and
+*The Grundy value of the sum of a finite set of positions is just the [[nim-sum]] of the Grundy values of its summands.
+It follows straightforwardly from these results that if a position <math>G</math> has a Grundy value of <math>m</math>, then <math>G + H</math> has the same Grundy value as  <math>*m + H</math>, and therefore belongs to the same outcome class, for any position <math>H</math>.   Thus, although Sprague and Grundy never explicitly stated the theorem described in this article, it follows directly from their results and is credited to them.<ref>{{citation
+| last= Smith
+| first = Cedric A.B.
+| title = Patrick Michael Grundy, 1917–1959
+| journal = Journal of the Royal Statistical Society, Series A
+| year = 1960
+| volume = 123
+| issue = 2
+| pages = 221–22
+}}</ref><ref>{{Cite journal|author1=Schleicher, Dierk |author2=Stoll, Michael | title = An introduction to Conway's games and numbers
+ |journal=Moscow Mathematical Journal
+ |volume=6 |issue=2 |pages=359–388 | year = 2006
+ | arxiv = math.CO/0410026|doi=10.17323/1609-4514-2006-6-2-359-388 }}</ref>
+These results have subsequently been developed into the field of [[combinatorial game theory]], notably by [[Richard K. Guy|Richard Guy]], [[E. R. Berlekamp|Elwyn Berlekamp]], [[John Horton Conway]] and others, where they are now encapsulated in the Sprague–Grundy theorem and its proof in the form described here. The field is presented in the books ''[[Winning Ways for your Mathematical Plays]]'' and ''[[On Numbers and Games]]''.
 
 ==See also==
-
-{{Commons category|Quantized phase modulation}}
-
-* [[Binary offset carrier modulation]]
-* [[Differential coding]]
-* [[Modulation]]{{snd}} for an overview of all modulation schemes
-* [[Phase modulation]] (PM){{snd}} the [[Analog signal|analogue]] equivalent of PSK
-* [[Polar modulation]]
-* [[PSK31]]
-* [[PSK63]]
-
-==Notes==
-<!--This article uses the Cite.php citation mechanism. If you would like more information on how to add references to this article, please see http://meta.wikimedia.org/wiki/Cite/Cite.php --> 
-{{reflist}}
+*[[Genus theory]]
+*[[Indistinguishability quotient]]
 
 ==References==
-The notation and theoretical results in this article are based on material presented in the following sources:
+{{Reflist}}
 
-*{{cite book | author=Proakis, John G. | title=Digital Communications | url=https://archive.org/details/digitalcommunica00proa | location=Singapore | publisher=McGraw Hill | year=1995 | isbn=0-07-113814-5}}
-*{{cite book | author=Couch, Leon W. II | title=Digital and Analog Communications | location=Upper Saddle River, NJ | publisher=Prentice-Hall | year=1997 | isbn=0-13-081223-4}}
-*{{cite book | author=Haykin, Simon | title=Digital Communications | location=Toronto, Canada | publisher=John Wiley & Sons | year=1988 | isbn=0-471-62947-2}}
+==External links==
+* [http://www.cut-the-knot.org/Curriculum/Games/Grundy.shtml Grundy's game] at [[cut-the-knot]]
+* [https://www.math.ucla.edu/~tom/Game_Theory/comb.pdf Easily readable, introductory account from the UCLA Math Department]
+* [http://sputsoft.com/blog/2009/04/the-game-of-nim.html The Game of Nim] at [http://sputsoft.com sputsoft.com]
+* {{citation
+ | title = Combinatorial Games, Theory and Applications| url = http://www.itu.dk/people/brit/Brits%20thesis.pdf
+ | year = 2000
+ | author = Milvang-Jensen, Brit C. A.
+ | citeseerx = 10.1.1.89.805
+ }}
 
-{{DEFAULTSORT:Phase-Shift Keying}}
-[[Category:Quantized radio modulation modes]]
-[[Category:Data transmission]]( 2 :2022-10-26T17:46:15ZB39166520JZ
-	Wikipedia'https://en.wikipedia.org/wiki/Main_PageMediaWiki 1.40.0-wmf.8"first-letterRk
->http://people.eecs.ku.edu/~esp/publications/c2005ItcCommon.pdf)"Common detectors for Tier 1 modulations"R�
-�https://www.researchgate.net/publication/4213516_Common_detectors_for_shaped_offset_QPSK_(SOQPSK)_and_Feher-patented_QPSK_(FQPSK)R"Common detectors for shaped offset QPSK (SOQPSK) and Feher-patented QPSK (FQPSK)"R�
-yhttps://web.archive.org/web/20200725125818/https://pdfs.semanticscholar.org/f025/2fa31444fad6a5090527d73f87352137c9b8.pdf~"Performance of coded offset quadrature phase-shift keying (OQPSK) and MIL-STD shaped OQPSK (SOQPSK) with iterative decoding."Rf
-$https://arxiv.org/pdf/1908.09501.pdf>Cubesat communications: Recent advances and future challenges.Rm
-%https://www.atlantarf.com/PSK_QAM.phpDLink Budget Analysis: Digital Modulation, Part 3 (www.AtlantaRF.com)R�
-=http://standards.ieee.org/getieee802/download/802.11-1999.pdffIEEE Std 802.11-1999: Wireless LAN Medium Access Control (MAC) and Physical Layer (PHY) SpecificationsR_
->http://standards.ieee.org/getieee802/download/802.11b-1999.pdfIEEE Std 802.11b-1999 (R2003)RW
->http://standards.ieee.org/getieee802/download/802.11g-2003.pdfIEEE Std 802.11g-2003R�
-=http://www.atmel.com/dyn/resources/prod_documents/doc2056.pdfeUnderstanding the Requirements of ISO/IEC 14443 for Type B Proximity Contactless Identification Cardsb������j���
+{{DEFAULTSORT:Sprague-Grundy theorem}}
+[[Category:Combinatorial game theory]]
+[[Category:Theorems in discrete mathematics]]( 2 :2022-10-23T07:26:04ZB31339567JZ
+	Wikipedia'https://en.wikipedia.org/wiki/Main_PageMediaWiki 1.40.0-wmf.8"first-letterRJ
+9http://www.cut-the-knot.org/Curriculum/Games/Grundy.shtmlGrundy's gameRz
+3https://www.math.ucla.edu/~tom/Game_Theory/comb.pdfCEasily readable, introductory account from the UCLA Math DepartmentRH
+5http://sputsoft.com/blog/2009/04/the-game-of-nim.htmlThe Game of NimR#
+http://sputsoft.comsputsoft.comb��������j��Ӛ

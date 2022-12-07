@@ -1,81 +1,285 @@
 
-41593Pseudorandom noise˜In cryptography, pseudorandom noise (PRN) is a signal similar to noise which satisfies one or more of the standard tests for statistical randomness. Although it seems to lack any definite pattern, pseudorandom noise consists of a deterministic sequence of pulses that will repeat itself after its period.
+41340LPD433›%LPD433 (low power device 433¬†MHz) is a UHF band in which license free communication devices are allowed to operate in some regions. The frequencies correspond with the ITU region 1 ISM band of 433.050¬†MHz to 434.790¬†MHz, and operation is limited to CEPT countries. The frequencies used are within the 70-centimeter band, which is currently reserved for government and amateur radio operations in the United States and most nations worldwide.
 
-In cryptographic devices, the pseudorandom noise pattern is determined by a key and the repetition period can be very long, even millions of digits.
+LPD hand-held radios are authorized for licence-free voice communications use in most of Europe using analog frequency modulation (FM) as part of short range device regulations,CEPT/ERC [http://www.erodocdb.dk/docs/doc98/official/pdf/rec7003e.pdf  REC 70-03]  (22 August 2011) with 25 kHz channel spacing, for a total of 69 channels. In some countries, LPD devices may only be used with an integral and non-removable antenna with a maximum legal power output of 10 mW.
 
-Pseudorandom noise is used in some electronic musical instruments, either by itself or as an input to subtractive synthesis, and in many white noise machines.
+Voice communication in the LPD band was introduced to reduce the burden on the eight (now sixteen) PMR446 channels over shorter ranges (less than 1¬†km).
 
-In spread-spectrum systems, the receiver correlates a locally generated signal with the received signal. Such spread-spectrum systems require a set of one or more "codes" or "sequences" such that
-* Like random noise, the local sequence has a very low correlation with any other sequence in the set, or with the same sequence at a significantly different time offset, or with narrow band interference, or with thermal noise.
-* Unlike random noise, it must be easy to generate exactly the same sequence at both the transmitter and the receiver, so the receiver's locally generated sequence has a very high correlation with the transmitted sequence.
+LPD is also used in vehicle key-less entry device, garage or gate openers and some outdoor home weather station products.
 
-In a direct-sequence spread spectrum system, each bit in the pseudorandom binary sequence is known as a chip and the inverse of its period as chip rate; compare bit rate and symbol rate.
+Usage by country
 
-In a frequency-hopping spread spectrum sequence, each value in the pseudorandom sequence is known as a channel number and the inverse of its period as the hop rate. FCC Part 15 mandates at least 50 different channels and at least a 2.5¬†Hz hop rate for narrow band frequency-hopping systems.
+ITU Region 1 (Europe)
 
-GPS satellites broadcast data at a rate of 50 data bits per second ‚Äì each satellite modulates its data with one PN bit stream at 1.023 million chips per second and the same data with another PN bit stream at 10.23 million chips per second.
-GPS receivers correlate the received PN bit stream with a local reference to measure distance. GPS is a receive-only system that uses relative timing measurements from several satellites (and the known positions of the satellites) to determine receiver position.
+United Kingdom
 
-Other range-finding applications involve two-way transmissions. A local station generates a pseudorandom bit sequence and transmits it to the remote location (using any modulation technique). Some object at the remote location echoes this PN signal back to the location station ‚Äì either passively, as in some kinds of radar and sonar systems, or using an active transponder at the remote location, as in the Apollo Unified S-band system.[http://www.ab9il.net/aviation/apollo-s-band.html "The Apollo Unified S Band System"]
- By correlating a (delayed version of) the transmitted signal with the received signal, a precise round trip time to the remote location can be determined and thus the distance.
+In the UK, LPD433 equipment that meets the respective Ofcom Interface Requirement can be used for model control, analogue/digitised voice and remote keyless entry systems. There is significant scope for interference however, both on frequency and on adjacent frequencies, as the band is far from free. The frequencies from 430 to 440¬†MHz are allocated on a secondary basis to licensed radio amateurs who are allowed to use up to 40¬†W (16¬†dBW) between 430 and 432¬†MHz and 400¬†W (26¬†dBW) between 432 and 440¬†MHz. Channels 1 to 14 are UK amateur repeater outputs and channels 62 to 69 are UK amateur repeater inputs. This band is shared on a secondary basis for both licensed and licence exempt users, with the primary user being the Ministry of Defence.
 
-PN code
+Ofcom, together with the  RSGB Emerging Technology Co-ordination Committee have produced guidelines to help mitigate the side effects of interference to an extent.
 
-A pseudo-noise code (PN code) or pseudo-random-noise code (PRN code) is one that has a spectrum similar to a random sequence of bits but is deterministically generated. The most commonly used sequences in direct-sequence spread spectrum systems are maximal length sequences, Gold codes, Kasami codes, and Barker codes.
+Switzerland
+
+Switzerland permits the use of all 69 LPD433 channels with a maximum power output of 10¬†mW.
+
+Spain 
+
+According to a recently published (June 2021) resolution of the Spanish government, where it defines 'interface IR-266', non-specific mobile short-range devices may be used without authorization for voice applications with 'advanced mitigation techniques' (such as listening before talking) from 434.040 to 434.790 MHz, with channels narrower than 25 kHz and with a maximum 'apparent radiated power' of 10 mW. This would make the use of LPD433 channels 40 to 69 possible in Spain.
+
+Other European countries
+
+European remote keyless entry systems often use the 433¬†MHz band, although, as in all of Europe, these frequencies are within the 70-centimeter band allocated to amateur radio, and interference results. In Germany, before the end of 2008,[http://www.rc-network.de/magazin/artikel_05/art_05-027/laender/GER.pdf RC-Network.de Fernsteuerfrequenzen f√ºr den Modellbau - Deutschland  (Frequency bands for RC modeling - Germany) - "Am 31.12.2008 endet die Betriebserlaubnis f√ºr Fernsteuerungen im Frequenzbereich 433 MHz!"] (As of 12/31/2008, RC use of the 433 MHz bands ends in Germany!) radio control enthusiasts were able to use frequencies from channel 03 through 67  for radio control of any form of model (air or ground-based), all with odd channel numbers (03, 05, etc. up to ch. 67), with each sanctioned frequency having 50¬†kHz of bandwidth separation between each adjacent channel.
+
+ITU Region 2 (America)
+
+In ITU region 2 (the Americas), the frequencies that LPD433 uses are also within the 70-centimeter band allocated to amateur radio. In the United States LPD433 radios can only be used under FCC amateur regulations by properly licensed amateur radio operators.
+
+ITU Region 3
+
+Malaysia
+
+In Malaysia, this band is also within the 70-centimeter band (430.000 ‚Äì 440.000 MHz) allocated to amateur radio. Class B amateur radio holders are permitted to transmit up to 50 watts PEP power level. There is no licence requirement for LPD as long as it complies with requirement regulated by [https://www.skmm.gov.my/ Malaysian Communications And Multimedia Commission] (MCMC). As regulated by MCMC in Technical Code for Short Range Devices, remote control and security device are allowed up to 50 mW ERP and up to 100 mW ERP for Short Range Communication (SRC) devices. RFID are allowed up to 100 mW EIRP.
+
+Channels
 
 See also
 
-* Barker code
-* Gold Codes
-* Maximum length sequence
-* Zadoff‚ÄìChu sequence
-* Pseudorandom number generator
-* Pseudorandomness
-* White noise
+*PMR446
+*Personal radio service
+*Family Radio Service
+*General Mobile Radio Service
+* Part 15
+* ISM band
+* NTIA Manual of Regulations and Procedures for Federal Radio Frequency Management
 
-References"Ó&{{Short description|Pseudo-random signal with characteristics similar to noise}}
-{{Use American English|date = March 2019}}
-{{Use mdy dates|date = March 2019}}
+References"πb'''LPD433''' (low power device 433&nbsp;MHz) is a [[ultra high frequency|UHF]] band in which license free communication devices are allowed to operate in some regions. The frequencies correspond with the [[International Telecommunication Union region|ITU region 1]] [[ISM band]] of 433.050&nbsp;[[megahertz|MHz]] to 434.790&nbsp;MHz, and operation is limited to [[European Conference of Postal and Telecommunications Administrations|CEPT]] countries. The frequencies used are within the [[70-centimeter band]], which is currently reserved for government and [[amateur radio]] operations in the United States and most nations worldwide.
 
-In [[cryptography]], '''pseudorandom noise''' ('''PRN'''<ref>{{cite web |url=http://www.gps.gov/technical/icwg/meetings/2011/09/13/WAS-IS-FINAL_PRN_Expansion_4May2011.pdf |archive-url=https://ghostarchive.org/archive/20221009/http://www.gps.gov/technical/icwg/meetings/2011/09/13/WAS-IS-FINAL_PRN_Expansion_4May2011.pdf |archive-date=2022-10-09 |url-status=live |title=Change Topic: Pseudorandom Noise (PRN) Expansion |publisher=GPS.GOV |access-date=13 July 2011 }}</ref>) is a [[Signalling (telecommunication)|signal]] similar to [[noise (physics)|noise]] which satisfies one or more of the standard tests for [[statistical randomness]]. Although it seems to lack any definite [[pattern]], pseudorandom noise consists of a deterministic [[sequence]] of [[Pulse (signal processing)|pulses]] that will repeat itself after its period.<ref>{{FS1037C MS188}}</ref>
+LPD hand-held radios are authorized for licence-free voice communications use in most of Europe using analog [[frequency modulation]] (FM) as part of [[short range device]] regulations,<ref name=rec_70-03>[[European Conference of Postal and Telecommunications Administrations|CEPT/ERC]] [http://www.erodocdb.dk/docs/doc98/official/pdf/rec7003e.pdf  REC 70-03] {{Webarchive|url=https://web.archive.org/web/20130805013647/http://www.erodocdb.dk/Docs/doc98/official/pdf/REC7003E.PDF |archive-url=https://ghostarchive.org/archive/20221009/http://www.erodocdb.dk/Docs/doc98/official/pdf/REC7003E.PDF |archive-date=2022-10-09 |url-status=live |date=2013-08-05 }} (22 August 2011)</ref> with 25 [[kilohertz|kHz]] channel spacing, for a total of 69 channels. In some countries, LPD devices may only be used with an integral and non-removable [[antenna (radio)|antenna]] with a maximum legal power output of 10 [[milliwatt|mW]].
 
-In [[cryptography|cryptographic device]]s, the pseudorandom noise pattern is determined by a [[key (cryptography)|key]] and the repetition period can be very long, even millions of digits.
+Voice communication in the LPD band was introduced to reduce the burden on the eight (now sixteen)<ref>{{cite web|url=http://www.erodocdb.dk/Docs/doc98/official/pdf/ECCDEC1505.PDF|title=ECC Decision (15) 05|publisher=CEPT Electronic Communications Committee|access-date=2017-12-06|archive-url=https://web.archive.org/web/20170819055247/http://www.erodocdb.dk/Docs/doc98/official/pdf/ECCDEC1505.PDF|archive-date=2017-08-19|url-status=dead}}</ref> [[PMR446]] channels over shorter ranges (less than 1&nbsp;km).<ref>{{Cite web|title=The Consumer Electronics Hall of Fame: Motorola T250 Talkabout Walkie-Talkies|url=https://spectrum.ieee.org/consumer-electronics/gadgets/the-consumer-electronics-hall-of-fame-motorola-t250-talkabout-walkietalkies|website=IEEE Spectrum: Technology, Engineering, and Science News|language=en|access-date=2020-05-09}}</ref>
 
-Pseudorandom noise is used in some [[synthesizer|electronic musical instruments]], either by itself or as an input to [[subtractive synthesis]], and in many [[white noise machine]]s.
+LPD is also used in vehicle key-less entry device, garage or gate openers and some outdoor home weather station products.
 
-In [[spread-spectrum]] systems, the receiver [[correlation|correlates]] a locally generated signal with the received [[signal (information theory)|signal]]. Such spread-spectrum systems require a set of one or more "codes" or "sequences" such that
-* Like random noise, the local sequence has a very low correlation with any other sequence in the set, or with the same sequence at a significantly different time offset, or with narrow band interference, or with thermal noise.
-* Unlike random noise, it must be easy to generate exactly the same sequence at both the transmitter and the receiver, so the receiver's locally generated sequence has a very high correlation with the transmitted sequence.
+==Usage by country==
 
-In a [[direct-sequence spread spectrum]] system, each bit in the [[pseudorandom binary sequence]] is known as a ''[[Chip (CDMA)|chip]]'' and the ''inverse'' of its period as ''[[chip rate]]''; ''compare [[bit rate]] and [[symbol rate]].''
+'''ITU Region 1 (Europe)'''
 
-In a [[frequency-hopping spread spectrum]] sequence, each value in the pseudorandom sequence is known as a ''channel number'' and the ''inverse'' of its period as the ''hop rate''. [[FCC Part 15]] mandates at least 50 different channels and at least a 2.5&nbsp;Hz hop rate for narrow band frequency-hopping systems.
+'''United Kingdom'''
 
-GPS satellites broadcast data at a rate of 50 data bits per second &ndash; each satellite modulates its data with one PN bit stream at 1.023 million [[chips per second]] and the same data with another PN bit stream at 10.23 million chips per second.
-[[GPS]] receivers correlate the received PN bit stream with a local reference to measure distance. GPS is a receive-only system that uses relative timing measurements from several satellites (and the known positions of the satellites) to determine receiver position.
+In the UK, LPD433 equipment that meets the respective [[Ofcom]] Interface Requirement can be used for model control, analogue/digitised voice and [[Remote keyless system|remote keyless entry systems]].<ref>{{cite web|url=https://www.ofcom.org.uk/__data/assets/pdf_file/0028/84970/ir-2030-july-2017.pdf |archive-url=https://ghostarchive.org/archive/20221009/https://www.ofcom.org.uk/__data/assets/pdf_file/0028/84970/ir-2030-july-2017.pdf |archive-date=2022-10-09 |url-status=live
+|title=IR 2030 - UK Interface Requirements 2030 - Licence Exempt Short Range Devices |publisher=Ofcom |date=July 2017 |access-date=2017-12-06}}</ref> There is significant scope for interference however, both on frequency and on adjacent frequencies, as the band is far from free. The frequencies from 430 to 440&nbsp;MHz are allocated on a secondary basis to licensed radio amateurs who are allowed to use up to 40&nbsp;W (16&nbsp;dBW) between 430 and 432&nbsp;MHz and 400&nbsp;W (26&nbsp;dBW) between 432 and 440&nbsp;MHz. Channels 1 to 14 are UK amateur repeater outputs and channels 62 to 69 are UK amateur repeater inputs. This band is shared on a secondary basis for both licensed and licence exempt users, with the primary user being the [[Ministry of Defence (United Kingdom)|Ministry of Defence]].<ref>{{cite web|url=http://stakeholders.ofcom.org.uk/binaries/spectrum/spectrum-information/UKFAT_2013.pdf |archive-url=https://ghostarchive.org/archive/20221009/http://stakeholders.ofcom.org.uk/binaries/spectrum/spectrum-information/UKFAT_2013.pdf |archive-date=2022-10-09 |url-status=live|title=United Kingdom Frequency Allocation Table 2013 |publisher=Ofcom |access-date=2014-01-07}}</ref>
 
-Other [[range-finding]] applications involve two-way transmissions. A local station generates a pseudorandom bit sequence and transmits it to the remote location (using any modulation technique). Some object at the remote location echoes this PN signal back to the location station &ndash; either passively, as in some kinds of radar and sonar systems, or using an active transponder at the remote location, as in the Apollo [[Unified S-band]] system.<ref>[http://www.ab9il.net/aviation/apollo-s-band.html "The Apollo Unified S Band System"]
-</ref> By correlating a (delayed version of) the transmitted signal with the received signal, a precise round trip time to the remote location can be determined and thus the distance.
+Ofcom, together with the  [[Radio Society of Great Britain|RSGB]] Emerging Technology Co-ordination Committee have produced guidelines to help mitigate the side effects of interference to an extent.<ref>{{cite web|url=https://www.ofcom.org.uk/__data/assets/pdf_file/0024/86172/Interference-between-Short-Range-Devices-and-Amateur-Repeaters.pdf |archive-url=https://ghostarchive.org/archive/20221009/https://www.ofcom.org.uk/__data/assets/pdf_file/0024/86172/Interference-between-Short-Range-Devices-and-Amateur-Repeaters.pdf |archive-date=2022-10-09 |url-status=live|title=Interference between Short Range Devices and Amateur Repeaters|publisher=Ofcom |access-date=2014-01-07}}</ref><ref>{{cite web|url=https://ukrepeater.net/documents/srd.pdf |archive-url=https://ghostarchive.org/archive/20221009/https://ukrepeater.net/documents/srd.pdf |archive-date=2022-10-09 |url-status=live|title=Paper on SRD Mitigation Techniques |publisher=R.S.G.B. Emerging Technology Co-ordination Committee|access-date=2014-01-07}}</ref>
 
-==PN code==
-{{main|Pseudorandom binary sequence}}
-A '''pseudo-noise code''' ('''PN code''') or '''pseudo-random-noise code''' ('''PRN code''') is one that has a spectrum similar to a [[algorithmically random sequence|random sequence]] of bits but is [[Deterministic computation|deterministically]] generated. The most commonly used sequences in [[direct-sequence spread spectrum]] systems are [[maximal length sequence]]s, [[Gold code]]s, [[Kasami code]]s, and [[Barker code]]s.<ref>{{Cite web |url=http://www-mobile.ecs.soton.ac.uk/bjc97r/pnseq.old/node1.html |title=PN Sequences |access-date=March 24, 2006 |archive-date=May 12, 2006 |archive-url=https://web.archive.org/web/20060512195837/http://www-mobile.ecs.soton.ac.uk/bjc97r/pnseq.old/node1.html |url-status=dead }}</ref>
+'''Switzerland'''
+
+Switzerland permits the use of all 69 LPD433 channels with a maximum power output of 10&nbsp;mW.<ref>{{cite web|url=https://www.ofcomnet.ch/api/rir/1008/19|title=Technical interfaces regulations|publisher=OFCOM (Swiss Federal Office of Communications)|access-date=2020-10-03}}</ref><ref>{{cite web|url=https://www.ezv.admin.ch/dam/ezv/en/dokumente/archiv/2013/01/merkblatt_funk_inderschweiz.pdf.download.pdf/leaflet_radiocommunicationsinswitzerland.pdf |archive-url=https://ghostarchive.org/archive/20221009/https://www.ezv.admin.ch/dam/ezv/en/dokumente/archiv/2013/01/merkblatt_funk_inderschweiz.pdf.download.pdf/leaflet_radiocommunicationsinswitzerland.pdf |archive-date=2022-10-09 |url-status=live|title=Radiocommunications in Switzerland|publisher=Bundesamt f√ºr Kommunikation|access-date=2020-10-03}}</ref>
+
+'''Spain''' 
+
+According to a recently published (June 2021) resolution of the Spanish government,<ref>{{cite web|url=https://www.boe.es/diario_boe/txt.php?id=BOE-A-2021-9913|title=Resoluci√≥n de 12 de marzo de 2021, de la Secretar√≠a de Estado de Telecomunicaciones e Infraestructuras Digitales, por la que se publican los requisitos t√©cnicos actualizados de las interfaces radioel√©ctricas reglamentadas IR-264, IR-265 e IR-266 relativas a equipos de radio para dispositivos de corto alcance (SRD) no espec√≠ficos, en la banda de frecuencias ICM de 433 MHz|publisher=Secretariat of State for Telecommunications and Digital Infrastructure of the Government of Spain|access-date=2022-10-16}}</ref> where it defines 'interface IR-266', non-specific mobile short-range devices may be used without authorization for voice applications with 'advanced mitigation techniques' (such as listening before talking<ref>{{cite web|url=https://docdb.cept.org/download/3338|title=ERC recommendation relating to the use of short range devices (SRD), Annex 1, Note 11|publisher=CEPT|access-date=2022-10-17}}</ref>) from 434.040 to 434.790 MHz, with channels narrower than 25 kHz and with a maximum 'apparent radiated power' of 10 mW. This would make the use of LPD433 channels 40 to 69 possible in Spain.
+
+'''Other European countries'''
+
+European [[Remote keyless system|remote keyless entry systems]] often use the 433&nbsp;MHz band, although, as in all of Europe, these frequencies are within the [[70-centimeter band]] allocated to [[amateur radio]], and interference results. In Germany, before the end of 2008,<ref>[http://www.rc-network.de/magazin/artikel_05/art_05-027/laender/GER.pdf RC-Network.de Fernsteuerfrequenzen f√ºr den Modellbau - Deutschland  (Frequency bands for RC modeling - Germany) - "Am 31.12.2008 endet die Betriebserlaubnis f√ºr Fernsteuerungen im Frequenzbereich 433 MHz!"] (As of 12/31/2008, RC use of the 433 MHz bands ends in Germany!)</ref> radio control enthusiasts were able to use frequencies from channel 03 through 67 <!--on the above chart--> for radio control of any form of model (air or ground-based), all with odd channel numbers (03, 05, etc. up to ch. 67)<!-- as read on the chart-->,<ref>{{cite web |url=http://www.ukrcc.org/germany.html |title=United Kingdom Radio Control Council: International Frequencies - Germany |author=<!--Staff writer(s); no by-line.--> |website=UKRCC |publisher=UKRCC |access-date=July 13, 2013}}</ref> with each sanctioned frequency having 50&nbsp;kHz of bandwidth separation between each adjacent channel.
+
+'''ITU Region 2 (America)'''
+
+In [[International Telecommunication Union region|ITU region 2]] (the Americas), the frequencies that LPD433 uses are also within the [[70-centimeter band]] allocated to [[amateur radio]]. In the United States LPD433 radios can only be used under [[Title 47 CFR Part 97|FCC amateur regulations]] by [[Amateur radio licensing in the United States|properly licensed amateur radio operators]].
+
+'''ITU Region 3'''
+
+'''Malaysia'''
+
+In Malaysia, this band is also within the 70-centimeter band (430.000 ‚Äì 440.000 MHz) allocated to amateur radio. Class B amateur radio holders are permitted to transmit up to 50 watts [[Peak envelope power|PEP]] power level.<ref>{{Cite web|url=https://www.skmm.gov.my/skmmgovmy/media/General/pdf/Guideline-for-Amateur-Radio-Service-in-Malaysia-2nd-Edition_1.pdf |archive-url=https://ghostarchive.org/archive/20221009/https://www.skmm.gov.my/skmmgovmy/media/General/pdf/Guideline-for-Amateur-Radio-Service-in-Malaysia-2nd-Edition_1.pdf |archive-date=2022-10-09 |url-status=live|title=Guidelines for Amateur Radio Services in Malaysia 2nd Edition|access-date=11 Feb 2018}}</ref> There is no licence requirement for LPD as long as it complies with requirement regulated by [https://www.skmm.gov.my/ Malaysian Communications And Multimedia Commission] (MCMC). As regulated by MCMC in Technical Code for Short Range Devices,<ref>{{Cite web|url=https://www.mcmc.gov.my/skmmgovmy/media/General/pdf/MCMC-MTSFB-TC-T007_2014.pdf |archive-url=https://ghostarchive.org/archive/20221009/https://www.mcmc.gov.my/skmmgovmy/media/General/pdf/MCMC-MTSFB-TC-T007_2014.pdf |archive-date=2022-10-09 |url-status=live|title=MCMC MTSFB TC T007:2014 - Specification for Short Range Devices|access-date=11 Feb 2018}}</ref> remote control and security device are allowed up to 50 mW [[Effective radiated power|ERP]] and up to 100 mW ERP for Short Range Communication (SRC) devices. [[Rfid|RFID]] are allowed up to 100 mW [[Effective isotropic radiated power|EIRP]].
+
+==Channels==
+{| class="wikitable"
+! Channel
+! Frequency (MHz)
+! Channel
+! Frequency (MHz)
+! Channel
+! Frequency (MHz)
+|- align="center"
+! 1
+| 433.075
+! 24
+| 433.650
+! 47
+| 434.225
+|- align="center"
+! 2
+| 433.100
+! 25
+| 433.675
+! 48
+| 434.250
+|- align="center"
+! 3
+| 433.125
+! 26
+| 433.700
+! 49
+| 434.275
+|- align="center"
+! 4
+| 433.150
+! 27
+| 433.725
+! 50
+| 434.300
+|- align="center"
+! 5
+| 433.175
+! 28
+| 433.750
+! 51
+| 434.325
+|- align="center"
+! 6
+| 433.200
+! 29
+| 433.775
+! 52
+| 434.350
+|- align="center"
+! 7
+| 433.225
+! 30
+| 433.800
+! 53
+| 434.375
+|- align="center"
+! 8
+| 433.250
+! 31
+| 433.825
+! 54
+| 434.400
+|- align="center"
+! 9
+| 433.275
+! 32
+| 433.850
+! 55
+| 434.425
+|- align="center"
+! 10
+| 433.300
+! 33
+| 433.875
+! 56
+| 434.450
+|- align="center"
+! 11
+| 433.325
+! 34
+| 433.900
+! 57
+| 434.475
+|- align="center"
+! 12
+| 433.350
+! 35
+| 433.925
+! 58
+| 434.500
+|- align="center"
+! 13
+| 433.375
+! 36
+| 433.950
+! 59
+| 434.525
+|- align="center"
+! 14
+| 433.400
+! 37
+| 433.975
+! 60
+| 434.550
+|- align="center"
+! 15
+| 433.425
+! 38
+| 434.000
+! 61
+| 434.575
+|- align="center"
+! 16
+| 433.450
+! 39
+| 434.025
+! 62
+| 434.600
+|- align="center"
+! 17
+| 433.475
+! 40
+| 434.050
+! 63
+| 434.625
+|- align="center"
+! 18
+| 433.500
+! 41
+| 434.075
+! 64
+| 434.650
+|- align="center"
+! 19
+| 433.525
+! 42
+| 434.100
+! 65
+| 434.675
+|- align="center"
+! 20
+| 433.550
+! 43
+| 434.125
+! 66
+| 434.700
+|- align="center"
+! 21
+| 433.575
+! 44
+| 434.150
+! 67
+| 434.725
+|- align="center"
+! 22
+| 433.600
+! 45
+| 434.175
+! 68
+| 434.750
+|- align="center"
+! 23
+| 433.625
+! 46
+| 434.200
+! 69
+| 434.775
+|}
 
 ==See also==
-* [[Barker code]]
-* [[Gold code|Gold Codes]]
-* [[Maximum length sequence]]
-* [[Zadoff‚ÄìChu sequence]]
-* [[Pseudorandom number generator]]
-* [[Pseudorandomness]]
-* [[White noise]]
+*[[PMR446]]
+*[[Personal radio service]]
+*[[Family Radio Service]]
+*[[General Mobile Radio Service]]
+* [[Part 15 (FCC rules)|Part 15]]
+* [[ISM band]]
+* [[NTIA Manual of Regulations and Procedures for Federal Radio Frequency Management]]
 
 ==References==
-{{Reflist}}
+{{reflist}}
 
-{{Cdma}}
+{{Radio spectrum}}
+{{Two-way radio}}
 
-[[Category:Noise (electronics)]]
-[[Category:Pseudorandomness]]( 2 :2022-10-30T20:39:28ZB31364895JZ
-	Wikipedia'https://en.wikipedia.org/wiki/Main_PageMediaWiki 1.40.0-wmf.8"first-letterRV
-0http://www.ab9il.net/aviation/apollo-s-band.html""The Apollo Unified S Band System"bïΩõÿªû™jÄ¬˚ö
+[[Category:Bandplans]]( 2 :2022-10-19T09:25:32ZB18872885JZ
+	Wikipedia'https://en.wikipedia.org/wiki/Main_PageMediaWiki 1.40.0-wmf.8"first-letterRH
+;http://www.erodocdb.dk/docs/doc98/official/pdf/rec7003e.pdf	REC 70-03Rö
+Fhttp://www.rc-network.de/magazin/artikel_05/art_05-027/laender/GER.pdfœRC-Network.de Fernsteuerfrequenzen f√ºr den Modellbau - Deutschland  (Frequency bands for RC modeling - Germany) - "Am 31.12.2008 endet die Betriebserlaubnis f√ºr Fernsteuerungen im Frequenzbereich 433 MHz!"RN
+https://www.skmm.gov.my/2Malaysian Communications And Multimedia CommissionbÕÃ¿úÿÚçrjåÖøö

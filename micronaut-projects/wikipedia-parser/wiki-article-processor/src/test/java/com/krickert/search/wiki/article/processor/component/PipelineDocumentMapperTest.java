@@ -29,12 +29,12 @@ class PipelineDocumentMapperTest {
     void mapWikiArticleToPipeDocument() {
         Collection<WikiArticle> articles = getFewHunderedArticles();
         assertThat(articles).isNotNull()
-                .hasSize(377);
+                .hasSize(367);
         Collection<PipeDocument> mapperDocuments = Lists.newArrayList();
         PipelineDocumentMapper mapper = new PipelineDocumentMapper();
         articles.forEach((article) -> mapperDocuments.add(mapper.mapWikiArticleToPipeDocument(article)));
         assertThat(mapperDocuments).isNotEmpty()
-                .hasSize(377);
+                .hasSize(367);
         mapperDocuments.forEach((pipeDocument) ->
                 assertThat(pipeDocument).isNotNull()
                         .isInstanceOf(PipeDocument.class));

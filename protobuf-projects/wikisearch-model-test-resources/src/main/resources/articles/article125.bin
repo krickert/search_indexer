@@ -1,76 +1,160 @@
 
-41256Index-matching material�+In optics, an index-matching material is a substance, usually a liquid, cement (adhesive), or gel, which has an index of refraction that closely approximates that of another object (such as a lens, material, fiber-optic, etc.).
+41378Modified AMI code�-Modified AMI codes are a digital telecommunications technique to maintain system synchronization. Alternate mark inversion (AMI) line codes are modified by deliberate insertion of bipolar violations. There are several types of modified AMI codes, used in various T-carrier and E-carrier systems.
 
-When two substances with the same index are in contact, light passes from one to the other with neither reflection nor refraction. As such, they are used for various purposes in science, engineering, and art.
+Overview
 
-For example, in a popular home experiment, a glass rod is made almost invisible by immersing it in an index-matched transparent fluid such as mineral spirits.[http://www.optics4kids.org/home/content/classroom-activities/medium/lose-a-glass-in-a-glass/ Optics For Kids - "Lose a glass in a glass" home experiment]
+The clock rate of an incoming T-carrier is extracted from its bipolar line code. Each signal transition provides an opportunity for the receiver to see the transmitter's clock. The AMI code guarantees that transitions are always present before and after each mark (1 bit), but are missing between adjacent spaces (0 bits). To prevent loss of synchronization when a long string of zeros is present in the payload, deliberate bipolar violations are inserted into the line code, to create a sufficient number of transitions to maintain synchronization; this is a form of run length limited coding. The receive terminal equipment recognizes the bipolar violations and removes from the user data the marks attributable to the bipolar violations.
 
-In microscopy
+T-carrier was originally developed for voice applications. When voice signals are digitized for transmission via T-carrier, the data stream always includes ample 1 bits to maintain synchronization. (To help this, the μ-law algorithm for digitizing voice signals encodes silence as a continuous stream of 1 bits.) However, when used for the transmission of digital data, the conventional AMI line code may fail to have sufficient marks to permit recovery of the incoming clock, and synchronization is lost. This happens when there are too many consecutive zeros in the user data being transported. 
 
-In light microscopy, oil immersion is a technique used to increase the resolution of a microscope. This is achieved by immersing both the objective lens and the specimen in a transparent oil of high refractive index, thereby increasing the numerical aperture of the objective lens.
+The exact pattern of bipolar violations that is transmitted in any given case depends on the line rate (i.e., the level of the line code in the T-carrier hierarchy) and the polarity of the last valid mark in the user data prior to the unacceptably long string of zeros. It would not be useful to have a violation immediately following a mark, as that would not produce a transition. For this reason, all modified AMI codes include a space (0 bit) before each violation mark.
 
-Immersion oils are transparent oils that have specific optical and viscosity characteristics necessary for use in microscopy. Typical oils used have an index of refraction around  1.515.[http://www.olympusmicro.com/primer/anatomy/immersion.html "Microscope Objectives: Immersion Media"] by Mortimer Abramowitz  and Michael W. Davidson, Olympus Microscopy Resource Center (website), 2002. An oil immersion objective is an objective lens specially designed to be used in this way. The index of the oil is typically chosen to match the index of the microscope lens glass, and of the cover slip.
+In the descriptions below, "" denotes a balancing mark with the opposite polarity to that of the preceding mark, while "" denotes a bipolar violation mark, which has the same polarity as the preceding mark. In order to preserve AMI coding's desirable absence of DC bias, the number of positive marks must equal the number of negative marks. This happens automatically for balancing () marks, but the line code must ensure that positive and negative violation marks balance each other.
 
-For more details, see the main article, oil immersion. Some microscopes also use other index-matching materials besides oil; see water immersion objective and solid immersion lens.
+Zero length code suppression 
 
-In fiber optics
+The first technique used to ensure a minimum density of marks was zero code suppression a form of bit stuffing, which set the least significant bit of each 8-bit byte transmitted to a 1. (This bit was already unavailable due to robbed-bit signaling.) This avoided the need to modify the AMI code in any way, but limited available data rates to 56,000 bits per second per DS0 voice channel. Also, the low minimum density of ones (12.5%) sometimes led to increased clock slippage on the span.
 
-In fiber optics and telecommunications, an index-matching material may be used in conjunction with pairs of mated connectors or with mechanical splices to reduce signal reflected in the guided mode (known as return loss) (see Optical fiber connector). Without the use of an index-matching material, Fresnel reflections will occur at the smooth end faces of a fiber unless there is no fiber-air interface or other significant mismatch in refractive index. These reflections may be as high as −14 dB (i.e., 14 dB below the optical power of the incident signal). When the reflected signal returns to the transmitting end, it may be reflected again and return to the receiving end at a level that is 28 dB plus twice the fiber loss below the direct signal. The reflected signal will also be delayed by twice the delay time introduced by the fiber. The twice-reflected, delayed signal superimposed on the direct signal may noticeably degrade an analog baseband intensity-modulated video signal. Conversely, for digital transmission, the reflected signal will often have no practical effect on the detected signal seen at the decision point of the digital optical receiver except in marginal cases where bit-error ratio is significant. However, certain digital transmitters such as those employing a Distributed Feedback Laser may be affected by back reflection and then fall outside specifications such as Side Mode Suppression Ratio, potentially degrading system bit error ratio, so networking standards intended for DFB lasers may specify a back-reflection tolerance such as −10 dB for transmitters so that they remain within specification even without index matching. This back-reflection tolerance might be achieved using an optical isolator or by way of reduced coupling efficiency.
+Increased demand for bandwidth, and compatibility with the G.703 and ISDN PRI standards which called for 64,000 bits per second, led to this system being superseded by B8ZS.
 
-For some applications, instead of standard polished connectors (e.g. FC/PC), angle polished connectors (e.g. FC/APC) may be used, whereby the non-perpendicular polish angle greatly reduces the ratio of reflected signal launched into the guided mode even in the case of a fiber-air interface.
+B8ZS (North American T1) 
 
-In experimental fluid dynamics
+Commonly used in the North American T1 (Digital Signal 1) 1.544 Mbit/s line code, bipolar with eight-zero substitution (B8ZS) replaces each string of 8 consecutive zeros with the special pattern "". Depending on the polarity of the preceding mark, that could be  or .
 
-Index matching is used in liquid-liquid and liquid-solid (Multiphase flow) experimental systems to minimise the distortions that occur in these systems, this is particularly important for systems with many interfaces which become optically inaccessible. Matching the refractive index minimises reflection, refraction, diffraction and rotations that occurs at the interfaces allowing access to regions that would otherwise be inaccessible to optical measurements. This is particularly important for advanced optical measurements like Laser-induced fluorescence, Particle image velocimetry and Particle tracking velocimetry to name a few.
+B6ZS (North American T2) 
 
-In art conservation
+At the North American T2 rate (6.312 Mbit/s), bipolar violations are inserted if 6 or more consecutive zeros occur. This line code is called bipolar with six-zero substitution (B6ZS), and replaces 6 consecutive zeros with the pattern "". Depending on the polarity of the preceding mark, that could be  or .
 
-If a sculpture is broken into several pieces, art conservators may reattach the pieces using an adhesive such as Paraloid B-72 or epoxy. If the sculpture is made of a transparent or semitransparent material (such as glass), the seam where the pieces are attached will usually be much less noticeable if the refractive index of the adhesive matches the refractive index of the surrounding object. Therefore, art conservators may measure the index of objects and then use an index-matched adhesive. Similarly, losses (missing sections) in transparent or semitransparent objects are often filled using an index-matched material.
+HDB3 (European E-carrier) 
 
-In optical component adhesives
+Used in all levels of the European E-carrier system, the high density bipolar of order 3 (HDB3) code replaces any instance of 4 consecutive 0 bits with one of the patterns "" or "". The choice is made to ensure that consecutive violations are of differing polarity; i.e., separated by an odd number of normal  marks.
 
-Certain optical components, such as a Wollaston prism or Nicol prism, are made of multiple transparent pieces that are directly attached to each other. The adhesive is usually index-matched to the pieces. Historically, Canada balsam was used in this application, but it is now more common to use epoxy or other synthetic adhesives.
+These rules are applied on the code as it is being built from the original string. Every time there are 4 consecutive zeros in the code they will be replaced by either 000−, 000+, +00+ or −00−. To determine which pattern to use, one must count the number of pluses (+) and the number of minuses (−) since the last violation bit V, then subtract one from the other. If the result is an odd number then 000− or 000+ is used. If the result is an even number then +00+ or −00− is used. To determine which polarity to use, one must look at the pulse preceding the four zeros. If 000V form must be used then V simply copies the polarity of last pulse, if B00V form must be used then B and V chosen will have the opposite polarity of the last pulse.
 
-References
+Examples
 
-*"�6In [[optics]], an '''index-matching material''' is a substance, usually a liquid, cement (adhesive), or [[gel]], which has an [[index of refraction]] that closely approximates that of another object (such as a lens, material, fiber-optic, etc.).
+Here are some examples of bit streams codes with AMI and HDB3. All assume the same starting conditions: the previous 1 bit was −, and the previous violation was an even number of 1 bits ago. (E.g. the preceding bits could have been ++−.)
 
-When two substances with the same index are in contact, light passes from one to the other with neither [[fresnel reflection|reflection]] nor [[refraction]]. As such, they are used for various purposes in science, engineering, and art.
+B3ZS (North American T3) 
 
-For example, in a popular home experiment, a glass rod is made almost invisible by immersing it in an index-matched transparent fluid such as [[mineral spirits]].<ref>[http://www.optics4kids.org/home/content/classroom-activities/medium/lose-a-glass-in-a-glass/ Optics For Kids - "Lose a glass in a glass" home experiment]</ref>
+At the North American T3 rate (44.736 Mbit/s), bipolar violations are inserted if 3 or more consecutive zeros occur. This line code is called bipolar with three-zero substitution (B3ZS), and is very similar to HDB3. Each run of 3 consecutive zeros is replaced by "" or "". The choice is made to ensure that consecutive violations are of differing polarity, i.e. separated by an odd number of normal  marks.
 
-==In microscopy==
-{{main|Oil immersion}}
+See also
 
-In [[optical microscope|light microscopy]], oil immersion is a technique used to increase the [[Optical resolution|resolution]] of a [[microscope]]. This is achieved by immersing both the [[Objective (optics)|objective lens]] and the specimen in a transparent oil of high [[refractive index]], thereby increasing the [[numerical aperture]] of the objective lens.
+Other line codes that have 3 states:
+* Bipolar encoding or alternate mark inversion
+* Hybrid ternary code
+* MLT-3 encoding
+* 4B3T"�A{{Unreferenced|date=April 2021}}
+'''Modified AMI codes''' are a digital telecommunications technique to maintain [[system]] [[synchronization]]. [[Alternate mark inversion]] (AMI) [[line code]]s are modified by deliberate insertion of [[bipolar violation]]s. There are several types of modified AMI codes, used in various [[T-carrier]] and [[E-carrier]] systems.
 
-Immersion oils are transparent oils that have specific optical and [[viscosity]] characteristics necessary for use in microscopy. Typical oils used have an [[index of refraction]] around  1.515.<ref>[http://www.olympusmicro.com/primer/anatomy/immersion.html "Microscope Objectives: Immersion Media"] by Mortimer Abramowitz  and Michael W. Davidson, ''[[Olympus Corporation|Olympus]] Microscopy Resource Center'' (website), 2002.</ref> An oil immersion objective is an objective lens specially designed to be used in this way. The index of the oil is typically chosen to match the index of the microscope lens glass, and of the [[cover slip]].
+==Overview==
+The [[clock rate]] of an incoming T-carrier is extracted from its bipolar line code. Each signal transition provides an opportunity for the receiver to see the transmitter's clock. The AMI code guarantees that transitions are always present before and after each mark (1 bit), but are missing between adjacent spaces (0 bits). To prevent loss of [[synchronization]] when a long [[string (computer science)|string]] of zeros is present in the [[payload (computing)|payload]], deliberate bipolar violations are inserted into the line code, to create a sufficient number of transitions to maintain synchronization; this is a form of [[run length limited]] coding. The receive [[terminal equipment]] recognizes the bipolar violations and removes from the user data the marks attributable to the bipolar violations.
 
-For more details, see the main article, [[oil immersion]]. Some microscopes also use other index-matching materials besides oil; see [[water immersion objective]] and [[solid immersion lens]].
+T-carrier was originally developed for voice applications. When voice signals are digitized for [[transmission (telecommunications)|transmission]] via T-carrier, the [[data stream]] always includes ample 1 bits to maintain synchronization. (To help this, the [[μ-law algorithm]] for digitizing voice signals encodes silence as a continuous stream of 1 bits.) However, when used for the transmission of [[digital data]], the conventional AMI line code may fail to have sufficient marks to permit recovery of the incoming clock, and synchronization is lost. This happens when there are too many consecutive zeros in the [[User (telecommunications)|user]] [[data]] being transported. 
 
-==In fiber optics==
-In fiber optics and [[telecommunications]], an index-matching material may be used in conjunction with pairs of mated connectors or with mechanical splices to reduce signal reflected in the guided mode (known as return loss) (see [[Optical fiber connector]]). Without the use of an index-matching material, Fresnel reflections will occur at the smooth end faces of a fiber unless there is no fiber-air interface or other significant mismatch in refractive index. These reflections may be as high as −14&nbsp;[[decibel|dB]] (i.e., 14&nbsp;dB below the optical power of the incident [[Signaling (telecommunication)|signal]]). When the reflected signal returns to the transmitting end, it may be reflected again and return to the receiving end at a level that is 28&nbsp;dB plus twice the fiber loss below the direct signal. The reflected signal will also be delayed by twice the delay time introduced by the fiber. The twice-reflected, delayed signal superimposed on the direct signal may noticeably degrade an analog [[baseband]] [[Amplitude|intensity]]-modulated [[video]] signal. Conversely, for digital transmission, the reflected signal will often have no practical effect on the detected signal seen at the decision point of the digital [[optical receiver]] except in marginal cases where bit-error ratio is significant. However, certain digital transmitters such as those employing a [[Distributed Feedback Laser]] may be affected by back reflection and then fall outside specifications such as Side Mode Suppression Ratio, potentially degrading system bit error ratio, so networking standards intended for DFB lasers may specify a back-reflection tolerance such as −10&nbsp;dB for transmitters so that they remain within specification even without index matching. This back-reflection tolerance might be achieved using an optical isolator or by way of reduced coupling efficiency.
+The exact pattern of bipolar violations that is transmitted in any given case depends on the line rate (''i.e.'', the level of the line code in the [[T-carrier]] hierarchy) and the polarity of the last valid [[mark frequency|mark]] in the user data prior to the unacceptably long string of zeros. It would not be useful to have a violation immediately following a mark, as that would not produce a transition. For this reason, all modified AMI codes include a space (0 bit) before each violation mark.
 
-For some applications, instead of standard polished connectors (e.g. FC/PC), angle polished connectors (e.g. FC/APC) may be used, whereby the non-perpendicular polish angle greatly reduces the ratio of reflected signal launched into the guided mode even in the case of a fiber-air interface.
+In the descriptions below, "{{mono|B}}" denotes a balancing mark with the opposite polarity to that of the preceding mark, while "{{mono|V}}" denotes a bipolar violation mark, which has the same polarity as the preceding mark. In order to preserve AMI coding's desirable absence of [[DC bias]], the number of positive marks must equal the number of negative marks. This happens automatically for balancing ({{mono|B}}) marks, but the line code must ensure that positive and negative violation marks balance each other.
 
-==In experimental fluid dynamics==
-{{main|Fluid dynamics}}
+==Zero length code suppression <span class="anchor" id="Suppression"></span>==
+The first technique used to ensure a minimum density of marks was '''zero code suppression''' a form of [[bit stuffing]], which set the least significant bit of each 8-bit byte transmitted to a 1. (This bit was already unavailable due to [[robbed-bit signaling]].) This avoided the need to modify the AMI code in any way, but limited available data rates to 56,000 bits per second per [[Digital Signal 0|DS0]] voice channel. Also, the low minimum density of ones (12.5%) sometimes led to increased clock [[slip (telecommunication)|slip]]page on the span.
 
-Index matching is used in liquid-liquid and liquid-solid ([[Multiphase flow]]) experimental systems to minimise the distortions that occur in these systems,<ref>{{cite journal|title=A review of solid–fluid selection options for optical-based measurements in single-phase liquid, two-phase liquid–liquid and multiphase solid–liquid flows|authors=Wright, S.F., Zadrazil, I. & Markides, C.N.|journal=Experiments in Fluids |year=2017|volume=58 |issue=9|pages=108|bibcode=2017ExFl...58..108W|doi=10.1007/s00348-017-2386-y|doi-access=free}}</ref> this is particularly important for systems with many interfaces which become optically inaccessible. Matching the refractive index minimises [[reflection (physics)|reflection]], [[refraction]], [[diffraction]] and rotations that occurs at the interfaces allowing access to regions that would otherwise be inaccessible to optical measurements. This is particularly important for advanced optical measurements like [[Laser-induced fluorescence]], [[Particle image velocimetry]] and [[Particle tracking velocimetry]] to name a few.
+Increased demand for bandwidth, and compatibility with the [[G.703]] and [[ISDN]] [[Primary Rate Interface|PRI]] standards which called for 64,000 bits per second, led to this system being superseded by B8ZS.
 
-==In art conservation==
-{{see also|Conservation and restoration of glass objects}}
-If a sculpture is broken into several pieces, [[Conservation (cultural heritage)|art conservators]] may reattach the pieces using an adhesive such as [[Paraloid B-72]] or [[epoxy]]. If the sculpture is made of a transparent or semitransparent material (such as glass), the seam where the pieces are attached will usually be much less noticeable if the refractive index of the adhesive matches the refractive index of the surrounding object. Therefore, art conservators may measure the index of objects and then use an index-matched adhesive. Similarly, losses (missing sections) in transparent or semitransparent objects are often filled using an index-matched material.<ref>{{cite journal|title=Controlling the refractive index of epoxy adhesives |authors=John M. Messinger and Peter T. Lansbury |url=http://cool.conservation-us.org/jaic/articles/jaic28-02-006.html |journal=Journal of the American Institute for Conservation |year=1989 |volume=28 |number=2 |pages=127–136|doi=10.2307/3179485 |jstor=3179485 }}</ref>
+==B8ZS (North American T1) <span class="anchor" id="B8ZS"></span>==
+Commonly used in the North American T1 ([[Digital Signal 1]]) 1.544 Mbit/s line code, '''bipolar with eight-zero substitution (B8ZS)''' replaces each string of 8 consecutive zeros with the special pattern "{{mono|000VB0VB}}". Depending on the polarity of the preceding mark, that could be {{mono|000+−0−+}} or {{mono|000−+0+−}}.
 
-==In optical component adhesives==
-Certain optical components, such as a [[Wollaston prism]] or [[Nicol prism]], are made of multiple transparent pieces that are directly attached to each other. The adhesive is usually index-matched to the pieces. Historically, [[Canada balsam]] was used in this application, but it is now more common to use [[epoxy]] or other synthetic adhesives.
+==B6ZS (North American T2) <span class="anchor" id="B6ZS"></span>==
+At the North American T2 rate (6.312 Mbit/s), bipolar violations are inserted if 6 or more consecutive zeros occur. This line code is called '''bipolar with six-zero substitution (B6ZS)''', and replaces 6 consecutive zeros with the pattern "{{mono|0VB0VB}}". Depending on the polarity of the preceding mark, that could be {{mono|0+−0−+}} or {{mono|0−+0+−}}.
 
-==References==
-*{{FS1037C}}
-{{reflist}}
+==HDB3 (European E-carrier) <span class="anchor" id="HDB3"></span>==
+Used in all levels of the European [[E-carrier]] system, the '''high density bipolar of order 3 (HDB3)''' code replaces any instance of 4 consecutive 0 bits with one of the patterns "{{mono|000V}}" or "{{mono|B00V}}". The choice is made to ensure that consecutive violations are of differing polarity; i.e., separated by an odd number of normal {{mono|+ or −}} marks.
+{|class=wikitable style="text-align:center;"
+|+ HDB 3 coding of 0000{{sub|2}}
+! Parity of +/− bits<br/>since previous V !! Pattern !! Previous pulse !! Coded
+|-
+|rowspan=2| Even || rowspan="2" | B00V
+| + || −00−
+|-
+| − || +00+
+|-
+|rowspan=2| Odd || rowspan="2" | 000V
+| + || 000+
+|-
+| − || 000-
+|}
 
-[[Category:Fiber optics]]
-[[Category:Optical materials]]( 2 :2022-01-15T21:34:06ZB42425010JZ
-	Wikipedia'https://en.wikipedia.org/wiki/Main_PageMediaWiki 1.40.0-wmf.8"first-letterR�
-\http://www.optics4kids.org/home/content/classroom-activities/medium/lose-a-glass-in-a-glass/;Optics For Kids - "Lose a glass in a glass" home experimentRe
-9http://www.olympusmicro.com/primer/anatomy/immersion.html("Microscope Objectives: Immersion Media"b���˽j����
+These rules are applied on the code as it is being built from the original string. Every time there are 4 consecutive zeros in the code they will be replaced by either 000−, 000+, +00+ or −00−. To determine which pattern to use, one must count the number of pluses (+) and the number of minuses (−) since the last violation bit V, then subtract one from the other. If the result is an odd number then 000− or 000+ is used. If the result is an even number then +00+ or −00− is used. To determine which polarity to use, one must look at the pulse preceding the four zeros. If 000V form must be used then V simply copies the polarity of last pulse, if B00V form must be used then B and V chosen will have the opposite polarity of the last pulse.
+
+===Examples===
+Here are some examples of bit streams codes with AMI and HDB3. All assume the same starting conditions: the previous 1 bit was −, and the previous violation was an even number of 1 bits ago. (E.g. the preceding bits could have been ++−.)
+{|
+| '''Input''' || {{mono|10000110}}{{sub|2}}
+|-
+| '''AMI'''   || {{mono|+0000−+0}}
+|-
+| '''HDB3'''  || {{mono|+B00V−+0}}
+|-
+|             || {{mono|+−00−+−0}}
+|}
+{|
+| '''Input''' || {{mono|101000001100001100000001}}{{sub|2}}
+|-
+| '''AMI'''   || {{mono|+0−00000+−0000+−0000000+}}
+|-
+| '''HDB3'''  || {{mono|+0−000V0+−B00V−+B00V000+}}
+|-
+|             || {{mono|+0−000−0+−+00+−+−00−000+}}
+|}
+{|
+| '''Input''' || {{mono|1010000100001100001110000111100001010000}}{{sub|2}}
+|-
+| '''AMI'''   || {{mono|+0−0000+0000−+0000−+−0000+−+−0000+0−0000}}
+|-
+| '''HDB3'''  || {{mono|+0-000V+000V-+B00V-+-000V+-+-B00V+0-B00V}}
+|-
+|             || {{mono|+0-000-+000+-+-00-+-+000+-+-+-00-+0-+00+}}
+|}
+{|
+| '''Input''' || {{mono| 10000000000}}{{sub|2}}
+|-
+| '''AMI'''   || {{mono|+000000000}}
+|-
+| '''HDB3'''  || {{mono|+B00VB00V00}}
+|-
+|             || {{mono|+-00-+00+00}}
+|}
+
+==B3ZS (North American T3) <span class="anchor" id="B3ZS"></span>==
+At the [[DS-3|North American T3]] rate (44.736 Mbit/s), bipolar violations are inserted if 3 or more consecutive zeros occur. This line code is called '''bipolar with three-zero substitution (B3ZS)''', and is very similar to HDB3. Each run of 3 consecutive zeros is replaced by "{{mono|00V}}" or "{{mono|B0V}}". The choice is made to ensure that consecutive violations are of differing polarity, i.e. separated by an odd number of normal {{mono|B}} marks.
+{|class=wikitable style="text-align:center;"
+|+ B3ZS coding of "000"
+! Number of B bits<br/>since last V !! Pattern !! Polarity<br/>of last B !! Coded
+|-
+|rowspan=2| Odd ||rowspan=2 | 00V
+| + || 00+
+|-
+| − || 00−
+|-
+|rowspan=2| Even ||rowspan=2 | B0V
+| + || −0−
+|-
+| − || +0+
+|}
+
+==See also==
+Other line codes that have 3 states:
+* [[Bipolar encoding]] or alternate mark inversion
+* [[Hybrid ternary code]]
+* [[MLT-3 encoding]]
+* [[4B3T]]
+
+{{Bit-encoding}}
+
+{{FS1037C}}
+
+[[Category:Encodings]]
+[[Category:Line codes]]
+[[Category:Multiplexing]]( 2 :2022-08-11T11:06:58ZB3653754JZ
+	Wikipedia'https://en.wikipedia.org/wiki/Main_PageMediaWiki 1.40.0-wmf.8"first-letterb�������j��ӗ
