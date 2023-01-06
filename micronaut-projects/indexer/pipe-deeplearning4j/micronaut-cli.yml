@@ -1,0 +1,6 @@
+applicationType: grpc
+defaultPackage: pipe.nlp
+testFramework: junit
+sourceLanguage: java
+buildTool: maven
+features: [annotation-api, app-name, assertj, grpc, hamcrest, jackson-databind, java, java-application, junit, logback, maven, mockito, readme, shade, test-resources, testcontainers, yaml]
