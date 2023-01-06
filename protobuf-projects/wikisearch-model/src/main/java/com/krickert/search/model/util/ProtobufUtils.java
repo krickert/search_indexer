@@ -1,7 +1,9 @@
 package com.krickert.search.model.util;
 
+import com.google.protobuf.ListValue;
 import com.google.protobuf.Message;
 import com.google.protobuf.Timestamp;
+import com.google.protobuf.Value;
 import com.krickert.search.model.pipe.PipeDocument;
 import com.krickert.search.model.wiki.DownloadFileRequest;
 import com.krickert.search.model.wiki.DownloadedFile;
@@ -60,5 +62,10 @@ public class ProtobufUtils {
     }
     public static UUID createKey(PipeDocument pipeDocument) {
         return createKey(pipeDocument.getId());
+    }
+    public static ListValue createListValueFromCollection(Collection<String> collectionToConvert) {
+        ListValue.Builder builder = ListValue.newBuilder();
+        collectionToConvert.forEach((obj) -> builder.addValues(Value.newBuilder().setStringValue(obj).build()));
+        return builder.build();
     }
 }

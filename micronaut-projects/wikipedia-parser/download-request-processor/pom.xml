@@ -17,39 +17,36 @@
     <packaging>jar</packaging>
     <micronaut.test.resources.enabled>true</micronaut.test.resources.enabled>
     <exec.mainClass>com.krickert.search.download.dump.DownloadRequestProcessor</exec.mainClass>
+    <httpclient5.version>5.2.1</httpclient5.version>
   </properties>
-
-
   <dependencies>
     <dependency>
       <groupId>io.micronaut</groupId>
       <artifactId>micronaut-http-client</artifactId>
-        <version>3.7.4</version>
+        <version>${micronaut.version}</version>
         <scope>test</scope>
     </dependency>
     <!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient -->
     <dependency>
       <groupId>org.apache.httpcomponents.client5</groupId>
       <artifactId>httpclient5</artifactId>
-      <version>5.2-beta1</version>
+      <version>${httpclient5.version}</version>
     </dependency>
     <!-- https://mvnrepository.com/artifact/commons-codec/commons-codec -->
     <dependency>
       <groupId>commons-codec</groupId>
       <artifactId>commons-codec</artifactId>
-      <version>1.15</version>
+      <version>${commons-codec.version}</version>
     </dependency>
     <dependency>
       <groupId>com.krickert.search</groupId>
       <artifactId>wikisearch-model</artifactId>
-      <version>0.1-SNAPSHOT</version>
+      <version>${project.version}</version>
     </dependency>
   </dependencies>
 
   <build>
     <plugins>
-
-      
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>

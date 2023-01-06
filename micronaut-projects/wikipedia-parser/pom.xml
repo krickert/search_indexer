@@ -3,13 +3,11 @@
     <artifactId>wikipedia-parser</artifactId>
     <version>0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
     <parent>
         <artifactId>indexer-micronaut-pom</artifactId>
         <groupId>com.krickert.search</groupId>
         <version>0.1-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
     </parent>
     <modules>
         <module>download-request-creator</module>
@@ -35,6 +33,4 @@
             <scope>provided</scope>
         </dependency>
     </dependencies>
-
-
 </project>
