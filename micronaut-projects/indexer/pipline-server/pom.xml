@@ -17,6 +17,7 @@
     <packaging>jar</packaging>
     <micronaut.test.resources.enabled>true</micronaut.test.resources.enabled>
     <exec.mainClass>com.krickert.search.PipelineServer</exec.mainClass>
+    <micronaut.grpc.version>3.5.0</micronaut.grpc.version>
   </properties>
 
 
@@ -24,7 +25,7 @@
     <dependency>
       <groupId>io.micronaut.grpc</groupId>
       <artifactId>micronaut-protobuff-support</artifactId>
-      <version>3.4.0</version>
+      <version>${micronaut.grpc.version}</version>
     </dependency>
     <dependency>
       <groupId>com.krickert.search</groupId>
@@ -35,7 +36,7 @@
     <dependency>
       <groupId>io.micronaut.grpc</groupId>
       <artifactId>micronaut-grpc-server-runtime</artifactId>
-      <version>3.4.0</version>
+      <version>${micronaut.grpc.version}</version>
     </dependency>
   </dependencies>
 

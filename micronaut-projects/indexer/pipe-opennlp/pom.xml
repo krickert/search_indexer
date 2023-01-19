@@ -35,7 +35,7 @@
     <dependency>
       <groupId>io.micronaut.grpc</groupId>
       <artifactId>micronaut-grpc-server-runtime</artifactId>
-      <version>3.4.0</version>
+      <version>${micronaut.grpc.version}</version>
     </dependency>
       <dependency>
         <groupId>org.hamcrest</groupId>
@@ -61,7 +61,7 @@
     <dependency>
       <groupId>com.krickert.search</groupId>
       <artifactId>wikisearch-model</artifactId>
-      <version>0.1-SNAPSHOT</version>
+      <version>${project.version}</version>
     </dependency>
     <!-- https://mvnrepository.com/artifact/ch.qos.logback/logback-classic -->
     <dependency>
@@ -72,7 +72,7 @@
     <dependency>
       <groupId>com.krickert.search</groupId>
       <artifactId>wikisearch-model-test-resources</artifactId>
-      <version>0.1-SNAPSHOT</version>
+      <version>${project.version}</version>
       <scope>test</scope>
     </dependency>
     <dependency>
