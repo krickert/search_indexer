@@ -17,10 +17,8 @@
     <packaging>jar</packaging>
     <micronaut.test.resources.enabled>true</micronaut.test.resources.enabled>
     <exec.mainClass>com.krickert.search.download.request.SendFileRequestsCommand</exec.mainClass>
-    <picocli.version>4.7.0</picocli.version>
-    <micronaut-rxjava3.version>2.4.0</micronaut-rxjava3.version>
-    <micronaut-serde.version>1.5.0</micronaut-serde.version>
-  </properties>
+    <picocli.version>4.7.1</picocli.version>
+    </properties>
 
   <repositories>
     <repository>
@@ -56,19 +54,16 @@
     <dependency>
       <groupId>io.micronaut.rxjava3</groupId>
       <artifactId>micronaut-rxjava3</artifactId>
-      <version>${micronaut-rxjava3.version}</version>
       <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>io.micronaut.rxjava3</groupId>
       <artifactId>micronaut-rxjava3-http-client</artifactId>
-      <version>${micronaut-rxjava3.version}</version>
       <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>io.micronaut.serde</groupId>
       <artifactId>micronaut-serde-jackson</artifactId>
-      <version>${micronaut-serde.version}</version>
       <scope>compile</scope>
     </dependency>
 
