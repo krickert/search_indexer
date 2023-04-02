@@ -41,36 +41,12 @@
         <artifactId>hamcrest</artifactId>
         <scope>test</scope>
       </dependency>
-      <dependency>
-        <groupId>org.junit.jupiter</groupId>
-        <artifactId>junit-jupiter-engine</artifactId>
-        <scope>test</scope>
-      </dependency>
-      <dependency>
-        <groupId>org.mockito</groupId>
-        <artifactId>mockito-core</artifactId>
-        <scope>test</scope>
-      </dependency>
+
     <!-- https://mvnrepository.com/artifact/org.deeplearning4j/deeplearning4j-core -->
     <dependency>
       <groupId>org.deeplearning4j</groupId>
       <artifactId>deeplearning4j-core</artifactId>
       <version>1.0.0-M2.1</version>
-    </dependency>
-    <dependency>
-      <groupId>commons-codec</groupId>
-      <artifactId>commons-codec</artifactId>
-      <version>1.15</version>
-    </dependency>
-    <dependency>
-      <groupId>commons-collections</groupId>
-      <artifactId>commons-collections</artifactId>
-      <version>3.2.2</version>
-    </dependency>
-    <dependency>
-      <groupId>commons-net</groupId>
-      <artifactId>commons-net</artifactId>
-      <version>3.9.0</version>
     </dependency>
     <!-- https://mvnrepository.com/artifact/org.deeplearning4j/deeplearning4j-nlp -->
     <dependency>
@@ -78,6 +54,24 @@
       <artifactId>deeplearning4j-nlp</artifactId>
       <version>1.0.0-M2.1</version>
     </dependency>
+    <dependency>
+      <groupId>commons-codec</groupId>
+      <artifactId>commons-codec</artifactId>
+      <version>1.15</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-collections4 -->
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-collections4</artifactId>
+      <version>4.4</version>
+    </dependency>
+
+    <dependency>
+      <groupId>commons-net</groupId>
+      <artifactId>commons-net</artifactId>
+      <version>3.9.0</version>
+    </dependency>
+
 
     <dependency>
       <groupId>com.krickert.search</groupId>

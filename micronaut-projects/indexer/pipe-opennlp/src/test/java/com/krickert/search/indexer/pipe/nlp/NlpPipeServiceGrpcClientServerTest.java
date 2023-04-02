@@ -10,7 +10,6 @@ import io.micronaut.test.extensions.junit5.annotation.MicronautTest;
 import jakarta.inject.Inject;
 import org.junit.jupiter.api.Test;
 
-import java.util.Collection;
 import java.util.Map;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -36,9 +35,9 @@ public class NlpPipeServiceGrpcClientServerTest {
         Map<String, PipeDocument> docs = TestDataHelper.getFewHunderedPipeDocumentsMap();
         PipeDocument amadeus = docs.get("41525");
         PipeDocument luciferians = docs.get("41526");
-        PipeDocument cod = docs.get("41515");
-        PipeDocument phaseAngle = docs.get("41508");
-        PipeDocument summerSolstace = docs.get("41516");
+//        PipeDocument cod = docs.get("41515");
+//        PipeDocument phaseAngle = docs.get("41508");
+//        PipeDocument summerSolstace = docs.get("41516");
 
 
         PipeReply reply1 = nlpService.send(createPipeRequest(amadeus));

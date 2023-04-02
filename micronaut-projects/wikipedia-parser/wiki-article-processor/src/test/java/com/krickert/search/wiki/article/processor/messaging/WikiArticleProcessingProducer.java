@@ -1,4 +1,5 @@
 package com.krickert.search.wiki.article.processor.messaging;
+
 import com.krickert.search.model.wiki.WikiArticle;
 import io.micronaut.configuration.kafka.annotation.KafkaClient;
 import io.micronaut.configuration.kafka.annotation.KafkaKey;

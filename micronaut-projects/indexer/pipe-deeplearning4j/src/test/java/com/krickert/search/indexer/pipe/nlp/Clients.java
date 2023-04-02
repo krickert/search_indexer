@@ -11,9 +11,9 @@ import io.micronaut.grpc.server.GrpcServerChannel;
 class Clients {
     @Bean
     PipeServiceGrpc.PipeServiceBlockingStub blockingStub(
-        @GrpcChannel(GrpcServerChannel.NAME) ManagedChannel channel) {
+            @GrpcChannel(GrpcServerChannel.NAME) ManagedChannel channel) {
         return PipeServiceGrpc.newBlockingStub(
-            channel
+                channel
         );
     }
 }

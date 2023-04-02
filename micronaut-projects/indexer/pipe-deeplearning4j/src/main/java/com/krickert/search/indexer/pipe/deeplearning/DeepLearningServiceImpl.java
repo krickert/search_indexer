@@ -5,7 +5,6 @@ import com.krickert.search.service.PipeReply;
 import com.krickert.search.service.PipeRequest;
 import jakarta.inject.Singleton;
 
-
 import static com.google.common.base.Preconditions.checkNotNull;
 
 @Singleton

@@ -12,11 +12,12 @@ import java.util.Collection;
 
 import static com.krickert.search.model.test.util.TestDataHelper.getFewHunderedArticles;
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class PipelineDocumentMapperTest {
     private static final Logger log = LoggerFactory.getLogger(PipelineDocumentMapperTest.class);
     PipelineDocumentMapper mock = new PipelineDocumentMapper();
+
     @Test
     void testDateConversion() {
         Timestamp now = Timestamp.newBuilder().setSeconds(1668046556).setNanos(204003000).build();

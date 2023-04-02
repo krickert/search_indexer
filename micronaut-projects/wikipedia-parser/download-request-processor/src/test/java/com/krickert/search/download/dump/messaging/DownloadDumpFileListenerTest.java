@@ -12,7 +12,9 @@ import io.micronaut.configuration.kafka.annotation.Topic;
 import io.micronaut.context.annotation.Property;
 import io.micronaut.test.extensions.junit5.annotation.MicronautTest;
 import jakarta.inject.Inject;
-import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -34,40 +36,33 @@ class DownloadDumpFileListenerTest {
 
 
     static final ConcurrentLinkedQueue<DownloadedFile> results = new ConcurrentLinkedQueue<>();
-
-    @AfterEach
-    public void clearQueue() {
-        results.clear();
-    }
-
     DownloadFileRequest request1 = DownloadFileRequest.newBuilder()
             .setErrorCheck(ErrorCheck.newBuilder().setErrorCheckType(ErrorCheckType.MD5).setErrorCheck("error1"))
             .setFileDumpDate("20221107")
             .setUrl("http://www.example.com/blah1.txt")
             .setFileName("someFile1.txt")
             .build();
-
-
     DownloadFileRequest request2 = DownloadFileRequest.newBuilder()
             .setErrorCheck(ErrorCheck.newBuilder().setErrorCheckType(ErrorCheckType.MD5).setErrorCheck("error2"))
             .setFileDumpDate("20221107")
             .setUrl("http://www.example.com/blah2.txt")
             .setFileName("someFile2.txt")
             .build();
-
     DownloadFileRequest request3 = DownloadFileRequest.newBuilder()
             .setErrorCheck(ErrorCheck.newBuilder().setErrorCheckType(ErrorCheckType.MD5).setErrorCheck("error3"))
             .setFileDumpDate("20221107")
             .setUrl("http://www.example.com/blah3.txt")
             .setFileName("someFile3.txt")
             .build();
-
     @Inject
     DownloadDumpFileListener downloadDumpFileListener;
-
     @Inject
     DownloadRequestProducer downloadRequestProducer;
 
+    @AfterEach
+    public void clearQueue() {
+        results.clear();
+    }
 
     @Test
     void receive() {
@@ -87,7 +82,7 @@ class DownloadDumpFileListenerTest {
                 .contains("http://www.example.com/blah2.txt")
                 .contains("http://www.example.com/blah3.txt");
 
-        results.forEach( (result) -> {
+        results.forEach((result) -> {
             try {
                 File fakeDownloaded = new File(result.getFullFilePath());
                 assertThat(fakeDownloaded.exists()).isTrue();

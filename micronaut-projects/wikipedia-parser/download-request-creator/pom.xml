@@ -19,7 +19,6 @@
     <exec.mainClass>com.krickert.search.download.request.SendFileRequestsCommand</exec.mainClass>
     <picocli.version>4.7.1</picocli.version>
     </properties>
-
   <repositories>
     <repository>
       <id>central</id>

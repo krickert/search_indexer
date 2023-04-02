@@ -35,19 +35,6 @@
             <artifactId>grpc-stub</artifactId>
             <version>${grpc.version}</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/io.grpc/grpc-api -->
-        <dependency>
-            <groupId>io.grpc</groupId>
-            <artifactId>grpc-protobuf</artifactId>
-            <version>${grpc.version}</version>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/javax.annotation/javax.annotation-api -->
-        <dependency>
-            <groupId>javax.annotation</groupId>
-            <artifactId>javax.annotation-api</artifactId>
-            <version>${javax.annotation.api.version}</version>
-        </dependency>
-
     </dependencies>
 
 

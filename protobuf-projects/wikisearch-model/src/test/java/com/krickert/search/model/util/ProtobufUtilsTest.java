@@ -49,22 +49,22 @@ public class ProtobufUtilsTest {
 
     @Test
     void testSaveProtoToDisk() throws IOException {
-            DownloadFileRequest request = DownloadFileRequest.newBuilder()
-                    .setFileName("File Name").setUrl("someurl")
-                    .setErrorCheck(ErrorCheck.newBuilder()
-                            .setErrorCheck("error check")
-                            .setErrorCheckType(ErrorCheckType.MD5).build())
-                    .setFileDumpDate("20221111")
-                    .setUrl("www.example.com").build();
-            ProtobufUtils.saveProtobufToDisk("somefile.bin", request);
-            File someFile = new File("somefile.bin");
-            assertThat(someFile)
-                    .isNotNull()
-                    .isFile();
-            DownloadFileRequest requestOnDisk = DownloadFileRequest.parseFrom(FileUtils.readFileToByteArray(someFile));
-            assertThat(request)
-                    .isEqualTo(requestOnDisk);
-            filesToDelete.add(someFile);
+        DownloadFileRequest request = DownloadFileRequest.newBuilder()
+                .setFileName("File Name").setUrl("someurl")
+                .setErrorCheck(ErrorCheck.newBuilder()
+                        .setErrorCheck("error check")
+                        .setErrorCheckType(ErrorCheckType.MD5).build())
+                .setFileDumpDate("20221111")
+                .setUrl("www.example.com").build();
+        ProtobufUtils.saveProtobufToDisk("somefile.bin", request);
+        File someFile = new File("somefile.bin");
+        assertThat(someFile)
+                .isNotNull()
+                .isFile();
+        DownloadFileRequest requestOnDisk = DownloadFileRequest.parseFrom(FileUtils.readFileToByteArray(someFile));
+        assertThat(request)
+                .isEqualTo(requestOnDisk);
+        filesToDelete.add(someFile);
     }
 
     @Test

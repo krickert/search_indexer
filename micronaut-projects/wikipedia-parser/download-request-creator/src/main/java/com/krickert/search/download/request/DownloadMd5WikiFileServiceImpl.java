@@ -75,16 +75,13 @@ public class DownloadMd5WikiFileServiceImpl implements DownloadMd5WikiFileServic
             throw new RuntimeException(e);
         }
         return fileContents;
-    };
+    }
 
     public String retrieveWikiDumpFileContentsFromWikipedia() {
         return client.retrieve(
                 GET("enwiki-latest-md5sums.txt"),
                 String.class).blockingFirst();
     }
-
-
-
 
 
 }

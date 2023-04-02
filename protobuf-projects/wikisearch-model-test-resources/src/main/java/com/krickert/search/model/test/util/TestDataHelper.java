@@ -11,17 +11,27 @@ import java.nio.file.*;
 import java.util.*;
 import java.util.stream.Stream;
 
-import static java.nio.file.FileSystems.newFileSystem;
-
 public class TestDataHelper {
     private static final Collection<WikiArticle> fewHunderedArticles = createFewHunderedArticles();
     private static final Collection<PipeDocument> fewHunderedPipeDocuments = createFewHunderedPipeDocuments();
     private static final Map<String, PipeDocument> fewHunderedPipeDocumentsMap = createPipeDocumentMapById();
     private static final Map<String, WikiArticle> fewHunderedArticlesMap = createArticleMapById();
-    public static Collection<PipeDocument> getFewHunderedPipeDocuments() { return fewHunderedPipeDocuments; }
-    public static Collection<WikiArticle> getFewHunderedArticles() { return fewHunderedArticles; }
-    public static Map<String, PipeDocument> getFewHunderedPipeDocumentsMap() { return fewHunderedPipeDocumentsMap; }
-    public static Map<String, WikiArticle> getFewHunderedArticlesMap() { return fewHunderedArticlesMap; }
+
+    public static Collection<PipeDocument> getFewHunderedPipeDocuments() {
+        return fewHunderedPipeDocuments;
+    }
+
+    public static Collection<WikiArticle> getFewHunderedArticles() {
+        return fewHunderedArticles;
+    }
+
+    public static Map<String, PipeDocument> getFewHunderedPipeDocumentsMap() {
+        return fewHunderedPipeDocumentsMap;
+    }
+
+    public static Map<String, WikiArticle> getFewHunderedArticlesMap() {
+        return fewHunderedArticlesMap;
+    }
 
 
     private static Map<String, PipeDocument> createPipeDocumentMapById() {
@@ -55,6 +65,7 @@ public class TestDataHelper {
         });
         return returnVal;
     }
+
     private static Collection<WikiArticle> createFewHunderedArticles() {
         String directory = "/articles";
         Stream<Path> walk = getPathsFromDirectory(directory);
@@ -73,17 +84,17 @@ public class TestDataHelper {
     }
 
     private static Stream<Path> getPathsFromDirectory(String directory) {
-        URI uri = null;
+        URI uri;
         try {
             uri = TestDataHelper.class.getResource(directory).toURI();
-        } catch (URISyntaxException e) {
+        } catch (URISyntaxException | NullPointerException e) {
             throw new RuntimeException(e);
         }
         Path myPath;
         if (uri.getScheme().equals("jar")) {
-            FileSystem fileSystem = null;
+            FileSystem fileSystem;
             try {
-                fileSystem = newFileSystem(uri, Collections.<String, Object>emptyMap());
+                fileSystem = FileSystems.newFileSystem(uri, Collections.emptyMap());
             } catch (IOException e) {
                 throw new RuntimeException(e);
             } catch (FileSystemAlreadyExistsException e) {
@@ -93,7 +104,7 @@ public class TestDataHelper {
         } else {
             myPath = Paths.get(uri);
         }
-        Stream<Path> walk = null;
+        Stream<Path> walk;
         try {
             walk = Files.walk(myPath, 1);
         } catch (IOException e) {

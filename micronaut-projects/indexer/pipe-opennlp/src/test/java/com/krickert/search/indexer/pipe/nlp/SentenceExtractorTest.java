@@ -14,6 +14,7 @@ class SentenceExtractorTest {
             "William Moseley, Anna Popplewell, Skandar Keynes, Georgie Henley, Liam Neeson, and Tilda Swinton reprise their roles from the first film, while new cast includes Ben Barnes, Sergio Castellitto, Peter Dinklage, Eddie Izzard, Warwick Davis, Ken Stott, and Vincent Grass. In the film, the four Pevensie children return to Narnia to aid Prince Caspian in his struggle with the \"secret\" help of Aslan for the throne against his corrupt uncle, King Miraz.\n" +
             "\n" +
             "Prince Caspian, a British-American production, is the last Narnia film to be co-produced by Walt Disney Pictures, as 20th Century Fox became the distributor for the next film The Chronicles of Narnia: The Voyage of the Dawn Treader due to budgetary disputes between Disney and Walden Media, but as a result of Disney eventually purchasing Fox on March 20, 2019, Disney now owns the rights to all three Narnia movies.[3] Work on the script began before The Lion, the Witch and the Wardrobe was released, so filming could begin before the actors grew too old for their parts.";
+
     @Test
     void testSentenceExtraction() {
         Collection<String> sentences = unit.extractSentences(princeText);
