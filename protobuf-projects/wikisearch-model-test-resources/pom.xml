@@ -21,7 +21,7 @@
         <dependency>
             <groupId>com.krickert.search</groupId>
             <artifactId>wikisearch-model</artifactId>
-            <version>0.1-SNAPSHOT</version>
+            <version>${project.version}</version>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
@@ -47,7 +47,7 @@
             <plugin>
                 <groupId>com.github.os72</groupId>
                 <artifactId>protoc-jar-maven-plugin</artifactId>
-                <version>3.11.4</version>
+                <version>${protoc-jar-maven-plugin.version}</version>
                 <configuration>
                     <protocArtifact>com.google.protobuf:protoc:${protobuf.version}</protocArtifact>
                     <addProtoSources>all</addProtoSources>

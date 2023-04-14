@@ -17,6 +17,7 @@
     <packaging>jar</packaging>
     <micronaut.test.resources.enabled>true</micronaut.test.resources.enabled>
     <exec.mainClass>com.krickert.search.indexer.pipe.nlp.Application</exec.mainClass>
+    <opennlp.version>2.1.1</opennlp.version>
   </properties>
 
   <repositories>
@@ -45,7 +46,7 @@
     <dependency>
       <groupId>org.apache.opennlp</groupId>
       <artifactId>opennlp-tools</artifactId>
-      <version>2.1.1</version>
+      <version>${opennlp.version}</version>
     </dependency>
 
     <dependency>

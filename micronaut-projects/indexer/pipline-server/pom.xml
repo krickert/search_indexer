@@ -29,7 +29,7 @@
     <dependency>
       <groupId>com.krickert.search</groupId>
       <artifactId>wikisearch-model</artifactId>
-      <version>0.1-SNAPSHOT</version>
+      <version>${project.version}</version>
       <scope>compile</scope>
     </dependency>
     <dependency>
@@ -68,7 +68,7 @@
         <groupId>com.github.os72</groupId>
         <artifactId>protoc-jar-maven-plugin</artifactId>
         <configuration>
-          <protocArtifact>com.google.protobuf:protoc:3.21.2</protocArtifact>
+          <protocArtifact>com.google.protobuf:protoc:${protoc-jar-maven-plugin.version}</protocArtifact>
           <addProtoSources>all</addProtoSources>
           <includeMavenTypes>direct</includeMavenTypes>
           <includeImports>true</includeImports>
