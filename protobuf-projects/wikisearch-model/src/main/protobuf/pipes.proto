@@ -9,9 +9,9 @@ message PipeDocument {
   string id = 1;
   string title = 2;
   string body = 3;
-  optional string revision_id = 4;
+  string revision_id = 4;
   google.protobuf.Timestamp creation_date = 5;
-  optional google.protobuf.Timestamp last_modified = 6;
+  google.protobuf.Timestamp last_modified = 6;
   string document_type = 7;
   map<string, string> fields = 8;
   map<string, google.protobuf.ListValue> list_fields = 9;
