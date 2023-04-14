@@ -26,7 +26,7 @@ message DownloadedFile {
   string full_file_path = 2;
   ErrorCheck error_check = 3;
   string file_dump_date = 4;
-  optional string server_name = 5;
+  string server_name = 5;
   google.protobuf.Timestamp download_start = 6;
   google.protobuf.Timestamp download_end = 7;
 }
@@ -57,11 +57,11 @@ enum WikiType {
 message WikiArticle {
   string id = 1;
   string title = 2;
-  optional string text = 3;
-  optional string wiki_text = 4;
-  optional int32 namespace_code = 5;
-  optional string namespace = 6;
-  optional string dump_timestamp = 7;
+  string text = 3;
+  string wiki_text = 4;
+  int32 namespace_code = 5;
+  string namespace = 6;
+  string dump_timestamp = 7;
   string revision_id = 8;
   WikiSiteInfo site_info = 9;
   repeated Link url_references = 10;
