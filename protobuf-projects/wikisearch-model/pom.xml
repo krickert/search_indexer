@@ -64,7 +64,7 @@
                 <artifactId>protoc-jar-maven-plugin</artifactId>
                 <version>${protoc-jar-maven-plugin.version}</version>
                 <configuration>
-                    <protocArtifact>com.google.protobuf:protoc:${protoc-jar-maven-plugin.version}</protocArtifact>
+                    <protocArtifact>com.google.protobuf:protoc:${protobuf.version}</protocArtifact>
                     <addProtoSources>all</addProtoSources>
                     <includeMavenTypes>direct</includeMavenTypes>
                     <includeImports>true</includeImports>

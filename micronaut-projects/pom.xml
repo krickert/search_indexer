@@ -9,17 +9,17 @@
         <jdk.version>17</jdk.version>
         <release.version>17</release.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <commons.io.version>2.11.0</commons.io.version>
+        <commons.io.version>2.13.0</commons.io.version>
         <commons-lang3.version>3.12.0</commons-lang3.version>
-        <kafka-streams-protobuf-serde.version>7.3.2</kafka-streams-protobuf-serde.version>
+        <kafka-streams-protobuf-serde.version>7.4.0</kafka-streams-protobuf-serde.version>
         <awaitility.version>4.2.0</awaitility.version>
         <commons-compress.version>1.23.0</commons-compress.version>
-        <commons-codec.version>1.15</commons-codec.version>
+        <commons-codec.version>1.16.0</commons-codec.version>
     </properties>
     <parent>
         <groupId>io.micronaut</groupId>
         <artifactId>micronaut-parent</artifactId>
-        <version>3.8.9</version>
+        <version>3.9.4</version>
         <relativePath/>
     </parent>
     <modules>

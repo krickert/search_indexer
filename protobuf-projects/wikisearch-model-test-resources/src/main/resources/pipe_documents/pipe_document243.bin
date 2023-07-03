@@ -1,676 +1,386 @@
 
-41515CodCod is the common name for the demersal fish genus Gadus, belonging to the family Gadidae. Cod is also used as part of the common name for a number of other fish species, and one species that belongs to genus Gadus is commonly not called cod (Alaska pollock, Gadus chalcogrammus).
+41285Interoperability�Interoperability is a characteristic of a product or system to work with other products or systems. While the term was initially defined for information technology or systems engineering services to allow for information exchange,Institute of Electrical and Electronics Engineers. IEEE Standard Computer Dictionary: A Compilation of IEEE Standard Computer Glossaries. New York, NY: 1990. a broader definition takes into account social, political, and organizational factors that impact system-to-system performance.Slater, T. [http://www.ncoic.org/what-is-interoperability "What is Interoperability?"] , [http://www.ncoic.org/ Network Centric Operations Industry Consortium - NCOIC] , 2012
 
-The two most common species of cod are the Atlantic cod (Gadus morhua), which lives in the colder waters and deeper sea regions throughout the North Atlantic, and the Pacific cod (Gadus macrocephalus), found in both eastern and western regions of the northern Pacific. Gadus morhua was named by Linnaeus in 1758. (However, G. morhua callarias, a low-salinity, nonmigratory race restricted to parts of the Baltic, was originally described as Gadus callarias by Linnaeus.)
+Types of interoperability include syntactic interoperability, where two systems can communicate with each other, and cross-domain interoperability, where multiple organizations work together and exchange information.
 
-Cod is popular as a food with a mild flavour and a dense, flaky, white flesh. Cod livers are processed to make cod liver oil, a common source of vitamin A, vitamin D, vitamin E, and omega-3 fatty acids (EPA and DHA). Young Atlantic cod or haddock prepared in strips for cooking is called scrod. In the United Kingdom, Atlantic cod is one of the most common ingredients in fish and chips, along with haddock and plaice.
+Types
 
-Species
+If two or more systems use common data formats and communication protocols and are capable of communicating with each other, they exhibit syntactic interoperability. XML and SQL are examples of common data formats and protocols. Lower-level data formats also contribute to syntactic interoperability, ensuring that alphabetical characters are stored in the same ASCII or a Unicode format in all the communicating systems.
 
-At various times in the past, taxonomists included many species in  the genus Gadus. Most of these are now either classified in other genera, or have been recognized as forms of one of three species. All these species have a number of common names, most of them ending with the word "cod", whereas other species, as closely related, have other common names (such as pollock and haddock).  However, many other, unrelated species also have common names ending with cod. The usage often changes with different localities and at different times.
+Beyond the ability of two or more computer systems to exchange information, semantic interoperability is the ability to automatically interpret the information exchanged meaningfully and accurately in order to produce useful results as defined by the end users of both systems. To achieve semantic interoperability, both sides must refer to a common information exchange reference model. The content of the information exchange requests are unambiguously defined: what is sent is the same as what is understood.
 
-Cod in the genus Gadus
+Cross-domain interoperability involves multiple social, organizational, political, legal entities working together for a common interest or information exchange.Slater, T. [https://www.ncoic.org/cross-domain-interoperability "Cross-Domain Interoperability"] , [https://www.ncoic.org/home Network Centric Operations Industry Consortium - NCOIC] , 2013
 
-Three species in the genus Gadus are currently called cod:
+Interoperability and open standards
 
-The fourth species of genus Gadus, Gadus chalcogrammus, is commonly called Alaska pollock or walleye pollock. But there are also less widespread alternative trade names highlighting the fish's belonging to the cod genus, like snow codAlaska Seafood Marketing Institute: Whitefish Buyers Guide. (Memento of the [https://web.archive.org/web/20060926232617/http://www.alaskaseafood.org/retailers/practices/pages/buyerguide-whitefish/index.html original] as of 26 September 2006 in the Internet Archive).SeafoodSource.com (23 January 2014): [https://www.seafoodsource.com/seafood-handbook/finfish/pollock-alaska Alaska pollock] .Doré, Ian (1991): [https://books.google.de/books?id
-5lLUBwAAQBAJ&pgPA126&lpg
-PA126&dq%22snow+cod%22&source
-bl&ots3JKgaK_uqF&sig
-ACfU3U2yVYITK2_eFytdKdGvR-RPcyx8jw&hlde&sa
-X&ved2ahUKEwibq6Gc3b3pAhUJzKQKHRumADgQ6AEwD3oECAkQAQ#v
-onepage&q%22snow%20cod%22&f
-false The New Fresh Seafood Buyer’s Guide: A manual for distributors, restaurants, and retailers] , p. 126. or bigeye cod.
+Interoperability implies exchanges between a range of products, or similar products from several different vendors, or even between past and future revisions of the same product. Interoperability may be developed post-facto, as a special measure between two products, while excluding the rest, by using open standards. When a vendor is forced to adapt its system to a dominant system that is not based on Open standards, it is compatibility, not interoperability.
 
-Related species
+Open standards
 
-Cod forms part of the common name of many other fish no longer classified in the genus Gadus. Many are members of the family Gadidae; others are members of three related families within the order Gadiformes whose names include the word "cod": the morid cods, Moridae (100 or so species); the eel cods, Muraenolepididae (four species); and the Eucla cod, Euclichthyidae (one species). The tadpole cod family (Ranicipitidae) has now been placed in Gadidae.
+Open standards rely on a broadly consultative and inclusive group including representatives from vendors, academics and others holding a stake in the development that discusses and debate the technical and economic merits, demerits and feasibility of a proposed common protocol. After the doubts and reservations of all members are addressed, the resulting common document is endorsed as a common standard. This document may be subsequently released to the public, and henceforth becomes an open standard. It is usually published and is available freely or at a nominal cost to any and all comers, with no further encumbrances. Various vendors and individuals (even those who were not part of the original group) can use the standards document to make products that implement the common protocol defined in the standard and are thus interoperable by design, with no specific liability or advantage for customers for choosing one product over another on the basis of standardized features. The vendors' products compete on the quality of their implementation, user interface, ease of use, performance, price, and a host of other factors, while keeping the customer's data intact and transferable even if he chooses to switch to another competing product for business reasons.
 
-Some fish have common names derived from "cod", such as codling, codlet, or tomcod. ("Codling" is also used as a name for a young cod.)
+Post facto interoperability
 
-Other species
+Post facto interoperability may be the result of the absolute market dominance of a particular product in contravention of any applicable standards, or if any effective standards were not present at the time of that product's introduction. The vendor behind that product can then choose to ignore any forthcoming standards and not co-operate in any standardization process at all, using its near-monopoly to insist that its product sets the de facto standard by its very market dominance. This is not a problem if the product's implementation is open and minimally encumbered, but it may well be both closed and heavily encumbered (e.g. by patent claims). Because of the network effect, achieving interoperability with such a product is both critical for any other vendor if it wishes to remain relevant in the market, and difficult to accomplish because of lack of cooperation on equal terms with the original vendor, who may well see the new vendor as a potential competitor and threat. The newer implementations often rely on clean-room reverse engineering in the absence of technical data to achieve interoperability. The original vendors may provide such technical data to others, often in the name of encouraging competition, but such data is invariably encumbered, and may be of limited use. Availability of such data is not equivalent to an open standard, because:
+# The data is provided by the original vendor on a discretionary basis, and the vendor has every interest in blocking the effective implementation of competing solutions, and may subtly alter or change its product, often in newer revisions, so that competitors' implementations are almost, but not quite completely interoperable, leading customers to consider them unreliable or of lower quality. These changes may not be passed on to other vendors at all, or passed on after a strategic delay, maintaining the market dominance of the original vendor.
+# The data itself may be encumbered, e.g. by patents or pricing, leading to a dependence of all competing solutions on the original vendor, and possibly leading a revenue stream from the competitors' customers back to the original vendor. This revenue stream is the result of the original product's market dominance and not a result of any innate superiority.
+# Even when the original vendor is genuinely interested in promoting a healthy competition (so that he may also benefit from the resulting innovative market), post-facto interoperability may often be undesirable as many defects or quirks can be directly traced back to the original implementation's technical limitations. Although in an open process, anyone may identify and correct such limitations, and the resulting cleaner specification may be used by all vendors, this is more difficult post-facto, as customers already have valuable information and processes encoded in the faulty but dominant product, and other vendors are forced to replicate those faults and quirks for the sake of preserving interoperability even if they could design better solutions. Alternatively, it can be argued that even open processes are subject to the weight of past implementations and imperfect past designs and that the power of the dominant vendor to unilaterally correct or improve the system and impose the changes to all users facilitates innovation.
+# Lack of an open standard can also become problematic for the customers, as in the case of the original vendor's inability to fix a certain problem that is an artifact of technical limitations in the original product. The customer wants that fault fixed, but the vendor has to maintain that faulty state, even across newer revisions of the same product, because that behavior is a de facto standard and many more customers would have to pay the price of any interoperability issues caused by fixing the original problem and introducing new behavior.
 
-Some fish commonly known as cod are unrelated to Gadus. Part of this name confusion is market-driven. Severely shrunken Atlantic cod stocks have led to the marketing of cod replacements using culinary names of the form "x cod", according to culinary rather than phyletic similarity. The common names for the following species have become well established; note that all inhabit the Southern Hemisphere.
+Government 
 
-Perciformes 
+eGovernment 
 
-Fish of the order Perciformes that are commonly called "cod" include:
-*Blue cod Parapercis colias
-*Eastern freshwater cod Maccullochella ikei
-*Mary River cod Maccullochella peelii mariensis
-*Murray cod Maccullochella peelii peelii
-*Potato cod Epinephelus tukula
-*Sleepy cod Oxyeleotris lineolatus
-*Trout cod Maccullochella macquariensis
-*The notothen family, Nototheniidae, including:
-**Antarctic cod Dissostichus mawsoni
-**Black cod Notothenia microlepidota
-**Maori cod Paranotothenia magellanica
+Speaking from an e-government perspective, interoperability refers to the collaboration ability of cross-border services for citizens, businesses and public administrations. Exchanging data can be a challenge due to language barriers, different specifications of formats, varieties of categorizations and other hindrances.
 
-Rock cod, reef cod, and coral cod 
+If data is interpreted differently, collaboration is limited, takes longer and is inefficient. For instance, if a citizen of country A wants to purchase land in country B, the person will be asked to submit the proper address data. Address data in both countries include full name details, street name and number as well as a postal code. The order of the address details might vary. In the same language, it is not an obstacle to order the provided address data; but across language barriers, it becomes difficult. If the language uses a different writing system it is almost impossible if no translation tools are available.
 
-Almost all coral cod, reef cod or rock cod are also in order Perciformes. Most are better known as groupers, and belong to the family Serranidae. Others belong to the Nototheniidae. Two exceptions are the Australasian red rock cod, which belongs to a different order (see below), and the fish known simply as the rock cod and as soft cod in New Zealand, Lotella rhacina, which as noted above actually is related to the true cod (it is a morid cod).
+Flood risk management 
 
-Scorpaeniformes 
+Interoperability is used by researchers in the context of urban flood risk management.  Cities and urban areas worldwide are expanding, which creates complex spaces with many interactions between the environment, infrastructure and people.  To address this complexity and manage water in urban areas appropriately, a system of systems approach to water and flood control is necessary. In this context, interoperability is important to facilitate system-of-systems thinking, and is defined as: "the ability of any water management system to redirect water and make use of other system(s) to maintain or enhance its performance function during water exceedance events." By assessing the complex properties of urban infrastructure systems, particularly the interoperability between the drainage systems and other urban systems (e.g. infrastructure such as transport), it could be possible to expand the capacity of the overall system to manage flood water towards achieving improved urban flood resilience.
 
-From the order Scorpaeniformes:
-*Ling cod Ophiodon elongatus
-*Red rock cod Scorpaena papillosa
-*Rock cod Sebastes
+Military forces
 
-Ophidiiformes 
+Force interoperability is defined in NATO as the ability of the forces of two or more nations to train, exercise and operate effectively together in the execution of assigned missions and tasks. Additionally NATO defines interoperability more generally as the ability to act together coherently, effectively and efficiently to achieve Allied tactical, operational and strategic objectives.[http://nso.nato.int/nso/zPublic/ap/aap6/AAP-6.pdf NATO Glossary of Terms and Definitions, NATO AAP-06]
 
-The tadpole cod family, Ranicipitidae, and the Eucla cod family, Euclichthyidae, were formerly classified in the order Ophidiiformes, but are now grouped with the Gadiformes.
+At the strategic level, interoperability is an enabler for coalition building. It facilitates meaningful contributions by coalition partners. At this level, interoperability issues center on harmonizing world views, strategies, doctrines, and force structures. Interoperability is an element of coalition willingness to work together over the long term to achieve and maintain shared interests against common threats. Interoperability at the operational and tactical levels is where strategic interoperability and technological interoperability come together to help allies shape the environment, manage crises, and win wars. The benefits of interoperability at the operational and tactical levels generally derive from the interchangeability of force elements and units. Technological interoperability reflects the interfaces between organizations and systems. It focuses on communications and computers but also involves the technical capabilities of systems and the resulting mission compatibility between the systems and data of coalition partners. At the technological level, the benefits of interoperability come primarily from their impacts at the operational and tactical levels in terms of enhancing flexibility.Interoperability: A continuing Challenge in Coalition Air Operations - Chapter 2 “A broad Definition of Interoperability”, by Myron Hura, Gary McLeod, James Schneider and others, RAND Monograph Report, 2000, [http://www.rand.org/content/dam/rand/pubs/monograph_reports/MR1235/MR1235.chap2.pdf] 
+ 
+Public safety
 
-Marketed as cod
+Interoperability is an important issue for law enforcement, fire fighting, EMS, and other public health and safety departments, because first responders need to be able to communicate during wide-scale emergencies. It has been a major area of investment and research over the last 12 years.Allen, D. K., Karanasios, S., & Norman, A. (2013). Information sharing and interoperability: the case of major incident management. European Journal of Information Systems, 10.1057/ejis.2013.8.Baldini, G. (2010). Report of the workshop on “Interoperable communications for Safety and Security”. Ispra: European Commission, Joint Research Centre (JRC), Institute for the Protection and Security of the Citizen. Traditionally, agencies could not exchange information because they operated widely disparate hardware that was incompatible. Agencies' information systems such as computer-aided dispatch systems (CAD) and records management systems (RMS) functioned largely in isolation, so-called information islands. Agencies tried to bridge this isolation with inefficient, stop-gap methods while large agencies began implementing limited interoperable systems. These approaches were inadequate and, in the US, the lack of interoperability in the public safety realm become evident during the 9/11 attacks on the Pentagon and World Trade Center structures. Further evidence of a lack of interoperability surfaced when agencies tackled the aftermath of the Hurricane Katrina disaster.
 
-Some fish that do not have "cod" in their names are sometimes sold as cod. Haddock and whiting belong to the same family, the Gadidae, as cod.
-* Haddock Melanogrammus aeglefinus
-* Whiting Merlangius merlangus
-* Patagonian toothfish or Chilean seabass
+In contrast to the overall national picture, some states, including Utah, have already made great strides forward. The Utah Highway Patrol and other departments in Utah have created a statewide data sharing network using technology from a company based in Bountiful, Utah, [https://web.archive.org/web/20180710230842/https://www.fatpot.com/ FATPOT Technologies].
 
-Characteristics
+The Commonwealth of Virginia is one of the leading states in the United States in improving interoperability and is continually recognized as a National Best Practice by the Department of Homeland Security (DHS). Virginia's proven practitioner-driven governance structure ensures that all the right players are involved in decision making, training and exercises, and planning efforts. The Interoperability Coordinator leverages a regional structure to better allocate grant funding around the Commonwealth so that all areas have an opportunity to improve communications interoperability. Virginia's strategic plan for communications is updated yearly to include new initiatives for the Commonwealth – all projects and efforts are tied to this plan, which is aligned with the National Emergency Communications Plan, authored by the Department of Homeland Security's Office of Emergency Communications (OEC).
 
-Cods of the genus Gadus have three rounded dorsal and two anal fins. The pelvic fins are small, with the first ray extended, and are set under the gill cover (i.e. the throat region), in front of the pectoral fins. The upper jaw extends over the lower jaw, which has a well-developed chin barbel. The eyes are medium-sized, approximately the same as the length of the chin barbel. Cod have a distinct white lateral line running from the gill slit above the pectoral fin, to the base of the caudal or tail fin. The back tends to be a greenish to sandy brown, and shows extensive mottling, especially towards the lighter sides and white belly. Dark brown colouration of the back and sides is not uncommon, especially for individuals that have resided in rocky inshore regions.
+The State of Washington seeks to enhance interoperability statewide. The State Interoperability Executive Committee (SIEC), established by the legislature in 2003, works to assist emergency responder agencies (police, fire, sheriff, medical, hazmat, etc.) at all levels of government (city, county, state, tribal, federal) to define interoperability for their local region.
 
-The Atlantic cod can change colour at certain water depths. It has two distinct colour phases: gray-green and reddish brown. Its average weight is 5 -, but specimens weighing up to 100 kg have been recorded. Pacific cod are smaller than Atlantic cod and are darker in colour.
+Washington recognizes collaborating on system design and development for wireless radio systems enables emergency responder agencies to efficiently provide additional services, increase interoperability, and reduce long-term costs.
 
-Distribution
+This work saves the lives of emergency personnel and the citizens they serve.
 
-Atlantic cod (Gadus morhua) live in the colder waters and deeper sea regions throughout the North Atlantic. Pacific cod (Gadus macrocephalus) is found in both eastern and western regions of the Pacific.[http://global.britannica.com/EBchecked/topic/123849/cod "Cod"] , Encyclopædia Britannica online 2008
+The U.S. government is making an effort to overcome the nation's lack of public safety interoperability. The Department of Homeland Security's Office for Interoperability and Compatibility (OIC) is pursuing the SAFECOM and CADIP and Project 25 programs, which are designed to help agencies as they integrate their CAD and other IT systems.
 
-Atlantic cod divide into several stocks, including the Arcto-Norwegian, North Sea, Baltic Sea, Faroe, Iceland, East Greenland, West Greenland, Newfoundland, and Labrador stocks. There seems to be little interchange between the stocks, although migrations to their individual breeding grounds may involve distances of 300 km or more. For instance, eastern Baltic cod shows specific reproductive adaptations to low salinity compared to Western Baltic and Atlantic cod.
+The OIC launched CADIP in August 2007. This project will partner the OIC with agencies in several locations, including Silicon Valley. This program will use case studies to identify the best practices and challenges associated with linking CAD systems across jurisdictional boundaries. These lessons will create the tools and resources public safety agencies can use to build interoperable CAD systems and communicate across local, state, and federal boundaries.
 
-Atlantic cod occupy varied habitat, favouring rough ground, especially inshore, and are demersal in depths between 6 and, 80 m on average, although not uncommonly to depths of 600 m. Off the Norwegian and New England coasts and on the Grand Banks of Newfoundland, cod congregate at certain seasons in water of 30 - depth. Cod are gregarious and form schools, although shoaling tends to be a feature of the spawning season.
+As regulator for interoperability 
 
-Life cycle
+Governance entities can increase interoperability through their legislative and executive powers. For instance, in 2021 the European Commission, after commissioning two impact assessment studies and a technology analysis study, proposed the implementation of a standardization – for iterations of USB-C – of phone charger products, which may increase interoperability along with convergence and convenience for consumers while decreasing resource-needs, redundancy and electronic waste.
 
-Spawning of northeastern Atlantic cod occurs between January and April (March and April are the peak months), at a depth of 200 m in specific spawning grounds at water temperatures between 4 and. Around the UK, the major spawning grounds are in the middle to southern North Sea, the start of the Bristol Channel (north of Newquay), the Irish Channel (both east and west of the Isle of Man), around Stornoway, and east of Helmsdale.
+Commerce and Industries 
 
-Prespawning courtship involves fin displays and male grunting, which leads to pairing. The male inverts himself beneath the female, and the pair swim in circles while spawning. The eggs are planktonic and hatch between eight and 23 days, with larva reaching 4 mm in length. This planktonic phase lasts some ten weeks, enabling the young cod to increase its body weight by 40-fold, and growing to about 2 cm. The young cod then move to the seabed and change their diet to small benthic crustaceans, such as isopods and small crabs. They increase in size to 8 cm in the first six months, 14 - by the end of their first year, and to 25 - by the end of the second. Growth tends to be less at higher latitudes. Cod reach maturity at about 50 cm at about 3 to 4 years of age. Changes in growth rate over decades of particular stocks have been reported, current eastern Baltic cod shows the lowest growth observed since 1955.
+Information technology and computers 
 
-Ecology
+Desktop
 
-Adult cod are active hunters, feeding on sand eels, whiting, haddock, small cod, squid, crabs, lobsters, mussels, worms, mackerel, and molluscs.
+The desktop interoperability (also known as interop) is a sub-section of the software interoperability. In the early days, the focus of ‘interop’ was to integrate web-applications with other web-applications. Over time, open-system ‘containers’ were developed to create a virtual desktop environment in which these applications could be registered and then communicate with each other using simple pub/sub patterns. Rudimentary UI capabilities were also supported allowing windows to be grouped with other windows. Today, the desktop interoperability has evolved into full-service interop platforms which include container support, basic exchange between web and web, but also native support for other application types and advanced window management. The very latest interop platforms also include application services such as universal search, notifications, user permissions and preferences, 3rd party application connectors and language adapters for in-house applications.
 
-In the Baltic Sea the most important prey species are herring and sprat. Many studies that analyze the stomach contents of these fish indicate that cod is the top predator, preying on the herring and sprat.  Sprat form particularly high concentrations in the Bornholm Basin in the southern Baltic Sea. Although cod feed primarily on adult sprat, sprat tend to prey on the cod eggs and larvae.
+Information search
 
-Cod and related species are plagued by parasites. For example, the cod worm, Lernaeocera branchialis, starts life as a copepod-like larva, a small free-swimming crustacean. The first host used by the larva is a flatfish or lumpsucker, which it captures with grasping hooks at the front of its body. It penetrates the fish with a thin filament, which it uses to suck the fish's blood. The nourished larvae then mate on the fish. The female larva, with her now fertilized eggs, then finds a cod, or a cod-like fish such as a haddock or whiting. There the larva clings to the gills while it metamorphoses into a plump sinusoidal wormlike body with a coiled mass of egg strings at the rear. The front part of the worm's body penetrates the body of the cod until it enters the rear bulb of the host's heart. There, firmly rooted in the cod's circulatory system, the front part of the parasite develops like the branches of a tree, reaching into the main artery. In this way, the worm extracts nutrients from the cod's blood, remaining safely tucked beneath the cod's gill cover until it releases a new generation of offspring into the water.
+Search interoperability refers to the ability of two or more information collections to be searched by a single query.
 
-Fisheries
+Specifically related to web-based search, the challenge of interoperability stems from the fact designers of web resources typically have little or no need to concern themselves with exchanging information with other web resources. Federated Search technology, which does not place format requirements on the data owner, has emerged as one solution to search interoperability challenges. In addition, standards, such as OAI-PMH, RDF, and SPARQL, have emerged recently that also help address the issue of search interoperability related to web resources. Such standards also address broader topics of interoperability, such as allowing data mining.
 
-The 2006 northwest Atlantic cod quota is 23,000 tons, representing half the available stocks, while the northeast Atlantic quota is 473,000 tons. Pacific cod is currently enjoying strong global demand. The 2006 total allowable catch (TAC) for the Gulf of Alaska and Aleutian Islands was 260,000 tons.
+Software
 
-Aquaculture
+With respect to software, the term interoperability is used to describe the capability of different programs to exchange data via a common set of exchange formats, to read and write the same file formats, and to use the same protocols. (The ability to execute the same binary code on different processor platforms is 'not' contemplated by the definition of interoperability.) The lack of interoperability can be a consequence of a lack of attention to standardization during the design of a program. Indeed, interoperability is not taken for granted in the non-standards-based portion of the computing world.
 
-Farming of Atlantic cod has received a significant amount of interest due to the overall trend of increasing cod prices alongside reduced wild catches.[http://www.fao.org/docrep/013/i1820e/i1820e.pdf The State of World Fisheries and Aquaculture 2010] . fao.org. .  However, progress in creating large scale farming of cod has been slow, mainly due to bottlenecks in the larval production stage, where survival and growth are often unpredictable.  It has been suggested that this bottleneck may be overcome by ensuring cod larvae are fed diets with similar nutritional content as the copepods they feed on in the wild  Recent examples have shown that increasing dietary levels of minerals such as selenium, iodine and zinc may improve survival and/or biomarkers for health in aquaculture reared cod larvae.
+According to ISO/IEC 2382-01, Information Technology Vocabulary, Fundamental Terms, interoperability is defined as follows: "The capability to communicate, execute programs, or transfer data among various functional units in a manner that requires the user to have little or no knowledge of the unique characteristics of those units".
 
-As food
+Note that the definition is somewhat ambiguous because the user of a program can be another program and, if the latter is a portion of the set of program that is required to be interoperable, it might well be that it does need to have knowledge of the characteristics of other units.
 
-Cod is popular as a food with a mild flavor and a dense, flaky white flesh. Cod livers are processed to make cod liver oil, an important source of vitamin A, vitamin D, vitamin E and omega-3 fatty acids (EPA and DHA).
+This definition focuses on the technical side of interoperability, while it has also been pointed out that interoperability is often more of an organizational issue: often interoperability has a significant impact on the organizations concerned, raising issues of ownership (do people want to share their data? or are they dealing with information silos?), labor relations (are people prepared to undergo training?) and usability. In this context, a more apt definition is captured in the term business process interoperability.
 
-Young Atlantic cod or haddock prepared in strips for cooking is called scrod. In the United Kingdom, Atlantic cod is one of the most common ingredients in fish and chips, along with haddock and plaice. Cod's soft liver can be tinned (canned) and eaten. 
+Interoperability can have important economic consequences; for example, research has estimated the cost of inadequate interoperability in the U.S. capital facilities industry to be $15.8 billion a year. If competitors' products are not interoperable (due to causes such as patents, trade secrets or coordination failures), the result may well be monopoly or market failure. For this reason, it may be prudent for user communities or governments to take steps to encourage interoperability in various situations. At least 30 international bodies and countries have implemented eGovernment-based interoperability framework initiatives called e-GIF while in the United States there is the NIEM initiative. Standards Defining Organizations (SDOs) provide open public software specifications to facilitate interoperability; examples include the Oasis-Open organization and buildingSMART (formerly the International Alliance for Interoperability). As far as user communities, Neutral Third Party is creating standards for business process interoperability. Another example of a neutral party is the RFC documents from the Internet Engineering Task Force (IETF).
 
-History
+The OSLC (Open Service for Lifecycle Collaboration) community is working on finding a common standard in order that software tools can share and exchange data e.g. bugs, tasks, requirements etc. The final goal is to agree on an open standard for interoperability of open source ALM tools.
 
-Cod has been an important economic commodity in international markets since the Viking period (around 800 AD). Norwegians travelled with dried cod and soon a dried cod market developed in southern Europe. This market has lasted for more than 1,000 years, enduring the Black Death, wars and other crises, and is still an important Norwegian fish trade. The Portuguese began fishing cod in the 15th century. Clipfish is widely enjoyed in Portugal. The Basques played an important role in the cod trade, and allegedly found the Canadian fishing banks before Columbus' discovery of America.
- The North American east coast developed in part due to the vast cod stocks. Many cities in the New England area are located near cod fishing grounds. The fish was so important to the history and development of Massachusetts, the state's House of Representatives hung a wood carving of a codfish, known as the Sacred Cod of Massachusetts, in its chambers.
+Java is a great example of an interoperable programming language that allows for programs to be written once and run anywhere with a Java Virtual Machine.Write once, run anywhere One writing a program in Java, so long as it does not use system-specific functionality, will maintain interoperability with all machines that have a Java Virtual Machine. There are many implementations of the Java Virtual Machine, such as Oracle, IBM, Android, etc... If a Java Virtual Machine is created to specification, applications will maintain compatibility because while the implementation is different, the underlying language interfaces are the same.
 
-Apart from the long history, cod differ from most fish because the fishing grounds are far from population centers. The large cod fisheries along the coast of North Norway (and in particular close to the Lofoten islands) have been developed almost uniquely for export, depending on sea transport of stockfish over large distances. Since the introduction of salt, dried and salted cod (clipfish or 'klippfisk' in Norwegian) has also been exported. By the end of the 14th century, the Hanseatic League dominated trade operations and sea transport, with Bergen as the most important port.
+Achieving software
 
-William Pitt the Elder, criticizing the Treaty of Paris in Parliament, claimed cod was "British gold"; and that it was folly to restore Newfoundland fishing rights to the French.
+Software interoperability is achieved through five interrelated ways:
+# Product testing
+#: Products produced to a common standard, or to a sub-profile thereof, depend on the clarity of the standards, but there may be discrepancies in their implementations that system or unit testing may not uncover. This requires that systems formally be tested in a production scenario – as they will be finally implemented – to ensure they actually will intercommunicate as advertised, i.e. they are interoperable. Interoperable product testing is different from conformance-based product testing as conformance to a standard does not necessarily engender interoperability with another product which is also tested for conformance.
+# Product engineering
+#: Implements the common standard, or a sub-profile thereof, as defined by the industry/community partnerships with the specific intention of achieving interoperability with other software implementations also following the same standard or sub-profile thereof.
+# Industry/community partnership
+#: Industry-community partnerships, either domestic or international, sponsor standard workgroups with the purpose to define a common standard that may be used to allow software systems to intercommunicate for a defined purpose. At times an industry/community will sub-profile an existing standard produced by another organization to reduce options and thus making interoperability more achievable for implementations.
+# Common technology and IP
+#: The use of a common technology or IP may speed up and reduce the complexity of interoperability by reducing variability between components from different sets of separately developed software products and thus allowing them to intercommunicate more readily. This technique has some of the same technical results as using a common vendor product to produce interoperability. The common technology can come through 3rd party libraries or open-source developments.
+# Standard implementation
+#: Software interoperability requires a common agreement that is normally arrived at via an industrial, national or international standard.
 
-In the 17th and 18th centuries in the New World, especially in Massachusetts and Newfoundland, cod became a major commodity, creating trade networks and cross-cultural exchanges. In 1733, Britain tried to gain control over trade between New England and the British Caribbean by imposing the Molasses Act, which they believed would eliminate the trade by making it unprofitable. The cod trade grew instead, because the "French were eager to work with the New Englanders in a lucrative contraband arrangement". In addition to increasing trade, the New England settlers organized into a "codfish aristocracy". The colonists rose up against Britain's "tariff on an import".
+Each of these has an important role in reducing variability in intercommunication software and enhancing a common understanding of the end goal to be achieved.
 
-In the 20th century, Iceland re-emerged as a fishing power and entered the Cod Wars. In the late 20th and early 21st centuries, fishing off the European and American coasts severely depleted stocks and become a major political issue. The necessity of restricting catches to allow stocks to recover upset the fishing industry and politicians who are reluctant to hurt employment.
+Market dominance and power 
 
-Collapse of the Atlantic northwest cod fishery
+Interoperability tends to be regarded as an issue for experts and its implications for daily living are sometimes underrated. The European Union Microsoft competition case shows how interoperability concerns important questions of power relationships. In 2004, the European Commission found that Microsoft had abused its market power by deliberately restricting interoperability between Windows work group servers and non-Microsoft work group servers. By doing so, Microsoft was able to protect its dominant market position for work group server operating systems, the heart of corporate IT networks. Microsoft was ordered to disclose complete and accurate interface documentation, which will enable rival vendors to compete on an equal footing (the interoperability remedy). As of June 2005, the Commission is market testing a new proposal by Microsoft to do this, having rejected previous proposals as insufficient.
 
-In 1992 the Canadian Federal Minister of Fisheries and Oceans, John Crosbie, declared a moratorium on the Northern Cod fishery, which for the preceding 500 years had largely shaped the lives and communities of Canada's eastern coast. Fishing societies interplay with the resources which they depend on: fisheries transform the ecosystem, which pushes the fishery and society to adapt.Hamilton et al., 195. In the summer of 1992, when the Northern Cod biomass fell to 1% of earlier levels,Hamilton and Butler, 1. Canada's federal government saw that this relationship had been pushed to the breaking point, and declared a moratorium, ending the region's 500-year run with the Northern Cod.
+Interoperability has also surfaced in the software patent debate in the European Parliament (June–July 2005). Critics claim that because patents on techniques required for interoperability are kept under RAND (reasonable and non-discriminatory licensing) conditions, customers will have to pay license fees twice: once for the product and, in the appropriate case, once for the patent-protected program the product uses.
 
-Observations on the reduced number and size of cod, and concerns of fishermen and marine biologists was offered, but generally ignored in favour of the uncertain science and harmful federal policies of Canada's Department of Fisheries and Oceans until the undeniable complete collapse of the fishery.  According to any reasonable analysis, the collapse was first due to massive overfishing. Second, the dependence for maintenance of the fishery itself on the nutrient cycle that was being disrupted by removal of megatons of biomass from a closed system resulted in the starvation of the residual fish.
+Manufacturing 
+
+Interoperability has become a common challenge within the manufacturing field in recent years particularly due to legacy systems, and the integration of manufacturing processes under the directive of promoting Industry 4.0. Interoperability has become a cornerstone of manufacturing policy and directives alongside autonomy and sustainability which can be identified within the German Federal policy of 2030 Vision for Industrie 4.0. The current pressing challenge for interoperability is closely linked to that of standardization and the implementation of best practices, which have prevented the driving of I4.0 to link manufacturing throughout the supply chain. Research into the current challenges have indicated that there is a gap within the IT and application landscapes of manufacturing enterprises, which present challenges for the linking of systems and flow of data. 
+
+Medical industry
+
+New technology is being introduced in hospitals and labs at an ever-increasing rate. The need for plug-and-play interoperability – the ability to take a medical device out of its box and easily make it work with one's other devices – has attracted great attention from both healthcare providers and industry.
+
+Increasingly, medical devices like incubators and imaging systems feature software that integrates at the point of care and with electronic systems, such as electronic medical records. At the 2016 Regulatory Affairs Professionals Society (RAPS) meeting, experts in the field like Angela N. Johnson with GE Healthcare and representative of the United States Food and Drug Administration provided practical seminars in how companies developing new medical devices, and hospitals installing them, can work more effectively to align interoperable software systems.
+
+Railways 
+
+Railways have greater or lesser interoperability depending on conforming to standards of gauge, couplings, brakes, signalling, communications, loading gauge, structure gauge, and operating rules, to mention a few parameters. For passenger rail service, different railway platform height and width clearance standards may also cause interoperability problems.
+
+North American freight and intercity passenger railroads are highly interoperable, but systems in Europe, Asia, Africa, Central and South America, and Australia are much less so. The parameter most difficult to overcome (at reasonable cost) is incompatibility of gauge, though variable gauge axle systems are increasingly used.
+
+Telecommunications 
+
+In telecommunication, the term can be defined as:
+
+#The ability to provide services to and accept services from other systems, and to use the services exchanged to enable them to operate effectively together. ITU-T provides standards for international telecommunications. 
+#The condition achieved among communications-electronics systems or items of communications-electronics equipment when information or services can be exchanged directly and satisfactorily between them and/or their users. The degree of interoperability should be defined when referring to specific cases.
+
+In two-way radio, interoperability is composed of three dimensions:
+
+* compatible communications paths (compatible frequencies, equipment and signaling),
+* radio system coverage or adequate signal strength, and;
+* scalable capacity.
+
+Organizations dedicated to interoperability
+
+Many organizations are dedicated to interoperability. All have in common that they want to push the development of the World Wide Web towards the semantic web. Some concentrate on eGovernment, eBusiness or data exchange in general. Internationally, Network Centric Operations Industry Consortium facilitates global interoperability across borders, language and technical barriers. In Europe, for instance, the European Commission and its IDABC program issue the European Interoperability Framework. IDABC was succeeded by the ISA program. They also initiated the Semantic Interoperability Centre Europe (SEMIC.EU). A [https://web.archive.org/web/20080331053219/http://www.eulis.org/index.html European Land Information Service] (EULIS) was established in 2006, as a consortium of European National Land Registers. The aim of the service is to establish a single portal through which customers are provided with access to information about individual properties, about land and property registration services, and about the associated legal environment. In the United States, the government's CORE.gov service provides a collaboration environment for component development, sharing, registration, and reuse and related to this is the [http://www.NIEM.gov National Information Exchange Model (NIEM)] work and component repository. The National Institute of Standards and Technology serves as an agency for measurement standards.
 
 See also
 
-* Harold Innis and the cod fishery, for the Canadian industry
+; Computer and information technology
+*Architecture of Interoperable Information Systems
+*List of computer standards
+*Model Driven Interoperability, framework  
+*Semantic Web, standard for making Internet data machine readable
+
+; Business
+*Business interoperability interface, between an organization's systems and processes
+*Enterprise interoperability, ability to link activities in an efficient and competitive way
+
+; Other 
+*Collaboration, general concept
+*Polytely, problem solving
+*Universal Data Element Framework, information indexing 
 
 References
 
-Further reading
-
-* Bavington, Dean L.Y. Managed Annihilation: An Unnatural History of the Newfoundland Cod Collapse (University of British Columbia Press; 2010) 224 pages. Links the collapse of Newfoundland and Labrador cod fishing to state management of the resource.
-* 
-* 
-* Mark Kurlansky (1997). Cod: A Biography of the Fish That Changed the World.
-*
-
 External links
 
-*[http://www.ucd.ie/codtrace/codfish.htm Codtrace] 
-*[http://www.fishbase.org/NomenClature/ScientificNameSearchList.cfm?Genus=Gadus fishbase.org – Scientific Names for Gadus]
-*[https://web.archive.org/web/20120501074530/http://www.fisheriesheritage.ca/ Fisheries Heritage website, Newfoundland and Labrador]
-*[http://www.nfh.uit.no/phaeocystis/uvac/TIM.htm Long term trends in Norwegian cod fisheries – the pioneers]
-*[https://web.archive.org/web/20120311082838/http://www.seafish.org/upload/file/fisheries_management/Cod%20Factsheet2%20APRIL%202007%20v.1.1.pdf Species factsheet on cod from the UK Sea Fish Industry Authority (PDF, 2MB)]
-*"1622404*����:ARTICLEB
+*[http://cyber.law.harvard.edu/interop/pdfs/interop-breaking-barriers.pdf "When and How Interoperability Drives Innovation," by Urs Gasser and John Palfrey]
+*[https://web.archive.org/web/20070912061034/http://www.cimit.org/orfuture.html CIMIT - Center for Integration of Medicine and Innovative Technology - the MD PnP Program on Medical Device Interoperability]
+*[https://web.archive.org/web/20190106202013/http://www.iocenter.eu/ GIC - The Greek Interoperability Centre: A Research Infrastructure for Interoperability in eGovernment and eBusiness, in SE Europe and the Mediterranean]
+*[http://www.sisostds.org/ Simulation Interoperability Standards Organization (SISO)]
+*[http://www.catcomtec.com Catalyst Communications]
+*[http://www.ariadne.ac.uk/issue24/interoperability Interoperability: What is it and why should I want it? Ariadne 24 (2000)]
+*[http://www.gridwiseac.org/pdfs/constitution_whitepaper_v1_1.pdf Interoperability Constitution - DOE's GridWise Architecture Council]
+*[http://www.gridwiseac.org/pdfs/interopframework_v1_1.pdf Interoperability Context-Setting Framework - DOE's GridWise Architecture Council]
+*[http://www.gridwiseac.org/pdfs/gwac_decisionmakerchecklist.pdf Decision Maker's Interoperability Checklist - DOE's GridWise Architecture Council]
+*[http://www.ibis.uni-oldenburg.de// OA Journal on Interoperability in Business Information Systems] 
+*[http://www.iol.unh.edu/ University of New Hampshire Interoperability Laboratory] - premier research facility on interoperability of computer networking technologies
+*[https://web.archive.org/web/20070926225814/http://sutor.com/newsite/blog-open/?p=1260 Interoperability vs. intraoperability: your open choice] on Bob Sutor blog, 6 December 2006
+*[https://web.archive.org/web/20070304002654/http://www.law.ed.ac.uk/ahrc/script%2Ded/vol3-4/jondet.asp La France v. Apple: who’s the dadvsi in DRMs?], Nicolas Jondet (University of Edinburgh), SCRIPT-ed, December 2006
+*[http://www.ecis.eu ECIS] European Committee for Interoperable Systems
+*Gradmann, Stefan. [https://web.archive.org/web/20160829012217/http://www.nationaalarchief.nl/kennisbank/interoperability-a-key-concept-for-large-scale-persistent-digital-libraries-2009 INTEROPERABILITY. A key concept for large scale, persistent digital libraries.]
+*[http://www.dlorg.eu/ DL.org] Digital Library Interoperability, Best Practices and Modelling Foundations"7903804*ޔ�:ARTICLEB
 	namespace B!
-	dump_date2022-11-01T13:33:06ZB݃
-	wiki_text΃{{Short description|Common name for the demersal fish genus Gadus}}
-{{About|a particular kind of fish|the food|Cod as food|
-other uses}}
-{{Use dmy dates|date=July 2014}}
-[[File:Gadus morhua Cod-2b-Atlanterhavsparken-Norway.JPG|thumb|upright=1.5|{{center|[[Atlantic cod]]}}]]
+	dump_date2022-10-25T20:43:10ZB��
+	wiki_text��{{Short description|Ability of systems to work with each other}}
+{{Use American English|date = March 2019}}
+{{lead too short|date=December 2016}}
 
-'''Cod''' is the [[common name]] for the [[demersal fish]] [[genus]] ''[[Gadus]]'', belonging to the [[family (biology)|family]] [[Gadidae]].<ref>{{cite EB1911 |wstitle=Cod|volume=6|page=632}}</ref> Cod is also used as part of the common name for a number of other fish species, and one species that belongs to genus ''Gadus'' is commonly not called cod ([[Alaska pollock]], ''Gadus chalcogrammus'').
+'''Interoperability''' is a characteristic of a product or system to work with other products or systems.<ref>{{cite web |others=Copyright AFUL under CC BY-SA |url=http://interoperability-definition.info/en/ |title=Definition of Interoperability |website=dedicated website for a Definition of Interoperability at interoperability-definition.info |access-date=2017-03-13 |archive-date=2017-03-14 |archive-url=https://web.archive.org/web/20170314064547/http://interoperability-definition.info/en/ |url-status=dead }}</ref> While the term was initially defined for [[information technology]] or [[systems engineering]] services to allow for information exchange,<ref>Institute of Electrical and Electronics Engineers. IEEE Standard Computer Dictionary: A Compilation of IEEE Standard Computer Glossaries. New York, NY: 1990.</ref> a broader definition takes into account social, political, and organizational factors that impact system-to-system performance.<ref>Slater, T. [http://www.ncoic.org/what-is-interoperability "What is Interoperability?"] {{Webarchive|url=https://web.archive.org/web/20140714143139/http://www.ncoic.org/what-is-interoperability |date=2014-07-14 }}, [http://www.ncoic.org/ ''Network Centric Operations Industry Consortium - NCOIC''] {{Webarchive|url=https://web.archive.org/web/20171120213045/http://www.ncoic.org/what-is-interoperability |date=2017-11-20 }}, 2012</ref>
 
-The two most common species of cod are the [[Atlantic cod]] (''Gadus morhua''), which lives in the colder waters and deeper sea regions throughout the [[North Atlantic]], and the [[Pacific cod]] (''Gadus macrocephalus''), found in both eastern and western regions of the northern [[Pacific Ocean|Pacific]]. ''Gadus morhua'' was named by [[Carl Linnaeus|Linnaeus]] in [[10th edition of Systema Naturae|1758]]. (However, ''G. morhua callarias'', a low-salinity, nonmigratory [[Subspecies|race]] restricted to parts of the Baltic, was originally described as ''Gadus callarias'' by Linnaeus.)
+Types of interoperability include '''syntactic interoperability''', where two systems can communicate with each other, and [[cross-domain interoperability]], where multiple organizations work together and exchange information.
 
-Cod is popular as a [[food]] with a mild flavour and a dense, flaky, [[Whitefish (fisheries term)|white flesh]]. Cod livers are processed to make [[cod liver oil]], a common source of [[vitamin A]], [[vitamin D]], [[vitamin E]], and [[omega-3 fatty acid]]s ([[eicosapentaenoic acid|EPA]] and [[docosahexaenoic acid|DHA]]). Young Atlantic cod or [[haddock]] prepared in strips for cooking is called [[scrod]]. In the United Kingdom, [[Atlantic cod]] is one of the most common ingredients in [[fish and chips]], along with [[haddock]] and [[plaice]].
-{{TOC limit}}
+==Types==
+If two or more systems use common [[File format|data format]]s and [[communication protocol]]s and are capable of communicating with each other, they exhibit ''syntactic interoperability''. [[XML]] and [[SQL]] are examples of common data formats and protocols. Lower-level data formats also contribute to syntactic interoperability, ensuring that alphabetical characters are stored in the same [[ASCII]] or a [[Unicode]] format in all the communicating systems.
 
-==Species==
-At various times in the past, taxonomists included many species in  the genus ''[[Gadus]]''. Most of these are now either classified in other genera, or have been recognized as forms of one of three species. All these species have a number of [[common name]]s, most of them ending with the word "cod", whereas other species, as closely related, have other common names (such as [[pollock]] and [[haddock]]).  However, many other, unrelated species also have common names ending with cod. The usage often changes with different localities and at different times.
+Beyond the ability of two or more computer systems to exchange information, [[semantic interoperability]] is the ability to automatically interpret the information exchanged meaningfully and accurately in order to produce useful results as defined by the end users of both systems. To achieve semantic interoperability, both sides must refer to a common information exchange reference model. The content of the information exchange requests are unambiguously defined: what is sent is the same as what is understood.
 
-===Cod in the genus ''Gadus''===
-Three species in the genus ''Gadus'' are currently called cod:
+[[Cross-domain interoperability]] involves multiple social, organizational, political, legal entities working together for a common interest or information exchange.<ref>Slater, T. [https://www.ncoic.org/cross-domain-interoperability "Cross-Domain Interoperability"] {{Webarchive|url=https://web.archive.org/web/20160826110009/https://www.ncoic.org/cross-domain-interoperability |date=2016-08-26 }}, [https://www.ncoic.org/home ''Network Centric Operations Industry Consortium - NCOIC''] {{Webarchive|url=https://web.archive.org/web/20130506134432/https://www.ncoic.org/home |date=2013-05-06 }}, 2013</ref>
 
-{{common fish}}
+==Interoperability and open standards==
+Interoperability implies exchanges between a range of products, or similar products from several different vendors, or even between past and future revisions of the same product. Interoperability may be developed ''[[wikt:ex post facto|post-facto]]'', as a special measure between two products, while excluding the rest, by using [[open standard]]s.{{elucidate|reason=How does using an open standard exclude others?|date=April 2022}} When a vendor is forced to adapt its system to a dominant system that is not based on Open standards, it is [[Computer compatibility|compatibility]], not interoperability.{{cn|date=April 2022}}
 
-{| class="wikitable collapsible"
-|-
-|+ {{nowrap|Cod in the genus ''Gadus''}}
-|-
-! Common name
-! Scientific name
-! Maximum<br />length
-! Common<br />length
-! Maximum<br />weight
-! Maximum<br />age
-! [[Trophic level|Trophic<br />level]]
-! [[FishBase|Fish<br />Base]]
-! [[FAO]]
-! [[ITIS]]
-! [[IUCN|IUCN status]]
-|-
-| [[Atlantic cod]]
-| ''Gadus morhua'' <small>[[Carl Linnaeus|Linnaeus]], [[10th edition of Systema Naturae|1758]]</small>
-| style="text-align:right;"| 200&nbsp;cm
-| style="text-align:right;"| 100&nbsp;cm
-| style="text-align:right;"| 96.0&nbsp;kg
-| style="text-align:right;"| 25 years
-| style="text-align:center;"| 4.4
-| style="text-align:center;"| <ref name=FBAtlantic>{{FishBase | genus = Gadus | species = morhua | month = April | year = 2012}}</ref>
-| style="text-align:center;"| <ref>[http://www.fao.org/fishery/species/2218/en ''Gadus morhua''] {{Webarchive|url=https://web.archive.org/web/20170907195108/http://www.fao.org/fishery/species/2218/en |date=7 September 2017 }} ([[Carl Linnaeus|Linnaeus]], [[10th edition of Systema Naturae|1758]])  FAO, Species Fact Sheet. Retrieved April 2012.</ref>
-| style="text-align:center;"| <ref>{{ITIS |id=164712 |taxon=Gadus morhua}}</ref>
-| [[File:VU IUCN 3 1.svg|VU IUCN 3 1.svg]] <small>Vulnerable</small><ref>Sobel, J. (1996). ''Gadus morhua''. The IUCN Red List of Threatened Species {{doi|10.2305/IUCN.UK.1996.RLTS.T8784A12931575.en}}</ref>
-|-
-| [[Pacific cod]]
-| ''Gadus macrocephalus'' <small>[[Wilhelm Gottlieb Tilesius von Tilenau|Tilesius]], 1810</small>
-| style="text-align:right;"| 119&nbsp;cm
-| style="text-align:right;"|  cm
-| style="text-align:right;"| 22.7&nbsp;kg
-| style="text-align:right;"| 18 years
-| style="text-align:center;"| 4.0
-| style="text-align:center;"| <ref name=FBPacific>{{FishBase | genus = Gadus | species = macrocephalus | month = April | year = 2012}}</ref>
-| style="text-align:center;"| <ref>[http://www.fao.org/fishery/species/2219/en ''Gadus macrocephalus'' (Tilesius, 1810) ] {{Webarchive|url=https://web.archive.org/web/20160207194404/http://www.fao.org/fishery/species/2219/en |date=7 February 2016 }} FAO, Species Fact Sheet. Retrieved April 2012.</ref>
-| style="text-align:center;"| <ref>{{ITIS |id=164711 |taxon=Gadus macrocephalus}}</ref>
-| style="text-align:center;"| <small>Not assessed</small>
-|-
-| [[Greenland cod]]
-| ''Gadus ogac'' <small>Richardson, 1836</small>
-| style="text-align:right;"| 77.0&nbsp;cm
-| style="text-align:right;"|  cm
-| style="text-align:right;"|  kg
-| style="text-align:right;"| 12 years
-| style="text-align:center;"| 3.6
-| style="text-align:center;"| <ref>{{FishBase | genus = Gadus | species = ogac | month = April | year = 2012}}</ref>
-| style="text-align:center;"| <ref>[http://www.fao.org/fishery/species/3011/en ''Gadus ogac'' (Richardson, 1836) ] {{Webarchive|url=https://web.archive.org/web/20160201235558/http://www.fao.org/fishery/species/3011/en |date=1 February 2016 }} FAO, Species Fact Sheet. Retrieved April 2012.</ref>
-| style="text-align:center;"| <ref>{{ITIS |id=164717 |taxon=Gadus ogac}}</ref>
-| style="text-align:center;"| <small>Not assessed</small>
-|}
+===Open standards===
+{{Main|Open standard}}
+Open standards rely on a broadly consultative and inclusive group including representatives from vendors, academics and others holding a stake in the development that discusses and debate the technical and economic merits, demerits and feasibility of a proposed common protocol. After the doubts and reservations of all members are addressed, the resulting common document is endorsed as a ''common standard''. This document may be subsequently released to the public, and henceforth becomes an ''open standard''. It is usually published and is available freely or at a nominal cost to any and all comers, with ''no further encumbrances''. Various vendors and individuals (even those who were not part of the original group) can use the standards document to make products that implement the common protocol defined in the standard and are thus ''interoperable by design'', with no specific liability or advantage for customers for choosing one product over another on the basis of standardized features. The vendors' products compete on the quality of their implementation, user interface, ease of use, performance, price, and a host of other factors, while keeping the customer's data intact and transferable even if he chooses to switch to another competing product for business reasons.
 
-The fourth species of genus Gadus, ''[[Gadus chalcogrammus]]'', is commonly called ''Alaska pollock'' or ''walleye pollock''. But there are also less widespread alternative trade names highlighting the fish's belonging to the cod genus, like ''snow cod''<ref>Alaska Seafood Marketing Institute: ''Whitefish Buyers Guide''. (Memento of the [https://web.archive.org/web/20060926232617/http://www.alaskaseafood.org/retailers/practices/pages/buyerguide-whitefish/index.html original] as of 26 September 2006 in the ''[[Internet Archive]]'').</ref><ref name="seafood-handbook">SeafoodSource.com (23 January 2014): ''[https://www.seafoodsource.com/seafood-handbook/finfish/pollock-alaska Alaska pollock] {{Webarchive|url=https://web.archive.org/web/20210525040525/https://www.seafoodsource.com/seafood-handbook/finfish/pollock-alaska |date=25 May 2021 }}''.</ref><ref>Doré, Ian (1991): ''[https://books.google.de/books?id=5lLUBwAAQBAJ&pg=PA126&lpg=PA126&dq=%22snow+cod%22&source=bl&ots=3JKgaK_uqF&sig=ACfU3U2yVYITK2_eFytdKdGvR-RPcyx8jw&hl=de&sa=X&ved=2ahUKEwibq6Gc3b3pAhUJzKQKHRumADgQ6AEwD3oECAkQAQ#v=onepage&q=%22snow%20cod%22&f=false The New Fresh Seafood Buyer’s Guide: A manual for distributors, restaurants, and retailers] {{Webarchive|url=https://web.archive.org/web/20200607210229/https://books.google.de/books?id=5lLUBwAAQBAJ&pg=PA126&lpg=PA126&dq=%22snow+cod%22&source=bl&ots=3JKgaK_uqF&sig=ACfU3U2yVYITK2_eFytdKdGvR-RPcyx8jw&hl=de&sa=X&ved=2ahUKEwibq6Gc3b3pAhUJzKQKHRumADgQ6AEwD3oECAkQAQ#v=onepage&q=%22snow%20cod%22&f=false |date=7 June 2020 }},'' p. 126.</ref> or ''bigeye cod''.<ref name="seafood-handbook"/>
+===''Post facto'' interoperability===
+{{Original research|section|date=August 2016}}
+''Post facto'' interoperability may be the result of the absolute market dominance of a particular product in contravention of any applicable standards, or if any effective standards were not present at the time of that product's introduction. The vendor behind that product can then choose to ''ignore'' any forthcoming standards and not co-operate in any standardization process at all, using its near-monopoly to insist that its product sets the ''de facto'' standard by its very market dominance. This is not a problem if the product's implementation is open ''and'' minimally encumbered, but it may well be both closed and heavily encumbered (e.g. by patent claims). Because of the [[network effect]], achieving interoperability with such a product is both critical for any other vendor if it wishes to remain relevant in the market, and difficult to accomplish because of lack of cooperation on equal terms with the original vendor, who may well see the new vendor as a potential competitor and threat. The newer implementations often rely on [[clean-room reverse engineering]] in the absence of technical data to achieve interoperability. The original vendors may provide such technical data to others, often in the name of ''encouraging competition'', but such data is invariably encumbered, and may be of limited use. Availability of such data is ''not'' equivalent to an open standard, because:
+# The data is provided by the original vendor on a discretionary basis, and the vendor has every interest in blocking the effective implementation of competing solutions, and may subtly alter or change its product, often in newer revisions, so that competitors' implementations are almost, but not quite completely interoperable, leading customers to consider them unreliable or of lower quality. These changes may not be passed on to other vendors at all, or passed on after a strategic delay, maintaining the market dominance of the original vendor.
+# The data itself may be encumbered, e.g. by patents or pricing, leading to a dependence of all competing solutions on the original vendor, and possibly leading a revenue stream from the competitors' customers back to the original vendor. This revenue stream is the result of the original product's market dominance and not a result of any innate superiority.
+# Even when the original vendor is genuinely interested in promoting a healthy competition (so that he may also benefit from the resulting innovative market), post-facto interoperability may often be undesirable as many defects or quirks can be directly traced back to the original implementation's technical limitations. Although in an open process, anyone may identify and correct such limitations, and the resulting cleaner specification may be used by all vendors, this is more difficult post-facto, as customers already have valuable information and processes encoded in the faulty but dominant product, and other vendors are forced to replicate those faults and quirks for the sake of preserving interoperability even if they could design better solutions. Alternatively, it can be argued that even open processes are subject to the weight of past implementations and imperfect past designs and that the power of the dominant vendor to unilaterally correct or improve the system and impose the changes to all users facilitates innovation.
+# Lack of an open standard can also become problematic for the customers, as in the case of the original vendor's inability to fix a certain problem that is an artifact of technical limitations in the original product. The customer wants that fault fixed, but the vendor has to maintain that faulty state, even across newer revisions of the same product, because that behavior is a de facto standard and many more customers would have to pay the price of any interoperability issues caused by fixing the original problem and introducing new behavior.
 
-===Related species===
-''Cod'' forms part of the [[common name]] of many other fish no longer classified in the genus ''Gadus''. Many are members of the family [[Gadidae]]; others are members of three related families within the order [[Gadiformes]] whose names include the word "cod": the [[morid cod]]s, [[Moridae]] (100 or so species); the eel cods, [[Muraenolepididae]] (four species); and the [[Eucla cod]], [[Euclichthyidae]] (one species). The tadpole cod family ([[Ranicipitidae]]) has now been placed in Gadidae.
+== Government ==
 
-{| class=wikitable
-|-
-|+{{nowrap|"Cod" in the order Gadiformes, but not part of ''Gadus''}}
-|-
-! Common name
-! Scientific name
-! Maximum<br />length
-! Common<br />length
-! Maximum<br />weight
-! Maximum<br />age
-! [[Trophic level|Trophic<br />level]]
-! [[FishBase|Fish<br />Base]]
-! [[FAO]]
-! [[ITIS]]
-! [[IUCN|IUCN status]]
-|-
-| [[Arctic cod]]
-| ''Arctogadus glacialis'' <small>(Peters, 1872)</small>
-| style="text-align:right;"| 32.5&nbsp;cm
-| style="text-align:right;"|  cm
-| style="text-align:right;"|  kg
-| style="text-align:right;"|  years
-| style="text-align:center;"| 3.8
-| style="text-align:center;"| <ref>{{FishBase | genus = Arctogadus | species = glacialis | month = April | year = 2012}}</ref>
-| style="text-align:center;"| 
-| style="text-align:center;"| <ref>{{ITIS |id=164704 |taxon=Arctogadus glacialis}}</ref>
-| style="text-align:center;"| <small>Not assessed</small>
-|-
-| [[East Siberian cod]]
-| ''Arctogadus borisovi'' <small>Dryagin, 1932</small>
-| style="text-align:right;"| 55.6&nbsp;cm
-| style="text-align:right;"|  cm
-| style="text-align:right;"| 1.5&nbsp;kg
-| style="text-align:right;"|  years
-| style="text-align:center;"| 3.9 
-| style="text-align:center;"| <ref>{{FishBase | genus = Arctogadus | species = borisovi | month = April | year = 2012}}</ref>
-| style="text-align:center;"| 
-| style="text-align:center;"| <ref>{{ITIS |id=164703 |taxon=Arctogadus borisovi}}</ref>
-| style="text-align:center;"| <small>Not assessed</small>
-|-
-| [[Eucla cod]]
-| ''Euclichthys polynemus'' <small>McCulloch, 1926</small>
-| style="text-align:right;"| 35.0&nbsp;cm
-| style="text-align:right;"| 22.5&nbsp;cm
-| style="text-align:right;"|  kg
-| style="text-align:right;"|  years
-| style="text-align:center;"| 3.6
-| style="text-align:center;"| <ref>{{FishBase | genus = Euclichthys | species = polynemus | month = April | year = 2012}}</ref>
-| style="text-align:center;"| 
-| style="text-align:center;"| <ref>{{ITIS |id=550695 |taxon=Euclichthys polynemus}}</ref>
-| style="text-align:center;"| <small>Not assessed</small>
-|-
-| [[Common ling]]
-| ''Molva molva'' <small>([[Carl Linnaeus|Linnaeus]], [[10th edition of Systema Naturae|1758]])</small>
-| style="text-align:right;"| 200&nbsp;cm
-| style="text-align:right;"| 106&nbsp;cm
-| style="text-align:right;"| 45.0&nbsp;kg
-| style="text-align:right;"| 25 years
-| style="text-align:center;"| 4.3
-| style="text-align:center;"| <ref>{{FishBase | genus = Molva | species = molva | month = April | year = 2012}}</ref>
-| style="text-align:center;"| <ref>[http://www.fao.org/fishery/species/2220/en ''Molva molva''] {{Webarchive|url=https://web.archive.org/web/20130320174050/http://www.fao.org/fishery/species/2220/en |date=20 March 2013 }} ([[Carl Linnaeus|Linnaeus]], [[10th edition of Systema Naturae|1758]]) FAO, Species Fact Sheet. Retrieved April 2012.</ref>
-| style="text-align:center;"| <ref>{{ITIS |id=164760 |taxon=Molva molva}}</ref>
-| style="text-align:center;"| <small>Not assessed</small>
-|-
-| [[Pelagic cod]]
-| ''Melanonus gracilis'' <small>Günther, 1878</small>
-| style="text-align:right;"| 18.7&nbsp;cm
-| style="text-align:right;"|  cm
-| style="text-align:right;"|  kg
-| style="text-align:right;"|  years
-| style="text-align:center;"| 3.5
-| style="text-align:center;"| <ref>{{FishBase | genus = Melanonus | species = gracilis | month = April | year = 2012}}</ref>
-| style="text-align:center;"| 
-| style="text-align:center;"| <ref>{{ITIS |id=550806 |taxon=Melanonus gracilis}}</ref>
-| style="text-align:center;"| <small>Not assessed</small>
-|-
-| [[Polar cod]]
-| ''Boreogadus saida'' <small>(Lepechin, 1774)</small>
-| style="text-align:right;"| 40.0&nbsp;cm
-| style="text-align:right;"| 25.0&nbsp;cm
-| style="text-align:right;"|  kg
-| style="text-align:right;"| 7 years
-| style="text-align:center;"| 3.1
-| style="text-align:center;"| <ref>{{FishBase | genus = Boreogadus | species = saida | month = April | year = 2012}}</ref>
-| style="text-align:center;"| <ref>[http://www.fao.org/fishery/species/2233/en ''Boreogadus saida'' (Lepechin, 1774)] {{Webarchive|url=https://web.archive.org/web/20130501094448/http://www.fao.org/fishery/species/2233/en |date=1 May 2013 }} FAO, Species Fact Sheet. Retrieved April 2012.</ref>
-| style="text-align:center;"| <ref>{{ITIS |id=164706 |taxon=Boreogadus saida}}</ref>
-| style="text-align:center;"| <small>Not assessed</small>
-|-
-| [[Poor cod]]
-| ''Trisopterus minutus'' <small>(Linnaeus, 1758)</small>
-| style="text-align:right;"| 40.0&nbsp;cm
-| style="text-align:right;"| 20.0&nbsp;cm
-| style="text-align:right;"|  kg
-| style="text-align:right;"| 5 years
-| style="text-align:center;"| 3.8
-| style="text-align:center;"| <ref>{{FishBase | genus = Trisopterus | species = minutus | month = April | year = 2012}}</ref>
-| style="text-align:center;"| 
-| style="text-align:center;"| <ref>{{ITIS |id=164754 |taxon=Trisopterus minutus}}</ref>
-| style="text-align:center;"| <small>Not assessed</small>
-|-
-| [[Rock cod]]
-| ''Lotella rhacina'' <small>(Forster, 1801)</small>
-| style="text-align:right;"| 50.0&nbsp;cm
-| style="text-align:right;"|  cm
-| style="text-align:right;"|  kg
-| style="text-align:right;"|  years
-| style="text-align:center;"| 3.5
-| style="text-align:center;"| <ref>{{FishBase | genus = Lotella | species = rhacina | month = April | year = 2012}}</ref>
-| style="text-align:center;"| 
-| style="text-align:center;"| <ref>{{ITIS |id=622984|taxon=Lotella rhacina}}</ref>
-| style="text-align:center;"| <small>Not assessed</small>
-|-
-| [[Saffron cod]]
-| ''Eleginus gracilis'' <small>([[Wilhelm Gottlieb Tilesius von Tilenau|Tilesius]], 1810)</small>
-| style="text-align:right;"| 55.0&nbsp;cm
-| style="text-align:right;"|  cm
-| style="text-align:right;"| 1.3&nbsp;kg
-| style="text-align:right;"| 15 years
-| style="text-align:center;"| 4.1
-| style="text-align:center;"| <ref>{{FishBase | genus = Eleginus | species = gracilis | month = April | year = 2012}}</ref>
-| style="text-align:center;"| <ref>[http://www.fao.org/fishery/species/3014/en ''Eleginus gracilis'' (Tilesius, 1810)] {{Webarchive|url=https://web.archive.org/web/20130212031909/http://www.fao.org/fishery/species/3014/en |date=12 February 2013 }} FAO, Species Fact Sheet. Retrieved April 2012.</ref>
-| style="text-align:center;"| <ref>{{ITIS |id=164708 |taxon=Eleginus gracilis}}</ref>
-| style="text-align:center;"| <small>Not assessed</small>
-|-
-| [[Small-headed cod]]
-| ''Lepidion microcephalus'' <small>Cowper, 1956</small>
-| style="text-align:right;"| 48.0&nbsp;cm
-| style="text-align:right;"|  cm
-| style="text-align:right;"|  kg
-| style="text-align:right;"|  years
-| style="text-align:center;"| 3.5
-| style="text-align:center;"| <ref>{{FishBase | genus = Lepidion | species = microcephalus | month = April | year = 2012}}</ref>
-| style="text-align:center;"| 
-| style="text-align:center;"| <ref>{{ITIS |id=550831 |taxon=Lepidion microcephalus}}</ref>
-| style="text-align:center;"| <small>Not assessed</small>
-|-
-| [[Tadpole cod]]
-| ''Guttigadus globosus'' <small>(Paulin, 1986)</small>
-| style="text-align:right;"| 18.1&nbsp;cm
-| style="text-align:right;"|  cm
-| style="text-align:right;"|  kg
-| style="text-align:right;"| 3.5 years
-| style="text-align:center;"| 
-| style="text-align:center;"| <ref>{{FishBase | genus = Guttigadus | species = globosus | month = April | year = 2012}}</ref>
-| style="text-align:center;"| 
-| style="text-align:center;"| <ref>{{ITIS |id=623005 |taxon=Guttigadus globosus}}</ref>
-| style="text-align:center;"| <small>Not assessed</small>
-|}
+=== eGovernment ===
+Speaking from an e-government perspective, interoperability refers to the collaboration ability of cross-border services for citizens, businesses and public administrations. Exchanging data can be a challenge due to language barriers, different specifications of formats, varieties of categorizations and other hindrances.
 
-Some fish have common names derived from "cod", such as [[Morids|codling]], [[codlet]], or [[tomcod]]. ("Codling" is also used as a name for a young cod.)
+If data is interpreted differently, collaboration is limited, takes longer and is inefficient. For instance, if a citizen of country A wants to purchase land in country B, the person will be asked to submit the proper address data. Address data in both countries include full name details, street name and number as well as a [[postal code]]. The order of the address details might vary. In the same language, it is not an obstacle to order the provided address data; but across language barriers, it becomes difficult. If the language uses a different [[writing system]] it is almost impossible if no translation tools are available.
 
-===Other species===
-Some fish commonly known as cod are unrelated to ''Gadus''. Part of this name confusion is market-driven. Severely shrunken Atlantic cod stocks have led to the marketing of cod replacements using [[culinary name]]s of the form "''x'' cod", according to culinary rather than phyletic similarity. The common names for the following species have become well established; note that all inhabit the [[Southern Hemisphere]].
+=== Flood risk management ===
+Interoperability is used by researchers in the context of urban [[flood risk management]].<ref>{{Cite journal|last1=Vercruysse|first1=Kim|last2=Dawson|first2=David A.|last3=Wright|first3=Nigel|title=Interoperability: A conceptual framework to bridge the gap between multifunctional and multisystem urban flood management|journal=Journal of Flood Risk Management|language=en|pages=e12535|doi=10.1111/jfr3.12535|issn=1753-318X|year=2019|volume=12|doi-access=free}}</ref>  Cities and urban areas worldwide are expanding, which creates complex spaces with many interactions between the environment, infrastructure and people.  To address this complexity and manage water in urban areas appropriately, a [[system of systems]] approach to water and [[flood control]] is necessary. In this context, interoperability is important to facilitate system-of-systems thinking, and is defined as: "the ability of any water management system to redirect water and make use of other system(s) to maintain or enhance its performance function during water exceedance events."<ref>{{citation |title=Achieving Urban Flood Resilience in an Uncertain Future  |year=2019 |doi=10.3390/w11051082|doi-access=free |last1=Fenner |first1=Richard |last2=o'Donnell |first2=Emily |last3=Ahilan |first3=Sangaralingam |last4=Dawson |first4=David |last5=Kapetas |first5=Leon |last6=Krivtsov |first6=Vladimir |last7=Ncube |first7=Sikhululekile |last8=Vercruysse |first8=Kim |journal=Water |volume=11 |issue=5 |page=1082 }}</ref> By assessing the complex properties of urban infrastructure systems, particularly the interoperability between the [[drainage]] systems and other urban systems (e.g. infrastructure such as transport), it could be possible to expand the capacity of the overall system to manage flood water towards achieving improved urban flood resilience.<ref>{{Cite web|url=http://www.urbanfloodresilience.ac.uk/|title=Urban Flood Resilience|website=www.urbanfloodresilience.ac.uk|language=en-GB|access-date=2019-05-15}}</ref>
 
-==== Perciformes ====
-Fish of the [[order (biology)|order]] [[Perciformes]] that are commonly called "cod" include:
-*[[Blue cod]] ''Parapercis colias''
-*[[Eastern freshwater cod]] ''Maccullochella ikei''
-*[[Mary River cod]] ''Maccullochella peelii mariensis''
-*[[Murray cod]] ''Maccullochella peelii peelii''
-*[[Potato cod]] ''Epinephelus tukula''
-*[[Sleepy cod]] ''Oxyeleotris lineolatus''
-*[[Trout cod]] ''Maccullochella macquariensis''
-*The notothen family, [[Nototheniidae]], including:
-**[[Antarctic cod]] ''Dissostichus mawsoni''
-**[[Notothenia microlepidota|Black cod]] ''Notothenia microlepidota''
-**[[Maori cod]] ''Paranotothenia magellanica''
+===Military forces===
+{{anchor| Military}}
+''Force interoperability'' is defined in NATO as the ability of the forces of two or more nations to train, exercise and operate effectively together in the execution of assigned missions and tasks. Additionally NATO defines interoperability more generally as the ability to act together coherently, effectively and efficiently to achieve Allied tactical, operational and strategic objectives.<ref>[http://nso.nato.int/nso/zPublic/ap/aap6/AAP-6.pdf NATO Glossary of Terms and Definitions, NATO AAP-06]{{dead link|date=April 2017 |bot=InternetArchiveBot |fix-attempted=yes }}</ref>
 
-==== Rock cod, reef cod, and coral cod ====
-Almost all [[coral cod]], [[reef cod]] or [[rock cod]] are also in order [[Perciformes]]. Most are better known as [[grouper]]s, and belong to the family [[Serranidae]]. Others belong to the [[Nototheniidae]]. Two exceptions are the [[Australasia]]n [[red rock cod]], which belongs to a different order (see below), and the fish known simply as the rock cod and as [[soft cod]] in New Zealand, ''[[Lotella rhacina]]'', which as noted above actually is related to the true cod (it is a morid cod).
+At the strategic level, interoperability is an enabler for coalition building. It facilitates meaningful contributions by coalition partners. At this level, interoperability issues center on harmonizing world views, strategies, doctrines, and force structures. Interoperability is an element of coalition willingness to work together over the long term to achieve and maintain shared interests against common threats. Interoperability at the operational and tactical levels is where strategic interoperability and technological interoperability come together to help allies shape the environment, manage crises, and win wars. The benefits of interoperability at the operational and tactical levels generally derive from the interchangeability of force elements and units. ''Technological interoperability'' reflects the interfaces between organizations and systems. It focuses on communications and computers but also involves the technical capabilities of systems and the resulting mission compatibility between the systems and data of coalition partners. At the technological level, the benefits of interoperability come primarily from their impacts at the operational and tactical levels in terms of enhancing flexibility.<ref>Interoperability: A continuing Challenge in Coalition Air Operations - Chapter 2 “A broad Definition of Interoperability”, by Myron Hura, Gary McLeod, James Schneider and others, RAND Monograph Report, 2000, [http://www.rand.org/content/dam/rand/pubs/monograph_reports/MR1235/MR1235.chap2.pdf] {{Webarchive|url=https://web.archive.org/web/20131019111733/http://www.rand.org/content/dam/rand/pubs/monograph_reports/MR1235/MR1235.chap2.pdf |date=2013-10-19 }}</ref><!--[[User:Kvng/RTH]]-->
+ 
+===Public safety===
+Interoperability is an important issue for [[police|law enforcement]], [[fire fighting]], [[Emergency medical services|EMS]], and other public health and safety departments, because first responders need to be able to communicate during wide-scale emergencies. It has been a major area of investment and research over the last 12 years.<ref>Allen, D. K., Karanasios, S., & Norman, A. (2013). Information sharing and interoperability: the case of major incident management. European Journal of Information Systems, 10.1057/ejis.2013.8.</ref><ref>Baldini, G. (2010). Report of the workshop on “Interoperable communications for Safety and Security”. Ispra: European Commission, Joint Research Centre (JRC), Institute for the Protection and Security of the Citizen.</ref> Traditionally, agencies could not exchange information because they operated widely disparate hardware that was incompatible.<ref>{{Cite news|url=https://www.firerescue1.com/fire-products/communications/interoperability/articles/424190-Interoperability-system-bridges-communications-gap/|title=Interoperability system bridges communications gap|newspaper=FireRescue1|access-date=2017-01-25}}</ref> Agencies' information systems such as computer-aided dispatch systems (CAD) and records management systems (RMS) functioned largely in isolation, so-called ''information islands''. Agencies tried to bridge this isolation with inefficient, stop-gap methods while large agencies began implementing limited interoperable systems. These approaches were inadequate and, in the US, the lack of interoperability in the public safety realm become evident during the [[9/11 attacks]]<ref>{{cite web|last=Grier|first=Robin|title=Interoperability Solutions|url=http://www.catcomtec.com/index.php?option=com_content&view=article&id=19&Itemid=34|work=Interoperability|publisher=Catalyst Communications|access-date=28 May 2011}}</ref> on the Pentagon and World Trade Center structures. Further evidence of a lack of interoperability surfaced when agencies tackled the aftermath of the Hurricane Katrina disaster.
 
-==== Scorpaeniformes ====
-From the order [[Scorpaeniformes]]:
-*[[Ling cod]] ''Ophiodon elongatus''
-*[[Red rock cod]] ''Scorpaena papillosa''
-*Rock cod ''[[Sebastes]]''
+In contrast to the overall national picture, some states, including Utah, have already made great strides forward. The [[Utah Highway Patrol]] and other departments in Utah have created a statewide [[data sharing]] network using technology from a company based in [[Bountiful, Utah]], [https://web.archive.org/web/20180710230842/https://www.fatpot.com/ FATPOT Technologies].
 
-==== Ophidiiformes ====
-The tadpole cod family, [[Ranicipitidae]], and the [[Eucla cod]] family, [[Euclichthyidae]], were formerly classified in the order [[Ophidiiformes]], but are now grouped with the [[Gadiformes]].
+The Commonwealth of Virginia is one of the leading states in the United States in improving interoperability and is continually recognized as a National Best Practice by the Department of Homeland Security (DHS).{{Citation needed|date=August 2016}} Virginia's proven practitioner-driven governance structure ensures that all the right players are involved in decision making, training and exercises, and planning efforts.{{Citation needed|date=August 2016}} The Interoperability Coordinator leverages a regional structure to better allocate grant funding around the Commonwealth so that all areas have an opportunity to improve communications interoperability. Virginia's strategic plan for communications is updated yearly to include new initiatives for the Commonwealth&nbsp;– all projects and efforts are tied to this plan, which is aligned with the National Emergency Communications Plan, authored by the Department of Homeland Security's Office of Emergency Communications (OEC).
 
-===Marketed as cod===
-Some fish that do not have "cod" in their names are sometimes sold as cod. Haddock and whiting belong to the same family, the Gadidae, as cod.
-* [[Haddock]] ''Melanogrammus aeglefinus''
-* [[Merlangius merlangus|Whiting]] ''Merlangius merlangus''
-* [[Patagonian toothfish]] or Chilean seabass
+The State of Washington<ref>{{cite web|url=http://www.governor.wa.gov|title=Governor Jay Inslee - Washington State|access-date=12 August 2016}}</ref> seeks to enhance interoperability statewide. The State Interoperability Executive Committee<ref>{{cite web|url=http://www.siec.wa.gov|title=SIEC|access-date=12 August 2016}}</ref> (SIEC), established by the legislature in 2003, works to assist emergency responder agencies (police, fire, sheriff, medical, hazmat, etc.) at all levels of government (city, county, state, tribal, federal) to define interoperability for their local region.
 
-==Characteristics==
-[[File:Atlantic cod.jpg|thumb|upright=1.2|right|The [[Atlantic cod]], ''Gadus morhua'']]
-Cods of the genus ''Gadus'' have three rounded [[Dorsal fin|dorsal]] and two [[anal fin]]s. The [[pelvic fin]]s are small, with the first ray extended, and are set under the [[gill]] cover (i.e. the throat region), in front of the [[pectoral fin]]s. The upper jaw extends over the lower jaw, which has a well-developed [[Barbel (anatomy)|chin barbel]]. The eyes are medium-sized, approximately the same as the length of the chin barbel. Cod have a distinct white [[lateral line]] running from the gill slit above the pectoral fin, to the base of the [[caudal fin|caudal]] or tail fin. The back tends to be a greenish to sandy brown, and shows extensive mottling, especially towards the lighter sides and white belly. Dark brown colouration of the back and sides is not uncommon, especially for individuals that have resided in rocky inshore regions.
+Washington recognizes collaborating on system design and development for wireless radio systems enables emergency responder agencies to efficiently provide additional services, increase interoperability, and reduce long-term costs.
 
-The [[Atlantic cod]] can change colour at certain water depths. It has two distinct colour phases: gray-green and reddish brown. Its average weight is {{convert|5|-|12|kg|lb|abbr=off}}, but specimens weighing up to {{convert|100|kg|lb|abbr=on}} have been recorded. Pacific cod are smaller than Atlantic cod<ref name=FBAtlantic /><ref name=FBPacific /> and are darker in colour.
+This work saves the lives of emergency personnel and the citizens they serve.
 
-==Distribution==
-[[Atlantic cod]] (''Gadus morhua'') live in the colder waters and deeper sea regions throughout the North Atlantic. Pacific cod (''Gadus macrocephalus'') is found in both eastern and western regions of the [[Pacific Ocean|Pacific]].<ref name=EBr>[http://global.britannica.com/EBchecked/topic/123849/cod "Cod"] {{Webarchive|url=https://web.archive.org/web/20140308033613/http://global.britannica.com/EBchecked/topic/123849/cod |date=8 March 2014 }}, ''Encyclopædia Britannica online'' 2008</ref>
+The U.S. government is making an effort to overcome the nation's lack of public safety interoperability. The Department of Homeland Security's [[Office for Interoperability and Compatibility]] (OIC) is pursuing the SAFECOM<ref>{{cite web|url=http://www.safecomprogram.gov/|title=SAFECOM - Homeland Security|access-date=12 August 2016|archive-url=https://web.archive.org/web/20141221211800/http://www.safecomprogram.gov/|archive-date=2014-12-21|url-status=dead}}</ref> and [[CADIP]] and [[Project 25]] programs, which are designed to help agencies as they integrate their CAD and other IT systems.
 
-Atlantic cod divide into several stocks, including the [[Norway|Arcto-Norwegian]], [[North Sea]], [[Baltic Sea]], [[Faroe Islands|Faroe]], [[Iceland]], [[East Greenland]], [[West Greenland]], [[Newfoundland (island)|Newfoundland]], and [[Labrador]] stocks. There seems to be little interchange between the stocks, although migrations to their individual breeding grounds may involve distances of {{convert|300|km|smi nmi|-1|abbr=off}} or more. For instance, eastern Baltic cod shows specific reproductive adaptations to low salinity compared to Western Baltic and Atlantic cod.<ref>{{Cite journal|last1=Vallin|first1=Lars|last2=Nissling|first2=Anders|last3=Westin|first3=Lars|date=1999|title=Potential Factors Influencing Reproductive Success of Baltic Cod, Gadus morhua: A Review|url=https://www.jstor.org/stable/4314854|journal=Ambio|volume=28|issue=1|pages=92–99|jstor=4314854|issn=0044-7447|access-date=21 November 2021|archive-date=21 November 2021|archive-url=https://web.archive.org/web/20211121131357/https://www.jstor.org/stable/4314854|url-status=live}}</ref>
+The OIC launched CADIP in August 2007. This project will partner the OIC with agencies in several locations, including [[Silicon Valley]]. This program will use case studies to identify the best practices and challenges associated with linking CAD systems across jurisdictional boundaries. These lessons will create the tools and resources public safety agencies can use to build interoperable CAD systems and communicate across local, state, and federal boundaries.
 
-Atlantic cod occupy varied habitat, favouring rough ground, especially inshore, and are [[demersal]] in depths between {{convert|6|and|60|m|ft fathom|abbr=off|sigfig=1}}, {{convert|80|m|ft fathom|abbr=on}} on average, although not uncommonly to depths of {{convert|600|m|ft fathom|abbr=on}}. Off the Norwegian and New England coasts and on the [[Grand Banks of Newfoundland]], cod congregate at certain seasons in water of {{convert|30|-|70|m|ft fathom|sigfig=1|abbr=on}} depth. Cod are gregarious and form schools, although [[shoaling and schooling|shoaling]] tends to be a feature of the spawning season.
+=== As regulator for interoperability ===
+Governance entities can increase interoperability through their legislative and executive powers. For instance, in 2021 the [[European Commission]], after commissioning two impact assessment studies and a [[product analysis|technology analysis]] study, proposed the implementation of a [[standardization]] – for iterations of [[USB-C]] – of [[phone charger]] products, which may increase interoperability along with convergence and convenience for consumers while decreasing resource-needs, redundancy and [[electronic waste]].<ref>{{cite news |title=Apple opposes EU plans to make common charger port for all devices |url=https://www.theguardian.com/world/2021/sep/23/apple-opposes-eu-plans-to-make-common-charger-port-for-all-devices |access-date=19 October 2021 |work=The Guardian |date=23 September 2021 |language=en}}</ref><ref>{{cite news |last1=Peltier |first1=Elian |title=In a setback for Apple, the European Union seeks a common charger for all phones. |url=https://www.nytimes.com/2021/09/23/business/european-union-apple-charging-port.html |access-date=19 October 2021 |work=The New York Times |date=23 September 2021}}</ref><ref>{{cite web |title=One common charging solution for all |url=https://ec.europa.eu/growth/sectors/electrical-engineering/red-directive/common-charger_en |website=Internal Market, Industry, Entrepreneurship and SMEs - European Commission |access-date=19 October 2021 |language=en |date=5 July 2016}}</ref>
 
-==Life cycle==
-Spawning of northeastern Atlantic cod occurs between January and April (March and April are the peak months), at a depth of {{convert|200|m|ft}} in specific spawning grounds at water temperatures between {{convert|4|and|6|C|F}}. Around the UK, the major spawning grounds are in the middle to southern North Sea, the start of the [[Bristol Channel]] (north of [[Newquay]]), the [[North Channel (Great Britain and Ireland)|Irish Channel]] (both east and west of the [[Isle of Man]]), around [[Stornoway]], and east of [[Helmsdale]].
+== Commerce and Industries ==
 
-Prespawning courtship involves fin displays and male grunting, which leads to pairing.<ref>{{cite journal | last1 = Brawn | first1 = V.M. | year = 1961 | title = Reproductive behaviour of the cod ''(Gadus callarias L.)'' | jstor = 4532991 | journal = Behaviour | volume = 18 | issue = 3| pages = 177–197 | doi=10.1163/156853961x00114}}</ref> The male inverts himself beneath the female, and the pair swim in circles while spawning. The eggs are planktonic and hatch between eight and 23 days, with larva reaching {{convert|4|mm|in|frac=32|abbr=off}} in length. This planktonic phase lasts some ten weeks, enabling the young cod to increase its body weight by 40-fold, and growing to about {{convert|2|cm|in|frac=4|abbr=on}}. The young cod then move to the seabed and change their diet to small [[benthic]] [[crustaceans]], such as [[isopods]] and small crabs. They increase in size to {{convert|8|cm|in|0|abbr=on}} in the first six months, {{convert|14|-|18|cm|in|frac=2|abbr=on}} by the end of their first year, and to {{convert|25|-|35|cm|in|frac=2|abbr=on}} by the end of the second. Growth tends to be less at higher latitudes. Cod reach maturity at about {{convert|50|cm|in|0|abbr=on}} at about 3 to 4 years of age. Changes in growth rate over decades of particular stocks have been reported, current eastern Baltic cod shows the lowest growth observed since 1955.<ref>{{Cite journal|last1=Mion|first1=Monica|last2=Haase|first2=Stefanie|last3=Hemmer‐Hansen|first3=Jakob|last4=Hilvarsson|first4=Annelie|last5=Hüssy|first5=Karin|last6=Krüger‐Johnsen|first6=Maria|last7=Krumme|first7=Uwe|last8=McQueen|first8=Kate|last9=Plikshs|first9=Maris|last10=Radtke|first10=Krzysztof|last11=Schade|first11=Franziska Maria|date=March 2021|title=Multidecadal changes in fish growth rates estimated from tagging data: A case study from the Eastern Baltic cod ( Gadus morhua, Gadidae )|url=https://onlinelibrary.wiley.com/doi/10.1111/faf.12527|journal=Fish and Fisheries|language=en|volume=22|issue=2|pages=413–427|doi=10.1111/faf.12527|s2cid=233795252|issn=1467-2960|access-date=21 November 2021|archive-date=21 November 2021|archive-url=https://web.archive.org/web/20211121131356/https://onlinelibrary.wiley.com/doi/10.1111/faf.12527|url-status=live}}</ref>
+=== Information technology and computers ===
 
-==Ecology==
-{{See also|Diseases and parasites in cod}}
-[[File:Lernaeocera branchialis.jpg|thumb|right|A fish with its gills infested with two [[cod worm]]s]]
-Adult cod are active hunters, feeding on [[sand eel]]s, [[merlangius merlangus|whiting]], [[haddock]], small cod, [[squid]], [[crab]]s, [[lobster]]s, [[mussel]]s, [[worm]]s, [[mackerel]], and [[mollusc]]s.
+====Desktop====
+{{Unreferenced section|date=March 2019}}
 
-In the Baltic Sea the most important prey species are [[Atlantic herring|herring]] and [[Sprattus sprattus|sprat]].<ref name=Koster2001/> Many studies that analyze the stomach contents of these fish indicate that cod is the top predator, preying on the herring and sprat.<ref name=Koster2001>{{cite journal|title=Developing Baltic cod recruitment models. I. Resolving spatial and temporal dynamics of spawning stock and recruitment for cod, herring, and sprat|journal=Canadian Journal of Fisheries and Aquatic Sciences|volume=58|issue=8|year=2001|pages=1516–1533|url=http://bioweb.coas.oregonstate.edu/~ciannellilab/cameo/articles/neuenfeldt/2001k%F6steretal.pdf |archive-url=https://ghostarchive.org/archive/20221009/http://bioweb.coas.oregonstate.edu/~ciannellilab/cameo/articles/neuenfeldt/2001k%F6steretal.pdf |archive-date=2022-10-09 |url-status=live|doi=10.1139/cjfas-58-8-1516|last1=Köster|first1=Friedrich W.|last2=Möllmann|first2=Christian|last3=Neuenfeldt|first3=Stefan|last4=St John|first4=Michael A|last5=Plikshs|first5=Maris|last6=Voss|first6=Rüdiger}} {{dead link|date=August 2017 |bot=InternetArchiveBot |fix-attempted=yes }}</ref> Sprat form particularly high concentrations in the [[Bornholm]] Basin in the southern Baltic Sea.<ref name=Casini2004>{{cite journal|author1=Casini, Michele |author2=Cardinale, Massimiliano |author3= Arrheni, Fredrik |name-list-style=amp |title=Feeding preferences of herring (''Clupea harengus'') and sprat (''Sprattus sprattus'') in the southern Baltic Sea|doi=10.1016/j.icesjms.2003.12.011|year=2004|journal=ICES Journal of Marine Science|volume=61|issue=8|page=1267|doi-access=free}}</ref> Although cod feed primarily on adult sprat, sprat tend to prey on the cod eggs and larvae.<ref name=Nissling2004>{{cite journal|author=Nissling, Anders|title=Effects of temperature on egg and larval survival of cod (''Gadus morhua'') and sprat (''Sprattus sprattus'') in the Baltic Sea – implications for stock development|doi=10.1023/B:hydr.0000018212.88053.aa|year=2004|journal=Hydrobiologia|volume=514|issue=1–3|pages=115–123|s2cid=59944278}}</ref>
+The desktop interoperability (also known as interop) is a sub-section of the software interoperability. In the early days, the focus of ‘interop’ was to integrate web-applications with other web-applications. Over time, open-system ‘containers’ were developed to create a virtual desktop environment in which these applications could be registered and then communicate with each other using simple pub/sub patterns. Rudimentary UI capabilities were also supported allowing windows to be grouped with other windows. Today, the desktop interoperability has evolved into full-service interop platforms which include container support, basic exchange between web and web, but also native support for other application types and advanced window management. The very latest interop platforms also include application services such as universal search, notifications, user permissions and preferences, 3rd party application connectors and language adapters for in-house applications.
 
-Cod and related species are plagued by parasites. For example, the [[cod worm]], ''Lernaeocera branchialis'', starts life as a [[copepod]]-like larva, a small free-swimming crustacean. The first host used by the larva is a [[flatfish]] or [[lumpsucker]], which it captures with grasping hooks at the front of its body. It penetrates the fish with a thin [[wiktionary:filament|filament]], which it uses to suck the fish's blood. The nourished larvae then mate on the fish.<ref name="Matthews">{{cite book|first=Bernard E. |last=Matthews|title=An Introduction to Parasitology |url={{google books |plainurl=y |id=UILMlQpNVCYC}}|date=1998 |publisher=Cambridge University Press |isbn=978-0-521-57691-8 |pages=73–74}}</ref><ref name="Piper">{{cite book
-|year=2007
-|title=Extraordinary Animals: An Encyclopedia of Curious and Unusual Animals
-|url=https://archive.org/details/extraordinaryani0000pipe|url-access=registration|publisher=[[Greenwood Press (publisher)|Greenwood Press]]|isbn=9780313339226
-}}</ref> The female larva, with her now fertilized eggs, then finds a cod, or a cod-like fish such as a [[haddock]] or [[Whiting (fish)|whiting]]. There the larva clings to the [[gill]]s while it metamorphoses into a plump sinusoidal wormlike body with a coiled mass of egg strings at the rear. The front part of the worm's body penetrates the body of the cod until it enters the rear bulb of the host's [[heart]]. There, firmly rooted in the cod's circulatory system, the front part of the parasite develops like the branches of a tree, reaching into the main [[artery]]. In this way, the worm extracts nutrients from the cod's blood, remaining safely tucked beneath the cod's gill cover until it releases a new generation of offspring into the water.<ref name="Matthews" /><ref name="Piper" />
+====Information search====
+Search interoperability refers to the ability of two or more information collections to be searched by a single query.
 
-{{Clear}}
+Specifically related to web-based search, the challenge of interoperability stems from the fact designers of web resources typically have little or no need to concern themselves with exchanging information with other web resources. [[Federated Search]] technology, which does not place format requirements on the data owner, has emerged as one solution to search interoperability challenges. In addition, standards, such as [[OAI-PMH]], [[Resource Description Framework|RDF]], and [[SPARQL]], have emerged recently that also help address the issue of search interoperability related to web resources. Such standards also address broader topics of interoperability, such as allowing data mining.
 
-==Fisheries==
-{{multiple image
- | align = right
- | direction = vertical
- | width     = 300
- | header            = 
- | header_align      = 
- | header_background = 
- | footer            = 
- | footer_align      = 
- | footer_background = 
- | background color  = 
- | image1    = Time series for global capture of Atlantic and Pacific cod.png
- | alt1      = 
- | caption1  = Global commercial capture of Atlantic and Pacific cod<br />in million tonnes reported by the [[FAO]] 1950–2010<ref name=FAOdata>Based on data sourced from the relevant [http://www.fao.org/fishery/species/search/en FAO Species Fact Sheets] {{Webarchive|url=https://web.archive.org/web/20090508190513/http://www.fao.org/fishery/species/search/en |date=8 May 2009 }}</ref>
- | image2    = Time series for global capture of all cod 2.png
- | alt2      = 
- | caption2  = The same chart as above, but showing embedded in light green, the [[collapse of the Atlantic northwest cod fishery]]<ref>Based on data sourced from the [http://www.fao.org/fishery/topic/18043/en FIGIS database] {{Webarchive|url=https://web.archive.org/web/20120430063052/http://www.fao.org/fishery/topic/18043/en |date=30 April 2012 }}, FAO.</ref>
- | image3    = <!-- add this here because it's presence corrects a scaling bug -->
-}}
-{{main|Cod fisheries}}
-{{Update|section|date=October 2022}}
+====Software====
+[[Image:Interoperable software.png|250px|thumb|Interoperability: playing the two role network game, when one of the player clients (top left) runs under [[Sun Microsystems]] and another under [[GNU Classpath]] with [[JamVM]]. The applications execute the same [[bytecode]] and interoperate using the standard [[RMI-IIOP]] messages for communication]]
+{{Main|Language interoperability|Semantic interoperability}}
 
-The 2006 northwest Atlantic cod [[IFQ|quota]] is 23,000 tons, representing half the available stocks, while the northeast Atlantic quota is 473,000 tons. Pacific cod is currently enjoying strong global demand. The 2006 [[total allowable catch]] (TAC) for the [[Gulf of Alaska]] and [[Aleutian Islands]] was 260,000 tons.<ref>{{cite web|title=2019–2020 Alaska Groundfish Harvest Specifications {{!}} NOAA Fisheries|url=https://www.fisheries.noaa.gov/alaska/sustainable-fisheries/2019-2020-alaska-groundfish-harvest-specifications|last=Fisheries|first=NOAA|date=2019-11-18|website=NOAA|language=en|access-date=2020-05-26|archive-date=28 July 2020|archive-url=https://web.archive.org/web/20200728164742/https://www.fisheries.noaa.gov/alaska/sustainable-fisheries/2019-2020-alaska-groundfish-harvest-specifications|url-status=live}}</ref>
+With respect to [[software]], the term ''interoperability'' is used to describe the capability of different programs to exchange data via a common set of exchange formats, to read and write the same [[file format]]s, and to use the same [[protocol (computing)|protocol]]s. (The ability to execute the same [[executable|binary code]] on different [[Central processing unit|processor]] platforms is 'not' contemplated by the definition of interoperability.) The lack of interoperability can be a consequence of a lack of attention to [[standardization]] during the design of a program. Indeed, interoperability is not taken for granted in the non-standards-based portion of the computing world.<ref>{{Cite book|title=The Official Guide to the SSCP Book|last=Gordon and Hernandez|publisher=SYBEX|isbn=978-1119278634|date=2016-05-16}}</ref>
 
-==Aquaculture==
-Farming of Atlantic cod has received a significant amount of interest due to the overall trend of increasing cod prices alongside reduced wild catches.<ref>[http://www.fao.org/docrep/013/i1820e/i1820e.pdf The State of World Fisheries and Aquaculture 2010] {{Webarchive|url=https://web.archive.org/web/20110915222055/http://www.fao.org/docrep/013/i1820e/i1820e.pdf |date=15 September 2011 }}. fao.org. {{ISBN|978-92-5-106675-1}}.</ref>  However, progress in creating large scale farming of cod has been slow, mainly due to bottlenecks in the larval production stage, where survival and growth are often unpredictable.<ref>{{cite journal |author1=Kamisaka, Y. |author2=Jordal, A.E.O. |author3=Edvardsen, R.B. |author4=Kryvi, H. |author5=Otterlei, E. |author6=Rønnestad, I |year=2010 |title=A case report on the distended gut syndrome (DGS) in cultured larvae of Atlantic cod (Gadus morhua) |journal=[[Aquaculture (journal)|Aquaculture]] |volume=309 |issue=1–4 |pages=38–48 |doi=10.1016/j.aquaculture.2010.09.006}}</ref>  It has been suggested that this bottleneck may be overcome by ensuring cod larvae are fed diets with similar nutritional content as the copepods they feed on in the wild <ref>{{cite journal |author1=van der Meeren, T. |author2=Olsen, R.E. |author3=Hamre, K. |author4=Fyhn, H.J |year=2008 |title=Biochemical composition of copepods for evaluation of feed quality in production of juvenile marine fish |journal=[[Aquaculture (journal)|Aquaculture]] |volume=274 |pages=375–397 |doi=10.1016/j.aquaculture.2007.11.041 |issue=2–4 |url=https://brage.bibsys.no/xmlui/bitstream/11250/108219/1/Biochemical%20composition%20of%20Copepods%20-%20Accepted%20preproof.pdf |hdl=11250/108219 |hdl-access=free |access-date=20 April 2018 |archive-date=12 April 2022 |archive-url=https://web.archive.org/web/20220412025727/https://www.unit.no/ugyldig-lenke-til-dokument-i-vitenarkiv |url-status=live }}</ref><ref>{{cite journal |author1=Hamre, K. |author2=Srivastava, A. |author3=Rønnestad, I. |author4=Mangor-Jensen, A. |author5=Stoss, J |year=2008 |title=Several micronutrients in the rotifer Brachionus sp. may not fulfil the nutritional requirements of marine fish larvae. |journal=Aquaculture Nutrition |volume=14 |pages=51–60 |doi=10.1111/j.1365-2095.2007.00504.x}}</ref> Recent examples have shown that increasing dietary levels of minerals such as selenium, iodine and zinc may improve survival and/or biomarkers for health in aquaculture reared cod larvae.<ref>{{cite journal |author1=Hamre, K. |author2=Mollan, T.A. |author3=Sæle, Ø. |author4=Erstad, B |year=2008 |title=Rotifers enriched with iodine and selenium increase survival in Atlantic cod (Gadus morhua) larvae |journal=[[Aquaculture (journal)|Aquaculture]] |volume=284 |issue=1–4 |pages=190–195 |doi=10.1016/j.aquaculture.2008.07.052}}</ref><ref>{{cite journal |author1=Penglase, S. |author2=Nordgreen, A. |author3=van der Meeren, T. |author4=Olsvik, P. |author5=Sæle, O. |author6=Baeverfjord, G. |author7=Helland, S. |author8=Hamre, K |year=2010 |title=Increasing the level of selenium in rotifers (Brachionus plicatilis 'Cayman') enhances the mRNA expression and activity of glutathione peroxidase in Atlantic cod (Gadus morhua L.) larvae |journal=[[Aquaculture (journal)|Aquaculture]] |volume=306 |issue=1–4 |pages=259–269 |doi=10.1016/j.aquaculture.2010.05.011}}</ref><ref>{{cite journal |author1=Penglase, S. |author2=Harboe, T. |author3=Sæle, O. |author4=Helland, S. |author5=Nordgreen, A. |author6=Hamre, K. |year=2013 |title=Iodine nutrition and toxicity in Atlantic cod (''Gadus morhua'') larvae |journal=[[PeerJ (journal)|PeerJ]] |volume=1:e20 |doi=10.7717/peerj.20 |pmid=23638355 |pages=e20|pmc=3628846 }}</ref><ref>{{cite journal|author1=Penglase, S. |author2=Hamre, K. |author3=Olsvik, P. |author4=Grøtan, E. |author5=Nordgreen, A |title=Rotifers enriched with iodine, copper and manganese had no effect on larval cod (Gadus morhua) growth, mineral status or redox system gene mRNA levels|journal=Aquaculture Research|volume=46 |issue=8 |page=1793 |date=2013|doi=10.1111/are.12332}}</ref>
+According to ISO/IEC 2382-01, ''Information Technology Vocabulary, Fundamental Terms'', interoperability is defined as follows: "The capability to communicate, execute programs, or transfer data among various functional units in a manner that requires the user to have little or no knowledge of the unique characteristics of those units".<ref>{{cite web|url=http://jtc1sc36.org/doc/36N0646.pdf|title=Proposed Draft Technical Report for: ISO/IEC xxxxx, Information technology -- Learning, education, and training -- Management and delivery -- Specification and use of extensions and profiles|author=SC36 Secretariat|date=2003-11-13|publisher=ISO/IEC JTC1 SC36|archive-url=https://web.archive.org/web/20071129034634/http://old.jtc1sc36.org/doc/36N0646.pdf|archive-date=2007-11-29|url-status=dead|access-date=12 August 2016}}</ref>
 
-{{Clear}}
+Note that the definition is somewhat ambiguous because the ''user'' of a program can be another program and, if the latter is a portion of the set of program that is required to be interoperable, it might well be that it does need to have knowledge of the characteristics of other units.
 
-==As food==
-[[File:Preserved Codfish Bodara.jpg|thumb|right|Preserved codfish]]
-{{main|Cod as food}}
+This definition focuses on the technical side of interoperability, while it has also been pointed out{{By whom|date=August 2016}} that interoperability is often more of an organizational issue: often interoperability has a significant impact on the organizations concerned, raising issues of ownership (do people want to share their data? or are they dealing with [[information silo]]s?), labor relations (are people prepared to undergo training?) and usability. In this context, a more apt definition is captured in the term ''[[business process interoperability]]''.
 
-Cod is popular as a [[food]] with a mild flavor and a dense, flaky [[Whitefish (fisheries term)|white flesh]]. Cod livers are processed to make [[cod liver oil]], an important source of [[vitamin A]], [[vitamin D]], [[vitamin E]] and [[omega-3 fatty acid]]s ([[eicosapentaenoic acid|EPA]] and [[docosahexaenoic acid|DHA]]).
+Interoperability can have important [[economic]] consequences; for example, research has estimated the cost of inadequate interoperability in the U.S. capital facilities industry to be $15.8 billion a year.<ref>{{cite report|author1=MP Gallaher|author2=AC O’Connor|author3=JL Dettbarn, Jr.|author4=LT Gilday|date=August 2004|title=Cost Analysis of Inadequate Interoperability in the U.S. Capital Facilities Industry|url=http://nvlpubs.nist.gov/nistpubs/gcr/2004/NIST.GCR.04-867.pdf|publisher=National Institute of Standards and Technology|page=iv|access-date=2012-04-19|archive-url=https://web.archive.org/web/20160204225252/http://nvlpubs.nist.gov/nistpubs/gcr/2004/NIST.GCR.04-867.pdf|archive-date=2016-02-04|url-status=dead}}</ref> If competitors' products are not interoperable (due to causes such as [[patent]]s, [[trade secret]]s or [[Coordination failure (economics)|coordination failures]]), the result may well be [[monopoly]] or [[market failure]]. For this reason, it may be prudent for user communities or governments to take steps to encourage interoperability in various situations. At least 30 international bodies and countries have implemented [[eGovernment]]-based interoperability framework initiatives called [[e-GIF]] while in the United States there is the [[NIEM]] initiative.<ref>{{cite web |url=https://lists.oasis-open.org/archives/tgf/201101/pdf00010.pdf |archive-url=https://ghostarchive.org/archive/20221009/https://lists.oasis-open.org/archives/tgf/201101/pdf00010.pdf |archive-date=2022-10-09 |url-status=live |title=e-Government Interoperability A comparative analysis of 30 countries |publisher=CS Transform |year=2010 |access-date=21 January 2016}}</ref> Standards Defining Organizations (SDOs) provide open public software specifications to facilitate interoperability; examples include the [[Oasis-Open]] organization and [[buildingSMART]] (formerly the International Alliance for Interoperability). As far as user communities, [[Neutral Third Party]] is creating standards for business process interoperability. Another example of a neutral party is the [[Request for Comments|RFC]] documents from the [[Internet Engineering Task Force]] (IETF).
 
-Young Atlantic cod or [[haddock]] prepared in strips for cooking is called [[scrod]]. In the [[United Kingdom]], [[Atlantic cod]] is one of the most common ingredients in [[fish and chips]], along with [[haddock]] and [[plaice]]. Cod's soft liver can be tinned (canned) and eaten. 
-{{Clear}}
+The OSLC<ref>{{cite web|url=http://open-services.net/|title=Open Services for Lifecycle Collaboration|access-date=12 August 2016}}</ref> (Open Service for Lifecycle Collaboration) community is working on finding a common standard in order that software tools can share and exchange data e.g. bugs, tasks, requirements etc. The final goal is to agree on an open standard for interoperability of open source [[Application Lifecycle Management|ALM]] tools.<ref>{{cite web|url=http://www.slideshare.net/olberger/presentation-icssea2011|title=OSLC (Open Services for Lifecycle Collaboration): open standard for i…|date=30 November 2011|access-date=12 August 2016}}</ref>
 
-==History==
-[[File:Joachim Beuckelaer - Vismarkt..JPG|thumb|right|Sixteenth-century [[Flemish]] fishmonger displaying cod, by [[Joachim Beuckelaer]]]]
+Java is a great example of an interoperable programming language that allows for programs to be written once and run anywhere with a Java Virtual Machine.<ref>[[Write once, run anywhere]]</ref>{{better source|date=May 2018}} One writing a program in Java, so long as it does not use system-specific functionality, will maintain interoperability with all machines that have a Java Virtual Machine. There are many implementations of the Java Virtual Machine, such as Oracle, IBM, Android, etc... If a Java Virtual Machine is created to specification, applications will maintain compatibility because while the implementation is different, the underlying language interfaces are the same.<ref>{{Cite book|url=https://www.safaribooksonline.com/library/view/clojure-programming/9781449310387/ch09.html|title=9. Java and JVM Interoperability [Book]|language=en}}</ref>
 
-Cod has been an important economic commodity in [[international market]]s since the [[Viking]] period (around 800 AD). [[Norway|Norwegians]] travelled with [[dried and salted cod|dried cod]] and soon a dried cod market developed in southern [[Europe]]. This market has lasted for more than 1,000 years, enduring the [[Black Death]], wars and other crises, and is still an important Norwegian fish trade.<ref>{{cite journal |year=2000 |title=What was the Viking age and when did it happen? A view from Orkney |journal=[[Norwegian Archaeological Review]] |volume=33 |issue=1 |pages=1–39 |doi=10.1080/00293650050202600 |last1=Barrett |first1=James |last2=Beukens |first2=Roelf |last3=Simpson |first3=Ian |last4=Ashmore |first4=Patrick |last5=Poaps |first5=Sandra |last6=Huntley |first6=Jacqui|s2cid=162229393 }}</ref> The [[Portuguese people|Portuguese]] began fishing cod in the 15th century. [[Clipfish]] is widely enjoyed in Portugal. The [[Basques]] played an important role in the cod trade, and allegedly found the [[Grand Banks of Newfoundland|Canadian fishing bank]]s before [[Christopher Columbus|Columbus]]' discovery of America.<ref name=kurl>
-{{cite book
-|last=Kurlansky
-|first=Mark
-|author-link=Mark Kurlansky
-|title=Cod: A Biography of the Fish That Changed the World
-|year=1997
-|publisher=Walker
-|location=New York
-|isbn=978-0-8027-1326-1
-|url-access=registration
-|url=https://archive.org/details/codbiographyof00kurl
-}}</ref> The North American east coast developed in part due to the vast cod stocks. Many cities in the New England area are located near cod fishing grounds. The fish was so important to the history and development of [[Massachusetts]], the state's House of Representatives hung a wood carving of a codfish, known as the [[Sacred Cod of Massachusetts]], in its chambers.
+=====Achieving software=====
+Software interoperability is achieved through five interrelated ways:
+# Product testing
+#: Products produced to a common standard, or to a sub-profile thereof, depend on the clarity of the standards, but there may be discrepancies in their implementations that system or unit testing may not uncover. This requires that systems formally be tested in a production scenario&nbsp;– as they will be finally implemented&nbsp;– to ensure they actually will intercommunicate as advertised, i.e. they are interoperable. Interoperable product testing is different from conformance-based product testing as conformance to a standard does not necessarily engender interoperability with another product which is also tested for conformance.
+# Product engineering
+#: Implements the common standard, or a sub-profile thereof, as defined by the industry/community partnerships with the specific intention of achieving interoperability with other software implementations also following the same standard or sub-profile thereof.
+# Industry/community partnership
+#: Industry-community partnerships, either domestic or international, sponsor standard workgroups with the purpose to define a common standard that may be used to allow software systems to intercommunicate for a defined purpose. At times an industry/community will sub-profile an existing standard produced by another organization to reduce options and thus making interoperability more achievable for implementations.
+# Common technology and IP
+#: The use of a common technology or IP may speed up and reduce the complexity of interoperability by reducing variability between components from different sets of separately developed software products and thus allowing them to intercommunicate more readily. This technique has some of the same technical results as using a common vendor product to produce interoperability. The common technology can come through 3rd party libraries or open-source developments.
+# Standard implementation
+#: Software interoperability requires a common agreement that is normally arrived at via an industrial, national or international [[standardisation|standard]].
 
-Apart from the long history, cod differ from most fish because the fishing grounds are far from population centers. The large cod fisheries along the coast of [[North Norway]] (and in particular close to the [[Lofoten]] islands) have been developed almost uniquely for [[export]], depending on sea transport of [[stockfish]] over large distances.<ref>{{cite journal
-| title = Norwegian fisheries research
-| author = Rollefsen, G.
-| journal = Fiskeridirektoratets Skrifter, Serie Havundersøkelser
-| volume = 14
-| pages = 1–36
-| year = 1966
-| issue = 1
-| url = http://brage.bibsys.no/imr/handle/URN:NBN:no-bibsys_brage_8018
-| access-date = 4 May 2012
-| archive-date = 2 November 2012
-| archive-url = https://web.archive.org/web/20121102204152/http://brage.bibsys.no/imr/handle/URN:NBN:no-bibsys_brage_8018
-| url-status = live
-}}</ref> Since the introduction of salt, [[dried and salted cod]] (clipfish or 'klippfisk' in Norwegian) has also been exported. By the end of the 14th century, the [[Hanseatic League]] dominated trade operations and sea transport, with [[Bergen, Norway|Bergen]] as the most important port.<ref>
-{{cite journal |author=Holt-Jensen, A.  |year=1985 |title=Norway and the sea: the shifting importance of marine resources through Norwegian history |journal=[[GeoJournal]] |volume=10 |issue=4 |pages=393–399 |doi=10.1007/BF00461710|s2cid=153579866 }}</ref>
+Each of these has an important role in reducing variability in intercommunication software and enhancing a common understanding of the end goal to be achieved.
 
-[[William Pitt the Elder]], criticizing the [[Treaty of Paris (1763)|Treaty of Paris]] in [[Parliament of Great Britain|Parliament]], claimed cod was "British gold"; and that it was folly to restore [[Newfoundland (island)|Newfoundland]] fishing rights to the [[France|French]].
+===Market dominance and power ===
+Interoperability tends to be regarded as an issue for experts and its implications for daily living are sometimes underrated. The [[European Union Microsoft competition case]] shows how interoperability concerns important questions of power relationships. In 2004, the European Commission found that Microsoft had abused its market power by deliberately restricting interoperability between Windows work group servers and non-Microsoft work group servers. By doing so, Microsoft was able to protect its dominant market position for work group server operating systems, the heart of corporate IT networks. Microsoft was ordered to disclose complete and accurate interface documentation, which will enable rival vendors to compete on an equal footing (''the interoperability remedy''). As of June 2005, the Commission is market testing a new proposal by Microsoft to do this, having rejected previous proposals as insufficient.
 
-In the 17th and 18th centuries in the New World, especially in [[Massachusetts]] and Newfoundland, cod became a major commodity, creating trade networks and cross-cultural exchanges. In 1733, Britain tried to gain control over trade between New England and the British [[Caribbean]] by imposing the [[Molasses Act]], which they believed would eliminate the trade by making it unprofitable. The cod trade grew instead, because the "French were eager to work with the New Englanders in a lucrative contraband arrangement".<ref name=kurl/> In addition to increasing trade, the New England settlers organized into a "codfish aristocracy". The colonists rose up against Britain's "tariff on an import".
+Interoperability has also surfaced in the [[software patent debate]] in the [[European Parliament]] (June–July 2005). Critics claim that because patents on techniques required for interoperability are kept under RAND (reasonable and non-discriminatory licensing) conditions, customers will have to pay license fees twice: once for the product and, in the appropriate case, once for the patent-protected program the product uses.
 
-In the 20th century, [[Iceland]] re-emerged as a fishing power and entered the [[Cod Wars]]. In the late 20th and early 21st centuries, fishing off the European and American coasts severely depleted stocks and become a major political issue. The necessity of restricting catches to allow stocks to recover upset the fishing industry and politicians who are reluctant to hurt employment.
+=== Manufacturing ===
+Interoperability has become a common challenge within the manufacturing field in recent years particularly due to legacy systems, and the integration of manufacturing processes under the directive of promoting Industry 4.0.<ref name=":0">{{Cite journal |last=Keller |first=Matthias |date=2021 |title=I4.0 Strategy and Policy Integration in The German Machining Industry |url=https://www.researchgate.net/publication/359005363 |journal=KU Leuven}}</ref> Interoperability has become a cornerstone of manufacturing policy and directives alongside autonomy and sustainability which can be identified within the German Federal policy of 2030 Vision for Industrie 4.0. The current pressing challenge for interoperability is closely linked to that of standardization and the implementation of best practices, which have prevented the driving of I4.0 to link manufacturing throughout the supply chain. Research into the current challenges have indicated that there is a gap within the IT and application landscapes of manufacturing enterprises, which present challenges for the linking of systems and flow of data.<ref name=":0" /> 
 
-===Collapse of the Atlantic northwest cod fishery===
-{{main|Collapse of the Atlantic northwest cod fishery}}
-{{POV section|date=January 2022}}
-[[File:Surexploitation morue surpêcheEn.jpg|thumb|300px|The [[Atlantic cod#Northwest Atlantic cod|Atlantic fishery]] abruptly collapsed in 1992, following [[overfishing]] since the late 1950s, and an earlier partial collapse in the 1970s.<ref name=Frank>{{cite journal|author1=Kenneth T. Frank |author2=Brian Petrie |author3=Jae S. Choi |author4=William C. Leggett |year=2005|title=Trophic Cascades in a Formerly Cod-Dominated Ecosystem|journal=Science|volume=308 |pages=1621–1623|doi=10.1126/science.1113075|pmid=15947186|issue=5728|bibcode=2005Sci...308.1621F |s2cid=45088691 }}</ref><ref>{{cite web|url=http://www.grida.no/graphicslib/detail/collapse-of-atlantic-cod-stocks-off-the-east-coast-of-newfoundland-in-1992_11e4|title=Collapse of Atlantic cod stocks off the East Coast of Newfoundland in 1992 {{!}} GRID-Arendal – Maps & Graphics library|website=www.grida.no|access-date=2017-02-22|archive-url=https://web.archive.org/web/20170222194251/http://www.grida.no/graphicslib/detail/collapse-of-atlantic-cod-stocks-off-the-east-coast-of-newfoundland-in-1992_11e4|archive-date=22 February 2017|url-status=dead}}</ref>]]
+===Medical industry===
+New technology is being introduced in [[hospitals]] and labs at an ever-increasing rate. The need for ''[[plug-and-play]]'' interoperability&nbsp;– the ability to take a medical device out of its box and easily make it work with one's other devices&nbsp;– has attracted great attention from both healthcare providers and industry.
 
-In 1992 the Canadian [[Minister of Fisheries and Oceans (Canada)|Federal Minister of Fisheries and Oceans]], [[John Crosbie]], declared a [[Moratorium (law)|moratorium]] on the Northern Cod fishery, which for the preceding 500 years had largely shaped the lives and communities of Canada's eastern coast. Fishing societies interplay with the resources which they depend on: fisheries transform the ecosystem, which pushes the fishery and society to adapt.<ref>Hamilton et al., 195.</ref> In the summer of 1992, when the [[Atlantic Cod|Northern Cod]] [[Biomass (ecology)|biomass]] fell to 1% of earlier levels,<ref>Hamilton and Butler, 1.</ref> Canada's federal government saw that this relationship had been pushed to the breaking point, and declared a [[moratorium (law)|moratorium]], ending the region's 500-year run with the Northern Cod.
+Increasingly, medical devices like incubators and imaging systems feature software that integrates at the point of care and with electronic systems, such as electronic medical records. At the 2016 Regulatory Affairs Professionals Society (RAPS) meeting, experts in the field like Angela N. Johnson with GE Healthcare and representative of the United States Food and Drug Administration provided practical seminars in how companies developing new medical devices, and hospitals installing them, can work more effectively to align interoperable software systems.<ref>{{cite web|url=http://www.assurx.com/raps-preview-fda-cdrh-director-shuren-talks-priorities/ |title= RAPS Preview: FDA CDRH Director Shuren Talks Priorities |date= September 19, 2016 |access-date= April 8, 2017}}</ref>
 
-Observations on the reduced number and size of cod, and concerns of fishermen and marine biologists<ref>{{cite web|url=http://fisherycrisis.com/sitemap.htm|title=Index to Articles|access-date=22 March 2019|archive-date=24 February 2019|archive-url=https://web.archive.org/web/20190224033702/http://www.fisherycrisis.com/sitemap.htm|url-status=live}}</ref> was offered, but generally ignored in favour of the uncertain science and harmful federal policies of Canada's Department of Fisheries and Oceans until the undeniable complete collapse of the fishery.  According to any reasonable analysis, the collapse was first due to massive overfishing. Second, the dependence for maintenance of the fishery itself on the [[nutrient cycle]] that was being disrupted by removal of megatons of biomass from a closed system resulted in the starvation of the residual fish.<ref>{{cite web |url=http://fisherycrisis.com/ |title=The Starving Ocean |publisher=Fisherycrisis.com |date= |accessdate=2022-03-01 |archive-date=6 April 2019 |archive-url=https://web.archive.org/web/20190406085845/http://www.fisherycrisis.com/ |url-status=live }}</ref><ref>{{cite web| url = https://www.cbc.ca/news/canada/newfoundland-labrador/northern-cod-rebuilding-plan-dfo-1.5856369| title = DFO has a new plan for northern cod stocks. It doesn't include more fishing {{!}} CBC News| access-date = 3 January 2021| archive-date = 3 January 2021| archive-url = https://web.archive.org/web/20210103225854/https://www.cbc.ca/news/canada/newfoundland-labrador/northern-cod-rebuilding-plan-dfo-1.5856369| url-status = live}}</ref>{{citation needed|date=August 2019}}
+=== Railways ===
+{{anchor| Railways}}
 
-{| class="wikitable collapsible collapsed" style="text-align: left;"
-|-
-! &nbsp; &nbsp; &nbsp; Historical images &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-|-
-|{{multiple image
- | align = left
- | direction = horizontal
- | header            = History
- | header_align      = center
- | image1    = Moll - Inset Codfish Map.png
- | width1    = 200
- | alt1      = 
- | caption1  = [[Fishing stage]] for curing and drying cod, [[Herman Moll]] 1654–1732
- | image2    = Drying fish, Burgeo, NL, 1908.jpg
- | width2    = 220
- | alt2      = 
- | caption2  = Drying fish 1908
- | image3    = Commercial fishing.jpg
- | width3    = 188
- | alt3      = 
- | caption3  = Cod and halibut before 1927
-}}
+Railways have greater or lesser interoperability depending on conforming to standards of [[Track gauge|gauge]], [[Railway coupling|couplings]], [[brake (railway)|brakes]], [[Railway signal|signalling]], [[communications]], [[loading gauge]], [[structure gauge]], and [[Railway signalling#Operating rules|operating rules]], to mention a few parameters. For passenger rail service, different [[railway platform height]] and [[platform gap|width clearance]] standards may also cause interoperability problems.
 
-{{multiple image
- | align = left
- | direction = horizontal
- | header            = History
- | header_align      = center
- | image1    = La pêche de la morue à Terre-Neuve en 1858-fabrication de l’huile de morue.jpg
- | width1    = 190
- | alt1      = 
- | caption1  = Manufacturing cod-liver oil,<br />Newfoundland 1858 <ref name=Girard>Girard, Fulgence (1858) [http://fr.wikisource.org/wiki/La_p%C3%AAche_de_la_morue La pêche de la morue] {{Webarchive|url=https://web.archive.org/web/20120730222620/http://fr.wikisource.org/wiki/La_p%C3%AAche_de_la_morue |date=30 July 2012 }} (The cod fishery) ''Le Monde illustré'', '''53'''. 17 April 1858. [http://translate.google.co.nz/translate?sl=auto&tl=en&js=n&prev=_t&hl=en&ie=UTF-8&layout=2&eotf=1&u=http%3A%2F%2Ffr.wikisource.org%2Fwiki%2FLa_p%25C3%25AAche_de_la_morue&act=url Google translation] {{Webarchive|url=https://web.archive.org/web/20140224000455/http://translate.google.co.nz/translate?sl=auto&tl=en&js=n&prev=_t&hl=en&ie=UTF-8&layout=2&eotf=1&u=http:%2F%2Ffr.wikisource.org%2Fwiki%2FLa_p%C3%AAche_de_la_morue&act=url |date=24 February 2014 }}</ref>
+North American freight and intercity passenger railroads are highly interoperable, but systems in Europe, Asia, Africa, Central and South America, and Australia are much less so. The parameter most difficult to overcome (at reasonable cost) is incompatibility of gauge, though [[variable gauge]] axle systems are increasingly used.
 
- | image2    = La pêche de la morue à Terre-Neuve en 1858.jpg
- | width2    = 150
- | alt2      = 
- | caption2  = Cod fishery,<br />Newfoundland 1858 <ref name=Girard />
- | image3    = Carlisle Packing Co floating cannery NOAA.jpg
- | width3    = 250
- | alt3      = 
- | caption3  = Carlisle Packaging Company, a floating cod cannery, [[Yukon River]], Alaska c. 1918
-}}
+=== Telecommunications ===
+In [[telecommunication]], the term can be defined as:
 
-{{multiple image
- | align = left
- | direction = horizontal
- | header            = Paintings
- | header_align      = center
- | image1    =
- | width1    = 157
- | alt1      = 
- | caption1  = Sign for the Cod and Lobster
- | image3    = Little Girl with a Cod (Anna Ancher).jpg
- | width3    = 160
- | alt3      = 
- | caption3  = Little Girl with a Cod, [[Anna Ancher]]
- | image4    = Isaac van Duynen - Still life of fish.jpg
- | width4    = 288
- | alt4      = 
- | caption4  = Still-life with fish and shellfish, [[Isaac van Duynen]]
+#The ability to provide services to and accept services from other systems, and to use the services exchanged to enable them to operate effectively together. [[ITU-T]] provides standards for international telecommunications. 
+#The condition achieved among [[communications-electronics]] systems or items of communications-electronics equipment when [[information]] or services can be exchanged directly and satisfactorily between them and/or their users. The degree of interoperability should be defined when referring to specific cases.<ref>{{FS1037C MS188}}</ref><ref>{{DODDIC}}</ref>
 
-}}
+In [[two-way radio]], interoperability is composed of three dimensions:
 
-{{multiple image
- | align = left
- | direction = horizontal
- | header            = Stamps
- | header_align      = center
- | image1    = Codstamp.jpg
- | width1    = 120
- | alt1      = 
- | caption1  = Cod postage stamp, [[Dominion of Newfoundland|Newfoundland]]
- | image2    = 20020810 15sant Latvia Postage Stamp.jpg
- | width2    = 165
- | alt2     = 
- | caption2  = 
- | image3    = DBP 1964 415 Jugend Kabeljau.jpg
- | width3    = 175
- | alt3      = 
- | caption3  = 
-}}
+* compatible communications paths (compatible frequencies, equipment and signaling),
+* radio system coverage or adequate signal strength, and;
+* scalable capacity.
 
-|}
+==Organizations dedicated to interoperability==
+Many organizations are dedicated to interoperability. All have in common that they want to push the development of the World Wide Web towards the semantic web.{{dubious|date=March 2014}} Some concentrate on eGovernment, eBusiness or data exchange in general. Internationally, [[Network Centric Operations Industry Consortium]] facilitates global interoperability across borders, language and technical barriers. In Europe, for instance, the European Commission and its [[IDABC]] program issue the [[European Interoperability Framework]]. IDABC was succeeded by the [[eGovernment in Europe#Interoperability Solutions for European Public Administrations (ISA)|ISA]] program. They also initiated the [[Semantic Interoperability Centre Europe]] (SEMIC.EU). A [https://web.archive.org/web/20080331053219/http://www.eulis.org/index.html European Land Information Service] (EULIS) was established in 2006, as a consortium of European National Land Registers. The aim of the service is to establish a single portal through which customers are provided with access to information about individual properties, about land and property registration services, and about the associated legal environment.<ref>{{cite web|url=http://www.eulis.org/aims.html|title=Welcome - EULIS|first=Erskine|last=Design|access-date=12 August 2016|archive-url=https://web.archive.org/web/20160917042036/http://eulis.org/aims.html|archive-date=17 September 2016|url-status=dead|df=dmy-all}}</ref> In the United States, the government's CORE.gov service provides a collaboration environment for component development, sharing, registration, and reuse and related to this is the [http://www.NIEM.gov National Information Exchange Model (NIEM)] work and component repository. The [[National Institute of Standards and Technology]] serves as an agency for measurement standards.
 
-== See also==
-* [[Harold Innis and the cod fishery]], for the Canadian industry
-{{Clear}}
+==See also==
+{{div col|colwidth=30em}}
+; Computer and information technology
+*[[Architecture of Interoperable Information Systems]]
+*[[List of computer standards]]
+*[[Model Driven Interoperability]], framework  
+*[[Semantic Web]], standard for making Internet data machine readable
+
+; Business
+*[[Business interoperability interface]], between an organization's systems and processes
+*[[Enterprise interoperability]], ability to link activities in an efficient and competitive way
+
+; Other 
+*[[Collaboration]], general concept
+*[[Polytely]], problem solving
+*[[Universal Data Element Framework]], information indexing 
+{{div col end}}
 
 ==References==
-{{Reflist|30em}}
-
-==Further reading==
-{{external media| float = right| video1 = [https://www.c-span.org/video/?110348-1/cod-biography-fish Presentation by Mark Kurlansky on ''Cod: A Biography of the Fish That Changed the World'', August 15, 1998], [[C-SPAN]]}}
-* Bavington, Dean L.Y. ''Managed Annihilation: An Unnatural History of the Newfoundland Cod Collapse'' (University of British Columbia Press; 2010) 224 pages. Links the collapse of Newfoundland and Labrador cod fishing to state management of the resource.
-* {{Cite book
- | last = Cobb
- | first = John N
- | title = Pacific Cod Fisheries
- | publisher = Government Printing Office
- | series = Bureau of Fisheries Document
- | volume = no. 830
- | year = 1916
- | location = Washington, DC
- | url = {{google books |plainurl=y |id=SGEZAAAAYAAJ}}
- | oclc = 14263968}}
-* {{Cite book |last=Greenberg |first=Paul |year=2010 |title=Four Fish: The Future of the Last Wild Food |url=https://www.google.com/books/edition/Four_Fish/ZVvK7yp1FzkC?hl=en&gbpv=1&dq&printsec=frontcover |location=New York |publisher=Penguin Press |isbn=9781594202568 |oclc=813929026}}
-* [[Mark Kurlansky]] (1997). ''Cod: A Biography of the Fish That Changed the World''.
-*{{Cite book
- | last = Shields
- | first = Edward
- | title = Salt of the sea: the Pacific Coast cod fishery and the last days of sail
- | publisher = Heritage House
- | year = 2001
- | location = Lopez Island, Wash.
- | isbn = 978-1-894384-35-3 }}
+{{reflist}}
 
 ==External links==
-{{wiktionary}}
-{{Commons category|Cod dishes}}
-{{Wikispecies|Gadus}}
-*[http://www.ucd.ie/codtrace/codfish.htm Codtrace] {{Webarchive|url=https://web.archive.org/web/20160201152058/http://www.ucd.ie/codtrace/codfish.htm |date=1 February 2016 }}
-*[http://www.fishbase.org/NomenClature/ScientificNameSearchList.cfm?Genus=Gadus fishbase.org – Scientific Names for Gadus]
-*[https://web.archive.org/web/20120501074530/http://www.fisheriesheritage.ca/ Fisheries Heritage website, Newfoundland and Labrador]
-*[http://www.nfh.uit.no/phaeocystis/uvac/TIM.htm Long term trends in Norwegian cod fisheries – the pioneers]
-*[https://web.archive.org/web/20120311082838/http://www.seafish.org/upload/file/fisheries_management/Cod%20Factsheet2%20APRIL%202007%20v.1.1.pdf Species factsheet on cod from the UK Sea Fish Industry Authority (PDF, 2MB)]
-*{{Cite NIE|wstitle=Cod|short=x}}
+{{External links|date=August 2016}}
+*[http://cyber.law.harvard.edu/interop/pdfs/interop-breaking-barriers.pdf "When and How Interoperability Drives Innovation," by Urs Gasser and John Palfrey]
+*[https://web.archive.org/web/20070912061034/http://www.cimit.org/orfuture.html CIMIT - Center for Integration of Medicine and Innovative Technology - the MD PnP Program on Medical Device Interoperability]
+*[https://web.archive.org/web/20190106202013/http://www.iocenter.eu/ GIC - The Greek Interoperability Centre: A Research Infrastructure for Interoperability in eGovernment and eBusiness, in SE Europe and the Mediterranean]
+*[http://www.sisostds.org/ Simulation Interoperability Standards Organization (SISO)]
+*[http://www.catcomtec.com Catalyst Communications]
+*[http://www.ariadne.ac.uk/issue24/interoperability Interoperability: What is it and why should I want it? Ariadne 24 (2000)]
+*[http://www.gridwiseac.org/pdfs/constitution_whitepaper_v1_1.pdf Interoperability Constitution - DOE's GridWise Architecture Council]
+*[http://www.gridwiseac.org/pdfs/interopframework_v1_1.pdf Interoperability Context-Setting Framework - DOE's GridWise Architecture Council]
+*[http://www.gridwiseac.org/pdfs/gwac_decisionmakerchecklist.pdf Decision Maker's Interoperability Checklist - DOE's GridWise Architecture Council]
+*[http://www.ibis.uni-oldenburg.de// OA Journal on Interoperability in Business Information Systems] {{Webarchive|url=https://web.archive.org/web/20161014095614/http://www.ibis.uni-oldenburg.de/ |date=2016-10-14 }}
+*[http://www.iol.unh.edu/ University of New Hampshire Interoperability Laboratory] - premier research facility on interoperability of computer networking technologies
+*[https://web.archive.org/web/20070926225814/http://sutor.com/newsite/blog-open/?p=1260 Interoperability vs. intraoperability: your open choice] on Bob Sutor blog, 6 December 2006
+*[https://web.archive.org/web/20070304002654/http://www.law.ed.ac.uk/ahrc/script%2Ded/vol3-4/jondet.asp La France v. Apple: who’s the dadvsi in DRMs?], Nicolas Jondet (University of Edinburgh), [[SCRIPT-ed]], December 2006
+*[http://www.ecis.eu ECIS] European Committee for Interoperable Systems
+*Gradmann, Stefan. [https://web.archive.org/web/20160829012217/http://www.nationaalarchief.nl/kennisbank/interoperability-a-key-concept-for-large-scale-persistent-digital-libraries-2009 INTEROPERABILITY. A key concept for large scale, persistent digital libraries.]
+*[http://www.dlorg.eu/ DL.org] Digital Library Interoperability, Best Practices and Modelling Foundations
 
-{{cod topics|state=expanded}}
-{{Commercial fish topics}}
-{{Authority control}}
-
-[[Category:Commercial fish]]
-[[Category:Gadidae]]
-[[Category:Fish common names]]B*
-date_parsed2022-12-07T02:26:01.420392Z
+[[Category:Interoperability| ]]
+[[Category:Computing terminology]]
+[[Category:Telecommunications engineering]]
+[[Category:Product testing]]B*
+date_parsed2022-12-07T05:36:12.870396Z

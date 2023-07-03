@@ -17,8 +17,8 @@
         <jdk.version>17</jdk.version>
         <release.version>17</release.version>
         <assertj-core.version>3.23.1</assertj-core.version>
-        <maven.compiler.version>3.10.1</maven.compiler.version>
-        <maven.surefire.plugin>3.0.0-M7</maven.surefire.plugin>
+        <maven.compiler.version>3.11.0</maven.compiler.version>
+        <maven.surefire.plugin>3.1.2</maven.surefire.plugin>
     </properties>
     <modules>
         <module>wikisearch-model</module>

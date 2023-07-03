@@ -3,6 +3,7 @@ package com.krickert.search.wiki.article.processor.messaging;
 import com.krickert.search.model.constants.KafkaProtobufConstants;
 import com.krickert.search.model.pipe.PipeDocument;
 import com.krickert.search.model.test.util.TestDataHelper;
+import com.krickert.search.model.util.ProtobufUtils;
 import io.micronaut.configuration.kafka.annotation.KafkaListener;
 import io.micronaut.configuration.kafka.annotation.Topic;
 import io.micronaut.context.annotation.Property;
@@ -50,6 +51,8 @@ class WikiArticleProcessorTest {
         await().atMost(30, SECONDS).until(() -> pipeDocuments.size() > 20);
         await().atMost(60, SECONDS).until(() -> pipeDocuments.size() > 100);
         await().atMost(90, SECONDS).until(() -> pipeDocuments.size() >= 367);
+        //uncomment to debug and save the raw pipe documetns
+        //ProtobufUtils.saveProtocoBufsToDisk("pipe_document",pipeDocuments,3);
     }
 
 

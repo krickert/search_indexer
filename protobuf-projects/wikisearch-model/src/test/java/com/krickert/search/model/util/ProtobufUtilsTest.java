@@ -25,8 +25,9 @@ public class ProtobufUtilsTest {
         filesToDelete.forEach((file) -> {
             try {
                 FileUtils.forceDelete(file);
-            } catch (IOException e) {
-                //windows.
+            } catch (NullPointerException | IOException e) {
+                //windows does IO exception at tiems
+                //OSX does NPE - this is just for tests so we swallow it for now
             }
         });
     }
