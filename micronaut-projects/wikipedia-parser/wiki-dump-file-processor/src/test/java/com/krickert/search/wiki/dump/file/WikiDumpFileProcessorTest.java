@@ -61,6 +61,7 @@ class WikiDumpFileProcessorTest {
         this.downloadedFileProcessingProducer.sendFileProcessingRequest(createKey(downloadedFile.getFileName()), downloadedFile);
         await().atMost(100, SECONDS).until(() -> wikiArticles.size() > 100);
         await().atMost(100, SECONDS).until(() -> wikiArticles.size() == 367);
+        //ProtobufUtils.saveProtocoBufsToDisk("article", wikiArticles, 3);
     }
 
     @KafkaListener(properties = @Property(name = KafkaProtobufConstants.SPECIFIC_CLASS_PROPERTY, value = KafkaProtobufConstants.WIKIARTICLE_CLASS), groupId = "test-group-wiki-dump")
