@@ -13,23 +13,6 @@ import java.util.List;
 @Singleton
 public class WikiURLExtractor {
 
-    public List<Link> parseUrlEntries(String pageText) {
-        String[] urlElements = StringUtils.substringsBetween(pageText, "[http", "]");
-        if (urlElements == null) {
-            return Collections.emptyList();
-        }
-        ArrayList<Link> urlEntries = Lists.newArrayListWithExpectedSize(urlElements.length);
-        for (String urlElement : urlElements) {
-            Link entry = generateUrlEntry(urlElement);
-            if (entry != null) {
-                urlEntries.add(entry);
-            }
-        }
-        return urlEntries;
-
-    }
-
-
     private static Link generateUrlEntry(String wikiCleanedText) {
         String[] entries = StringUtils.split(wikiCleanedText, " ", 2);
         if (ArrayUtils.isEmpty(entries)) {
@@ -49,6 +32,22 @@ public class WikiURLExtractor {
                 .setUrl(url)
                 .setDescription(value)
                 .build();
+
+    }
+
+    public List<Link> parseUrlEntries(String pageText) {
+        String[] urlElements = StringUtils.substringsBetween(pageText, "[http", "]");
+        if (urlElements == null) {
+            return Collections.emptyList();
+        }
+        ArrayList<Link> urlEntries = Lists.newArrayListWithExpectedSize(urlElements.length);
+        for (String urlElement : urlElements) {
+            Link entry = generateUrlEntry(urlElement);
+            if (entry != null) {
+                urlEntries.add(entry);
+            }
+        }
+        return urlEntries;
 
     }
 

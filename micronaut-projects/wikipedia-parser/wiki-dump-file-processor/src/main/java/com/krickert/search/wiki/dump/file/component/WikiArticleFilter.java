@@ -3,6 +3,7 @@ package com.krickert.search.wiki.dump.file.component;
 import com.google.protobuf.Timestamp;
 import com.krickert.search.model.wiki.WikiSiteInfo;
 import com.krickert.search.model.wiki.WikiType;
+import com.krickert.search.wiki.dump.file.messaging.WikiArticleProducer;
 import info.bliki.wiki.dump.IArticleFilter;
 import info.bliki.wiki.dump.Siteinfo;
 import info.bliki.wiki.dump.WikiArticle;
@@ -11,9 +12,7 @@ import io.micronaut.core.util.StringUtils;
 import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import com.krickert.search.wiki.dump.file.messaging.WikiArticleProducer;
 
-import java.io.IOException;
 import java.time.Instant;
 
 import static com.google.common.base.Preconditions.checkNotNull;
@@ -36,17 +35,20 @@ public class WikiArticleFilter implements IArticleFilter {
         this.urlExtractor = checkNotNull(urlExtractor);
     }
 
+    private static boolean notNull(Object o) {
+        return o != null;
+    }
+
     @Override
-    public void process(WikiArticle article, Siteinfo siteinfo) throws IOException {
-        log.info("Sending {}:{}", article.getId(),article.getTitle());
+    public void process(WikiArticle article, Siteinfo siteinfo) {
+        log.info("Sending {}:{}", article.getId(), article.getTitle());
         com.krickert.search.model.wiki.WikiArticle protoArticle = createWikiArticleProto(article, siteinfo);
         producer.sendParsedArticleProcessingRequest(createKey(protoArticle.getId()), protoArticle);
     }
 
-
     @NotNull
     private com.krickert.search.model.wiki.WikiArticle createWikiArticleProto(WikiArticle article, Siteinfo siteinfo) {
-        com.krickert.search.model.wiki.WikiArticle.Builder builder =  com.krickert.search.model.wiki.WikiArticle.newBuilder()
+        com.krickert.search.model.wiki.WikiArticle.Builder builder = com.krickert.search.model.wiki.WikiArticle.newBuilder()
                 .setId(article.getId())
                 .setNamespace(article.getNamespace())
                 .setNamespaceCode(article.getIntegerNamespace())
@@ -71,23 +73,22 @@ public class WikiArticleFilter implements IArticleFilter {
                         .setSeconds(in.getEpochSecond())
                         .setNanos(in.getNano()).build();
                 builder.setTimestamp(created);
-            } catch (RuntimeException e ) {
+            } catch (RuntimeException e) {
                 log.error("illegal format for dates", e);
             }
         }
         return builder.setDumpTimestamp(article.getTimeStamp())
-        .setTitle(article.getTitle())
-        .setWikiType(findWikiCategory(article.getTitle(), article.getText()))
-        .setDateParsed(now())
-        .build();
+                .setTitle(article.getTitle())
+                .setWikiType(findWikiCategory(article.getTitle(), article.getText()))
+                .setDateParsed(now())
+                .build();
     }
 
     private WikiType findWikiCategory(String title, String wikiBody) {
         if (title.contains("REDIRECT")
                 || (StringUtils.isNotEmpty(wikiBody) &&
-                    ( wikiBody.startsWith("#REDIRECT ")
-                    || wikiBody.startsWith("#redirect "))))
-        {
+                (wikiBody.startsWith("#REDIRECT ")
+                        || wikiBody.startsWith("#redirect ")))) {
             return WikiType.REDIRECT;
         } else if (title.startsWith("Category:")) {
             return WikiType.CATEGORY;
@@ -104,9 +105,5 @@ public class WikiArticleFilter implements IArticleFilter {
         } else {
             return WikiType.ARTICLE;
         }
-    }
-
-    private static boolean notNull(Object o) {
-        return o != null;
     }
 }

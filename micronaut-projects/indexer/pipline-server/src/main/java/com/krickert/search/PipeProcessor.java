@@ -7,7 +7,6 @@ import jakarta.inject.Singleton;
 public class PipeProcessor {
 
 
-
     @Inject
     public PipeProcessor() {
 

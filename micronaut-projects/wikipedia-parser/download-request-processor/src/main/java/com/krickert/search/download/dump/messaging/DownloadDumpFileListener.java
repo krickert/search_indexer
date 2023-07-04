@@ -2,12 +2,12 @@ package com.krickert.search.download.dump.messaging;
 
 import com.google.protobuf.Timestamp;
 import com.krickert.search.download.dump.component.FileDownloader;
-
 import com.krickert.search.model.constants.KafkaProtobufConstants;
-import com.krickert.search.model.util.ProtobufUtils;
 import com.krickert.search.model.wiki.DownloadFileRequest;
 import com.krickert.search.model.wiki.DownloadedFile;
-import io.micronaut.configuration.kafka.annotation.*;
+import io.micronaut.configuration.kafka.annotation.KafkaKey;
+import io.micronaut.configuration.kafka.annotation.KafkaListener;
+import io.micronaut.configuration.kafka.annotation.Topic;
 import io.micronaut.context.annotation.Property;
 import io.micronaut.context.annotation.Prototype;
 import io.micronaut.context.annotation.Value;
@@ -40,8 +40,7 @@ public class DownloadDumpFileListener {
 
     @Inject
     public DownloadDumpFileListener(
-            @Value("${wikipedia.download-location}")
-            final String downloadLocation,
+            @Value("${wikipedia.download-location}") final String downloadLocation,
             final FileDownloader fileDownloader,
             final DownloadedFileProcessingProducer producer)
             throws UnknownHostException {

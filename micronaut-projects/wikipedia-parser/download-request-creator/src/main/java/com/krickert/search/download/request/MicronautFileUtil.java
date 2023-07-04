@@ -3,13 +3,10 @@ package com.krickert.search.download.request;
 import io.micronaut.core.io.ResourceResolver;
 import io.micronaut.core.io.file.FileSystemResourceLoader;
 import io.micronaut.core.io.scan.ClassPathResourceLoader;
-import jakarta.inject.Singleton;
-import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.nio.charset.Charset;
@@ -36,7 +33,7 @@ public class MicronautFileUtil {
             return Optional.of(IOUtils.toString(resource.get().openStream(), Charset.defaultCharset()));
         } catch (NoSuchElementException | IOException e) {
             log.error("File was specified: [{}] but does not exist in classpath or as a file.", commandlineFileName);
-            return Optional.ofNullable(null);
+            return Optional.empty();
         }
     }
 }

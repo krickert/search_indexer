@@ -2,60 +2,67 @@ package com.krickert.search.download.request;
 
 import io.micronaut.rxjava3.http.client.Rx3HttpClient;
 import io.micronaut.test.extensions.junit5.annotation.MicronautTest;
-import io.reactivex.rxjava3.core.Flowable;
 import jakarta.inject.Inject;
 import org.apache.commons.io.FileUtils;
-import org.junit.AfterClass;
+import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Optional;
 
-import static io.micronaut.http.HttpRequest.GET;
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.mockito.Mockito.when;
+import static org.assertj.core.api.Assertions.fail;
 
 @MicronautTest
 class DownloadMd5WikiFileServiceImplTest {
 
-    private static Collection<File> filesToDelete = new ArrayList<>();
+    private static final Logger log = LoggerFactory.getLogger(DownloadMd5WikiFileServiceImplTest.class);
+    public static final String WIKI_LIST_MD_5 = "wikiList.md5";
+    public static final String WIKI_LIST_MD_5_TEXT = MicronautFileUtil.readFileAsString(WIKI_LIST_MD_5).get();
+    public static final String WIKI_LIST_NO_MULTISTREAM_MD_5 = "wikiListNoMultistream.md5";
+    private static final Collection<File> filesToDelete = new ArrayList<>();
+    private final DownloadMd5WikiFileServiceImpl mock;
+    private final DownloadMd5WikiFileServiceImpl mock2;
+    @Inject
+    DownloadMd5WikiFileServiceImplTest(Rx3HttpClient client) {
+        DownloadMd5WikiFileServiceImpl service = new DownloadMd5WikiFileServiceImpl(WIKI_LIST_MD_5, false, client);
+        DownloadMd5WikiFileServiceImpl spied = Mockito.spy(service);
+        Optional<String> md5Str = MicronautFileUtil.readFileAsString(WIKI_LIST_MD_5);
+        if (md5Str.isEmpty()) {
+            fail(WIKI_LIST_MD_5 + " file is not there");
+        }
+        Mockito.doReturn(WIKI_LIST_MD_5_TEXT).when(spied).retrieveWikiDumpFileContentsFromWikipedia();
+        this.mock = spied;
+        DownloadMd5WikiFileServiceImpl service2 = new DownloadMd5WikiFileServiceImpl(null, false, client);
+        DownloadMd5WikiFileServiceImpl spied2 = Mockito.spy(service2);
+        Mockito.doReturn(MicronautFileUtil.readFileAsString(WIKI_LIST_NO_MULTISTREAM_MD_5).get()).when(spied2).retrieveWikiDumpFileContentsFromWikipedia();
+        this.mock2 = spied2;
+    }
 
-    @AfterClass
-    void deleteFiles() {
+    @AfterAll
+    public static void deleteFiles() {
         filesToDelete.forEach((file) -> {
             try {
                 FileUtils.forceDelete(file);
             } catch (IOException e) {
+                log.warn("file didn't delete right - probably because this is running on windows", e);
             }
         });
     }
-
-    private final DownloadMd5WikiFileServiceImpl mock;
-    private final DownloadMd5WikiFileServiceImpl mock2;
-
-    @Inject
-    DownloadMd5WikiFileServiceImplTest(Rx3HttpClient client) {
-        DownloadMd5WikiFileServiceImpl service = new DownloadMd5WikiFileServiceImpl("wikiList.md5", false, client);
-        DownloadMd5WikiFileServiceImpl spied = Mockito.spy(service);
-        Mockito.doReturn(MicronautFileUtil.readFileAsString("wikiList.md5").get()).when(spied).retrieveWikiDumpFileContentsFromWikipedia();
-        this.mock = spied;
-        DownloadMd5WikiFileServiceImpl service2 = new DownloadMd5WikiFileServiceImpl(null, false, client);
-        DownloadMd5WikiFileServiceImpl spied2 = Mockito.spy(service2);
-        Mockito.doReturn(MicronautFileUtil.readFileAsString("wikiListNoMultistream.md5").get()).when(spied2).retrieveWikiDumpFileContentsFromWikipedia();
-        this.mock2 = spied2;
-    }
-
 
     @Test
     void downloadTestMockingString() {
         assertThat(
                 mock.retrieveWikiDumpFileContentsFromWikipedia())
-                .isEqualTo(MicronautFileUtil.readFileAsString("wikiList.md5").get()
-        );
+                .isEqualTo(MicronautFileUtil.readFileAsString(WIKI_LIST_MD_5).get()
+                );
     }
 
     @Test
@@ -67,8 +74,8 @@ class DownloadMd5WikiFileServiceImplTest {
     }
 
     @Test
-    void downloadWhenFileNotThere() throws IOException {
-        String result =  mock.downloadWikiMd5AsString("wikiListNotThere.md5");
+    void downloadWhenFileNotThere() {
+        String result = mock.downloadWikiMd5AsString("wikiListNotThere.md5");
         assertThat(result)
                 .isEqualTo(MicronautFileUtil.readFileAsString("wikiListNotThere.md5").get()
                 );
@@ -82,6 +89,7 @@ class DownloadMd5WikiFileServiceImplTest {
                 .isEqualTo(MicronautFileUtil.readFileAsString("wikiListNoMultistream.md5").get()
                 );
     }
+
     @Test
     void downloadFromInternetWhenNoParametersAreThere() throws IOException {
         String contents = mock2.downloadWikiMd5AsString(null);

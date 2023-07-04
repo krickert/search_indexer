@@ -21,19 +21,14 @@
         <dependency>
             <groupId>com.krickert.search</groupId>
             <artifactId>wikisearch-model</artifactId>
-            <version>0.1-SNAPSHOT</version>
+            <version>${project.version}</version>
         </dependency>
-        <dependency>
-            <groupId>io.micronaut</groupId>
-            <artifactId>micronaut-core</artifactId>
-            <version>3.7.4</version>
-            <scope>compile</scope>
-        </dependency>
+
         <!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
         <dependency>
             <groupId>commons-io</groupId>
             <artifactId>commons-io</artifactId>
-            <version>2.11.0</version>
+            <version>${commons.io.version}</version>
             <scope>compile</scope>
         </dependency>
     </dependencies>
@@ -43,7 +38,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.10.1</version>
+                <version>${maven.compiler.version}</version>
                 <configuration>
                     <source>17</source>
                     <target>17</target>
@@ -52,9 +47,9 @@
             <plugin>
                 <groupId>com.github.os72</groupId>
                 <artifactId>protoc-jar-maven-plugin</artifactId>
-                <version>3.11.4</version>
+                <version>${protoc-jar-maven-plugin.version}</version>
                 <configuration>
-                    <protocArtifact>com.google.protobuf:protoc:3.21.1</protocArtifact>
+                    <protocArtifact>com.google.protobuf:protoc:${protobuf.version}</protocArtifact>
                     <addProtoSources>all</addProtoSources>
                     <includeMavenTypes>direct</includeMavenTypes>
                     <optimizeCodegen>false</optimizeCodegen>
@@ -72,12 +67,12 @@
         <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-surefire-plugin</artifactId>
-            <version>3.0.0-M7</version>
+            <version>${maven.surefire.plugin}</version>
             <dependencies>
                 <dependency>
                     <groupId>org.junit.jupiter</groupId>
                     <artifactId>junit-jupiter-engine</artifactId>
-                    <version>5.9.1</version>
+                    <version>${junit-jupiter-engine.version}</version>
                 </dependency>
             </dependencies>
         </plugin>

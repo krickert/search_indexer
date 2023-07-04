@@ -1,714 +1,598 @@
 
-41551Phase-shift keying��Phase-shift keying (PSK) is a digital modulation process which conveys data by changing (modulating) the phase of a constant frequency reference signal (the carrier wave). The modulation is accomplished by varying the sine and cosine inputs at a precise time. It is widely used for wireless LANs, RFID and Bluetooth communication.
+41531Stanislaw UlamՇStanisław Marcin Ulam (; 13 April 1909 – 13 May 1984) was a Polish-American scientist in the fields of mathematics and nuclear physics. He participated in the Manhattan Project, originated the Teller–Ulam design of thermonuclear weapons, discovered the concept of the cellular automaton, invented the Monte Carlo method of computation, and suggested nuclear pulse propulsion. In pure and applied mathematics, he proved some theorems and proposed several conjectures.
 
-Any digital modulation scheme uses a finite number of distinct signals to represent digital data. PSK uses a finite number of phases, each assigned a unique pattern of binary digits. Usually, each phase encodes an equal number of bits. Each pattern of bits forms the symbol that is represented by the particular phase. The demodulator, which is designed specifically for the symbol-set used by the modulator, determines the phase of the received signal and maps it back to the symbol it represents, thus recovering the original data. This requires the receiver to be able to compare the phase of the received signal to a reference signal such a system is termed coherent (and referred to as CPSK).
+Born into a wealthy Polish Jewish family, Ulam studied mathematics at the Lwów Polytechnic Institute, where he earned his PhD in 1933 under the supervision of Kazimierz Kuratowski and Włodzimierz Stożek. In 1935, John von Neumann, whom Ulam had met in Warsaw, invited him to come to the Institute for Advanced Study in Princeton, New Jersey, for a few months. From 1936 to 1939, he spent summers in Poland and academic years at Harvard University in Cambridge, Massachusetts, where he worked to establish important results regarding ergodic theory. On 20 August 1939, he sailed for the United States for the last time with his 17-year-old brother Adam Ulam. He became an assistant professor at the University of Wisconsin–Madison in 1940, and a United States citizen in 1941.
 
-CPSK requires a complicated demodulator, because it must extract the reference wave from the received signal and keep track of it, to compare each sample to.  Alternatively, the phase shift of each symbol sent can be measured with respect to the phase of the previous symbol sent.  Because the symbols are encoded in the difference in phase between successive samples, this is called differential phase-shift keying (DPSK).  DPSK can be significantly simpler to implement than ordinary PSK, as it is a 'non-coherent' scheme, i.e. there is no need for the demodulator to keep track of a reference wave.   A trade-off is that it has more demodulation errors.
+In October 1943, he received an invitation from Hans Bethe to join the Manhattan Project at the secret Los Alamos Laboratory in New Mexico. There, he worked on the hydrodynamic calculations to predict the behavior of the explosive lenses that were needed by an implosion-type weapon. He was assigned to Edward Teller's group, where he worked on Teller's "Super" bomb for Teller and Enrico Fermi. After the war he left to become an associate professor at the University of Southern California, but returned to Los Alamos in 1946 to work on thermonuclear weapons. With the aid of a cadre of female "computers", including his wife Françoise Aron Ulam, he found that Teller's "Super" design was unworkable. In January 1951, Ulam and Teller came up with the Teller–Ulam design, which is the basis for all thermonuclear weapons.
 
-Introduction
+Ulam considered the problem of nuclear propulsion of rockets, which was pursued by Project Rover, and proposed, as an alternative to Rover's nuclear thermal rocket, to harness small nuclear explosions for propulsion, which became Project Orion. With Fermi, John Pasta, and Mary Tsingou, Ulam studied the Fermi–Pasta–Ulam–Tsingou problem, which became the inspiration for the field of non-linear science. He is probably best known for realising that electronic computers made it practical to apply statistical methods to functions without known solutions, and as computers have developed, the Monte Carlo method has become a common and standard approach to many problems.
 
-There are three major classes of digital modulation techniques used for transmission of digitally represented data:
+Poland
 
-* Amplitude-shift keying (ASK)
-* Frequency-shift keying (FSK)
-* Phase-shift keying (PSK)
+Ulam was born in Lemberg, Galicia, on 13 April 1909. At this time, Galicia was in the Kingdom of Galicia and Lodomeria of the Austro-Hungarian Empire, which was known to Poles as the Austrian partition. In 1918, it became part of the newly restored Poland, the Second Polish Republic, and the city took its Polish name again, Lwów.
 
-All convey data by changing some aspect of a base signal, the carrier wave (usually a sinusoid), in response to a data signal. In the case of PSK, the phase is changed to represent the data signal. There are two fundamental ways of utilizing the phase of a signal in this way:
+The Ulams were a wealthy Polish Jewish family of bankers, industrialists, and other professionals. Ulam's immediate family was "well-to-do but hardly rich". His father, Józef Ulam, was born in Lwów and was a lawyer, and his mother, Anna (née Auerbach), was born in Stryj. His uncle, Michał Ulam, was an architect, building contractor, and lumber industrialist. From 1916 until 1918, Józef's family lived temporarily in Vienna. After they returned, Lwów became the epicenter of the Polish–Ukrainian War, during which the city experienced a Ukrainian siege.
 
-* By viewing the phase itself as conveying the information, in which case the demodulator must have a reference signal to compare the received signal's phase against; or
-* By viewing the change in the phase as conveying information differential schemes, some of which do not need a reference carrier (to a certain extent).
+In 1919, Ulam entered Lwów Gymnasium Nr. VII, from which he graduated in 1927. He then studied mathematics at the Lwów Polytechnic Institute. Under the supervision of Kazimierz Kuratowski, he received his Master of Arts degree in 1932, and became a Doctor of Science in 1933. At the age of 20, in 1929, he published his first paper Concerning Function of Sets in the journal Fundamenta Mathematicae. From 1931 until 1935, he traveled to and studied in Wilno (Vilnius), Vienna, Zurich, Paris, and Cambridge, England, where he met G. H. Hardy and Subrahmanyan Chandrasekhar.
 
-A convenient method to represent PSK schemes is on a constellation diagram. This shows the points in the complex plane where, in this context, the real and imaginary axes are termed the in-phase and quadrature axes respectively due to their 90° separation. Such a representation on perpendicular axes lends itself to straightforward implementation. The amplitude of each point along the in-phase axis is used to modulate a cosine (or sine) wave and the amplitude along the quadrature axis to modulate a sine (or cosine) wave.  By convention, in-phase modulates cosine and quadrature modulates sine.
+Along with Stanisław Mazur, Mark Kac, Włodzimierz Stożek, Kuratowski, and others, Ulam was a member of the Lwów School of Mathematics. Its founders were Hugo Steinhaus and Stefan Banach, who were professors at the Jan Kazimierz University. Mathematicians of this "school" met for long hours at the Scottish Café, where the problems they discussed were collected in the Scottish Book, a thick notebook provided by Banach's wife. Ulam was a major contributor to the book. Of the 193 problems recorded between 1935 and 1941, he contributed 40 problems as a single author, another 11 with Banach and Mazur, and an additional 15 with others. In 1957, he received from Steinhaus a copy of the book, which had survived the war, and translated it into English. In 1981, Ulam's friend R. Daniel Mauldin published an expanded and annotated version.
 
-In PSK, the constellation points chosen are usually positioned with uniform angular spacing around a circle. This gives maximum phase-separation between adjacent points and thus the best immunity to corruption. They are positioned on a circle so that they can all be transmitted with the same energy. In this way, the moduli of the complex numbers they represent will be the same and thus so will the amplitudes needed for the cosine and sine waves. Two common examples are "binary phase-shift keying" (BPSK) which uses two phases, and "quadrature phase-shift keying" (QPSK) which uses four phases, although any number of phases may be used. Since the data to be conveyed are usually binary, the PSK scheme is usually designed with the number of constellation points being a power of two.
+Move to the United States
 
-Binary phase-shift keying (BPSK)
+In 1935, John von Neumann, whom Ulam had met in Warsaw, invited him to come to the Institute for Advanced Study in Princeton, New Jersey, for a few months. In December of that year, Ulam sailed to the US. At Princeton, he went to lectures and seminars, where he heard Oswald Veblen, James Alexander, and Albert Einstein. During a tea party at von Neumann's house, he encountered G. D. Birkhoff, who suggested that he apply for a position with the Harvard Society of Fellows. Following up on Birkhoff's suggestion, Ulam spent summers in Poland and academic years at Harvard University in Cambridge, Massachusetts from 1936 to 1939, where he worked with John C. Oxtoby to establish results regarding ergodic theory. These appeared in Annals of Mathematics in 1941. In 1938, Stanislaw's mother Anna hanna Ulam (maiden name Auerbach) died of cancer.
 
-BPSK (also sometimes called PRK, phase reversal keying, or 2PSK) is the simplest form of phase shift keying (PSK). It uses two phases which are separated by 180° and so can also be termed 2-PSK. It does not particularly matter exactly where the constellation points are positioned, and in this figure they are shown on the real axis, at 0° and 180°. Therefore, it handles the highest noise level or distortion before the demodulator reaches an incorrect decision. That makes it the most robust of all the PSKs. It is, however, only able to modulate at 1bit/symbol (as seen in the figure) and so is unsuitable for high data-rate applications. Yet there is the possibility of extending this bit/symbol, given the modulators symbol encryption / decryption logic system. 
+On 20 August 1939, in Gdynia, Józef Ulam, along with his brother Szymon, put his two sons, Stanislaw and 17 year old Adam, on a ship headed for the US. Eleven days later, the Germans invaded Poland. Within two months, the Germans completed their occupation of western Poland, and the Soviets invaded and occupied eastern Poland. Within two years, Józef Ulam and the rest of his family, including Stanislaw's sister Stefania Ulam, were victims of the Holocaust, Hugo Steinhaus was in hiding, Kazimierz Kuratowski was lecturing at the underground university in Warsaw, Włodzimierz Stożek and his two sons had been killed in the massacre of Lwów professors, and the last problem had been recorded in the Scottish Book. Stefan Banach survived the Nazi occupation by feeding lice at Rudolf Weigl's typhus research institute. In 1963, Adam Ulam, who had become an eminent kremlinologist at Harvard, received a letter from George Volsky, who hid in Józef Ulam's house after deserting from the Polish army. This reminiscence gave a chilling account of Lwów's chaotic scenes in late 1939. In later life Ulam described himself as "an agnostic. Sometimes I muse deeply on the forces that are for me invisible. When I am almost close to the idea of God, I feel immediately estranged by the horrors of this world, which he seems to tolerate".
 
-In the presence of an arbitrary phase-shift introduced by the communications channel, the demodulator (see, e.g. Costas loop)  is unable to tell which constellation point is which. As a result, the data is often differentially encoded prior to modulation.
+In 1940, after being recommended by Birkhoff, Ulam became an assistant professor at the University of Wisconsin–Madison. Here, he became a United States citizen in 1941. That year, he married Françoise Aron. She had been a French exchange student at Mount Holyoke College, whom he met in Cambridge. They had one daughter, Claire. In Madison, Ulam met his friend and colleague C. J. Everett, with whom he collaborated on a number of papers.
 
-BPSK is functionally equivalent to 2-QAM modulation.
+Manhattan Project
 
-Implementation
+In early 1943, Ulam asked von Neumann to find him a war job. In October, he received an invitation to join an unidentified project near Santa Fe, New Mexico. The letter was signed by Hans Bethe, who had been appointed as leader of the theoretical division of Los Alamos National Laboratory by Robert Oppenheimer, its scientific director. Knowing nothing of the area, he borrowed a New Mexico guide book. On the checkout card, he found the names of his Wisconsin colleagues, Joan Hinton, David Frisch, and Joseph McKibben, all of whom had mysteriously disappeared. This was Ulam's introduction to the Manhattan Project, which was the US's wartime effort to create the atomic bomb.
 
-The general form for BPSK follows the equation:
+Hydrodynamical calculations of implosion
 
-s_n(t)   \sqrt{\frac{2E_b}{T_b}} \cos(2 \pi f t + \pi(1-n )),\quad n 
- 0,1. 
+A few weeks after Ulam reached Los Alamos in February 1944, the project experienced a crisis. In April, Emilio Segrè discovered that plutonium made in reactors would not work in a gun-type plutonium weapon like the "Thin Man", which was being developed in parallel with a uranium weapon, the "Little Boy" that was dropped on Hiroshima. This problem threatened to waste an enormous investment in new reactors at the Hanford site and to make slow uranium isotope separation the only way to prepare fissile material suitable for use in bombs. To respond, Oppenheimer implemented, in August, a sweeping reorganization of the laboratory to focus on development of an implosion-type weapon and appointed George Kistiakowsky head of the implosion department. He was a professor at Harvard and an expert on precise use of explosives.
 
-This yields two phases, 0 and π.
-In the specific form, binary data is often conveyed with the following signals:
+The basic concept of implosion is to use chemical explosives to crush a chunk of fissile material into a critical mass, where neutron multiplication leads to a nuclear chain reaction, releasing a large amount of energy. Cylindrical implosive configurations had been studied by Seth Neddermeyer, but von Neumann, who had experience with shaped charges used in armor-piercing ammunition, was a vocal advocate of spherical implosion driven by explosive lenses. He realized that the symmetry and speed with which implosion compressed the plutonium were critical issues, and enlisted Ulam to help design lens configurations that would provide nearly spherical implosion.  Within an implosion, because of enormous pressures and high temperatures, solid materials behave much like fluids. This meant that hydrodynamical calculations were needed to predict and minimize asymmetries that would spoil a nuclear detonation. Of these calculations, Ulam said:
 
-s_0(t) =   \sqrt{\frac{2E_b}{T_b}} \cos(2 \pi f t + \pi )
-              = - \sqrt{\frac{2E_b}{T_b}} \cos(2 \pi f t) for binary "0"
-s_1(t) = \sqrt{\frac{2E_b}{T_b}} \cos(2 \pi f t)  for binary "1"
+Nevertheless, with the primitive facilities available at the time, Ulam and von Neumann did carry out numerical computations that led to a satisfactory design. This motivated their advocacy of a powerful computational capability at Los Alamos, which began during the war years, continued through the cold war, and still exists. Otto Frisch remembered Ulam as "a brilliant Polish topologist with a charming French wife. At once he told me that he was a pure mathematician who had sunk so low that his latest paper actually contained numbers with decimal points!"
 
-where f is the frequency of the base band.
+Statistics of branching and multiplicative processes
 
-Hence, the signal space can be represented by the single basis function
+Even the inherent statistical fluctuations of neutron multiplication within a chain reaction have implications with regard to implosion speed and symmetry. In November 1944, David Hawkins and Ulam addressed this problem in a report entitled "Theory of Multiplicative Processes". This report, which invokes probability-generating functions, is also an early entry in the extensive literature on statistics of branching and multiplicative processes. In 1948, its scope was extended by Ulam and Everett.
 
-\phi(t) = \sqrt{\frac{2}{T_b}} \cos(2 \pi f t) 
+Early in the Manhattan project, Enrico Fermi's attention was focused on the use of reactors to produce plutonium. In September 1944, he arrived at Los Alamos, shortly after breathing life into the first Hanford reactor, which had been poisoned by a xenon isotope. Soon after Fermi's arrival, Teller's "Super" bomb group, of which Ulam was a part, was transferred to a new division headed by Fermi. Fermi and Ulam formed a relationship that became very fruitful after the war.
 
-where 1 is represented by \sqrt{E_b} \phi(t) and 0 is represented by -\sqrt{E_b} \phi(t). This assignment is arbitrary.
+Post war Los Alamos
 
-This use of this basis function is shown at the end of the next section in a signal timing diagram. The topmost signal is a BPSK-modulated cosine wave that the BPSK modulator would produce. The bit-stream that causes this output is shown above the signal (the other parts of this figure are relevant only to QPSK). After modulation, the base band signal will be moved to the high frequency band by multiplying  \cos(2 \pi f_c t).
+In September 1945, Ulam left Los Alamos to become an associate professor at the University of Southern California in Los Angeles. In January 1946, he suffered an acute attack of encephalitis, which put his life in danger, but which was alleviated by emergency brain surgery. During his recuperation, many friends visited, including Nicholas Metropolis from Los Alamos and the famous mathematician Paul Erdős, who remarked: "Stan, you are just like before." This was encouraging, because Ulam was concerned about the state of his mental faculties, for he had lost the ability to speak during the crisis. Another friend, Gian-Carlo Rota, asserted in a 1987 article that the attack changed Ulam's personality: afterwards, he turned from rigorous pure mathematics to more speculative conjectures concerning the application of mathematics to physics and biology; Rota also cites Ulam's former collaborator Paul Stein as noting that Ulam was sloppier in his clothing afterwards, and John Oxtoby as noting that Ulam before the encephalitis could work for hours on end doing calculations, while when Rota worked with him, was reluctant to solve even a quadratic equation. This assertion was not accepted by Françoise Aron Ulam.
 
-Bit error rate
+By late April 1946, Ulam had recovered enough to attend a secret conference at Los Alamos to discuss thermonuclear weapons. Those in attendance included Ulam, von Neumann, Metropolis, Teller, Stan Frankel, and others. Throughout his participation in the Manhattan Project, Teller's efforts had been directed toward the development of a "super" weapon based on nuclear fusion, rather than toward development of a practical fission bomb. After extensive discussion, the participants reached a consensus that his ideas were worthy of further exploration. A few weeks later, Ulam received an offer of a position at Los Alamos from Metropolis and Robert D. Richtmyer, the new head of its theoretical division, at a higher salary, and the Ulams returned to Los Alamos.
 
-The bit error rate (BER) of BPSK under additive white Gaussian noise (AWGN) can be calculated as:Communications Systems, H. Stern & S. Mahmoud, Pearson Prentice Hall, 2004, p. 283.
+Monte Carlo method
 
-P_b Q\left(\sqrt{\frac{2 E_b}{N_0}}\right) or P_e 
- \frac{1}{2} \operatorname{erfc} \left( \sqrt{\frac{E_b}{N_0}}\right)
+Late in the war, under the sponsorship of von Neumann, Frankel and Metropolis began to carry out calculations on the first general-purpose electronic computer, the ENIAC at the Aberdeen Proving Ground in Maryland. Shortly after returning to Los Alamos, Ulam participated in a review of results from these calculations. Earlier, while playing solitaire during his recovery from surgery, Ulam had thought about playing hundreds of games to estimate statistically the probability of a successful outcome. With ENIAC in mind, he realized that the availability of computers made such statistical methods very practical. John von Neumann immediately saw the significance of this insight. In March 1947 he proposed a statistical approach to the problem of neutron diffusion in fissionable material. Because Ulam had often mentioned his uncle, Michał Ulam, "who just had to go to Monte Carlo" to gamble, Metropolis dubbed the statistical approach "The Monte Carlo method". Metropolis and Ulam published the first unclassified paper on the Monte Carlo method in 1949.
 
-Since there is only one bit per symbol, this is also the symbol error rate.
+Fermi, learning of Ulam's breakthrough, devised an analog computer known as the Monte Carlo trolley, later dubbed the FERMIAC. The device performed a mechanical simulation of random diffusion of neutrons. As computers improved in speed and programmability, these methods became more useful. In particular, many Monte Carlo calculations carried out on modern massively parallel supercomputers are embarrassingly parallel applications, whose results can be very accurate.
 
-Quadrature phase-shift keying (QPSK)
+Teller–Ulam design
 
-Sometimes this is known as quadriphase PSK, 4-PSK, or 4-QAM. (Although the root concepts of QPSK and 4-QAM are different, the resulting modulated radio waves are exactly the same.) QPSK uses four points on the constellation diagram, equispaced around a circle. With four phases, QPSK can encode two bits per symbol, shown in the diagram with Gray coding to minimize the bit error rate (BER) sometimes misperceived as twice the BER of BPSK.
+On 29 August 1949, the Soviet Union tested its first fission bomb, the RDS-1. Created under the supervision of Lavrentiy Beria, who sought to duplicate the US effort, this weapon was nearly identical to Fat Man, for its design was based on information provided by spies Klaus Fuchs, Theodore Hall, and David Greenglass. In response, on 31 January 1950, President Harry S. Truman announced a crash program to develop a fusion bomb.
 
-The mathematical analysis shows that QPSK can be used either to double the data rate compared with a BPSK system while maintaining the same bandwidth of the signal, or to maintain the data-rate of BPSK but halving the bandwidth needed. In this latter case, the BER of QPSK is exactly the same as the BER of BPSK and believing differently is a common confusion when considering or describing QPSK. The transmitted carrier can undergo numbers of phase changes.
+To advocate an aggressive development program, Ernest Lawrence and Luis Alvarez came to Los Alamos, where they conferred with Norris Bradbury, the laboratory director, and with George Gamow, Edward Teller, and Ulam. Soon, these three became members of a short-lived committee appointed by Bradbury to study the problem, with Teller as chairman. At this time, research on the use of a fission weapon to create a fusion reaction had been ongoing since 1942, but the design was still essentially the one originally proposed by Teller. His concept was to put tritium and/or deuterium in close proximity to a fission bomb, with the hope that the heat and intense flux of neutrons released when the bomb exploded, would ignite a self-sustaining fusion reaction. Reactions of these isotopes of hydrogen are of interest because the energy per unit mass of fuel released by their fusion is much larger than that from fission of heavy nuclei.
 
-Given that radio communication channels are allocated by agencies such as the Federal Communications Commission giving a prescribed (maximum) bandwidth, the advantage of QPSK over BPSK becomes evident: QPSK transmits twice the data rate in a given bandwidth compared to BPSK - at the same BER. The engineering penalty that is paid is that QPSK transmitters and receivers are more complicated than the ones for BPSK. However, with modern electronics technology, the penalty in cost is very moderate.
+Because the results of calculations based on Teller's concept were discouraging, many scientists believed it could not lead to a successful weapon, while others had moral and economic grounds for not proceeding. Consequently, several senior people of the Manhattan Project opposed development, including Bethe and Oppenheimer. To clarify the situation, Ulam and von Neumann resolved to do new calculations to determine whether Teller's approach was feasible. To carry out these studies, von Neumann decided to use electronic computers: ENIAC at Aberdeen, a new computer, MANIAC, at Princeton, and its twin, which was under construction at Los Alamos. Ulam enlisted Everett to follow a completely different approach, one guided by physical intuition. Françoise Ulam was one of a cadre of women "computers" who carried out laborious and extensive computations of thermonuclear scenarios on mechanical calculators, supplemented and confirmed by Everett's slide rule. Ulam and Fermi collaborated on further analysis of these scenarios. The results showed that, in workable configurations, a thermonuclear reaction would not ignite, and if ignited, it would not be self-sustaining. Ulam had used his expertise in combinatorics to analyze the chain reaction in deuterium, which was much more complicated than the ones in uranium and plutonium, and he concluded that no self-sustaining chain reaction would take place at the (low) densities that Teller was considering. In late 1950, these conclusions were confirmed by von Neumann's results.
 
-As with BPSK, there are phase ambiguity problems at the receiving end, and differentially encoded QPSK is often used in practice.
+In January 1951, Ulam had another idea: to channel the mechanical shock of a nuclear explosion so as to compress the fusion fuel. On the recommendation of his wife, Ulam discussed this idea with Bradbury and Mark before he told Teller about it. Almost immediately, Teller saw its merit, but noted that soft X-rays from the fission bomb would compress the thermonuclear fuel more strongly than mechanical shock and suggested ways to enhance this effect. On 9 March 1951, Teller and Ulam submitted a joint report describing these innovations. A few weeks later, Teller suggested placing a fissile rod or cylinder at the center of the fusion fuel. The detonation of this "spark plug" would help to initiate and enhance the fusion reaction. The design based on these ideas, called staged radiation implosion, has become the standard way to build thermonuclear weapons. It is often described as the "Teller–Ulam design".
 
-Implementation
+In September 1951, after a series of differences with Bradbury and other scientists, Teller resigned from Los Alamos, and returned to the University of Chicago. At about the same time, Ulam went on leave as a visiting professor at Harvard for a semester. Although Teller and Ulam submitted a joint report on their design and jointly applied for a patent on it, they soon became involved in a dispute over who deserved credit. After the war, Bethe returned to Cornell University, but he was deeply involved in the development of thermonuclear weapons as a consultant. In 1954, he wrote an article on the history of the H-bomb, which presents his opinion that both men contributed very significantly to the breakthrough. This balanced view is shared by others who were involved, including Mark and Fermi, but Teller persistently attempted to downplay Ulam's role. "After the H-bomb was made," Bethe recalled, "reporters started to call Teller the father of the H-bomb. For the sake of history, I think it is more precise to say that Ulam is the father, because he provided the seed, and Teller is the mother, because he remained with the child. As for me, I guess I am the midwife."
 
-The implementation of QPSK is more general than that of BPSK and also indicates the implementation of higher-order PSK. Writing the symbols in the constellation diagram in terms of the sine and cosine waves used to transmit them:
+With the basic fusion reactions confirmed, and with a feasible design in hand, there was nothing to prevent Los Alamos from testing a thermonuclear device. On 1 November 1952, the first thermonuclear explosion occurred when Ivy Mike was detonated on Enewetak Atoll, within the US Pacific Proving Grounds. This device, which used liquid deuterium as its fusion fuel, was immense and utterly unusable as a weapon. Nevertheless, its success validated the Teller–Ulam design, and stimulated intensive development of practical weapons.
 
-s_n(t) \sqrt{\frac{2E_s}{T_s}} \cos \left(2 \pi f_c t + (2n - 1)\frac{\pi}{4}\right),\quad n 
- 1, 2, 3, 4.
+Fermi–Pasta–Ulam–Tsingou problem
 
-This yields the four phases π/4, 3π/4, 5π/4 and 7π/4 as needed.
+When Ulam returned to Los Alamos, his attention turned away from weapon design and toward the use of computers to investigate problems in physics and mathematics. With John Pasta, who helped Metropolis to bring MANIAC on line in March 1952, he explored these ideas in a report "Heuristic Studies in Problems of Mathematical Physics on High Speed Computing Machines", which was submitted on 9 June 1953. It treated several problems that cannot be addressed within the framework of traditional analytic methods: billowing of fluids, rotational motion in gravitating systems, magnetic lines of force, and hydrodynamic instabilities.
 
-This results in a two-dimensional signal space with unit basis functions
+Soon, Pasta and Ulam became experienced with electronic computation on MANIAC, and by this time, Enrico Fermi had settled into a routine of spending academic years at the University of Chicago and summers at Los Alamos. During these summer visits, Pasta, Ulam, and Mary Tsingou, a programmer in the MANIAC group, joined him to study a variation of the classic problem of a string of masses held together by springs that exert forces linearly proportional to their displacement from equilibrium. Fermi proposed to add to this force a nonlinear component, which could be chosen to be proportional to either the square or cube of the displacement, or to a more complicated "broken linear" function. This addition is the key element of the Fermi–Pasta–Ulam–Tsingou problem, which is often designated by the abbreviation FPUT.
 
-\begin{align}
-  \phi_1(t) &= \sqrt{\frac{2}{T_s}} \cos\left(2\pi f_c t\right) \\
-  \phi_2(t) &= \sqrt{\frac{2}{T_s}} \sin\left(2\pi f_c t\right)
-\end{align}
+A classical spring system can be described in terms of vibrational modes, which are analogous to the harmonics that occur on a stretched violin string. If the system starts in a particular mode, vibrations in other modes do not develop. With the nonlinear component, Fermi expected energy in one mode to transfer gradually to other modes, and eventually, to be distributed equally among all modes. This is roughly what began to happen shortly after the system was initialized with all its energy in the lowest mode, but much later, essentially all the energy periodically reappeared in the lowest mode. This behavior is very different from the expected equipartition of energy. It remained mysterious until 1965, when Kruskal and Zabusky showed that, after appropriate mathematical transformations, the system can be described by the Korteweg–de Vries equation, which is the prototype of nonlinear partial differential equations that have soliton solutions. This means that FPUT behavior can be understood in terms of solitons.
 
-The first basis function is used as the in-phase component of the signal and the second as the quadrature component of the signal.
+Nuclear propulsion
 
-Hence, the signal constellation consists of the signal-space 4 points
+Starting in 1955, Ulam and Frederick Reines considered nuclear propulsion of aircraft and rockets. This is an attractive possibility, because the nuclear energy per unit mass of fuel is a million times greater than that available from chemicals. From 1955 to 1972, their ideas were pursued during Project Rover, which explored the use of nuclear reactors to power rockets. In response to a question by Senator John O. Pastore at a congressional committee hearing on "Outer Space Propulsion by Nuclear Energy", on January 22, 1958, Ulam replied that "the future as a whole of mankind is to some extent involved inexorably now with going outside the globe."
 
-\begin{pmatrix} \pm\sqrt{\frac{E_s}{2}} & \pm\sqrt{\frac{E_s}{2}} \end{pmatrix}.
+Ulam and C. J. Everett also proposed, in contrast to Rover's continuous heating of rocket exhaust, to harness small nuclear explosions for propulsion. Project Orion was a study of this idea. It began in 1958 and ended in 1965, after the Partial Nuclear Test Ban Treaty of 1963 banned nuclear weapons tests in the atmosphere and in space. Work on this project was spearheaded by physicist Freeman Dyson, who commented on the decision to end Orion in his article, "Death of a Project".
 
-The factors of 1/2 indicate that the total power is split equally between the two carriers.
+Bradbury appointed Ulam and John H. Manley as research advisors to the laboratory director in 1957. These newly created positions were on the same administrative level as division leaders, and Ulam held his until he retired from Los Alamos. In this capacity, he was able to influence and guide programs in many divisions: theoretical, physics, chemistry, metallurgy, weapons, health, Rover, and others.
 
-Comparing these basis functions with that for BPSK shows clearly how QPSK can be viewed as two independent BPSK signals. Note that the signal-space points for BPSK do not need to split the symbol (bit) energy over the two carriers in the scheme shown in the BPSK constellation diagram.
+In addition to these activities, Ulam continued to publish technical reports and research papers. One of these introduced the Fermi–Ulam model, an extension of Fermi's theory of the acceleration of cosmic rays. Another, with Paul Stein and Mary Tsingou, titled "Quadratic Transformations", was an early investigation of chaos theory and is considered the first published use of the phrase "chaotic behavior".
 
-QPSK systems can be implemented in a number of ways. An illustration of the major components of the transmitter and receiver structure are shown below.
+Return to academia
 
-Probability of error
+During his years at Los Alamos, Ulam was a visiting professor at Harvard from 1951 to 1952, MIT from 1956 to 1957, the University of California, San Diego, in 1963, and the University of Colorado at Boulder from 1961 to 1962 and 1965 to 1967. In 1967, the last of these positions became permanent, when Ulam was appointed Professor and Chairman of the Department of Mathematics at the University of Colorado. He kept a residence in Santa Fe, which made it convenient to spend summers at Los Alamos as a consultant. He was an elected member of the American Academy of Arts and Sciences, the United States National Academy of Sciences, and the American Philosophical Society.
 
-Although QPSK can be viewed as a quaternary modulation, it is easier to see it as two independently modulated quadrature carriers. With this interpretation, the even (or odd) bits are used to modulate the in-phase component of the carrier, while the odd (or even) bits are used to modulate the quadrature-phase component of the carrier. BPSK is used on both carriers and they can be independently demodulated.
+In Colorado, where he rejoined his friends Gamow, Richtmyer, and Hawkins, Ulam's research interests turned toward biology. In 1968, recognizing this emphasis, the University of Colorado School of Medicine appointed Ulam as Professor of Biomathematics, and he held this position until his death. With his Los Alamos colleague Robert Schrandt he published a report, "Some Elementary Attempts at Numerical Modeling of Problems Concerning Rates of Evolutionary Processes", which applied his earlier ideas on branching processes to evolution. Another, report, with William Beyer, Temple F. Smith, and M. L. Stein, titled "Metrics in Biology", introduced new ideas about numerical taxonomy and evolutionary distances.
 
-As a result, the probability of bit-error for QPSK is the same as for BPSK:
-P_b = Q\left(\sqrt{\frac{2E_b}{N_0}}\right)
+When he retired from Colorado in 1975, Ulam began to spend winter semesters at the University of Florida, where he was a graduate research professor. Except for sabbaticals at the University of California, Davis from 1982 to 1983, and at Rockefeller University from 1980 to 1984, this pattern of spending summers in Colorado and Los Alamos and winters in Florida continued until Ulam died of an apparent heart attack in Santa Fe on 13 May 1984.
+Paul Erdős noted that "he died suddenly of heart failure, without fear or pain, while he could still prove and conjecture." In 1987, Françoise Ulam deposited his papers with the American Philosophical Society Library in Philadelphia. She continued to live in Santa Fe until she died in 2011, at the age of 93. Both Françoise and her husband were buried with her family in Montparnasse Cemetery in Paris.
 
-However, in order to achieve the same bit-error probability as BPSK, QPSK uses twice the power (since two bits are transmitted simultaneously).
+Challenge to economics
 
-The symbol error rate is given by:
+Alfred Marshall and his disciples dominated economic theory until the end of WWII. With the Cold War, the theory changed, emphasizing that a market economy was superior and the only sensible way. In Paul Samuelson's "Economics: An Introductory Analysis", 1948, Adam Smith's "invisible hand" was only a footnote. In later editions, it became the central theme. As Samuelson remembers, all this was challenged by Stanislaw Ulam: "[Y]ears ago... I was in the Society of Fellows at Harvard along with the mathematician Stanislaw Ulam. Ulam, who was to become an originator of the Monte Carlo method and co-discoverer of the hydrogen-bomb,... used to tease me by saying, 'Name me one proposition in all of the social sciences which is both true and non-trivial.' This was the test that I always failed. But now, some thirty years later ... an appropriate answer occurs to me: The Ricardian theory of comparative advantage ... That it is logically true need not be argued before a mathematician; that it is not trivial is attested by the thousands of important and intelligent men who have never been able to grasp the doctrine for themselves or to believe it after it was explained to them."The Collected Scientific Papers of Paul A. Samuelson, vol. iii, p. 683, MIT Press 1966
 
-\begin{align}
- P_s &= 1 - \left( 1 - P_b \right)^2 \\
-     &= 2Q\left( \sqrt{\frac{E_s}{N_0}} \right) - \left[ Q \left( \sqrt{\frac{E_s}{N_0}} \right) \right]^2.
-\end{align}
+Impact and legacy
 
-If the signal-to-noise ratio is high (as is necessary for practical QPSK systems) the probability of symbol error may be approximated:
+Participated in the creation of a hydrogen bomb as part of the Los Alamos Laboratory nuclear project. From the publication of his first paper as a student in 1929 until his death, Ulam was constantly writing on mathematics. The list of Ulam's publications includes more than 150 papers. Topics represented by a significant number of papers are: set theory (including measurable cardinals and abstract measures), topology, transformation theory, ergodic theory, group theory, projective algebra, number theory, combinatorics, and graph theory. In March 2009, the Mathematical Reviews database contained 697 papers with the name "Ulam".
 
-P_s \approx 2 Q \left( \sqrt{\frac{E_s}{N_0}} \right ) \operatorname{erfc} \left( \sqrt{\frac{E_s}{2N_0}} \right) 
- \operatorname{erfc} \left( \sqrt{\frac{E_b}{N_0}} \right)
+Notable results of this work are:
 
-The modulated signal is shown below for a short segment of a random binary data-stream. The two carrier waves are a cosine wave and a sine wave, as indicated by the signal-space analysis above. Here, the odd-numbered bits have been assigned to the in-phase component and the even-numbered bits to the quadrature component (taking the first bit as number 1). The total signal the sum of the two components is shown at the bottom. Jumps in phase can be seen as the PSK changes the phase on each component at the start of each bit-period. The topmost waveform alone matches the description given for BPSK above.
+*Borsuk–Ulam theorem
+*Mazur–Ulam theorem
+*Kuratowski–Ulam theorem
+*Hyers–Ulam–Rassias stability
+*Lucky number
+*Ulam spiral
 
-The binary data that is conveyed by this waveform is: 11000110.
-* The odd bits, highlighted here, contribute to the in-phase component: 1010
-* The even bits, highlighted here, contribute to the quadrature-phase component: 1001
+*Ulam conjecture (in Number Theory)
+*Ulam conjecture (in Graph theory)
+*Ulam's packing conjecture
+*Ulam's game
+*Ulam matrix
+*Ulam numbers
 
-Variants
+With his pivotal role in the development of thermonuclear weapons, Stanislaw Ulam changed the world. According to Françoise Ulam: "Stan would reassure me that, barring accidents, the H-bomb rendered nuclear war impossible." In 1980, Ulam and his wife appeared in the television documentary The Day After Trinity.
 
-Offset QPSK (OQPSK)
+The Monte Carlo method has become a ubiquitous and standard approach to computation, and the method has been applied to a vast number of scientific problems. In addition to problems in physics and mathematics, the method has been applied to finance, social science, environmental risk assessment, linguistics, radiation therapy, and sports.
 
-Offset quadrature phase-shift keying (OQPSK) is a variant of phase-shift keying modulation using four different values of the phase to transmit.  It is sometimes called staggered quadrature phase-shift keying (SQPSK).
+The Fermi–Pasta–Ulam–Tsingou problem is credited not only as "the birth of experimental mathematics", but also as inspiration for the vast field of Nonlinear Science. In his Lilienfeld Prize lecture, David K. Campbell noted this relationship and described how FPUT gave rise to ideas in chaos, solitons, and dynamical systems. In 1980, Donald Kerr, laboratory director at Los Alamos, with the strong support of Ulam and Mark Kac, founded the Center for Nonlinear Studies (CNLS). In 1985, CNLS initiated the Stanislaw M. Ulam Distinguished Scholar program, which provides an annual award that enables a noted scientist to spend a year carrying out research at Los Alamos.
 
-Taking four values of the phase (two bits) at a time to construct a QPSK symbol can allow the phase of the signal to jump by as much as 180° at a time. When the signal is low-pass filtered (as is typical in a transmitter), these phase-shifts result in large amplitude fluctuations, an undesirable quality in communication systems. By offsetting the timing of the odd and even bits by one bit-period, or half a symbol-period, the in-phase and quadrature components will never change at the same time. In the constellation diagram shown on the right, it can be seen that this will limit the phase-shift to no more than 90° at a time. This yields much lower amplitude fluctuations than non-offset QPSK and is sometimes preferred in practice.
+The fiftieth anniversary of the original FPUT paper was the subject of the March 2005 issue of the journal Chaos, and the topic of the 25th Annual International Conference of CNLS. The University of Southern Mississippi and the University of Florida supported the Ulam Quarterly, which was active from 1992 to 1996, and which was one of the first online mathematical journals. Florida's Department of Mathematics has sponsored, since 1998, the annual Ulam Colloquium Lecture, and in March 2009, the Ulam Centennial Conference.
 
-The picture on the right shows the difference in the behavior of the phase between ordinary QPSK and OQPSK. It can be seen that in the first plot the phase can change by 180° at once, while in OQPSK the changes are never greater than 90°.
+Ulam's work on non-Euclidean distance metrics in the context of molecular biology made a significant contribution to sequence analysis and his contributions in theoretical biology are considered watersheds in the development of cellular automata theory, population biology, pattern recognition, and biometrics generally (David Sankoff, however, challenged conclusions of Walter by writing that Ulam had only modest influence on early development of sequence alignment methods.). Colleagues noted that some of his greatest contributions were in clearly identifying problems to be solved and general techniques for solving them.
 
-The modulated signal is shown below for a short segment of a random binary data-stream. Note the half symbol-period offset between the two component waves. The sudden phase-shifts occur about twice as often as for QPSK (since the signals no longer change together), but they are less severe. In other words, the magnitude of jumps is smaller in OQPSK when compared to QPSK.
+In 1987, Los Alamos issued a special issue of its Science publication, which summarized his accomplishments, and which appeared, in 1989, as the book From Cardinals to Chaos. Similarly, in 1990, the University of California Press issued a compilation of mathematical reports by Ulam and his Los Alamos collaborators: Analogies Between Analogies. During his career, Ulam was awarded honorary degrees by the Universities of New Mexico, Wisconsin, and Pittsburgh.
 
-SOQPSK
+In 2021, German film director Thorsten Klein made the film adaptation of the book Adventures of a Mathematician about Ulam's life
 
-The license-free shaped-offset QPSK (SOQPSK) is interoperable with Feher-patented QPSK (FQPSK), in the sense that an integrate-and-dump offset QPSK detector produces the same output no matter which kind of transmitter is used.
-Tom Nelson, Erik Perrins, and Michael Rice.
-[http://people.eecs.ku.edu/~esp/publications/c2005ItcCommon.pdf "Common detectors for Tier 1 modulations"] .
+Bibliography
 
-T. Nelson, E. Perrins, M. Rice.
-[https://www.researchgate.net/publication/4213516_Common_detectors_for_shaped_offset_QPSK_(SOQPSK)_and_Feher-patented_QPSK_(FQPSK) "Common detectors for shaped offset QPSK (SOQPSK) and Feher-patented QPSK (FQPSK)"]
-
-These modulations carefully shape the I and Q waveforms such that they change very smoothly, and the signal stays constant-amplitude even during signal transitions. (Rather than traveling instantly from one symbol to another, or even linearly, it travels smoothly around the constant-amplitude circle from one symbol to the next.) SOQPSK modulation can be represented as the hybrid of QPSK and MSK: SOQPSK has the same signal constellation as QPSK, however the phase of SOQPSK is always stationary.Hill, Terrance J. "A non-proprietary, constant envelope, variant of shaped offset QPSK (SOQPSK) for improved spectral containment and detection efficiency." MILCOM 2000. 21st Century Military Communications Conference Proceedings. Vol. 1. IEEE, 2000.Li, Lifang, and M. K. Simon. [https://web.archive.org/web/20200725125818/https://pdfs.semanticscholar.org/f025/2fa31444fad6a5090527d73f87352137c9b8.pdf "Performance of coded offset quadrature phase-shift keying (OQPSK) and MIL-STD shaped OQPSK (SOQPSK) with iterative decoding."] Interplanetary Network Prog. Rep. 42 (2004).
-
-The standard description of SOQPSK-TG involves ternary symbols.Sahin, C. and Perrins, E., 2011, November. The capacity of SOQPSK-TG. In 2011-MILCOM 2011 Military Communications Conference (pp. 555-560). IEEE. SOQPSK is one of the most spread modulation schemes in application to LEO satellite communications.Saeed, N., Elzanaty, A., Almorad, H., Dahrouj, H., Al-Naffouri, T.Y. and Alouini, M.S., 2020. [https://arxiv.org/pdf/1908.09501.pdf Cubesat communications: Recent advances and future challenges.] IEEE Communications Surveys & Tutorials.
-
-π/4-QPSK
-
-This variant of QPSK uses two identical constellations which are rotated by 45° (\pi/4 radians, hence the name) with respect to one another. Usually, either the even or odd symbols are used to select points from one of the constellations and the other symbols select points from the other constellation. This also reduces the phase-shifts from a maximum of 180°, but only to a maximum of 135° and so the amplitude fluctuations of \pi/4-QPSK are between OQPSK and non-offset QPSK.
-
-One property this modulation scheme possesses is that if the modulated signal is represented in the complex domain, transitions between symbols never pass through 0. In other words, the signal does not pass through the origin. This lowers the dynamical range of fluctuations in the signal which is desirable when engineering communications signals.
-
-On the other hand, \pi/4-QPSK lends itself to easy demodulation and has been adopted for use in, for example, TDMA cellular telephone systems.
-
-The modulated signal is shown below for a short segment of a random binary data-stream. The construction is the same as above for ordinary QPSK. Successive symbols are taken from the two constellations shown in the diagram. Thus, the first symbol (1 1) is taken from the "blue" constellation and the second symbol (0 0) is taken from the "green" constellation. Note that magnitudes of the two component waves change as they switch between constellations, but the total signal's magnitude remains constant (constant envelope). The phase-shifts are between those of the two previous timing-diagrams.
-
-DPQPSK
-
-Dual-polarization quadrature phase shift keying (DPQPSK) or dual-polarization QPSK - involves the polarization multiplexing of two different QPSK signals, thus improving the spectral efficiency by a factor of 2. This is a cost-effective alternative to utilizing 16-PSK, instead of QPSK to double the spectral efficiency.j
-
-Higher-order PSK
-
-Any number of phases may be used to construct a PSK constellation but 8-PSK is usually the highest order PSK constellation deployed. With more than 8 phases, the error-rate becomes too high and there are better, though more complex, modulations available such as quadrature amplitude modulation (QAM). Although any number of phases may be used, the fact that the constellation must usually deal with binary data means that the number of symbols is usually a power of 2 to allow an integer number of bits per symbol.
-
-Bit error rate
-
-For the general M-PSK there is no simple expression for the symbol-error probability if M > 4. Unfortunately, it can only be obtained from
-
-P_s = 1 - \int_{-\pi/M}^{\pi/M} p_{\theta_r}\left(\theta_r\right)d\theta_r,
-
-where
-
-\begin{align}
-  p_{\theta_r} \left(\theta_r\right) &= \frac{1}{2\pi} e^{-2\gamma_s\sin^2\theta_r} \int_0^\infty V e^{-\frac{1}{2}\left(V - 2\sqrt{\gamma_s}\cos\theta_r\right)^2}\,dV,\\
-                                   V &= \sqrt{r_1^2 + r_2^2},\\
-                            \theta_r &= \tan^{-1}\left(\frac{r_2}{r_1}\right),\\
-                            \gamma_s &= \frac{E_s}{N_0}
-\end{align}
-and r_1 \sim N\left(\sqrt{E_s}, \frac{1}{2}N_0\right) and r_2 \sim N\left(0, \frac{1}{2} N_0\right) are each Gaussian random variables.
-
-This may be approximated for high M and high E_b/N_0 by:
-
-P_s \approx 2Q\left(\sqrt{2\gamma_s}\sin\frac{\pi}{M}\right). 
-
-The bit-error probability for M-PSK can only be determined exactly once the bit-mapping is known. However, when Gray coding is used, the most probable error from one symbol to the next produces only a single bit-error and
-
-P_b \approx \frac{1}{k} P_s. 
-
-(Using Gray coding allows us to approximate the Lee distance of the errors as the Hamming distance of the errors in the decoded bitstream, which is easier to implement in hardware.)
-
-The graph on the right compares the bit-error rates of BPSK, QPSK (which are the same, as noted above), 8-PSK and 16-PSK. It is seen that higher-order modulations exhibit higher error-rates; in exchange however they deliver a higher raw data-rate.
-
-Bounds on the error rates of various digital modulation schemes can be computed with application of the union bound to the signal constellation.
-
-Spectral efficiency
-
-Bandwidth (or spectral) efficiency of M-PSK modulation schemes increases with increasing of modulation order M (unlike, for example, M-FSK):Haykin, S., 2001. Communication Systems, John Wiley&Sons. Inc. - p. 368
-
-\rho = \frac{\log_2M}{2} \quad [(\text{bits}/\text{s}) / \text{Hz}]
-
-The same relationship holds true for M-QAM.[https://www.atlantarf.com/PSK_QAM.php Link Budget Analysis: Digital Modulation, Part 3 (www.AtlantaRF.com)]
-
-Differential phase-shift keying (DPSK)
-
-Differential encoding
-
-Differential phase shift keying (DPSK) is a common form of phase modulation that conveys data by changing the phase of the carrier wave. As mentioned for BPSK and QPSK there is an ambiguity of phase if the constellation is rotated by some effect in the communications channel through which the signal passes. This problem can be overcome by using the data to change rather than set the phase.
-
-For example, in differentially encoded BPSK a binary "1" may be transmitted by adding 180° to the current phase and a binary "0" by adding 0° to the current phase. 
-Another variant of DPSK is Symmetric Differential Phase Shift keying, SDPSK, where encoding would be +90° for a "1" and −90° for a "0".
-
-In differentially encoded QPSK (DQPSK), the phase-shifts are 0°, 90°, 180°, −90° corresponding to data "00", "01", "11", "10". This kind of encoding may be demodulated in the same way as for non-differential PSK but the phase ambiguities can be ignored. Thus, each received symbol is demodulated to one of the M points in the constellation and a comparator then computes the difference in phase between this received signal and the preceding one. The difference encodes the data as described above. Symmetric differential quadrature phase shift keying (SDQPSK) is like DQPSK, but encoding is symmetric, using phase shift values of −135°, −45°, +45° and +135°.
-
-The modulated signal is shown below for both DBPSK and DQPSK as described above. In the figure, it is assumed that the signal starts with zero phase, and so there is a phase shift in both signals at t = 0.
-
-Analysis shows that differential encoding approximately doubles the error rate compared to ordinary M-PSK but this may be overcome by only a small increase in E_b/N_0. Furthermore, this analysis (and the graphical results below) are based on a system in which the only corruption is additive white Gaussian noise (AWGN). However, there will also be a physical channel between the transmitter and receiver in the communication system. This channel will, in general, introduce an unknown phase-shift to the PSK signal; in these cases the differential schemes can yield a better error-rate than the ordinary schemes which rely on precise phase information.
-
-One of the most popular applications of DPSK is the Bluetooth standard where \pi/4-DQPSK and 8-DPSK were implemented.
-
-Demodulation
-
-For a signal that has been differentially encoded, there is an obvious alternative method of demodulation. Instead of demodulating as usual and ignoring carrier-phase ambiguity, the phase between two successive received symbols is compared and used to determine what the data must have been. When differential encoding is used in this manner, the scheme is known as differential phase-shift keying (DPSK). Note that this is subtly different from just differentially encoded PSK since, upon reception, the received symbols are not decoded one-by-one to constellation points but are instead compared directly to one another.
-
-Call the received symbol in the kth timeslot r_k and let it have phase \phi_k. Assume without loss of generality that the phase of the carrier wave is zero. Denote the additive white Gaussian noise (AWGN) term as n_k. Then
-
-r_k = \sqrt{E_s}e^{j\phi_k} + n_k.
-
-The decision variable for the k-1th symbol and the kth symbol is the phase difference between r_k and r_{k-1}. That is, if r_k is projected onto r_{k-1}, the decision is taken on the phase of the resultant complex number:
-
-r_kr_{k-1}^* = E_se^{j\left(\varphi_k - \varphi_{k-1}\right)} + \sqrt{E_s}e^{j\varphi_k}n_{k-1}^* + \sqrt{E_s}e^{-j\varphi_{k-1}}n_k + n_kn_{k-1}^*
-
-where superscript * denotes complex conjugation. In the absence of noise, the phase of this is \phi_{k}-\phi_{k-1}, the phase-shift between the two received signals which can be used to determine the data transmitted.
-
-The probability of error for DPSK is difficult to calculate in general, but, in the case of DBPSK it is:
-
-P_b = \frac{1}{2}e^{-\frac{E_b}{N_0}},G.L. Stüber, “Soft Decision Direct-Sequence DPSK Receivers,” IEEE Transactions on Vehicular Technology, vol. 37, no. 3, pp. 151–157, August 1988.
-
-which, when numerically evaluated, is only slightly worse than ordinary BPSK, particularly at higher E_b/N_0 values.
-
-Using DPSK avoids the need for possibly complex carrier-recovery schemes to provide an accurate phase estimate and can be an attractive alternative to ordinary PSK.
-
-In optical communications, the data can be modulated onto the phase of a laser in a differential way. The modulation is a laser which emits a continuous wave, and a Mach–Zehnder modulator which receives electrical binary data. For the case of BPSK, the laser transmits the field unchanged for binary '1', and with reverse polarity for '0'. The demodulator consists of a delay line interferometer which delays one bit, so two bits can be compared at one time. In further processing, a photodiode is used to transform the optical field into an electric current, so the information is changed back into its original state.
-
-The bit-error rates of DBPSK and DQPSK are compared to their non-differential counterparts in the graph to the right. The loss for using DBPSK is small enough compared to the complexity reduction that it is often used in communications systems that would otherwise use BPSK. For DQPSK though, the loss in performance compared to ordinary QPSK is larger and the system designer must balance this against the reduction in complexity.
-
-Example: Differentially encoded BPSK
-
-At the k^{\textrm{th}} time-slot call the bit to be modulated b_k, the differentially encoded bit e_k and the resulting modulated signal m_k(t). Assume that the constellation diagram positions the symbols at ±1 (which is BPSK). The differential encoder produces:
-
-\,e_k = e_{k-1} \oplus b_k
-
-where \oplus{} indicates binary or modulo-2 addition.
-
-So e_k only changes state (from binary "0" to binary "1" or from binary "1" to binary "0") if b_k is a binary "1". Otherwise it remains in its previous state. This is the description of differentially encoded BPSK given above.
-
-The received signal is demodulated to yield e_k = \pm 1 and then the differential decoder reverses the encoding procedure and produces
-
-b_k = e_k \oplus e_{k-1},
-
-since binary subtraction is the same as binary addition.
-
-Therefore, b_k1 if e_k and e_{k-1} differ and b_k
-0 if they are the same. Hence, if both e_k and e_{k-1} are inverted, b_k will still be decoded correctly. Thus, the 180° phase ambiguity does not matter.
-
-Differential schemes for other PSK modulations may be devised along similar lines. The waveforms for DPSK are the same as for differentially encoded PSK given above since the only change between the two schemes is at the receiver.
-
-The BER curve for this example is compared to ordinary BPSK on the right. As mentioned above, whilst the error rate is approximately doubled, the increase needed in E_b/N_0 to overcome this is small.  The increase in E_b/N_0 required to overcome differential modulation in coded systems, however, is larger typically about 3 dB. The performance degradation is a result of noncoherent transmission in this case it refers to the fact that tracking of the phase is completely ignored.
-
-Definitions
-
-For determining error-rates mathematically, some definitions will be needed:
-
-* E_b,            energy per bit
-* E_s = nE_b,     energy per symbol with n bits
-* T_b,            bit duration
-* T_s,            symbol duration
-* \frac{1}{2}N_0, noise power spectral density (W/Hz)
-* P_b,            probability of bit-error
-* P_s,            probability of symbol-error
-
-Q(x) will give the probability that a single sample taken from a random process with zero-mean and unit-variance Gaussian probability density function will be greater or equal to x. It is a scaled form of the complementary Gaussian error function:
-
-Q(x) \frac{1}{\sqrt{2\pi}}\int_x^\infty e^{-\frac{1}{2}t^2} \,dt 
- \frac{1}{2} \operatorname{erfc}\left(\frac{x}{\sqrt{2}}\right),\ x \geq 0.
-
-The error rates quoted here are those in additive white Gaussian noise (AWGN). These error rates are lower than those computed in fading channels, hence, are a good theoretical benchmark to compare with.
-
-Applications
-
-Owing to PSK's simplicity, particularly when compared with its competitor quadrature amplitude modulation, it is widely used in existing technologies.
-
-The wireless LAN standard, IEEE 802.11b-1999,[http://standards.ieee.org/getieee802/download/802.11-1999.pdf IEEE Std 802.11-1999: Wireless LAN Medium Access Control (MAC) and Physical Layer (PHY) Specifications] the overarching IEEE 802.11 specification. [http://standards.ieee.org/getieee802/download/802.11b-1999.pdf IEEE Std 802.11b-1999 (R2003)] the IEEE 802.11b specification. uses a variety of different PSKs depending on the data rate required. At the basic rate of 1Mbit/s, it uses DBPSK (differential BPSK). To provide the extended rate of 2Mbit/s, DQPSK is used. In reaching 5.5Mbit/s and the full rate of 11Mbit/s, QPSK is employed, but has to be coupled with complementary code keying. The higher-speed wireless LAN standard, IEEE 802.11g-2003,[http://standards.ieee.org/getieee802/download/802.11g-2003.pdf IEEE Std 802.11g-2003] the IEEE 802.11g specification. has eight data rates: 6, 9, 12, 18, 24, 36, 48 and 54Mbit/s. The 6 and 9Mbit/s modes use OFDM modulation where each sub-carrier is BPSK modulated. The 12 and 18Mbit/s modes use OFDM with QPSK. The fastest four modes use OFDM with forms of quadrature amplitude modulation.
-
-Because of its simplicity, BPSK is appropriate for low-cost passive transmitters, and is used in RFID standards such as ISO/IEC 14443 which has been adopted for biometric passports, credit cards such as American Express's ExpressPay, and many other applications.[http://www.atmel.com/dyn/resources/prod_documents/doc2056.pdf Understanding the Requirements of ISO/IEC 14443 for Type B Proximity Contactless Identification Cards], Application Note, Rev. 2056B–RFID–11/05, 2005, ATMEL.
-
-Bluetooth 2 uses \pi/4-DQPSK at its lower rate (2Mbit/s) and 8-DPSK at its higher rate (3Mbit/s) when the link between the two devices is sufficiently robust. Bluetooth 1 modulates with Gaussian minimum-shift keying, a binary scheme, so either modulation choice in version 2 will yield a higher data-rate. A similar technology, IEEE 802.15.4 (the wireless standard used by ZigBee) also relies on PSK using two frequency bands: 868–915MHz with BPSK and at 2.4GHz with OQPSK.
-
-Both QPSK and 8PSK are widely used in satellite broadcasting. QPSK is still widely used in the streaming of SD satellite channels and some HD channels. High definition programming is delivered almost exclusively in 8PSK due to the higher bitrates of HD video and the high cost of satellite bandwidth. The DVB-S2 standard requires support for both QPSK and 8PSK. The chipsets used in new satellite set top boxes, such as Broadcom's 7000 series support 8PSK and are backward compatible with the older standard.
-
-Historically, voice-band synchronous modems such as the Bell 201, 208, and 209 and the CCITT V.26, V.27, V.29, V.32, and V.34 used PSK.
-
-Mutual information with additive white Gaussian noise
-
-The mutual information of PSK can be evaluated in additive Gaussian noise by numerical integration of its definition. The curves of mutual information saturate to the number of bits carried by each symbol in the limit of infinite signal to noise ratio E_s/N_0. On the contrary, in the limit of small signal to noise ratios the mutual information approaches the AWGN channel capacity, which is the supremum among all possible choices of symbol statistical distributions.
-
-At intermediate values of signal to noise ratios the mutual information (MI) is well approximated by:
-
-\textrm{MI} \simeq \log_2\left(\sqrt{\frac{4\pi}{e}\frac{E_s}{N_0}}\right).
-
-The mutual information of PSK over the AWGN channel is generally farther to the AWGN channel capacity than QAM modulation formats.
+*
+*
+*
+* (autobiography).
+*
+*
 
 See also
 
-* Binary offset carrier modulation
-* Differential coding
-* Modulation for an overview of all modulation schemes
-* Phase modulation (PM) the analogue equivalent of PSK
-* Polar modulation
-* PSK31
-* PSK63
-
-Notes
-
- 
+* List of things named after Stanislaw Ulam
+* Biopic about Stanislaw Ulam, based on his autobiography, starring Jakub Gierszal
 
 References
 
-The notation and theoretical results in this article are based on material presented in the following sources:
+External links
 
+*[http://manhattanprojectvoices.org/oral-histories/stanislaus-ulams-interview-1979 1979 Audio Interview with Stanislaus Ulam by Martin Sherwin] Voices of the Manhattan Project
+*[http://manhattanprojectvoices.org/oral-histories/stanislaus-ulams-interview 1965 Audio Interview with Stanislaus Ulam by Richard Rhodes] Voices of the Manhattan Project
 *
-*
-*"39166520*���:ARTICLEB
+*  – 1976 lecture on The First International Research Conference on the History of Computing."42425010*����:ARTICLEB
 	namespace B!
-	dump_date2022-10-26T17:46:15ZB��
-	wiki_text��{{short description|Type of data encoding}}
-{{Multiple issues|
-{{Manual|date=October 2022}}
-{{Technical|date=October 2022}}
-{{More footnotes|date=October 2022}}
+	dump_date2022-10-09T22:26:17ZB��
+	wiki_text��{{Short description|Polish-American mathematician}}
+{{good article}}
+{{Infobox scientist
+| name              = Stanisław Ulam
+| image             = File:Stanislaw Ulam.tif
+| birth_name        = Stanisław Marcin Ulam
+| image_size        = 240px
+| alt               = A smiling man in a hat and heavy winter coat and scarf, carrying a portfolio tucked under his arm
+| caption           = Stanisław Ulam
+| birth_date        = {{birth date|df=y|1909|4|13}}
+| birth_place       = [[Lviv#Habsburg Empire|Lemberg]], [[Austria-Hungary]]<br /><small>({{small|now [[Lviv]], [[Ukraine]]}})</small>
+| death_date        = {{death date and age|df=y|1984|5|13|1909|4|3}}
+| death_place       = [[Santa Fe, New Mexico]], U.S.
+| residence         = 
+| citizenship       = Poland, United States (naturalized in 1941)
+| field             = [[Mathematics]]
+| work_institutions = [[Institute for Advanced Study]]<br />[[Harvard University]]<br />[[University of Wisconsin–Madison|University of Wisconsin]]<br />[[Los Alamos National Laboratory]]<br />[[University of Colorado at Boulder|University of Colorado]]<br />[[University of Florida]]
+| education         = [[Lviv Polytechnic#Second Polish Republic|Lwów Polytechnic Institute]], [[Second Polish Republic]]
+| doctoral_advisor  = [[Kazimierz Kuratowski]]<br>[[Włodzimierz Stożek]]
+| doctoral_students = [[Paul Kelly (mathematician)|Paul Kelly]]
+| known_for         = Mathematical formulations in the fields of [[Physics]], [[Computer Science]], and [[Biology]]<br>[[Teller–Ulam design]]<br />[[Monte Carlo method]]<br />[[Fermi–Pasta–Ulam–Tsingou problem]]<br />[[Nuclear pulse propulsion]]
+| influences        = 
+| awards            = 
 }}
-{{Modulation techniques}}
-'''Phase-shift keying''' ('''PSK''') is a [[digital modulation]] process which conveys [[Data (computing)|data]] by changing (modulating) the [[Phase (waves)|phase]] of a constant [[frequency]] reference [[signal]] (the [[carrier wave]]). The modulation is accomplished by varying the [[sine wave|sine]] and [[cosine wave|cosine]] inputs at a precise time. It is widely used for [[wireless LAN]]s, [[RFID]] and [[Bluetooth]] communication.
 
-Any digital modulation scheme uses a finite number of distinct signals to represent digital data. PSK uses a finite number of phases, each assigned a unique pattern of [[bit|binary digit]]s. Usually, each phase encodes an equal number of bits. Each pattern of bits forms the [[symbol rate|symbol]] that is represented by the particular phase. The [[demodulator]], which is designed specifically for the symbol-set used by the modulator, determines the phase of the received signal and maps it back to the symbol it represents, thus recovering the original data. This requires the receiver to be able to compare the phase of the received signal to a reference signal{{snd}} such a system is termed coherent (and referred to as CPSK).
+'''Stanisław Marcin Ulam''' ({{IPAc-pl|s|t|a|'ɲ|i|s|ł|a|f|-|'m|a|r|ć|i|n|-|'u|l|a|m}}; 13 April 1909&nbsp;– 13 May 1984) was a Polish-American scientist in the fields of mathematics and nuclear physics. He participated in the [[Manhattan Project]], originated the [[History of the Teller–Ulam design|Teller–Ulam design]] of [[thermonuclear weapon]]s, discovered the concept of the [[cellular automaton]], invented the [[Monte Carlo method|Monte Carlo method of computation]], and suggested [[nuclear pulse propulsion]]. In pure and [[applied mathematics]], he proved some theorems and proposed several conjectures.
 
-CPSK requires a complicated demodulator, because it must extract the reference wave from the received signal and keep track of it, to compare each sample to.  Alternatively, the phase shift of each symbol sent can be measured with respect to the phase of the previous symbol sent.  Because the symbols are encoded in the difference in phase between successive samples, this is called '''differential phase-shift keying (DPSK)'''.  DPSK can be significantly simpler to implement than ordinary PSK, as it is a 'non-coherent' scheme, i.e. there is no need for the demodulator to keep track of a reference wave.   A trade-off is that it has more demodulation errors.
+Born into a wealthy [[Polish Jewish]] family, Ulam studied mathematics at the [[Lviv Polytechnic#Second Polish Republic|Lwów Polytechnic Institute]], where he earned his [[PhD]] in 1933 under the supervision of [[Kazimierz Kuratowski]] and [[Włodzimierz Stożek]].<ref>{{Cite web|title=Mathematics Genealogy Project: Stanisław Marcin Ulam|url=https://mathgenealogy.org/id.php?id=12682|access-date=2022-05-17|website=Mathematics Genealogy Project|language=en}}</ref> In 1935, [[John von Neumann]], whom Ulam had met in Warsaw, invited him to come to the [[Institute for Advanced Study]] in [[Princeton, New Jersey]], for a few months. From 1936 to 1939, he spent summers in Poland and academic years at [[Harvard University]] in [[Cambridge, Massachusetts]], where he worked to establish important results regarding [[ergodic theory]]. On 20 August 1939, he sailed for the United States for the last time with his 17-year-old brother [[Adam Ulam]]. He became an assistant professor at the [[University of Wisconsin–Madison]] in 1940, and a [[United States citizen]] in 1941.
 
-{{Further|Very minimum shift keying}}
+In October 1943, he received an invitation from [[Hans Bethe]] to join the [[Manhattan Project]] at the secret [[Los Alamos Laboratory]] in New Mexico. There, he worked on the [[Fluid dynamics|hydrodynamic]] calculations to predict the behavior of the [[explosive lens]]es that were needed by an [[Nuclear weapon design#Implosion-type weapon|implosion-type weapon]]. He was assigned to [[Edward Teller]]'s group, where he worked on [[Teller's "Super" bomb]] for Teller and [[Enrico Fermi]]. After the war he left to become an associate professor at the [[University of Southern California]], but returned to Los Alamos in 1946 to work on [[Nuclear weapon design|thermonuclear weapons]]. With the aid of a cadre of female "[[Human computers#Wartime computing and the invention of electronic computing|computers]]", including his wife [[Françoise Aron Ulam]],{{cn|date=November 2020}} he found that Teller's "Super" design was unworkable. In January 1951, Ulam and Teller came up with the [[Teller–Ulam design]], which is the basis for all thermonuclear weapons.
 
-==Introduction==
-There are three major classes of [[modulation#Digital modulation methods|digital modulation]] techniques used for transmission of [[Digital data|digital]]ly represented data:
+Ulam considered the problem of [[nuclear propulsion]] of rockets, which was pursued by [[Project Rover]], and proposed, as an alternative to Rover's [[nuclear thermal rocket]], to harness small nuclear explosions for propulsion, which became [[Project Orion (nuclear propulsion)|Project Orion]]. With Fermi, [[John Pasta]], and [[Mary Tsingou]], Ulam studied the [[Fermi–Pasta–Ulam–Tsingou problem]], which became the inspiration for the field of non-linear science. He is probably best known for realising that electronic computers made it practical to apply statistical methods to functions without known solutions, and as computers have developed, the [[Monte Carlo method]] has become a common and standard approach to many problems.
 
-* [[Amplitude-shift keying]] (ASK)
-* [[Frequency-shift keying]] (FSK)
-* Phase-shift keying (PSK)
+==Poland==
+Ulam was born in [[Lviv#Habsburg Empire|Lemberg]], [[Galicia (Eastern Europe)|Galicia]], on 13 April 1909.<ref name="CHAR 78" /><ref name='NYTIMES-OBIT' /><ref>{{Cite web|title=Stanislaw Ulam {{!}} Biography, Facts, & Spiral|url=https://www.britannica.com/biography/Stanislaw-Ulam|access-date=2021-04-11|website=Encyclopedia Britannica|language=en}}</ref> At this time, Galicia was in the [[Kingdom of Galicia and Lodomeria]] of the [[Austria-Hungary|Austro-Hungarian Empire]], which was known to Poles as the [[Austrian partition]]. In 1918, it became part of the newly restored Poland, the [[Second Polish Republic]], and the city took its Polish name again, [[Lviv#Interwar period|Lwów]].<ref name="ULAM 9-15"/>
 
-All convey data by changing some aspect of a base signal, the [[carrier wave]] (usually a [[Sine wave|sinusoid]]), in response to a data signal. In the case of PSK, the phase is changed to represent the data signal. There are two fundamental ways of utilizing the phase of a signal in this way:
+The Ulams were a wealthy [[Polish Jewish]] family of bankers, industrialists, and other professionals. Ulam's immediate family was "well-to-do but hardly rich".<ref name='AULAM'/> His father, Józef Ulam, was born in Lwów and was a lawyer,<ref name="ULAM 9-15"/> and his mother, Anna (née Auerbach), was born in [[Stryi|Stryj]].<ref name='FAMILY'/> His uncle, Michał Ulam, was an architect, building contractor, and lumber industrialist.<ref name='MIKE'/> From 1916 until 1918, Józef's family lived temporarily in [[Vienna]].<ref name='VITA'/> After they returned, Lwów became the epicenter of the [[Polish–Ukrainian War]], during which the city experienced [[Battle of Lemberg (1918)|a Ukrainian siege]].<ref name="ULAM 9-15"/>
 
-* By viewing the [[Phase (waves)|phase]] itself as conveying the information, in which case the [[demodulator]] must have a reference signal to compare the received signal's phase against; or
-* By viewing the ''change'' in the phase as conveying information{{snd}} [[#Differential encoding|''differential'']] schemes, [[#Differential phase-shift keying .28DPSK.29|some]] of which do not need a reference carrier (to a certain extent).
+[[File:Lwow - Kawiarnia Szkocka.jpg|thumb|300px|alt=Picture of the building that used to house the Scottish Café|The [[Scottish Café]]'s building now houses the Universal Bank in [[Lviv]], Ukraine.]]
+In 1919, Ulam entered Lwów Gymnasium Nr. VII, from which he graduated in 1927.<ref name='AJMAA'/> He then studied mathematics at the Lwów Polytechnic Institute. Under the supervision of [[Kazimierz Kuratowski]], he received his [[Master of Arts]] degree in 1932, and became a [[Doctor of Science#Poland|Doctor of Science]] in 1933.<ref name='VITA'/><ref name=zwoje/> At the age of 20, in 1929, he published his first paper ''Concerning Function of Sets'' in the journal ''[[Fundamenta Mathematicae]]''.<ref name=zwoje>{{cite journal|author=Andrzej M. Kobos|title=Mędrzec większy niż życie|trans-title=A Sage Greater Than Life|language=pl|journal=Zwoje|volume=3|number=16|year=1999|access-date=10 May 2013|url=http://www.zwoje-scrolls.com/zwoje16/text03.htm|archive-date=6 March 2009|archive-url=https://web.archive.org/web/20090306182319/http://www.zwoje-scrolls.com/zwoje16/text03.htm|url-status=dead}}</ref> From 1931 until 1935, he traveled to and studied in [[Wilno]] (Vilnius), [[Vienna]], [[Zurich]], [[Paris]], and [[University of Cambridge|Cambridge, England]], where he met [[G. H. Hardy]] and [[Subrahmanyan Chandrasekhar]].<ref name="ULAM 56-60"/>
 
-A convenient method to represent PSK schemes is on a [[constellation diagram]]. This shows the points in the [[complex plane]] where, in this context, the [[real number|real]] and [[imaginary number|imaginary]] axes are termed the in-phase and quadrature axes respectively due to their 90° separation. Such a representation on perpendicular axes lends itself to straightforward implementation. The amplitude of each point along the in-phase axis is used to modulate a cosine (or sine) wave and the amplitude along the quadrature axis to modulate a sine (or cosine) wave.  By convention, in-phase modulates cosine and quadrature modulates sine.
+Along with [[Stanisław Mazur]], [[Mark Kac]], [[Włodzimierz Stożek]], Kuratowski, and others, Ulam was a member of the [[Lwów School of Mathematics]]. Its founders were [[Hugo Steinhaus]] and [[Stefan Banach]], who were professors at the [[University of Lviv#Jan Kazimierz University (1919–39)|Jan Kazimierz University]]. Mathematicians of this "school" met for long hours at the [[Scottish Café]], where the problems they discussed were collected in the [[Scottish Book]], a thick notebook provided by Banach's wife. Ulam was a major contributor to the book. Of the 193 problems recorded between 1935 and 1941, he contributed 40 problems as a single author, another 11 with Banach and Mazur, and an additional 15 with others. In 1957, he received from Steinhaus a copy of the book, which had survived the war, and translated it into English.<ref name='BOOK'/> In 1981, Ulam's friend R. Daniel Mauldin published an expanded and annotated version.<ref name='MAULDIN'/>
 
-In PSK, the [[constellation diagram|constellation points]] chosen are usually positioned with uniform [[angle|angular]] spacing around a [[circle]]. This gives maximum phase-separation between adjacent points and thus the best immunity to corruption. They are positioned on a circle so that they can all be transmitted with the same energy. In this way, the moduli of the complex numbers they represent will be the same and thus so will the amplitudes needed for the cosine and sine waves. Two common examples are "binary phase-shift keying" ([[#Binary phase-shift keying (BPSK)|BPSK]]) which uses two phases, and "quadrature phase-shift keying" ([[#Quadrature phase-shift keying (QPSK)|QPSK]]) which uses four phases, although any number of phases may be used. Since the data to be conveyed are usually binary, the PSK scheme is usually designed with the number of constellation points being a [[power (mathematics)|power]] of two.
+==Move to the United States==
+In 1935, [[John von Neumann]], whom Ulam had met in Warsaw, invited him to come to the [[Institute for Advanced Study]] in [[Princeton, New Jersey]], for a few months. In December of that year, Ulam sailed to the US. At Princeton, he went to lectures and seminars, where he heard [[Oswald Veblen]], [[James Waddell Alexander II|James Alexander]], and [[Albert Einstein]]. During a tea party at von Neumann's house, he encountered [[G. D. Birkhoff]], who suggested that he apply for a position with the [[Harvard Society of Fellows]].<ref name='VITA'/> Following up on Birkhoff's suggestion, Ulam spent summers in Poland and academic years at [[Harvard University]] in [[Cambridge, Massachusetts]] from 1936 to 1939, where he worked with [[John C. Oxtoby]] to establish results regarding [[ergodic theory]]. These appeared in [[Annals of Mathematics]] in 1941.<ref name='AJMAA'/><ref name='OXTOBY'/> In 1938, Stanislaw's mother Anna hanna Ulam (maiden name Auerbach) died of cancer.
 
-==Binary phase-shift keying (BPSK)==
-{{Anchor|BPSK}}
-[[File:BPSK Gray Coded.svg|200px|right|thumb|[[Constellation diagram]] example for BPSK]]
+On 20 August 1939, in [[Gdynia]], Józef Ulam, along with his brother Szymon, put his two sons, Stanislaw and 17 year old [[Adam Ulam|Adam]], on a ship headed for the US.<ref name='VITA'/> Eleven days later, the [[Invasion of Poland#Phase 1: German invasion|Germans invaded Poland]]. Within two months, the Germans completed their [[History of Poland (1939–1945)|occupation]] of western Poland, and the Soviets [[Invasion of Poland#Phase 2: Soviet invasion|invaded]] and occupied eastern Poland. Within two years, Józef Ulam and the rest of his family, including Stanislaw's sister Stefania Ulam, were victims of the [[Holocaust]], [[Hugo Steinhaus]] was in hiding, [[Kazimierz Kuratowski]] was lecturing at the [[Education in Poland during World War II|underground university]] in Warsaw, [[Włodzimierz Stożek]] and his two sons had been killed in the [[massacre of Lwów professors]], and the last problem had been recorded in the [[Scottish Book]]. [[Stefan Banach]] survived the Nazi occupation by feeding [[lice]] at [[Rudolf Weigl|Rudolf Weigl's typhus research institute]]. In 1963, [[Adam Ulam]], who had become an eminent [[Kremlinology|kremlinologist]] at Harvard,<ref name='ADAM'/> received a letter from George Volsky,<ref name='VOLSKY'/> who hid in Józef Ulam's house after deserting from the Polish army. This reminiscence gave a chilling account of Lwów's chaotic scenes in late 1939.<ref name='MOLLY'/> In later life Ulam described himself as "an agnostic. Sometimes I muse deeply on the forces that are for me invisible. When I am almost close to the idea of God, I feel immediately estranged by the horrors of this world, which he seems to tolerate".<ref name='OLGIERD'/>
 
-BPSK (also sometimes called PRK, phase reversal keying, or 2PSK) is the simplest form of phase shift keying (PSK). It uses two phases which are separated by 180° and so can also be termed 2-PSK. It does not particularly matter exactly where the constellation points are positioned, and in this figure they are shown on the real axis, at 0° and 180°. Therefore, it handles the highest noise level or distortion before the [[demodulator]] reaches an incorrect decision. That makes it the most robust of all the PSKs. It is, however, only able to modulate at 1{{nbsp}}bit/symbol (as seen in the figure) and so is unsuitable for high data-rate applications. Yet there is the possibility of extending this bit/symbol, given the modulators symbol encryption / decryption logic system. 
+In 1940, after being recommended by Birkhoff, Ulam became an assistant professor at the [[University of Wisconsin–Madison]]. Here, he became a [[United States citizen]] in 1941.<ref name='VITA'/> That year, he married [[Françoise Aron Ulam|Françoise Aron]].<ref name='AJMAA'/> She had been a French exchange student at [[Mount Holyoke College]], whom he met in Cambridge. They had one daughter, Claire. In Madison, Ulam met his friend and colleague C. J. Everett, with whom he collaborated on a number of papers.<ref name="ULAM 125-130"/>
 
-In the presence of an arbitrary phase-shift introduced by the [[communications channel]], the demodulator (see, e.g. [[Costas loop]])  is unable to tell which constellation point is which. As a result, the data is often [[#Differential encoding|differentially encoded]] prior to modulation.
+==Manhattan Project==
+[[File:Stanislaw Ulam ID badge.png|thumb|200px|Ulam's ID badge photo from [[Los Alamos National Laboratory]] |alt=A mug shot style ID photo, with the serial H 0]]
+In early 1943, Ulam asked von Neumann to find him a war job. In October, he received an invitation to join an unidentified project near [[Santa Fe, New Mexico]].<ref name='VITA'/> The letter was signed by [[Hans Bethe]], who had been appointed as leader of the theoretical division of [[Los Alamos National Laboratory]] by [[Robert Oppenheimer]], its scientific director.<ref name="ULAM 143-147"/> Knowing nothing of the area, he borrowed a New Mexico guide book. On the checkout card, he found the names of his Wisconsin colleagues, [[Joan Hinton]], [[David H. Frisch|David Frisch]], and Joseph McKibben, all of whom had mysteriously disappeared.<ref name='VITA'/> This was Ulam's introduction to the [[Manhattan Project]], which was the US's wartime effort to create the atomic bomb.<ref name='LANLBIO'/>
 
-BPSK is functionally equivalent to [[Quadrature amplitude modulation|2-QAM]] modulation.
+===Hydrodynamical calculations of implosion===
+A few weeks after Ulam reached [[Los Alamos, New Mexico|Los Alamos]] in February 1944, the project experienced a crisis. In April, [[Emilio G. Segrè|Emilio Segrè]] discovered that [[plutonium]] made in [[Nuclear reactors#Early reactors|reactors]] would not work in a [[gun-type fission weapon|gun-type]] plutonium weapon like the "[[Thin Man nuclear bomb|Thin Man]]", which was being developed in parallel with a uranium weapon, the "[[Little Boy]]" that was dropped on [[Atomic bombings of Hiroshima and Nagasaki#Hiroshima|Hiroshima]]. This problem threatened to waste an enormous investment in new reactors at the [[Hanford site]] and to make slow uranium [[isotope separation]] the only way to prepare [[fissile]] material suitable for use in bombs. To respond, Oppenheimer implemented, in August, a sweeping reorganization of the laboratory to focus on development of an [[Nuclear weapon design#Implosion-type weapon|implosion-type weapon]] and appointed [[George Kistiakowsky]] head of the implosion department. He was a professor at Harvard and an expert on precise use of explosives.<ref name="HODDESON 130-137"/>
 
-===Implementation===
-The general form for BPSK follows the equation:
+The basic concept of [[Implosion (mechanical process)|implosion]] is to use chemical explosives to crush a chunk of fissile material into a [[critical mass]], where [[neutron]] multiplication leads to a [[nuclear chain reaction]], releasing a large amount of energy. Cylindrical implosive configurations had been studied by [[Seth Neddermeyer]], but von Neumann, who had experience with [[shaped charge]]s used in [[High-explosive anti-tank|armor-piercing ammunition]], was a [[John von Neumann#Nuclear weapons|vocal advocate of spherical implosion]] driven by [[explosive lens]]es. He realized that the symmetry and speed with which implosion compressed the plutonium were critical issues,<ref name="HODDESON 130-137"/> and enlisted Ulam to help design lens configurations that would provide nearly spherical implosion.  Within an implosion, because of enormous pressures and high temperatures, solid materials behave much like fluids. This meant that [[Fluid dynamics|hydrodynamical]] calculations were needed to predict and minimize asymmetries that would spoil a nuclear detonation. Of these calculations, Ulam said:{{quote|The hydrodynamical problem was simply stated, but very difficult to calculate&nbsp;– not only in detail, but even in order of magnitude. In this discussion, I stressed pure pragmatism and the necessity to get a heuristic survey of the problem by simple-minded brute force, rather than by massive numerical work.<ref name='VITA'/>}}
 
-:<math>s_n(t) =   \sqrt{\frac{2E_b}{T_b}} \cos(2 \pi f t + \pi(1-n )),\quad n = 0,1. </math>
+Nevertheless, with the primitive facilities available at the time, Ulam and von Neumann did carry out numerical computations that led to a satisfactory design. This motivated their advocacy of a powerful computational capability at Los Alamos, which began during the war years,<ref name='COMPEARLY'/> continued through the cold war, and still exists.<ref name='COMPLATE'/> [[Otto Frisch]] remembered Ulam as "a brilliant Polish topologist with a charming French wife. At once he told me that he was a pure mathematician who had sunk so low that his latest paper actually contained numbers with decimal points!"<ref name='FRISCH'/>
 
-This yields two phases, 0 and π.
-In the specific form, [[binary data]] is often conveyed with the following signals:{{citation needed|date=June 2019}}
+===Statistics of branching and multiplicative processes===
+Even the inherent statistical fluctuations of [[neutron]] multiplication within a [[chain reaction]] have implications with regard to implosion speed and symmetry. In November 1944, [[David Hawkins (philosopher)|David Hawkins]]<ref name='HAWKINS'/> and Ulam addressed this problem in a report entitled "Theory of Multiplicative Processes".<ref name='LA171'/> This report, which invokes [[probability-generating function]]s, is also an early entry in the extensive literature on statistics of [[Branching process|branching]] and multiplicative processes. In 1948, its scope was extended by Ulam and Everett.<ref name='MULT123'/>
 
-:<math>s_0(t) =   \sqrt{\frac{2E_b}{T_b}} \cos(2 \pi f t + \pi )
-              = - \sqrt{\frac{2E_b}{T_b}} \cos(2 \pi f t)</math> for binary "0"
-:<math>s_1(t) = \sqrt{\frac{2E_b}{T_b}} \cos(2 \pi f t) </math> for binary "1"
+Early in the Manhattan project, [[Enrico Fermi]]'s attention was focused on the use of reactors to produce plutonium. In September 1944, he arrived at Los Alamos, shortly after breathing life into the [[Manhattan Project#Hanford reactors|first Hanford reactor]], which had been [[Nuclear poison|poisoned]] by a [[Xenon-135|xenon isotope]].<ref name="HEWLETT"/> Soon after Fermi's arrival, [[Teller's "Super" bomb]] group, of which Ulam was a part, was transferred to a new division headed by Fermi.<ref name="ULAM 152-153"/> Fermi and Ulam formed a relationship that became very fruitful after the war.<ref name="ULAM 162-167"/>
 
-where ''f'' is the frequency of the base band.
+==Post war Los Alamos==
+In September 1945, Ulam left Los Alamos to become an associate professor at the [[University of Southern California]] in [[Los Angeles, California|Los Angeles]]. In January 1946, he suffered an acute attack of [[encephalitis]], which put his life in danger, but which was alleviated by emergency brain surgery. During his recuperation, many friends visited, including [[Nicholas Metropolis]] from Los Alamos and the famous mathematician [[Paul Erdős]],<ref name='ERDOS'/> who remarked: "Stan, you are just like before."<ref name='VITA'/> This was encouraging, because Ulam was concerned about the state of his mental faculties, for he had lost the ability to speak during the crisis. Another friend, [[Gian-Carlo Rota]], asserted in a 1987 article that the attack changed Ulam's personality: afterwards, he turned from rigorous pure mathematics to more speculative conjectures concerning the application of mathematics to physics and [[biology]]; Rota also cites Ulam's former collaborator Paul Stein as noting that Ulam was sloppier in his clothing afterwards, and John Oxtoby as noting that Ulam before the encephalitis could work for hours on end doing calculations, while when Rota worked with him, was reluctant to solve even a quadratic equation.<ref name='ROTA'/> This assertion was not accepted by [[Françoise Aron Ulam]].<ref name='FULAM'/>
 
-Hence, the signal space can be represented by the single [[basis function]]
+By late April 1946, Ulam had recovered enough to attend a secret conference at Los Alamos to discuss [[Nuclear weapon design|thermonuclear weapons]]. Those in attendance included Ulam, von Neumann, Metropolis, Teller, [[Stan Frankel]], and others. Throughout his participation in the Manhattan Project, Teller's efforts had been directed toward the development of a "super" weapon based on [[nuclear fusion]], rather than toward development of a practical fission bomb. After extensive discussion, the participants reached a consensus that his ideas were worthy of further exploration. A few weeks later, Ulam received an offer of a position at Los Alamos from Metropolis and [[Robert D. Richtmyer]], the new head of its theoretical division, at a higher salary, and the Ulams returned to Los Alamos.<ref name="ULAM 184-187"/>
 
-:<math>\phi(t) = \sqrt{\frac{2}{T_b}} \cos(2 \pi f t) </math>
+===Monte Carlo method===
+[[File:STAN ULAM HOLDING THE FERMIAC.jpg|thumb|Stan Ulam holding the [[FERMIAC]]|alt=A smiling balding man in a suit and tie holds a strange device that looks like a frame]]
+Late in the war, under the sponsorship of von Neumann, Frankel and Metropolis began to carry out calculations on the first general-purpose electronic computer, the [[ENIAC]] at the Aberdeen Proving Ground in Maryland. Shortly after returning to Los Alamos, Ulam participated in a review of results from these calculations.<ref name='METROPOLIS'/> Earlier, while playing [[Patience (game)|solitaire]] during his recovery from surgery, Ulam had thought about playing hundreds of games to estimate statistically the probability of a successful outcome.<ref name='ECKHARDT'/> With ENIAC in mind, he realized that the availability of computers made such statistical methods very practical. John von Neumann immediately saw the significance of this insight. In March 1947 he proposed a statistical approach to the problem of neutron diffusion in fissionable material.<ref name='LAMS551'/> Because Ulam had often mentioned his uncle, Michał Ulam, "who just had to go to Monte Carlo" to gamble, Metropolis dubbed the statistical approach "The [[Monte Carlo method]]".<ref name='METROPOLIS'/> Metropolis and Ulam published the first unclassified paper on the Monte Carlo method in 1949.<ref name='MONTEPAPER'/>
 
-where 1 is represented by <math>\sqrt{E_b} \phi(t)</math> and 0 is represented by <math>-\sqrt{E_b} \phi(t)</math>. This assignment is arbitrary.
+Fermi, learning of Ulam's breakthrough, devised an [[analog computer]] known as the [[Monte Carlo trolley]], later dubbed the [[FERMIAC]]. The device performed a mechanical simulation of random diffusion of neutrons. As computers improved in speed and programmability, these methods became more useful. In particular, many Monte Carlo calculations carried out on modern [[massively parallel]] [[supercomputer]]s are [[embarrassingly parallel]] applications, whose results can be very accurate.<ref name='COMPLATE'/>
 
-This use of this basis function is shown at the [[#timing|end of the next section]] in a signal timing diagram. The topmost signal is a BPSK-modulated cosine wave that the BPSK modulator would produce. The bit-stream that causes this output is shown above the signal (the other parts of this figure are relevant only to QPSK). After modulation, the base band signal will be moved to the high frequency band by multiplying <math> \cos(2 \pi f_c t)</math>.
+===Teller–Ulam design===
+On 29 August 1949, the [[Soviet Union]] tested its first fission bomb, the [[RDS-1]]. Created under the supervision of [[Lavrentiy Beria]], who sought to duplicate the US effort, this weapon was nearly identical to [[Fat Man]], for its design was based on information provided by spies [[Klaus Fuchs]], [[Theodore Hall]], and [[David Greenglass]]. In response, on 31 January 1950, [[President of the United States|President]] [[Harry S. Truman]] announced a crash program to develop a fusion bomb.<ref name='DUNCAN'/>
 
-===Bit error rate===
-The [[bit error rate]] (BER) of BPSK under [[additive white Gaussian noise]] (AWGN) can be calculated as:<ref>Communications Systems, H. Stern & S. Mahmoud, Pearson Prentice Hall, 2004, p. 283.</ref>
+To advocate an aggressive development program, [[Ernest Lawrence]] and [[Luis Walter Alvarez|Luis Alvarez]] came to Los Alamos, where they conferred with [[Norris Bradbury]], the laboratory director, and with [[George Gamow]], [[Edward Teller]], and Ulam. Soon, these three became members of a short-lived committee appointed by Bradbury to study the problem, with Teller as chairman.<ref name='VITA'/> At this time, research on the use of a fission weapon to create a [[Nuclear fusion|fusion reaction]] had been ongoing since 1942, but the design was still essentially the one originally proposed by Teller. His concept was to put [[tritium]] and/or [[deuterium]] in close proximity to a fission bomb, with the hope that the heat and intense flux of neutrons released when the bomb exploded, would ignite a self-sustaining [[Nuclear fusion|fusion reaction]]. Reactions of these [[isotopes of hydrogen]] are of interest because the energy per unit mass of fuel released by their fusion is much larger than that from fission of heavy nuclei.<ref name="RHODES"/>
 
-:<math>P_b = Q\left(\sqrt{\frac{2 E_b}{N_0}}\right)</math> or <math>P_e = \frac{1}{2} \operatorname{erfc} \left( \sqrt{\frac{E_b}{N_0}}\right)</math>
+[[File:IvyMike2.jpg|thumb|300px|left|[[Ivy Mike]], the first full test of the Teller–Ulam design (a [[Nuclear weapon design#Two-stage thermonuclear weapons|staged]] fusion bomb), with a [[TNT equivalent|yield]] of 10.4 megatons on 1 November 1952|alt=A mushroom cloud lights up the dawn sky]]
+Because the results of calculations based on Teller's concept were discouraging, many scientists believed it [[History of the Teller–Ulam design#Teller's "Super"|could not lead to a successful weapon]], while others had moral and economic grounds for not proceeding. Consequently, several senior people of the Manhattan Project opposed development, including Bethe and Oppenheimer.<ref name= "HEWLETT AND DUNCAN"/> To clarify the situation, Ulam and von Neumann resolved to do new calculations to determine whether Teller's approach was feasible. To carry out these studies, von Neumann decided to use electronic computers: ENIAC at Aberdeen, a new computer, [[MANIAC I|MANIAC]], at Princeton, and its twin, which was under construction at Los Alamos. Ulam enlisted Everett to follow a completely different approach, one guided by physical intuition. [[Françoise Aron Ulam|Françoise Ulam]] was one of{{cn|date=November 2020}} a cadre of women "[[Human computers#Wartime computing and the invention of electronic computing|computers]]" who carried out laborious and extensive computations of thermonuclear scenarios on [[mechanical calculator]]s, supplemented and confirmed by Everett's [[slide rule]]. Ulam and Fermi collaborated on further analysis of these scenarios. The results showed that, in workable configurations, a thermonuclear reaction would not ignite, and if ignited, it would not be self-sustaining. Ulam had used his expertise in [[combinatorics]] to analyze the chain reaction in deuterium, which was much more complicated than the ones in uranium and plutonium, and he concluded that no self-sustaining chain reaction would take place at the (low) densities that Teller was considering.<ref name='GALISON'/> In late 1950, these conclusions were confirmed by von Neumann's results.<ref name='FULAM'/><ref name="RHODES 422-424"/>
 
-Since there is only one bit per symbol, this is also the symbol error rate.
+In January 1951, Ulam had another idea: to channel the mechanical shock of a nuclear explosion so as to compress the fusion fuel. On the recommendation of his wife,<ref name='FULAM'/> Ulam discussed this idea with Bradbury and Mark before he told Teller about it.<ref name='MARKBIO'/> Almost immediately, Teller saw its merit, but noted that soft [[X-rays]] from the fission bomb would compress the thermonuclear fuel more strongly than mechanical shock and suggested ways to enhance this effect. On 9 March 1951, Teller and Ulam submitted a joint report describing these innovations.<ref name='LAMS1225'/> A few weeks later, Teller suggested placing a [[fissile]] rod or cylinder at the center of the fusion fuel. The detonation of this "spark plug"<ref name='LAMS1230'/> would help to initiate and enhance the fusion reaction. The design based on these ideas, called staged radiation implosion, has become the standard way to build thermonuclear weapons. It is often described as the "[[Teller–Ulam design]]".<ref name="RHODES 455-464"/>
 
-==Quadrature phase-shift keying (QPSK)==
-[[File:QPSK Gray Coded.svg|200px|right|thumb|Constellation diagram for QPSK with [[Gray coding]]. Each adjacent symbol only differs by one bit.]]
+[[File:Ivy Mike Sausage device.jpg|thumb|The ''Sausage'' device of [[Ivy Mike|Mike]] nuclear test (yield 10.4 Mt) on [[Enewetak Atoll]]. The test was part of the [[Operation Ivy]]. The Sausage was the first true H-Bomb ever tested, meaning the first [[Thermonuclear weapon|thermonuclear]] device built upon the [[Teller–Ulam design|Teller-Ulam]] principles of staged radiation implosion.|alt=Tiny men and a large silver cylindrical object connected to a lot of scaffolding and tubes]]
+In September 1951, after a series of differences with Bradbury and other scientists, Teller resigned from Los Alamos, and returned to the University of Chicago.<ref name="HEWLETT AND DUNCAN 554-556"/> At about the same time, Ulam went on leave as a visiting professor at Harvard for a semester.<ref name="ULAM 220-224"/> Although Teller and Ulam submitted a joint report on their design<ref name='LAMS1225'/> and jointly applied for a patent on it,<ref name='LANLBIO'/> they soon became involved in a dispute over who deserved credit.<ref name='MARKBIO'/> After the war, Bethe returned to [[Cornell University]], but he was deeply involved in the development of thermonuclear weapons as a consultant. In 1954, he wrote an article on the history of the H-bomb,<ref name='BETHE'/> which presents his opinion that both men contributed very significantly to the breakthrough. This balanced view is shared by others who were involved, including Mark and Fermi, but Teller persistently attempted to downplay Ulam's role.<ref name = 'UCHII'/> "After the H-bomb was made," Bethe recalled, "reporters started to call Teller the father of the H-bomb. For the sake of history, I think it is more precise to say that Ulam is the father, because he provided the seed, and Teller is the mother, because he remained with the child. As for me, I guess I am the midwife."<ref name=SCHWEBER/>
 
-Sometimes this is known as ''quadriphase PSK'', 4-PSK, or 4-[[QAM]]. (Although the root concepts of QPSK and 4-QAM are different, the resulting modulated radio waves are exactly the same.) QPSK uses four points on the constellation diagram, equispaced around a circle. With four phases, QPSK can encode two bits per symbol, shown in the diagram with [[Gray coding]] to minimize the [[bit error rate]] (BER){{snd}} sometimes misperceived as twice the BER of BPSK.
+With the basic fusion reactions confirmed, and with a feasible design in hand, there was nothing to prevent Los Alamos from testing a thermonuclear device. On 1 November 1952, the first thermonuclear explosion occurred when [[Ivy Mike]] was detonated on [[Enewetak Atoll]], within the US [[Pacific Proving Grounds]]. This device, which used liquid deuterium as its fusion fuel, was immense and utterly unusable as a weapon. Nevertheless, its success validated the Teller–Ulam design, and stimulated intensive development of practical weapons.<ref name="ULAM 220-224"/>
 
-The mathematical analysis shows that QPSK can be used either to double the data rate compared with a BPSK system while maintaining the ''same'' [[bandwidth (signal processing)|bandwidth]] of the signal, or to ''maintain the data-rate of BPSK'' but halving the bandwidth needed. In this latter case, the BER of QPSK is ''exactly the same'' as the BER of BPSK{{snd}} and believing differently is a common confusion when considering or describing QPSK. The transmitted carrier can undergo numbers of phase changes.
+===Fermi–Pasta–Ulam–Tsingou problem===
+{{main|Fermi–Pasta–Ulam–Tsingou problem}}
+When Ulam returned to Los Alamos, his attention turned away from weapon design and toward the use of computers to investigate problems in physics and mathematics. With [[John Pasta]], who helped Metropolis to bring MANIAC on line in March 1952, he explored these ideas in a report "Heuristic Studies in Problems of Mathematical Physics on High Speed Computing Machines", which was submitted on 9 June 1953. It treated several problems that cannot be addressed within the framework of traditional analytic methods: billowing of fluids, rotational motion in gravitating systems, magnetic lines of force, and hydrodynamic instabilities.<ref name='LA1557'/>
 
-Given that radio communication channels are allocated by agencies such as the [[Federal Communications Commission]] giving a prescribed (maximum) bandwidth, the advantage of QPSK over BPSK becomes evident: QPSK transmits twice the data rate in a given bandwidth compared to BPSK - at the same BER. The engineering penalty that is paid is that QPSK transmitters and receivers are more complicated than the ones for BPSK. However, with modern [[electronics]] technology, the penalty in cost is very moderate.
+Soon, Pasta and Ulam became experienced with electronic computation on MANIAC, and by this time, Enrico Fermi had settled into a routine of spending academic years at the University of Chicago and summers at Los Alamos. During these summer visits, Pasta, Ulam, and [[Mary Tsingou]], a programmer in the MANIAC group, joined him to study a variation of the classic problem of a string of masses held together by springs that exert forces linearly proportional to their displacement from equilibrium.<ref>{{cite journal|last1=Dauxois|first1=Thierry|title=Fermi, Pasta, Ulam, and a mysterious lady|journal=Physics Today|date=2008|volume=6|issue=1|pages=55–57|url=http://perso.ens-lyon.fr/thierry.dauxois/PAPERS/pt61_55.2008.pdf |archive-url=https://ghostarchive.org/archive/20221009/http://perso.ens-lyon.fr/thierry.dauxois/PAPERS/pt61_55.2008.pdf |archive-date=2022-10-09 |url-status=live|access-date=7 May 2017|doi=10.1063/1.2835154|arxiv=0801.1590|bibcode=2008PhT....61a..55D|s2cid=118607235}}</ref> Fermi proposed to add to this force a nonlinear component, which could be chosen to be proportional to either the square or cube of the displacement, or to a more complicated "broken linear" function. This addition is the key element of the [[Fermi–Pasta–Ulam–Tsingou problem]], which is often designated by the abbreviation FPUT.<ref name='LA1940'/><ref name='FPU'/>
 
-As with BPSK, there are phase ambiguity problems at the receiving end, and [[#Differential encoding|differentially encoded]] QPSK is often used in practice.
+A classical spring system can be described in terms of vibrational modes, which are analogous to the harmonics that occur on a stretched violin string. If the system starts in a particular mode, vibrations in other modes do not develop. With the nonlinear component, Fermi expected energy in one mode to transfer gradually to other modes, and eventually, to be distributed equally among all modes. This is roughly what began to happen shortly after the system was initialized with all its energy in the lowest mode, but much later, essentially all the energy periodically reappeared in the lowest mode.<ref name='FPU'/> This behavior is very different from the expected [[Equipartition theorem|equipartition of energy]]. It remained mysterious until 1965, when [[Martin David Kruskal|Kruskal]] and [[Norman Zabusky|Zabusky]] showed that, after appropriate mathematical transformations, the system can be described by the [[Korteweg–de Vries equation]], which is the prototype of nonlinear [[partial differential equations]] that have [[soliton]] solutions. This means that FPUT behavior can be understood in terms of solitons.<ref name="CHAOS"/>
 
-===Implementation===
-The implementation of QPSK is more general than that of BPSK and also indicates the implementation of higher-order PSK. Writing the symbols in the constellation diagram in terms of the sine and cosine waves used to transmit them:
+===Nuclear propulsion===
+[[File:NASA-project-orion-artist.jpg|thumb|300px|left|An artist's conception of the NASA reference design for the Project Orion spacecraft powered by nuclear propulsion|alt=A painting of a spacecraft passing a Jupiter-like planet]]
+Starting in 1955, Ulam and [[Frederick Reines]] considered [[nuclear propulsion]] of aircraft and rockets.<ref name='LAMS2186'/> This is an attractive possibility, because the nuclear energy per unit mass of fuel is a million times greater than that available from chemicals. From 1955 to 1972, their ideas were pursued during [[Project Rover]], which explored the use of nuclear reactors to power rockets.<ref name="ULAM 249-254"/> In response to a question by Senator [[John O. Pastore]] at a congressional committee hearing on "Outer Space Propulsion by Nuclear Energy", on January 22, 1958, Ulam replied that "the future as a whole of mankind is to some extent involved inexorably now with going outside the globe."<ref name='HEARING'/>
 
-:<math>s_n(t) = \sqrt{\frac{2E_s}{T_s}} \cos \left(2 \pi f_c t + (2n - 1)\frac{\pi}{4}\right),\quad n = 1, 2, 3, 4.</math>
+Ulam and C. J. Everett also proposed, in contrast to [[Nuclear thermal rocket|Rover's continuous heating of rocket exhaust]], to harness small nuclear explosions for propulsion.<ref name='LAMS1955'/> [[Project Orion (nuclear propulsion)|Project Orion]] was a study of this idea. It began in 1958 and ended in 1965, after the [[Partial Nuclear Test Ban Treaty]] of 1963 banned nuclear weapons tests in the atmosphere and in space.<ref name='ORION'/> Work on this project was spearheaded by physicist [[Freeman Dyson]], who commented on the decision to end Orion in his article, "Death of a Project".<ref name='DEATH'/>
 
-This yields the four phases π/4, 3π/4, 5π/4 and 7π/4 as needed.
+Bradbury appointed Ulam and [[John H. Manley]] as research advisors to the laboratory director in 1957. These newly created positions were on the same administrative level as division leaders, and Ulam held his until he retired from Los Alamos. In this capacity, he was able to influence and guide programs in many divisions: theoretical, physics, chemistry, metallurgy, weapons, health, Rover, and others.<ref name='ULAM 249-254'/>
 
-This results in a two-dimensional signal space with unit [[basis functions]]
+In addition to these activities, Ulam continued to publish technical reports and research papers. One of these introduced the [[Fermi–Ulam model]], an extension of Fermi's theory of [[Fermi acceleration|the acceleration of cosmic rays]].<ref name='FUM'/> Another, with Paul Stein and [[Mary Tsingou]], titled "Quadratic Transformations", was an early investigation of [[chaos theory]] and is considered the first published use of the phrase "[[chaotic behavior]]".<ref name='ABRAHAM' /><ref name='LA-2305'/>
+{{Clear}}
 
-:<math>\begin{align}
-  \phi_1(t) &= \sqrt{\frac{2}{T_s}} \cos\left(2\pi f_c t\right) \\
-  \phi_2(t) &= \sqrt{\frac{2}{T_s}} \sin\left(2\pi f_c t\right)
-\end{align}</math>
+==Return to academia==
+[[File:Ulam 1.png|thumb|300px|When the positive integers are arrayed along the [[Ulam spiral]], prime numbers, represented by dots, tend to collect along diagonal lines.|alt=A lot of dots, but forming diagonal lines]]
+During his years at Los Alamos, Ulam was a visiting professor at Harvard from 1951 to 1952, [[MIT]] from 1956 to 1957, the [[University of California, San Diego]], in 1963, and the [[University of Colorado at Boulder]] from 1961 to 1962 and 1965 to 1967. In 1967, the last of these positions became permanent, when Ulam was appointed Professor and Chairman of the Department of Mathematics at the University of Colorado. He kept a residence in Santa Fe, which made it convenient to spend summers at Los Alamos as a consultant.<ref name="AIP"/> He was an elected member of the [[American Academy of Arts and Sciences]], the United States [[National Academy of Sciences]], and the [[American Philosophical Society]].<ref>{{Cite web |title=Stanislaw Marcin Ulam |url=https://www.amacad.org/person/stanislaw-marcin-ulam |access-date=2022-09-21 |website=American Academy of Arts & Sciences |language=en}}</ref><ref>{{Cite web |title=S. M. Ulam |url=http://www.nasonline.org/member-directory/deceased-members/49612.html |access-date=2022-09-21 |website=www.nasonline.org}}</ref><ref>{{Cite web |title=APS Member History |url=https://search.amphilsoc.org/memhist/search?creator=Stanislaw+Ulam&title=&subject=&subdiv=&mem=&year=&year-max=&dead=&keyword=&smode=advanced |access-date=2022-09-21 |website=search.amphilsoc.org}}</ref>
 
-The first basis function is used as the in-phase component of the signal and the second as the quadrature component of the signal.
+In Colorado, where he rejoined his friends Gamow, Richtmyer, and Hawkins, Ulam's research interests turned toward [[biology]]. In 1968, recognizing this emphasis, the [[University of Colorado Denver|University of Colorado School of Medicine]] appointed Ulam as Professor of Biomathematics, and he held this position until his death. With his Los Alamos colleague Robert Schrandt he published a report, "Some Elementary Attempts at Numerical Modeling of Problems Concerning Rates of Evolutionary Processes", which applied his earlier ideas on branching processes to evolution.<ref name='LA-4246'/> Another, report, with William Beyer, [[Temple F. Smith]], and M. L. Stein, titled "Metrics in Biology", introduced new ideas about numerical taxonomy and evolutionary distances.<ref name='LA-4973'/>
 
-Hence, the signal constellation consists of the signal-space 4 points
+When he retired from Colorado in 1975, Ulam began to spend winter semesters at the [[University of Florida]], where he was a graduate research professor. Except for [[sabbatical]]s at the [[University of California, Davis]] from 1982 to 1983, and at [[Rockefeller University]] from 1980 to 1984,<ref name="AIP"/> this pattern of spending summers in Colorado and Los Alamos and winters in Florida continued until Ulam died of an apparent heart attack in Santa Fe on 13 May 1984.<ref name='NYTIMES-OBIT'/>
+[[Paul Erdős]] noted that "he died suddenly of heart failure, without fear or pain, while he could still prove and conjecture."<ref name="ERDOS"/> In 1987, [[Françoise Aron Ulam|Françoise Ulam]] deposited his papers with the [[American Philosophical Society]] Library in [[Philadelphia]].<ref name="PAPERS"/> She continued to live in Santa Fe until she died in 2011, at the age of 93. Both Françoise and her husband were buried with her family in [[Montparnasse Cemetery]] in Paris.<ref name='FULAMOBIT'/><ref name=RB/>
 
-:<math>\begin{pmatrix} \pm\sqrt{\frac{E_s}{2}} & \pm\sqrt{\frac{E_s}{2}} \end{pmatrix}.</math>
+==Challenge to economics==
+[[Alfred Marshall]] and his disciples dominated economic theory until the end of WWII. With the Cold War, the theory changed, emphasizing that a market economy was superior and the only sensible way. In [[Paul Samuelson]]'s "Economics: An Introductory Analysis", 1948, Adam Smith's "invisible hand" was only a footnote. In later editions, it became the central theme. As Samuelson remembers, all this was challenged by Stanislaw Ulam: "[Y]ears ago... I was in the Society of Fellows at Harvard along with the mathematician Stanislaw Ulam. Ulam, who was to become an originator of the Monte Carlo method and co-discoverer of the hydrogen-bomb,... used to tease me by saying, 'Name me one proposition in all of the social sciences which is both true and non-trivial.' This was the test that I always failed. But now, some thirty years later ... an appropriate answer occurs to me: The [[David Ricardo|Ricardian]] theory of [[comparative advantage]] ... That it is logically true need not be argued before a mathematician; that it is not trivial is attested by the thousands of important and intelligent men who have never been able to grasp the doctrine for themselves or to believe it after it was explained to them."<ref>{{cite web |title=Comparative Advantage |publisher=World Trade Organisation |url=https://www.wto.org/english/res_e/reser_e/cadv_e.htm |access-date=10 March 2021}}</ref><ref>The Collected Scientific Papers of Paul A. Samuelson, vol. iii, p. 683, MIT Press 1966</ref>
 
-The factors of 1/2 indicate that the total power is split equally between the two carriers.
-
-Comparing these basis functions with that for BPSK shows clearly how QPSK can be viewed as two independent BPSK signals. Note that the signal-space points for BPSK do not need to split the symbol (bit) energy over the two carriers in the scheme shown in the BPSK constellation diagram.
-
-QPSK systems can be implemented in a number of ways. An illustration of the major components of the transmitter and receiver structure are shown below.
-
-[[File:Transmisor QPSK 2.png|thumb|600px|center|Conceptual transmitter structure for QPSK. The binary data stream is split into the in-phase and quadrature-phase components. These are then separately modulated onto two orthogonal basis functions. In this implementation, two sinusoids are used. Afterwards, the two signals are superimposed, and the resulting signal is the QPSK signal. Note the use of polar [[non-return-to-zero]] encoding. These encoders can be placed before for binary data source, but have been placed after to illustrate the conceptual difference between digital and analog signals involved with digital modulation.]]
-
-[[File:Receiver QPSK.PNG|thumb|600px|center|Receiver structure for QPSK. The matched filters can be replaced with correlators. Each detection device uses a reference threshold value to determine whether a 1 or 0 is detected.]]
-
-===Probability of error===
-Although QPSK can be viewed as a quaternary modulation, it is easier to see it as two independently modulated quadrature carriers. With this interpretation, the even (or odd) bits are used to modulate the in-phase component of the carrier, while the odd (or even) bits are used to modulate the quadrature-phase component of the carrier. BPSK is used on both carriers and they can be independently demodulated.
-
-As a result, the probability of bit-error for QPSK is the same as for BPSK:
-:<math>P_b = Q\left(\sqrt{\frac{2E_b}{N_0}}\right)</math>
-
-However, in order to achieve the same bit-error probability as BPSK, QPSK uses twice the power (since two bits are transmitted simultaneously).
-
-The symbol error rate is given by:
-
-:<math>
-\begin{align}
- P_s &= 1 - \left( 1 - P_b \right)^2 \\
-     &= 2Q\left( \sqrt{\frac{E_s}{N_0}} \right) - \left[ Q \left( \sqrt{\frac{E_s}{N_0}} \right) \right]^2.
-\end{align}
-</math>
-
-If the [[signal-to-noise ratio]] is high (as is necessary for practical QPSK systems) the probability of symbol error may be approximated:
-
-:<math>P_s \approx 2 Q \left( \sqrt{\frac{E_s}{N_0}} \right ) = \operatorname{erfc} \left( \sqrt{\frac{E_s}{2N_0}} \right) = \operatorname{erfc} \left( \sqrt{\frac{E_b}{N_0}} \right)</math>
-
-The modulated signal is shown below for a short segment of a random binary data-stream. The two carrier waves are a cosine wave and a sine wave, as indicated by the signal-space analysis above. Here, the odd-numbered bits have been assigned to the in-phase component and the even-numbered bits to the quadrature component (taking the first bit as number 1). The total signal{{snd}} the sum of the two components{{snd}} is shown at the bottom. Jumps in phase can be seen as the PSK changes the phase on each component at the start of each bit-period. The topmost waveform alone matches the description given for BPSK above.
-<br />[[File:QPSK timing diagram.png|frame|center|Timing diagram for QPSK. The binary data stream is shown beneath the time axis. The two signal components with their bit assignments are shown at the top, and the total combined signal at the bottom. Note the abrupt changes in phase at some of the bit-period boundaries.]]
-
-The binary data that is conveyed by this waveform is: <span style="letter-spacing:0.5em;">11000110</span>.
-* The odd bits, highlighted here, contribute to the in-phase component: <span style="letter-spacing:0.5em;">{{bg|lightblue|1}}1{{bg|lightblue|0}}0{{bg|lightblue|0}}1{{bg|lightblue|1}}0</span>
-* The even bits, highlighted here, contribute to the quadrature-phase component: <span style="letter-spacing:0.5em;">1{{bg|lightblue|1}}0{{bg|lightblue|0}}0{{bg|lightblue|1}}1{{bg|lightblue|0}}</span>
-
-===Variants===
-
-====Offset QPSK (OQPSK)====
-[[File:Pi-by-O-QPSK Gray Coded.svg|thumb|Signal doesn't pass through the origin, because only one bit of the symbol is changed at a time.]]
-
-''Offset quadrature phase-shift keying'' (''OQPSK'') is a variant of phase-shift keying modulation using four different values of the phase to transmit.  It is sometimes called ''staggered quadrature phase-shift keying'' (''SQPSK'').
-
-[[File:Oqpsk phase plot.svg|thumb|Difference of the phase between QPSK and OQPSK]]
-
-Taking four values of the phase (two [[bit]]s) at a time to construct a QPSK symbol can allow the phase of the signal to jump by as much as 180° at a time. When the signal is low-pass filtered (as is typical in a transmitter), these phase-shifts result in large amplitude fluctuations, an undesirable quality in communication systems. By offsetting the timing of the odd and even bits by one bit-period, or half a symbol-period, the in-phase and quadrature components will never change at the same time. In the constellation diagram shown on the right, it can be seen that this will limit the phase-shift to no more than 90° at a time. This yields much lower amplitude fluctuations than non-offset QPSK and is sometimes preferred in practice.
-
-The picture on the right shows the difference in the behavior of the phase between ordinary QPSK and OQPSK. It can be seen that in the first plot the phase can change by 180° at once, while in OQPSK the changes are never greater than 90°.
-
-The modulated signal is shown below for a short segment of a random binary data-stream. Note the half symbol-period offset between the two component waves. The sudden phase-shifts occur about twice as often as for QPSK (since the signals no longer change together), but they are less severe. In other words, the magnitude of jumps is smaller in OQPSK when compared to QPSK.
-
-[[File:OQPSK timing diagram.png|frame|center|Timing diagram for offset-QPSK. The binary data stream is shown beneath the time axis. The two signal components with their bit assignments are shown the top and the total, combined signal at the bottom. Note the half-period offset between the two signal components.]]
-
-====SOQPSK====
-The license-free '''[[Pulse shaping|shaped]]-offset QPSK''' (SOQPSK) is interoperable with Feher-patented QPSK ('''FQPSK'''), in the sense that an integrate-and-dump offset QPSK detector produces the same output no matter which kind of transmitter is used.<ref>
-Tom Nelson, Erik Perrins, and Michael Rice.
-[http://people.eecs.ku.edu/~esp/publications/c2005ItcCommon.pdf "Common detectors for Tier 1 modulations"] {{webarchive|url=https://web.archive.org/web/20120917001949/http://people.eecs.ku.edu/~esp/publications/c2005ItcCommon.pdf |date=2012-09-17 }}.
-
-T. Nelson, E. Perrins, M. Rice.
-[https://www.researchgate.net/publication/4213516_Common_detectors_for_shaped_offset_QPSK_(SOQPSK)_and_Feher-patented_QPSK_(FQPSK) "Common detectors for shaped offset QPSK (SOQPSK) and Feher-patented QPSK (FQPSK)"]
-{{Cite book | last1 = Nelson | first1 = T. | last2 = Perrins | first2 = E. | last3 = Rice | first3 = M. | doi = 10.1109/GLOCOM.2005.1578470 | chapter = Common detectors for shaped offset QPSK (SOQPSK) and Feher-patented QPSK (FQPSK) | title = GLOBECOM '05. IEEE Global Telecommunications Conference, 2005 | pages = 5 pp | year = 2005 | isbn = 0-7803-9414-3 | s2cid = 11020777 }}
-{{ISBN|0-7803-9414-3}}
-</ref>
-
-These modulations carefully shape the I and Q waveforms such that they change very smoothly, and the signal stays constant-amplitude even during signal transitions. (Rather than traveling instantly from one symbol to another, or even linearly, it travels smoothly around the constant-amplitude circle from one symbol to the next.) SOQPSK modulation can be represented as the hybrid of QPSK and [[Minimum-shift keying|MSK]]: SOQPSK has the same signal constellation as QPSK, however the phase of SOQPSK is always stationary.<ref>Hill, Terrance J. "A non-proprietary, constant envelope, variant of shaped offset QPSK (SOQPSK) for improved spectral containment and detection efficiency." MILCOM 2000. 21st Century Military Communications Conference Proceedings. Vol. 1. IEEE, 2000.</ref><ref>Li, Lifang, and M. K. Simon. [https://web.archive.org/web/20200725125818/https://pdfs.semanticscholar.org/f025/2fa31444fad6a5090527d73f87352137c9b8.pdf "Performance of coded offset quadrature phase-shift keying (OQPSK) and MIL-STD shaped OQPSK (SOQPSK) with iterative decoding."] Interplanetary Network Prog. Rep. 42 (2004).</ref>
-
-The standard description of SOQPSK-TG involves [[ternary signal|ternary symbols]].<ref>Sahin, C. and Perrins, E., 2011, November. The capacity of SOQPSK-TG. In 2011-MILCOM 2011 Military Communications Conference (pp. 555-560). IEEE.</ref> SOQPSK is one of the most spread modulation schemes in application to [[Low Earth orbit|LEO]] satellite communications.<ref>Saeed, N., Elzanaty, A., Almorad, H., Dahrouj, H., Al-Naffouri, T.Y. and Alouini, M.S., 2020. [https://arxiv.org/pdf/1908.09501.pdf Cubesat communications: Recent advances and future challenges.] IEEE Communications Surveys & Tutorials.</ref>
-
-====''&pi;''/4-QPSK====
-[[File:Pi-by-4-QPSK Gray Coded.svg|thumb|right|Dual constellation diagram for π/4-QPSK. This shows the two separate constellations with identical Gray coding but rotated by 45° with respect to each other.]]
-
-This variant of QPSK uses two identical constellations which are rotated by 45° (<math>\pi/4</math> radians, hence the name) with respect to one another. Usually, either the even or odd symbols are used to select points from one of the constellations and the other symbols select points from the other constellation. This also reduces the phase-shifts from a maximum of 180°, but only to a maximum of 135° and so the amplitude fluctuations of <math>\pi/4</math>-QPSK are between OQPSK and non-offset QPSK.
-
-One property this modulation scheme possesses is that if the modulated signal is represented in the complex domain, transitions between symbols never pass through 0. In other words, the signal does not pass through the origin. This lowers the dynamical range of fluctuations in the signal which is desirable when engineering communications signals.
-
-On the other hand, <math>\pi/4</math>-QPSK lends itself to easy demodulation and has been adopted for use in, for example, [[time-division multiple access|TDMA]] [[cellular telephone]] systems.
-
-The modulated signal is shown below for a short segment of a random binary data-stream. The construction is the same as above for ordinary QPSK. Successive symbols are taken from the two constellations shown in the diagram. Thus, the first symbol (1 1) is taken from the "blue" constellation and the second symbol (0 0) is taken from the "green" constellation. Note that magnitudes of the two component waves change as they switch between constellations, but the total signal's magnitude remains constant ([[constant envelope]]). The phase-shifts are between those of the two previous timing-diagrams.
-
-[[File:Pi-by-4-QPSK timing diagram.png|frame|center|Timing diagram for π/4-QPSK. The binary data stream is shown beneath the time axis. The two signal components with their bit assignments are shown the top and the total, combined signal at the bottom. Note that successive symbols are taken alternately from the two constellations, starting with the "blue" one.]]
-
-====DPQPSK====
-'''Dual-polarization quadrature phase shift keying''' (DPQPSK) or '''dual-polarization QPSK''' - involves the polarization multiplexing of two different QPSK signals, thus improving the spectral efficiency by a factor of 2. This is a cost-effective alternative to utilizing 16-PSK, instead of QPSK to double the spectral efficiency.j
-
-==Higher-order PSK==
-[[File:8PSK Gray Coded.svg|200px|right|thumb|Constellation diagram for 8-PSK with Gray coding]]
-
-Any number of phases may be used to construct a PSK constellation but 8-PSK is usually the highest order PSK constellation deployed. With more than 8 phases, the error-rate becomes too high and there are better, though more complex, modulations available such as [[quadrature amplitude modulation]] (QAM). Although any number of phases may be used, the fact that the constellation must usually deal with binary data means that the number of symbols is usually a power of 2 to allow an integer number of bits per symbol.
-
-===Bit error rate===
-For the general M-PSK there is no simple expression for the symbol-error probability if <math>M > 4</math>. Unfortunately, it can only be obtained from
-
-:<math>P_s = 1 - \int_{-\pi/M}^{\pi/M} p_{\theta_r}\left(\theta_r\right)d\theta_r,</math>
-
-where
-
-:<math>\begin{align}
-  p_{\theta_r} \left(\theta_r\right) &= \frac{1}{2\pi} e^{-2\gamma_s\sin^2\theta_r} \int_0^\infty V e^{-\frac{1}{2}\left(V - 2\sqrt{\gamma_s}\cos\theta_r\right)^2}\,dV,\\
-                                   V &= \sqrt{r_1^2 + r_2^2},\\
-                            \theta_r &= \tan^{-1}\left(\frac{r_2}{r_1}\right),\\
-                            \gamma_s &= \frac{E_s}{N_0}
-\end{align}</math>
-and <math>r_1 \sim N\left(\sqrt{E_s}, \frac{1}{2}N_0\right)</math> and <math>r_2 \sim N\left(0, \frac{1}{2} N_0\right)</math> are each Gaussian [[random variable]]s.
-
-[[File:PSK BER curves.svg|thumb|right|280px|Bit-error rate curves for BPSK, QPSK, 8-PSK and 16-PSK, additive white Gaussian noise channel]]
-This may be approximated for high <math>M</math> and high <math>E_b/N_0</math> by:
-
-:<math>P_s \approx 2Q\left(\sqrt{2\gamma_s}\sin\frac{\pi}{M}\right). </math>
-
-The bit-error probability for <math>M</math>-PSK can only be determined exactly once the bit-mapping is known. However, when [[Gray code|Gray coding]] is used, the most probable error from one symbol to the next produces only a single bit-error and
-
-:<math>P_b \approx \frac{1}{k} P_s. </math>
-
-(Using Gray coding allows us to approximate the [[Lee distance]] of the errors as the [[Hamming distance]] of the errors in the decoded bitstream, which is easier to implement in hardware.)
-
-The graph on the right compares the bit-error rates of BPSK, QPSK (which are the same, as noted above), 8-PSK and 16-PSK. It is seen that [[higher-order modulation]]s exhibit higher error-rates; in exchange however they deliver a higher raw data-rate.
-
-Bounds on the error rates of various digital modulation schemes can be computed with application of the [[union bound]] to the signal constellation.
-
-===Spectral efficiency===
-
-[[Spectral efficiency|Bandwidth (or spectral) efficiency]] of M-PSK modulation schemes increases with increasing of modulation order ''M'' (unlike, for example, [[Multiple frequency-shift keying|M-FSK]]):<ref>Haykin, S., 2001. Communication Systems, John Wiley&Sons. Inc. - p. 368</ref>
-
-:<math>\rho = \frac{\log_2M}{2} \quad [(\text{bits}/\text{s}) / \text{Hz}]</math>
-
-The same relationship holds true for [[Quadrature amplitude modulation|M-QAM]].<ref>[https://www.atlantarf.com/PSK_QAM.php Link Budget Analysis: Digital Modulation, Part 3 (www.AtlantaRF.com)]</ref>
-{{clear}}
-
-==Differential phase-shift keying (DPSK)==
-
-===Differential encoding===
-{{Main article|differential coding}}
-
-Differential phase shift keying (DPSK) is a common form of phase modulation that conveys data by changing the phase of the carrier wave. As mentioned for BPSK and QPSK there is an ambiguity of phase if the constellation is rotated by some effect in the [[communications channel]] through which the signal passes. This problem can be overcome by using the data to ''change'' rather than ''set'' the phase.
-
-For example, in differentially encoded BPSK a binary "1" may be transmitted by adding 180° to the current phase and a binary "0" by adding 0° to the current phase. {{anchor|SDPSK}}
-Another variant of DPSK is Symmetric Differential Phase Shift keying, SDPSK, where encoding would be +90° for a "1" and −90° for a "0".
-
-In differentially encoded QPSK (DQPSK), the phase-shifts are 0°, 90°, 180°, −90° corresponding to data "00", "01", "11", "10". This kind of encoding may be demodulated in the same way as for non-differential PSK but the phase ambiguities can be ignored. Thus, each received symbol is demodulated to one of the <math>M</math> points in the constellation and a [[comparator]] then computes the difference in phase between this received signal and the preceding one. The difference encodes the data as described above. ''Symmetric differential quadrature phase shift keying'' (SDQPSK) is like DQPSK, but encoding is symmetric, using phase shift values of −135°, −45°, +45° and +135°.
-
-The modulated signal is shown below for both DBPSK and DQPSK as described above. In the figure, it is assumed that the ''signal starts with zero phase'', and so there is a phase shift in both signals at <math>t = 0</math>.
-
-[[File:DBQPSK timing diag fixed.png|center|thumb|600px|Timing diagram for DBPSK and DQPSK. The binary data stream is above the DBPSK signal. The individual bits of the DBPSK signal are grouped into pairs for the DQPSK signal, which only changes every ''T<sub>s</sub>'' = 2''T<sub>b</sub>''.]]
-
-Analysis shows that differential encoding approximately doubles the error rate compared to ordinary <math>M</math>-PSK but this may be overcome by only a small increase in <math>E_b/N_0</math>. Furthermore, this analysis (and the graphical results below) are based on a system in which the only corruption is [[additive white Gaussian noise]] (AWGN). However, there will also be a physical channel between the transmitter and receiver in the communication system. This channel will, in general, introduce an unknown phase-shift to the PSK signal; in these cases the differential schemes can yield a ''better'' error-rate than the ordinary schemes which rely on precise phase information.
-
-One of the most popular applications of DPSK is the [[Bluetooth#Implementation|Bluetooth standard]] where <math>\pi/4</math>-DQPSK and 8-DPSK were implemented.
-
-===Demodulation===
-[[File:DPSK BER curves.svg|thumb|right|280px|BER comparison between DBPSK, DQPSK and their non-differential forms using Gray coding and operating in white noise]]
-
-For a signal that has been differentially encoded, there is an obvious alternative method of demodulation. Instead of demodulating as usual and ignoring carrier-phase ambiguity, the phase between two successive received symbols is compared and used to determine what the data must have been. When differential encoding is used in this manner, the scheme is known as differential phase-shift keying (DPSK). Note that this is subtly different from just differentially encoded PSK since, upon reception, the received symbols are ''not'' decoded one-by-one to constellation points but are instead compared directly to one another.
-
-Call the received symbol in the <math>k</math><sup>th</sup> timeslot <math>r_k</math> and let it have phase <math>\phi_k</math>. Assume without loss of generality that the phase of the carrier wave is zero. Denote the [[additive white Gaussian noise]] (AWGN) term as <math>n_k</math>. Then
-
-:<math>r_k = \sqrt{E_s}e^{j\phi_k} + n_k.</math>
-
-The decision variable for the <math>k-1</math><sup>th</sup> symbol and the <math>k</math><sup>th</sup> symbol is the phase difference between <math>r_k</math> and <math>r_{k-1}</math>. That is, if <math>r_k</math> is projected onto <math>r_{k-1}</math>, the decision is taken on the phase of the resultant complex number:
-
-:<math>r_kr_{k-1}^* = E_se^{j\left(\varphi_k - \varphi_{k-1}\right)} + \sqrt{E_s}e^{j\varphi_k}n_{k-1}^* + \sqrt{E_s}e^{-j\varphi_{k-1}}n_k + n_kn_{k-1}^*</math>
-
-where superscript * denotes [[complex conjugation]]. In the absence of noise, the phase of this is <math>\phi_{k}-\phi_{k-1}</math>, the phase-shift between the two received signals which can be used to determine the data transmitted.
-
-The probability of error for DPSK is difficult to calculate in general, but, in the case of DBPSK it is:
-
-:<math>P_b = \frac{1}{2}e^{-\frac{E_b}{N_0}},</math><ref>G.L. Stüber, “Soft Decision Direct-Sequence DPSK Receivers,” IEEE Transactions on Vehicular Technology, vol. 37, no. 3, pp. 151–157, August 1988.</ref>
-
-which, when numerically evaluated, is only slightly worse than ordinary BPSK, particularly at higher <math>E_b/N_0</math> values.
-
-Using DPSK avoids the need for possibly complex carrier-recovery schemes to provide an accurate phase estimate and can be an attractive alternative to ordinary PSK.
-
-In [[optical communications]], the data can be modulated onto the phase of a [[laser]] in a differential way. The modulation is a laser which emits a [[continuous wave]], and a [[Mach–Zehnder modulator]] which receives electrical binary data. For the case of BPSK, the laser transmits the field unchanged for binary '1', and with reverse polarity for '0'. The demodulator consists of a [[delay line interferometer]] which delays one bit, so two bits can be compared at one time. In further processing, a [[photodiode]] is used to transform the [[optical field]] into an electric current, so the information is changed back into its original state.
-
-The bit-error rates of DBPSK and DQPSK are compared to their non-differential counterparts in the graph to the right. The loss for using DBPSK is small enough compared to the complexity reduction that it is often used in communications systems that would otherwise use BPSK. For DQPSK though, the loss in performance compared to ordinary QPSK is larger and the system designer must balance this against the reduction in complexity.
-
-===Example: Differentially encoded BPSK===
-[[File:Differential Codec.png|center|500px|thumb|Differential encoding/decoding system diagram]]
-
-At the <math>k^{\textrm{th}}</math> time-slot call the bit to be modulated <math>b_k</math>, the differentially encoded bit <math>e_k</math> and the resulting modulated signal <math>m_k(t)</math>. Assume that the constellation diagram positions the symbols at ±1 (which is BPSK). The differential encoder produces:
-
-:<math>\,e_k = e_{k-1} \oplus b_k</math>
-
-where <math>\oplus{}</math> indicates [[binary addition|binary]] or [[modular arithmetic|modulo-2]] addition.
-
-[[File:Diff enc BPSK BER curves.svg|thumb|right|280px|BER comparison between BPSK and differentially encoded BPSK operating in white noise]]
-
-So <math>e_k</math> only changes state (from binary "0" to binary "1" or from binary "1" to binary "0") if <math>b_k</math> is a binary "1". Otherwise it remains in its previous state. This is the description of differentially encoded BPSK given above.
-
-The received signal is demodulated to yield <math>e_k = \pm 1</math> and then the differential decoder reverses the encoding procedure and produces
-
-:<math>b_k = e_k \oplus e_{k-1},</math>
-
-since binary subtraction is the same as binary addition.
-
-Therefore, <math>b_k=1</math> if <math>e_k</math> and <math>e_{k-1}</math> differ and <math>b_k=0</math> if they are the same. Hence, if both <math>e_k</math> and <math>e_{k-1}</math> are ''inverted'', <math>b_k</math> will still be decoded correctly. Thus, the 180° phase ambiguity does not matter.
-
-Differential schemes for other PSK modulations may be devised along similar lines. The waveforms for DPSK are the same as for differentially encoded PSK given above since the only change between the two schemes is at the receiver.
-
-The BER curve for this example is compared to ordinary BPSK on the right. As mentioned above, whilst the error rate is approximately doubled, the increase needed in <math>E_b/N_0</math> to overcome this is small.  The increase in <math>E_b/N_0</math> required to overcome differential modulation in coded systems, however, is larger{{snd}} typically about 3&nbsp;dB. The performance degradation is a result of [[noncoherent transmission]]{{snd}} in this case it refers to the fact that tracking of the phase is completely ignored.
-
-===Definitions===
-For determining error-rates mathematically, some definitions will be needed:
-
-* <math>E_b</math>,            energy per [[bit]]
-* <math>E_s = nE_b</math>,     energy per symbol with ''n'' bits
-* <math>T_b</math>,            [[bit rate|bit duration]]
-* <math>T_s</math>,            [[symbol rate|symbol duration]]
-* <math>\frac{1}{2}N_0</math>, [[signal noise|noise]] [[spectral density|power spectral density]] ([[watt|W]]/[[hertz|Hz]])
-* <math>P_b</math>,            [[probability]] of ''bit-error''
-* <math>P_s</math>,            probability of symbol-error
-
-<math>Q(x)</math> will give the probability that a single sample taken from a random process with zero-mean and unit-variance [[Normal distribution|Gaussian probability density function]] will be greater or equal to <math>x</math>. It is a scaled form of the [[Error function|complementary Gaussian error function]]:
-
-: <math>Q(x) = \frac{1}{\sqrt{2\pi}}\int_x^\infty e^{-\frac{1}{2}t^2} \,dt = \frac{1}{2} \operatorname{erfc}\left(\frac{x}{\sqrt{2}}\right),\ x \geq 0</math>.
-
-The error rates quoted here are those in [[additive white Gaussian noise]] (AWGN). These error rates are lower than those computed in [[fading channel]]s, hence, are a good theoretical benchmark to compare with.
-
-==Applications==
-Owing to PSK's simplicity, particularly when compared with its competitor [[quadrature amplitude modulation]], it is widely used in existing technologies.
-
-The [[wireless LAN]] standard, [[IEEE 802.11b-1999]],<ref name="ref80211">[http://standards.ieee.org/getieee802/download/802.11-1999.pdf IEEE Std 802.11-1999: Wireless LAN Medium Access Control (MAC) and Physical Layer (PHY) Specifications]{{snd}} the overarching IEEE 802.11 specification. {{webarchive|url=https://web.archive.org/web/20070828223638/http://standards.ieee.org/getieee802/download/802.11-1999.pdf|date=August 28, 2007}}</ref><ref name="80211b">[http://standards.ieee.org/getieee802/download/802.11b-1999.pdf IEEE Std 802.11b-1999 (R2003)]{{snd}} the IEEE 802.11b specification.</ref> uses a variety of different PSKs depending on the data rate required. At the basic rate of 1{{nbsp}}[[Mbit]]/s, it uses DBPSK (differential BPSK). To provide the extended rate of 2{{nbsp}}Mbit/s, DQPSK is used. In reaching 5.5{{nbsp}}Mbit/s and the full rate of 11{{nbsp}}Mbit/s, QPSK is employed, but has to be coupled with [[complementary code keying]]. The higher-speed wireless LAN standard, [[IEEE 802.11g-2003]],<ref name="ref80211" /><ref name="80211g">[http://standards.ieee.org/getieee802/download/802.11g-2003.pdf IEEE Std 802.11g-2003]{{snd}} the IEEE 802.11g specification.</ref> has eight data rates: 6, 9, 12, 18, 24, 36, 48 and 54{{nbsp}}Mbit/s. The 6 and 9{{nbsp}}Mbit/s modes use [[Orthogonal frequency-division multiplexing|OFDM]] modulation where each sub-carrier is BPSK modulated. The 12 and 18{{nbsp}}Mbit/s modes use OFDM with QPSK. The fastest four modes use OFDM with forms of [[quadrature amplitude modulation]].
-
-Because of its simplicity, BPSK is appropriate for low-cost passive transmitters, and is used in [[RFID]] standards such as [[ISO/IEC 14443]] which has been adopted for [[biometric passport]]s, credit cards such as [[American Express]]'s [[ExpressPay]], and many other applications.<ref>[http://www.atmel.com/dyn/resources/prod_documents/doc2056.pdf Understanding the Requirements of ISO/IEC 14443 for Type B Proximity Contactless Identification Cards], Application Note, Rev. 2056B–RFID–11/05, 2005, ATMEL.</ref>
-
-[[Bluetooth]] 2 uses <math>\pi/4</math>-DQPSK at its lower rate (2{{nbsp}}Mbit/s) and 8-DPSK at its higher rate (3{{nbsp}}Mbit/s) when the link between the two devices is sufficiently robust. Bluetooth 1 modulates with [[Minimum-shift keying|Gaussian minimum-shift keying]], a binary scheme, so either modulation choice in version 2 will yield a higher data-rate. A similar technology, [[IEEE 802.15.4]] (the wireless standard used by [[ZigBee]]) also relies on PSK using two frequency bands: 868–915{{nbsp}}[[Megahertz|MHz]] with BPSK and at 2.4{{nbsp}}[[Hertz|GHz]] with OQPSK.
-
-Both QPSK and 8PSK are widely used in satellite broadcasting. QPSK is still widely used in the streaming of SD satellite channels and some HD channels. High definition programming is delivered almost exclusively in 8PSK due to the higher bitrates of HD video and the high cost of satellite bandwidth.<ref>{{cite web |date=2014 |title=How Communications Satellites Work |url=http://planetfox.net/microwaves/howitworks.html |website=Planet Fox}}</ref> The [[DVB-S2]] standard requires support for both QPSK and 8PSK. The chipsets used in new satellite set top boxes, such as [[Broadcom]]'s 7000 series support 8PSK and are backward compatible with the older standard.<ref>{{Cite web |title=Low-Cost Satellite Set-top Box SoC - BCM7325 &#124; Broadcom |url=http://www.broadcom.com/products/set-top-box-and-media-processors/satellite/bcm7325 |url-status=dead |archive-url=https://web.archive.org/web/20150915234053/http://www.broadcom.com/products/set-top-box-and-media-processors/satellite/bcm7325 |archive-date=2015-09-15 |access-date=2015-09-08}}</ref>
-
-Historically, voice-band synchronous [[modems]] such as the Bell 201, 208, and 209 and the CCITT V.26, V.27, V.29, V.32, and V.34 used PSK.<ref>{{Cite web |title=Local and Remote Modems |url=http://www.blackbox.com/resource/files/productdetails/19558.PDF |url-status=dead |archive-url=https://web.archive.org/web/20151222112409/http://www.blackbox.com/resource/files/productdetails/19558.PDF |archive-date=December 22, 2015 |access-date=December 20, 2015 |website=Black Box |publisher=Black Box Network Services}}</ref>
-
-==Mutual information with additive white Gaussian noise==
-[[File:PSK Mutual Information in AWGN.svg|300px|right|thumb|Mutual information of PSK over the AWGN channel]]
-
-The [[mutual information]] of PSK can be evaluated in [[additive white Gaussian noise|additive Gaussian noise]] by [[numerical integration]] of its definition.<ref name=Blahut1988>{{cite book|last1=Blahut|first1=R. E.|title=Principles and Practice of Information Theory|date=1988|publisher=Addison Wesley Publishing Company|location=Boston, MA, USA|isbn=0-201-10709-0}}</ref> The curves of mutual information saturate to the number of bits carried by each symbol in the limit of infinite signal to noise ratio <math>E_s/N_0</math>. On the contrary, in the limit of small signal to noise ratios the mutual information approaches the [[Shannon–Hartley theorem|AWGN channel capacity]], which is the supremum among all possible choices of symbol statistical distributions.
-
-At intermediate values of signal to noise ratios the mutual information (MI) is well approximated by:<ref name=Blahut1988 />
-
-:<math>\textrm{MI} \simeq \log_2\left(\sqrt{\frac{4\pi}{e}\frac{E_s}{N_0}}\right).</math>
-
-The mutual information of PSK over the AWGN channel is generally farther to the AWGN channel capacity than [[Quadrature amplitude modulation#Mutual Information with AWGN|QAM]] modulation formats.
+==Impact and legacy==
+Participated in the creation of a [[hydrogen bomb]] as part of the [[Los Alamos Laboratory]] nuclear project. From the publication of his first paper as a student in 1929 until his death, Ulam was constantly writing on mathematics. The list of Ulam's publications includes more than 150 papers.<ref name='AJMAA'/> Topics represented by a significant number of papers are: [[set theory]] (including [[measurable cardinal]]s and abstract [[measure (mathematics)|measures]]), [[topology]], [[Transformation (function)|transformation theory]], [[ergodic theory]], [[group theory]], [[Variety (universal algebra)|projective algebra]], [[number theory]], [[combinatorics]], and [[graph theory]].<ref name='UPUBS'/> In March 2009, the [[Mathematical Reviews]] database contained 697 papers with the name "Ulam".<ref name='UAMS'/>
+
+Notable results of this work are:
+{{col-begin}}
+{{col-2}}
+*[[Borsuk–Ulam theorem]]
+*[[Mazur–Ulam theorem]]
+*[[Kuratowski–Ulam theorem]]
+*[[Hyers–Ulam–Rassias stability]]
+*[[Lucky number]]
+*[[Ulam spiral]]
+{{col-2}}
+*[[Collatz conjecture|Ulam conjecture]] (in Number Theory)
+*[[Reconstruction conjecture|Ulam conjecture]] (in Graph theory)
+*[[Ulam's packing conjecture]]
+*[[Ulam's game]]
+*[[Ulam matrix]]
+*[[Ulam numbers]]
+{{col-end}}
+
+With his pivotal role in the development of thermonuclear weapons, Stanislaw Ulam changed the world. According to Françoise Ulam: "Stan would reassure me that, barring accidents, the H-bomb rendered nuclear war impossible."<ref name=FULAM/> In 1980, Ulam and his wife appeared in the television documentary ''[[The Day After Trinity]]''.<ref>{{IMDb title|id=0080594|title=The Day After Trinity}}</ref>
+
+[[File:LuckySieve.gif|thumb|An animation demonstrating the lucky number sieve. The numbers in red are lucky numbers|alt=A square containing the numbers 1 to 120. Numbers are initially grey but go purple as they are eliminated; the lucky numbers then remain, and are highlighted in red.]]
+The [[Monte Carlo method]] has become a ubiquitous and standard approach to computation, and the method has been applied to a vast number of scientific problems.<ref name=MONTEALAMOS/> In addition to problems in physics and mathematics, the method has been applied to [[Monte Carlo methods in finance|finance]], social science,<ref name='MONTESOC'/> [[environmental impact assessment|environmental risk assessment]],<ref name='MONTERISK'/> linguistics,<ref name='MONTELING'/> radiation therapy,<ref name='MONTEONC'/> and sports.<ref name='MONTEBIG10'/>
+
+The [[Fermi–Pasta–Ulam–Tsingou problem]] is credited not only as "the birth of experimental mathematics",<ref name='FPU'/> but also as inspiration for the vast field of Nonlinear Science. In his [[Lilienfeld Prize]] lecture, [[David K. Campbell]] noted this relationship and described how FPUT gave rise to ideas in [[Chaos theory|chaos]], [[solitons]], and [[Dynamical systems theory|dynamical systems]].<ref name='CAMPB'/> In 1980, [[Donald Kerr]], laboratory director at Los Alamos, with the strong support of Ulam and [[Mark Kac]],<ref name = 'CNLSSCOTT'/> founded the Center for Nonlinear Studies (CNLS).<ref name='CNLSHIST'/> In 1985, CNLS initiated the ''Stanislaw M. Ulam Distinguished Scholar'' program, which provides an annual award that enables a noted scientist to spend a year carrying out research at Los Alamos.<ref name='CNLSULAM'/>
+
+The fiftieth anniversary of the original FPUT paper was the subject of the March 2005 issue of the journal Chaos,<ref name='FPUCHAOS'/> and the topic of the 25th Annual International Conference of CNLS.<ref name='CNLSFPU'/> The [[University of Southern Mississippi]] and the University of Florida supported the ''Ulam Quarterly'',<ref name='UQUART'/> which was active from 1992 to 1996, and which was one of the first online mathematical journals.<ref name='UQUART2'/> Florida's Department of Mathematics has sponsored, since 1998, the annual ''Ulam Colloquium Lecture'',<ref name='UCOLLOQ'/> and in March 2009, the ''Ulam Centennial Conference''.<ref name='UCONF'/>
+
+Ulam's work on non-[[Euclidean distance|Euclidean distance metrics]] in the context of molecular biology made a significant contribution to [[sequence analysis]]<ref name='GOAD'/> and his contributions in theoretical biology are considered watersheds in the development of [[Cellular automata#History|cellular automata]] theory, [[population biology]], [[pattern recognition]], and biometrics generally (David Sankoff, however, challenged conclusions of Walter by writing that Ulam had only modest influence on early development of sequence alignment methods.<ref name='SANKOFF' />). Colleagues noted that some of his greatest contributions were in clearly identifying problems to be solved and general techniques for solving them.<ref name='BIOLOGY'/>
+
+In 1987, Los Alamos issued a special issue of its ''Science'' publication, which summarized his accomplishments,<ref name='UTRIB'/> and which appeared, in 1989, as the book ''From Cardinals to Chaos''. Similarly, in 1990, the University of California Press issued a compilation of mathematical reports by Ulam and his Los Alamos collaborators: ''Analogies Between Analogies''.<ref name='ANALOG'/> During his career, Ulam was awarded honorary degrees by the Universities of [[University of New Mexico|New Mexico]], [[University of Wisconsin|Wisconsin]], and [[University of Pittsburgh|Pittsburgh]].<ref name='VITA'/>
+
+In 2021, German film director Thorsten Klein made the [[:de:Adventures of a Mathematician|film adaptation]] of the book ''Adventures of a Mathematician'' about Ulam's life
+
+==Bibliography==
+*{{cite book |last1=Kac |first1=Mark |author-link=Mark Kac |first2=Stanisław |last2=Ulam |title=Mathematics and Logic: Retrospect and Prospects |url=https://archive.org/details/mathematicslogic0000kacm |url-access=registration |location=New York |publisher=Praeger |year=1968 |isbn= 978-0-486-67085-0 |oclc=24847821 |ref=none}}
+*{{cite book|mr=0441664|last=Ulam|first= Stanisław |title=Sets, Numbers, and Universes: selected works|editor1-first= W. A.|editor1-last= Beyer|editor2-first= J.|editor2-last= Mycielski and |editor3-first=G.-C.|editor3-last= Rota |series=Mathematicians of Our Time|volume= 9|publisher= The MIT Press, Cambridge, Mass.-London|year= 1974|isbn= 978-0-262-02108-1|ref=none}}
+*{{cite book |last=Ulam |first=Stanisław  |title=A Collection of Mathematical Problems |url=https://archive.org/details/collectionofmath0000ulam |url-access=registration |location=New York |publisher=Interscience Publishers |year=1960 |oclc=526673 |ref=none}}
+*{{cite book |last=Ulam |first=Stanisław  |title=Adventures of a Mathematician |url=https://archive.org/details/adventuresofmath0000ulam |url-access=registration |location=New York |publisher=Charles Scribner's Sons|year=1983 |isbn=978-0-684-14391-0 |oclc=1528346|ref=none}} (autobiography).
+*{{cite book |last=Ulam |first=Stanisław  |title=Science, Computers, and People: From the Tree of Mathematics |url=https://archive.org/details/sciencecomputers0000ulam |url-access=registration |location=Boston |publisher=Birkhauser |year=1986 |isbn= 978-3-7643-3276-1 |oclc=11260216 |ref=none}}
+*{{cite book |last1=Ulam |first1=Stanisław  |last2=Ulam |first2=Françoise |title=Analogies Between Analogies: The Mathematical Reports of S.M. Ulam and his Los Alamos Collaborators |location=Berkeley |publisher=University of California Press |year=1990 |isbn= 978-0-520-05290-1 |oclc=20318499 |ref=none}}
 
 ==See also==
 
-{{Commons category|Quantized phase modulation}}
-
-* [[Binary offset carrier modulation]]
-* [[Differential coding]]
-* [[Modulation]]{{snd}} for an overview of all modulation schemes
-* [[Phase modulation]] (PM){{snd}} the [[Analog signal|analogue]] equivalent of PSK
-* [[Polar modulation]]
-* [[PSK31]]
-* [[PSK63]]
-
-==Notes==
-<!--This article uses the Cite.php citation mechanism. If you would like more information on how to add references to this article, please see http://meta.wikimedia.org/wiki/Cite/Cite.php --> 
-{{reflist}}
+* [[List of things named after Stanislaw Ulam]]
+* Biopic about Stanislaw Ulam, based on his autobiography, starring [[Jakub Gierszał|Jakub Gierszal]]<ref>{{Cite web|url=http://scienceandfilm.org/articles/2930/adventures-of-a-mathematician-new-film-on-stan-ulam|title=Adventures of a Mathematician|last=Epstein|first=Sonia|date=29 June 2017|website=Sloan Science & Film}}</ref>
 
 ==References==
-The notation and theoretical results in this article are based on material presented in the following sources:
+{{Reflist | 30em | refs =
 
-*{{cite book | author=Proakis, John G. | title=Digital Communications | url=https://archive.org/details/digitalcommunica00proa | location=Singapore | publisher=McGraw Hill | year=1995 | isbn=0-07-113814-5}}
-*{{cite book | author=Couch, Leon W. II | title=Digital and Analog Communications | location=Upper Saddle River, NJ | publisher=Prentice-Hall | year=1997 | isbn=0-13-081223-4}}
-*{{cite book | author=Haykin, Simon | title=Digital Communications | location=Toronto, Canada | publisher=John Wiley & Sons | year=1988 | isbn=0-471-62947-2}}
+<ref name='ABRAHAM'>{{cite web | url = http://www.ralph-abraham.org/articles/MS%23133.Entropy/ms133.pdf| title = Image Entropy for Discrete Dynamical Systems  | access-date = 30 May 2013| last = Abraham | first = Ralph| date = 9 July 2011 | publisher = University of California, Santa Cruz}}</ref>
 
-{{DEFAULTSORT:Phase-Shift Keying}}
-[[Category:Quantized radio modulation modes]]
-[[Category:Data transmission]]B*
-date_parsed2022-12-07T02:26:01.909729Z
+<ref name='ADAM'>{{cite web | url = http://news.harvard.edu/gazette/2000/04.06/ulam.html | title = Obituary for Adam Ulam | access-date = 10 October 2011 | date = 6 April 2000 | website = Harvard University Gazette}}</ref>
+
+<ref name="AIP">{{cite web |url=http://www.aip.org/history/acap/biographies/bio.jsp?ulams |title=Stanislaw Ulam |publisher=[[American Institute of Physics]] |access-date=14 May 2013 |url-status=dead |archive-url=https://web.archive.org/web/20150702060345/https://www.aip.org/history/acap/biographies/bio.jsp?ulams |archive-date=2 July 2015 }}</ref>
+
+<ref name='AJMAA'>{{cite web | url = http://ajmaa.org/searchroot/files/pdf/v6n1/v6i1p1.pdf | title = On Stan Ulam and His Mathematics | access-date = 10 October 2011 | last = Ciesielski | first = Kryzystof |author2=Thermistocles Rassias  | year = 2009 | website = Australian Journal of Mathematical Analysis and Applications | quote = v 6, nr 1, pp 1-9, 2009}}</ref>
+
+<ref name='ANALOG'>{{cite book | last1 = Ulam | first1 = S. M. | title = Analogies Between Analogies |editor1= A. R. Bednarek |editor2=Françoise Ulam | publisher = University of California Press | year = 1990 | location = Berkeley | url = http://publishing.cdlib.org/ucpressebooks/view?docId=ft9g50091s&brand=ucpress | access-date = 24 December 2011 | isbn = 978-0-520-05290-1}}</ref>
+
+<ref name='AULAM'>{{cite book | last1 = Ulam | first1 = Adam Bruno | title = Understanding the Cold War: a historian's personal reflections | publisher = Transaction Publishers | year = 2002 | location = New Brunswick, NJ | pages = 19 | url = https://books.google.com/books?id=wgtCaPUPIlwC | access-date = 28 December 2011 | isbn =  9780765808851 |oclc=48122759 }}</ref>
+
+<ref name='BETHE'>{{cite web | url = http://library.lanl.gov/cgi-bin/getfile?06-03.pdf | title = Reprinting of 1954 article: Comments on the History of the H-Bomb | access-date = 3 November 2011 | last = Bethe | first = Hans A. | date = Fall 1982 | website = [[Los Alamos Science]], No 6 | publisher = Los Alamos National Laboratory}}</ref>
+
+<ref name='BIOLOGY'>{{cite journal | title = Stanislaw M. Ulam's Contributions to Theoretical Biology | journal = Letters in Mathematical Physics | year = 1985 | first = William A. | last = Beyer | author2 = Peter H. Sellers | author3 = Michael S. Waterman | volume = 10 | issue = 2–3 | pages = 231–242 | url = http://www.cmb.usc.edu/papers/msw_papers/msw-065.pdf | access-date = 5 December 2011 | doi = 10.1007/bf00398163 | bibcode = 1985LMaPh..10..231B | url-status = dead | archive-url = https://web.archive.org/web/20110927133755/http://www.cmb.usc.edu/papers/msw_papers/msw-065.pdf | archive-date = 27 September 2011 | citeseerx = 10.1.1.78.4790 | s2cid = 2791811 }}</ref>
+
+<ref name='BOOK'>{{cite web | url = http://www-groups.dcs.st-and.ac.uk/history/HistTopics/Scottish_Book.html | title = Preface to the "Scottish Book" | access-date = 11 September 2012 | last = Ulam | first = Stanislaw | date = November 2002 | website = Turnbull WWW Server | publisher = School of Mathematical and Computational Sciences University of St Andrews}}</ref>
+
+<ref name='CAMPB'>{{cite web | url = http://physics.ucsc.edu/~peter/242/FPU-birth-of-nonlinear-science-Lilienfeld.pdf | title = The Birth of Nonlinear Science | access-date = 8 December 2011 | last = Campbell | first = Donald H. | date = 17 March 2010 | publisher = Americal Physical Society}}</ref>
+
+<ref name="CHAOS">{{cite journal |title=Focus: Landmarks—Computer Simulations Led to Discovery of Solitons |date=February 8, 2013 |journal=Physics |volume=6 |pages=15 |number=15  |doi=10.1103/Physics.6.15|bibcode = 2013PhyOJ...6...15L |last1=Lindley |first1=David }}</ref>
+
+<ref name="CHAR 78">{{Cite book|last1=Chartrand|first1=Gary|url=https://books.google.com/books?id=zA_CAgAAQBAJ&pg=PA78|title=A First Course in Graph Theory|last2=Zhang|first2=Ping|date=2013-05-20|publisher=Courier Corporation|isbn=978-0-486-29730-9|pages=78|language=en}}</ref>
+
+<ref name = 'CNLSSCOTT'>{{cite web | url = http://cnls.lanl.gov/External/Kruskal_Scott_Article.php | title = CNLS: apprecion of Martin Kruskal and Alwyn Scott | access-date = 8 December 2011 | year = 2007 | publisher = Los Alamos National Laboratory}}</ref>
+
+<ref name='CNLSFPU'>{{cite web | url = http://cnls.lanl.gov/Conferences/annual25/agenda.htm | title = 50 Years of the Fermi-Pasta-Ulam Problem: Legacy, Impact, and Beyond | access-date = 9 December 2011 | date = May 16–20, 2005 | website = CLNS 25th International Conference | publisher = Los Alamos National Laboratory}}</ref>
+
+<ref name='CNLSHIST'>{{cite web | url = http://cnls.lanl.gov/External/History.php | title = History of the Center for Nonlinear Studies | access-date = 8 December 2011 | publisher = Los Alamos National Laboratory}}</ref>
+
+<ref name='CNLSULAM'>{{cite web | url = http://cnls.lanl.gov/External/Ulam.php | title = Ulam Scholars at CNLS | access-date = 8 December 2011 | publisher = Los Alamos National Laboratory}}</ref>
+
+<ref name='COMPEARLY'>{{cite web | url = http://www.lanl.gov/history/story.php?story_id=82 | title = Supercomputing | access-date = 24 October 2011 | website = History @ Los Alamos | publisher = Los Alamos National Laboratory}}</ref>
+
+<ref name='COMPLATE'>{{cite web | url = http://www.lanl.gov/history/story.php?story_id=39 | title = From Calculators to Computers | access-date = 24 October 2011 | website = History @ Los Alamos | publisher = Los Alamos National Laboratory}}</ref>
+
+<ref name='DEATH'>{{cite journal | title = Death of a Project | journal = Science | date = 9 July 1965 | first = Freeman | last = Dyson | volume = 149 | pages = 141–144| doi=10.1126/science.149.3680.141 | pmid = 17734490 | issue=3680|bibcode = 1965Sci...149..141D }}</ref>
+
+<ref name='DUNCAN'>{{Cite book |last1 = Hewlett |first1 = Richard G. |author-link = Richard G. Hewlett  |last2 = Duncan  |first2 = Francis  | title = Atomic Shield, Volume II, 1947–1952 |pages = 406–409 |series = A History of the United States Atomic Energy Commission  |publisher = [[Pennsylvania State University Press]] |location = University Park, Pennsylvania |year = 1969 |isbn = 978-0-520-07187-2 }}</ref>
+
+<ref name='ECKHARDT'>{{cite web | url = http://library.lanl.gov/cgi-bin/getfile?15-13.pdf | title = Stan Ulam, John von Neumann, and the Monte Carlo method | access-date = 22 October 2011 | last = Eckhardt | first = Roger | year =1987 | website = Los Alamos Science, No 15}}</ref>
+
+<ref name='ERDOS'>{{cite journal | url = http://www.renyi.hu/~p_erdos/1985-37.pdf | title = Ulam, the man and the mathematician | last = Erdős | first = Paul | authorlink = Paul Erdős | year = 1985 | journal = [[Journal of Graph Theory]] | volume = 9 | issue = 4 | pages = 445–449 | doi = 10.1002/jgt.3190090402}}</ref>
+
+<ref name='FAMILY'>{{cite web | url = http://genforum.genealogy.com/cgi-bin/print.cgi?poland::5660.html | title = Ulam Family of Lwow; Auerbachs of Vienna | access-date = 10 October 2011 | last = Ulam | first = Molly | date = June 25, 2000 | website = Genforum}}</ref>
+
+<!--
+<ref name='FEIGENBAUM'>{{cite web | url = http://library.lanl.gov/cgi-bin/getfile?06-04.pdf | title = Reflections of the Polish Masters | access-date = 1 January 2012 | last = Feigenbaum | first = Mitchell | work = Los Alamos Science, No 6, 1982 | publisher = Los Alamos National Laboratory}}</ref> -->
+
+<ref name='FPU'>{{cite journal | title = Fermi, Pasta, Ulam and the Birth of Experimental Mathematics | journal = American Scientist | date = May–Jun 2009 | first1 = Mason A. | last1 = Porter | first2= Norman J. | last2= Zabusky | last3 = Hu | first3= Bambi |  last4=Campbell  | first4=David K. | volume = 97 | issue = 3 | pages = 214–221| url = http://people.maths.ox.ac.uk/porterm/papers/fpupop_final.pdf | access-date = 20 November 2011 | doi=10.1511/2009.78.214}}</ref>
+
+<ref name='FPUCHAOS'>{{cite journal | title = Focus-Issue: The Fermi-Pasta-Ulam Problem-The-First-50-Years | journal = Chaos | date = March 2005 | volume = 15 | issue = 1 | url = http://chaos.aip.org/resource/1/chaoeh/v15/i1?&section=focus-issue-the-fermi-pasta-ulam-problem-the-first-50-years&page=1 | archive-url = https://web.archive.org/web/20120503100148/http://chaos.aip.org/resource/1/chaoeh/v15/i1?&section=focus-issue-the-fermi-pasta-ulam-problem-the-first-50-years&page=1 | url-status = dead | archive-date = 2012-05-03 | access-date = 9 December 2011 }}</ref>
+
+<ref name='FRISCH'>{{cite journal |last=Frisch |first=Otto |author-link=Otto Frisch |date=April 1974 |page=17 |journal=[[Bulletin of the Atomic Scientists]] |volume=30 |issue=4 |title=Somebody Turned the Sun on with a Switch |url=https://books.google.com/books?id=KQwAAAAAMBAJ&pg=PA17 |access-date=May 29, 2013 |bibcode=1974BuAtS..30d..12F |doi=10.1080/00963402.1974.11458102 }}</ref>
+
+<ref name='FULAM'>{{cite book | last1 = Ulam | first1 = Françoise | title = Postscript to Adventures of a Mathematician | publisher = University of California | year = 1991 | location = Berkeley, CA | isbn = 978-0-520-07154-4}}</ref>
+
+<ref name='FULAMOBIT'>{{cite web | url = http://www.legacy.com/obituaries/santafenewmexican/obituary.aspx?n=francoise-ulam&pid=150769924 | title = Françoise Ulam Obituary | access-date = 12 December 2011 | date = 30 April 2011 | website = Santa Fe, New Mexican}}</ref>
+
+<ref name='FUM'>{{citation | first = S. M. | last = Ulam | contribution = On Some Statistical Properties of Dynamical Systems | title = Proceedings of the 4th Berkeley Symposium on Mathematical Statistics and Probability | publisher = University of California Press | location = Berkeley, CA | year = 1961}}</ref>
+
+<ref name='GALISON'>{{cite book |title=The Disunity of Science: Boundaries, Contexts, and Power | editor = Peter Galison, David J. Stump | chapter = 5: Computer Simulations and the Trading Zone | page= 135 | author= Peter Galison
+| chapter-url=https://books.google.com/books?id=2HEYgFz_kioC&pg=PA135| publisher = Stanford University Press
+| year = 1996| isbn = 9780804725620 }}</ref>
+
+<!--
+<ref name='GAMOW'>{{cite web | url = http://library.lanl.gov/cgi-bin/getfile?00285752.pdf | title = Ulam's Gamow Memorial Lecture, 5 October 1982 | access-date = 24 December 2011 | last = Ulam | first = S. M. | year =1987 | work = Los Alamos Science, No 15}}</ref> -->
+
+<ref name='GOAD'>{{cite web | url = https://fas.org/sgp/othergov/doe/lanl/pubs/00326869.pdf | title = Sequence Analysis: Contributions of Ulam to Molecular Genetics | access-date = 28 December 2011 | last = Goad | first = Walter B | year = 1987 | website = Los Alamos Science | publisher = Los Alamos National Laboratory}}</ref>
+
+<ref name=SANKOFF>{{cite journal|last=Sankoff|first=David|title=The early introduction of dynamic programming into computational biology|journal=Bioinformatics|year=2000|volume=16|issue=1|pages=41–47|doi=10.1093/bioinformatics/16.1.41|pmid=10812476|doi-access=free}}</ref>
+
+<!--
+<ref name='GONCH'>{{cite journal | title = American and Soviet H-bomb development programmes: historical background | journal = [[Uspekhi Fizicheskikh Nauk]] | date = 29 May 1996 | first = G. A. | last = Goncharov | volume = 39 | issue = 10 | pages = 1033–1044| url = https://fas.org/nuke/guide/russia/nuke/goncharov-h-bomb.pdf | access-date = 2 November 2011 | doi=10.1070/pu1996v039n10abeh000174|bibcode = 1996PhyU...39.1033G }}</ref> -->
+
+<ref name='HAWKINS'>{{cite web | url = https://www.nytimes.com/2002/03/04/us/david-hawkins-88-historian-for-manhattan-project-in-1940-s.html | title = Obituary of David Hawkins | access-date = 14 October 2011 | last = Lehmann | first = Christopher | date = 4 March 2002 | website = The New York Times}}</ref>
+
+<ref name=RB>{{cite web |url=http://andrewgelman.com/wp-content/uploads/2014/07/CM-ULAM-Stanislaw.pdf |archive-url=https://ghostarchive.org/archive/20221009/http://andrewgelman.com/wp-content/uploads/2014/07/CM-ULAM-Stanislaw.pdf |archive-date=2022-10-09 |url-status=live |title = Stanisław Ulam | language = fr | access-date = 29 October 2015}}</ref>
+
+<ref name='HEARING'>{{cite book | last1 = Schreiber | first1 = R. E. | last2 = Ulam | first2 = Stanislaw M. | last3 = Bradbury | first3 = Norris | title = Outer Space Propulsion by Nuclear Energy | chapter = US Congress, Joint Committee on Atomic Energy: hearing on 22 January 1958 | publisher = US Government Printing Office | year = 1958 | pages = 47 | chapter-url = http://sul-derivatives.stanford.edu/derivative?CSNID=00002040&mediaType=application/pdf | access-date = 25 November 2011}}</ref>
+
+<ref name="HEWLETT">{{cite book |last1=Hewlett |first1=Richard G. |author-link=Richard G. Hewlett |last2=Anderson |first2=Oscar E. |title=The New World, 1939–1946 |location=University Park|publisher=Pennsylvania State University Press |year=1962
+|url=https://www.governmentattic.org/5docs/TheNewWorld1939-1946.pdf |archive-url=https://ghostarchive.org/archive/20221009/https://www.governmentattic.org/5docs/TheNewWorld1939-1946.pdf |archive-date=2022-10-09 |url-status=live |pages=304–307 |isbn=978-0-520-07186-5|oclc=637004643 }}</ref>
+
+<ref name= "HEWLETT AND DUNCAN">{{cite book|last1=Hewlett|first1=Richard G.|last2=Duncan|first2=Francis|title=Atomic Shield, 1947–1952|series=A History of the United States Atomic Energy Commission|publisher=Pennsylvania State University Press|location=University Park|year=1969|isbn=978-0-520-07187-2|pages=380–385|oclc=3717478}}</ref>
+
+<ref name= "HEWLETT AND DUNCAN 554-556">{{cite book|last1=Hewlett|first1=Richard G.|last2=Duncan|first2=Francis|title=Atomic Shield, 1947–1952|series=A History of the United States Atomic Energy Commission|publisher=Pennsylvania State University Press|location=University Park|year=1969|isbn=978-0-520-07187-2|pages=554–556|oclc=3717478}}</ref>
+
+<ref name="HODDESON 130-137">{{cite book|last1=Hoddeson |first1=Lillian|author-link=Lillian Hoddeson|first2=Paul W. |last2=Henriksen |first3=Roger A. |last3=Meade |first4=Catherine L. |last4=Westfall|author4-link= Catherine Westfall|title=Critical Assembly: A Technical History of Los Alamos During the Oppenheimer Years, 1943–1945 |location=New York |publisher=Cambridge University Press |year=1993 |pages=[https://archive.org/details/criticalassembly0000unse/page/130 130–137] |isbn=978-0-521-44132-2 |oclc=26764320 |url=https://archive.org/details/criticalassembly0000unse/page/130 }}</ref>
+
+<ref name='LA171'>{{cite web | url = http://library.lanl.gov/cgi-bin/getfile?00350385.pdf | title = Theory of Multiplicative Processes | access-date = 13 October 2011 | last = Hawkins | first = D. |author2=S. Ulam  | date = 14 November 1944 | website = LANL report LA-171}}</ref>
+
+<ref name='LA1557'>{{cite web | url = http://library.lanl.gov/cgi-bin/getfile?00359950.pdf | title = Heuristic studies in problems of mathematical physics | access-date = 21 November 2011 | last = Pasta | first = John |author2=S. Ulam  | date = 9 March 1953 | website = LANL report LA-1557}}</ref>
+
+<ref name='LA1940'>{{cite web | url = http://library.lanl.gov/cgi-bin/getfile?00353569.pdf | title = Studies of Nonlinear Problems I | access-date = 21 November 2011 | last = Fermi | first = E. |author2=J. Pasta |author3=S. Ulam | date = May 1955 | website = LANL report LA-1940}}</ref>
+
+<ref name='LA-2305'>{{cite web | url = http://library.lanl.gov/cgi-bin/getfile?00320803.pdf | title = Quadratic Transformations. Part I | access-date = 26 November 2011 | last = Stein | first = P. R. |author2=Stanislaw M. Ulam  | date = March 1959 | website = LANL report LA-2305 | publisher = Los Alamos National Laboratory}}</ref>
+
+<ref name='LA-4246'>{{cite web | url = http://library.lanl.gov/cgi-bin/getfile?00387440.pdf | title = Some Elementary Attempts at Numerical Modeling of Problems Concerning Rates of Evolutionary Processes | access-date = 26 November 2011 | last = Schrandt | first = Robert G. |author2=Stanislaw M. Ulam  | date = December 1970 | website = LANL report LA-4246 | publisher = Los Alamos National Laboratory}}</ref>
+
+<ref name='LA-4973'>{{cite web | url = http://library.lanl.gov/cgi-bin/getfile?00319833.pdf | title = Metrics in Biology, an Introduction | access-date = 26 November 2011 | last = Beyer | first = William A. |author2=Temple F. Smith |author3=M. L. Stein |author4=Stanislaw M. Ulam  | date = August 1972 | website = LANL report LA-4973 | publisher = Los Alamos National Laboratory}}</ref>
+
+<!--
+<ref name='LA-5647-MS'>{{cite web | url = http://www.lanl.gov/history/postwar/pdf/00377295.pdf | title = A short Account of Los Alamos Theoretical work on Thermonuclear Weapons 1946–1950 | access-date = 1 January 2012 | last = Mark | first = J. Carson | date = July 1974 (reissue of a report dated 1 October 1954) | work = LANL report LA-5647-MS | publisher = Los Alamos National Laboratory}}</ref> -->
+
+<ref name='LAMS551'>{{cite web | url = http://library.lanl.gov/cgi-bin/getfile?00329286.pdf | title = Statistical Methods in Neutron Diffusion | access-date = 23 October 2011 | last = Richtmyer | first = D. |author2=J. Pasta |author3=S. Ulam | date = 9 April 1947 | website = LANL report LAMS-551}}</ref>
+
+<ref name='LAMS1225'>{{cite web | url =http://www.nuclearnonproliferation.org/LAMS1225.pdf | title = On Heterocatalytic Detonations I. - Hydrodynamic Lenses and Radiation Mirrors | last1 = Teller | first1 = E. | last2 = Ulam | first2 = S. | author1-link = Edward Teller | publisher = [[Los Alamos National Laboratory]] | date = 9 March 1951 | id = LAMS-1225 | archive-url = https://web.archive.org/web/20120301145116/http://www.nuclearnonproliferation.org/LAMS1225.pdf | archive-date = 1 March 2012 | access-date = 4 April 2022}}</ref>
+
+<ref name='LAMS1230'>{{citation | first = E. | last = Teller | contribution = A New Thermonuclear device | title = Technical Report LAMS-1230 | publisher = Los Alamos National Laboratory | date = 4 April 1951}}</ref>
+
+<ref name='LAMS1955'>{{cite web | url = http://library.lanl.gov/cgi-bin/getfile?00350011.pdf | title = On a Method of Propulsion of Projectiles by Means of External Nuclear Explosions | access-date = 24 November 2011 | last = Everett | first = C. J. |author2=S. M. Ulam  | date = August 1955 | website = LANL report LAMS-1955}}</ref>
+
+<ref name='LAMS2186'>{{cite web | url = http://library.lanl.gov/cgi-bin/getfile?00339493.pdf  | title = Some Schemes for Nuclear Propulsion | access-date = 24 November 2011 | first = C. | last = Longmier |author2=F. Reines |author3=S. Ulam | date = August 1955 | website = LANL report LAMS-2186}}</ref>
+
+<ref name='LANLBIO'>{{cite web | url = http://www.lanl.gov/history/people/S_Ulam.shtml | title = Staff biography of Stanislaw Ulam | access-date = 22 October 2011 | publisher = Los Alamos National Laboratory}}</ref>
+
+<ref name='MAULDIN'>{{cite book | last1 = Mauldin | first1 = R. Daniel | title = The Scottish Book | publisher = Birkhauser | year = 1981 | pages = 268 | url = https://books.google.com/books?id=gaqEAAAAIAAJ | access-date = 4 December 2011 | isbn = 9783764330453 |oclc=7553633 }}</ref>
+
+<ref name='MARKBIO'>{{cite web|url=http://www.lanl.gov/history/people/J_Mark.shtml |title=Staff biography of J. Carson Mark |access-date=22 October 2011 |publisher=Los Alamos National Laboratory |url-status=dead |archive-url=https://web.archive.org/web/20120716192104/http://www.lanl.gov/history/people/J_Mark.shtml |archive-date=16 July 2012 }}</ref>
+
+<ref name='METROPOLIS'>{{cite web | url = http://library.lanl.gov/cgi-bin/getfile?15-12.pdf | title = The Beginnings of the Monte Carlo Method | access-date = 22 October 2011 | last = Metropolis | first = Nicholas | year = 1987 | website = Los Alamos Science, No 15}}</ref>
+
+<ref name='MIKE'>{{cite web | url = http://www.geni.com/people/Michael-Ulam/6000000011955105854 | title = Genealogy of Michael Ulam | access-date = 12 October 2011 | date = 24 May 2011 | website = GENi}}</ref>
+
+<ref name='MOLLY'>{{cite web | url = http://www.readthehook.com/99589/memoir-memorial-lvov-lives-leopolis-press | title = Lwow lives on at Leopolis Press | access-date = 10 October 2011 | date = 14 November 2002 | website = The Hook}}</ref>
+
+<ref name='MONTEALAMOS'>{{cite web | url = http://library.lanl.gov/cgi-bin/getfile?15-13.pdf | title = Stan Ulam, John von Neumann, and the Monte Carlo Method | access-date = 11 Mar 2016| last = Eckhardt | first = Roger| date = 1987| website = Los Alamos Science| publisher = Los Alamos National Laboratory}}</ref>
+
+<ref name='MONTEBIG10'>{{cite web | url = http://theludwigs.com/2011/11/a-monte-carlo-simulation-of-the-big10-race/ | title = A Monte Carlo Simulation of the Big10 race | access-date = 9 December 2011 | last = Ludwig | first = John | date = November 2011 | publisher = ludwig.com}}</ref>
+
+<ref name='MONTELING'>{{cite journal | title = Historical Change in Language Using Monte CarloTechniques | journal = Mechanical Translation and Computational Linguistics | date = 23 May 1966 | first = Sheldon | last = Klein | volume = 9 | issue = 3 and 4 | pages = 67–81| url = http://www.mt-archive.info/MT-1966-Klein.pdf | access-date = 9 December 2011}}</ref>
+
+<ref name='MONTEONC'>{{cite journal | title = Dose Enhancement of electron beams subject to external magnetic fields: A Monte Carlo Study | journal = Medical Physics | date = 12 March 2002 | first = M. A. | last = Earl |author2=L. M. Ma  | volume = 29 | issue = 4 | pages = 484–492| url = http://online.medphys.org/resource/1/mphya6/v29/i4/p484_s1?isAuthorized=no | access-date = 9 December 2011 | doi=10.1118/1.1461374| pmid = 11991119 |bibcode = 2002MedPh..29..484E }}</ref>
+
+<ref name='MONTEPAPER'>{{cite journal | title = The Monte Carlo method | journal = Journal of the American Statistical Association | year = 1949 | first = Nicholas | last = Metropolis |author2=Stanislaw Ulam  | volume = 44 | issue = 247 | pages = 335–341| url = https://people.bordeaux.inria.fr/pierre.delmoral/MetropolisUlam49.pdf |access-date = 21 November 2011 | doi=10.1080/01621459.1949.10483310 | pmid=18139350| jstor = 2280232 }}</ref>
+
+<ref name='MONTERISK'>{{cite web | url = http://courses.engmath.dal.ca/courses/engm6675/web/montecarlo.pdf | archive-url = https://web.archive.org/web/20160306123025/http://courses.engmath.dal.ca/courses/engm6675/web/montecarlo.pdf | url-status = dead | archive-date = 2016-03-06 | title = Monte Carlo Simulation in Environmental Risk Assessment | access-date = 13 September 2012 | last = Poulter | first = Susan R. | date = Winter 1998 | website = Risk:Health, Safety, & Environment | publisher = University of New Hampshire }}</ref>
+
+<ref name='MONTESOC'>{{cite web | url = http://www.icpsr.umich.edu/icpsrweb/sumprog/courses/0130 | title = Course description:Monte Carlo Methods for Social Scientists | access-date = 9 December 2011 | last = Casey | first = Thomas M. | date = June 2011 | website = Inter-University Consortium for Political and Social Research | publisher = University of Michigan}}</ref>
+
+<ref name='MULT123'>{{cite web | url = http://publishing.cdlib.org/ucpressebooks/view?docId=ft9g50091s&chunk.id=d0e4100&toc.depth=1&toc.id=d0e4100&brand=ucpress | title = Multiplicative Systems in Several Variables I, II, III | access-date = 13 October 2011 | last1 = Ulam | first1 = S. | last2=Everett | first2 = C. J | date = 7 June 1948 | website = LANL reports | publisher = University of California Press}}</ref>
+
+<ref name='NYTIMES-OBIT'>{{cite news | url = https://www.nytimes.com/1984/05/15/obituaries/stanislaw-ulam-theorist-on-hydrogen-bomb.html | title = Stanislaw Ulam, Theorist on Hydrogen Bomb | access-date = 30 May 2013| last = Sullivan| first = Walter| date = 15 May 1984 | newspaper = New York Times}}</ref>
+
+<ref name='OLGIERD'>{{cite book | last1 = Budrewicz/ | first1 = Olgierd | title = The melting-pot revisited: twenty well-known USers of Polish background | publisher = Interpress | year = 1977 | pages = 36 | url = https://books.google.com/books?id=pc51AAAAMAAJ&q=Sometimes+I+muse | access-date = 11 September 2012}}</ref>
+
+<ref name='ORION'>{{cite web | url = http://www.oriondrive.com/p1_story_history.php | title = History of Project Orion | access-date = 7 October 2011 | date = 2008–2009 | website = The Story of Orion | publisher = OrionDrive.com}}</ref>
+
+<ref name='OXTOBY'>{{cite web | url = https://www.nytimes.com/1991/01/05/obituaries/john-c-oxtoby-80-mathematics-professor.html | title = Obituary for John C, Oxtoby | access-date = 10 October 2011 | date = 5 January 1991 | website = The New York Times}}</ref>
+
+<ref name="PAPERS">{{cite web |url=http://www.amphilsoc.org/mole/view?docId=ead/Mss.Ms.Coll.54-ead.xml |title=Stanislaw M. Ulam Papers |publisher=American Philosophical Society |access-date= 14 May 2013 }}</ref>
+
+<!--
+<ref name='PREFACE'>{{cite book | last1 = Matthews | first1 = William G. | last2 = Hirsch | first2 = Daniel | title = Preface to Adventures of a Mathematician | publisher = University of California | year = 1991 | location = Berkeley, CA | isbn = 0-520-07154-9}}</ref> -->
+
+<ref name="RHODES">{{cite book | last = Rhodes | first = Richard | author-link = Richard Rhodes | year = 1995 | title = Dark Sun: The Making of the Hydrogen Bomb | publisher = Simon & Schuster | location = New York | page = [https://archive.org/details/darksunmakingofh00rhod/page/248 248] | isbn = 978-0-684-80400-2 | url = https://archive.org/details/darksunmakingofh00rhod | url-access = registration }}</ref>
+
+<ref name="RHODES 422-424">{{cite book | last = Rhodes | first = Richard | author-link = Richard Rhodes | year = 1995 | title = Dark Sun: The Making of the Hydrogen Bomb | publisher = Simon & Schuster | location = New York | pages = [https://archive.org/details/darksunmakingofh00rhod/page/422 422]–424 | isbn = 978-0-684-80400-2 | url = https://archive.org/details/darksunmakingofh00rhod | url-access = registration }}</ref>
+
+<ref name="RHODES 455-464">{{cite book | last = Rhodes | first = Richard | author-link = Richard Rhodes | year = 1995 | title = Dark Sun: The Making of the Hydrogen Bomb | publisher = Simon & Schuster | location = New York | pages = [https://archive.org/details/darksunmakingofh00rhod/page/455 455]–464 | isbn = 978-0-684-80400-2 | url = https://archive.org/details/darksunmakingofh00rhod | url-access = registration }}</ref>
+
+<ref name='ROTA'>{{cite web | url = http://library.lanl.gov/cgi-bin/getfile?15-03.pdf | title = Stan Ulam: The Lost Cafe | access-date = 22 October 2011 | last = Rota | first = Gian-Carlo | website = Los Alamos Science, No 15, 1987}}</ref>
+
+<ref name=SCHWEBER>{{cite book | last=Schweber | first=S. S. | title=In the Shadow of the Bomb: Bethe, Oppenheimer, and the Moral Responsibility of the Scientist | location=Princeton | publisher=Princeton University Press | pages=[https://archive.org/details/inshadowofbombbe00schw/page/166 166] | year=2000 | isbn=978-0-691-04989-2 | url=https://archive.org/details/inshadowofbombbe00schw/page/166 }}</ref>
+
+<!--
+<ref name='TRIBUTE'>{{cite journal | title = Tribute to John von Neumann | journal = Bulletin of the American Mathematical Society | volume = 64 | issue = 3, part 2 | pages = 1–49|date=1958|doi=10.1090/S0002-9904-1958-10184-6}}</ref> -->
+
+<ref name='UAMS'>{{cite web | url = http://www.ams.org/sitesearch?cx=006070101833274801941%3Acyhu7o79tee&cof=FORID%3A9&ie=UTF-8&q=Ulam&sa=Go&siteurl=www.ams.org%2Fmr-database | title = Search for "Ulam" on AMS website | access-date = 10 December 2011 | publisher = American Mathematical Society}}</ref>
+
+<ref name = 'UCHII'>{{cite journal | first=Soshichi | last=Uchii | title=Review of Edward Teller's Memoirs | journal=PHS Newsletter | volume=52 | date=22 July 2003 | url=http://www1.kcn.ne.jp/~h-uchii/philsci/Newsletters/newslet_52.html |access-date=13 August 2012}}</ref>
+
+<ref name='UCOLLOQ'>{{cite web | url = http://www.math.ufl.edu/dept_news_events/ulam/ | title = List of Ulam Colloquium Speakers | access-date = 24 December 2011 | publisher = University of Florida, Dept. of Mathematics}}</ref>
+
+<ref name='UCONF'>{{cite web | url = http://www.math.ufl.edu/stdculam/ | title = Ulam Centennial Conference | access-date = 24 December 2011 | date = March 10–11, 2009 | publisher = University of Florida | url-status = dead | archive-url = https://web.archive.org/web/20120424214006/http://www.math.ufl.edu/stdculam/ | archive-date = 24 April 2012 }}</ref>
+
+<ref name="ULAM 9-15">{{cite book |last=Ulam |first=S. M |title=Adventures of a Mathematician |url=https://archive.org/details/adventuresofmath0000ulam |url-access=registration |publisher=Charles Scribner's Sons |location=New York |year=1983 |pages=[https://archive.org/details/adventuresofmath0000ulam/page/9 9–15] |isbn=9780684143910 |oclc=1528346 }}</ref>
+
+<ref name="ULAM 56-60">{{cite book |last=Ulam |first=S. M |title=Adventures of a Mathematician |url=https://archive.org/details/adventuresofmath0000ulam |url-access=registration |publisher=Charles Scribner's Sons |location=New York |year=1983 |pages=[https://archive.org/details/adventuresofmath0000ulam/page/56 56–60] |isbn=9780684143910 |oclc=1528346  }}</ref>
+
+<ref name="ULAM 125-130">{{cite book |last=Ulam |first=S. M |title=Adventures of a Mathematician |url=https://archive.org/details/adventuresofmath0000ulam/page/125 |url-access=registration |publisher=Charles Scribner's Sons |location=New York |year=1983 |pages=[https://archive.org/details/adventuresofmath0000ulam/page/125 125–130, 174] |isbn=9780684143910 |oclc=1528346 }}</ref>
+
+<ref name="ULAM 143-147">{{cite book |last=Ulam |first=S. M |title=Adventures of a Mathematician |url=https://archive.org/details/adventuresofmath0000ulam |url-access=registration |publisher=Charles Scribner's Sons |location=New York |year=1983 |pages=[https://archive.org/details/adventuresofmath0000ulam/page/143 143–147] |isbn=9780684143910 |oclc=1528346  }}</ref>
+
+<ref name="ULAM 152-153">{{cite book |last=Ulam |first=S. M |title=Adventures of a Mathematician |url=https://archive.org/details/adventuresofmath0000ulam |url-access=registration |publisher=Charles Scribner's Sons |location=New York |year=1983 |pages=[https://archive.org/details/adventuresofmath0000ulam/page/152 152–153] |isbn=9780684143910 |oclc=1528346  }}</ref>
+
+<ref name="ULAM 162-167">{{cite book |last=Ulam |first=S. M |title=Adventures of a Mathematician |url=https://archive.org/details/adventuresofmath0000ulam |url-access=registration |publisher=Charles Scribner's Sons |location=New York |year=1983 |pages=[https://archive.org/details/adventuresofmath0000ulam/page/162 162–157] |isbn=9780684143910 |oclc=1528346  }}</ref>
+
+<ref name="ULAM 184-187">{{cite book |last=Ulam |first=S. M |title=Adventures of a Mathematician |url=https://archive.org/details/adventuresofmath0000ulam |url-access=registration |publisher=Charles Scribner's Sons |location=New York |year=1983 |pages=[https://archive.org/details/adventuresofmath0000ulam/page/184 184–187] |isbn=9780684143910 |oclc=1528346  }}</ref>
+
+<ref name="ULAM 220-224">{{cite book |last=Ulam |first=S. M |title=Adventures of a Mathematician |url=https://archive.org/details/adventuresofmath0000ulam |url-access=registration |publisher=Charles Scribner's Sons |location=New York |year=1983 |pages=[https://archive.org/details/adventuresofmath0000ulam/page/220 220–224] |isbn=9780684143910 |oclc=1528346  }}</ref>
+
+<ref name="ULAM 249-254">{{cite book |last=Ulam |first=S. M |title=Adventures of a Mathematician |url=https://archive.org/details/adventuresofmath0000ulam |url-access=registration |publisher=Charles Scribner's Sons |location=New York |year=1983 |pages=[https://archive.org/details/adventuresofmath0000ulam/page/249 249–250] |isbn=9780684143910 |oclc=1528346  }}</ref>
+
+<!--
+<ref name='UMATH'>{{cite web | url = http://library.lanl.gov/cgi-bin/getfile?15-09.pdf | title = Learning from Ulam: Measurable Cardinals, Ergodicity, and Biomathematics | access-date = 6 December 2011 | last = Mycielski | first = January | work = Los Alamos Science, No 15, 1987 | publisher = Los Alamos National Laboratory}}</ref> -->
+
+<ref name='UPUBS'>{{cite web | url = http://library.lanl.gov/cgi-bin/getfile?15-26.pdf | title = Publications of Stanislaw M. Ulam | access-date = 6 December 2011 | website = Los Alamos Science, No 15, 1987 | publisher = Los Alamos National Laboratory}}</ref>
+
+<ref name='UQUART'>{{cite web | url = http://www.ulam.usm.edu/index.html | title = Home Page for Ulam Quarterly | access-date = 24 December 2011 | publisher = University of Florida}}</ref>
+
+<ref name='UQUART2'>{{citation | first = Julio G. | last = Dix | contribution = Some Aspects of Running a Free Electronic Journal | title = New Developments in Electronic Publishing | editor-first = Hans | editor-last = Becker | publisher = European Congress of Mathematicians; ECM4 Satellite Conference | place = Stockholm | pages = 41–43 | date = June 25–27, 2004 | contribution-url = http://www.emis.de/proceedings/Stockholm2004/dix.pdf | access-date = 5 January 2013 | isbn = 978-3-88127-107-3}}</ref>
+
+<ref name='UTRIB'>{{cite web | url = http://la-science.lanl.gov/lascience15.shtml | title = Stanislaw Ulam 1909–1984 | access-date = 6 December 2011 | last = Cooper | first = Necia Grant | website = Los Alamos Science, No 15, 1987 | publisher = Los Alamos National Laboratory}}</ref>
+
+<ref name='VITA'>{{cite web | url = http://library.lanl.gov/cgi-bin/getfile?15-02.pdf | access-date = 7 October 2011 | last = Ulam | first = Francoise | year = 1987 | title = Vita: Excerpts from ''Adventures of a Mathematician'' | publisher = Los Alamos National Laboratory |archive-url=https://web.archive.org/web/20090114160317/http://library.lanl.gov/cgi-bin/getfile?15-02.pdf |archive-date=14 January 2009}}</ref>
+
+<ref name='VOLSKY'>{{cite web | url = http://www.aulam.org/anxious2.htm#volsky | title = Letter about Jozef Ulam | access-date = 24 May 2013 | last = Volsky | first = George | date = 23 December 1963 | website = Anxiously from Lwow | publisher = Adam Ulam | url-status = dead | archive-url = https://web.archive.org/web/20130517203420/http://www.aulam.org/anxious2.htm#volsky | archive-date = 17 May 2013 }}</ref>
+
+<!--
+<ref name='ZABUK'>{{cite journal | title = Interactions of solitons in a collisionless plasma and the recurrence of initial states. | journal = Physical Review Letters | year = 1965 | first = N. J. | last = Zabusky |author2=M.D. Kruskal.  | volume = 15 | pages = 240–243 | url = =http://physics.aps.org/articles/v6/15 | access-date = 21 November 2011 | doi=10.1103/physrevlett.15.240|bibcode = 1965PhRvL..15..240Z }}</ref> -->
+}}
+
+==External links==
+*[http://manhattanprojectvoices.org/oral-histories/stanislaus-ulams-interview-1979 1979 Audio Interview with Stanislaus Ulam by Martin Sherwin] Voices of the Manhattan Project
+*[http://manhattanprojectvoices.org/oral-histories/stanislaus-ulams-interview 1965 Audio Interview with Stanislaus Ulam by Richard Rhodes] Voices of the Manhattan Project
+*{{cite journal |journal=Los Alamos Science |date = 1987 |issue=Special Issue |page=313 |url=https://fas.org/sgp/othergov/doe/lanl/pubs/00326872.pdf |archive-url=https://ghostarchive.org/archive/20221009/https://fas.org/sgp/othergov/doe/lanl/pubs/00326872.pdf |archive-date=2022-10-09 |url-status=live |title=Publications of Stanislaw M. Ulam |issn=0273-7116 }}
+* {{YouTube|7DHs3ToRaJM|Von Neumann: The Interaction of Mathematics and Computing}} – 1976 lecture on ''The First International Research Conference on the History of Computing''.
+
+{{Manhattan Project}}
+{{John von Neumann Lecturers}}
+{{Authority control}}
+{{Subject bar
+| portal1=World War II
+| portal2=Nuclear technology
+| portal3=Mathematics
+| portal4=History of science
+| portal5=Biography
+| portal6=Poland
+| commons=y
+| q=y
+| book =
+}}
+
+{{DEFAULTSORT:Ulam, Stanislaw}}
+[[Category:1909 births]]
+[[Category:1984 deaths]]
+[[Category:Politicians from Lviv]]
+[[Category:Jews from Galicia (Eastern Europe)]]
+[[Category:People from the Kingdom of Galicia and Lodomeria]]
+[[Category:Polish agnostics]]
+[[Category:Jewish emigrants from Nazi Germany to the United States]]
+[[Category:Polish set theorists]]
+[[Category:Harvard University faculty]]
+[[Category:University of Wisconsin–Madison faculty]]
+[[Category:University of Colorado Boulder faculty]]
+[[Category:University of Colorado Denver faculty]]
+[[Category:University of Florida faculty]]
+[[Category:Members of the United States National Academy of Sciences]]
+[[Category:Manhattan Project people]]
+[[Category:People from Los Alamos, New Mexico]]
+[[Category:Jewish American scientists]]
+[[Category:Lwów School of Mathematics]]
+[[Category:Mathematics popularizers]]
+[[Category:Monte Carlo methodologists]]
+[[Category:Cellular automatists]]
+[[Category:Jewish agnostics]]
+[[Category:Lviv Polytechnic alumni]]
+[[Category:Jewish physicists]]
+[[Category:Burials at Montparnasse Cemetery]]
+[[Category:Members of the American Philosophical Society]]B*
+date_parsed2022-12-07T05:36:14.776099Z

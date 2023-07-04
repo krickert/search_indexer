@@ -1,38 +1,36 @@
 <project>
-  <modelVersion>4.0.0</modelVersion>
- 
-  <groupId>com.krickert.search</groupId>
-  <artifactId>indexer-pom</artifactId>
-  <version>0.1-SNAPSHOT</version>
-  <packaging>pom</packaging>
-  <properties>
-    <jdk.version>17</jdk.version>
-    <release.version>17</release.version>
-    <micronaut.version>3.7.4</micronaut.version>
-    <kafka.client.version>3.0.2</kafka.client.version>
-    <commons.io.version>2.11.0</commons.io.version>
-    <awaitility.version>4.2.0</awaitility.version>
-    <mockito.version>4.8.1</mockito.version>
-    <micronaut-test-resources-kafka.version>1.1.3</micronaut-test-resources-kafka.version>
-    <protobuf.version>3.21.9</protobuf.version>
-    <kafka-streams-protobuf-serde.version>7.3.0</kafka-streams-protobuf-serde.version>
-    <commons-lang3.version>3.12.0</commons-lang3.version>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  </properties>
+    <modelVersion>4.0.0</modelVersion>
 
-  <modules>
-    <module>protobuf-projects</module>
-    <module>micronaut-projects</module>
-  </modules>
-  <repositories>
-    <repository>
-      <id>central</id>
-      <url>https://repo.maven.apache.org/maven2</url>
-    </repository>
-    <!-- other maven repositories the project -->
-    <repository>
-      <id>confluent</id>
-      <url>https://packages.confluent.io/maven/</url>
-    </repository>
-  </repositories>
+    <groupId>com.krickert.search</groupId>
+    <artifactId>indexer-pom</artifactId>
+    <version>0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <properties>
+        <commons.io.version>2.13.0</commons.io.version>
+        <protobuf.version>3.23.2</protobuf.version>
+        <commons-lang3.version>3.12.0</commons-lang3.version>
+        <grpc.version>1.56.1</grpc.version>
+        <junit-jupiter-engine.version>5.9.3</junit-jupiter-engine.version>
+        <javax.annotation.api.version>1.3.2</javax.annotation.api.version>
+        <protoc-jar-maven-plugin.version>3.11.4</protoc-jar-maven-plugin.version>
+        <maven.compiler.version>3.11.0</maven.compiler.version>
+        <maven.surefire.plugin>3.1.2</maven.surefire.plugin>
+    </properties>
+
+    <modules>
+        <module>protobuf-projects</module>
+        <module>micronaut-projects</module>
+    </modules>
+    <repositories>
+        <repository>
+            <id>central</id>
+            <url>https://repo.maven.apache.org/maven2</url>
+        </repository>
+        <!-- other maven repositories the project -->
+        <repository>
+            <id>confluent</id>
+            <url>https://packages.confluent.io/maven/</url>
+        </repository>
+    </repositories>
 </project>

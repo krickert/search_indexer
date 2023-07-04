@@ -3,7 +3,6 @@ package com.krickert.search.wiki.article.processor.component;
 import com.google.protobuf.Timestamp;
 import com.krickert.search.model.pipe.PipeDocument;
 import com.krickert.search.model.wiki.WikiArticle;
-import jakarta.inject.Singleton;
 
 import java.time.Instant;
 import java.time.ZoneId;
@@ -23,15 +22,15 @@ public class PipelineDocumentMapper {
                 .setTitle(wikiArticle.getTitle())
                 .setDocumentType(wikiArticle.getWikiType().name())
                 .setCreationDate(wikiArticle.getTimestamp());
-        pipeDocumentBuilder.putCustom("namespace", wikiArticle.getNamespace())
-                .putCustom("dump_date", wikiArticle.getDumpTimestamp());
+        pipeDocumentBuilder.putFields("namespace", wikiArticle.getNamespace())
+                .putFields("dump_date", wikiArticle.getDumpTimestamp());
         if (isNotEmpty(wikiArticle.getText())) {
             pipeDocumentBuilder.setBody(wikiArticle.getText());
         }
         if (isNotEmpty(wikiArticle.getWikiText())) {
-            pipeDocumentBuilder.putCustom("wiki_text", wikiArticle.getWikiText());
+            pipeDocumentBuilder.putFields("wiki_text", wikiArticle.getWikiText());
         }
-        pipeDocumentBuilder.putCustom("date_parsed", parseDateParsed(wikiArticle.getDateParsed()));
+        pipeDocumentBuilder.putFields("date_parsed", parseDateParsed(wikiArticle.getDateParsed()));
         return pipeDocumentBuilder.build();
     }
 

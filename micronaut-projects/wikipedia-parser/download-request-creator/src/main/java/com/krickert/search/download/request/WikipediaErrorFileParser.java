@@ -27,6 +27,19 @@ public class WikipediaErrorFileParser {
         this.wikipediaPrefixUrl = wikipediaPrefixUrl;
     }
 
+    private static boolean isArticleFile(String fileName) {
+        return !fileName.contains("multistream") &&
+                fileName.contains("pages-article") &&
+                !fileName.contains("pages-articles.xml.bz2") &&
+                !fileName.contains("index");
+    }
+
+    private static boolean isMultiStreamArticleFile(String fileName) {
+        return fileName.contains("pages-articles-multistream") &&
+                !fileName.contains("pages-articles-multistream.xml.bz2") &&
+                !fileName.contains("index");
+    }
+
     public Collection<String[]> parseFileList(String m) {
         Collection<String[]> fileList = parseFileList(m, WIKI_FILE_TYPE.MULTISTREAM);
         if (CollectionUtils.isEmpty(fileList)) {
@@ -43,7 +56,7 @@ public class WikipediaErrorFileParser {
         Collection<String[]> filesToDownload = new ArrayList<>();
         String[] lines = m.split("\n");
         String[] data;
-        for (String line:lines) {
+        for (String line : lines) {
             data = line.split(" {2}");
             String fileName = data[1];
             if (isFileType(fileName, type)) {
@@ -64,27 +77,9 @@ public class WikipediaErrorFileParser {
         }
     }
 
-    private static boolean isArticleFile(String fileName) {
-        return !fileName.contains("multistream") &&
-                fileName.contains("pages-article") &&
-                !fileName.contains("pages-articles.xml.bz2") &&
-                !fileName.contains("index");
-    }
-
-
-    public enum WIKI_FILE_TYPE {
-        MULTISTREAM, ARTICLE
-    }
-
-    private static boolean isMultiStreamArticleFile(String fileName) {
-        return fileName.contains("pages-articles-multistream") &&
-                !fileName.contains("pages-articles-multistream.xml.bz2") &&
-                !fileName.contains("index");
-    }
-
     public Collection<DownloadFileRequest> createDownloadRequests(Collection<String[]> fileList) {
         Collection<DownloadFileRequest> response = new ArrayList<>(fileList.size());
-        for(String[] data : fileList) {
+        for (String[] data : fileList) {
             if (ArrayUtils.isNotEmpty(data) && data.length == 2) {
                 String dumpFileDateStr = parseWikiDateFromFile(data[1]);
                 response.add(DownloadFileRequest.newBuilder()
@@ -99,8 +94,13 @@ public class WikipediaErrorFileParser {
         }
         return response;
     }
+
     private String parseWikiDateFromFile(String wikiFileName) {
         return StringUtils.substringBetween(wikiFileName, "enwiki-", "-pages");
+    }
+
+    public enum WIKI_FILE_TYPE {
+        MULTISTREAM, ARTICLE
     }
 
 }

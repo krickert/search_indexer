@@ -1,10 +1,8 @@
 package com.krickert.search.download.dump.component;
 
-import io.micronaut.core.io.ResourceLoader;
 import io.micronaut.core.io.ResourceResolver;
 import io.micronaut.core.io.scan.ClassPathResourceLoader;
 import io.micronaut.test.extensions.junit5.annotation.MicronautTest;
-import org.apache.commons.io.FileUtils;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
@@ -15,12 +13,9 @@ import java.io.PrintStream;
 import java.net.MalformedURLException;
 import java.net.URISyntaxException;
 import java.net.URL;
-import java.nio.charset.Charset;
 import java.util.Optional;
-import java.util.stream.Stream;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.spy;
 
@@ -73,26 +68,28 @@ class FileDownloaderImplTest {
     void checkMd5() {
         ClassPathResourceLoader loader = new ResourceResolver().getLoader(ClassPathResourceLoader.class).get();
         Optional<URL> resource = loader.getResource("classpath:fakeDownloadedFile.txt");
-        assertThat(fileDownloader.checkMd5("00a5f9e5b648a2dcc1f90eb692ec7115", new File(resource.get().getFile())));
+        assertThat(fileDownloader.checkMd5("00a5f9e5b648a2dcc1f90eb692ec7115", new File(resource.get().getFile()))).isTrue();
     }
+
     @Test
     void checkMd5FailWhenFileNotThere() {
-        ClassPathResourceLoader loader = new ResourceResolver().getLoader(ClassPathResourceLoader.class).get();
-        Optional<URL> resource = loader.getResource("classpath:fakeDownloadedFile.txt");
         assertThat(fileDownloader.checkMd5("00a5f9e5b648a2dcc1f90eb692ec7115", new File("nothing to see here"))).isFalse();
     }
+
     @Test
     void checkMd5FailWhenFileNull() {
         assertThat(fileDownloader.checkMd5("00a5f9e5b648a2dcc1f90eb692ec7115", null)).isFalse();
     }
+
     @Test
     void checkMd5FailWhenMd5AndFileNull() {
         assertThat(fileDownloader.checkMd5(null, null)).isFalse();
     }
+
     @Test
     void checkMd5FailWhenMd5Wrong() {
         ClassPathResourceLoader loader = new ResourceResolver().getLoader(ClassPathResourceLoader.class).get();
         Optional<URL> resource = loader.getResource("classpath:fakeDownloadedFile.txt");
-        assertThat(fileDownloader.checkMd5("0aa5f9e5b648a2dcc1f90eb692ec7115", new File(resource.get().getFile())));
+        assertThat(fileDownloader.checkMd5("0aa5f9e5b648a2dcc1f90eb692ec7115", new File(resource.get().getFile()))).isFalse();
     }
 }

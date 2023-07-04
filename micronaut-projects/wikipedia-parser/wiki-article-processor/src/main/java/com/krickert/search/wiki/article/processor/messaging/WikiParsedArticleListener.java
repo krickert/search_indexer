@@ -1,4 +1,5 @@
 package com.krickert.search.wiki.article.processor.messaging;
+
 import com.krickert.search.model.constants.KafkaProtobufConstants;
 import com.krickert.search.model.wiki.WikiArticle;
 import com.krickert.search.wiki.article.processor.component.PipelineDocumentMapper;

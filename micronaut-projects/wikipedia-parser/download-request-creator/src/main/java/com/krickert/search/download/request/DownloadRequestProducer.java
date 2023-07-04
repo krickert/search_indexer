@@ -1,4 +1,5 @@
 package com.krickert.search.download.request;
+
 import com.krickert.search.model.wiki.DownloadFileRequest;
 import io.micronaut.configuration.kafka.annotation.KafkaClient;
 import io.micronaut.configuration.kafka.annotation.KafkaKey;

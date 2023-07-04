@@ -44,6 +44,27 @@ public class FileDownloaderImpl implements FileDownloader {
         this.maxTries = maxTries;
     }
 
+    private static void createBackupOfFile(File dstFile, String md5) {
+        File backupFile = getBackupFile(dstFile);
+        try {
+            FileUtils.copyFile(dstFile, backupFile);
+            log.info("backed up file {} as {}", dstFile.getName(), backupFile.getName());
+        } catch (IOException e) {
+            log.error("we couldn't copy the backup file {} from existing file {} due to mismatch md5 {}",
+                    backupFile.getName(), dstFile.getName(), md5);
+            throw new RuntimeException(e);
+        }
+    }
+
+    @NotNull
+    private static File getBackupFile(File dstFile) {
+        File backupFile = new File(dstFile.getName() + ".backup");
+        if (backupFile.exists()) {
+            return getBackupFile(backupFile);
+        }
+        return backupFile;
+    }
+
     @Override
     public File download(URL url, File dstFile) {
         Preconditions.checkNotNull(url);
@@ -82,7 +103,7 @@ public class FileDownloaderImpl implements FileDownloader {
             throw new IllegalArgumentException("file " + dstFile.getName() + " is a directory.");
         }
         if (dstFile.exists() && dstFile.isFile()) {
-            if(checkMd5(md5,dstFile)) {
+            if (checkMd5(md5, dstFile)) {
                 log.info("File {} has md5 {} and is already there.  Skipping.", dstFile.getAbsoluteFile(), md5);
                 return;
             } else {
@@ -115,27 +136,6 @@ public class FileDownloaderImpl implements FileDownloader {
         }
     }
 
-    private static void createBackupOfFile(File dstFile, String md5) {
-        File backupFile = getBackupFile(dstFile);
-        try {
-            FileUtils.copyFile(dstFile, backupFile);
-            log.info("backed up file {} as {}", dstFile.getName(), backupFile.getName());
-        } catch (IOException e) {
-            log.error("we couldn't copy the backup file {} from existing file {} due to mismatch md5 {}",
-                    backupFile.getName(), dstFile.getName(), md5);
-            throw new RuntimeException(e);
-        }
-    }
-
-    @NotNull
-    private static File getBackupFile(File dstFile) {
-        File backupFile = new File(dstFile.getName() + ".backup");
-        if (backupFile.exists()) {
-            return getBackupFile(backupFile);
-        }
-        return backupFile;
-    }
-
     @Override
     public boolean checkMd5(String md5Sum, File theFile) {
         try {
@@ -157,6 +157,10 @@ public class FileDownloaderImpl implements FileDownloader {
         }
     }
 
+    public enum DownloadStatus {
+        IN_PROGRESS, COMPLETED, ERROR
+    }
+
     static class FileDownloadResponseHandler implements HttpClientResponseHandler<File> {
 
         private final File target;
@@ -171,10 +175,6 @@ public class FileDownloaderImpl implements FileDownloader {
             FileUtils.copyInputStreamToFile(source, this.target);
             return this.target;
         }
-    }
-
-    public enum DownloadStatus {
-        IN_PROGRESS, COMPLETED, ERROR
     }
 
 }
