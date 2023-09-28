@@ -1,3 +1,0 @@
-kafka:
-  enabled: true
-  schema.registry.url: mock://localhost:8081

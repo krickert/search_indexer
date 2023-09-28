@@ -1,8 +1,0 @@
-micronaut:
-  application:
-    name: pipe-deeplearning4j
-consul:
-  client:
-    registration:
-      enabled: true
-    defaultZone: "${CONSUL_HOST:localhost}:${CONSUL_PORT:8500}"

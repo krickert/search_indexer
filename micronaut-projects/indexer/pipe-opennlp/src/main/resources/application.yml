@@ -1,8 +1,0 @@
-micronaut:
-  application:
-    name: pipe-nlp
-consul:
-  client:
-    registration:
-      enabled: true
-    defaultZone: "${CONSUL_HOST:localhost}:${CONSUL_PORT:8500}"

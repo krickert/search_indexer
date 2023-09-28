@@ -1,6 +1,0 @@
-applicationType: messaging
-defaultPackage: com.krickert.search.download.dump
-testFramework: junit
-sourceLanguage: java
-buildTool: maven
-features: [annotation-api, app-name, assertj, awaitility, graalvm, jackson-databind, java, java-application, junit, kafka, lombok, maven, readme, shade, slf4j-simple, test-resources, testcontainers, yaml]

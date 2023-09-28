@@ -1,4 +1,0 @@
-grpc:
-  client:
-    discovery:
-      enabled: false
