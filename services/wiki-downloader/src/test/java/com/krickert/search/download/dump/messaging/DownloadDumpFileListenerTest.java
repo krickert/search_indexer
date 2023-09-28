@@ -1,6 +1,5 @@
 package com.krickert.search.download.dump.messaging;
 
-import com.krickert.search.download.dump.messaging.DownloadDumpFileListener;
 import com.krickert.search.model.constants.KafkaProtobufConstants;
 import com.krickert.search.model.wiki.DownloadFileRequest;
 import com.krickert.search.model.wiki.DownloadedFile;
@@ -33,7 +32,7 @@ import static org.junit.jupiter.api.TestInstance.Lifecycle.PER_CLASS;
 
 @MicronautTest
 @TestInstance(PER_CLASS)
-class DownloadDumpFileListenerTest {
+class DownloadDumpFileListenerTest extends AbstractKafkaTest {
 
 
     static final ConcurrentLinkedQueue<DownloadedFile> results = new ConcurrentLinkedQueue<>();
