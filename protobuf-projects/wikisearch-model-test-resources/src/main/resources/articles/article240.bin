@@ -1,0 +1,496 @@
+
+41509Phased array��In antenna theory, a phased array usually means an electronically scanned array, a computer-controlled array of antennas which creates a beam of radio waves that can be electronically steered to point in different directions without moving the antennas.
+
+In a simple array antenna, the radio frequency current from the transmitter is fed to multiple individual antenna elements   with the proper phase relationship so that the radio waves from the separate elements combine (superpose) to form beams, to increase power radiated in desired directions and suppress radiation in undesired directions.  In a phased array, the power from the transmitter is fed to the radiating elements through devices called phase shifters, controlled by a computer system, which can alter the phase or signal delay electronically, thus steering the beam of radio waves to a different direction.  Since the size of an antenna array must extend many wavelengths to achieve the high gain needed for narrow beamwidth, phased arrays are mainly practical at the high frequency end of the radio spectrum, in the UHF and microwave bands, in which the operating wavelengths are conveniently small.
+
+Phased arrays were originally conceived for use in military radar systems, to steer a beam of radio waves quickly across the sky to detect planes and missiles. These systems are now widely used and have spread to civilian applications such as 5G MIMO for cell phones. The phased array principle is also used in acoustics, and phased arrays of acoustic transducers are used in medical ultrasound imaging scanners (phased array ultrasonics), oil and gas prospecting (reflection seismology), and military sonar systems.
+
+The term "phased array" is also used to a lesser extent for unsteered array antennas in which the phase of the feed power and thus the radiation pattern of the antenna array is fixed. [http://glossary.its.bldrdoc.gov/fs-1037/dir-027/_3979.htm Definition of Phased Array] . Accessed 27 April 2006. For example, AM broadcast radio antennas consisting of multiple mast radiators fed so as to create a specific radiation pattern are also called "phased arrays".
+
+Types 
+
+Phased arrays take multiple forms. However, the four most common are the passive electronically scanned array (PESA), active electronically scanned array (AESA), hybrid beam forming phased array, and digital beam forming (DBF) array.
+
+A passive phased array or passive electronically scanned array (PESA) is a phased array in which the antenna elements are connected to a single transmitter and/or receiver, as shown in the first animation at top. PESAs are the most common type of phased array. Generally speaking, a PESA uses one receiver/exciter for the entire array.
+
+An active phased array or active electronically scanned array (AESA) is a phased array in which each antenna element has an analog transmitter/receiver (T/R) module which creates the phase shifting required to electronically steer the antenna beam.  Active arrays are a more advanced, second-generation phased-array technology which are used in military applications; unlike PESAs they can radiate several beams of radio waves at multiple frequencies in different directions simultaneously. However, the number of simultaneous beams is limited by practical reasons of electronic packaging of the beam formers to approximately three simultaneous beams for an AESA. Each beam former has a receiver/exciter connected to it.
+
+A hybrid beam forming phased array can be thought of as a combination of an AESA and a digital beam forming phased array. It uses subarrays that are active phased arrays (for instance, a subarray may be 64, 128 or 256 elements and the number of elements depends upon system requirements). The subarrays are combined to form the full array. Each subarray has its own digital receiver/exciter. This approach allows clusters of simultaneous beams to be created.
+
+A digital beam forming (DBF) phased array has a digital receiver/exciter at each element in the array. The signal at each element is digitized by the receiver/exciter. This means that antenna beams can be formed digitally in a field programmable gate array (FPGA) or the array computer. This approach allows for multiple simultaneous antenna beams to be formed.
+
+A conformal antenna is a phased array in which the individual antennas, instead of being arranged in a flat plane, are mounted on a curved surface.  The phase shifters compensate for the different path lengths of the waves due to the antenna elements' varying position on the surface, allowing the array to radiate a plane wave.  Conformal antennas are used in aircraft and missiles, to integrate the antenna into the curving surface of the aircraft to reduce aerodynamic drag.
+
+History 
+
+Phased array transmission was originally shown in 1905 by Nobel laureate Karl Ferdinand Braun who demonstrated enhanced transmission of radio waves in one direction. Braun's Nobel Prize lecture. The phased array section is on pages 239–240."Die Strassburger Versuche über gerichtete drahtlose Telegraphie" (The Strassburg experiments on directed wireless telegraphy), Elektrotechnische und Polytechnische Rundschau (Electrical technology and polytechnic review [a weekly]), (1 November 1905). This article is summarized (in German) in:
+Adolf Prasch, ed., Die Fortschritte auf dem Gebiete der Drahtlosen Telegraphie [Progress in the field of wireless telegraphy] (Stuttgart, Germany: Ferdinand Enke, 1906), vol. 4, [https://books.google.com/books?idZAAMAAAAYAAJ&pg
+RA1-PA184#vonepage&q&f
+false pages 184–185]. During World War II, Nobel laureate Luis Alvarez used phased array transmission in a rapidly steerable radar system for "ground-controlled approach", a system to aid in the landing of aircraft. At the same time, the GEMA in Germany built the Mammut 1.http://www.100jahreradar.de/index.html?/gdr_5_deutschefunkmesstechnikim2wk.html  Mamut1 first early warning PESA Radar It was later adapted for radio astronomy leading to Nobel Prizes for Physics for Antony Hewish and Martin Ryle after several large phased arrays were developed at the University of Cambridge Interplanetary Scintillation Array. This design is also used for radar, and is generalized in interferometric radio antennas.
+
+In 2004, Caltech researchers demonstrated the first integrated silicon-based phased array receiver at 24 GHz with 8 elements. This was followed by their demonstration of a CMOS 24 GHz phased array transmitter in 2005 and a fully integrated 77 GHz phased array transceiver with integrated antennas in 2006 by the Caltech team. In 2007, DARPA researchers announced a 16 element phased array radar antenna which was also integrated with all the necessary circuits on a single silicon chip and operated at 30–50 GHz.[http://ucsdnews.ucsd.edu/newsrel/science/10-07PhasedArrayChipDK-L.asp World’s Most Complex Silicon Phased Array Chip Developed at UC San Diego]  in UCSD News (reviewed 2 November 2007)
+
+The relative amplitudes of—and constructive and destructive interference effects among—the signals radiated by the individual antennas determine the effective radiation pattern of the array. A phased array may be used to point a fixed radiation pattern, or to scan rapidly in azimuth or elevation. Simultaneous electrical scanning in both azimuth and elevation was first demonstrated in a phased array antenna at Hughes Aircraft Company, California in 1957.See Joseph Spradley, "A Volumetric Electrically Scanned Two-Dimensional Microwave Antenna Array," IRE National Convention Record, Part I Antennas and Propagation; Microwaves, New York: The Institute of Radio Engineers, 1958, 204–212.
+
+Applications 
+
+Broadcasting 
+
+In broadcast engineering, the term 'phased array' has a meaning different from its normal meaning, it means an ordinary array antenna, an array of multiple mast radiators designed to radiate a directional radiation pattern, as opposed to a single mast which radiates an omnidirectional pattern. Broadcast phased arrays have fixed radiation patterns and are not 'steered' during operation as are other phased arrays.
+
+Phased arrays are used by many AM broadcast radio stations to enhance signal strength and therefore coverage in the city of license, while minimizing interference to other areas. Due to the differences between daytime and nighttime ionospheric propagation at mediumwave frequencies, it is common for AM broadcast stations to change between day (groundwave) and night (skywave) radiation patterns by switching the phase and power levels supplied to the individual antenna elements (mast radiators) daily at sunrise and sunset. For shortwave broadcasts many stations use arrays of horizontal dipoles. A common arrangement uses 16 dipoles in a 4×4 array. Usually this is in front of a wire grid reflector. The phasing is often switchable to allow beam steering in azimuth and sometimes elevation.
+
+Radar 
+
+Phased arrays were invented for radar tracking of ballistic missiles, and because of their fast tracking abilities phased array radars are widely used in military applications.  For example, because of the rapidity with which the beam can be steered, phased array radars allow a warship to use one radar system for surface detection and tracking (finding ships), air detection and tracking (finding aircraft and missiles) and missile uplink capabilities. Before using these systems, each surface-to-air missile in flight required a dedicated fire-control radar, which meant that radar-guided weapons could only engage a small number of simultaneous targets. Phased array systems can be used to control missiles during the mid-course phase of the missile's flight. During the terminal portion of the flight, continuous-wave fire control directors provide the final guidance to the target. Because the antenna pattern is electronically steered, phased array systems can direct radar beams fast enough to maintain a fire control quality track on many targets simultaneously while also controlling several in-flight missiles.
+
+The AN/SPY-1 phased array radar, part of the Aegis Combat System deployed on modern U.S. cruisers and destroyers, "is able to perform search, track and missile guidance functions simultaneously with a capability of over 100 targets.". Likewise, the Thales Herakles phased array multi-function radar used in service with France and Singapore has a track capacity of 200 targets and is able to achieve automatic target detection, confirmation and track initiation in a single scan, while simultaneously providing mid-course guidance updates to the MBDA Aster missiles launched from the ship. The German Navy and the Royal Dutch Navy have developed the Active Phased Array Radar System (APAR). The MIM-104 Patriot and other ground-based antiaircraft systems use phased array radar for similar benefits.
+
+Phased arrays are used in naval sonar, in active (transmit and receive) and passive (receive only) and hull-mounted and towed array sonar.
+
+Space probe communication 
+
+The MESSENGER spacecraft was a space probe mission to the planet Mercury (2011–2015). This was the first deep-space mission to use a phased-array antenna for communications. The radiating elements are circularly-polarized, slotted waveguides. The antenna, which uses the X band, used 26 radiative elements and can gracefully degrade.
+
+Weather research usage 
+
+The National Severe Storms Laboratory has been using a SPY-1A phased array antenna, provided by the US Navy, for weather research at its Norman, Oklahoma facility since April 23, 2003. It is hoped that research will lead to a better understanding of thunderstorms and tornadoes, eventually leading to increased warning times and enhanced prediction of tornadoes. Current project participants include the National Severe Storms Laboratory and National Weather Service Radar Operations Center, Lockheed Martin, United States Navy, University of Oklahoma School of Meteorology, School of Electrical and Computer Engineering, and Atmospheric Radar Research Center, Oklahoma State Regents for Higher Education, the Federal Aviation Administration, and Basic Commerce and Industries. The project includes research and development, future technology transfer and potential deployment of the system throughout the United States. It is expected to take 10 to 15 years to complete and initial construction was approximately $25 million.National Oceanic and Atmospheric Administration. [http://www.norman.noaa.gov/publicaffairs/backgrounders/backgrounder_par.html PAR Backgrounder] . Accessed 6 April 2006. A team from Japan's RIKEN Advanced Institute for Computational Science (AICS) has begun experimental work on using phased-array radar with a new algorithm for instant weather forecasts.
+
+Optics 
+
+Within the visible or infrared spectrum of electromagnetic waves it is possible to construct optical phased arrays. They are used in wavelength multiplexers and filters for telecommunication purposes,P. D. Trinh, S. Yegnanarayanan, F. Coppinger and B. Jalali [http://www.ee.ucla.edu/~oecs/comp_pub/intr_opt/Optics23.pdf Silicon-on-Insulator (SOI) Phased-Array Wavelength Multi/Demultiplexer with Extremely Low-Polarization Sensitivity] , IEEE Photonics Technology Letters, Vol. 9, No. 7, July 1997 laser beam steering, and holography. Synthetic array heterodyne detection is an efficient method for multiplexing an entire phased array onto a single element photodetector. The dynamic beam forming in an optical phased array transmitter can be used to electronically raster or vector scan images without using lenses or mechanically moving parts in a lensless projector. Optical phased array receivers have been demonstrated to be able to act as lensless cameras by selectively looking at different directions.
+
+Satellite broadband internet transceivers 
+
+Starlink is a low Earth orbit satellite constellation that is under construction . It is designed to provide broadband internet connectivity to consumers; the user terminals of the system will use phased array antennas.
+
+Radio-frequency identification (RFID) 
+
+By 2014, phased array antennas were integrated into RFID systems to increase the area of coverage of a single system by 100% to 76200 sqm while still using traditional passive UHF tags.
+
+Human-machine interfaces (HMI) 
+
+A phased array of acoustic transducers, denominated airborne ultrasound tactile display (AUTD), was developed in 2008 at the University of Tokyo's Shinoda Lab to induce tactile feedback. SIGGRAPH 2008, Airborne Ultrasound Tactile Display This system was demonstrated to enable a user to interactively manipulate virtual holographic objects. SIGGRAPH 2009, Touchable holography
+
+Radio Astronomy 
+
+Phased Array Feeds (PAF) have recently been used at the focus of radio telescopes to provide many beams, giving the radio telescope a very wide field of view. Two examples are the ASKAP telescope in Australia and the Apertif upgrade to the Westerbork Synthesis Radio Telescope in The Netherlands.
+
+Mathematical perspective and formulas
+
+Mathematically a phased array is an example of N-slit diffraction, in which the radiation field at the receiving point is the result of the coherent addition of N point sources in a line.  Since each individual antenna acts as a slit, emitting radio waves, their diffraction pattern can be calculated by adding the phase shift φ to the fringing term.
+
+We will begin from the N-slit diffraction pattern derived on the diffraction formalism page, with N slits of equal size a and spacing d.
+
+  \psi = \psi_0\,
+    \frac{\sin\left(\frac{\pi a}{\lambda} \sin\theta \right)}
+         {\frac{\pi a}{\lambda} \sin\theta}\,
+    \frac{\sin\left(\frac{N}{2}  kd \sin\theta \right)}
+         {\sin\left(\frac{kd}{2}    \sin\theta \right)}
+
+Now, adding a φ term to the kd\sin\theta\, fringe effect in the second term yields:
+
+  \psi = \psi_0\,
+    \frac{\sin\left(\frac{\pi a}{\lambda} \sin\theta\right)}
+         {\frac{\pi a}{\lambda} \sin\theta}\,
+    \frac{\sin\left(\frac{N}{2} \left(\frac{\lambda} \sin\theta + \phi \right)\right)}
+         {\sin\left(\frac{\pi d}{\lambda} \sin\theta + \frac{\phi}{2} \right)}
+
+Taking the square of the wave function gives us the intensity of the wave.
+
+\begin{align}
+  I &= I_0 \left(\frac{\sin\left(\frac{\pi a}{\lambda} \sin\theta\right)}
+                      {\frac{\pi a}{\lambda} \sin\theta}
+           \right)^2
+           \left(\frac{\sin\left(\frac{N}{2} \left(\frac{2\pi d}{\lambda} \sin\theta + \phi\right)\right)}
+                      {\sin\left(\frac{\pi d}{\lambda} \sin\theta + \frac{\phi}{2} \right)}
+           \right)^2 \\
+  I &= I_0 \left(\frac{\sin\left(\frac{\pi a}{\lambda} \sin\theta\right)}
+                                {\frac{\pi a}{\lambda} \sin\theta}
+           \right)^2
+           \left(\frac{\sin\left(\frac{\pi  }{\lambda} Nd \sin\theta + \frac{N}{2} \phi\right)}
+                      {\sin\left(\frac{\pi d}{\lambda}    \sin\theta + \frac{\phi}{2} \right)}\right)^2  
+\end{align}
+
+Now space the emitters a distance d 
+ \frac{\lambda}{4} apart.  This distance is chosen for simplicity of calculation but can be adjusted as any scalar fraction of the wavelength.
+
+I = I_0"��{{Short description|Array of antennas creating a steerable beam}}
+{{About|the general theory of an electromagnetic phased array|the ultrasonic and medical imaging application|Phased array ultrasonics|the optical application|Phased-array optics}}
+[[File:Phased array animation with arrow 10frames 371x400px 100ms.gif|thumb|upright=1.5|Animation showing how a phased array works. It consists of an array of antenna elements ''(A)'' powered by a [[transmitter]] ''(TX)''.  The feed current for each element passes through a [[phase shifter]] ''(φ)'' controlled by a computer ''(C)''.  The moving red lines show the wavefronts of the radio waves emitted by each element.  The individual wavefronts are spherical, but they combine ([[Superposition principle|superpose]]) in front of the antenna to create a [[plane wave]], a beam of radio waves travelling in a specific direction.  The phase shifters delay the radio waves progressively going up the line so each antenna emits its wavefront later than the one below it.  This causes the resulting plane wave to be directed at an angle ''θ'' to the antenna's axis.  By changing the phase shifts the computer can instantly change the angle ''θ'' of the beam.  Most phased arrays have two-dimensional arrays of antennas instead of the linear array shown here, and the beam can be steered in two dimensions. The velocity of the radio waves shown have been slowed down in this diagram.]] 
+[[File:Phasearray.gif|thumb|upright=1.3|Animation showing the [[radiation pattern]] of a phased array of 15 antenna elements spaced a quarter wavelength apart as the [[phase shift|phase difference]] between adjacent antennas is swept between −120 and 120 degrees. The dark area is the beam or [[main lobe]], while the light lines fanning out around it are [[sidelobe]]s.]]
+
+In [[antenna (radio)|antenna]] theory, a '''phased array''' usually means an '''electronically scanned array''', a computer-controlled [[Antenna array|array of antennas]] which creates a beam of radio waves that can be electronically steered to point in different directions without moving the antennas.<ref name="Brown2">{{cite book
+ | last1  = Brown
+ | first1 = Arik D. 
+ | title = Active Electronically Scanned Arrays: Fundamentals and Applications
+ | publisher = Wiley-IEEE Press
+ | date   = 2021
+ | url    = https://www.wiley.com/en-us/Active+Electronically+Scanned+Arrays%3A+Fundamentals+and+Applications-p-9781119749059
+ | isbn   = 978-1-119-74905-9
+ }}</ref><ref name="Brown1">{{cite book
+ | last1  = Brown
+ | first1 = Arik D. 
+ | editor-first1 = Arik D 
+ | editor-last1 = Brown 
+ | title = Electronically Scanned Arrays: MATLAB Modeling and Simulation, 1st Ed.
+ | publisher = CRC Press
+ | date   = 2012
+ | doi = 10.1201/b12044 
+ | url    = https://www.taylorfrancis.com/books/edit/10.1201/b12044/electronically-scanned-arrays-arik-brown
+ | isbn = 9781315217130
+ }}</ref><ref name="Milligan">{{cite book
+ | last1  = Milligan
+ | first1 = Thomas A. 
+ | title  = Modern Antenna Design, 2nd Ed.
+ | publisher = John Wiley & Sons
+ | date   = 2005
+ | url    = https://books.google.com/books?id=PPyDQXAd09kC&q=%22phased+array%22&pg=PA102
+ | isbn   = 0471720607
+ }}</ref><ref name="Balanis">{{cite book
+ | last1  = Balanis
+ | first1 = Constantine A. 
+ | title  = Antenna Theory: Analysis and Design, 4th Ed.
+ | publisher = John Wiley & Sons
+ | date   = 2015
+ | pages  = 302–303
+ | url    = https://books.google.com/books?id=PTFcCwAAQBAJ&q=%22phased%20array%22&pg=PA303
+ | isbn   = 978-1119178989
+ }}</ref><ref name="Stutzman">{{cite book
+ | last1  = Stutzman
+ | first1 = Warren L.
+ | last2  =  Thiele
+ | first2 = Gary A. 
+ | title  = Antenna Theory and Design
+ | publisher = John Wiley & Sons
+ | date   = 2012
+ | pages  = 315
+ | url    = https://books.google.com/books?id=xhZRA1K57wIC&q=%22phased+array%22&pg=PA315
+ | isbn   = 978-0470576649
+ }}</ref><ref name="Lida">{{cite book
+ | last1  = Lida
+ | first1 = Takashi
+ | title  = Satellite Communications: System and Its Design Technology
+ | publisher = IOS Press
+ | date   = 2000
+ | url    = https://books.google.com/books?id=v-OuSc4t7IQC&q=%22phased+array%22&pg=PA128
+ | isbn   = 4274903796
+ }}</ref><ref name="Laplante">{{cite book
+ | last1  = Laplante
+ | first1 = Phillip A. 
+ | title  = Comprehensive Dictionary of Electrical Engineering
+ | publisher = Springer Science and Business Media
+ | date   = 1999
+ | url    = https://books.google.com/books?id=soSsLATmZnkC&q=%22phased+array%22&pg=PA485
+ | isbn   = 3540648356
+ }}</ref><ref name="Visser">{{cite book
+ | last1  = Visser
+ | first1 = Hubregt J. 
+ | title  = Array and Phased Array Antenna Basics
+ | publisher = John Wiley & Sons
+ | date   = 2006
+ | pages  = xi
+ | url    = https://books.google.com/books?id=qv9luhVAKAQC&q=%22phased+array%22&pg=PAxi
+ | isbn   = 0470871180
+ }}</ref><ref name="Golio">{{cite book
+ | last1  = Golio
+ | first1 = Mike
+ | last2  = Golio
+ | first2 = Janet
+ | title  = RF and Microwave Passive and Active Technologies
+ | publisher = CRC Press
+ | date   = 2007
+ | pages  = 10.1
+ | url    = https://books.google.com/books?id=MCj9jxSVQKIC&q=%22phased+array%22&pg=SA9-PA49
+ | isbn   = 978-1420006728
+ }}</ref><ref name="Mazda">{{cite book
+ | last1  = Mazda
+ | first1 = Xerxes
+ | last2  = Mazda
+ | first2 = F. F.
+ | title  = The Focal Illustrated Dictionary of Telecommunications
+ | publisher = Taylor & Francis
+ | date   = 1999
+ | pages  = 476
+ | url    = https://books.google.com/books?id=rhCc_qibz5sC&q=%22phased+array%22&pg=PA476
+ | isbn   = 0240515447
+ }}</ref>
+
+In a simple [[array antenna]], the [[radio frequency]] current from the [[transmitter]] is fed to multiple individual antenna elements   with the proper [[phase (waves)|phase]] relationship so that the radio waves from the separate elements combine ([[superposition|superpose]]) to form beams, to increase power radiated in desired directions and suppress radiation in undesired directions.  In a phased array, the power from the transmitter is fed to the radiating elements through devices called ''[[phase shifter]]s'', controlled by a computer system, which can alter the phase or signal delay electronically, thus steering the beam of radio waves to a different direction.  Since the size of an antenna array must extend many wavelengths to achieve the high gain needed for narrow beamwidth, phased arrays are mainly practical at the high [[frequency]] end of the radio spectrum, in the [[ultrahigh frequency|UHF]] and [[microwave]] bands, in which the operating wavelengths are conveniently small.
+
+Phased arrays were originally conceived for use in military [[radar]] systems, to steer a beam of radio waves quickly across the sky to detect planes and missiles. These systems are now widely used and have spread to civilian applications such as [[5G]] [[MIMO]] for cell phones. The phased array principle is also used in [[acoustics]], and phased arrays of [[transducer|acoustic transducers]] are used in medical [[ultrasound imaging]] scanners ([[phased array ultrasonics]]), [[hydrocarbon exploration|oil and gas prospecting]] ([[reflection seismology]]), and military [[sonar]] systems.
+
+The term "phased array" is also used to a lesser extent for unsteered [[array antenna]]s in which the phase of the feed power and thus the radiation pattern of the antenna array is fixed.<ref name="Visser"/><ref>{{FS1037C MS188}} [http://glossary.its.bldrdoc.gov/fs-1037/dir-027/_3979.htm Definition of Phased Array] {{webarchive|url=https://web.archive.org/web/20041021132428/http://glossary.its.bldrdoc.gov/fs-1037/dir-027/_3979.htm |date=2004-10-21 }}. Accessed 27 April 2006.</ref> For example, AM broadcast radio antennas consisting of multiple [[mast radiator]]s fed so as to create a specific radiation pattern are also called "phased arrays".
+
+== Types ==
+Phased arrays take multiple forms. However, the four most common are the passive electronically scanned array (PESA), active electronically scanned array (AESA), hybrid beam forming phased array, and digital beam forming (DBF) array.<ref>{{cite book |last1=Sturdivant, Quan, Chang |title=Systems Engineering of Phased Arrays |date=2018 |publisher=Artech House |isbn=978-1630814885 |url=https://www.amazon.com/gp/product/1630814881/ref=dbs_a_def_rwt_bibl_vppi_i0}}</ref>
+
+A ''passive phased array'' or ''[[passive electronically scanned array]]'' (PESA) is a phased array in which the antenna elements are connected to a single [[transmitter]] and/or [[radio receiver|receiver]], as shown in the first animation at top. PESAs are the most common type of phased array. Generally speaking, a PESA uses one receiver/exciter for the entire array.
+
+An ''active phased array'' or ''[[active electronically scanned array]]'' (AESA) is a phased array in which each antenna element has an analog transmitter/receiver (T/R) module<ref>{{cite book |last1=Sturdivant, Harris |title=Transmit Receive Modules for Radar and Communication Systems |date=2015 |publisher=Artech House |location=Norwood, MA |isbn=978-1608079797 |url=https://www.amazon.com/gp/product/1608079791/ref=dbs_a_def_rwt_bibl_vppi_i2}}</ref> which creates the phase shifting required to electronically steer the antenna beam.  Active arrays are a more advanced, second-generation phased-array technology which are used in military applications; unlike PESAs they can radiate several beams of radio waves at multiple frequencies in different directions simultaneously. However, the number of simultaneous beams is limited by practical reasons of electronic packaging of the beam formers to approximately three simultaneous beams for an AESA. Each beam former has a receiver/exciter connected to it.
+
+A ''hybrid beam forming phased array'' can be thought of as a combination of an AESA and a digital beam forming phased array. It uses subarrays that are active phased arrays (for instance, a subarray may be 64, 128 or 256 elements and the number of elements depends upon system requirements). The subarrays are combined to form the full array. Each subarray has its own digital receiver/exciter. This approach allows clusters of simultaneous beams to be created.
+
+A ''digital beam forming (DBF) phased array'' has a digital receiver/exciter at each element in the array. The signal at each element is digitized by the receiver/exciter. This means that antenna beams can be formed digitally in a field programmable gate array (FPGA) or the array computer. This approach allows for multiple simultaneous antenna beams to be formed.
+
+A ''[[conformal antenna]]''<ref name=" Pandey">{{cite book
+ | last1  =  Pandey
+ | first1 = Anil 
+ | title  = Practical Microstrip and Printed Antenna Design
+ | publisher = Artech House
+ | date   = 2019
+ | location = Bostan
+ | pages  = 443
+ | language = en
+ | url    = https://us.artechhouse.com/Practical-Microstrip-and-Printed-Antenna-Design-P2002.aspx
+ | isbn   = 9781630816681
+ }}</ref> is a phased array in which the individual antennas, instead of being arranged in a flat plane, are mounted on a curved surface.  The phase shifters compensate for the different path lengths of the waves due to the antenna elements' varying position on the surface, allowing the array to radiate a plane wave.  Conformal antennas are used in aircraft and missiles, to integrate the antenna into the curving surface of the aircraft to reduce aerodynamic drag.
+{{breakafterimages}}
+
+== History ==
+[[Image:Braun phased array antenna 1905.png|thumb|[[Ferdinand Braun]]'s 1905 directional antenna which used the phased array principle, consisting of 3 monopole antennas in an equilateral triangle. A quarter-wave delay in the feedline of one antenna caused the array to radiate in a beam. The delay could be switched manually into any of the 3 feeds, rotating the antenna beam by 120°.]]
+{{multiple image
+| align = right
+| direction = horizontal
+| header   =
+| image1   = PAVE PAWS Radar Clear AFS Alaska.jpg
+| caption1 = US [[PAVE PAWS]] [[active electronically scanned array|active phased array]] ballistic missile detection radar in Alaska. Completed in 1979, it was one of the first active phased arrays.
+| width1   = 180
+| image2   = Cape Cod Air Station - HAER MA-151-A - 384568pu.jpg
+| caption2 = Closeup of some of the 2677 crossed dipole antenna elements that make up the plane array. This antenna produced a narrow "pencil" beam only 2.2° wide.
+| width2   = 195
+| footer   =
+}}
+[[File:PAVE PAWS&BMEWS.svg|thumb|[[BMEWS]] & [[PAVE PAWS]] Radars]]
+[[Image:Mammut Hoarding radar illustration.png|thumb|Mammut phased array radar [[World War II]]]]
+
+Phased array transmission was originally shown in 1905 by [[Nobel Prize|Nobel]] laureate [[Karl Ferdinand Braun]] who demonstrated enhanced transmission of [[radio]] waves in one direction.<ref>{{cite web |url=http://nobelprize.org/nobel_prizes/physics/laureates/1909/braun-lecture.pdf |title=Archived copy |access-date=2009-04-22 |url-status=live |archive-url=https://web.archive.org/web/20080706075759/http://nobelprize.org/nobel_prizes/physics/laureates/1909/braun-lecture.pdf |archive-date=2008-07-06 }} Braun's Nobel Prize lecture. The phased array section is on pages 239–240.</ref><ref>"Die Strassburger Versuche über gerichtete drahtlose Telegraphie" (The Strassburg experiments on directed wireless telegraphy), ''Elektrotechnische und Polytechnische Rundschau'' (Electrical technology and polytechnic review [a weekly]), (1 November 1905). This article is summarized (in German) in:
+Adolf Prasch, ed., ''Die Fortschritte auf dem Gebiete der Drahtlosen Telegraphie'' [Progress in the field of wireless telegraphy] (Stuttgart, Germany: Ferdinand Enke, 1906), vol. 4, [https://books.google.com/books?id=ZAAMAAAAYAAJ&pg=RA1-PA184#v=onepage&q&f=false pages 184–185].</ref> During [[World War II]], Nobel laureate [[Luis Walter Alvarez|Luis Alvarez]] used phased array transmission in a rapidly [[Beam steering|steerable]] [[radar]] system for "[[ground-controlled approach]]", a system to aid in the landing of aircraft. At the same time, the GEMA in Germany built the [[Mammut radar|Mammut]] 1.<ref>http://www.100jahreradar.de/index.html?/gdr_5_deutschefunkmesstechnikim2wk.html {{webarchive|url=https://web.archive.org/web/20070929154159/http://www.100jahreradar.de/index.html?%2Fgdr_5_deutschefunkmesstechnikim2wk.html |date=2007-09-29 }} Mamut1 first early warning PESA Radar</ref> It was later adapted for [[radio astronomy]] leading to [[Nobel Prize for Physics|Nobel Prizes for Physics]] for [[Antony Hewish]] and [[Martin Ryle]] after several large phased arrays were developed at the [[University of Cambridge]] [[Interplanetary Scintillation Array]]. This design is also used for [[radar]], and is generalized in [[interferometry|interferometric]] radio antennas.
+
+In 2004, [[California Institute of Technology|Caltech]] researchers demonstrated the first integrated silicon-based phased array receiver at 24&nbsp;GHz with 8 elements.<ref>{{Cite web|url=http://chic.caltech.edu/wp-content/uploads/2013/06/fullyintegrated24ghz.pdf|title=A Fully Integrated 24GHz 8-Path Phased-Array Receiver in Silicon|url-status=live|archive-url=https://web.archive.org/web/20180511100234/http://chic.caltech.edu/wp-content/uploads/2013/06/fullyintegrated24ghz.pdf|archive-date=2018-05-11}}</ref> This was followed by their demonstration of a CMOS 24&nbsp;GHz phased array transmitter in 2005<ref>{{Cite web|url=http://chic.caltech.edu/wp-content/uploads/2013/05/11.7_final.pdf|title=A 24GHz Phased-Array Transmitter in 0.18μm CMOS|url-status=live|archive-url=https://web.archive.org/web/20180511100233/http://chic.caltech.edu/wp-content/uploads/2013/05/11.7_final.pdf|archive-date=2018-05-11}}</ref> and a fully integrated 77&nbsp;GHz phased array transceiver with integrated antennas in 2006<ref>{{Cite web|url=http://chic.caltech.edu/wp-content/uploads/2013/05/Aydin_ISSCC_06.pdf|title=A 77GHz 4-Element Phased Array Receiver with On-Chip Dipole Antennas in Silicon|url-status=live|archive-url=https://web.archive.org/web/20180511100234/http://chic.caltech.edu/wp-content/uploads/2013/05/Aydin_ISSCC_06.pdf|archive-date=2018-05-11}}</ref><ref>{{Cite web|url=http://chic.caltech.edu/wp-content/uploads/2006/02/HajimiriArun_ISSCC_77TX_06.pdf|title=A 77GHz Phased-Array Transmitter with Local LO- Path Phase-Shifting in Silicon|url-status=live|archive-url=https://web.archive.org/web/20150909231447/http://chic.caltech.edu/wp-content/uploads/2006/02/HajimiriArun_ISSCC_77TX_06.pdf|archive-date=2015-09-09}}</ref> by the Caltech team. In 2007, [[DARPA]] researchers announced a 16 element phased array radar antenna which was also integrated with all the necessary circuits on a single silicon chip and operated at 30–50&nbsp;GHz.<ref>[http://ucsdnews.ucsd.edu/newsrel/science/10-07PhasedArrayChipDK-L.asp World’s Most Complex Silicon Phased Array Chip Developed at UC San Diego] {{webarchive|url=https://web.archive.org/web/20071225084723/http://ucsdnews.ucsd.edu/newsrel/science/10-07PhasedArrayChipDK-L.asp |date=2007-12-25 }} in UCSD News (reviewed 2 November 2007)</ref>
+
+The relative [[amplitude]]s of—and constructive and destructive [[Interference (wave propagation)|interference]] effects among—the signals radiated by the individual antennas determine the effective [[radiation pattern]] of the array. A phased array may be used to point a fixed radiation pattern, or to [[wikt:scan|scan]] rapidly in [[azimuth]] or elevation. Simultaneous electrical scanning in both azimuth and elevation was first demonstrated in a phased array antenna at [[Hughes Aircraft Company]], California in 1957.<ref>See Joseph Spradley, "A Volumetric Electrically Scanned Two-Dimensional Microwave Antenna Array," IRE National Convention Record, Part I{{Snd}} Antennas and Propagation; Microwaves, New York: The Institute of Radio Engineers, 1958, 204–212.</ref>
+
+== Applications ==
+
+=== Broadcasting ===
+In [[broadcast engineering]], the term 'phased array' has a meaning different from its normal meaning, it means an ordinary [[array antenna]], an array of multiple [[mast radiator]]s designed to radiate a [[directional antenna|directional]] radiation pattern, as opposed to a single mast which radiates an [[omnidirectional antenna|omnidirectional]] pattern. Broadcast phased arrays have fixed radiation patterns and are not 'steered' during operation as are other phased arrays.
+
+Phased arrays are used by many [[AM broadcasting|AM broadcast]] [[radio stations]] to enhance [[signal strength]] and therefore coverage in the [[city of license]], while minimizing [[Interference (communication)|interference]] to other areas. Due to the differences between daytime and nighttime [[ionosphere|ionospheric]] [[radio propagation|propagation]] at [[mediumwave]] frequencies, it is common for AM broadcast stations to change between day ([[groundwave]]) and night ([[skywave]]) radiation patterns by switching the [[phase (waves)|phase]] and power levels supplied to the individual antenna elements ([[mast radiator]]s) daily at [[sunrise]] and [[sunset]]. For [[shortwave]] broadcasts many stations use arrays of horizontal dipoles. A common arrangement uses 16 dipoles in a 4×4 array. Usually this is in front of a wire grid reflector. The phasing is often switchable to allow [[beam steering]] in azimuth and sometimes elevation.
+
+=== Radar ===
+Phased arrays were invented for radar tracking of ballistic missiles, and because of their fast tracking abilities phased array radars are widely used in military applications.  For example, because of the rapidity with which the [[Beam steering|beam can be steered]], phased array radars allow a warship to use one [[radar]] system for surface detection and tracking (finding ships), air detection and tracking (finding aircraft and missiles) and missile uplink capabilities. Before using these systems, each [[surface-to-air missile]] in flight required a dedicated [[fire-control radar]], which meant that radar-guided weapons could only engage a small number of simultaneous targets. Phased array systems can be used to control missiles during the mid-course phase of the missile's flight. During the terminal portion of the flight, [[continuous-wave]] fire control directors provide the final guidance to the target. Because the antenna pattern is [[Beam steering|electronically steered]], phased array systems can direct radar beams fast enough to maintain a [[fire-control system|fire control quality]] track on many targets simultaneously while also controlling several in-flight missiles.
+
+[[File:APAR.jpg|thumb|[[Active Phased Array Radar]] mounted on top of [[Sachsen-class frigate|''Sachsen''-class frigate]] F220 ''Hamburg's'' superstructure of the [[German Navy]]]]
+The [[AN/SPY-1]] phased array radar, part of the [[Aegis Combat System]] deployed on modern U.S. [[cruisers]] and [[destroyers]], "is able to perform search, track and missile guidance functions simultaneously with a capability of over 100 targets."<ref>{{cite web|title=AEGIS Weapon System MK-7 |publisher=[[Jane's Information Group]] |date=2001-04-25 |url=http://www.janes.com/defence/naval_forces/news/misc/aegis010425.shtml |access-date=10 August 2006 |archive-url=https://web.archive.org/web/20060701055247/http://www.janes.com/defence/naval_forces/news/misc/aegis010425.shtml |archive-date=1 July 2006 |url-status=dead }}.</ref> Likewise, the [[Thales Herakles]] phased array multi-function radar used in service with [[France]] and [[Singapore]] has a track capacity of 200 targets and is able to achieve automatic target detection, confirmation and track initiation in a single scan, while simultaneously providing mid-course guidance updates to the [[MBDA Aster]] missiles launched from the ship.<ref>{{cite journal |last=Scott |first=Richard |date=April 2006 |title=Singapore Moves to Realise Its Formidable Ambitions|journal=Jane's Navy International |volume=111 |issue=4 |pages=42–49}}</ref> The [[German Navy]] and the [[Royal Dutch Navy]] have developed the [[Active Phased Array Radar]] System (APAR). The [[MIM-104 Patriot]] and other ground-based antiaircraft systems use phased array radar for similar benefits.
+
+Phased arrays are used in naval sonar, in active (transmit and receive) and passive (receive only) and hull-mounted and [[towed array sonar]].
+
+{{See also |SAMPSON |Active Phased Array Radar |SMART-L |Active Electronically Scanned Array |Aegis combat system |AN/SPY-1 }}
+
+=== Space probe communication ===
+The ''[[MESSENGER]]'' spacecraft was a [[space probe]] mission to the planet [[Mercury (planet)|Mercury]] (2011–2015<ref name=nyt20150430>{{cite news |last=Corum |first=Jonathan |title=Messenger's Collision Course With Mercury |url=https://www.nytimes.com/interactive/2015/04/30/science/space/messenger-collides-with-mercury.html |date=April 30, 2015 |work=[[New York Times]] |access-date=10 May 2015 |url-status=live |archive-url=https://web.archive.org/web/20150510040355/http://www.nytimes.com/interactive/2015/04/30/science/space/messenger-collides-with-mercury.html |archive-date=10 May 2015 }}</ref>). This was the first deep-space mission to use a phased-array antenna for [[telecommunication|communications]]. The radiating elements are [[circular polarization|circularly-polarized]], slotted [[waveguide]]s. The antenna, which uses the [[X band]], used 26 radiative elements and can [[Fault tolerance|gracefully degrade]].<ref>{{cite web|url=http://messenger.jhuapl.edu/the_mission/publications/Wallis_Cheng.2001.pdf |title=Phased-Array Antenna System for the MESSENGER Deep Space Mission |last1=Wallis |first1=Robert E. |last2=Cheng |first2=Sheng |publisher=[[Johns Hopkins University Applied Physics Laboratory]] |access-date=11 May 2015 |archive-url=https://web.archive.org/web/20150518091704/http://messenger.jhuapl.edu/the_mission/publications/Wallis_Cheng.2001.pdf |archive-date=18 May 2015 |url-status=dead }}</ref>
+
+=== Weather research usage ===
+[[File:Par installation.jpg|thumb|left|AN/SPY-1A  radar installation at [[National Severe Storms Laboratory]], Norman, Oklahoma. The enclosing [[radome]] provides weather protection.]]
+The [[National Severe Storms Laboratory]] has been using a SPY-1A phased array antenna, provided by the US Navy, for weather research at its [[Norman, Oklahoma]] facility since April 23, 2003. It is hoped that research will lead to a better understanding of thunderstorms and tornadoes, eventually leading to increased warning times and enhanced prediction of tornadoes. Current project participants include the National Severe Storms Laboratory and National Weather Service Radar Operations Center, [[Lockheed Martin]], [[United States Navy]], [[University of Oklahoma]] School of Meteorology, School of Electrical and Computer Engineering, and [[Atmospheric Radar Research Center]], Oklahoma State Regents for Higher Education, the [[Federal Aviation Administration]], and Basic Commerce and Industries. The project includes [[research and development]], future [[technology transfer]] and potential deployment of the system throughout the United States. It is expected to take 10 to 15 years to complete and initial construction was approximately $25 million.<ref>[[National Oceanic and Atmospheric Administration]]. [http://www.norman.noaa.gov/publicaffairs/backgrounders/backgrounder_par.html PAR Backgrounder] {{webarchive|url=https://web.archive.org/web/20060509134036/http://www.norman.noaa.gov/publicaffairs/backgrounders/backgrounder_par.html |date=2006-05-09 }}. Accessed 6 April 2006.</ref> A team from Japan's RIKEN Advanced Institute for Computational Science (AICS) has begun experimental work on using phased-array radar with a new algorithm for [[3D NowCasting|instant weather forecasts]].<ref>{{cite journal|last1=Otsuka|first1=Shigenori|last2=Tuerhong|first2=Gulanbaier|last3=Kikuchi|first3=Ryota|last4=Kitano|first4=Yoshikazu|last5=Taniguchi|first5=Yusuke|last6=Ruiz|first6=Juan Jose|last7=Satoh|first7=Shinsuke|last8=Ushio|first8=Tomoo|last9=Miyoshi|first9=Takemasa|title=Precipitation Nowcasting with Three-Dimensional Space–Time Extrapolation of Dense and Frequent Phased-Array Weather Radar Observations|journal=Weather and Forecasting|date=February 2016|volume=31|issue=1|pages=329–340|doi=10.1175/WAF-D-15-0063.1|bibcode=2016WtFor..31..329O}}</ref>
+
+=== Optics ===
+{{Main|Phased-array optics}}
+Within the visible or infrared spectrum of electromagnetic waves it is possible to construct [[phased-array optics|optical phased arrays]]. They are used in wavelength multiplexers and filters for telecommunication purposes,<ref>P. D. Trinh, S. Yegnanarayanan, F. Coppinger and B. Jalali [http://www.ee.ucla.edu/~oecs/comp_pub/intr_opt/Optics23.pdf Silicon-on-Insulator (SOI) Phased-Array Wavelength Multi/Demultiplexer with Extremely Low-Polarization Sensitivity] {{webarchive|url=https://web.archive.org/web/20051208105830/http://www.ee.ucla.edu/~oecs/comp_pub/intr_opt/Optics23.pdf |date=2005-12-08 }}, ''IEEE Photonics Technology Letters'', Vol. 9, No. 7, July 1997</ref> laser [[beam steering]], and holography. [[Synthetic array heterodyne detection]] is an efficient method for [[multiplexing]] an entire phased array onto a single element [[photodetector]]. The dynamic beam forming in an optical phased array transmitter can be used to electronically raster or vector scan images without using lenses or mechanically moving parts in a lensless projector.<ref name=":0">{{Cite web|url=http://authors.library.caltech.edu/60779/1/06886570.pdf|title=Electronic Two-Dimensional Beam Steering for Integrated Optical Phased Arrays|archive-url=https://web.archive.org/web/20170809130907/http://authors.library.caltech.edu/60779/1/06886570.pdf|archive-date=2017-08-09|url-status=live}}</ref> Optical phased array receivers have been demonstrated to be able to act as lensless cameras by selectively looking at different directions.<ref name=":1">{{Cite web|url=http://chic.caltech.edu/wp-content/uploads/2017/03/Cleo_2017_2D_OPA_V7.pdf|title=An 8x8 Heterodyne Lens-less OPA Camera|archive-url=https://web.archive.org/web/20170713050602/http://chic.caltech.edu/wp-content/uploads/2017/03/Cleo_2017_2D_OPA_V7.pdf|archive-date=2017-07-13|url-status=live}}</ref><ref name=":2">{{Cite web|url=http://chic.caltech.edu/wp-content/uploads/2016/06/CLEO_SI-2016-STu3G.3.pdf|title=A One-Dimensional Heterodyne Lens-Free OPA Camera|archive-url=https://web.archive.org/web/20170722055717/http://chic.caltech.edu/wp-content/uploads/2016/06/CLEO_SI-2016-STu3G.3.pdf|archive-date=2017-07-22|url-status=live}}</ref>
+
+=== Satellite broadband internet transceivers ===
+[[Starlink]] is a [[low Earth orbit]] [[satellite constellation]] that is under construction {{As of|2021|lc=y}}. It is designed to provide broadband internet connectivity to consumers; the user terminals of the system will use phased array antennas.<ref>
+{{cite AV media |people=Elon Musk, Mike Suffradini |date=7 July 2015 |title=ISSRDC 2015{{Snd}} A Conversation with Elon Musk (2015.7.7) |medium=video |url=https://www.youtube.com/watch?v=ZmEg95wPiVU |access-date=2015-12-30 |time=46:45–50:40 }}</ref>
+
+=== Radio-frequency identification (RFID) ===
+By 2014, phased array antennas were integrated into [[RFID]] systems to increase the area of coverage of a single system by 100% to {{convert|76200|sqm|sqft|abbr=on}} while still using traditional passive [[UHF]] tags.<ref>{{cite web |url=http://www.mojix.com/pdf/Mojix_STAR_System.pdf |title=Mojix Star System |access-date=24 October 2014 |url-status=dead |archive-url=https://web.archive.org/web/20110516020744/http://www.mojix.com/pdf/Mojix_STAR_System.pdf |archive-date=16 May 2011 }}</ref>
+
+=== Human-machine interfaces (HMI) ===
+A phased array of acoustic transducers, denominated airborne ultrasound tactile display (AUTD), was developed in 2008 at the University of Tokyo's Shinoda Lab to induce tactile feedback.<ref>{{cite web |archive-url=https://web.archive.org/web/20090318064419/http://www.alab.t.u-tokyo.ac.jp/~siggraph/08/Tactile/SIGGRAPH08-Tactile.html |archive-date=18 March 2009|title=Airborne Ultrasound Tactile Display|url=http://www.alab.t.u-tokyo.ac.jp/~siggraph/08/Tactile/SIGGRAPH08-Tactile.html}} SIGGRAPH 2008, Airborne Ultrasound Tactile Display</ref> This system was demonstrated to enable a user to interactively manipulate virtual holographic objects.<ref>{{cite web|url=http://www.alab.t.u-tokyo.ac.jp/~siggraph/09/TouchableHolography/SIGGRAPH09-TH.html |title=Touchable Holography |access-date=2009-08-22 |url-status=dead |archive-url=https://web.archive.org/web/20090831054307/http://www.alab.t.u-tokyo.ac.jp/~siggraph/09/TouchableHolography/SIGGRAPH09-TH.html |archive-date=2009-08-31 }} SIGGRAPH 2009, Touchable holography</ref>
+
+=== Radio Astronomy ===
+Phased Array Feeds (PAF)<ref>{{Cite journal|last=Hay, S. G. & O’Sullivan, J. D.|date=2008|title=Analysis of common‐mode effects in a dual‐polarized planar connected‐array antenna|journal=Radio Science|volume=43|issue=6|pages=RS6S04|doi=10.1029/2007RS003798|bibcode=2008RaSc...43.6S04H|doi-access=free}}</ref> have recently been used at the focus of [[radio telescope]]s to provide many beams, giving the radio telescope a very wide [[Angle of view|field of view]]. Two examples are the [[Australian Square Kilometre Array Pathfinder|ASKAP]] telescope in [[Australia]] and the Apertif upgrade to the [[Westerbork Synthesis Radio Telescope]] in The [[Netherlands]].
+
+==Mathematical perspective and formulas==
+{{unreferenced section|date=December 2016}}
+[[File:Phase array sweep.webm|thumb|Radiation pattern of phased array containing 7 emitters spaced a quarter wavelength apart, showing the beam switching direction.  The phase shift between adjacent emitters is switched from 45 degrees to −45 degrees]]
+
+[[File:Phased array radiation pattern.gif|thumb|483x483px|The radiation pattern of a phased array in polar coordinate system.]]
+Mathematically a phased array is an example of ''N''-slit [[diffraction]], in which the radiation field at the receiving point is the result of the coherent addition of ''N'' point sources in a line.  Since each individual antenna acts as a slit, emitting radio waves, their diffraction pattern can be calculated by adding the phase shift φ to the fringing term.
+
+We will begin from the ''N''-slit diffraction pattern derived on the [[diffraction formalism]] page, with <math>N</math> slits of equal size <math>a</math> and spacing <math>d</math>.
+
+:<math>
+  \psi = \psi_0\,
+    \frac{\sin\left(\frac{\pi a}{\lambda} \sin\theta \right)}
+         {\frac{\pi a}{\lambda} \sin\theta}\,
+    \frac{\sin\left(\frac{N}{2}  kd \sin\theta \right)}
+         {\sin\left(\frac{kd}{2}    \sin\theta \right)}
+</math>
+
+Now, adding a φ term to the <math display="inline">kd\sin\theta\,</math> fringe effect in the second term yields:
+
+:<math>
+  \psi = \psi_0\,
+    \frac{\sin\left(\frac{\pi a}{\lambda} \sin\theta\right)}
+         {\frac{\pi a}{\lambda} \sin\theta}\,
+    \frac{\sin\left(\frac{N}{2} \left(\frac{{2\pi d}}{\lambda} \sin\theta + \phi \right)\right)}
+         {\sin\left(\frac{\pi d}{\lambda} \sin\theta + \frac{\phi}{2} \right)}
+</math>
+
+Taking the square of the wave function gives us the intensity of the wave.
+
+:<math>\begin{align}
+  I &= I_0 \left(\frac{\sin\left(\frac{\pi a}{\lambda} \sin\theta\right)}
+                      {\frac{\pi a}{\lambda} \sin\theta}
+           \right)^2
+           \left(\frac{\sin\left(\frac{N}{2} \left(\frac{2\pi d}{\lambda} \sin\theta + \phi\right)\right)}
+                      {\sin\left(\frac{\pi d}{\lambda} \sin\theta + \frac{\phi}{2} \right)}
+           \right)^2 \\
+  I &= I_0 \left(\frac{\sin\left(\frac{\pi a}{\lambda} \sin\theta\right)}
+                                {\frac{\pi a}{\lambda} \sin\theta}
+           \right)^2
+           \left(\frac{\sin\left(\frac{\pi  }{\lambda} Nd \sin\theta + \frac{N}{2} \phi\right)}
+                      {\sin\left(\frac{\pi d}{\lambda}    \sin\theta + \frac{\phi}{2} \right)}\right)^2  
+\end{align}</math>
+
+Now space the emitters a distance <math display="inline">d = \frac{\lambda}{4}</math> apart.  This distance is chosen for simplicity of calculation but can be adjusted as any scalar fraction of the wavelength.
+
+:<math>I = I_0{{\left(\frac{\sin \left(\frac{\pi a}{\lambda } \sin\theta \right)}{\frac{\pi a}{\lambda }
+\sin\theta }\right)}^2}{{\left(\frac{\sin \left(\frac{\pi }{4} N \sin\theta+\frac{N}{2} \phi \right)}{\sin \left(\frac{\pi }{4}
+\sin\theta+ \frac{\phi}{2} \right)}\right)}^2}</math>
+
+As sine achieves its maximum at <math display="inline">\frac{\pi}{2}</math>, we set the numerator of the second term = 1.
+
+:<math>\begin{align}
+  \frac{\pi}{4}N\sin\theta + \frac{N}{2}\phi &= \frac{\pi}{2} \\
+                                  \sin\theta &= \left(\frac{\pi}{2} - \frac{N}{2}\phi \right)\frac{4}{N\pi} \\
+                                  \sin\theta &= \frac{2}{N} - \frac{2\phi}{\pi}
+\end{align}</math>
+
+Thus as ''N'' gets large, the term will be dominated by the <math>\begin{matrix}\frac{2\phi}{\pi}\end{matrix}</math> term.  As sine can oscillate between −1 and 1, we can see that setting <math>\phi=-\begin{matrix}\frac{\pi}{2}\end{matrix}</math> will send the maximum energy on an angle given by 
+:<math>\theta = \sin^{-1} 1 = \frac{\pi}{2} = 90^\circ</math>
+
+Additionally, we can see that if we wish to adjust the angle at which the maximum energy is emitted, we need only to adjust the phase shift φ between successive antennas.  Indeed, the phase shift corresponds to the negative angle of maximum signal.
+
+A similar calculation will show that the denominator is minimized by the same factor.
+
+== Different types of phased arrays ==
+{{unreferenced section|date=December 2016}}
+{{Main|Beamforming}}
+There are two main types of beamformers. These are [[time domain]] beamformers and [[frequency domain]] beamformers. From a theoretical point of view, both are in principle the same operation, with just a Fourier transform allowing conversion from one to the other type.
+
+A graduated attenuation window is sometimes applied across the face of the array to improve side-lobe suppression performance, in addition to the phase shift.
+
+Time domain beamformer works by introducing time delays. The basic operation is called "delay and sum". It delays the incoming signal from each array element by a certain amount of time, and then adds them together. A [[Butler matrix]] allows several beams to be formed simultaneously, or one beam to be scanned through an arc. The most common kind of time domain beam former is serpentine waveguide. Active phased array designs use individual delay lines that are switched on and off. [[Yttrium iron garnet]] phase shifters vary the phase delay using the strength of a magnetic field.
+
+There are two different types of frequency domain beamformers.
+
+The first type separates the different frequency components that are present in the received signal into multiple frequency bins (using either a [[Discrete Fourier transform]] (DFT) or a [[filterbank]]). When different delay and sum beamformers are applied to each frequency bin, the result is that the main lobe simultaneously points in multiple different directions at each of the different frequencies. This can be an advantage for communication links, and is used with the [[SPS-48]] radar.
+
+The other type of frequency domain beamformer makes use of Spatial Frequency. Discrete samples are taken from each of the individual array elements. The samples are processed using a DFT. The DFT introduces multiple different discrete phase shifts during processing. The outputs of the DFT are individual channels that correspond with evenly spaced beams formed simultaneously. A 1-dimensional DFT produces a fan of different beams. A 2-dimensional DFT produces beams with a [[pineapple]] configuration.
+
+These techniques are used to create two kinds of phased array.
+:* Dynamic{{Snd}} an array of variable phase shifters are used to move the beam
+:* Fixed{{Snd}} the beam position is stationary with respect to the array face and the whole antenna is moved
+
+There are two further sub-categories that modify the kind of dynamic array or fixed array.
+:* Active{{Snd}} amplifiers or processors are in each phase shifter element
+:* Passive{{Snd}} large central amplifier with attenuating phase shifters
+
+=== Dynamic phased array ===
+Each array element incorporates an adjustable phase shifter that are collectively used to move the beam with respect to the array face.
+
+Dynamic phased array require no physical movement to aim the beam. The beam is moved electronically. This can produce antenna motion fast enough to use a small pencil-beam to simultaneously track multiple targets while searching for new targets using just one radar set (track while search).
+
+As an example, an antenna with a 2 degree beam with a pulse rate of 1&nbsp;kHz will require approximately 8 seconds to cover an entire hemisphere consisting of 8,000 pointing positions. This configuration provides 12 opportunities to detect a {{convert|1000|m/s|mph km/h|abbr=on}} vehicle over a range of {{convert|100|km|mi|abbr=on}}, which is suitable for military applications.{{citation needed|date=July 2014}}
+
+The position of mechanically steered antennas can be predicted, which can be used to create [[electronic countermeasures]] that interfere with radar operation. The flexibility resulting from phased array operation allows beams to be aimed at random locations, which eliminates this vulnerability. This is also desirable for military applications.
+
+=== Fixed phased array ===
+[[File:Antenna-tower-collinear-et-al.jpg|thumb|130px|An antenna tower consisting of a fixed phase collinear antenna array with four elements]]
+Fixed phased array antennas are typically used to create an antenna with a more desirable form factor than the conventional [[parabolic reflector]] or [[cassegrain reflector]]. Fixed phased arrays incorporate fixed phase shifters. For example, most commercial FM Radio and TV antenna towers use a [[collinear antenna array]], which is a fixed phased array of dipole elements.
+
+In radar applications, this kind of phased array is physically moved during the track and scan process. There are two configurations.
+:* Multiple frequencies with a delay-line
+:* Multiple adjacent beams
+
+The [[SPS-48]] radar uses multiple transmit frequencies with a serpentine delay line along the left side of the array to produce vertical fan of stacked beams. Each frequency experiences a different phase shift as it propagates down the serpentine delay line, which forms different beams. A filter bank is used to split apart the individual receive beams. The antenna is mechanically rotated.
+
+[[Semi-active radar homing]] uses [[monopulse radar]] that relies on a fixed phased array to produce multiple adjacent beams that measure angle errors. This form factor is suitable for [[gimbal]] mounting in missile seekers.
+
+=== Active phased array ===
+[[Active electronically scanned array|Active electronically-scanned array]]s (AESA) elements incorporate transmit amplification with [[phase shift]] in each [[Transceiver|antenna element]] (or group of elements). Each element also includes receive pre-amplification. The phase shifter setting is the same for transmit and receive.<ref>Active Electronically Steered Arrays{{Snd}} A Maturing Technology (ausairpower.net)</ref>
+
+Active phased arrays do not require phase reset after the end of the transmit pulse, which is compatible with [[Doppler radar]] and [[pulse-Doppler radar]].
+
+=== Passive phased array ===
+[[Passive phased array]]s typically use large amplifiers that produce all of the microwave transmit signal for the antenna. Phase shifters typically consist of waveguide elements controlled by magnetic field, voltage gradient, or equivalent technology.<ref>{{cite web|url=http://scholarworks.sjsu.edu/cgi/viewcontent.cgi?article=5082&context=etd_theses&sei-redir=1&referer=http%3A%2F%2Fwww.google.com|title=YIG-sphere-based phase shifter for X-band phased array applications|publisher=Scholarworks|url-status=live|archive-url=https://web.archive.org/web/20140527212406/http://scholarworks.sjsu.edu/cgi/viewcontent.cgi?article=5082&context=etd_theses&sei-redir=1&referer=http%3A%2F%2Fwww.google.com|archive-date=2014-05-27}}</ref><ref>{{cite web|url=http://www.microwaves101.com/encyclopedia/phaseshifters_ferro.cfm|title=Ferroelectric Phase Shifters|publisher=Microwaves 101|url-status=live|archive-url=https://web.archive.org/web/20120913014513/http://www.microwaves101.com/encyclopedia/phaseshifters_ferro.cfm|archive-date=2012-09-13}}</ref>
+
+The phase shift process used with passive phased arrays typically puts the receive beam and transmit beam into diagonally opposite quadrants. The sign of the phase shift must be inverted after the transmit pulse is finished and before the receive period begins to place the receive beam into the same location as the transmit beam. That requires a phase impulse that degrades sub-clutter visibility performance on Doppler radar and Pulse-Doppler radar. As an example, [[Yttrium iron garnet]] phase shifters must be changed after transmit pulse quench and before receiver processing starts to align transmit and receive beams. That impulse introduces FM noise that degrades clutter performance.
+
+Passive phased array design is used in the AEGIS Combat System.<ref>{{cite web|url=http://apps.dtic.mil/dtic/tr/fulltext/u2/a460426.pdf|title=Total Ownership Cost Reduction Case Study: AEGIS Radar Phase Shifters|publisher=Naval Postgraduate School|url-status=live|archive-url=https://web.archive.org/web/20160303234942/http://www.dtic.mil/dtic/tr/fulltext/u2/a460426.pdf|archive-date=2016-03-03}}</ref> for [[Direction of arrival|direction-of-arrival]] estimation.
+
+== See also ==
+{{portal|Electronics}}
+{{colbegin}}
+* [[Active electronically scanned array]]
+* [[Antenna array]]
+* [[Aperture synthesis]]
+* [[Beamforming]]
+* [[Huygens–Fresnel principle]]
+* [[Interferometric synthetic-aperture radar]]
+* [[Inverse synthetic-aperture radar]]
+* [[Multi-user MIMO]]
+* [[Optical heterodyne detection]]
+* [[Phased array ultrasonics]]
+* [[Phased-array optics]]
+* [[Radar MASINT]]
+* [[Side-scan sonar]]
+* [[Single-frequency network]]
+* [[Smart antenna]]
+* [[Standard linear array]]
+* [[Synthetic-aperture radar]]
+* [[Synthetic aperture sonar]]
+* [[Synthetically thinned aperture radar]]
+* [[Thinned-array curse]]
+* [[Wave field synthesis]]
+* [[History of smart antennas]]
+* [[Reconfigurable antenna]]{{colend}}
+
+==References==
+{{Reflist|30em}}
+
+==External links==
+{{Commons category|Phased arrays}}
+* [https://web.archive.org/web/20120204094857/http://www.nssl.noaa.gov/par/ Radar Research and Development - Phased Array Radar]—[[National Severe Storms Laboratory]] 
+* [http://www.harpoonhq.com/waypoint/articles/Article_044.pdf Shipboard Phased Array Radars]
+* [https://ntrs.nasa.gov/archive/nasa/casi.ntrs.nasa.gov/19870018450_1987018450.pdf NASA Report: MMICs For Multiple Scanning Beam Antennas for Space Applications]
+* [http://www.radartutorial.eu/06.antennas/Phased%20Array%20Antenna.en.html Principle of Phased Array]
+* [http://www.sengpielaudio.com/TonyFaulknerPhasedArray06.htm 'Phased Array' microphone system of Tony Faulkner]
+* [https://antennaarraycalculator.blogspot.com/p/calculator.html Software tool to predict the radiation pattern of an antenna array]
+* [http://sharif.edu/~fakharzadeh/Tutorial%201%20Phased%20ArrayF.pdf  Principles of Phased Array systems] - Tutorial 1
+
+{{Antenna Types}}
+
+{{DEFAULTSORT:Phased Array}}
+[[Category:Antennas (radio)]]
+[[Category:Broadcast engineering]]
+[[Category:Domes]]
+[[Category:Radar]]
+[[Category:Radio frequency antenna types]]
+[[Category:Wireless locating]]( 2 :2022-10-19T19:09:28ZB892079JZ
+	Wikipedia'https://en.wikipedia.org/wiki/Main_PageMediaWiki 1.40.0-wmf.8"first-letterRW
+9http://glossary.its.bldrdoc.gov/fs-1037/dir-027/_3979.htmDefinition of Phased ArrayRb
+Ohttps://books.google.com/books?id=ZAAMAAAAYAAJ&pg=RA1-PA184#v=onepage&q&f=falsepages 184–185R�
+Ehttp://ucsdnews.ucsd.edu/newsrel/science/10-07PhasedArrayChipDK-L.aspJWorld’s Most Complex Silicon Phased Array Chip Developed at UC San DiegoR`
+Lhttp://www.norman.noaa.gov/publicaffairs/backgrounders/backgrounder_par.htmlPAR BackgrounderR�
+;http://www.ee.ucla.edu/~oecs/comp_pub/intr_opt/Optics23.pdfrSilicon-on-Insulator (SOI) Phased-Array Wavelength Multi/Demultiplexer with Extremely Low-Polarization SensitivityR
+Hhttps://web.archive.org/web/20120204094857/http://www.nssl.noaa.gov/par/3Radar Research and Development - Phased Array RadarR[
+:http://www.harpoonhq.com/waypoint/articles/Article_044.pdfShipboard Phased Array RadarsR�
+Phttps://ntrs.nasa.gov/archive/nasa/casi.ntrs.nasa.gov/19870018450_1987018450.pdfMNASA Report: MMICs For Multiple Scanning Beam Antennas for Space ApplicationsRe
+Hhttp://www.radartutorial.eu/06.antennas/Phased%20Array%20Antenna.en.htmlPrinciple of Phased ArrayRo
+:http://www.sengpielaudio.com/TonyFaulknerPhasedArray06.htm1'Phased Array' microphone system of Tony FaulknerR�
+=https://antennaarraycalculator.blogspot.com/p/calculator.htmlBSoftware tool to predict the radiation pattern of an antenna arrayRg
+Ahttp://sharif.edu/~fakharzadeh/Tutorial%201%20Phased%20ArrayF.pdf"Principles of Phased Array systemsb����Ȍ�Ij���

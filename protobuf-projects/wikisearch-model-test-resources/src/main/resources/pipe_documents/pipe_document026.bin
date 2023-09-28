@@ -1,0 +1,245 @@
+
+41432Numerical aperture�ZIn optics, the numerical aperture (NA) of an optical system is a dimensionless number that characterizes the range of angles over which the system can accept or emit light. By incorporating index of refraction in its definition, NA has the property that it is constant for a beam as it goes from one material to another, provided there is no refractive power at the interface. The exact definition of the term varies slightly between different areas of optics. Numerical aperture is commonly used in microscopy to describe the acceptance cone of an objective (and hence its light-gathering ability and  resolution), and in fiber optics, in which it describes the range of angles within which light that is incident on the fiber will be transmitted along it.
+
+General optics
+
+In most areas of optics, and especially in microscopy, the numerical aperture of an optical system such as an objective lens is defined by
+
+\mathrm{NA} = n \sin \theta,
+
+where  is the index of refraction of the medium in which the lens is working (1.00 for air, 1.33 for pure water, and typically 1.52 for immersion oil; see also list of refractive indices), and  is the maximal half-angle of the cone of light that can enter or exit the lens. In general, this is the angle of the real marginal ray in the system. Because the index of refraction is included, the NA of a pencil of rays is an invariant as a pencil of rays passes from one material to another through a flat surface. This is easily shown by rearranging Snell's law to find that  is constant across an interface.
+
+In air, the angular aperture of the lens is approximately twice this value (within the paraxial approximation). The NA is generally measured with respect to a particular object or image point and will vary as that point is moved. In microscopy, NA generally refers to object-space NA unless otherwise noted.
+
+In microscopy, NA is important because it indicates the resolving power of a lens. The size of the finest detail that can be resolved (the resolution) is proportional to , where  is the wavelength of the light.  A lens with a larger numerical aperture will be able to visualize finer details than a lens with a smaller numerical aperture.  Assuming quality (diffraction-limited) optics, lenses with larger numerical apertures collect more light and will generally provide a brighter image, but will provide shallower depth of field.
+
+Numerical aperture is used to define the "pit size" in optical disc formats.[http://www.crutchfieldadvisor.com/S-UNO5yLxzuZf/learningcenter/home/hd_blu.html?page
+2 "High-def Disc Update: Where things stand with HD DVD and Blu-ray"]  by Steve Kindig, Crutchfield Advisor. Accessed 2008-01-18.
+
+Increasing the magnification and the numerical aperture of the objective reduces the working distance, i.e. the distance between front lens and specimen.
+
+Numerical aperture versus f-number 
+
+Numerical aperture is not typically used in photography. Instead, the angular aperture of a lens (or an imaging mirror) is expressed by the f-number, written N, where N is the f-number given by the ratio of the focal length  to the diameter of the entrance pupil :
+
+N = \frac{f}{D}.
+
+This ratio is related to the image-space numerical aperture when the lens is focused at infinity.  Based on the diagram at the right, the image-space numerical aperture of the lens is:
+
+\text{NA}_\text{i} n \sin \theta 
+ n \sin \left[ \arctan \left( \frac{D}{2f} \right) \right] \approx n \frac{D}{2f},
+
+thus , assuming normal use in air ().
+
+The approximation holds when the numerical aperture is small, but it turns out that for well-corrected optical systems such as camera lenses, a more detailed analysis shows that  is almost exactly equal to  even at large numerical apertures. As Rudolf Kingslake explains, "It is a common error to suppose that the ratio [] is actually equal to , and not  ...  The tangent would, of course, be correct if the principal planes were really plane.  However, the complete theory of the Abbe sine condition shows that if a lens is corrected for coma and spherical aberration, as all good photographic objectives must be, the second principal plane becomes a portion of a sphere of radius  centered about the focal point". In this sense, the traditional thin-lens definition and illustration of f-number is misleading, and defining it in terms of numerical aperture may be more meaningful.
+
+Working (effective) -number
+
+The -number describes the light-gathering ability of the lens in the case where the marginal rays on the object side are parallel to the axis of the lens. This case is commonly encountered in photography, where objects being photographed are often far from the camera.  When the object is not distant from the lens, however, the image is no longer formed in the lens's focal plane, and the -number no longer accurately describes the light-gathering ability of the lens or the image-side numerical aperture.  In this case, the numerical aperture is related to what is sometimes called the "working -number" or "effective -number".
+
+The working -number is defined by modifying the relation above, taking into account the magnification from object to image:
+
+\frac{1}{2 \text{NA}_\text{i}} N_\text{w} 
+ \left(1 - \frac{m}{P}\right) N, 
+
+where  is the working -number,  is the lens's magnification for an object a particular distance away,  is the pupil magnification, and the NA is defined in terms of the angle of the marginal ray as before. p. 29.  The magnification here is typically negative, and the pupil magnification is most often assumed to be 1 — as Allen R. Greenleaf explains, "Illuminance varies inversely as the square of the distance between the exit pupil of the lens and the position of the plate or film.  Because the position of the exit pupil usually is unknown to the user of a lens, the rear conjugate focal distance is used instead; the resultant theoretical error so introduced is insignificant with most types of photographic lenses."
+
+In photography, the factor is sometimes written as , where  represents the absolute value of the magnification; in either case, the correction factor is 1 or greater. The two equalities in the equation above are each taken by various authors as the definition of working -number, as the cited sources illustrate.  They are not necessarily both exact, but are often treated as if they are.
+
+Conversely, the object-side numerical aperture is related to the -number by way of the magnification (tending to zero for a distant object):
+
+\frac{1}{2 \text{NA}_\text{o}} = \frac{m - P}{mP} N. 
+
+Laser physics
+
+In laser physics, numerical aperture is defined slightly differently. Laser beams spread out as they propagate, but slowly. Far away from the narrowest part of the beam, the spread is roughly linear with distance—the laser beam forms a cone of light in the "far field". The relation used to define the NA of the laser beam is the same as that used for an optical system,
+
+\text{NA} = n \sin \theta,
+
+but  is defined differently. Laser beams typically do not have sharp edges like the cone of light that passes through the aperture of a lens does. Instead, the irradiance falls off gradually away from the center of the beam. It is very common for the beam to have a Gaussian profile. Laser physicists typically choose to make  the divergence of the beam: the far-field angle between the beam axis and the distance from the axis at which the irradiance drops to  times the on-axis irradiance. The NA of a Gaussian laser beam is then related to its minimum spot size ("beam waist") by
+
+\text{NA} \simeq \frac{\lambda_0}{\pi w_0},
+
+where  is the vacuum wavelength of the light, and  is the diameter of the beam at its narrowest spot, measured between the  irradiance points ("Full width at  maximum of the intensity"). This means that a laser beam that is focused to a small spot will spread out quickly as it moves away from the focus, while a large-diameter laser beam can stay roughly the same size over a very long distance. See also: Gaussian beam width.
+
+Fiber optics
+
+A multi-mode optical fiber will only propagate light that enters the fiber within a certain range of angles, known as the acceptance cone of the fiber. The half-angle of this cone is called the acceptance angle, . For step-index multimode fiber in a given medium, the acceptance angle is determined only by the indices of refraction of the core, the cladding, and the medium:
+n \sin \theta_\max = \sqrt{n_\text{core}^2 - n_\text{clad}^2},
+where  is the refractive index of the medium around the fiber,  is the refractive index of the fiber core, and  is the refractive index of the cladding. While the core will accept light at higher angles, those rays will not totally reflect off the core–cladding interface, and so will not be transmitted to the other end of the fiber. The derivation of this formula is given below.
+
+When a light ray is incident from a medium of refractive index  to the core of index  at the maximum acceptance angle, Snell's law at the medium–core interface gives
+n\sin\theta_\max = n_\text{core}\sin\theta_r.\ 
+      
+From the geometry of the above figure we have:
+\sin\theta_{r} \sin\left({90^\circ} - \theta_{c}\right) 
+ \cos\theta_{c}
+
+where 
+ \theta_{c} = \arcsin \frac{n_\text{clad}}{n_\text{core}}
+
+is the critical angle for total internal reflection.
+
+Substituting  for  in Snell's law we get:
+\frac{n}{n_\text{core}}\sin\theta_\max = \cos\theta_{c}.
+
+By squaring both sides
+\frac{n^{2}}{n_\text{core}^{2}}\sin^{2}\theta_\max \cos^{2}\theta_{c} 
+ 1 - \sin^{2}\theta_{c} = 1 - \frac{n_\text{clad}^{2}}{n_\text{core}^{2}}.
+
+Solving, we find the formula stated above:
+
+n \sin \theta_\max = \sqrt{n_\text{core}^2 - n_\text{clad}^2},
+
+This has the same form as the numerical aperture (NA) in other optical systems, so it has become common to define the NA of any type of fiber to be
+\mathrm{NA} = \sqrt{n_\text{core}^2 - n_\text{clad}^2},
+
+where  is the refractive index along the central axis of the fiber. Note that when this definition is used, the connection between the NA and the acceptance angle of the fiber becomes only an approximation. In particular, manufacturers often quote "NA" for single-mode fiber based on this formula, even though the acceptance angle for single-mode fiber is quite different and cannot be determined from the indices of refraction alone.
+
+The number of bound modes, the mode volume, is related to the normalized frequency and thus to the NA.
+
+In multimode fibers, the term equilibrium numerical aperture is sometimes used. This refers to the numerical aperture with respect to the extreme exit angle of a ray emerging from a fiber in which equilibrium mode distribution has been established.
+
+See also
+
+*-number
+*Launch numerical aperture
+*Guided ray, optic fibre context
+*Acceptance angle (solar concentrator), further context
+
+References
+
+*
+
+External links
+
+*[http://www.microscopy.fsu.edu/primer/anatomy/numaperture.html "Microscope Objectives: Numerical Aperture and Resolution"] by Mortimer Abramowitz and Michael W. Davidson, Molecular Expressions: Optical Microscopy Primer (website), Florida State University, April 22, 2004.
+*[http://www.microscopyu.com/articles/formulas/formulasna.html "Basic Concepts and Formulas in Microscopy: Numerical Aperture"] by Michael W. Davidson, Nikon MicroscopyU (website).
+*[http://www.rp-photonics.com/numerical_aperture.html "Numerical aperture"], Encyclopedia of Laser Physics and Technology (website).
+*[http://www.gonda.ucla.edu/bri_core/na.htm "Numerical Aperture and Resolution"], UCLA Brain Research Institute Microscopy Core Facilities (website), 2007."
+1116082417*�Ѧ�:ARTICLEB
+	namespace B!
+	dump_date2022-10-14T18:21:15ZB�
+	wiki_text�{{Short description|Characteristic of an optical system}}
+[[Image:Numerical aperture.svg|thumb|The numerical aperture with respect to a point {{math|''P''}} depends on the half-angle, {{math|''θ''<sub>1</sub>}}, of the maximum cone of light that can enter or exit the lens and the ambient index of refraction. As a [[Pencil (optics)|pencil]] of light goes through a flat plane of glass, its half-angle changes to {{math|''θ''<sub>2</sub>}}. Due to [[Snell's law]], the numerical aperture remains the same:<br /><math>\text{NA} = n_1 \sin \theta_1 = n_2 \sin\theta_2.</math>]]
+In [[optics]], the '''numerical aperture''' ('''NA''') of an optical system is a [[dimensionless number]] that characterizes the range of angles over which the system can accept or emit light. By incorporating [[index of refraction]] in its definition, NA has the property that it is constant for a beam as it goes from one material to another, provided there is no [[refractive power]] at the interface. The exact definition of the term varies slightly between different areas of optics. Numerical aperture is commonly used in [[microscopy]] to describe the acceptance cone of an [[Objective (optics)|objective]] (and hence its light-gathering ability and [[Optical resolution| resolution]]), and in [[fiber optics]], in which it describes the range of angles within which light that is incident on the fiber will be transmitted along it.
+
+==General optics==
+[[File:marginal_vs_chief_ray.svg|thumb|Simple ray diagram showing typical chief and marginal rays]]
+In most areas of optics, and especially in [[microscopy]], the numerical aperture of an optical system such as an [[objective lens]] is defined by
+
+:<math>\mathrm{NA} = n \sin \theta,</math>
+
+where {{math|''n''}} is the [[Refractive index|index of refraction]] of the medium in which the lens is working (1.00 for [[air]], 1.33 for pure [[water]], and typically 1.52 for [[immersion oil]];<ref>{{cite web|title=Immersion oil and the microscope |first=John J. |last=Cargille |year=1985 |edition=2nd |url=https://cargille.com/wp-content/uploads/2018/03/Immersion_Oil_and_the_Microscope.pdf |archive-url=https://ghostarchive.org/archive/20221009/https://cargille.com/wp-content/uploads/2018/03/Immersion_Oil_and_the_Microscope.pdf |archive-date=2022-10-09 |url-status=live |access-date=2019-10-16}}</ref> see also [[list of refractive indices]]), and {{math|''θ''}} is the maximal half-angle of the cone of light that can enter or exit the lens. In general, this is the angle of the real [[marginal ray]] in the system. Because the index of refraction is included, the NA of a [[Pencil (optics)|pencil of rays]] is an invariant as a pencil of rays passes from one material to another through a flat surface. This is easily shown by rearranging [[Snell's law]] to find that {{math|''n'' sin ''θ''}} is constant across an interface.
+
+In air, the [[angular aperture]] of the lens is approximately twice this value (within the [[paraxial approximation]]). The NA is generally measured with respect to a particular object or image point and will vary as that point is moved. In microscopy, NA generally refers to object-space NA unless otherwise noted.
+
+In microscopy, NA is important because it indicates the [[Angular resolution|resolving power]] of a lens. The size of the finest detail that can be resolved (the ''resolution'') is proportional to {{math|{{sfrac|''λ''|2NA}}}}, where {{math|''λ''}} is the [[wavelength]] of the light.  A lens with a larger numerical aperture will be able to visualize finer details than a lens with a smaller numerical aperture.  Assuming quality ([[diffraction-limited]]) optics, lenses with larger numerical apertures collect more light and will generally provide a brighter image, but will provide shallower [[depth of field]].
+
+Numerical aperture is used to define the "pit size" in [[optical disc]] formats.<ref name="Crutchfield Advisor">[http://www.crutchfieldadvisor.com/S-UNO5yLxzuZf/learningcenter/home/hd_blu.html?page=2 "High-def Disc Update: Where things stand with HD DVD and Blu-ray"] {{Webarchive|url=https://web.archive.org/web/20080110072357/http://www.crutchfieldadvisor.com/S-UNO5yLxzuZf/learningcenter/home/hd_blu.html?page=2 |date=2008-01-10 }} by Steve Kindig, ''Crutchfield Advisor''. Accessed 2008-01-18.</ref>
+
+Increasing the magnification and the numerical aperture of the objective reduces the working distance, i.e. the distance between front lens and specimen.
+
+=== Numerical aperture versus f-number ===
+
+[[Image:Numerical aperture for a lens.svg|thumb|250px|right|Numerical aperture of a [[thin lens]]]]
+
+Numerical aperture is not typically used in [[photography]]. Instead, the angular aperture of a [[photographic lens|lens]] (or an imaging mirror) is expressed by the [[f-number]], written {{f/}}''N'', where ''N'' is the f-number given by the ratio of the [[focal length]] {{mvar|f}} to the diameter of the [[entrance pupil]] {{math|''D''}}:
+
+:<math>N = \frac{f}{D}.</math>
+
+This ratio is related to the image-space numerical aperture when the lens is focused at infinity.<ref name="Greivenkamp"/>  Based on the diagram at the right, the image-space numerical aperture of the lens is:
+
+:<math>\text{NA}_\text{i} = n \sin \theta = n \sin \left[ \arctan \left( \frac{D}{2f} \right) \right] \approx n \frac{D}{2f},</math>
+
+thus {{math|''N'' ≈ {{sfrac|1|2NA<sub>i</sub>}}}}, assuming normal use in air ({{math|''n'' {{=}} 1}}).
+
+The approximation holds when the numerical aperture is small, but it turns out that for well-corrected optical systems such as camera lenses, a more detailed analysis shows that {{math|''N''}} is almost exactly equal to {{math|{{sfrac|1|2NA<sub>i</sub>}}}} even at large numerical apertures. As Rudolf Kingslake explains, "It is a common error to suppose that the ratio [{{math|{{sfrac|''D''|2''f''}}}}] is actually equal to {{math|tan ''θ''}}, and not {{math|sin ''θ''}} ...  The tangent would, of course, be correct if the principal planes were really plane.  However, the complete theory of the [[Abbe sine condition]] shows that if a lens is corrected for [[Coma (optics)|coma]] and [[spherical aberration]], as all good photographic objectives must be, the second principal plane becomes a portion of a sphere of radius {{mvar|f}} centered about the focal point".<ref>{{cite book | title = Lenses in photography: the practical guide to optics for photographers | author = Rudolf Kingslake | publisher = Case-Hoyt, for Garden City Books | year = 1951 | pages = 97–98}}</ref> In this sense, the traditional thin-lens definition and illustration of f-number is misleading, and defining it in terms of numerical aperture may be more meaningful.
+
+===Working (effective) {{mvar|f}}-number===
+
+The {{mvar|f}}-number describes the light-gathering ability of the lens in the case where the marginal rays on the object side are parallel to the axis of the lens. This case is commonly encountered in photography, where objects being photographed are often far from the camera.  When the object is not distant from the lens, however, the image is no longer formed in the lens's [[focal plane]], and the {{mvar|f}}-number no longer accurately describes the light-gathering ability of the lens or the image-side numerical aperture.  In this case, the numerical aperture is related to what is sometimes called the "[[working f-number|working {{mvar|f}}-number]]" or "effective {{mvar|f}}-number".
+
+The working {{mvar|f}}-number is defined by modifying the relation above, taking into account the magnification from object to image:
+
+:<math>\frac{1}{2 \text{NA}_\text{i}} = N_\text{w} = \left(1 - \frac{m}{P}\right) N, </math>
+
+where {{math|''N''<sub>w</sub>}} is the working {{mvar|f}}-number, {{math|''m''}} is the lens's [[magnification]] for an object a particular distance away, {{math|''P''}} is the [[pupil magnification]], and the NA is defined in terms of the angle of the marginal ray as before.<ref name="Greivenkamp">{{cite book | first=John E. | last=Greivenkamp | year=2004 | title=Field Guide to Geometrical Optics | publisher=SPIE | others=SPIE Field Guides vol. '''FG01''' | isbn=0-8194-5294-7 | url = https://books.google.com/books?id=1YfZNWZAwCAC&pg=PA29 }} p. 29.</ref><ref>{{cite book | title = Field Guide to Illumination |author1=Angelo V Arecchi |author2=Tahar Messadi |author3=R. John Koshel  |name-list-style=amp | publisher = SPIE | year = 2007 | isbn = 978-0-8194-6768-3 | page = 48 | url = https://books.google.com/books?id=Ax0RqdqeDG0C&q=working-f-number+aperture&pg=PP14 }}</ref>  The magnification here is typically negative, and the pupil magnification is most often assumed to be 1 — as Allen R. Greenleaf explains, "Illuminance varies inversely as the square of the distance between the exit pupil of the lens and the position of the plate or film.  Because the position of the exit pupil usually is unknown to the user of a lens, the rear conjugate focal distance is used instead; the resultant theoretical error so introduced is insignificant with most types of photographic lenses."<ref>{{cite book | title = Photographic Optics | author = Allen R. Greenleaf | publisher = The Macmillan Company | year = 1950 | page = 24 | url = https://books.google.com/books?id=L4dtAAAAIAAJ&q=intitle:optics+inauthor:greenleaf+%22position+of+the+exit+pupil%22 }}</ref>
+
+In photography, the factor is sometimes written as {{math|1 + ''m''}}, where {{math|''m''}} represents the [[absolute value]] of the magnification; in either case, the correction factor is 1 or greater. The two equalities in the equation above are each taken by various authors as the definition of working {{mvar|f}}-number, as the cited sources illustrate.  They are not necessarily both exact, but are often treated as if they are.
+
+Conversely, the object-side numerical aperture is related to the {{mvar|f}}-number by way of the magnification (tending to zero for a distant object):
+
+:<math>\frac{1}{2 \text{NA}_\text{o}} = \frac{m - P}{mP} N. </math>
+
+==Laser physics==
+In [[laser physics]], numerical aperture is defined slightly differently. Laser beams spread out as they propagate, but slowly. Far away from the narrowest part of the beam, the spread is roughly linear with distance—the laser beam forms a cone of light in the "far field". The relation used to define the NA of the laser beam is the same as that used for an optical system,
+
+:<math>\text{NA} = n \sin \theta,</math>
+
+but {{math|''θ''}} is defined differently. Laser beams typically do not have sharp edges like the cone of light that passes through the [[aperture]] of a lens does. Instead, the [[irradiance]] falls off gradually away from the center of the beam. It is very common for the beam to have a [[Gaussian beam|Gaussian]] profile. Laser physicists typically choose to make {{math|''θ''}} the ''divergence'' of the beam: the [[far-field]] angle between the beam axis and the distance from the axis at which the irradiance drops to {{math|''e''<sup>−2</sup>}} times the on-axis irradiance. The NA of a Gaussian laser beam is then related to its minimum spot size ("beam waist") by
+
+:<math>\text{NA} \simeq \frac{\lambda_0}{\pi w_0},</math>
+
+where {{math|''λ''<sub>0</sub>}} is the [[vacuum wavelength]] of the light, and {{math|2''w''<sub>0</sub>}} is the diameter of the beam at its narrowest spot, measured between the {{math|''e''<sup>−2</sup>}} irradiance points ("Full width at {{math|''e''<sup>−2</sup>}} maximum of the intensity"). This means that a laser beam that is focused to a small spot will spread out quickly as it moves away from the focus, while a large-diameter laser beam can stay roughly the same size over a very long distance. See also: [[Gaussian beam#Beam waist|Gaussian beam width]].
+
+==Fiber optics==
+[[Image:Optic fibre-numerical aperture diagram.svg|400px|thumb|right|A multi-mode fiber of index {{math|''n''<sub>1</sub>}} with cladding of index {{math|''n''<sub>2</sub>}}.]]
+
+A [[multi-mode optical fiber]] will only propagate light that enters the fiber within a certain range of angles, known as the [[acceptance cone]] of the fiber. The half-angle of this cone is called the [[Acceptance angle (optical fiber)|acceptance angle]], {{math|''θ''<sub>max</sub>}}. For [[Step-index profile|step-index]] multimode fiber in a given medium, the acceptance angle is determined only by the indices of refraction of the core, the cladding, and the medium:
+:<math>n \sin \theta_\max = \sqrt{n_\text{core}^2 - n_\text{clad}^2},</math>
+where {{math|''n''}} is the [[refractive index]] of the medium around the fiber, {{math|''n''<sub>core</sub>}} is the refractive index of the fiber core, and {{math|''n''<sub>clad</sub>}} is the refractive index of the [[Cladding (fiber optics)|cladding]]. While the core will accept light at higher angles, those rays will not [[total internal reflection|totally reflect]] off the core–cladding interface, and so will not be transmitted to the other end of the fiber. The derivation of this formula is given below.
+
+When a light ray is incident from a medium of [[refractive index]] {{mvar|n}} to the core of index {{math|''n''<sub>core</sub>}} at the maximum acceptance angle, [[Snell's law]] at the medium–core interface gives
+:<math>n\sin\theta_\max = n_\text{core}\sin\theta_r.\ </math>
+      
+From the geometry of the above figure we have:
+:<math>\sin\theta_{r} = \sin\left({90^\circ} - \theta_{c}\right) = \cos\theta_{c}</math>
+
+where 
+:<math> \theta_{c} = \arcsin \frac{n_\text{clad}}{n_\text{core}}</math>
+
+is the [[critical angle (optics)|critical angle]] for [[total internal reflection]].
+
+Substituting {{math|cos ''θ''<sub>''c''</sub>}} for {{math|sin ''θ''<sub>''r''</sub>}} in Snell's law we get:
+:<math>\frac{n}{n_\text{core}}\sin\theta_\max = \cos\theta_{c}.</math>
+
+By squaring both sides
+: <math>\frac{n^{2}}{n_\text{core}^{2}}\sin^{2}\theta_\max = \cos^{2}\theta_{c} = 1 - \sin^{2}\theta_{c} = 1 - \frac{n_\text{clad}^{2}}{n_\text{core}^{2}}.</math>
+
+Solving, we find the formula stated above:
+
+: <math>n \sin \theta_\max = \sqrt{n_\text{core}^2 - n_\text{clad}^2},</math>
+
+This has the same form as the numerical aperture (NA) in other optical systems, so it has become common to ''define'' the NA of any type of fiber to be
+: <math>\mathrm{NA} = \sqrt{n_\text{core}^2 - n_\text{clad}^2},</math>
+
+where {{math|''n''<sub>core</sub>}} is the refractive index along the central axis of the fiber. Note that when this definition is used, the connection between the NA and the acceptance angle of the fiber becomes only an approximation. In particular, manufacturers often quote "NA" for [[single-mode fiber]] based on this formula, even though the acceptance angle for single-mode fiber is quite different and cannot be determined from the indices of refraction alone.
+
+The number of bound [[transverse mode|modes]], the [[mode volume]], is related to the [[Normalized frequency (fiber optics)|normalized frequency]] and thus to the NA.
+
+In multimode fibers, the term ''equilibrium numerical aperture'' is sometimes used. This refers to the numerical aperture with respect to the extreme exit angle of a [[Line (mathematics)|ray]] emerging from a fiber in which [[equilibrium mode distribution]] has been established.
+
+==See also==
+*[[F-number|{{mvar|f}}-number]]
+*[[Launch numerical aperture]]
+*[[Guided ray]], [[optic fibre]] context
+*[[Acceptance angle (solar concentrator)]], further context
+
+==References==
+{{Reflist}}
+*{{FS1037C MS188}}
+
+==External links==
+*[http://www.microscopy.fsu.edu/primer/anatomy/numaperture.html "Microscope Objectives: Numerical Aperture and Resolution"] by Mortimer Abramowitz and Michael W. Davidson, ''Molecular Expressions: Optical Microscopy Primer'' (website), [[Florida State University]], April 22, 2004.
+*[http://www.microscopyu.com/articles/formulas/formulasna.html "Basic Concepts and Formulas in Microscopy: Numerical Aperture"] by Michael W. Davidson, ''[[Nikon]] MicroscopyU'' (website).
+*[http://www.rp-photonics.com/numerical_aperture.html "Numerical aperture"], ''Encyclopedia of Laser Physics and Technology'' (website).
+*[http://www.gonda.ucla.edu/bri_core/na.htm "Numerical Aperture and Resolution"], ''[[UCLA]] Brain Research Institute Microscopy Core Facilities'' (website), 2007.
+
+{{Authority control}}
+
+[[Category:Optics]]
+[[Category:Fiber optics]]
+[[Category:Microscopy]]
+[[Category:Dimensionless numbers]]B*
+date_parsed2022-12-07T05:36:13.958173Z

@@ -1,0 +1,196 @@
+
+41592!Provisioning (telecommunications)ªyIn telecommunication, provisioning involves the process of preparing and equipping a network to allow it to provide new services to its users.  In National Security/Emergency Preparedness telecommunications services, "provisioning" equates to  "initiation" and includes altering the state of an existing priority service or capability.
+
+The concept of network provisioning or service mediation, mostly used in the telecommunication industry, refers to the provisioning of the customer's services to the network elements, which are various equipment connected in that network communication system. Generally in telephony provisioning this is accomplished with network management database table mappings. It requires the existence of networking equipment and depends on network planning and design.
+
+In a modern signal infrastructure employing information technology (IT) at all levels, there is no possible distinction between telecommunications services and "higher level" infrastructure.  Accordingly, provisioning configures any required systems, provides users with access to data and technology resources, and refers to all enterprise-level information-resource management involved.
+
+Organizationally, a CIO typically manages provisioning, necessarily involving human resources and IT departments cooperating to:
+
+* Give users access to data repositories or grant authorization to systems, network applications and databases based on a unique user identity.
+* Appropriate for their use hardware resources, such as computers, mobile phones and pagers.
+
+As its core, the provisioning process monitors access rights and privileges to ensure the security of an enterprise's resources and user privacy.  As a secondary responsibility, it ensures compliance and minimizes the vulnerability of systems to penetration and abuse.  As a tertiary responsibility, it tries to reduce the amount of custom configuration using boot image control and other methods that radically reduce the number of different configurations involved.
+
+Discussion of provisioning often appears in the context of virtualization, orchestration, utility computing, cloud computing, and open-configuration concepts and projects.  For instance, the OASIS Provisioning Services Technical Committee (PSTC) defines an XML-based framework for exchanging user, resource, and service-provisioning information - SPML (Service Provisioning Markup Language) for "managing the provisioning and allocation of identity information and system resources within and between organizations".
+
+Once provisioning has taken place, the process of SysOpping ensures the maintenance of services to the expected standards.  Provisioning thus refers only to the setup or startup part of the service operation, and SysOpping to the ongoing support.
+
+Network provisioning
+
+One type of provisioning.
+The services which are assigned to the customer in the customer relationship management (CRM) have to be provisioned on the network element which is enabling the service and allows the customer to actually use the service. The relation between a service configured in the CRM and a service on the network elements is not necessarily a one-to-one relationship; for example, services like Microsoft Media Server (mms://) can be enabled by more than one network element.
+
+During the provisioning, the service mediation device translates the service and the corresponding parameters of the service to one or more services/parameters on the network elements involved. The algorithm used to translate a system service into network services is called provisioning logic.
+
+Electronic invoice feeds from your carriers can be automatically downloaded directly into the core of the telecom expense management (TEM) software and it will immediately conduct an audit of each single line item charge all the way down to the User Support and Operations Center (USOC) level. The provisioning software will capture each circuit number provided by all of your carriers and if billing occurs outside of the contracted rate an exception rule will trigger a red flag and notify the pre-established staff member to review the billing error.
+
+Server provisioning
+
+Server provisioning is a set of actions to prepare a server with appropriate systems, data and software, and make it ready for network operation. Typical tasks when provisioning a server are: select a server from a pool of available servers, load the appropriate software (operating system, device drivers, middleware, and applications), appropriately customize and configure the system and the software to create or change a boot image for this server, and then change its parameters, such as IP address, IP Gateway to find associated network and storage resources (sometimes separated as resource provisioning) to audit the system. By auditing the system, you ensure OVAL compliance with limit vulnerability, ensure compliance, or install patches. After these actions, you restart the system and load the new software. This makes the system ready for operation. Typically an internet service provider (ISP) or network operations center will perform these tasks to a well-defined set of parameters, for example, a boot image that the organization has approved and which uses software it has license to. Many instances of such a boot image create a virtual dedicated host.
+
+There are many software products available to automate the provisioning of servers, services and end-user devices. Examples: BMC Bladelogic Server Automation, HP Server Automation, IBM Tivoli Provisioning Manager, Redhat Kickstart, xCAT, HP Insight CMU, etc.  Middleware and applications can be installed either when the operating system is installed or afterwards by using an Application Service Automation tool. Further questions are addressed in academia such as when provisioning should be issued and how many servers are needed in multi-tier, or multi-service applications.Jiang Dejun, Guillaume Pierre and Chi-Hung Chi. [http://www.globule.org/publi/ARPMSWA_www2010.html Autonomous Resource Provisioning for Multi-Service Web Applications]. In Proceedings of the 19th International World-Wide Web conference, April 2010.
+
+In cloud computing, servers may be provisioned via a web user interface or an application programming interface (API). One of the unique things about cloud computing is how rapidly and easily this can be done.  Monitoring software can be used to trigger automatic provisioning when existing resources become too heavily stressed.Amies A, Sanchez J, Vernier D, and Zheng X D, 2011. [http://www.ibm.com/developerworks/cloud/library/cl-monitorcloudservices/ "Monitor services in the cloud"], IBM developerWorks, February 15.
+
+In short, server provisioning configures servers based on resource requirements. The use of a hardware or software component (e.g. single/dual processor, RAM, HDD, RAID Controller, a number of LAN cards, applications, OS, etc.) depends on the functionality of the server, such as ISP, virtualization, NOS, or voice processing. Server redundancy depends on the availability of servers in the organization. Critical applications have less downtime when using cluster servers, RAID, or a mirroring system.
+
+Service used by most larger-scale centers in part to avoid this. Additional resource provisioning may be done per service.
+
+There are several software on the market for server provisioning such as Cobbler or HP Intelligent Provisioning.
+
+User provisioning
+
+User provisioning refers to the creation, maintenance and deactivation of user objects and user attributes, as they exist in one or more systems, directories or applications, in response to automated or interactive business processes.  User provisioning software may include one or more of the following processes: change propagation, self-service workflow, consolidated user administration, delegated user administration, and federated change control.  User objects may represent employees, contractors, vendors, partners, customers or other recipients of a service.  Services may include electronic mail, inclusion in a published user directory, access to a database, access to a network or mainframe, etc.  User provisioning is a type of identity management software, particularly useful within organizations, where users may be represented by multiple objects on multiple systems and multiple instances.
+
+Self-service provisioning for cloud computing services
+
+On-demand self-service is described by the National Institute of Standards and Technology (NIST) as an essential characteristic of cloud computing.Mell, Peter; Grance, Timothy. [http://csrc.nist.gov/publications/nistpubs/800-145/SP800-145.pdf "The NIST definition of cloud computing"], Special Publication 800-145, National Institute of Standards and Technology The self-service nature of cloud computing lets end users obtain and remove cloud services‚Äïincluding applications, the infrastructure supporting the applications, and configuration‚ÄïPerera, David. [http://www.fiercegovernmentit.com/story/real-obstacle-federal-cloud-computing/2012-07-12 "The real obstacle to federal cloud computing"], Fierce Government IT, July 12, 2012 themselves without requiring the assistance of an IT staff member.MSV, Janakiram. [http://cloudstory.in/2012/07/top-10-reasons-why-startups-should-consider-cloud/ "Top 10 reasons why startups should consider cloud"]. Cloud Story, July 20, 2012 The automatic self-servicing may target different application goals and constraints (e.g. deadlines and cost), as well as handling different application architectures (e.g., bags-of-tasks and workflows). Cloud users can obtain cloud services through a cloud service catalog or a self-service portal.Onisick, Joe. [http://www.networkcomputing.com/private-cloud-tech-center/240004192 "Five steps to building a private cloud"], Network Computing, July 23, 2012 Because business users can obtain and configure cloud services themselves, this means IT staff can be more productive and gives them more time to manage cloud infrastructures.Cowie, Jason. [http://www.datacenterjournal.com/dcj-magazine/how-to-make-private-cloud-initiatives-matter-to-your-ceo/ "How to make private cloud initiatives matter to your CEO"], The Data Center Journal, July 17, 2012
+
+One downside of cloud service provisioning is that it is not instantaneous. A cloud virtual machine (VM) can be acquired at any time by the user, but it may take up to several minutes for the acquired VM to be ready to use. The VM startup time is dependent on factors, such as image size, VM type, data center location, and number of VMs. Cloud providers have different VM startup performance.
+
+Mobile subscriber provisioning
+
+Mobile subscriber provisioning refers to the setting up of new services, such as GPRS, MMS and Instant Messaging for an existing subscriber of a mobile phone network, and any gateways to standard Internet chat or mail services.  The network operator typically sends these settings to the subscriber's handset using SMS text services or HTML, and less commonly WAP, depending on what the mobile operating systems can accept.
+
+A general example of provisioning is with data services. A mobile user who is using his or her device for voice calling may wish to switch to data services in order to read emails or browse the Internet. The mobile device's services are "provisioned" and thus the user is able to stay connected through push emails and other features of smartphone services.
+
+Device management systems can benefit end-users by incorporating plug-and-play data services, supporting whatever device the end-user is using.. Such a platform can automatically detect devices in the network, sending them settings for immediate and continued usability. The process is fully automated, keeping the history of used devices and sending settings only to subscriber devices which were not previously set.  One method of managing mobile updates is to filter IMEI/IMSI pairs.  Some operators report activity of 50 over-the-air settings update files per second.
+
+Mobile content provisioning
+
+This refers to delivering mobile content, such as mobile internet to a mobile phone, agnostic of the features of said device. These may include operating system type and versions, Java version, browser version, screen form factors, audio capabilities, language settings and many other characteristics. As of April 2006, an estimated 5,000 permutations were relevant. Mobile content provisioning facilitates a common user experience, though delivered on widely different handsets.
+
+Mobile device provisioning
+
+Provisioning devices involves delivering configuration data and policy settings to the mobile devices from a central point ‚Äì Mobile device management system tools.
+
+Internet access provisioning
+
+When getting a customer online, the client system must be configured. Depending on the connection technology (e.g., DSL, Cable, Fibre), the client system configuration may include:
+* Modem configuration
+* Network authentication
+* Installing drivers
+* Setting up Wireless LAN
+* Securing operating system (primarily for Windows)
+* Configuring browser provider-specifics
+* E-mail provisioning (create mailboxes and aliases)
+* E-mail configuration in client systems
+* Installing additional support software or add-on packages
+
+There are four approaches to provisioning internet access:
+
+* Hand out manuals: Manuals are a great help for experienced users, but inexperienced users will need to call the support hotline several times until all internet services are accessible. Every unintended change in the configuration, by user mistake or due to a software error, results in additional calls.
+* On-site setup by a technician: Sending a technician on-site is the most reliable approach from the provider's point of view, as the person ensures that the internet access is working, before leaving the customer's premises. This advantage comes at high costs ‚Äì either for the provider or the customer, depending on the business model. Furthermore, it is inconvenient for customers, as they have to wait until they get an installation appointment and because they need to take a day off from work. For repairing an internet connection on-site or phone support will be needed again.
+* Server-side remote setup: Server-side modem configuration uses a protocol called TR-069. It is widely established and reliable. At the current stage it can only be used for modem configuration. Protocol extensions are discussed, but not yet practically implemented, particularly because most client devices and applications do not support them yet. All other steps of the provisioning process are left to the user, typically causing many rather long calls to the support hotline.
+* Installation CD: Also called a "client-side self-service installation" CD, it can cover the entire process from modem configuration to setting up client applications, including home networking devices. The software typically acts autonomously, i.e., it doesn't need an online connection and an expensive backend infrastructure. During such an installation process the software usually also install diagnosis and self-repair applications that support customers in case of problems, avoiding costly hotline calls. Such client-side applications also open completely new possibilities for marketing, cross- and upselling. Such solutions come from highly specialised companies or directly from the provider's development department.
+
+See also
+
+* Dynamic provisioning environment
+
+References
+
+External links
+
+*"âú{{other uses|Provisioning (disambiguation)}}
+
+In [[telecommunication]], '''provisioning''' involves the process of preparing and equipping a network to allow it to provide new services to its users.  In [[NS/EP telecommunications|National Security/Emergency Preparedness telecommunications]] services, ''"provisioning"'' equates to  ''"initiation"'' and includes altering the state of an existing priority service or capability.<ref>{{FS1037C}}</ref>
+
+The concept of '''network provisioning''' or '''service mediation''', mostly used in the [[telecommunication industry]], refers to the provisioning of the customer's services to the network elements, which are various equipment connected in that network communication system. Generally in telephony provisioning this is accomplished with network management database table mappings. It requires the existence of networking equipment and depends on [[network planning and design]].
+
+In a modern signal infrastructure employing [[information technology]] (IT) at all levels, there is no possible distinction between telecommunications services and "higher level" infrastructure.{{citation needed|date=October 2014}}  Accordingly, provisioning configures any required systems, provides users with access to data and technology resources, and refers to all enterprise-level information-resource management involved.
+
+Organizationally, a [[Chief Information Officer|CIO]] typically manages provisioning, necessarily involving [[human resources]] and IT departments cooperating to:
+
+* Give users access to data repositories or grant authorization to systems, network applications and databases based on a unique user identity.
+* Appropriate for their use hardware resources, such as computers, mobile phones and pagers.
+
+As its core, the provisioning process monitors access rights and privileges to ensure the security of an enterprise's resources and user privacy.  As a secondary responsibility, it ensures compliance and minimizes the vulnerability of systems to penetration and abuse.  As a tertiary responsibility, it tries to reduce the amount of custom configuration using [[boot image control]] and other methods that radically reduce the number of different configurations involved.
+
+Discussion of provisioning often appears in the context of [[Platform virtualization|virtualization]], [[orchestration (computers)|orchestration]], [[utility computing]], [[cloud computing]], and open-configuration concepts and projects.  For instance, the [[OASIS (organization)|OASIS]] Provisioning Services Technical Committee (PSTC) defines an [[XML]]-based framework for exchanging user, resource, and service-provisioning information - [[SPML]] (Service Provisioning Markup Language) for "managing the provisioning and allocation of identity information and system resources within and between organizations".{{citation needed|date=October 2014}}
+
+Once provisioning has taken place, the process of [[SysOp]]ping ensures the maintenance of services to the expected standards.  Provisioning thus refers only to the setup or startup part of the service operation, and SysOpping to the ongoing support.
+
+==Network provisioning==
+One type of provisioning.
+The services which are assigned to the customer in the [[customer relationship management]] (CRM) have to be provisioned on the [[network element]] which is enabling the service and allows the customer to actually use the service. The relation between a service configured in the CRM and a service on the network elements is not necessarily a one-to-one relationship; for example, services like [[Microsoft Media Server]] (mms://) can be enabled by more than one network element.
+
+During the provisioning, the service mediation device translates the service and the corresponding parameters of the service to one or more services/parameters on the network elements involved. The algorithm used to translate a system service into network services is called '''provisioning logic'''.
+
+Electronic invoice feeds from your carriers can be automatically downloaded directly into the core of the [[telecom expense management]] (TEM) software and it will immediately conduct an audit of each single line item charge all the way down to the User Support and Operations Center (USOC) level. The provisioning software will capture each circuit number provided by all of your carriers and if billing occurs outside of the contracted rate an exception rule will trigger a red flag and notify the pre-established staff member to review the billing error.
+
+==Server provisioning==
+Server provisioning is a set of actions to prepare a server with appropriate systems, data and software, and make it ready for network operation. Typical tasks when provisioning a server are: select a [[server (computing)|server]] from a pool of available servers, load the appropriate [[software]] ([[operating system]], [[device driver]]s, [[middleware]], and [[application software|application]]s), appropriately customize and configure the system and the software to create or change a [[boot image]] for this server, and then change its parameters, such as [[IP address]], [[Gateway (telecommunications)|IP Gateway]] to find associated network and storage resources (sometimes separated as ''resource provisioning'') to audit the system. By auditing the system, you ensure [[Open Vulnerability and Assessment Language|OVAL]] compliance with limit vulnerability, ensure compliance, or install patches. After these actions, you restart the system and load the new software. This makes the system ready for operation. Typically an [[internet service provider]] (ISP) or [[Network Operations Center|network operations center]] will perform these tasks to a well-defined set of parameters, for example, a boot image that the organization has approved and which uses software it has license to. Many instances of such a boot image create a [[virtual host|virtual]] [[Dedicated hosting service|dedicated host]].
+
+There are many [[software]] products available to automate the provisioning of servers, services and end-user devices. Examples: BMC Bladelogic Server Automation, HP Server Automation, [[IBM Tivoli]] Provisioning Manager, [[Redhat]] Kickstart, xCAT, HP Insight CMU, etc.  Middleware and applications can be installed either when the operating system is installed or afterwards by using an [[Application Service Automation]] tool. Further questions are addressed in academia such as when provisioning should be issued and how many servers are needed in multi-tier,<ref>{{Cite journal | doi=10.1145/1342171.1342172|title = Agile dynamic provisioning of multi-tier Internet applications| journal=ACM Transactions on Autonomous and Adaptive Systems| volume=3| pages=1‚Äì39|year = 2008|last1 = Urgaonkar|first1 = Bhuvan| last2=Shenoy| first2=Prashant| last3=Chandra| first3=Abhishek| last4=Goyal| first4=Pawan| last5=Wood| first5=Timothy| citeseerx=10.1.1.294.6606|s2cid = 10041862}}</ref> or multi-service applications.<ref>Jiang Dejun, Guillaume Pierre and Chi-Hung Chi. [http://www.globule.org/publi/ARPMSWA_www2010.html Autonomous Resource Provisioning for Multi-Service Web Applications]. In Proceedings of the 19th International World-Wide Web conference, April 2010.</ref>
+
+In [[cloud computing]], servers may be provisioned via a web user interface or an [[application programming interface]] (API). One of the unique things about cloud computing is how rapidly and easily this can be done.  Monitoring software can be used to trigger automatic provisioning when existing resources become too heavily stressed.<ref>Amies A, Sanchez J, Vernier D, and Zheng X D, 2011. [http://www.ibm.com/developerworks/cloud/library/cl-monitorcloudservices/ "Monitor services in the cloud"], ''IBM developerWorks'', February 15.</ref>
+
+In short, server provisioning configures servers based on resource requirements. The use of a hardware or software component (e.g. single/dual processor, RAM, HDD, [[RAID Controller]], a number of [[LAN card]]s, applications, OS, etc.) depends on the functionality of the server, such as ISP, virtualization, NOS, or voice processing. Server redundancy depends on the availability of servers in the organization. Critical applications have less downtime when using cluster servers, RAID, or a mirroring system.
+
+Service used by most larger-scale centers in part to avoid this. Additional '''resource provisioning''' may be done per service.<ref>{{cite book|last=He|first=Sijin |author2=L. Guo |author3=Y. Guo |author4=M. Ghanem |chapter=Improving Resource Utilisation in the Cloud Environment Using Multivariate Probabilistic Models|publisher=2012 2012 IEEE 5th International Conference on Cloud Computing (CLOUD) |doi=10.1109/CLOUD.2012.66 |isbn=978-1-4673-2892-0 |pages=574‚Äì581|title=2012 IEEE Fifth International Conference on Cloud Computing |year=2012 |s2cid=15374752 }}</ref>
+
+There are several software on the market for server provisioning such as [[Cobbler (software)|Cobbler]] or HP Intelligent Provisioning.
+
+==User provisioning==
+{{further|User provisioning software}}
+User provisioning refers to the creation, maintenance and deactivation of user objects and user attributes, as they exist in one or more systems, directories or applications, in response to automated or interactive business processes.  User provisioning software may include one or more of the following processes: change propagation, self-service [[workflow]], consolidated user administration, delegated user administration, and federated change control.  User objects may represent employees, contractors, vendors, partners, customers or other recipients of a service.  Services may include [[electronic mail]], inclusion in a published [[directory service|user directory]], access to a [[database]], access to a network or mainframe, etc.  User provisioning is a type of [[identity management]] software, particularly useful within organizations, where users may be represented by multiple objects on multiple systems and multiple instances.
+
+==Self-service provisioning for cloud computing services==
+On-demand self-service is described by the [[National Institute of Standards and Technology]] (NIST) as an essential characteristic of [[cloud computing]].<ref>Mell, Peter; Grance, Timothy. [http://csrc.nist.gov/publications/nistpubs/800-145/SP800-145.pdf "The NIST definition of cloud computing"], Special Publication 800-145, National Institute of Standards and Technology</ref> The self-service nature of cloud computing lets end users obtain and remove cloud services‚Äïincluding applications, the infrastructure supporting the applications,<ref>{{cite book|last=He|first=Sijin|author2=L. Guo |author3=Y. Guo |author4=C. Wu |author5=M. Ghanem |author6=R. Han |chapter=Elastic Application Container: A Lightweight Approach for Cloud Resource Provisioning|publisher=2012 IEEE 26th International Conference on Advanced Information Networking and Applications (AINA) |doi=10.1109/AINA.2012.74|isbn=978-1-4673-0714-7|pages=15‚Äì22|title=2012 IEEE 26th International Conference on Advanced Information Networking and Applications|year=2012|s2cid=4863927}}</ref> and configuration‚Äï<ref>Perera, David. [http://www.fiercegovernmentit.com/story/real-obstacle-federal-cloud-computing/2012-07-12 "The real obstacle to federal cloud computing"], ''Fierce Government IT'', July 12, 2012</ref> themselves without requiring the assistance of an IT staff member.<ref>MSV, Janakiram. [http://cloudstory.in/2012/07/top-10-reasons-why-startups-should-consider-cloud/ "Top 10 reasons why startups should consider cloud"]. ''Cloud Story'', July 20, 2012</ref> The automatic self-servicing may target different application goals and constraints (e.g. deadlines and cost),<ref name="sc2011workflow">{{cite book|last=Mao|first=Ming|author2=M. Humphrey |title=Auto-scaling to minimize cost and meet application deadlines in cloud workflows|journal=Proceedings of 2011 International Conference for High Performance Computing, Networking, Storage and Analysis (SC2011)|year=2011|doi=10.1145/2063384.2063449|isbn=978-1-4503-0771-0|s2cid=11960822}}</ref><ref name="sc2013scaling">{{cite book|last=Mao|first=Ming|author2=M. Humphrey |title=Scaling and Scheduling to Maximize Application Performance within Budget Constraints in Cloud Workflows|journal=Proceedings of the 2013 IEEE 27th International Symposium on Parallel and Distributed Processing(IPDPS2013)|year=2013|url=http://dl.acm.org/citation.cfm?id=2511429|doi=10.1109/IPDPS.2013.61|isbn=978-0-7695-4971-2|pages=67‚Äì78|s2cid=5226147}}</ref> as well as handling different application architectures (e.g., bags-of-tasks and workflows).<ref name="grid2010">{{cite book|last=Mao|first=Ming |author2=J. Li |author3=M. Humphrey|title=2010 11th IEEE/ACM International Conference on Grid Computing (Grid2010)|year=2010|doi=10.1109/GRID.2010.5697966|isbn=978-1-4244-9347-0|pages=41‚Äì48|citeseerx=10.1.1.467.5771 |s2cid=9744596 }}</ref> Cloud users can obtain cloud services through a cloud service catalog or a self-service portal.<ref>Onisick, Joe. [http://www.networkcomputing.com/private-cloud-tech-center/240004192 "Five steps to building a private cloud"], ''Network Computing'', July 23, 2012</ref> Because business users can obtain and configure cloud services themselves, this means IT staff can be more productive and gives them more time to manage cloud infrastructures.<ref>Cowie, Jason. [http://www.datacenterjournal.com/dcj-magazine/how-to-make-private-cloud-initiatives-matter-to-your-ceo/ "How to make private cloud initiatives matter to your CEO"], ''The Data Center Journal'', July 17, 2012</ref>
+
+One downside of cloud service provisioning is that it is not instantaneous. A cloud [[virtual machine]] (VM) can be acquired at any time by the user, but it may take up to several minutes for the acquired VM to be ready to use. The VM startup time is dependent on factors, such as image size, VM type, [[data center]] location, and number of VMs.<ref name="vmstartuptime2012">{{cite book|last=Mao|first=Ming|author2=M. Humphrey |title=A Performance Study on the VM Startup Time in the Cloud|journal=Proceedings of 2012 IEEE 5th International Conference on Cloud Computing (Cloud2012)|year=2012|doi=10.1109/CLOUD.2012.103|isbn=978-1-4673-2892-0|page=423|s2cid=1285357}}</ref> Cloud providers have different VM startup performance.
+
+==Mobile subscriber provisioning==
+Mobile subscriber provisioning refers to the setting up of new services, such as [[General Packet Radio Service|GPRS]], [[Multimedia Messaging Service|MMS]] and [[Instant Messaging]] for an existing subscriber of a [[mobile phone]] network, and any gateways to standard Internet [[Online chat|chat]] or [[mail]] services.  The network operator typically sends these settings to the subscriber's handset using [[Short message service|SMS]] text services or [[HTML]], and less commonly [[Wireless Application Protocol|WAP]], depending on what the [[mobile operating system]]s can accept.
+
+A general example of provisioning is with data services. A mobile user who is using his or her device for voice calling may wish to switch to data services in order to read emails or browse the Internet. The mobile device's services are "provisioned" and thus the user is able to stay connected through push emails and other features of smartphone services.
+
+Device management systems can benefit end-users by incorporating [[Plug and play|plug-and-play]] data services, supporting whatever device the end-user is using.{{citation needed|date=April 2014}}. Such a platform can automatically detect devices in the network, sending them settings for immediate and continued usability.{{citation needed|date=April 2014}} The process is fully automated, keeping the history of used devices and sending settings only to subscriber devices which were not previously set.  One method of managing mobile updates is to filter [[IMEI]]/[[International mobile subscriber identity|IMSI]] pairs.{{citation needed|date=April 2014}}  Some operators report activity of 50 over-the-air settings update files per second.{{citation needed|date=April 2014}}
+
+==Mobile content provisioning==
+This refers to delivering [[mobile content]], such as mobile internet to a [[mobile phone]], agnostic of the features of said device. These may include operating system type and versions, Java version, browser version, screen form factors, audio capabilities, language settings and many other characteristics. As of April 2006, an estimated 5,000 permutations were relevant. Mobile content provisioning facilitates a common user experience, though delivered on widely different handsets.
+
+==Mobile device provisioning==
+Provisioning devices involves delivering configuration data and policy settings to the mobile devices from a central point ‚Äì [[Mobile device management]] system tools.
+
+==Internet access provisioning==
+When getting a customer online, the client system must be configured. Depending on the connection technology (e.g., [[DSL]], Cable, Fibre), the client system configuration may include:
+* [[Modem]] configuration
+* Network authentication
+* Installing [[Device driver|drivers]]
+* Setting up [[Wireless LAN]]
+* Securing [[operating system]] (primarily for [[Microsoft Windows|Windows]])
+* Configuring browser provider-specifics
+* E-mail provisioning (create mailboxes and aliases)
+* E-mail configuration in client systems
+* Installing additional support software or add-on packages
+
+There are four approaches to provisioning internet access:
+
+* Hand out manuals: Manuals are a great help for experienced users, but inexperienced users will need to call the support hotline several times until all internet services are accessible. Every unintended change in the configuration, by user mistake or due to a software error, results in additional calls.
+* On-site setup by a technician: Sending a technician on-site is the most reliable approach from the provider's point of view, as the person ensures that the internet access is working, before leaving the customer's premises. This advantage comes at high costs ‚Äì either for the provider or the customer, depending on the business model. Furthermore, it is inconvenient for customers, as they have to wait until they get an installation appointment and because they need to take a day off from work. For repairing an internet connection on-site or phone support will be needed again.
+* Server-side remote setup: Server-side modem configuration uses a protocol called [[TR-069]]. It is widely established and reliable. At the current stage it can only be used for modem configuration. Protocol extensions are discussed, but not yet practically implemented, particularly because most client devices and applications do not support them yet. All other steps of the provisioning process are left to the user, typically causing many rather long calls to the support hotline.
+* Installation CD: Also called a "client-side self-service installation" [[Compact disc|CD]], it can cover the entire process from modem configuration to setting up client applications, including home networking devices. The software typically acts autonomously, i.e., it doesn't need an online connection and an expensive backend infrastructure. During such an installation process the software usually also install diagnosis and self-repair applications that support customers in case of problems, avoiding costly hotline calls. Such client-side applications also open completely new possibilities for marketing, [[Cross-selling|cross-]] and [[upselling]]. Such solutions come from highly specialised companies or directly from the provider's development department.
+
+==See also==
+* [[Dynamic provisioning environment]]
+
+==References==
+{{Reflist|30em}}
+
+==External links==
+* {{curlie|/Computers/Internet/Access_Providers/Resources_for_ISPs/Customer_Provisioning/|Customer provisioning}}
+
+[[Category:Network access]]
+[[Category:Operating system technology]]
+[[Category:Provisioning| ]]( 2 :2022-09-08T04:27:23ZB18126639JZ
+	Wikipedia'https://en.wikipedia.org/wiki/Main_PageMediaWiki 1.40.0-wmf.8"first-letterRx
+1http://www.globule.org/publi/ARPMSWA_www2010.htmlCAutonomous Resource Provisioning for Multi-Service Web ApplicationsRk
+Hhttp://www.ibm.com/developerworks/cloud/library/cl-monitorcloudservices/"Monitor services in the cloud"Rl
+@http://csrc.nist.gov/publications/nistpubs/800-145/SP800-145.pdf("The NIST definition of cloud computing"Rä
+Xhttp://www.fiercegovernmentit.com/story/real-obstacle-federal-cloud-computing/2012-07-12."The real obstacle to federal cloud computing"RÜ
+Ohttp://cloudstory.in/2012/07/top-10-reasons-why-startups-should-consider-cloud/3"Top 10 reasons why startups should consider cloud"Ro
+Chttp://www.networkcomputing.com/private-cloud-tech-center/240004192("Five steps to building a private cloud"R•
+ghttp://www.datacenterjournal.com/dcj-magazine/how-to-make-private-cloud-initiatives-matter-to-your-ceo/:"How to make private cloud initiatives matter to your CEO"bÅ∫ç•‡ô∫j´ﬁÂò

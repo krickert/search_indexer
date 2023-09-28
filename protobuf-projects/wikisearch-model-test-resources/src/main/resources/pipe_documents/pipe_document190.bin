@@ -1,0 +1,141 @@
+
+41332Log-periodic antenna�GA log-periodic antenna (LP), also known as a log-periodic array or log-periodic aerial, is a multi-element, directional antenna designed to operate over a wide band of frequencies. It was invented by John Dunlavy in 1952.
+
+The most common form of log-periodic antenna is the log-periodic dipole array or LPDA, The LPDA consists of a number of half-wave dipole driven elements of gradually increasing length, each consisting of a pair of metal rods. The dipoles are mounted close together in a line, connected in parallel to the feedline with alternating phase. Electrically, it simulates a series of two or three-element Yagi–Uda antennas connected together, each set tuned to a different frequency.
+
+LPDA antennas look somewhat similar to Yagi antennas, in that they both consist of dipole rod elements mounted in a line along a support boom, but they work in very different ways. Adding elements to a Yagi increases its directionality, or gain, while adding elements to a LPDA increases its frequency response, or bandwidth. 
+
+One large application for LPDAs is in rooftop terrestrial television antennas, since they must have large bandwidth to cover the wide television bands of roughly 54–88 and 174–216 MHz in the VHF and 470–890 MHz in the UHF  while also having high gain for adequate fringe reception. One widely used design for television reception combined a Yagi for UHF reception in front of a larger LPDA for VHF.
+
+Basic concept 
+
+The LPDA normally consists of a series of half wave dipole "elements" each consisting of a pair of metal rods, positioned along a support boom lying along the antenna axis. The elements are spaced at intervals following a logarithmic function of the frequency, known as d or sigma.  The length of the successive elements and the spacing between them gradually decrease along the boom. The relationship between the lengths is a function known as tau. Sigma and tau are the key design elements of the LPDA design.[http://www.salsburg.com/Log-Periodic.pdf The Log-Periodic Dipole Array"]  The radiation pattern of the antenna is unidirectional, with the main lobe along the axis of the boom, off the end with the shortest elements.  Each dipole element is resonant at a wavelength approximately equal to twice its length. The bandwidth of the antenna, the frequency range over which it has maximum gain, is approximately between the resonant frequencies of the longest and shortest element.
+
+Every element in the LPDA antenna is a driven element, that is, connected electrically to the feedline.  A parallel wire transmission line usually runs along the central boom, and each successive element is connected in opposite phase to it.  The feedline can often be seen zig-zagging across the support boom holding the elements.  Another common construction method is to use two parallel central support booms that also acts as the transmission line, mounting the dipoles on the alternate booms. Other forms of the log-periodic design replace the dipoles with the transmission line itself, forming the log-periodic zig-zag antenna.[http://www.google.ca/patents/US3355740 "Log-periodic zig zag antenna"], US Patent 3355740 Many other forms using the transmission wire as the active element also exist.[http://www.ece.illinois.edu/about/history/antenna/photos.html Photo Archive Of Antennas], Illinois Historic Archive
+
+The Yagi and the LPDA designs look very similar at first glance, as they both consist of a number of dipole elements mounted along a support boom. The Yagi, however, has only a single driven element connected to the transmission line, usually the second one from the back of the array, the remaining elements are parasitic. The Yagi antenna differs from the LPDA in having a very narrow bandwidth.
+
+In general terms, at any given frequency the log-periodic design operates somewhat similar to a three-element Yagi antenna; the dipole element closest to resonant at the operating frequency acts as a driven element, with the two adjacent elements on either side as director and reflector to increase the gain, the shorter element in front acting as a director and the longer element behind as a reflector. However, the system is somewhat more complex than that, and all the elements contribute to some degree, so the gain for any given frequency is higher than a Yagi of the same dimensions as any one section of the log-periodic. However, a Yagi with the same number of elements as a log-periodic would have far higher gain, as all of those elements are improving the gain of a single driven element. In its use as a television antenna, it was common to combine a log-periodic design for VHF with a Yagi for UHF, with both halves being roughly equal in size. This resulted in much higher gain for UHF, typically on the order of 10 to 14 dB on the Yagi side and 6.5 dB for the log-periodic. But this extra gain was needed anyway in order to make up for a number of problems with UHF signals.
+
+It should be strictly noted that the log-periodic shape, according to the IEEE definition,"Log-periodic antenna Any one of a class of antennas having a structural geometry such that its impedance and radiation characteristics repeat periodically as the logarithm of frequency." (see The new IEEE Standard Dictionary of Electrical and Electronics Terms, 1993 ⓒ IEEE.) "Log-periodic antenna Any one of a class of antennas having a structural geometry such that its impedance and radiation characteristics repeat periodically as the logarithm of frequency." (see Acknowledgments, and footnote in page 1), Self-Complementary Antennas―Principle of Self-Complementarity for Constant Impedance―, by Mushiake, Yasuto, Springer-Verlag London Ltd., London, 1996. does not align with broadband property for antennas.Mushiake, Yasuto, "Constant-impedance antennas", J. IECE Japan, 48, 4, pp. 580-584, April 1965. (in Japanese). The broadband property of log-periodic antennas comes from its self-similarity. A planar log-periodic antenna can also be made self-complementary, such as logarithmic spiral antennas (which are not classified as log-periodic per se but among the frequency independent antennas that are also self-similar) or the log-periodic toothed design. Y. Mushiake found, for what he termed "the simplest self-complementary planar antenna," a driving point impedance of η0/2188.4 Ω at frequencies well within its bandwidth limits.Rumsey, V. H., Frequency independent antennas, Academic Press, New York and London. 1966. [p. 55]
+
+History 
+
+The log periodic antenna was invented by John Dunlavy in 1952 while working for the United States Air Force, but was not credited with it due to its "Secret" classification. The University of Illinois at Urbana–Champaign had patented the Isbell and Mayes-Carrel antennas and licensed the design as a package exclusively to JFD Electronics in New York. Channel Master and Blonder Tongue Labs ignored the patents and produced a wide range of antennas based on that design. Lawsuits regarding the antenna patent which the U.I. Foundation lost, evolved into the 1971 Blonder-Tongue Doctrine. This precedent governs patent litigation.
+
+Short wave broadcast antennas 
+
+The log periodic is commonly used as a transmitting antenna in high power shortwave broadcasting stations because its broad bandwidth allows a single antenna to transmit on frequencies in multiple bands. The log-periodic zig-zag design with up to 16 sections has been used. These large antennas are typically designed to cover 6 to 26 MHz but even larger ones have been built which operate as low as 2 MHz. Power ratings are available up to 500 kW. Instead of the elements being driven in parallel, attached to a central transmission line, the elements are driven in series, adjacent elements connected at the outer edges. The antenna shown here would have about 14 dBi gain. An antenna array consisting of two such antennas, one above the other and driven in phase has a gain of up to 17 dBi. Being log-periodic, the antenna's main characteristics (radiation pattern, gain, driving point impedance) are almost constant over its entire frequency range, with the match to a 300 Ω feed line achieving a standing wave ratio of better than 2:1 over that range.
+
+References 
+
+Bibliography 
+
+*  $ 15-5: The Log-Periodic Antenna, p. 703-708.
+
+Notes 
+
+See also 
+
+*Self-complementary antenna
+
+External links 
+
+*[http://www.antenna-theory.com/antennas/wideband/log-periodic.php Antenna-Theory.com Log-Periodic Tooth Antenna Page]
+*[http://definitions.uslegal.com/b/blonder-tongue-doctrine/ Blonder-Tongue Doctrine]
+*[http://www.changpuak.ch/electronics/lpda.php LPDA Online Calculation]
+*[http://www.members.westnet.com.au/impeh/log%20periodic_A.htm Some thoughts on Log-Periodic Antennas]
+*[http://www.com-power.com/log_periodic_antennas.html Com-Power Corporation - Log Periodic Antennas for EMC testing]
+*[https://www.allaboutcircuits.com/technical-articles/wi-fi-antennas-part-1-fundamentals/ All About Circuits - The Fundamentals of Wi-Fi Antennas]
+*[https://www.electronicspoint.com/forums/threads/antenna.103577/ Electronics Point - Forum / Antenna]
+*[https://maker.pro/  Maker Pro]
+*[https://eepower.com/ EE Power]"216203*𯸘:ARTICLEB
+	namespace B!
+	dump_date2022-08-30T14:00:16ZB�k
+	wiki_text�k{{short description|Multi-element, directional antenna useable over a wide band of frequencies}}
+[[File:LPDA-Antenna.jpg|thumb|260px|Log-periodic antenna, 400&ndash;4000 MHz]]
+
+{{Antennas|expanded=Common Types}}
+
+A '''log-periodic antenna''' ('''LP'''), also known as a '''log-periodic array''' or '''log-periodic aerial''', is a multi-element, [[directional antenna]] designed to operate over a wide band of [[Frequency|frequencies]]. It was invented by John Dunlavy in 1952.
+
+The most common form of log-periodic antenna is the '''log-periodic dipole array''' or '''LPDA''', The LPDA consists of a number of [[half-wave dipole]] [[driven element]]s of gradually increasing length, each consisting of a pair of metal rods. The dipoles are mounted close together in a line, connected in parallel to the [[feedline]] with alternating [[phase (waves)|phase]]. Electrically, it simulates a series of two or three-element [[Yagi–Uda antenna]]s connected together, each set tuned to a different frequency.
+
+LPDA antennas look somewhat similar to Yagi antennas, in that they both consist of dipole rod elements mounted in a line along a support boom, but they work in very different ways. Adding elements to a Yagi increases its directionality, or [[Antenna gain|gain]], while adding elements to a LPDA increases its frequency response, or [[bandwidth (signal processing)|bandwidth]]. 
+
+One large application for LPDAs is in rooftop terrestrial [[television antenna]]s, since they must have large bandwidth to cover the wide television bands of roughly 54&ndash;88 and 174&ndash;216&nbsp;MHz in the [[Very high frequency|VHF]] and 470&ndash;890&nbsp;MHz in the [[Ultra high frequency|UHF]]  while also having high gain for adequate fringe reception. One widely used design for television reception combined a Yagi for UHF reception in front of a larger LPDA for VHF.
+
+== Basic concept ==
+
+The LPDA normally consists of a series of [[dipole antenna|half wave dipole]] "elements" each consisting of a pair of metal rods, positioned along a support boom lying along the antenna axis. The elements are spaced at intervals following a logarithmic function of the [[frequency]], known as ''d'' or ''sigma''.  The length of the successive elements and the spacing between them gradually decrease along the boom. The relationship between the lengths is a function known as ''tau''. ''Sigma'' and ''tau'' are the key design elements of the LPDA design.<ref>[http://www.salsburg.com/Log-Periodic.pdf The Log-Periodic Dipole Array"]</ref><ref name=d>{{Cite web|url=http://www.ewh.ieee.org/soc/es/Nov1998/13/LPARRAY/LPDA.HTM|title=Log Periodic Dipole Array (LPDA)|website=www.ewh.ieee.org}}</ref>  The [[radiation pattern]] of the antenna is unidirectional, with the [[main lobe]] along the axis of the boom, off the end with the shortest elements.  Each dipole element is [[resonance|resonant]] at a [[wavelength]] approximately equal to twice its length. The [[bandwidth (signal processing)|bandwidth]] of the antenna, the [[frequency]] range over which it has maximum [[antenna gain|gain]], is approximately between the [[resonant frequency|resonant frequencies]] of the longest and shortest element.
+
+Every element in the LPDA antenna is a [[driven element]], that is, connected electrically to the [[feedline]].  A parallel wire [[transmission line]] usually runs along the central boom, and each successive element is connected in ''opposite'' [[phase (waves)|phase]] to it.  The feedline can often be seen zig-zagging across the support boom holding the elements.<ref name=d/>  Another common construction method is to use two parallel central support booms that also acts as the transmission line, mounting the dipoles on the alternate booms. Other forms of the log-periodic design replace the dipoles with the transmission line itself, forming the log-periodic zig-zag antenna.<ref>[http://www.google.ca/patents/US3355740 "Log-periodic zig zag antenna"], US Patent 3355740</ref> Many other forms using the transmission wire as the active element also exist.<ref>[http://www.ece.illinois.edu/about/history/antenna/photos.html Photo Archive Of Antennas], Illinois Historic Archive</ref>
+
+The [[Yagi–Uda antenna|Yagi]] and the LPDA designs look very similar at first glance, as they both consist of a number of dipole elements mounted along a support boom. The Yagi, however, has only a single [[driven element]] connected to the transmission line, usually the second one from the back of the array, the remaining elements are [[parasitic element|parasitic]]. The Yagi antenna differs from the LPDA in having a very narrow bandwidth.
+
+In general terms, at any given frequency the log-periodic design operates somewhat similar to a three-element Yagi antenna; the dipole element closest to resonant at the operating frequency acts as a driven element, with the two adjacent elements on either side as director and reflector to increase the gain, the shorter element in front acting as a director and the longer element behind as a reflector. However, the system is somewhat more complex than that, and all the elements contribute to some degree, so the gain for any given frequency is higher than a Yagi of the same dimensions as any one section of the log-periodic. However, a Yagi with the same number of elements as a log-periodic would have ''far'' higher gain, as all of those elements are improving the gain of a single driven element. In its use as a television antenna, it was common to combine a log-periodic design for VHF with a Yagi for UHF, with both halves being roughly equal in size. This resulted in much higher gain for UHF, typically on the order of 10 to 14&nbsp;dB on the Yagi side and 6.5&nbsp;dB for the log-periodic.<ref>{{cite book |url={{GBurl|id=jDCs1Ckne_EC|pg=PA177}} |page=178 |title= Computational Electromagnetics for RF and Microwave Engineering |first=David |last=Davidson |publisher=Cambridge University Press |date=2010|isbn=978-1-139-49281-2}}</ref> But this extra gain was needed anyway in order to make up for a number of problems with [[UHF television broadcasting#UHF vs VHF|UHF signals]].
+
+It should be strictly noted that the log-periodic shape, according to the IEEE definition,<ref>"''Log-periodic antenna'' Any one of a class of antennas having a structural geometry such that its impedance and radiation characteristics repeat periodically as the logarithm of frequency." (see ''The new IEEE Standard Dictionary of Electrical and Electronics Terms'', 1993 ⓒ IEEE.) </ref><ref>"''Log-periodic antenna'' Any one of a class of antennas having a structural geometry such that its impedance and radiation characteristics repeat periodically as the logarithm of frequency." (see Acknowledgments, and footnote in page 1), ''Self-Complementary Antennas―Principle of Self-Complementarity for Constant Impedance''―, by Mushiake, Yasuto, Springer-Verlag London Ltd., London, 1996.</ref> does not align with broadband property for antennas.<ref>Mushiake, Yasuto, "Constant-impedance antennas", ''J. IECE Japan'', 48, 4, pp. 580-584, April 1965. (in Japanese).</ref><ref>{{cite journal|last=Mushiake|first=Yasuto|url=http://www.sm.rim.or.jp/~ymushiak/sub.non-const.htm|title=Log-periodic structure provides no broad-band property for antennas|journal=J. IEE Japan |volume=69 |issue=3 |page=88 |date=March 1949 |publisher=Sm.rim.or.jp |access-date=15 January 2014}}</ref> The broadband property of log-periodic antennas comes from its [[self-similarity]]. A planar log-periodic antenna can also be made [[self-complementary antenna|self-complementary]], such as logarithmic [[spiral antenna]]s (which are not classified as log-periodic ''per se'' but among the [[frequency independent antennas]] that are also self-similar) or the log-periodic toothed design. Y. Mushiake found, for what he termed "the simplest self-complementary planar antenna," a driving point impedance of [[Impedance of free space|η<sub>0</sub>]]/2=188.4&nbsp;Ω at frequencies well within its bandwidth limits.<ref>{{cite journal|last=Mushiake|first=Yasuto|url=http://www.sm.rim.or.jp/~ymushiak/sub.docu.1.htm##%% |title=Origination of self-complementary structure and discovery of its constant-impedance property|journal=J. IEE Japan|volume=69 |issue=3 |page=88 |date=March 1949 |lang=ja |publisher=Sm.rim.or.jp |access-date=31 January 2014}}</ref><ref>{{cite web|last=Mushiake|first=Yasuto|url=http://www.sm.rim.or.jp/~ymushiak/sub.sca.htm|title=Infinite freedom |publisher=Sm.rim.or.jp |access-date=15 January 2014}}</ref><ref name="Rumsey Frequency">Rumsey, V. H., ''Frequency independent antennas'', Academic Press, New York and London. 1966. [p. 55]</ref>
+{{multiple image
+| align    = center
+| direction = horizontal
+| header   =
+| image1   = Schwarzbeck UHALP 9108 A.jpg
+| caption1 = Log-periodic antenna, 250&ndash;2400 MHz
+| width1   = 200
+| image2   = VHF UHF LP-antenna closeup.JPG
+| caption2 = Log periodic mounted for vertical polarization, covers 140&ndash;470&nbsp;MHz
+| width2   = 150
+| image3   = Log periodic VHF TV antenna 1963.jpg
+| caption3 = LP television antenna 1963. Covers 54&ndash;88&nbsp;MHz and 174&ndash;218&nbsp;MHz. Slanted elements were used because on the upper band they operate at the 3rd harmonic.
+| width3   = 262
+| image4   = Log-periodic monopole antenna.png
+| caption4 = Wire Log-periodic monopole antenna.
+| width4   = 202
+}}
+
+== History ==
+The log periodic antenna was invented by John Dunlavy in 1952 while working for the United States Air Force, but was not credited with it due to its "Secret" classification.<ref>{{cite web |website=Stereophile |author=John Atkinson |date=24 August 1996 |title=Loudspeaker designer John Dunlavy: By the Numbers |at=page&nbsp;4 |url=https://www.stereophile.com/content/loudspeaker-designer-john-dunlavy-numbers-page-4}}</ref> The [[University of Illinois at Urbana–Champaign]] had patented the Isbell and Mayes-Carrel antennas and licensed the design as a package exclusively to JFD Electronics in New York. [[Channel Master]] and [[Blonder Tongue Labs]] ignored the patents and produced a wide range of antennas based on that design. Lawsuits regarding the antenna patent which the U.I. Foundation lost, evolved into the [[Blonder-Tongue Labs., Inc. v. University of Ill. Foundation|1971 Blonder-Tongue Doctrine]]. This precedent governs patent litigation.<ref>{{Cite web |title=Blonder–Tongue Doctrine Law and Legal Definition |publisher=USLegal, Inc. |website=definitions.uslegal.com |url=https://definitions.uslegal.com/b/blonder-tongue-doctrine/ |url-status=live |access-date=2022-05-04}}</ref>
+
+== Short wave broadcast antennas ==
+{{multiple image
+| align = right
+| direction = horizontal
+| header   =
+| image1   = Moosbrunn drehbare logarithmisch-periodische Antenne (2).JPG
+| caption1 = Wire log periodic transmitting antenna at international shortwave broadcasting station, Moosbrunn, Austria. Covers 6.1&ndash;23&nbsp;MHz
+| width1   = 288
+| image2   = LPA_antenna_suitable_for_short_wave_broadcast.png
+| caption2 = Diagram of a zig-zag shortwave LPA antenna, black shows metallic conductors, red shows insulating supports
+| width2   = 180
+}}
+
+The log periodic is commonly used as a transmitting antenna in high power [[International broadcasting|shortwave broadcasting]]<ref>{{Cite web|url=https://www.antenna.be/art1.html|title=Antennas for the Shortwave Broadcaster|website=www.antenna.be}}</ref> stations because its broad bandwidth allows a single antenna to transmit on frequencies in multiple [[Shortwave bands#International broadcast bands|bands]]. The log-periodic zig-zag design with up to 16 sections has been used. These large antennas are typically designed to cover 6 to 26&nbsp;MHz but even larger ones have been built which operate as low as 2&nbsp;MHz. Power ratings are available up to 500&nbsp;kW. Instead of the elements being driven in parallel, attached to a central transmission line, the elements are driven in series, adjacent elements connected at the outer edges. The antenna shown here would have about 14&nbsp;dBi [[antenna gain|gain]]. An [[antenna array]] consisting of two such antennas, one above the other and driven in phase has a gain of up to 17&nbsp;dBi. Being log-periodic, the antenna's main characteristics ([[radiation pattern]], gain, [[driving point impedance]]) are almost constant over its entire frequency range, with the match to a 300&nbsp;Ω feed line achieving a [[standing wave ratio]] of better than 2:1 over that range.
+
+== References ==
+{{Reflist|30em}}
+
+== Bibliography ==
+* {{cite book |title= Antennas|author= John Daniel Kraus |publisher= McGraw-Hill College |year= 1988|edition = Subsequent|page=892 |isbn=978-0-070-35422-7}} $ 15-5: ''The Log-Periodic Antenna'', p. 703-708.
+
+== Notes ==
+{{FS1037C MS188}}
+
+== See also ==
+*[[Self-complementary antenna]]
+
+== External links ==
+*[http://www.antenna-theory.com/antennas/wideband/log-periodic.php Antenna-Theory.com Log-Periodic Tooth Antenna Page]
+*[http://definitions.uslegal.com/b/blonder-tongue-doctrine/ Blonder-Tongue Doctrine]
+*[http://www.changpuak.ch/electronics/lpda.php LPDA Online Calculation]
+*[http://www.members.westnet.com.au/impeh/log%20periodic_A.htm Some thoughts on Log-Periodic Antennas]
+*[http://www.com-power.com/log_periodic_antennas.html Com-Power Corporation - Log Periodic Antennas for EMC testing]
+*[https://www.allaboutcircuits.com/technical-articles/wi-fi-antennas-part-1-fundamentals/ All About Circuits - The Fundamentals of Wi-Fi Antennas]
+*[https://www.electronicspoint.com/forums/threads/antenna.103577/ Electronics Point - Forum / Antenna]
+*[https://maker.pro/  Maker Pro]
+*[https://eepower.com/ EE Power]
+{{Antenna Types}}
+
+[[Category:Radio frequency antenna types]]
+[[Category:Antennas (radio)]]B*
+date_parsed2022-12-07T05:36:13.189901Z

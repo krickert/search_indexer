@@ -1,0 +1,68 @@
+
+41616Queuing delayæIn telecommunication and computer engineering, the queuing delay or queueing delay is the time a job waits in a queue until it can be executed. It is a key component of network delay. In a switched network, queuing delay is the time between the completion of signaling by the call originator and the arrival of a ringing signal at the call receiver. Queuing delay may be caused by delays at the originating switch, intermediate switches, or the call receiver servicing switch. In a data network, queuing delay is the sum of the delays between the request for service and the establishment of a circuit to the called data terminal equipment (DTE). In a packet-switched network, queuing delay is the sum of the delays encountered by a packet between the time of insertion into the network and the time of delivery to the address.  
+Router processing
+
+This term is most often used in reference to routers. When packets arrive at a router, they have to be processed and transmitted. A router can only process one packet at a time. If packets arrive faster than the router can process them (such as in a burst transmission) the router puts them into the queue (also called the buffer) until it can get around to transmitting them. Delay can also vary from packet to packet so averages and statistics are usually generated when measuring and evaluating queuing delay.  
+
+As a queue begins to fill up due to traffic arriving faster than it can be processed, the amount of delay a packet experiences going through the queue increases. The speed at which the contents of a queue can be processed is a function of the transmission rate of the facility. This leads to the classic delay curve. The average delay any given packet is likely to experience is given by the formula 1/(Œº-Œª) where Œº is the number of packets per second the facility can sustain and Œª is the average rate at which packets are arriving to be serviced.   This formula can be used when no packets are dropped from the queue. 
+
+The maximum queuing delay is proportional to buffer size. The longer the line of packets waiting to be transmitted, the longer the average waiting time is. The router queue of packets waiting to be sent also introduces a potential cause of packet loss. Since the router has a finite amount of buffer memory to hold the queue, a router which receives packets at too high a rate may experience a full queue. In this case, the router has no other option than to simply discard excess packets.
+
+When the transmission protocol uses the dropped-packets symptom of filled buffers to regulate its transmit rate, as the Internet's TCP does, bandwidth is fairly shared at near theoretical capacity with minimal network congestion delays. Absent this feedback mechanism the delays become both unpredictable and rise sharply, a symptom also seen as freeways approach capacity; metered onramps are the most effective solution there, just as TCP's self-regulation is the most effective solution when the traffic is packets instead of cars). This result is both hard to model mathematically and quite counterintuitive to people who lack experience with mathematics or real networks.  Failing to drop packets, choosing instead to buffer an ever-increasing number of them, produces bufferbloat.
+Notation
+
+In Kendall's notation, the M/M/1/K queuing model, where K is the size of the buffer, may be used to analyze the queuing delay in a specific system. Kendall's notation should be used to calculate the queuing delay when packets are dropped from the queue.  The M/M/1/K queuing model is the most basic and important queuing model for network analysis.
+
+See also
+
+* Broadcast delay
+* Delay encoding
+* End-to-end delay
+* Latency (engineering)
+* Little's law ‚Äì queueing formula
+* Network delay
+* Packet loss
+* Processing delay
+* Queueing theory
+* Transmission delay
+
+References
+
+* Wireless communications; Theodore S.Rpappaport"ã,{{Technical|date=May 2022}}
+
+In [[telecommunication]] and [[computer engineering]], the '''queuing delay''' or '''queueing delay''' is the time a job waits in a [[Queue (data structure)|queue]] until it can be executed. It is a key component of [[network delay]]. In a switched network, queuing delay is the time between the completion of signaling by the call originator and the arrival of a ringing signal at the call receiver. Queuing delay may be caused by delays at the originating switch, intermediate switches, or the call receiver servicing switch. In a data network, queuing delay is the sum of the delays between the request for service and the establishment of a circuit to the called data terminal equipment (DTE). In a packet-switched network, queuing delay is the sum of the delays encountered by a packet between the time of insertion into the network and the time of delivery to the address. <ref name=Gov>{{cite web|title=Queuing Delay|url=http://www.its.bldrdoc.gov/fs-1037/dir-029/_4318.htm|access-date=2012-02-12|archive-url=https://web.archive.org/web/20121219004715/http://www.its.bldrdoc.gov/fs-1037/dir-029/_4318.htm|archive-date=2012-12-19|url-status=dead}}</ref> 
+==Router processing==
+This term is most often used in reference to [[router (computing)|router]]s. When [[Packet (information technology)|packet]]s arrive at a router, they have to be processed and transmitted. A router can only process one packet at a time. If packets arrive faster than the router can process them (such as in a [[burst transmission]]) the router puts them into the queue (also called the [[Buffer (computer science)|buffer]]) until it can get around to transmitting them. Delay can also vary from packet to packet so averages and statistics are usually generated when measuring and evaluating queuing delay. <ref>{{cite web|title=Delay and Loss in Packet-Switched Networks|url=http://59.67.152.66:8000/newenglish/delay.htm|access-date=2012-02-12|author=Keith W. Ross|author2=James F. Kurose|url-status=dead|archive-url=https://archive.today/20130114163812/http://59.67.152.66:8000/newenglish/delay.htm|archive-date=2013-01-14}}</ref> 
+
+As a queue begins to fill up due to traffic arriving faster than it can be processed, the amount of delay a packet experiences going through the queue increases. The speed at which the contents of a queue can be processed is a function of the transmission rate of the facility. This leads to the classic delay curve. The average delay any given packet is likely to experience is given by the formula 1/(Œº-Œª) where Œº is the number of packets per second the facility can sustain and Œª is the average rate at which packets are arriving to be serviced. <ref>{{cite web|title=Queueing Delay|url=http://www.hill2dot0.com/wiki/index.php?title=Queuing_delay|publisher=Hill Association|access-date=2 December 2012|archive-url=https://web.archive.org/web/20150904041151/http://www.hill2dot0.com/wiki/index.php?title=Queuing_delay|archive-date=4 September 2015|url-status=dead|df=dmy-all}}</ref>  This formula can be used when no packets are dropped from the queue. 
+
+The maximum queuing delay is proportional to buffer size. The longer the line of packets waiting to be transmitted, the longer the average waiting time is. The router queue of packets waiting to be sent also introduces a potential cause of packet loss. Since the router has a finite amount of buffer memory to hold the queue, a router which receives packets at too high a rate may experience a full queue. In this case, the router has no other option than to simply discard excess packets.
+
+When the transmission protocol uses the dropped-packets symptom of filled buffers to regulate its transmit rate, as the Internet's TCP does, bandwidth is fairly shared at near theoretical capacity with minimal [[network congestion]] delays. Absent this feedback mechanism the delays become both unpredictable and rise sharply, a symptom also seen as freeways approach capacity; metered onramps are the most effective solution there, just as TCP's self-regulation is the most effective solution when the traffic is packets instead of cars). This result is both hard to model mathematically and quite counterintuitive to people who lack experience with mathematics or real networks.  Failing to drop packets, choosing instead to buffer an ever-increasing number of them, produces [[bufferbloat]].
+==Notation==
+In [[Kendall's notation]], the M/M/1/K queuing model, where K is the size of the buffer, may be used to analyze the queuing delay in a specific system. Kendall's notation should be used to calculate the queuing delay when packets are dropped from the queue.  The M/M/1/K queuing model is the most basic and important queuing model for network analysis.<ref>{{cite web|url=http://streaming.stat.iastate.edu/~stat330/notes/day30.pdf |archive-url=https://ghostarchive.org/archive/20221009/http://streaming.stat.iastate.edu/~stat330/notes/day30.pdf |archive-date=2022-10-09 |url-status=live |access-date=November 7, 2008 |title=stat.iastate.edu}}{{dead link|date=June 2016|bot=medic}}{{cbignore|bot=medic}}</ref>
+
+==See also==
+
+* [[Broadcast delay]]
+* [[Delay encoding]]
+* [[End-to-end delay]]
+* [[Latency (engineering)]]
+* [[Little's law]] ‚Äì queueing formula
+* [[Network delay]]
+* [[Packet loss]]
+* [[Processing delay]]
+* [[Queueing theory]]
+* [[Transmission delay]]
+
+==References==
+* ''Wireless communications''; Theodore S.Rpappaport
+<references/>
+{{FS1037C MS188}}
+
+{{DEFAULTSORT:Queuing Delay}}
+[[Category:Computer networking]]
+[[Category:Telecommunications engineering]]
+[[Category:Computer engineering]]
+[[Category:Queueing theory]]( 2 :2022-10-09T22:28:40ZB42425010JZ
+	Wikipedia'https://en.wikipedia.org/wiki/Main_PageMediaWiki 1.40.0-wmf.8"first-letterbÅ∫ç•»∑¿Qjòñçö

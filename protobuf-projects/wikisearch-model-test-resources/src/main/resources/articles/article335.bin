@@ -1,0 +1,117 @@
+
+41625
+Radiometry�Radiometry is a set of techniques for measuring electromagnetic radiation, including visible light. Radiometric techniques in optics characterize the distribution of the radiation's power in space, as opposed to photometric techniques, which characterize the light's interaction with the human eye. The fundamental difference between radiometry and photometry is that radiometry gives the entire optical radiation spectrum, while photometry is limited to the visible spectrum. Radiometry is distinct from quantum techniques such as photon counting.
+
+The use of radiometers to determine the temperature of objects and gasses by measuring radiation flux is called pyrometry.  Handheld pyrometer devices are often marketed as infrared thermometers.
+
+Radiometry is important in astronomy, especially radio astronomy, and plays a significant role in Earth remote sensing. The measurement techniques categorized as radiometry in optics are called photometry in some astronomical applications, contrary to the optics usage of the term.
+
+Spectroradiometry is the measurement of absolute radiometric quantities in narrow bands of wavelength.
+
+Radiometric quantities 
+
+Integral and spectral radiometric quantities 
+
+Integral quantities (like radiant flux) describe the total effect of radiation of all wavelengths or frequencies, while spectral quantities (like spectral power) describe the effect of radiation of a single wavelength λ or frequency ν. To each integral quantity there are corresponding spectral quantities, for example the radiant flux Φe corresponds to the spectral power Φe,λ and Φe,ν.
+
+Getting an integral quantity's spectral counterpart requires a limit transition. This comes from the idea that the precisely requested wavelength photon existence probability is zero. Let us show the relation between them using the radiant flux as an example:
+
+Integral flux, whose unit is W:
+\Phi_\mathrm{e}.
+
+Spectral flux by wavelength, whose unit is :
+\Phi_{\mathrm{e},\lambda} = {\mathrm{d}\Phi_\mathrm{e} \over \mathrm{d}\lambda},
+where \mathrm{d}\Phi_\mathrm{e} is the radiant flux of the radiation in a small wavelength interval [\lambda - {\mathrm{d}\lambda \over 2}, \lambda + {\mathrm{d}\lambda \over 2}].
+The area under a plot with wavelength horizontal axis equals to the total radiant flux.
+
+Spectral flux by frequency, whose unit is :
+\Phi_{\mathrm{e},\nu} = {\mathrm{d}\Phi_\mathrm{e} \over \mathrm{d}\nu},
+where \mathrm{d}\Phi_\mathrm{e} is the radiant flux of the radiation in a small frequency interval [\nu - {\mathrm{d}\nu \over 2}, \nu + {\mathrm{d}\nu \over 2}].
+The area under a plot with frequency horizontal axis equals to the total radiant flux.
+
+The spectral quantities by wavelength λ and frequency ν are related to each other, since the product of the two variables is the speed of light (\lambda \cdot \nu = c):
+\Phi_{\mathrm{e},\lambda} {c \over \lambda^2} \Phi_{\mathrm{e},\nu}, or \Phi_{\mathrm{e},\nu} 
+ {c \over \nu^2} \Phi_{\mathrm{e},\lambda}, or \lambda \Phi_{\mathrm{e},\lambda} = \nu \Phi_{\mathrm{e},\nu}.
+
+The integral quantity can be obtained by the spectral quantity's integration:
+
+\Phi_\mathrm{e} \int_0^\infty \Phi_{\mathrm{e},\lambda}\, \mathrm{d}\lambda 
+ \int_0^\infty \Phi_{\mathrm{e},\nu}\, \mathrm{d}\nu \int_0^\infty \lambda \Phi_{\mathrm{e},\lambda}\, \mathrm{d} \ln \lambda 
+ \int_0^\infty \nu \Phi_{\mathrm{e},\nu}\, \mathrm{d} \ln \nu.
+
+See also 
+
+* Reflectivity
+* Microwave radiometer
+* Measurement of Ionizing Radiation
+* Radiometric calibration
+* Radiometric resolution
+
+References
+
+External links
+
+*[https://web.archive.org/web/20130313095139/http://fp.optics.arizona.edu/Palmer/rpfaq/rpfaq.htm Radiometry and photometry FAQ] Professor Jim Palmer's Radiometry FAQ page (The University of Arizona College of Optical Sciences)."�){{Short description|Techniques for measuring electromagnetic radiation}}
+{{one source|date=December 2015}}
+[[File:photometry_radiometry_units.svg|thumb|upright=1.5|Comparison of photometric and radiometric quantities]]
+'''Radiometry''' is a set of techniques for [[measurement|measuring]] [[electromagnetic radiation]], including [[visible light]]. Radiometric techniques in [[optics]] characterize the distribution of the radiation's [[power (physics)|power]] in space, as opposed to [[photometry (optics)|photometric]] techniques, which characterize the light's interaction with the human eye. The fundamental difference between radiometry and photometry is that radiometry gives the entire optical radiation spectrum, while photometry is limited to the visible spectrum. Radiometry is distinct from [[quantum optics|quantum]] techniques such as [[photon]] counting.
+
+The use of [[radiometer]]s to determine the temperature of objects and gasses by measuring radiation flux is called [[pyrometry]].  Handheld pyrometer devices are often marketed as [[infrared thermometer]]s.
+
+Radiometry is important in [[astronomy]], especially [[radio astronomy]], and plays a significant role in [[Earth remote sensing]]. The measurement techniques categorized as ''radiometry'' in optics are called [[Photometry (astronomy)|''photometry'']] in some astronomical applications, contrary to the optics usage of the term.
+
+'''Spectroradiometry''' is the measurement of absolute radiometric quantities in narrow bands of wavelength.<ref>{{cite book|title=Focal Encyclopedia of Photography|publisher=[[Focal Press]] | author=Leslie D. Stroebel | author2=Richard D. Zakia | name-list-style=amp | date=1993 | edition=3rd|page=[https://archive.org/details/focalencyclopedi00lesl/page/115 115] |isbn=0-240-51417-3 | url = https://archive.org/details/focalencyclopedi00lesl |url-access=registration|quote=spectroradiometry Focal Encyclopedia of Photography.}}</ref>
+
+== Radiometric quantities ==
+{{SI radiometry units}}
+{{Radiometry coefficients}}
+
+== Integral and spectral radiometric quantities ==
+[[Integral]] quantities (like [[radiant flux]]) describe the total effect of radiation of all [[wavelength]]s or [[frequency|frequencies]], while [[electromagnetic spectrum|spectral]] quantities (like [[spectral power]]) describe the effect of radiation of a single wavelength ''λ'' or frequency ''ν''. To each integral quantity there are corresponding spectral quantities, for example the radiant flux Φ<sub>e</sub> corresponds to the spectral power Φ<sub>e,''λ''</sub> and Φ<sub>e,''ν''</sub>.
+
+Getting an integral quantity's spectral counterpart requires a [[Limit (mathematics)|limit transition]]. This comes from the idea that the precisely requested wavelength [[photon]] existence probability is zero. Let us show the relation between them using the radiant flux as an example:
+
+Integral flux, whose unit is [[watt|W]]:
+:<math>\Phi_\mathrm{e}.</math>
+
+Spectral flux by wavelength, whose unit is {{nobreak|W/[[metre|m]]}}:
+:<math>\Phi_{\mathrm{e},\lambda} = {\mathrm{d}\Phi_\mathrm{e} \over \mathrm{d}\lambda},</math>
+where <math>\mathrm{d}\Phi_\mathrm{e}</math> is the radiant flux of the radiation in a small wavelength interval <math>[\lambda - {\mathrm{d}\lambda \over 2}, \lambda + {\mathrm{d}\lambda \over 2}]</math>.
+The area under a plot with wavelength horizontal axis equals to the total radiant flux.
+
+Spectral flux by frequency, whose unit is {{nobreak|W/[[hertz|Hz]]}}:
+:<math>\Phi_{\mathrm{e},\nu} = {\mathrm{d}\Phi_\mathrm{e} \over \mathrm{d}\nu},</math>
+where <math>\mathrm{d}\Phi_\mathrm{e}</math> is the radiant flux of the radiation in a small frequency interval <math>[\nu - {\mathrm{d}\nu \over 2}, \nu + {\mathrm{d}\nu \over 2}]</math>.
+The area under a plot with frequency horizontal axis equals to the total radiant flux.
+
+The spectral quantities by wavelength ''λ'' and frequency ''ν'' are related to each other, since the product of the two variables is the [[speed of light]] (<math>\lambda \cdot \nu = c</math>):
+:<math>\Phi_{\mathrm{e},\lambda} = {c \over \lambda^2} \Phi_{\mathrm{e},\nu},</math> or <math>\Phi_{\mathrm{e},\nu} = {c \over \nu^2} \Phi_{\mathrm{e},\lambda},</math> or <math>\lambda \Phi_{\mathrm{e},\lambda} = \nu \Phi_{\mathrm{e},\nu}.</math>
+
+The integral quantity can be obtained by the spectral quantity's integration:
+
+:<math>\Phi_\mathrm{e} = \int_0^\infty \Phi_{\mathrm{e},\lambda}\, \mathrm{d}\lambda = \int_0^\infty \Phi_{\mathrm{e},\nu}\, \mathrm{d}\nu = \int_0^\infty \lambda \Phi_{\mathrm{e},\lambda}\, \mathrm{d} \ln \lambda = \int_0^\infty \nu \Phi_{\mathrm{e},\nu}\, \mathrm{d} \ln \nu.</math>
+
+== See also ==
+* [[Reflectivity]]
+* [[Microwave radiometer]]
+* [[Ionizing radiation#Measurement|Measurement of Ionizing Radiation]]
+* [[Radiometric calibration]]
+* [[Radiometric resolution]]
+
+==References==
+{{Reflist}}
+
+==External links==
+*[https://web.archive.org/web/20130313095139/http://fp.optics.arizona.edu/Palmer/rpfaq/rpfaq.htm Radiometry and photometry FAQ] Professor Jim Palmer's Radiometry FAQ page (The University of Arizona College of Optical Sciences).
+
+{{Authority control}}
+
+[[Category:Radiometry| ]]
+[[Category:Measurement]]
+[[Category:Optical metrology]]
+[[Category:Telecommunications engineering]]
+[[Category:Observational astronomy]]
+[[Category:Electromagnetic radiation]]( 2 :2022-08-22T03:05:19ZB252195JZ
+	Wikipedia'https://en.wikipedia.org/wiki/Main_PageMediaWiki 1.40.0-wmf.8"first-letterRB
+;https://archive.org/details/focalencyclopedi00lesl/page/115115R
+^https://web.archive.org/web/20130313095139/http://fp.optics.arizona.edu/Palmer/rpfaq/rpfaq.htmRadiometry and photometry FAQb�����ܦmj�䋘

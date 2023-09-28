@@ -1,0 +1,76 @@
+
+41256Index-matching material¯+In optics, an index-matching material is a substance, usually a liquid, cement (adhesive), or gel, which has an index of refraction that closely approximates that of another object (such as a lens, material, fiber-optic, etc.).
+
+When two substances with the same index are in contact, light passes from one to the other with neither reflection nor refraction. As such, they are used for various purposes in science, engineering, and art.
+
+For example, in a popular home experiment, a glass rod is made almost invisible by immersing it in an index-matched transparent fluid such as mineral spirits.[http://www.optics4kids.org/home/content/classroom-activities/medium/lose-a-glass-in-a-glass/ Optics For Kids - "Lose a glass in a glass" home experiment]
+
+In microscopy
+
+In light microscopy, oil immersion is a technique used to increase the resolution of a microscope. This is achieved by immersing both the objective lens and the specimen in a transparent oil of high refractive index, thereby increasing the numerical aperture of the objective lens.
+
+Immersion oils are transparent oils that have specific optical and viscosity characteristics necessary for use in microscopy. Typical oils used have an index of refraction around  1.515.[http://www.olympusmicro.com/primer/anatomy/immersion.html "Microscope Objectives: Immersion Media"] by Mortimer Abramowitz  and Michael W. Davidson, Olympus Microscopy Resource Center (website), 2002. An oil immersion objective is an objective lens specially designed to be used in this way. The index of the oil is typically chosen to match the index of the microscope lens glass, and of the cover slip.
+
+For more details, see the main article, oil immersion. Some microscopes also use other index-matching materials besides oil; see water immersion objective and solid immersion lens.
+
+In fiber optics
+
+In fiber optics and telecommunications, an index-matching material may be used in conjunction with pairs of mated connectors or with mechanical splices to reduce signal reflected in the guided mode (known as return loss) (see Optical fiber connector). Without the use of an index-matching material, Fresnel reflections will occur at the smooth end faces of a fiber unless there is no fiber-air interface or other significant mismatch in refractive index. These reflections may be as high as ‚àí14¬†dB (i.e., 14¬†dB below the optical power of the incident signal). When the reflected signal returns to the transmitting end, it may be reflected again and return to the receiving end at a level that is 28¬†dB plus twice the fiber loss below the direct signal. The reflected signal will also be delayed by twice the delay time introduced by the fiber. The twice-reflected, delayed signal superimposed on the direct signal may noticeably degrade an analog baseband intensity-modulated video signal. Conversely, for digital transmission, the reflected signal will often have no practical effect on the detected signal seen at the decision point of the digital optical receiver except in marginal cases where bit-error ratio is significant. However, certain digital transmitters such as those employing a Distributed Feedback Laser may be affected by back reflection and then fall outside specifications such as Side Mode Suppression Ratio, potentially degrading system bit error ratio, so networking standards intended for DFB lasers may specify a back-reflection tolerance such as ‚àí10¬†dB for transmitters so that they remain within specification even without index matching. This back-reflection tolerance might be achieved using an optical isolator or by way of reduced coupling efficiency.
+
+For some applications, instead of standard polished connectors (e.g. FC/PC), angle polished connectors (e.g. FC/APC) may be used, whereby the non-perpendicular polish angle greatly reduces the ratio of reflected signal launched into the guided mode even in the case of a fiber-air interface.
+
+In experimental fluid dynamics
+
+Index matching is used in liquid-liquid and liquid-solid (Multiphase flow) experimental systems to minimise the distortions that occur in these systems, this is particularly important for systems with many interfaces which become optically inaccessible. Matching the refractive index minimises reflection, refraction, diffraction and rotations that occurs at the interfaces allowing access to regions that would otherwise be inaccessible to optical measurements. This is particularly important for advanced optical measurements like Laser-induced fluorescence, Particle image velocimetry and Particle tracking velocimetry to name a few.
+
+In art conservation
+
+If a sculpture is broken into several pieces, art conservators may reattach the pieces using an adhesive such as Paraloid B-72 or epoxy. If the sculpture is made of a transparent or semitransparent material (such as glass), the seam where the pieces are attached will usually be much less noticeable if the refractive index of the adhesive matches the refractive index of the surrounding object. Therefore, art conservators may measure the index of objects and then use an index-matched adhesive. Similarly, losses (missing sections) in transparent or semitransparent objects are often filled using an index-matched material.
+
+In optical component adhesives
+
+Certain optical components, such as a Wollaston prism or Nicol prism, are made of multiple transparent pieces that are directly attached to each other. The adhesive is usually index-matched to the pieces. Historically, Canada balsam was used in this application, but it is now more common to use epoxy or other synthetic adhesives.
+
+References
+
+*"»6In [[optics]], an '''index-matching material''' is a substance, usually a liquid, cement (adhesive), or [[gel]], which has an [[index of refraction]] that closely approximates that of another object (such as a lens, material, fiber-optic, etc.).
+
+When two substances with the same index are in contact, light passes from one to the other with neither [[fresnel reflection|reflection]] nor [[refraction]]. As such, they are used for various purposes in science, engineering, and art.
+
+For example, in a popular home experiment, a glass rod is made almost invisible by immersing it in an index-matched transparent fluid such as [[mineral spirits]].<ref>[http://www.optics4kids.org/home/content/classroom-activities/medium/lose-a-glass-in-a-glass/ Optics For Kids - "Lose a glass in a glass" home experiment]</ref>
+
+==In microscopy==
+{{main|Oil immersion}}
+
+In [[optical microscope|light microscopy]], oil immersion is a technique used to increase the [[Optical resolution|resolution]] of a [[microscope]]. This is achieved by immersing both the [[Objective (optics)|objective lens]] and the specimen in a transparent oil of high [[refractive index]], thereby increasing the [[numerical aperture]] of the objective lens.
+
+Immersion oils are transparent oils that have specific optical and [[viscosity]] characteristics necessary for use in microscopy. Typical oils used have an [[index of refraction]] around  1.515.<ref>[http://www.olympusmicro.com/primer/anatomy/immersion.html "Microscope Objectives: Immersion Media"] by Mortimer Abramowitz  and Michael W. Davidson, ''[[Olympus Corporation|Olympus]] Microscopy Resource Center'' (website), 2002.</ref> An oil immersion objective is an objective lens specially designed to be used in this way. The index of the oil is typically chosen to match the index of the microscope lens glass, and of the [[cover slip]].
+
+For more details, see the main article, [[oil immersion]]. Some microscopes also use other index-matching materials besides oil; see [[water immersion objective]] and [[solid immersion lens]].
+
+==In fiber optics==
+In fiber optics and [[telecommunications]], an index-matching material may be used in conjunction with pairs of mated connectors or with mechanical splices to reduce signal reflected in the guided mode (known as return loss) (see [[Optical fiber connector]]). Without the use of an index-matching material, Fresnel reflections will occur at the smooth end faces of a fiber unless there is no fiber-air interface or other significant mismatch in refractive index. These reflections may be as high as ‚àí14&nbsp;[[decibel|dB]] (i.e., 14&nbsp;dB below the optical power of the incident [[Signaling (telecommunication)|signal]]). When the reflected signal returns to the transmitting end, it may be reflected again and return to the receiving end at a level that is 28&nbsp;dB plus twice the fiber loss below the direct signal. The reflected signal will also be delayed by twice the delay time introduced by the fiber. The twice-reflected, delayed signal superimposed on the direct signal may noticeably degrade an analog [[baseband]] [[Amplitude|intensity]]-modulated [[video]] signal. Conversely, for digital transmission, the reflected signal will often have no practical effect on the detected signal seen at the decision point of the digital [[optical receiver]] except in marginal cases where bit-error ratio is significant. However, certain digital transmitters such as those employing a [[Distributed Feedback Laser]] may be affected by back reflection and then fall outside specifications such as Side Mode Suppression Ratio, potentially degrading system bit error ratio, so networking standards intended for DFB lasers may specify a back-reflection tolerance such as ‚àí10&nbsp;dB for transmitters so that they remain within specification even without index matching. This back-reflection tolerance might be achieved using an optical isolator or by way of reduced coupling efficiency.
+
+For some applications, instead of standard polished connectors (e.g. FC/PC), angle polished connectors (e.g. FC/APC) may be used, whereby the non-perpendicular polish angle greatly reduces the ratio of reflected signal launched into the guided mode even in the case of a fiber-air interface.
+
+==In experimental fluid dynamics==
+{{main|Fluid dynamics}}
+
+Index matching is used in liquid-liquid and liquid-solid ([[Multiphase flow]]) experimental systems to minimise the distortions that occur in these systems,<ref>{{cite journal|title=A review of solid‚Äìfluid selection options for optical-based measurements in single-phase liquid, two-phase liquid‚Äìliquid and multiphase solid‚Äìliquid flows|authors=Wright, S.F., Zadrazil, I. & Markides, C.N.|journal=Experiments in Fluids |year=2017|volume=58 |issue=9|pages=108|bibcode=2017ExFl...58..108W|doi=10.1007/s00348-017-2386-y|doi-access=free}}</ref> this is particularly important for systems with many interfaces which become optically inaccessible. Matching the refractive index minimises [[reflection (physics)|reflection]], [[refraction]], [[diffraction]] and rotations that occurs at the interfaces allowing access to regions that would otherwise be inaccessible to optical measurements. This is particularly important for advanced optical measurements like [[Laser-induced fluorescence]], [[Particle image velocimetry]] and [[Particle tracking velocimetry]] to name a few.
+
+==In art conservation==
+{{see also|Conservation and restoration of glass objects}}
+If a sculpture is broken into several pieces, [[Conservation (cultural heritage)|art conservators]] may reattach the pieces using an adhesive such as [[Paraloid B-72]] or [[epoxy]]. If the sculpture is made of a transparent or semitransparent material (such as glass), the seam where the pieces are attached will usually be much less noticeable if the refractive index of the adhesive matches the refractive index of the surrounding object. Therefore, art conservators may measure the index of objects and then use an index-matched adhesive. Similarly, losses (missing sections) in transparent or semitransparent objects are often filled using an index-matched material.<ref>{{cite journal|title=Controlling the refractive index of epoxy adhesives |authors=John M. Messinger and Peter T. Lansbury |url=http://cool.conservation-us.org/jaic/articles/jaic28-02-006.html |journal=Journal of the American Institute for Conservation |year=1989 |volume=28 |number=2 |pages=127‚Äì136|doi=10.2307/3179485 |jstor=3179485 }}</ref>
+
+==In optical component adhesives==
+Certain optical components, such as a [[Wollaston prism]] or [[Nicol prism]], are made of multiple transparent pieces that are directly attached to each other. The adhesive is usually index-matched to the pieces. Historically, [[Canada balsam]] was used in this application, but it is now more common to use [[epoxy]] or other synthetic adhesives.
+
+==References==
+*{{FS1037C}}
+{{reflist}}
+
+[[Category:Fiber optics]]
+[[Category:Optical materials]]( 2 :2022-01-15T21:34:06ZB42425010JZ
+	Wikipedia'https://en.wikipedia.org/wiki/Main_PageMediaWiki 1.40.0-wmf.8"first-letterRõ
+\http://www.optics4kids.org/home/content/classroom-activities/medium/lose-a-glass-in-a-glass/;Optics For Kids - "Lose a glass in a glass" home experimentRe
+9http://www.olympusmicro.com/primer/anatomy/immersion.html("Microscope Objectives: Immersion Media"b˛πç•¿ŸúƒjŒ˚åè

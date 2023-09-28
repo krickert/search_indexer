@@ -1,0 +1,147 @@
+
+41440Online and offlineçVIn computer technology and telecommunications, online indicates a state of connectivity and offline indicates a disconnected state. In modern terminology, this usually refers to an Internet connection, but (especially when expressed "on line" or "on the line") could refer to any piece of equipment or functional unit that is connected to a larger system. Being online means that the equipment or subsystem is connected, or that it is ready for use.Federal Standard 1037C [https://www.its.bldrdoc.gov/fs-1037/fs-1037c.htm]
+
+"Online" has come to describe activities performed on and data available on the Internet, for example: "online identity", "online predator", "online gambling", "online shopping", "online banking", and "online learning". Similar meaning is also given by the prefixes "cyber" and "e", as in the words "cyberspace", "cybercrime", "email", and "ecommerce".  In contrast, "offline" can refer to either computing activities performed while disconnected from the Internet, or alternatives to Internet activities (such as shopping in brick-and-mortar stores). The term "offline" is sometimes used interchangeably with the acronym "IRL", meaning "in real life".
+
+History
+
+During the 19th century, the term on line was commonly used in both the railroad and telegraph industries. For railroads, a signal box would send messages down the line (track), via a telegraph line (cable), indicating the track's status: Train on line or Line clear. Telegraph linemen would refer to sending current through a line as direct on line or battery on line; or they may refer to a problem with the circuit as being on line, as opposed to the power source or end-point equipment.
+
+Since at least 1950, in computing, the terms on-line and off-line have been used to refer to whether machines, including computers and peripheral devices, are connected or not. Here is an excerpt from the 1950 book High-Speed Computing Devices:
+
+The use of automatic computing equipment for large-scale reduction of data will be strikingly successful only if means are provided for the automatic transcription of these data to a form suitable for automatic entry into the machine. For some applications, of which the most prominent are those in which the reduced data are used to control the process being measured, the input must be developed for on-line operation. In on-line operation the input is communicated directly and without delay to the data-reduction device. For other applications, off-line operation, involving automatic transcription of data in a form suitable for later introduction to the machine, may be tolerated. These requirements may be compared with teleprinter operating requirements. For example, some teletype machines operate on line. Their operators are in instantaneous communication. Other teletype machines are operated off line, through the intervention of punched paper tape. The message is preserved by means of holes punched in the tape and is transmitted later by feeding the tape to another machine.
+
+Examples
+
+Offline e-mail
+
+One example of a common use of these concepts with email is a mail user agent (MUA) that can be instructed to be in either online or offline states.  One such MUA is Microsoft Outlook. When online it will attempt to connect to mail servers (to check for new mail at regular intervals, for example), and when offline it will not attempt to make any such connection. The online or offline state of the MUA does not necessarily reflect the connection status between the computer on which it is running and the internet i.e. the computer itself may be online‚Äîconnected to Internet via a cable modem or other means‚Äîwhile Outlook is kept offline by the user, so that it makes no attempt to send or to receive messages. Similarly, a computer may be configured to employ a dial-up connection on demand (as when an application such as Outlook attempts to make connection to a server), but the user may not wish for Outlook to trigger that call whenever it is configured to check for mail.
+
+Offline media playing
+
+Another example of the use of these concepts is digital audio technology. A tape recorder, digital audio editor, or other device that is online is one whose clock is under the control of the clock of a synchronization master device. When the sync master commences playback, the online device automatically synchronizes itself to the master and commences playing from the same point in the recording. A device that is offline uses no external clock reference and relies upon its own internal clock. When many devices are connected to a sync master it is often convenient, if one wants to hear just the output of one single device, to take it offline because, if the device is played back online, all synchronized devices have to locate the playback point and wait for each other device to be in synchronization. (For related discussion, see MIDI timecode, word sync, and recording system synchronization.)
+
+Offline browsing
+
+A third example of a common use of these concepts is a web browser that can be instructed to be in either online or offline states. The browser attempts to fetch pages from servers while only in the online state. In the offline state, or "offline mode", users can perform offline browsing, where pages can be browsed using local copies of those pages that have previously been downloaded while in the online state. This can be useful when the computer is offline and connection to the Internet is impossible or undesirable. The pages are downloaded either implicitly into the web browser's own cache as a result of prior online browsing by the user or explicitly by a browser configured to keep local copies of certain web pages, which are updated when the browser is in the online state, either by checking that the local copies are up-to-date at regular intervals or by checking that the local copies are up-to-date whenever the browser is switched to the online. One such web browser is Internet Explorer. When pages are added to the Favourites list, they can be marked to be "available for offline browsing". Internet Explorer will download local copies of both the marked page and, optionally, all of the pages that it links to. In Internet Explorer version 6, the level of direct and indirect links, the maximum amount of local disc space allowed to be consumed, and the schedule on which local copies are checked to see whether they are up-to-date, are configurable for each individual Favourites entry.
+
+For communities that lack adequate Internet connectivity‚Äîsuch as developing countries, rural areas, and prisons‚Äîoffline information stores such as WiderNet's eGranary Digital Library (a collection of approximately thirty million educational resources from more than two thousand web sites and hundreds of CD-ROMs) provide offline access to information.  More recently, the Internet Archive announced an offline server project intended to provide access to material on inexpensive servers that can be updated using USB sticks and SD cards.
+
+Offline storage
+
+Likewise, offline storage is computer data storage that is not "available for immediate use on demand by the system without human intervention". Additionally, an otherwise online system that is powered down may be considered offline.
+
+Offline messages
+
+With the growing communication tools and media, the words offline and online are used very frequently. If a person is active over a messaging tool and is able to accept the messages it is termed as online message and if the person is not available and the message is left to view when the person is back, it is termed as offline message. In the same context, the person's availability is termed as online and non-availability is termed as offline.
+
+Generalisations
+
+Online and offline distinctions have been generalised from computing and telecommunication into the field of human interpersonal relationships. The distinction between what is considered online and what is considered offline has become a subject of study in the field of sociology.
+
+The distinction between online and offline is conventionally seen as the distinction between computer-mediated communication and face-to-face communication (e.g., face time), respectively. Online is virtuality or cyberspace, and offline is reality (i.e., real life or "meatspace"). Slater states that this distinction is "obviously far too simple". To support his argument that the distinctions in relationships are more complex than a simple dichotomy of online versus offline, he observes that some people draw no distinction between an online relationship, such as indulging in cybersex, and an offline relationship, such as being pen pals.  He argues that even the telephone can be regarded as an online experience in some circumstances, and that the blurring of the distinctions between the uses of various technologies (such as PDA versus mobile phone, internet television versus internet, and telephone versus Voice over Internet Protocol) has made it "impossible to use the term online meaningfully in the sense that was employed by the first generation of Internet research".
+
+Slater asserts that there are legal and regulatory pressures to reduce the distinction between online and offline, with a "general tendency to assimilate online to offline and erase the distinction," stressing, however, that this does not mean that online relationships are being reduced to pre-existing offline relationships. He conjectures that greater legal status may be assigned to online relationships (pointing out that contractual relationships, such as business transactions, online are already seen as just as "real" as their offline counterparts), although he states it to be hard to imagine courts awarding palimony to people who have had a purely online sexual relationship. He also conjectures that an online/offline distinction may be seen by people as "rather quaint and not quite comprehensible" within 10 years.
+
+This distinction between online and offline is sometimes inverted, with online concepts being used to define and to explain offline activities, rather than (as per the conventions of the desktop metaphor with its desktops, trash cans, folders, and so forth) the other way around. Several cartoons appearing in The New Yorker have satirized this. One includes Saint Peter asking for a username and a password before admitting a man into Heaven. Another illustrates "the offline store" where "All items are actual size!", shoppers may "Take it home as soon as you pay for it!", and "Merchandise may be handled prior to purchase!"
+
+See also
+
+*Computer networking
+*Extremely Online
+*NLS, or the "oN-Line System"
+*Offline reader
+*On the fly ¬ß Computer usage
+*Online algorithm
+*Online and offline algorithms
+*Online editing and offline editing ‚Äì the online/outline distinction in video editing
+*Online games
+*Online identity
+*Online (magazine)
+*Online volunteering
+*Open access (publishing)
+*Presentity
+*Reputation
+*Website mirroring software
+
+References
+
+*"Íâ{{Short description|Terms for being connected to, or disconnected from, the internet}}
+{{Use dmy dates|date=May 2019}}
+{{redirect-multi|2|Online|Offline}}
+
+In computer technology and [[telecommunications]], '''online''' indicates a state of connectivity and '''offline''' indicates a disconnected state. In modern terminology, this usually refers to an [[Internet connection]], but (especially when expressed "on line" or "on the line") could refer to any piece of equipment or functional unit that is connected to a larger system. Being online means that the equipment or subsystem is connected, or that it is ready for use.<ref>[[Federal Standard 1037C]] [https://www.its.bldrdoc.gov/fs-1037/fs-1037c.htm]</ref>
+
+"Online" has come to describe activities performed on and data available on the Internet,<ref name=ox>{{cite web|title=online|url=http://www.oxforddictionaries.com/definition/english/online|archive-url=https://web.archive.org/web/20120711233543/http://oxforddictionaries.com/definition/english/online|url-status=dead|archive-date=11 July 2012|website=Dictionary of British and World English|publisher=Oxford University Press|access-date=31 January 2015}}</ref> for example: "[[online identity]]", "[[online predator]]", "[[online gambling]]", "[[online shopping]]", "[[online banking]]", and "[[E-learning|online learning]]". Similar meaning is also given by the prefixes "cyber" and "e", as in the words "[[cyberspace]]", "[[cybercrime]]", "[[email]]", and "[[ecommerce]]".<ref name=thesau>{{cite web|title=Synonyms of online in English|url=http://www.oxforddictionaries.com/definition/american_english-thesaurus/online|archive-url=https://web.archive.org/web/20140420082900/http://www.oxforddictionaries.com/definition/american_english-thesaurus/online|url-status=dead|archive-date=20 April 2014|website=Oxford Dictionary|publisher=Oxford University Press|access-date=31 January 2015}}</ref>  In contrast, "offline" can refer to either computing activities performed while disconnected from the Internet, or alternatives to Internet activities (such as shopping in [[brick-and-mortar]] stores). The term "offline" is sometimes used interchangeably with the acronym "IRL", meaning "in real life".<ref>{{cite web|url=https://www.denofgeek.com/uk/go/52766|title=19 things we miss about the early days of the web|website=Den of Geek}}</ref>
+
+==History==
+During the 19th century, the term ''on line'' was commonly used in both the [[Rail transport|railroad]] and [[Telegraphy|telegraph]] industries. For railroads, a [[Signalling control|signal box]] would send messages down the line (track), via a telegraph line (cable), indicating the track's status: ''Train on line'' or ''Line clear''.<ref>{{cite book |url=https://archive.org/details/greatbritainrai00tradgoog |quote=train on line. |title=Great Britain Railways: Accidents. Court of Inquiry Reports |author=Great Britain Board of Trade |year=1874 |page=[https://archive.org/details/greatbritainrai00tradgoog/page/n174 33] |access-date=8 April 2015}}</ref> [[Lineworker|Telegraph linemen]] would refer to sending current through a line as ''direct on line'' or ''battery on line'';<ref>{{cite book |url=https://books.google.com/books?id=A4A3AQAAMAAJ&q=%22on+line%22+telegraph&pg=PA172 |title=Journal of the Society of Telegraph Engineers: Including Original Communications on Telegraphy and Electrical Science, Volume 8 |author=Society of Telegraph Engineers |year=1879 |page=172 |access-date=8 April 2015}}</ref> or they may refer to a problem with the circuit as being ''on line'', as opposed to the power source or end-point equipment.<ref>{{cite book |url=https://books.google.com/books?id=yxgAAAAAQAAJ&q=%22on+line%22+telegraph+battery&pg=PA47 |title=The practical telegraphist and guide to the telegraph service |author=William Lynd |year=1885 |page=47 |access-date=8 April 2015}}</ref>
+
+Since at least 1950, in [[computing]], the terms ''on-line'' and ''off-line'' have been used to refer to whether machines, including [[computer|computers]] and [[peripheral|peripheral devices]], are connected or not.<ref name=stiffler>{{cite book |author1=The staff of Engineering Research Associates, Inc. |date=1950 |author-link=Engineering Research Associates |editor1-last=Stiffler |editor1-first=W. W. |title=High-Speed Computing Devices |publisher=McGraw Hill Book Company, Inc. |url=https://archive.org/details/bitsavers_eraHighSpe950_30096406/ |accessdate=2022-09-02 |page=[https://archive.org/details/bitsavers_eraHighSpe950_30096406/page/n19 19]}}</ref> Here is an excerpt from the 1950 book ''High-Speed Computing Devices'':{{r|stiffler}}
+
+: The use of automatic computing equipment for large-scale reduction of data will be strikingly successful only if means are provided for the automatic transcription of these data to a form suitable for automatic entry into the machine. For some applications, of which the most prominent are those in which the reduced data are used to control the process being measured, the input must be developed for ''on-line'' operation. In on-line operation the input is communicated directly and without delay to the data-reduction device. For other applications, ''off-line'' operation, involving automatic transcription of data in a form suitable for later introduction to the machine, may be tolerated. These requirements may be compared with [[teletype|teleprinter]] operating requirements. For example, some teletype machines operate on line. Their operators are in instantaneous communication. Other teletype machines are operated off line, through the intervention of [[punched tape|punched paper tape]]. The message is preserved by means of holes punched in the tape and is transmitted later by feeding the tape to another machine.
+
+==Examples==
+
+===Offline e-mail===
+One example of a common use of these concepts with email is a [[mail user agent]] (MUA) that can be instructed to be in either online or offline states.  One such MUA is [[Microsoft Outlook]]. When online it will attempt to connect to mail servers (to check for new mail at regular intervals, for example), and when offline it will not attempt to make any such connection. The online or offline state of the MUA does not necessarily reflect the connection status between the computer on which it is running and the internet i.e. the computer itself may be online‚Äîconnected to Internet via a cable modem or other means‚Äîwhile Outlook is kept offline by the user, so that it makes no attempt to send or to receive messages. Similarly, a computer may be configured to employ a [[dial-up Internet access|dial-up connection]] on demand (as when an application such as Outlook attempts to make connection to a server), but the user may not wish for Outlook to trigger that call whenever it is configured to check for mail.<ref name="Mann">{{cite book|pages=[https://archive.org/details/howtodoeverythin00mann/page/76 76&ndash;77]|title=How to Do Everything with Microsoft Office Outlook 2003|author=Bill Mann|publisher=McGraw-Hill Professional|year=2003|isbn=0-07-223070-3|url=https://archive.org/details/howtodoeverythin00mann/page/76}}</ref>
+
+===Offline media playing===
+Another example of the use of these concepts is [[digital audio]] technology. A tape recorder, [[digital audio editor]], or other device that is online is one whose clock is under the control of the clock of a synchronization master device. When the sync master commences playback, the online device automatically synchronizes itself to the master and commences playing from the same point in the recording. A device that is offline uses no external clock reference and relies upon its own internal clock. When many devices are connected to a sync master it is often convenient, if one wants to hear just the output of one single device, to take it offline because, if the device is played back online, all synchronized devices have to locate the playback point and wait for each other device to be in synchronization.<ref>{{cite book|title=Audiopro Home Recording Course: A Comprehensive Multimedia Audio Recording Text|author=Bill Gibson|pages=155|year=1998|publisher=Hal Leonard|isbn=0-87288-715-4}}</ref> (For related discussion, see [[MIDI timecode]], [[word sync]], and recording system synchronization.)
+
+===Offline browsing===
+{{main|Offline browsing|}}
+A third example of a common use of these concepts is a [[web browser]] that can be instructed to be in either online or offline states. The browser attempts to fetch pages from servers while only in the online state. In the offline state, or "offline mode", users can perform '''offline browsing''', where pages can be browsed using local copies of those pages that have previously been downloaded while in the online state. This can be useful when the computer is offline and connection to the Internet is impossible or undesirable. The pages are downloaded either implicitly into the web browser's own [[browser cache|cache]] as a result of prior online browsing by the user or explicitly by a browser configured to keep local copies of certain web pages, which are updated when the browser is in the online state, either by checking that the local copies are up-to-date at regular intervals or by checking that the local copies are up-to-date whenever the browser is switched to the online. One such web browser is [[Internet Explorer]]. When pages are added to the Favourites list, they can be marked to be "available for offline browsing". Internet Explorer will download local copies of both the marked page and, optionally, all of the pages that it links to. In Internet Explorer version 6, the level of direct and indirect links, the maximum amount of local disc space allowed to be consumed, and the schedule on which local copies are checked to see whether they are up-to-date, are configurable for each individual Favourites entry.<ref>{{cite book|title=Good Web Guide|author=Arabella Dymoke|year=2004|publisher=The Good Web Guide Ltd|isbn=1-903282-46-2|pages=17|chapter=an a to z of internet terms}}</ref><ref>{{cite book|title=The Complete Idiot's Guide to Wireless Computing and Networking|author=Paul Heltzel|chapter=Wireless Road Tricks|year=2002|publisher=Alpha Books|isbn=0-02-864287-2|pages=205}}</ref><ref>{{cite book|title=The Internet Companion: The Easy Australian Guide|author1=Glen Waller  |author2=Vanessa Waller |name-list-style=amp |year=2000|publisher=UNSW Press|isbn=0-86840-499-3|pages=110&ndash;112}}</ref><ref>{{cite book|title=Configuring and Troubleshooting Windows XP Professional|author=Brian Barber|year=2001|publisher=Syngress Publishing|isbn=1-928994-80-6|pages=[https://archive.org/details/isbn_9781928994800/page/285 285&ndash;389]|chapter=Configuring Internet Technologies|url=https://archive.org/details/isbn_9781928994800/page/285}}</ref>
+
+For communities that lack adequate Internet connectivity‚Äîsuch as developing countries, rural areas, and prisons‚Äîoffline information stores such as WiderNet's [[eGranary]] Digital Library (a collection of approximately thirty million educational resources from more than two thousand web sites and hundreds of CD-ROMs) provide offline access to information.<ref>{{Cite web|url=https://er.educause.edu/articles/2012/10/the-egranary-digital-library|title=The eGranary Digital Library|website=er.educause.edu|language=en|access-date=2020-01-08}}</ref>  More recently, the [[Internet Archive]] announced an offline server project intended to provide access to material on inexpensive servers that can be updated using USB sticks and SD cards.<ref>{{Cite web|url=https://archive.org/about/offline-archive/|title=Internet Archive: Offline Archive|website=archive.org|access-date=2020-01-08}}</ref>
+
+===Offline storage===
+Likewise, [[offline storage]] is [[computer data storage]] that is not "available for immediate use on demand by the system without human intervention". Additionally, an otherwise online system that is powered down may be considered offline.<ref>{{Cite book|last1=Sheikh|first1=Dr Tariq Hussain|url=https://books.google.com/books?id=0GLPDwAAQBAJ&dq=offline+storage+is+computer+data+storage+that+is+not+%22available+for+immediate+use+on+demand+by+the+system+without+human+intervention.%22&pg=PA80|title=Internet And Web Technology|last2=Kumar|first2=Naresh|date=2020-02-11|publisher=Booksclinic Publishing|isbn=978-93-89757-56-9|language=en}}</ref>
+
+===Offline messages===
+With the growing communication tools and media, the words offline and online are used very frequently. If a person is active over a messaging tool and is able to accept the messages it is termed as online message and if the person is not available and the message is left to view when the person is back, it is termed as offline message. In the same context, the person's availability is termed as online and non-availability is termed as offline.
+
+==Generalisations==
+Online and offline distinctions have been generalised from computing and telecommunication into the field of human interpersonal relationships. The distinction between what is considered online and what is considered offline has become a subject of study in the field of [[sociology]].<ref name=Slater>{{cite book|chapter=Social Relationships and Identity On-line and Off-line|title=Handbook of New Media: Social Shaping and Consequences of ICTs|editor1=Leah |editor2=Sonia |editor3=Lievrouw |editor4=Livingstone|author=Don Slater|pages=533&ndash;543|year=2002|publisher=Sage Publications Inc|isbn=0-7619-6510-6}}</ref>
+
+The distinction between online and offline is conventionally seen as the distinction between [[computer-mediated communication]] and [[Face-to-face (philosophy)|face-to-face]] communication (e.g., [[face time]]), respectively. Online is virtuality or [[cyberspace]], and offline is reality (i.e., [[Real life (reality)|real life or "meatspace"]]). Slater states that this distinction is "obviously far too simple".<ref name=Slater /> To support his argument that the distinctions in relationships are more complex than a simple dichotomy of online versus offline, he observes that some people draw no distinction between an online relationship, such as indulging in [[cybersex]], and an offline relationship, such as being [[pen pal]]s.  He argues that even the [[telephone]] can be regarded as an online experience in some circumstances, and that the blurring of the distinctions between the uses of various technologies (such as [[personal digital assistant|PDA]] versus mobile phone, [[internet television]] versus internet, and telephone versus [[Voice over Internet Protocol]]) has made it "impossible to use the term ''online'' meaningfully in the sense that was employed by the first generation of Internet research".<ref name=Slater />
+
+Slater asserts that there are legal and regulatory pressures to reduce the distinction between online and offline, with a "general tendency to assimilate online to offline and erase the distinction," stressing, however, that this does not mean that online relationships are being reduced to ''pre-existing'' offline relationships. He conjectures that greater legal status may be assigned to online relationships (pointing out that contractual relationships, such as business transactions, online are already seen as just as "real" as their offline counterparts), although he states it to be hard to imagine courts awarding palimony to people who have had a purely online sexual relationship. He also conjectures that an online/offline distinction may be seen by people as "rather quaint and not quite comprehensible" within 10 years.<ref name=Slater />
+
+This distinction between ''online'' and ''offline'' is sometimes inverted, with online concepts being used to define and to explain offline activities, rather than (as per the conventions of the [[desktop metaphor]] with its desktops, trash cans, folders, and so forth) the other way around. Several cartoons appearing in ''[[The New Yorker]]'' have satirized this. One includes [[Saint Peter]] asking for a username and a password before admitting a man into Heaven. Another illustrates "the offline store" where "All items are actual size!", shoppers may "Take it home as soon as you pay for it!", and "Merchandise may be handled prior to purchase!"<ref>{{cite book|chapter=Introduction|title=Evolve: Succeeding in the digital culture of tomorrow|author=Rosabeth Moss Kanter|year=2001|publisher=Harvard Business School|isbn=1-57851-439-8|url=https://archive.org/details/evolvesucceeding00kant}}</ref><ref>{{Cite web |url=http://executiveeducation.wharton.upenn.edu/ebuzz/0508/images/cartoon2.jpg |title=The "off-line store" cartoon from ''The New Yorker'' |access-date=6 September 2007 |archive-url=https://web.archive.org/web/20160410015927/http://executiveeducation.wharton.upenn.edu/ebuzz/0508/images/cartoon2.jpg |archive-date=10 April 2016 |url-status=dead }}</ref>
+
+==See also==
+{{Wiktionary|offline|online|come online}}
+{{div col|colwidth=30em}}
+*[[Computer networking]]
+*[[Extremely Online]]
+*[[NLS (computer system)|NLS]], or the "oN-Line System"
+*[[Offline reader]]
+*[[On the fly#Computer usage|On the fly ¬ß Computer usage]]
+*[[Online algorithm]]
+*[[Online algorithm|Online and offline algorithms]]
+*[[Online editing]] and [[offline editing]] ‚Äì the online/outline distinction in [[video editing]]
+*[[Online game]]s
+*[[Online identity]]
+*[[Online (magazine)|''Online'' (magazine)]]
+*[[Online volunteering]]
+*[[Open access (publishing)]]
+*[[Presentity]]
+*[[Reputation]]
+*[[Website mirroring software]]
+{{div col end}}
+
+==References==
+{{Reflist}}
+{{refbegin}}
+* {{FS1037C MS188}}
+{{refend}}
+
+[[Category:Computer jargon]]
+[[Category:Internet terminology]]( 2 :2022-10-20T16:15:22ZB44702688JZ
+	Wikipedia'https://en.wikipedia.org/wiki/Main_PageMediaWiki 1.40.0-wmf.8"first-letterR4
+0https://www.its.bldrdoc.gov/fs-1037/fs-1037c.htm RE
+?https://archive.org/details/greatbritainrai00tradgoog/page/n17433RK
+Ehttps://archive.org/details/bitsavers_eraHighSpe950_30096406/page/n1919RI
+:https://archive.org/details/howtodoeverythin00mann/page/7676&ndash;77RH
+7https://archive.org/details/isbn_9781928994800/page/285285&ndash;389bˇπç•†¿¿ﬁjöË≈ö
