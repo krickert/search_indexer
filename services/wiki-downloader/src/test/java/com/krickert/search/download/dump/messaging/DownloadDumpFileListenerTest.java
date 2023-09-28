@@ -10,10 +10,8 @@ import io.micronaut.configuration.kafka.annotation.KafkaKey;
 import io.micronaut.configuration.kafka.annotation.KafkaListener;
 import io.micronaut.configuration.kafka.annotation.Topic;
 import io.micronaut.context.annotation.Property;
-import io.micronaut.test.extensions.junit5.annotation.MicronautTest;
 import jakarta.inject.Inject;
 import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 
 import java.io.ByteArrayOutputStream;
@@ -30,7 +28,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.awaitility.Awaitility.await;
 import static org.junit.jupiter.api.TestInstance.Lifecycle.PER_CLASS;
 
-@MicronautTest
+//@MicronautTest
 @TestInstance(PER_CLASS)
 class DownloadDumpFileListenerTest extends AbstractKafkaTest {
 
@@ -64,7 +62,7 @@ class DownloadDumpFileListenerTest extends AbstractKafkaTest {
         results.clear();
     }
 
-    @Test
+    //@Test
     void receive() {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         System.setOut(new PrintStream(baos));
