@@ -158,16 +158,7 @@
       <artifactId>micronaut-test-resources-kafka</artifactId>
       <scope>test</scope>
     </dependency>
-    <dependency>
-      <groupId>org.testcontainers</groupId>
-      <artifactId>junit-jupiter</artifactId>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.testcontainers</groupId>
-      <artifactId>testcontainers</artifactId>
-      <scope>test</scope>
-    </dependency>
+
     <!-- https://mvnrepository.com/artifact/io.grpc/grpc-protobuf -->
     <dependency>
       <groupId>io.grpc</groupId>

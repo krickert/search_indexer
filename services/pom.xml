@@ -10,7 +10,7 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modules>
-	<module>wiki-downloader-request</module>
+        <module>wiki-downloader-request</module>
         <module>wiki-downloader</module>
     </modules>
 
@@ -20,45 +20,9 @@
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <kafka-streams-protobuf-serde.version>7.4.0</kafka-streams-protobuf-serde.version>
     </properties>
 
-    <dependencies>
-        <!-- https://mvnrepository.com/artifact/io.confluent/kafka-streams-protobuf-serde -->
-        <dependency>
-            <groupId>io.confluent</groupId>
-            <artifactId>kafka-streams-protobuf-serde</artifactId>
-            <version>${kafka-streams-protobuf-serde.version}</version>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/io.confluent/kafka-protobuf-serializer -->
-        <dependency>
-            <groupId>io.confluent</groupId>
-            <artifactId>kafka-protobuf-serializer</artifactId>
-            <version>7.4.0</version>
-        </dependency>
 
-        <!-- https://mvnrepository.com/artifact/org.apache.kafka/kafka-clients -->
-        <dependency>
-            <groupId>org.apache.kafka</groupId>
-            <artifactId>kafka-clients</artifactId>
-            <version>3.5.1</version>
-        </dependency>
-
-        <!-- https://mvnrepository.com/artifact/io.micronaut.kafka/micronaut-kafka -->
-        <dependency>
-            <groupId>io.micronaut.kafka</groupId>
-            <artifactId>micronaut-kafka</artifactId>
-            <version>5.1.2</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>io.confluent</groupId>
-            <artifactId>kafka-protobuf-serializer</artifactId>
-            <version>7.4.0</version>
-        </dependency>
-
-
-    </dependencies>
 
     <repositories>
         <repository>
