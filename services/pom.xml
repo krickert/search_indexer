@@ -10,6 +10,7 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modules>
+	<module>wiki-downloader-request</module>
         <module>wiki-downloader</module>
     </modules>
 

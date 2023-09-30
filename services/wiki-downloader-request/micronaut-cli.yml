@@ -1,0 +1,6 @@
+applicationType: cli
+defaultPackage: com.krickert.search.dump
+testFramework: junit
+sourceLanguage: java
+buildTool: maven
+features: [ app-name, assertj, awaitility, http-client-test, java, junit, logback, maven, maven-enforcer-plugin, mockito, picocli, picocli-java-application, picocli-junit, readme, rxjava3-http-client, serialization-jackson, shade, test-resources, yaml, yaml-build ]
