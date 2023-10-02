@@ -13,6 +13,6 @@ message PipeDocument {
   google.protobuf.Timestamp creation_date = 5;
   google.protobuf.Timestamp last_modified = 6;
   string document_type = 7;
-  map<string, string> fields = 8;
+  map<string, google.protobuf.Struct> fields = 8;
   map<string, google.protobuf.ListValue> list_fields = 9;
 }

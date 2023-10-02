@@ -10,62 +10,13 @@ package com.krickert.search;
 
 service PipeService {
   rpc send (PipeRequest) returns (PipeReply) {}
-  rpc sendNlp (NLPPipeRequest) returns (PipeReply) {}
-  rpc sendClean (CleanPipeRequest) returns (PipeReply) {}
-}
-
-message FieldMapping {
-  string input_field = 1;
-  string output_field = 2;
-}
-
-enum CleanFieldAction {
-  CLEAN_WHITESPACE = 0;
-  CLEAN_HTML = 1;
-}
-
-enum NLPFieldAction {
-  SPLIT_SENTENCES = 0;
-  NER_LOCATION = 1;
-  NER_DATE = 2;
-  NER_ORGANIZATION = 3;
-  NER_PERSON = 4;
-  PART_OF_SPEECH = 5;
-  TOKENIZE = 6;
-  SNOWBALL_STEM = 7;
-  REMOVE_STOPWORDS = 8;
-}
-
-message CleanFieldMappingAction {
-  FieldMapping mapping = 1;
-  CleanFieldAction action = 2;
-}
-
-message NLPFieldMappingAction {
-  FieldMapping mapping = 1;
-  NLPFieldAction action = 2;
 }
 
 message PipeRequest {
-  string id = 1;
-  com.krickert.search.model.pipe.PipeDocument document = 2;
-  repeated FieldMapping field_mappings = 3;
-}
-
-message NLPPipeRequest {
-  string id = 1;
-  com.krickert.search.model.pipe.PipeDocument document = 2;
-  repeated NLPFieldMappingAction field_mappings = 3;
-}
-
-message CleanPipeRequest {
-  string id = 1;
-  com.krickert.search.model.pipe.PipeDocument document = 2;
-  repeated CleanFieldMappingAction field_mappings = 3;
+  com.krickert.search.model.pipe.PipeDocument document = 1;
 }
 
 message PipeReply {
-  string message = 1;
-  com.krickert.search.model.pipe.PipeDocument document = 2;
+  com.krickert.search.model.pipe.PipeDocument document = 1;
 }
 

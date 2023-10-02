@@ -12,6 +12,7 @@
     <modules>
         <module>wiki-downloader-request</module>
         <module>wiki-downloader</module>
+        <module>grpc-vectorizer-service</module>
     </modules>
 
     <artifactId>services</artifactId>
