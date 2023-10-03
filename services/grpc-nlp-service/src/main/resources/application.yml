@@ -1,0 +1,8 @@
+micronaut:
+  application:
+    name: grpc-vectorizer-service
+consul:
+  client:
+    defaultZone: ${CONSUL_HOST:localhost}:${CONSUL_PORT:8500}
+    registration:
+      enabled: true
