@@ -1,7 +1,6 @@
-package com.krickert.search.service;
+package com.krickert.search.service.vectorizer;
 
 import ai.djl.MalformedModelException;
-import ai.djl.Model;
 import ai.djl.huggingface.translator.TextEmbeddingTranslatorFactory;
 import ai.djl.inference.Predictor;
 import ai.djl.repository.zoo.Criteria;
@@ -9,7 +8,6 @@ import ai.djl.repository.zoo.ModelNotFoundException;
 import ai.djl.repository.zoo.ZooModel;
 import ai.djl.translate.TranslateException;
 import com.google.common.collect.Lists;
-import jakarta.inject.Inject;
 import jakarta.inject.Singleton;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

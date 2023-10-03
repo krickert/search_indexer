@@ -1,4 +1,4 @@
-package com.krickert.search.grpc.vectorizer;
+package com.krickert.search.service.vectorizer;
 
 import io.micronaut.runtime.Micronaut;
 

@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.krickert.search.grpc.vectorizer</groupId>
   <artifactId>grpc-vectorizer-service</artifactId>
-  <version>0.1</version>
+  <version>1.0-SNAPSHOT</version>
   <packaging>${packaging}</packaging>
 
   <parent>
@@ -19,7 +19,7 @@
     <release.version>17</release.version>
     <micronaut.version>4.1.2</micronaut.version>
     <micronaut.test.resources.enabled>true</micronaut.test.resources.enabled>
-    <exec.mainClass>com.krickert.search.grpc.vectorizer.Application</exec.mainClass>
+    <exec.mainClass>com.krickert.search.service.grpc.Application</exec.mainClass>
   </properties>
 
   <repositories>

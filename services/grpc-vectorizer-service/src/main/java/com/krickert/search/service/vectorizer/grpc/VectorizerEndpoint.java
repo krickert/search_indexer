@@ -1,4 +1,4 @@
-package com.krickert.search.service.grpc;
+package com.krickert.search.service.vectorizer.grpc;
 
 
 import com.google.common.collect.Maps;
@@ -9,7 +9,7 @@ import com.krickert.search.model.pipe.PipeDocument;
 import com.krickert.search.service.PipeReply;
 import com.krickert.search.service.PipeRequest;
 import com.krickert.search.service.PipeServiceGrpc;
-import com.krickert.search.service.Vectorizer;
+import com.krickert.search.service.vectorizer.Vectorizer;
 import io.grpc.stub.StreamObserver;
 import jakarta.inject.Inject;
 import jakarta.inject.Singleton;

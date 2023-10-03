@@ -1,8 +1,7 @@
-package com.krickert.search.grpc.vectorizer;
+package com.krickert.search.service.vectorizer.grpc;
 
 import com.google.common.collect.Maps;
 import com.google.protobuf.InvalidProtocolBufferException;
-import com.google.protobuf.Message;
 import com.google.protobuf.Struct;
 import com.google.protobuf.util.JsonFormat;
 import com.krickert.search.model.pipe.PipeDocument;
@@ -22,7 +21,6 @@ import org.slf4j.LoggerFactory;
 
 import java.util.Collection;
 import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
 
 import static java.util.concurrent.TimeUnit.SECONDS;
 import static org.awaitility.Awaitility.await;
