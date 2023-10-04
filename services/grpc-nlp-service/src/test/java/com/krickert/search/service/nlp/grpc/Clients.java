@@ -1,4 +1,4 @@
-package com.krickert.search.grpc.vectorizer;
+package com.krickert.search.service.nlp.grpc;
 
 import com.krickert.search.service.PipeServiceGrpc;
 import io.grpc.ManagedChannel;
