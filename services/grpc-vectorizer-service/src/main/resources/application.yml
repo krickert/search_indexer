@@ -6,3 +6,6 @@ consul:
     defaultZone: ${CONSUL_HOST:localhost}:${CONSUL_PORT:8500}
     registration:
       enabled: true
+grpc:
+  server:
+    port: 50052

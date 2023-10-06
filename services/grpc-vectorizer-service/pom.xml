@@ -51,8 +51,13 @@
       <scope>compile</scope>
     </dependency>
     <dependency>
-      <groupId>io.micronaut.serde</groupId>
-      <artifactId>micronaut-serde-jackson</artifactId>
+      <groupId>io.micronaut</groupId>
+      <artifactId>micronaut-jackson-databind</artifactId>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.micronaut.discovery</groupId>
+      <artifactId>micronaut-discovery-client</artifactId>
       <scope>compile</scope>
     </dependency>
     <dependency>
