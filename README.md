@@ -1,7 +1,81 @@
 # search_indexer
 
-Here's a cartoon showing what this does:
+
+## Overview
+This project is made to be an OOTB enterprise data pipeline for processing data from multiple 
+sources and to be placed into a datastream for processing.  Processors can be written in most popular languages.
+
+The data crawled is wikipeda right now but will expand to be multiple open data sources with reliable formats.  Additonally, a web and database crawler are possible.
+
+The data processing steps from multiple sources which perform the following:
+* Retrieval - grab the data from a data source and save it to a shared storage device.  As of now it only processes wikipedia data, but additional data will be added.
+* Parsing - After the data is retrieved, the data will go into a parsing step which will convert it to a plain text document for text processing.
+* Enrichment - Now that the document is plain text, it will be applied to a pipeline which would execute multiple services to enrich the document.
+* Sink - Once the data is fully enriched, it will go into a data sink to output to the desired service such as a search engine, vector store, or a data scientist experiementing with data.
+
+As a PoC, we are first processing the entire set of wikipedia documents.
+
+## Technical architecture
+### Components used
+* Protocol buffers - the data format of all data in the stream
+* Kafka - the messaging queue 
+* gRPC - the service layer for document enrichment.  Can be any gRPC service in any supported language.
+* Consul - gRPC and REST service registration
+* OpenJDK 17  - Base layer for project
+* Micronaut - Dependency injection layer 
+* There's many more, we'll add them here later
+
+### Data flows
+#### Overall data flow
 ![cartoon for managers](/docs/arch_diagrams/search_indexer-StreamFlow.drawio.svg)
+
+The above demonstrates the following flow:
+* Document Retrieval
+* Document Parsing
+* Document Enrichment 
+
+##### Document Retrieval 
+The data is sent to a repository for raw data processing.  
+##### Document parsing
+Take the document and parse it into plain text.
+##### Document enrichment
+Take the document and add some feature.
+
+#### Wikipedia Document Retrieval 
+![document retrieval](/docs/arch_diagrams/search_indexer-WikiRetrieval.drawio.svg)
+The document retrieval does the following steps to ensure:
+* The latest version of the documents are retrieved
+* if the latest version is not intended, the user can configure it to a specific dump date
+* user configures how many downloads would happen simultaneously in the settings.  Wikimedia allows up to 3 at a time.
+* all downloads are validated by their md5 sum
+* downloads are going to be stored onto disk.  In the future s3 buckets would be supported.
+
+##### Next document retrievals planned
+* Web crawler integration such as [heritix](https://github.com/internetarchive/heritrix3) or [scrapy](https://scrapy.org/) integration
+* JDBC crawler
+* 311 data from various open APIs and data dumps
+* IRS data
+* Weather data
+* Map data
+
+#### Document parsing
+The parsing only removes wiki data and adds the metadata returned from the dumps.  Current types of wiki documents from the Wikipedia dumps that are supported go as follows:
+* ARTICLE 
+* CATEGORY
+* LIST
+* DRAFT
+* WIKIPEDIA
+* TEMPLATE
+* FILE 
+* REDIRECT
+
+#### Pipeline Processing
+![Pipeline Processor Flow](/docs/arch_diagrams/search_indexer-PipelineProcessorFlow.drawio.svg)
+Once the parsed document is parsed, it is cleaned up, the pipeline processing step can enhance the document by applying a pipeline step to the document.
+
+This is a set of services all with the same gRPC interface which simply inputs a Pipeline Document and outputs the same.  The service can enhance, read, or manipulate the document through the series of pipelines.
+
+As of now the project has two pipeline steps: a vectorizer and an NLP named entity rocognition service.  They're both a reference point as to how to create a gRPC service to enhance the document.  Further implementations of gRPC services in multiple languages are planned.
 
 ## install directions
 
