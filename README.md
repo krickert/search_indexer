@@ -41,8 +41,9 @@ Take the document and parse it into plain text.
 ##### Document enrichment
 Take the document and add some feature.
 
-#### Wikipedia Document Retrieval 
+#### Wikipedia Document Retrieval
 ![document retrieval](/docs/arch_diagrams/search_indexer-WikiRetrieval.drawio.svg)
+
 The document retrieval does the following steps to ensure:
 * The latest version of the documents are retrieved
 * if the latest version is not intended, the user can configure it to a specific dump date
@@ -58,7 +59,7 @@ The document retrieval does the following steps to ensure:
 * Weather data
 * Map data
 
-#### Document parsing
+#### Wiki Document parsing
 The parsing only removes wiki data and adds the metadata returned from the dumps.  Current types of wiki documents from the Wikipedia dumps that are supported go as follows:
 * ARTICLE 
 * CATEGORY
@@ -70,7 +71,9 @@ The parsing only removes wiki data and adds the metadata returned from the dumps
 * REDIRECT
 
 #### Pipeline Processing
+
 ![Pipeline Processor Flow](/docs/arch_diagrams/search_indexer-PipelineProcessorFlow.drawio.svg)
+
 Once the parsed document is parsed, it is cleaned up, the pipeline processing step can enhance the document by applying a pipeline step to the document.
 
 This is a set of services all with the same gRPC interface which simply inputs a Pipeline Document and outputs the same.  The service can enhance, read, or manipulate the document through the series of pipelines.
