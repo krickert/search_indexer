@@ -3,6 +3,7 @@ package com.krickert.search.service.vectorizer.grpc;
 import com.google.common.collect.Maps;
 import com.google.protobuf.InvalidProtocolBufferException;
 import com.google.protobuf.Struct;
+import com.google.protobuf.Value;
 import com.google.protobuf.util.JsonFormat;
 import com.krickert.search.model.pipe.PipeDocument;
 import com.krickert.search.model.test.util.TestDataHelper;
@@ -54,7 +55,7 @@ class GrpcVectorizerServiceTest {
         public void onNext(PipeReply reply) {
             try {
                 log.debug("RESPONSE, returning embeddings: {}", JsonFormat.printer().print(
-                        reply.getDocument()));
+                        reply.getDocument().getCustomData()));
                 finishedDocs.put(reply.getDocument().getId(), reply.getDocument());
             } catch (InvalidProtocolBufferException e) {
                 throw new RuntimeException(e);
@@ -83,7 +84,7 @@ class GrpcVectorizerServiceTest {
             PipeRequest request = PipeRequest.newBuilder()
                     .setDocument(doc).build();
             PipeReply reply = endpoint.send(request);
-            Struct embeddings = reply.getDocument().getFieldsMap().get("embeddings");
+            Value embeddings = reply.getDocument().getCustomData().getFieldsMap().get("embeddings");
             assertNotNull(embeddings);
         }
     }

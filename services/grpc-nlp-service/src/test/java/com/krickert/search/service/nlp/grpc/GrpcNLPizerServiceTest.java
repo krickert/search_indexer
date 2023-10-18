@@ -3,6 +3,7 @@ package com.krickert.search.service.nlp.grpc;
 import com.google.common.collect.Maps;
 import com.google.protobuf.InvalidProtocolBufferException;
 import com.google.protobuf.Struct;
+import com.google.protobuf.Value;
 import com.google.protobuf.util.JsonFormat;
 import com.krickert.search.model.pipe.PipeDocument;
 import com.krickert.search.model.test.util.TestDataHelper;
@@ -84,8 +85,8 @@ class GrpcNLPizerServiceTest {
             PipeRequest request = PipeRequest.newBuilder()
                     .setDocument(doc).build();
             PipeReply reply = endpoint.send(request);
-            Map<String, Struct> fieldsMap  = reply.getDocument().getFieldsMap();
-
+            Map<String, Value> fieldsMap  = reply.getDocument().getCustomData().getFieldsMap();
+            assertNotNull(fieldsMap);
         }
     }
 

@@ -80,8 +80,7 @@ public class NLPizerEndpoint extends PipeServiceGrpc.PipeServiceImplBase {
     }
 
     private PipeDocument addNlpEntities(PipeDocument document) {
-        Map<String, Struct> fieldsMap = Maps.newHashMapWithExpectedSize(servicesEnabledMap.size());
-        fieldsMap.putAll(document.getFieldsMap());
+        PipeDocument.Builder documentWitNlp = document.toBuilder();
         String body = document.getBody();
         //we will take the body and title of each service and "nlpize" the fields
         Struct.Builder nlpEntitiesForGrpc = Struct.newBuilder();
@@ -94,9 +93,8 @@ public class NLPizerEndpoint extends PipeServiceGrpc.PipeServiceImplBase {
                             Value.newBuilder().setListValue(convertStrings(nlpEntities)).build()
                     ).build();
         }
-        fieldsMap.put("nlp", nlpEntitiesForGrpc.build());
-        PipeDocument docWithEntities = document.toBuilder().putAllFields(fieldsMap).build();
-        return docWithEntities;
+        documentWitNlp.mergeCustomData(nlpEntitiesForGrpc.build());
+        return documentWitNlp.build();
     }
 
     public static ListValue convertStrings(Collection<String> strings) {

@@ -1,6 +1,6 @@
 micronaut:
   application:
-    name: grpc-nlp-service
+    name: nlp
 consul:
   client:
     defaultZone: ${CONSUL_HOST:localhost}:${CONSUL_PORT:8500}
