@@ -1,0 +1,6 @@
+applicationType: messaging
+defaultPackage: com.krickert.search
+testFramework: junit
+sourceLanguage: java
+buildTool: maven
+features: [ app-name, assertj, awaitility, consul, discovery-client, discovery-consul, discovery-core, hamcrest, http-client-test, java, java-application, junit, kafka, kafka-streams, logback, maven, maven-enforcer-plugin, mockito, readme, serialization-jackson, shade, test-resources, yaml, yaml-build ]

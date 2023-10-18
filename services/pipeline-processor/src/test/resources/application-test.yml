@@ -1,0 +1,43 @@
+consul:
+  client:
+    discovery:
+      enabled: true
+    registration:
+      enabled: true
+    defaultZone: ${CONSUL_HOST:localhost}:${CONSUL_PORT:8500}
+
+grpc:
+  client:
+    discovery:
+      enabled: true
+  channels:
+    nlp:
+      plaintext: true
+      default-service-config:
+
+
+kafka:
+  enabled: false
+
+pipeline-config:
+  client-configs:
+    nlp2:
+      type: server_grpc
+      host: "localhost"
+      port: "50051"
+    nlp:
+      type: consul_grpc
+      consul_service: nlp
+    vectorizer:
+      type: consul_grpc
+      consul_service: vectorizer
+
+  pipeline-processor:
+    search-pipeline:
+      services:
+        - nlp
+        - vectorizer
+        - nlp_direct
+    datascience-pipeline:
+      services:
+        - vectorizer
