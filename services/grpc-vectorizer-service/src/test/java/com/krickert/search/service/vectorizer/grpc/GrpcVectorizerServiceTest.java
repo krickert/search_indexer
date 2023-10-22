@@ -48,7 +48,7 @@ class GrpcVectorizerServiceTest {
     @Inject
     PipeServiceGrpc.PipeServiceStub endpoint2;
 
-    private Map<String,PipeDocument> finishedDocs = Maps.newConcurrentMap();
+    private final Map<String,PipeDocument> finishedDocs = Maps.newConcurrentMap();
 
     StreamObserver<PipeReply> streamObserver = new StreamObserver<>() {
         @Override
