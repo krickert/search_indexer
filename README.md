@@ -104,7 +104,7 @@ The following configuration parameters need to be registered in `application.yml
 2. Grpc service list registered in consul
 3. Kafka configuration
 
-####### Consul setup
+###### Consul setup
 In the `pipeline-document`'s `application.yml` file:
 ```
 consul:
