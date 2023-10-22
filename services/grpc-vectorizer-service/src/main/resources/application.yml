@@ -1,6 +1,6 @@
 micronaut:
   application:
-    name: grpc-vectorizer-service
+    name: vectorizer
 consul:
   client:
     defaultZone: ${CONSUL_HOST:localhost}:${CONSUL_PORT:8500}

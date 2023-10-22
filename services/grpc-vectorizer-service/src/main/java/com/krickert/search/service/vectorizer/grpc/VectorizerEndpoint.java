@@ -1,7 +1,9 @@
 package com.krickert.search.service.vectorizer.grpc;
 
 
+import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
+import com.google.protobuf.FloatValue;
 import com.google.protobuf.ListValue;
 import com.google.protobuf.Struct;
 import com.google.protobuf.Value;
@@ -26,30 +28,23 @@ public class VectorizerEndpoint extends PipeServiceGrpc.PipeServiceImplBase {
 
     @Override
     public void send(PipeRequest req, StreamObserver<PipeReply> responseObserver) {
-        PipeDocument document = req.getDocument();
-        Map<String, Struct> fieldsMap = Maps.newHashMapWithExpectedSize(2);
-        fieldsMap.putAll(document.getFieldsMap());
-        String body = document.getBody();
-        Collection<Float> vector = vectorizer.getEmbeddings(body);
-        Struct embeddings = Struct.newBuilder()
-                .putFields("vector",
-                        Value.newBuilder().setListValue(convert(vector)).build()
-                ).build();
-        fieldsMap.put("embeddings", embeddings);
-        PipeDocument docWithEmbeddings = document.toBuilder().putAllFields(fieldsMap).build();
+        PipeDocument.Builder document = req.getDocument().toBuilder();
+        Struct.Builder customDataBuilder = document.getCustomDataBuilder();
+        ListValue values = createListOfFloats(vectorizer.getEmbeddings(document.getBody()));
+        customDataBuilder.putFields("embeddings",  Value.newBuilder().setListValue(values).build());
+        document.mergeCustomData(customDataBuilder.build());
         PipeReply reply =  PipeReply.newBuilder()
-                .setDocument(docWithEmbeddings).build();
+                .setDocument(document).build();
         responseObserver.onNext(reply);
         responseObserver.onCompleted();
     }
 
-    public static ListValue convert(Collection<Float> floats) {
-        ListValue.Builder builder = ListValue.newBuilder();
-        for (Float f : floats) {
-            double doubleResult = f.doubleValue();
-            Value value = Value.newBuilder().setNumberValue(doubleResult).build();
-            builder.addValues(value);
+    private ListValue createListOfFloats(Collection<Float> embeddings) {
+        final ListValue.Builder returnVal = ListValue.newBuilder();
+        for (Float embedding : embeddings) {
+            returnVal.addValues(Value.newBuilder().setNumberValue(embedding.doubleValue()));
         }
-        return builder.build();
+        return returnVal.build();
     }
+
 }

@@ -36,9 +36,10 @@ public class PipelineDocumentMapper {
         if (isNotEmpty(wikiArticle.getWikiText())) {
             wikiMetaData.put("wiki_text", Value.newBuilder().setStringValue(wikiArticle.getWikiText()).build());
         }
-        Struct customFields = Struct.newBuilder().putAllFields(wikiMetaData).build();
-        pipeDocumentBuilder.putFields("wikiMetadata", customFields);
-        return pipeDocumentBuilder.build();
+        Struct wikiData = Struct.newBuilder().putAllFields(wikiMetaData).build();
+        Value wikiDataValue = Value.newBuilder().setStructValue(wikiData).build();
+        Struct customData = pipeDocumentBuilder.getCustomData().toBuilder().putFields("wiki_metadata", wikiDataValue).build();
+        return pipeDocumentBuilder.setCustomData(customData).build();
     }
 
     String parseDateParsed(Timestamp dateParsed) {

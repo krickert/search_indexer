@@ -2,3 +2,6 @@ consul:
   client:
     registration:
       enabled: false
+grpc:
+  server:
+    port: ${random.port}

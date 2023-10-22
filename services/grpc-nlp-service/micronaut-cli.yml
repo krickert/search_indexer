@@ -1,0 +1,6 @@
+applicationType: grpc
+defaultPackage: com.krickert.search.service
+testFramework: junit
+sourceLanguage: java
+buildTool: maven
+features: [app-name, discovery-core, grpc, http-client-test, java, java-application, junit, logback, maven, maven-enforcer-plugin, properties, readme, serialization-jackson, shade]
