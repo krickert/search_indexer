@@ -57,6 +57,6 @@ public class PipelineClientConfig {
     }
 
     public enum GRPC_TYPE {
-        CONSUL_GRPC, SERVER_GRPC;
+        CONSUL_GRPC, SERVER_GRPC
     }
 }

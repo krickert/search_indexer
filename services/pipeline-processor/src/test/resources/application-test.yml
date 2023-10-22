@@ -1,20 +1,15 @@
 consul:
   client:
-    discovery:
-      enabled: true
     registration:
-      enabled: true
+      enabled: false
     defaultZone: ${CONSUL_HOST:localhost}:${CONSUL_PORT:8500}
-
+    discovery:
+      enabled: false
 grpc:
   client:
+    plaintext: true
     discovery:
-      enabled: true
-  channels:
-    nlp:
-      plaintext: true
-      default-service-config:
-
+      enabled: false
 
 kafka:
   enabled: false
@@ -33,11 +28,15 @@ pipeline-config:
       consul_service: vectorizer
 
   pipeline-processor:
+    test-pipeline:
+      services:
+        - nlp
+        - vectorizer
     search-pipeline:
       services:
         - nlp
         - vectorizer
-        - nlp_direct
+        - language-detection
     datascience-pipeline:
       services:
         - vectorizer

@@ -6,7 +6,6 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Assertions;
 
 import jakarta.inject.Inject;
-import org.testcontainers.consul.ConsulContainer;
 
 @MicronautTest
 class GrpcPipelineProcessorTest {
@@ -20,6 +19,7 @@ class GrpcPipelineProcessorTest {
     void testItWorks() {
         Assertions.assertTrue(application.isRunning());
     }
+
 
 
 }

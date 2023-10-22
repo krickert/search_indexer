@@ -35,6 +35,50 @@
     </repositories>
 
     <dependencies>
+        <!-- https://mvnrepository.com/artifact/io.grpc/grpc-netty -->
+        <dependency>
+            <groupId>io.grpc</groupId>
+            <artifactId>grpc-netty</artifactId>
+            <version>1.58.0</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.ecwid.consul/consul-api -->
+        <dependency>
+            <groupId>com.ecwid.consul</groupId>
+            <artifactId>consul-api</artifactId>
+            <version>1.4.5</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.google.code.gson</groupId>
+                    <artifactId>gson</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>commons-codec</groupId>
+                    <artifactId>commons-codec</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.apache.httpcomponents</groupId>
+                    <artifactId>httpclient</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.10.1</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-codec</groupId>
+            <artifactId>commons-codec</artifactId>
+            <version>1.16.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>4.5.14</version>
+        </dependency>
+
         <dependency>
             <groupId>io.micronaut</groupId>
             <artifactId>micronaut-management</artifactId>
@@ -50,11 +94,7 @@
             <artifactId>micronaut-kafka-streams</artifactId>
             <scope>compile</scope>
         </dependency>
-        <dependency>
-            <groupId>io.micronaut.serde</groupId>
-            <artifactId>micronaut-serde-jackson</artifactId>
-            <scope>compile</scope>
-        </dependency>
+
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
@@ -65,11 +105,7 @@
             <artifactId>snakeyaml</artifactId>
             <scope>runtime</scope>
         </dependency>
-        <dependency>
-            <groupId>io.micronaut.testresources</groupId>
-            <artifactId>micronaut-test-resources-client</artifactId>
-            <scope>provided</scope>
-        </dependency>
+
         <dependency>
             <groupId>io.micronaut.test</groupId>
             <artifactId>micronaut-test-junit5</artifactId>
@@ -131,21 +167,25 @@
         </dependency>
         <dependency>
             <groupId>io.micronaut.grpc</groupId>
-            <artifactId>micronaut-grpc-client-runtime</artifactId>
+            <artifactId>micronaut-grpc-runtime</artifactId>
+            <scope>compile</scope>
         </dependency>
         <dependency>
-            <groupId>io.micronaut</groupId>
+            <groupId>io.micronaut.serde</groupId>
+            <artifactId>micronaut-serde-jackson</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.micronaut.discovery</groupId>
             <artifactId>micronaut-discovery-client</artifactId>
-            <version>2.0.1</version>
         </dependency>
         <dependency>
-            <groupId>org.testcontainers</groupId>
-            <artifactId>consul</artifactId>
-            <scope>test</scope>
+            <groupId>javax.annotation</groupId>
+            <artifactId>javax.annotation-api</artifactId>
+            <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>io.micronaut.testresources</groupId>
-            <artifactId>micronaut-test-resources-testcontainers</artifactId>
+            <artifactId>micronaut-test-resources-client</artifactId>
             <scope>test</scope>
         </dependency>
 

@@ -1,19 +1,8 @@
 micronaut:
   application:
-    name: pipeline-processor-application
+    name: pipeline-processor
 
-consul:
-  client:
-    discovery:
-      enabled: false
-    defaultZone: ${CONSUL_HOST:localhost}:${CONSUL_PORT:8500}
 
-grpc:
-  client:
-    discovery:
-      enabled: false
-    plaintext: true
-  server: false
 
 
 

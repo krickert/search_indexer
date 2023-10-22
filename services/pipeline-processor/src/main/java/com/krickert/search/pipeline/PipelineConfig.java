@@ -1,9 +1,11 @@
 package com.krickert.search.pipeline;
 
+import com.google.common.collect.Maps;
 import io.micronaut.context.annotation.ConfigurationProperties;
 import io.micronaut.serde.annotation.Serdeable;
 
 import java.util.Collection;
+import java.util.Map;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
@@ -11,19 +13,23 @@ import static com.google.common.base.Preconditions.checkNotNull;
 @ConfigurationProperties("pipeline-config")
 public class PipelineConfig {
 
-    private final Collection<PipelineClientConfig> pipelineClientConfig;
-    private final Collection<RegisteredPipelines> registeredPipelines;
+
+    private final Map<String, PipelineClientConfig> pipelineClientConfig;
+    private final Map<String, RegisteredPipelines> registeredPipelines;
 
     public PipelineConfig(Collection<PipelineClientConfig> pipelineClientConfig, Collection<RegisteredPipelines> registeredPipelines) {
-        this.pipelineClientConfig = checkNotNull(pipelineClientConfig);
-        this.registeredPipelines = checkNotNull(registeredPipelines);
+        checkNotNull(pipelineClientConfig);
+        checkNotNull(registeredPipelines);
+        this.pipelineClientConfig = Maps.uniqueIndex(pipelineClientConfig, PipelineClientConfig::getName);
+        this.registeredPipelines = Maps.uniqueIndex(registeredPipelines, RegisteredPipelines::getName);
     }
 
-    public Collection<RegisteredPipelines> getRegisteredPipelines() {
+    public Map<String, PipelineClientConfig> getPipelineClientConfig() {
+        return pipelineClientConfig;
+    }
+
+    public Map<String, RegisteredPipelines> getRegisteredPipelines() {
         return registeredPipelines;
     }
 
-    public Collection<PipelineClientConfig> getPipelineClientConfig() {
-        return pipelineClientConfig;
-    }
 }
