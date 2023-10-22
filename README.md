@@ -13,7 +13,9 @@ The data processing steps from multiple sources which perform the following:
 * Enrichment - Now that the document is plain text, it will be applied to a pipeline which would execute multiple services to enrich the document.
 * Sink - Once the data is fully enriched, it will go into a data sink to output to the desired service such as a search engine, vector store, or a data scientist experiementing with data.
 
-As a PoC, we are first processing the entire set of wikipedia documents.
+As a PoC, we are first processing the entire set of wikipedia documents.  Once an end-to-end with two search engines is completed, other data types and sources will be added and supported.
+
+
 
 ## Technical architecture
 ### Components used
@@ -72,6 +74,8 @@ The parsing only removes wiki data and adds the metadata returned from the dumps
 
 #### Pipeline Processing
 
+##### Overview
+
 ![Pipeline Processor Flow](/docs/arch_diagrams/search_indexer-PipelineProcessorFlow.drawio.svg)
 
 Once the parsed document is parsed, it is cleaned up, the pipeline processing step can enhance the document by applying a pipeline step to the document.
@@ -79,6 +83,84 @@ Once the parsed document is parsed, it is cleaned up, the pipeline processing st
 This is a set of services all with the same gRPC interface which simply inputs a Pipeline Document and outputs the same.  The service can enhance, read, or manipulate the document through the series of pipelines.
 
 As of now the project has two pipeline steps: a vectorizer and an NLP named entity rocognition service.  They're both a reference point as to how to create a gRPC service to enhance the document.  Further implementations of gRPC services in multiple languages are planned.
+
+##### Setting up the pipeline processor
+
+The pipeline processor project is in `services/pipeline-processor`.  This application:
+1. Takes in a docuemnt from kafka.
+   1. The type is `PipeDocument` which is a google protocol buffer type, defined in `protobuf-projects/wikisearch-model/src/main/protobuf/pipes.proto`
+   2. The topic is `pipe-document`.  The application subscribes to this topic.
+2. Processes the document through a grpc pipeline of services registered in consul.
+   1. In the `application.yml` file, you can configure the pipeline stages that would process.  These stages are all grpc services that take in the same interface but different implementations meant to enhance a document.  Instructions on how to do this is below.
+   2. When the application starts up, when a document is consumed from kafka, the processor will run the document through the configured pipelines defined in the application.yml file.
+   3. The result of this file gets saved into a kafka topic called `enhanced-pipeline-document` which is also a PipeDocument type.
+
+There are two projects that can be used to test with consul: `services/grpc-nlp-service` and `services/grpc-vectorizor-service`.  Each are standalone applications that will run on 2 different ports on your machine.  These services are configured in the application.yml file to automatically register for a consul server.  
+
+###### Configuration
+
+The following configuration parameters need to be registered in `application.yml`:
+1. Consul server zone
+2. Grpc service list registered in consul
+3. Kafka configuration
+
+####### Consul setup
+In the `pipeline-document`'s `application.yml` file:
+```
+consul:
+  client:
+    registration:
+      enabled: false (1)
+    defaultZone: ${CONSUL_HOST:localhost}:${CONSUL_PORT:8500} (2)
+    discovery:
+      enabled: true (3)
+grpc:
+  client:
+    plaintext: true (4)
+    discovery:
+      enabled: true (5)
+
+kafka:
+  enabled: true (6)
+
+pipeline-config:
+  client-configs: (7)
+    nlp2:
+      type: server_grpc
+      host: "localhost"
+      port: "50051"
+    nlp:
+      type: consul_grpc
+      consul_service: nlp
+    vectorizer:
+      type: consul_grpc
+      consul_service: vectorizer
+
+  pipeline-processor: (8)
+    test-pipeline: (9)
+      services:
+        - nlp
+        - vectorizer
+    search-pipeline:
+      services:
+        - vectorizer
+    datascience-pipeline:
+      services:
+        - nlp
+```
+Note: *client-configs* has not yet been implemented.  So, for now, the `client-configs` parameter can be ignored.  This is going to be refactored in the future.  The consul services would not need to be added to the client-config section in the near future as the app will assume the service name is the reference to the grpc service in consul.
+
+The above is referenced with the following instructions for the config:
+1. `consul.client.registration` should be false.  Soon this will turn to true as the pipeline-processor itself will offer a grpc service to process a specific pipeline processor.  However, if this is set to true, there will be no harm as the app will still run.
+2. `defaultZone` contains the consul server configuration.  Eventually, all the configuration will be in consul as an option.
+3. `consul.client.discovery` needs to be true.  It's the feature of micronaut that allows for the dynamic registation of a `PipeDocument` processor.
+4. `grpc.client.plaintext` is only true because the 2 services that come as an example are also serving as plantext.  However, setup your ssl per the directions in micronaut grpc if you don't want to use plaintext.
+5. `grpc.client.discovery.enabled` needs to be set to true in order to get the grpc channel from consul.
+6. `kafka.enabled` is set to true.  Please read the kafka instructions if you're not using standard ports, etc for the kafka server.
+7. `pipeline-config.client-config` feature is not yet implemented.   Right now this app assumes consul registered grpc services only.
+8. `pipeline-config.pipeline-processor` sets up different named pipelines for the registered grpc consul services.  All grpc services must implement the PipeService interface for gRPC and registered in consul as a service.
+9. `pipeline-config.pipeline-processor.*.services` the wildcard is the name of the defined pipeline for the `PipeDocument` processing.
+
 
 ## install directions
 
