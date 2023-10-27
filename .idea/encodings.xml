@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/protobuf-projects/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/protobuf-projects/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/protobuf-projects/wikisearch-model-test-resources/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/protobuf-projects/wikisearch-model-test-resources/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/protobuf-projects/wikisearch-model/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/protobuf-projects/wikisearch-model/src/main/protobuf" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/protobuf-projects/wikisearch-model/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/protobuf-projects/wikisearch-model/target/generated-sources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/services/grpc-nlp-service-old/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/services/grpc-nlp-service-old/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/services/grpc-services/grpc-nlp-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/services/grpc-services/grpc-nlp-service/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/services/grpc-services/grpc-vectorizer-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/services/grpc-services/grpc-vectorizer-service/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/services/grpc-services/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/services/grpc-services/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/services/pipeline-processor/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/services/pipeline-processor/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/services/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/services/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/services/wiki-downloader-services/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/services/wiki-downloader-services/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/services/wiki-downloader-services/wiki-article-to-pipedocument-processor/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/services/wiki-downloader-services/wiki-article-to-pipedocument-processor/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/services/wiki-downloader-services/wiki-download-dump-file-processor/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/services/wiki-downloader-services/wiki-download-dump-file-processor/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/services/wiki-downloader-services/wiki-download-request-creator/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/services/wiki-downloader-services/wiki-download-request-creator/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/services/wiki-downloader-services/wiki-dump-file-to-wiki-article-processor/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/services/wiki-downloader-services/wiki-dump-file-to-wiki-article-processor/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
+    <file url="file:///var/folders/kv/yk55dtgs0w98gtdszcnhgkrw0000gn/T/protocjar10105480857312819557/include" charset="UTF-8" />
+    <file url="file:///var/folders/kv/yk55dtgs0w98gtdszcnhgkrw0000gn/T/protocjar6574715023516372618/include" charset="UTF-8" />
+    <file url="file:///var/folders/kv/yk55dtgs0w98gtdszcnhgkrw0000gn/T/protocjar7096632721647957606/include" charset="UTF-8" />
+  </component>
+</project>

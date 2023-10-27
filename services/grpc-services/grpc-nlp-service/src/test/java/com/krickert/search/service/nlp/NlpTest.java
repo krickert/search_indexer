@@ -1,4 +1,4 @@
-package com.krickert.search;
+package com.krickert.search.service.nlp;
 
 import io.micronaut.runtime.EmbeddedApplication;
 import io.micronaut.test.extensions.junit5.annotation.MicronautTest;
@@ -7,9 +7,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 @MicronautTest
-class GrpcPipelineProcessorTest {
-
-
+class NlpTest {
 
     @Inject
     EmbeddedApplication<?> application;
@@ -18,7 +16,5 @@ class GrpcPipelineProcessorTest {
     void testItWorks() {
         Assertions.assertTrue(application.isRunning());
     }
-
-
 
 }

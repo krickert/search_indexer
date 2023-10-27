@@ -11,6 +11,8 @@ import java.nio.file.*;
 import java.util.*;
 import java.util.stream.Stream;
 
+import static java.nio.file.FileSystems.newFileSystem;
+
 public class TestDataHelper {
     private static final Collection<WikiArticle> fewHunderedArticles = createFewHunderedArticles();
     private static final Collection<PipeDocument> fewHunderedPipeDocuments = createFewHunderedPipeDocuments();
@@ -86,7 +88,7 @@ public class TestDataHelper {
     private static Stream<Path> getPathsFromDirectory(String directory) {
         URI uri;
         try {
-            uri = TestDataHelper.class.getResource(directory).toURI();
+            uri = Objects.requireNonNull(TestDataHelper.class.getResource(directory)).toURI();
         } catch (URISyntaxException | NullPointerException e) {
             throw new RuntimeException(e);
         }
@@ -94,7 +96,7 @@ public class TestDataHelper {
         if (uri.getScheme().equals("jar")) {
             FileSystem fileSystem;
             try {
-                fileSystem = FileSystems.newFileSystem(uri, Collections.emptyMap());
+                fileSystem = newFileSystem(uri, Collections.emptyMap());
             } catch (IOException e) {
                 throw new RuntimeException(e);
             } catch (FileSystemAlreadyExistsException e) {

@@ -3,20 +3,31 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <packaging>pom</packaging>
-    <artifactId>services-pom</artifactId>
-    <groupId>com.krickert.search.service</groupId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <parent>
+        <groupId>com.krickert.search.service</groupId>
+        <artifactId>services-pom</artifactId>
+        <version>1.0-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
     <modules>
-        <module>wiki-downloader-services</module>
-        <module>grpc-services</module>
-        <module>pipeline-processor</module>
+        <module>wiki-download-request-creator</module>
+        <module>wiki-download-dump-file-processor</module>
+        <module>wiki-dump-file-to-wiki-article-processor</module>
+        <module>wiki-article-to-pipedocument-processor</module>
     </modules>
+
+    <artifactId>wiki-downloader-services</artifactId>
+
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+
+
+
     <repositories>
         <repository>
             <id>central</id>

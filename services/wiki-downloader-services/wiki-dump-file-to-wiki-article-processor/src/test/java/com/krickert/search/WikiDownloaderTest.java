@@ -7,9 +7,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 @MicronautTest
-class GrpcPipelineProcessorTest {
-
-
+class WikiDownloaderTest {
 
     @Inject
     EmbeddedApplication<?> application;
@@ -18,7 +16,5 @@ class GrpcPipelineProcessorTest {
     void testItWorks() {
         Assertions.assertTrue(application.isRunning());
     }
-
-
 
 }
