@@ -1,0 +1,4 @@
+kafka:
+  enabled: true
+  schema.registry.url: http://192.168.86.43:8081
+  bootstrap.servers: 192.168.86.43:9092
