@@ -8,6 +8,7 @@
         <groupId>com.krickert.search</groupId>
         <artifactId>search-pom</artifactId>
         <version>1.0-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
     </parent>
     <modules>
         <module>wiki-downloader-services</module>
