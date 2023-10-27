@@ -1,0 +1,28 @@
+micronaut:
+  application:
+    name: wiki-downloader
+  executors:
+    consumer:
+      type: fixed
+      nThreads: 50
+    producer:
+      type: fixed
+      nThreads: 50
+      
+consul:
+  client:
+    registration:
+      enabled: true
+    defaultZone: ${CONSUL_HOST:localhost}:${CONSUL_PORT:8500}
+
+kafka:
+  enabled: true
+  schema.registry.url: http://${KAFKA_HOST:localhost}:${KAFKA_PORT:8081}
+  key:
+    serializer: org.apache.kafka.common.serialization.UUIDSerializer
+    deserializer: org.apache.kafka.common.serialization.UUIDDeserializer
+  value:
+    serializer: io.confluent.kafka.serializers.protobuf.KafkaProtobufSerializer
+    deserializer: io.confluent.kafka.serializers.protobuf.KafkaProtobufDeserializer
+
+
