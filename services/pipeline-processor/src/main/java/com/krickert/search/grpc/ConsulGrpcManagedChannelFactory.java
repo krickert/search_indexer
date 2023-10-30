@@ -25,7 +25,6 @@ import static org.apache.kafka.streams.state.RocksDBConfigSetter.LOG;
 @Singleton
 @Requires(notEnv = Environment.TEST)
 public class ConsulGrpcManagedChannelFactory implements AutoCloseable {
-
     private final ApplicationContext beanContext;
     private final Map<ChannelKey, ManagedChannel> channels = new ConcurrentHashMap<>();
 
