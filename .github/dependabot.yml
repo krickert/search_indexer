@@ -1,0 +1,64 @@
+# To get started with Dependabot version updates, you'll need to specify which
+# package ecosystems to update and where the package manifests are located.
+# Please see the documentation for all configuration options:
+# https://docs.github.com/github/administering-a-repository/configuration-options-for-dependency-updates
+
+version: 2
+updates:
+  - package-ecosystem: "maven" # See documentation for possible values
+    directory: "/" # Location of package manifests
+    schedule:
+      interval: "weekly"
+  - package-ecosystem: "maven" # See documentation for possible values
+    directory: "/protobuf-projects" # Location of package manifests
+    schedule:
+      interval: "weekly"
+  - package-ecosystem: "maven" # See documentation for possible values
+    directory: "/protobuf-projects/wikisearch-model" # Location of package manifests
+    schedule:
+      interval: "weekly"
+  - package-ecosystem: "maven" # See documentation for possible values
+    directory: "/protobuf-projects/wikisearch-model-test-resources" # Location of package manifests
+    schedule:
+      interval: "weekly"
+  - package-ecosystem: "maven" # See documentation for possible values
+   directory: "/services" # Location of package manifests
+    schedule:
+      interval: "weekly"
+  - package-ecosystem: "maven" # See documentation for possible values
+    directory: "/services/grpc-services" # Location of package manifests
+    schedule:
+      interval: "weekly"
+  - package-ecosystem: "maven" # See documentation for possible values
+    directory: "/services/grpc-services/grpc-nlp-services" # Location of package manifests
+    schedule:
+      interval: "weekly"
+  - package-ecosystem: "maven" # See documentation for possible values
+    directory: "/services/grpc-services/grpc-vectorizer-service" # Location of package manifests
+    schedule:
+      interval: "weekly"
+  - package-ecosystem: "maven" # See documentation for possible values
+    directory: "/services/wiki-downloader-services" # Location of package manifests
+    schedule:
+      interval: "weekly"
+  - package-ecosystem: "maven" # See documentation for possible values
+    directory: "/services/wiki-downloader-services/wiki-download-dump-file-processor" # Location of package manifests
+    schedule:
+      interval: "weekly"
+  - package-ecosystem: "maven" # See documentation for possible values
+    directory: "/services/wiki-downloader-services/wiki-article-to-pipedocument-processor" # Location of package manifests
+    schedule:
+      interval: "weekly"
+  - package-ecosystem: "maven" # See documentation for possible values
+    directory: "/services/wiki-downloader-services/wiki-dump-file-to-wiki-article-processor" # Location of package manifests
+    schedule:
+      interval: "weekly"
+  - package-ecosystem: "maven" # See documentation for possible values
+    directory: "/services/wiki-downloader-services/wiki-download-request-creator" # Location of package manifests
+    schedule:
+      interval: "weekly"
+  - package-ecosystem: "maven" # See documentation for possible values
+    directory: "/services/pipeline-processor" # Location of package manifests
+    schedule:
+      interval: "weekly"
+  
