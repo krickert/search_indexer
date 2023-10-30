@@ -7,6 +7,7 @@ import io.micronaut.context.ApplicationContext;
 import io.micronaut.context.annotation.Requires;
 import io.micronaut.context.env.Environment;
 import io.micronaut.core.type.Argument;
+import io.micronaut.grpc.channels.GrpcManagedChannelFactory;
 import io.micronaut.grpc.channels.GrpcNamedManagedChannelConfiguration;
 import io.micronaut.inject.qualifiers.Qualifiers;
 import jakarta.annotation.PreDestroy;
@@ -25,7 +26,7 @@ import static org.apache.kafka.streams.state.RocksDBConfigSetter.LOG;
 @Singleton
 @Requires(notEnv = Environment.TEST)
 public class ConsulGrpcManagedChannelFactory implements AutoCloseable {
-
+    GrpcManagedChannelFactory factory;
     private final ApplicationContext beanContext;
     private final Map<ChannelKey, ManagedChannel> channels = new ConcurrentHashMap<>();
 

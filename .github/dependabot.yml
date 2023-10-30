@@ -61,4 +61,7 @@ updates:
     directory: "/services/pipeline-processor" # Location of package manifests
     schedule:
       interval: "weekly"
+    ignore:
+      - dependency-name: "io.grpc:grpc-netty" # breaks the build because build() is no longer exposed.  This code was ripped from the micronaut library, so just wait for them to update the grpc library
+        version: ["1.58.x"]
   
