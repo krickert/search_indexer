@@ -187,8 +187,8 @@
                         </path>
                     </annotationProcessorPaths>
                     <compilerArgs>
-                        <arg>-Amicronaut.processing.group=com.krickert.search</arg>
-                        <arg>-Amicronaut.processing.module=grpc-pipeline-processor</arg>
+                        <arg>-Amicronaut.processing.group=com.krickert.search.service</arg>
+                        <arg>-Amicronaut.processing.module=pipeline-processor</arg>
                     </compilerArgs>
                 </configuration>
             </plugin>
