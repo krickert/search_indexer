@@ -1,5 +1,17 @@
 # search_indexer
 
+## Abstract
+This project sets out to:
+* Allow data scientists quickly create access to popular text (i.e. all wikipedia articles) and structured data (IRS, 311, weather, census, public travel data) with little effort
+* Make recrawling updates to the data sets fast and trouble-free
+* Allow for quick enhancement of the data in multiple languages by use of a pluggable gRPC service
+* Deploy software suite on a laptop or cloud
+* Directly run the software suite on container-based technology or directly on any OSX, Windows, or Linux machine.
+* Access the data through an advanced search engine with output in multiple formats (JSON, XML, or Google Protocol Buffers)
+
+Most of my career has been in analytics or search technologies.  When working on these umbrellas, I find myself spending too much time being able to test software because I have to wrangle a large data set to test it out.  This can include hours of time parsing files, crawling sites, writing SQL calls, etc.  
+
+Fast forward to 2023, there is a large set of many data sources publicly available to perfrom the above tasks.  So this software is set to do exactly that: take public well-known data and parse it for consuming on other apps.
 
 ## Overview
 This project is made to be an OOTB enterprise data pipeline for processing data from multiple 

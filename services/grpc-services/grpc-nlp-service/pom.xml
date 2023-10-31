@@ -61,14 +61,13 @@
     <dependency>
       <groupId>io.micronaut.testresources</groupId>
       <artifactId>micronaut-test-resources-client</artifactId>
-      <scope>provided</scope>
+      <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.apache.opennlp</groupId>
       <artifactId>opennlp-tools</artifactId>
       <version>2.3.0</version>
     </dependency>
-
     <dependency>
       <groupId>com.krickert.search</groupId>
       <artifactId>wikisearch-model</artifactId>
@@ -118,6 +117,7 @@
     <dependency>
       <groupId>org.testcontainers</groupId>
       <artifactId>consul</artifactId>
+      <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>com.google.protobuf</groupId>
@@ -133,6 +133,7 @@
     <dependency>
       <groupId>io.micronaut.crac</groupId>
       <artifactId>micronaut-crac</artifactId>
+      <scope>compile</scope>
     </dependency>
 
 
@@ -168,8 +169,8 @@
             </path>
           </annotationProcessorPaths>
           <compilerArgs>
-            <arg>-Amicronaut.processing.group=com.krickert.search.service.nlp</arg>
-            <arg>-Amicronaut.processing.module=nlp</arg>
+            <arg>-Amicronaut.processing.group=com.krickert.search.service.grpc</arg>
+            <arg>-Amicronaut.processing.module=grpc-nlp-service</arg>
           </compilerArgs>
         </configuration>
       </plugin>

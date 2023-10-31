@@ -256,8 +256,8 @@
             </path>
           </annotationProcessorPaths>
           <compilerArgs>
-            <arg>-Amicronaut.processing.group=com.krickert.search</arg>
-            <arg>-Amicronaut.processing.module=wiki-downloader</arg>
+            <arg>-Amicronaut.processing.group=com.krickert.search.services.kafka</arg>
+            <arg>-Amicronaut.processing.module=wiki-dump-file-to-wiki-article-processor</arg>
           </compilerArgs>
         </configuration>
       </plugin>

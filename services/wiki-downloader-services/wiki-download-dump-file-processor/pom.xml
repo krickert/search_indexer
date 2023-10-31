@@ -201,8 +201,8 @@
             </path>
           </annotationProcessorPaths>
           <compilerArgs>
-            <arg>-Amicronaut.processing.group=com.krickert.search.service.kafka</arg>
-            <arg>-Amicronaut.processing.module=wiki-dump-file-downloader</arg>
+            <arg>-Amicronaut.processing.group=com.krickert.search.services.kafka</arg>
+            <arg>-Amicronaut.processing.module=wiki-download-dump-file-processorr</arg>
           </compilerArgs>
         </configuration>
       </plugin>

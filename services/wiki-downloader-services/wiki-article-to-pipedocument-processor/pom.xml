@@ -76,7 +76,7 @@
     <dependency>
       <groupId>io.micronaut.testresources</groupId>
       <artifactId>micronaut-test-resources-client</artifactId>
-      <scope>provided</scope>
+      <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>io.micronaut.test</groupId>
@@ -257,7 +257,7 @@
           </annotationProcessorPaths>
           <compilerArgs>
             <arg>-Amicronaut.processing.group=com.krickert.search.services.kafka</arg>
-            <arg>-Amicronaut.processing.module=wiki-article-processor</arg>
+            <arg>-Amicronaut.processing.module=wiki-article-to-pipedocument-processor</arg>
           </compilerArgs>
         </configuration>
       </plugin>
