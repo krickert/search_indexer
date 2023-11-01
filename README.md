@@ -9,7 +9,7 @@ This project sets out to:
 * Directly run the software suite on container-based technology or directly on any OSX, Windows, or Linux machine.
 * Access the data through an advanced search engine with output in multiple formats (JSON, XML, or Google Protocol Buffers)
 
-Most of my career has been in analytics or search technologies.  When working on these umbrellas, I find myself spending too much time being able to test software because I have to wrangle a large data set to test it out.  This can include hours of time parsing files, crawling sites, writing SQL calls, etc.  
+Most of my career has been in analytics or search technologies.  When working under these umbrellas, I don't spend much time testing the software as I do getting data into the new software.  This can include hours of time parsing files, crawling sites, writing SQL calls, etc.  
 
 Fast forward to 2023, there is a large set of many data sources publicly available to perfrom the above tasks.  So this software is set to do exactly that: take public well-known data and parse it for consuming on other apps.
 
