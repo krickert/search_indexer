@@ -21,7 +21,7 @@
     <micronaut.version>4.1.5</micronaut.version>
     <micronaut.test.resources.enabled>true</micronaut.test.resources.enabled>
     <exec.mainClass>com.krickert.search.WikiArticleProcessorApplication</exec.mainClass>
-    <kafka-streams-protobuf-serde.version>7.5.1</kafka-streams-protobuf-serde.version>
+    <kafka-streams-protobuf-serde.version>7.5.2</kafka-streams-protobuf-serde.version>
   </properties>
 
   <repositories>
