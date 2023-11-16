@@ -40,7 +40,9 @@ public class Vectorizer {
 
     public float[] embeddings(String text) {
         try (Predictor<String, float[]> predictor = model.newPredictor()) {
-            return predictor.predict(text);
+            float[] response = predictor.predict(text);
+            log.info("Text input [{}] returned embeddings [{}]", text, response);
+            return response;
         } catch (TranslateException e) {
             throw new RuntimeException(e);
         }
