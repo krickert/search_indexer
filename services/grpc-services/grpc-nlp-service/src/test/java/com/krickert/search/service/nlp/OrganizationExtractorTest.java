@@ -10,7 +10,8 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @MicronautTest
-public class OrganizationExtractorTest {
+public class
+OrganizationExtractorTest {
 
     @Inject
     NLPBeans nlpBeans;

@@ -10,14 +10,14 @@
     <parent>
         <groupId>io.micronaut.platform</groupId>
         <artifactId>micronaut-parent</artifactId>
-        <version>4.1.6</version>
+        <version>4.2.0</version>
         <relativePath/>
     </parent>
     <properties>
         <packaging>jar</packaging>
         <jdk.version>17</jdk.version>
         <release.version>17</release.version>
-        <micronaut.version>4.1.6</micronaut.version>
+        <micronaut.version>4.2.0</micronaut.version>
         <micronaut.test.resources.enabled>true</micronaut.test.resources.enabled>
         <exec.mainClass>com.krickert.search.PipelineProcessorApplication</exec.mainClass>
     </properties>
@@ -39,7 +39,7 @@
         <dependency>
             <groupId>io.grpc</groupId>
             <artifactId>grpc-netty</artifactId>
-            <version>1.58.0</version>
+            <version>1.59.0</version>
             <scope>compile</scope>
         </dependency>
         <dependency>

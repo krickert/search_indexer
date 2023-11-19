@@ -39,9 +39,11 @@ public class Vectorizer {
     }
 
     public float[] embeddings(String text) {
+        log.info("vectorizing {}", text);
         try (Predictor<String, float[]> predictor = model.newPredictor()) {
             float[] response = predictor.predict(text);
-            log.info("Text input [{}] returned embeddings [{}]", text, response);
+            log.debug("Text input [{}] returned embeddings [{}]", text, response);
+            log.info("completed");
             return response;
         } catch (TranslateException e) {
             throw new RuntimeException(e);
@@ -60,7 +62,7 @@ public class Vectorizer {
                 response.add(embedding);
             }
         }
-        log.info("Text input [{}] returned embeddings [{}]", text, response);
+        log.debug("Text input [{}] returned embeddings [{}]", text, response);
         return response;
     }
 }

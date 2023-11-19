@@ -51,18 +51,12 @@ class GrpcNLPizerServiceTest {
     StreamObserver<PipeReply> streamObserver = new StreamObserver<>() {
         @Override
         public void onNext(PipeReply reply) {
-            try {
-                log.info("RESPONSE, returning embeddings: {}", JsonFormat.printer().print(
-                        reply.getDocument()));
-                finishedDocs.put(reply.getDocument().getId(), reply.getDocument());
-            } catch (InvalidProtocolBufferException e) {
-                throw new RuntimeException(e);
-            }
+            log.debug("RESPONSE, returning document: {}",  reply.getDocument().getTitle());
+            finishedDocs.put(reply.getDocument().getId(), reply.getDocument());
         }
 
         @Override
         public void onError(Throwable throwable) {
-
             log.error("Not implemented", throwable);
         }
 
@@ -71,7 +65,6 @@ class GrpcNLPizerServiceTest {
             log.info("Finished");
         }
 
-        // Override OnError ...
     };
 
 

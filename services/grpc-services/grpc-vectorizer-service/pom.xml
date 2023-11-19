@@ -10,14 +10,14 @@
   <parent>
     <groupId>io.micronaut.platform</groupId>
     <artifactId>micronaut-parent</artifactId>
-    <version>4.1.6</version>
+    <version>4.2.0</version>
     <relativePath/>
   </parent>
   <properties>
     <packaging>jar</packaging>
     <jdk.version>17</jdk.version>
     <release.version>17</release.version>
-    <micronaut.version>4.1.6</micronaut.version>
+    <micronaut.version>4.2.0</micronaut.version>
     <micronaut.test.resources.enabled>true</micronaut.test.resources.enabled>
     <exec.mainClass>com.krickert.search.service.grpc.Application</exec.mainClass>
   </properties>
@@ -160,6 +160,16 @@
       <artifactId>pytorch-jni</artifactId>
       <version>2.0.1-0.25.0</version>
       <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.netty</groupId>
+      <artifactId>netty-codec</artifactId>
+      <version>4.1.101.Final</version>
+    </dependency>
+    <dependency>
+      <groupId>io.netty</groupId>
+      <artifactId>netty-codec-http2</artifactId>
+      <version>4.1.101.Final</version>
     </dependency>
 
   </dependencies>

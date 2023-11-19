@@ -22,6 +22,9 @@ import java.util.concurrent.TimeUnit;
 
 import static org.apache.kafka.streams.state.RocksDBConfigSetter.LOG;
 
+/**
+ * This was taken from
+ */
 @Singleton
 @Requires(notEnv = Environment.TEST)
 public class ConsulGrpcManagedChannelFactory implements AutoCloseable {
