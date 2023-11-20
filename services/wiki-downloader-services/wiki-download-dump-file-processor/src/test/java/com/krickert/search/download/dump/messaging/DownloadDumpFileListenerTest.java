@@ -14,6 +14,7 @@ import io.micronaut.test.extensions.junit5.annotation.MicronautTest;
 import jakarta.inject.Inject;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -29,28 +30,20 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.awaitility.Awaitility.await;
 
 @MicronautTest
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 class DownloadDumpFileListenerTest {
 
-
     static final ConcurrentLinkedQueue<DownloadedFile> results = new ConcurrentLinkedQueue<>();
-    DownloadFileRequest request1 = DownloadFileRequest.newBuilder()
-            .setErrorCheck(ErrorCheck.newBuilder().setErrorCheckType(ErrorCheckType.MD5).setErrorCheck("error1"))
-            .setFileDumpDate("20221107")
-            .setUrl("http://www.example.com/blah1.txt")
-            .setFileName("someFile1.txt")
-            .build();
-    DownloadFileRequest request2 = DownloadFileRequest.newBuilder()
-            .setErrorCheck(ErrorCheck.newBuilder().setErrorCheckType(ErrorCheckType.MD5).setErrorCheck("error2"))
-            .setFileDumpDate("20221107")
-            .setUrl("http://www.example.com/blah2.txt")
-            .setFileName("someFile2.txt")
-            .build();
-    DownloadFileRequest request3 = DownloadFileRequest.newBuilder()
-            .setErrorCheck(ErrorCheck.newBuilder().setErrorCheckType(ErrorCheckType.MD5).setErrorCheck("error3"))
-            .setFileDumpDate("20221107")
-            .setUrl("http://www.example.com/blah3.txt")
-            .setFileName("someFile3.txt")
-            .build();
+
+    private static DownloadFileRequest createRequest(int id) {
+        return DownloadFileRequest.newBuilder()
+                .setErrorCheck(ErrorCheck.newBuilder().setErrorCheckType(ErrorCheckType.MD5).setErrorCheck("error" + id))
+                .setFileDumpDate("20221107")
+                .setUrl("http://www.example.com/blah" + id + ".txt")
+                .setFileName("someFile" + id + ".txt")
+                .build();
+    }
+
     @Inject
     DownloadDumpFileListener downloadDumpFileListener;
     @Inject
@@ -66,8 +59,11 @@ class DownloadDumpFileListenerTest {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         System.setOut(new PrintStream(baos));
 
-        downloadRequestProducer.sendDownloadRequest(createKey(request3), request1);
-        downloadRequestProducer.sendDownloadRequest(createKey(request3), request2);
+        DownloadFileRequest request1 = createRequest(1);
+        DownloadFileRequest request2 = createRequest(2);
+        DownloadFileRequest request3 = createRequest(3);
+        downloadRequestProducer.sendDownloadRequest(createKey(request1), request1);
+        downloadRequestProducer.sendDownloadRequest(createKey(request2), request2);
         downloadRequestProducer.sendDownloadRequest(createKey(request3), request3);
         await().atMost(30, SECONDS).until(() -> results.size() == 3);
 
@@ -88,9 +84,7 @@ class DownloadDumpFileListenerTest {
                 throw new RuntimeException(e);
             }
         });
-
     }
-
 
     @KafkaClient
     public interface DownloadRequestProducer {
