@@ -36,11 +36,6 @@
       <scope>compile</scope>
     </dependency>
     <dependency>
-      <groupId>io.micronaut.cache</groupId>
-      <artifactId>micronaut-cache-caffeine</artifactId>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
       <groupId>io.micronaut.grpc</groupId>
       <artifactId>micronaut-grpc-runtime</artifactId>
       <scope>compile</scope>
@@ -147,29 +142,34 @@
           <version>1.0-SNAPSHOT</version>
           <scope>test</scope>
       </dependency>
-    <dependency>
+    <!-- for GPU acceleration but made jar 1.6G -->
+    <!-- If running this on an x86 machine, it's good to turn this on if you have an nvidia GPU -->
+    <!-- keeping this for now.  Will need to see how to integrate it in the container later -->
+    <!--dependency>
       <groupId>ai.djl.pytorch</groupId>
       <artifactId>pytorch-native-cu118</artifactId>
       <classifier>linux-x86_64</classifier>
       <version>2.0.1</version>
       <scope>runtime</scope>
-    </dependency>
+    </dependency-->
     <!-- https://mvnrepository.com/artifact/ai.djl.pytorch/pytorch-jni -->
-    <dependency>
+    <!-- dependency>
       <groupId>ai.djl.pytorch</groupId>
       <artifactId>pytorch-jni</artifactId>
       <version>2.0.1-0.25.0</version>
       <scope>runtime</scope>
-    </dependency>
+    </dependency-->
     <dependency>
       <groupId>io.netty</groupId>
       <artifactId>netty-codec</artifactId>
       <version>4.1.101.Final</version>
+      <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>io.netty</groupId>
       <artifactId>netty-codec-http2</artifactId>
       <version>4.1.101.Final</version>
+      <scope>compile</scope>
     </dependency>
 
   </dependencies>
