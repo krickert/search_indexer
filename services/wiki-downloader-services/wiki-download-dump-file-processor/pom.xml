@@ -2,7 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>com.krickert.search.services.kafka</groupId>
+  <groupId>com.krickert.search.download.dump</groupId>
   <artifactId>wiki-download-dump-file-processor</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>${packaging}</packaging>
@@ -201,7 +201,7 @@
             </path>
           </annotationProcessorPaths>
           <compilerArgs>
-            <arg>-Amicronaut.processing.group=com.krickert.search.services.kafka</arg>
+            <arg>-Amicronaut.processing.group=com.krickert.search.download.dump</arg>
             <arg>-Amicronaut.processing.module=wiki-download-dump-file-processorr</arg>
           </compilerArgs>
         </configuration>

@@ -15,6 +15,8 @@ import jakarta.inject.Inject;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -32,6 +34,8 @@ import static org.awaitility.Awaitility.await;
 @MicronautTest
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 class DownloadDumpFileListenerTest {
+    private static final Logger log = LoggerFactory.getLogger(DownloadDumpFileListenerTest.class);
+
 
     static final ConcurrentLinkedQueue<DownloadedFile> results = new ConcurrentLinkedQueue<>();
 
@@ -59,11 +63,15 @@ class DownloadDumpFileListenerTest {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         System.setOut(new PrintStream(baos));
 
+
         DownloadFileRequest request1 = createRequest(1);
         DownloadFileRequest request2 = createRequest(2);
         DownloadFileRequest request3 = createRequest(3);
+        log.info("sending request {} ", request1);
         downloadRequestProducer.sendDownloadRequest(createKey(request1), request1);
+        log.info("sending request {} ", request2);
         downloadRequestProducer.sendDownloadRequest(createKey(request2), request2);
+        log.info("sending request {} ", request3);
         downloadRequestProducer.sendDownloadRequest(createKey(request3), request3);
         await().atMost(30, SECONDS).until(() -> results.size() == 3);
 
@@ -100,8 +108,9 @@ class DownloadDumpFileListenerTest {
     )
     public static class DownloadedFileTestListener {
         @Topic("wiki-dump-file")
-        void receive(DownloadedFile request) {
-            results.add(request);
+        void receive(DownloadedFile result) {
+            log.info("Got result {} ", result);
+            results.add(result);
         }
 
     }
