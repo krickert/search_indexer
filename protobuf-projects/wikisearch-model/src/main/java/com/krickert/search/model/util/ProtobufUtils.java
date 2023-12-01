@@ -59,7 +59,7 @@ public class ProtobufUtils {
     }
 
     public static UUID createKey(DownloadFileRequest downloadFileRequest) {
-        return UUID.nameUUIDFromBytes(downloadFileRequest.getFileName().getBytes());
+        return UUID.nameUUIDFromBytes(downloadFileRequest.getErrorCheck().getErrorCheck().getBytes());
     }
 
     public static UUID createKey(WikiArticle wikiArticle) {
