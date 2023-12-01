@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 @MicronautTest
-public class VectorizerTest {
+public class     VectorizerTest {
     @Inject
     Vectorizer vectorizer;
 

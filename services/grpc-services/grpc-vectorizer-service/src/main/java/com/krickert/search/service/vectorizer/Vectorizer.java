@@ -29,7 +29,7 @@ public class Vectorizer {
     public Vectorizer() throws ModelNotFoundException, MalformedModelException, IOException {
         Criteria<String, float[]> criteria = Criteria.builder()
                 .setTypes(String.class, float[].class)
-                .optModelUrls("djl://ai.djl.huggingface.pytorch/sentence-transformers/all-MiniLM-L6-v2")
+                .optModelUrls("djl://ai.djl.huggingface.pytorch/sentence-transformers/all-MiniLM-L12-v2")
                 .optEngine("PyTorch")
                 .optTranslatorFactory(new TextEmbeddingTranslatorFactory())
                 .build();
