@@ -17,7 +17,7 @@
         <packaging>jar</packaging>
         <jdk.version>17</jdk.version>
         <release.version>17</release.version>
-        <micronaut.version>4.2.0</micronaut.version>
+        <micronaut.version>4.2.1</micronaut.version>
         <micronaut.test.resources.enabled>true</micronaut.test.resources.enabled>
         <exec.mainClass>com.krickert.search.PipelineProcessorApplication</exec.mainClass>
     </properties>
@@ -35,13 +35,6 @@
     </repositories>
 
     <dependencies>
-        <!-- https://mvnrepository.com/artifact/io.grpc/grpc-netty -->
-        <dependency>
-            <groupId>io.grpc</groupId>
-            <artifactId>grpc-netty</artifactId>
-            <version>1.60.0</version>
-            <scope>compile</scope>
-        </dependency>
         <dependency>
             <groupId>io.micronaut</groupId>
             <artifactId>micronaut-management</artifactId>
@@ -149,6 +142,12 @@
             <groupId>io.micronaut.testresources</groupId>
             <artifactId>micronaut-test-resources-client</artifactId>
             <scope>test</scope>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/io.grpc/grpc-netty -->
+        <dependency>
+            <groupId>io.grpc</groupId>
+            <artifactId>grpc-netty</artifactId>
+            <version>1.60.0</version>
         </dependency>
 
 

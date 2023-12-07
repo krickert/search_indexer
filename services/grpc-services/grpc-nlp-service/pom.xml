@@ -17,7 +17,7 @@
     <packaging>jar</packaging>
     <jdk.version>17</jdk.version>
     <release.version>17</release.version>
-    <micronaut.version>4.2.0</micronaut.version>
+    <micronaut.version>4.2.1</micronaut.version>
     <exec.mainClass>com.krickert.search.service.nlp.NlpNerApplication</exec.mainClass>
   </properties>
 
@@ -32,8 +32,6 @@
     <dependency>
       <groupId>io.micronaut.grpc</groupId>
       <artifactId>micronaut-grpc-runtime</artifactId>
-      <scope>compile</scope>
-      <version>4.2.0</version>
     </dependency>
     <dependency>
       <groupId>io.micronaut.serde</groupId>
@@ -42,7 +40,6 @@
     <dependency>
       <groupId>io.micronaut.discovery</groupId>
       <artifactId>micronaut-discovery-client</artifactId>
-      <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>javax.annotation</groupId>
@@ -136,17 +133,6 @@
       <artifactId>micronaut-crac</artifactId>
       <scope>compile</scope>
     </dependency>
-    <dependency>
-      <groupId>io.netty</groupId>
-      <artifactId>netty-codec</artifactId>
-      <version>4.1.101.Final</version>
-    </dependency>
-    <dependency>
-      <groupId>io.netty</groupId>
-      <artifactId>netty-codec-http2</artifactId>
-      <version>4.1.101.Final</version>
-    </dependency>
-
 
   </dependencies>
   <build>
