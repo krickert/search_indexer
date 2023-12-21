@@ -31,6 +31,10 @@ public class NLPizerEndpoint extends PipeServiceGrpc.PipeServiceImplBase {
     private final Map<String, NlpExtractor> servicesEnabledMap;
     private static final Logger log = LoggerFactory.getLogger(NLPizerEndpoint.class);
 
+    /**
+     * NLPizerEndpoint class is responsible for processing incoming data and applying NLP (Natural Language Processing)
+     * techniques to extract entities for enabled services.
+     */
     @Inject
     NLPizerEndpoint(
             @io.micronaut.context.annotation.Value("${nlp.services_enabled}")
@@ -45,23 +49,13 @@ public class NLPizerEndpoint extends PipeServiceGrpc.PipeServiceImplBase {
     }
 
     private void resolveService(NLPBeans nlpBeans, String service) {
-        switch (ServiceType.lookup(service)) {
-            case ORGANIZATION:
-                this.servicesEnabledMap.put(ServiceType.ORGANIZATION.getServiceName(), nlpBeans.getOrganizationExtractor());
-                break;
-            case LOCATION:
-                this.servicesEnabledMap.put(ServiceType.LOCATION.getServiceName(), nlpBeans.getLocationExtractor());
-                break;
-            case PERSON:
-                this.servicesEnabledMap.put(ServiceType.PERSON.getServiceName(), nlpBeans.getPersonExtractor());
-                break;
-            case DATE:
-                this.servicesEnabledMap.put(ServiceType.DATE.getServiceName(), nlpBeans.getDateExtractor());
-                break;
-            default:
-                throw new UnsupportedServiceException("Cannot find service " + service);
-        }
+        ServiceType serviceType = ServiceType.lookup(service);
+        this.servicesEnabledMap.put(
+                serviceType.getServiceName(),
+                serviceType.getExtractor(nlpBeans)
+        );
     }
+
     @Override
     public void send(PipeRequest req, StreamObserver<PipeReply> responseObserver) {
         PipeDocument document = req.getDocument();
@@ -73,7 +67,9 @@ public class NLPizerEndpoint extends PipeServiceGrpc.PipeServiceImplBase {
         }
         PipeReply reply =  PipeReply.newBuilder()
                 .setDocument(doc).build();
+        log.debug("calling onNext for {}", doc.getTitle());
         responseObserver.onNext(reply);
+        log.debug("calling onCompleted for {}", doc.getTitle());
         responseObserver.onCompleted();
     }
 

@@ -181,15 +181,6 @@ public class TestDataHelper {
             } catch (FileSystemAlreadyExistsException e) {
                 fileSystem = FileSystems.getFileSystem(uri);
                 myPath = fileSystem.getPath(directory);
-            } finally {
-                if (fileSystem != null && fileSystem.isOpen()) {
-                    try {
-                        fileSystem.close();
-                    } catch (IOException e) {
-                        //swallowing exception
-                        System.err.println("Exception occurred when closing filesystem " + e.getMessage());
-                    }
-                }
             }
         } else {
             myPath = Paths.get(uri);

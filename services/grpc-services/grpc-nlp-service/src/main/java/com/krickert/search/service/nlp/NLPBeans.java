@@ -12,6 +12,10 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.Optional;
 
+/**
+ * NLPBeans is a singleton class that provides access to various NLP (Natural Language Processing) extractors.
+ * It creates the NLP extractors using the provided configuration and resource files.
+ */
 @Singleton
 public class NLPBeans {
 
@@ -20,6 +24,16 @@ public class NLPBeans {
     private final NlpExtractor locationExtractor;
     private final NlpExtractor personExtractor;
 
+    /**
+     * The NLPBeans class is responsible for initializing the NLP extractors for different services.
+     *
+     * @param englishTokenizerLocation the location of the English tokenizer model file
+     * @param nlpNerOrgModel the location of the NER org model file
+     * @param nlpNerPersonModel the location of the NER person model file
+     * @param nlpNerLocationModel the location of the NER location model file
+     * @param nlpNerDateModel the location of the NER date model file
+     * @throws IOException if there is an error loading the tokenizer or NER models
+     */
     public NLPBeans(@Value("${nlp.en_tokenizer}") String englishTokenizerLocation,
                     @Value("${nlp.ner_org_model}") String nlpNerOrgModel,
                     @Value("${nlp.ner_person_model}") String nlpNerPersonModel,
@@ -51,7 +65,16 @@ public class NLPBeans {
     }
 
 
-
+    /**
+     * Creates a new NlpExtractor instance with the specified parameters.
+     *
+     * @param serviceType       The service type to be used by the NlpExtractor.
+     * @param tokenizerLocation The location of the tokenizer model file.
+     * @param nlpNerModel       The location of the name finder model file.
+     * @param loader            The ClassPathResourceLoader used for loading the tokenizer and name finder models.
+     * @return A new NlpExtractor instance.
+     * @throws IOException if there is an error loading the tokenizer or name finder models.
+     */
     private NlpExtractor createNlpExtractor(
             ServiceType serviceType,
             String tokenizerLocation,
@@ -60,7 +83,7 @@ public class NLPBeans {
         TokenizerModel tokenizerModel = createTokenizerModel(tokenizerLocation, loader);
         Optional<URL> resource = loader.getResource(nlpNerModel);
         if (resource.isEmpty()) {
-            throw new RuntimeException("tokenizer file name was set but file is empty or not present.");
+            throw new RuntimeException("File: " + nlpNerModel + " was set but file is empty or not present.");
         }
         TokenNameFinderModel finderModel = new TokenNameFinderModel(resource.get().openStream());
         return new NlpExtractor(serviceType, tokenizerModel, finderModel);
