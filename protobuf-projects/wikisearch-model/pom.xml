@@ -18,6 +18,7 @@
     </parent>
 
     <dependencies>
+        <!-- Apache Commons dependencies -->
         <dependency>
             <groupId>commons-io</groupId>
             <artifactId>commons-io</artifactId>
@@ -28,6 +29,8 @@
             <artifactId>commons-lang3</artifactId>
             <version>${commons-lang3.version}</version>
         </dependency>
+
+        <!-- gRPC dependencies -->
         <!-- https://mvnrepository.com/artifact/io.grpc/grpc-api -->
         <dependency>
             <groupId>io.grpc</groupId>
@@ -40,13 +43,14 @@
             <artifactId>grpc-protobuf</artifactId>
             <version>${grpc.version}</version>
         </dependency>
+
+        <!-- Others -->
         <!-- https://mvnrepository.com/artifact/javax.annotation/javax.annotation-api -->
         <dependency>
             <groupId>javax.annotation</groupId>
             <artifactId>javax.annotation-api</artifactId>
             <version>${javax.annotation.api.version}</version>
         </dependency>
-
     </dependencies>
 
     <build>

@@ -26,7 +26,7 @@ public class ProtobufUtilsTest {
             try {
                 FileUtils.forceDelete(file);
             } catch (NullPointerException | IOException e) {
-                //windows does IO exception at tiems
+                //windows does IO exception because windows NTFS is awful
                 //OSX does NPE - this is just for tests so we swallow it for now
             }
         });

@@ -17,27 +17,51 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
+
+
+/**
+ * The Vectorizer class is responsible for converting text inputs into vector embeddings
+ * using a pre-trained model.
+ */
 @Singleton
 public class Vectorizer {
 
     private static final Logger log = LoggerFactory.getLogger(Vectorizer.class);
+    private static final String MODEL_URL = "djl://ai.djl.huggingface.pytorch/sentence-transformers/all-MiniLM-L12-v2";
 
     final Criteria<String, float[]> criteria;
-
     final ZooModel<String, float[]> model;
 
+    /**
+     * The Vectorizer class is responsible for converting text inputs into vector embeddings
+     * using a pre-trained model.
+     */
     public Vectorizer() throws ModelNotFoundException, MalformedModelException, IOException {
-        Criteria<String, float[]> criteria = Criteria.builder()
+        this.criteria = makeCriteria();
+        this.model = this.criteria.loadModel();
+    }
+
+    /**
+     * Builds a Criteria object for text embedding translation.
+     * @return The Criteria object for text embedding translation.
+     */
+    private Criteria<String, float[]> makeCriteria() {
+        return Criteria.builder()
                 .setTypes(String.class, float[].class)
-                .optModelUrls("djl://ai.djl.huggingface.pytorch/sentence-transformers/all-MiniLM-L12-v2")
+                .optModelUrls(MODEL_URL)
                 .optEngine("PyTorch")
                 .optTranslatorFactory(new TextEmbeddingTranslatorFactory())
                 .build();
-
-        this.criteria = criteria;
-        this.model = criteria.loadModel();
     }
 
+
+    /**
+     * Generates vector embeddings for the given text using a pre-trained model.
+     *
+     * @param text The input text to be vectorized.
+     * @return An array of floating-point values representing the embeddings.
+     * @throws RuntimeException if an error occurs during embedding translation.
+     */
     public float[] embeddings(String text) {
         log.info("vectorizing {}", text);
         try (Predictor<String, float[]> predictor = model.newPredictor()) {
@@ -50,6 +74,12 @@ public class Vectorizer {
         }
     }
 
+    /**
+     * Retrieves vector embeddings for the given text.
+     *
+     * @param text The input text to be vectorized.
+     * @return A collection of floating-point values representing the embeddings.
+     */
     public Collection<Float> getEmbeddings(String text) {
         log.debug("getting embeddings for {}", text);
         float[] res = this.embeddings(text);
@@ -65,5 +95,6 @@ public class Vectorizer {
         log.debug("Text input [{}] returned embeddings [{}]", text, response);
         return response;
     }
+
 }
 
