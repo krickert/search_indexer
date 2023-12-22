@@ -22,12 +22,23 @@ import java.util.concurrent.TimeUnit;
 
 import static org.apache.kafka.streams.state.RocksDBConfigSetter.LOG;
 
+
 /**
- * This was taken from
+ * The ConsulGrpcManagedChannelFactory class is responsible for creating and managing gRPC ManagedChannels
+ * for communication with services registered with Consul.
+ * <p>
+ * This code was taken from Micronaut's GrpcManagedChannelFactory.  The Micronaut version does not support
+ * the ability to create a managed channel by the service name.  Rather, they expect you to do this during compile
+ * time through the use of annotations.  I tired to get them to support this, but don't think they understand the use
+ * case.
+ * </p>
+ * <p>
+ * @see <a href="https://github.com/micronaut-projects/micronaut-grpc/blob/master/grpc-client-runtime/src/main/java/io/micronaut/grpc/channels/GrpcManagedChannelFactory.java">Micronaut's GrpcManagedChannelFactory</a>
+ *</p>
  */
 @Singleton
 @Requires(notEnv = Environment.TEST)
-public class ConsulGrpcManagedChannelFactory implements AutoCloseable {
+public final class ConsulGrpcManagedChannelFactory implements AutoCloseable {
     private final ApplicationContext beanContext;
     private final Map<ChannelKey, ManagedChannel> channels = new ConcurrentHashMap<>();
 
