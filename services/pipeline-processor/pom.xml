@@ -147,7 +147,7 @@
         <dependency>
             <groupId>io.grpc</groupId>
             <artifactId>grpc-netty</artifactId>
-            <version>1.60.0</version>
+            <version>1.60.1</version>
         </dependency>
 
 
