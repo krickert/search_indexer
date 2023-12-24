@@ -1,0 +1,6 @@
+applicationType: cli
+defaultPackage: com.krickert.search.crawler
+testFramework: junit
+sourceLanguage: java
+buildTool: maven
+features: [ app-name, awaitility, data, data-mongodb, github-workflow-docker-registry, hamcrest, http-client-test, java, jib, junit, kafka, logback, maven, maven-enforcer-plugin, picocli, picocli-java-application, picocli-junit, readme, serialization-jackson, shade, testcontainers, yaml, yaml-build ]
