@@ -1,4 +1,13 @@
 # search_indexer
+Welcome to the search indexing project.  I've been working on search technologies for 15 years, and created this project to open source patterns I've seen in the industry that aren't easily done when doing searches.
+
+Whenever I approach a new search project the biggest challenge always ends up being the indexing part and analytics.  Today's modern search engines - both new and enterprise - already solve all the "hard" problems of scaling, speed, and up-to-date top-of-the-line search and relevancy sorting technologies.  However, I have always had a hard time testing new technologies because it's simply hard to get a lot of documents in an index quickly.
+
+That's where this project comes in.  I started this to test semantic search on wikipedia data, but it's since evolved to be a full fledged indexing solution.
+
+As of now, this project allows you to index all of wikipedia [directly from the wiki foundation's dump files](https://dumps.wikimedia.org/enwiki/).
+
+The next iteration will feature a selenium-based web crawler.
 
 ## Abstract
 This project sets out to:
