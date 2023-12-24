@@ -20,15 +20,39 @@ import static com.krickert.search.download.request.util.MicronautFileUtil.readFi
 import static io.micronaut.http.HttpRequest.GET;
 import static org.apache.commons.lang3.StringUtils.isNotEmpty;
 
+/**
+ * This class represents a service used to download an MD5 file from Wikipedia.
+ */
 @Singleton
 @Requires(notEnv = Environment.TEST)
 public class DownloadMd5WikiFileServiceImpl implements DownloadMd5WikiFileService {
     private static final Logger log = LoggerFactory.getLogger(DownloadMd5WikiFileServiceImpl.class);
+    /**
+     * Represents the default filename for the MD5 file collected from Wikipedia.
+     */
+    public static final String DEFAULT_WIKI_MD5_FILENAME = "wikiList.md5";
+    /**
+     * Represents the name of the file to be downloaded from Wikipedia.
+     */
+    public static final String DOWNLOAD_WIKI_FILENAME = "enwiki-latest-md5sums.txt";
 
+    /**
+     * Represents the name of the wiki file for downloading.
+     */
     final String wikiDownloadName;
+    /**
+     * This variable represents an instance of the Rx3HttpClient class.
+     * It is used for making HTTP requests and retrieving data from the internet.
+     */
     final Rx3HttpClient client;
+    /**
+     * Represents a service used to download a MD5 file from Wikipedia.
+     */
     final boolean freshCopy;
 
+    /**
+     * Represents a service used to download a MD5 file from Wikipedia.
+     */
     @Inject
     public DownloadMd5WikiFileServiceImpl(
             @Value("${wikipedia.download-name}")
@@ -41,32 +65,26 @@ public class DownloadMd5WikiFileServiceImpl implements DownloadMd5WikiFileServic
         this.freshCopy = freshCopy;
     }
 
+    /**
+     * Downloads the MD5 file from Wikipedia as a string.
+     *
+     * @param fileList the name of the file to be downloaded
+     * @return the contents of the downloaded file as a string
+     */
     @Override
     public String downloadWikiMd5AsString(String fileList) {
-
-        final String wikiFileName;
         if (isNotEmpty(fileList)) {
-            // the file was specified in the commandline
-            //if the file doesn't exist, an exception is thrown
             Optional<String> fileInfo = readFileAsString(fileList);
             if (fileInfo.isPresent()) {
                 return fileInfo.get();
-            } else {
-                wikiFileName = fileList;
             }
         } else if (isNotEmpty(wikiDownloadName) && !freshCopy) {
             Optional<String> configFileContents = readFileAsString(wikiDownloadName);
             if (configFileContents.isPresent()) {
                 return configFileContents.get();
-            } else {
-                wikiFileName = wikiDownloadName;
             }
-        } else if (freshCopy && isNotEmpty(wikiDownloadName)) {
-            wikiFileName = wikiDownloadName;
-        } else {
-            wikiFileName = "wikiList.md5";
         }
-
+        String wikiFileName = getWikiFileName(fileList);
         log.info("Config file is not present for download.  Downloading a fresh copy onto disk.");
         String fileContents = retrieveWikiDumpFileContentsFromWikipedia();
         try {
@@ -77,9 +95,32 @@ public class DownloadMd5WikiFileServiceImpl implements DownloadMd5WikiFileServic
         return fileContents;
     }
 
+    /**
+     * Returns the name of the wiki file based on the given file list.
+     *
+     * @param fileList the name of the file list
+     * @return the name of the wiki file
+     */
+    private String getWikiFileName(String fileList) {
+        if (isNotEmpty(fileList)) {
+            return fileList;
+        } else if (isNotEmpty(wikiDownloadName) && !freshCopy) {
+            return wikiDownloadName;
+        } else if (freshCopy && isNotEmpty(wikiDownloadName)) {
+            return wikiDownloadName;
+        } else {
+            return DEFAULT_WIKI_MD5_FILENAME;
+        }
+    }
+
+    /**
+     * Retrieves the contents of a Wikipedia dump file from the internet.
+     *
+     * @return The contents of the Wikipedia dump file as a string.
+     */
     public String retrieveWikiDumpFileContentsFromWikipedia() {
         return client.retrieve(
-                GET("enwiki-latest-md5sums.txt"),
+                GET(DOWNLOAD_WIKI_FILENAME),
                 String.class).blockingFirst();
     }
 

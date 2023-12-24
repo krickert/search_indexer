@@ -79,20 +79,34 @@ public class WikipediaErrorFileParser {
 
     public Collection<DownloadFileRequest> createDownloadRequests(Collection<String[]> fileList) {
         Collection<DownloadFileRequest> response = new ArrayList<>(fileList.size());
+
         for (String[] data : fileList) {
-            if (ArrayUtils.isNotEmpty(data) && data.length == 2) {
-                String dumpFileDateStr = parseWikiDateFromFile(data[1]);
-                response.add(DownloadFileRequest.newBuilder()
-                        .setErrorCheck(ErrorCheck.newBuilder()
-                                .setErrorCheck(data[0])
-                                .setErrorCheckType(ErrorCheckType.MD5))
-                        .setUrl(wikipediaPrefixUrl + "/" + dumpFileDateStr + "/" + data[1])
-                        .setFileName(data[1])
-                        .setFileDumpDate(dumpFileDateStr)
-                        .build());
+            if (isValidData(data)) {
+                response.add(createRequestForDownloadFile(data));
             }
         }
         return response;
+    }
+
+    private boolean isValidData(String[] data) {
+        return ArrayUtils.isNotEmpty(data) && data.length == 2;
+    }
+
+    private DownloadFileRequest createRequestForDownloadFile(String[] data) {
+        String dumpFileDateStr = parseWikiDateFromFile(data[1]);
+
+        ErrorCheck errorCheck = ErrorCheck.newBuilder()
+                .setErrorCheck(data[0])
+                .setErrorCheckType(ErrorCheckType.MD5).build();
+
+        String url = wikipediaPrefixUrl + "/" + dumpFileDateStr + "/" + data[1];
+
+        return DownloadFileRequest.newBuilder()
+                .setErrorCheck(errorCheck)
+                .setUrl(url)
+                .setFileName(data[1])
+                .setFileDumpDate(dumpFileDateStr)
+                .build();
     }
 
     private String parseWikiDateFromFile(String wikiFileName) {

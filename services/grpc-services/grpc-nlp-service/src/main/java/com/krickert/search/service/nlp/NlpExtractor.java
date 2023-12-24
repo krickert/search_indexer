@@ -39,55 +39,15 @@ public final class NlpExtractor {
     /**
      * The nameFinder variable holds the model used for named entity recognition.
      * It is a private final variable of type TokenNameFinderModel.
-     *
+     * <p>
      * This class is part of the NlpExtractor system and is used for extracting named entities from text using NLP (Natural Language Processing).
-     *
+     * <p>
      * Class: NlpExtractor
      *   - tokenizer
      *   - nameFinder
      *   - serviceType
-     *
+     * <p>
      * You can use the nameFinder object to perform named entity recognition on text by calling the extract method.
-     *
-     * Method: extract
-     *   - Parameters:
-     *     - text: The text to be processed for named entity recognition.
-     *   - Return type: Collection of strings containing the extracted named entities.
-     *
-     * Method: extractNamedEntitiesFromTokens
-     *   - Parameters:
-     *     - tokens: An array of strings representing the text tokens.
-     *   - Return type: Collection of strings containing the extracted named entities.
-     *
-     * Method: createAndUseTokenizerME
-     *   - Parameters:
-     *     - text: The text to be tokenized.
-     *   - Return type: Array of strings representing the tokens.
-     *
-     * Method: getEntityFromSpan
-     *   - Parameters:
-     *     - tokens: An array of strings representing the text tokens.
-     *     - span: The span object specifying the start and end indices of the named entity.
-     *   - Return type: String containing the named entity.
-     *
-     * Class: ServiceType (Enum)
-     *   - ORGANIZATION: Represents the organization service type.
-     *   - PERSON: Represents the person service type.
-     *   - LOCATION: Represents the location service type.
-     *   - DATE: Represents the date service type.
-     *
-     * Enum Method: lookup
-     *   - Parameters:
-     *     - service: The name of the service.
-     *   - Return type: The corresponding ServiceType enum value.
-     *   - Throws: UnsupportedServiceException if the service name is invalid.
-     *
-     * Enum Method: getServiceName
-     *   - Return type: The name of the service.
-     *
-     * Class: UnsupportedServiceException
-     *   - Extends: RuntimeException
-     *   - Constructor: Creates a new UnsupportedServiceException with the specified reason.
      */
     private final TokenNameFinderModel nameFinder;
     /**

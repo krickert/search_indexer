@@ -12,7 +12,6 @@ import io.micronaut.context.env.Environment;
 import io.micronaut.test.extensions.junit5.annotation.MicronautTest;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestInstance;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -24,9 +23,11 @@ import java.util.concurrent.ConcurrentLinkedQueue;
 import static java.util.concurrent.TimeUnit.SECONDS;
 import static org.awaitility.Awaitility.await;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.*;
+
 
 @MicronautTest
-@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class SendFileRequestsCommandTest {
     public static final ConcurrentLinkedQueue<DownloadFileRequest> fileRequest = new ConcurrentLinkedQueue<>();
     private static final Logger log = LoggerFactory.getLogger(SendFileRequestsCommandTest.class);
@@ -46,8 +47,9 @@ public class SendFileRequestsCommandTest {
             PicocliRunner.run(SendFileRequestsCommand.class, ctx, args);
 
         }
-        //assertTrue(baos.toString().contains("Application exiting."));
         await().atMost(30, SECONDS).until(() -> fileRequest.size() == 63);
+        String output = baos.toString();
+        assertThat(output, containsString("Application exiting."));
         log.debug("testing! {}", fileRequest);
     }
 

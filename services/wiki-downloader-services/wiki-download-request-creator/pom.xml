@@ -167,8 +167,8 @@
                         </path>
                     </annotationProcessorPaths>
                     <compilerArgs>
-                        <arg>-Amicronaut.processing.group=com.krickert.search.services.kafka</arg>
-                        <arg>-Amicronaut.processing.module=wiki-downloader-request-creator</arg>
+                        <arg>-Amicronaut.processing.group=com.krickert.search.download.request</arg>
+                        <arg>-Amicronaut.processing.module=wiki-download-request-creator</arg>
                     </compilerArgs>
                 </configuration>
             </plugin>
