@@ -24,7 +24,7 @@
             <url>https://repo.maven.apache.org/maven2</url>
         </repository>
         <!-- other maven repositories the project -->
-        <repository>git
+        <repository>
             <id>confluent</id>
             <url>https://packages.confluent.io/maven/</url>
         </repository>
