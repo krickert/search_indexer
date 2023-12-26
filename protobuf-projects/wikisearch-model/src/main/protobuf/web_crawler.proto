@@ -1,0 +1,88 @@
+syntax = "proto3";
+option java_multiple_files = true;
+package com.krickert.search.model.crawler;
+import "google/protobuf/timestamp.proto";
+
+message WebCrawlerConfig {
+  string site_id = 1;
+  repeated string start_urls = 2;
+  string crontab = 3;
+  int32 max_depth = 4;
+}
+
+message WebCrawlRequest {
+  WebCrawlerConfig config = 1;
+}
+
+enum WebCrawlResult {
+  SUCCESS = 0;
+  FAILURE = 1;
+}
+
+enum WebCrawlStatus {
+  STARTED = 0;
+  STOPPED = 1;
+  ERROR = 2;
+}
+
+message WebCrawlReply {
+  string crawl_id = 1;
+  WebCrawlResult result = 2;
+}
+
+message WebCrawlStatusRequest {
+  string crawl_id = 1;
+}
+
+message WebCrawlStatusReply {
+  WebCrawlStatus status = 1;
+}
+
+enum Browser {
+  FIREFOX = 0;
+  CHROME = 1;
+}
+
+message CrawlPageRequest {
+  string crawl_id = 1;
+  string url = 2;
+  Browser browser = 3;
+}
+
+message CrawlPageReply {
+  bytes page_data = 1;
+  google.protobuf.Timestamp creation_date = 2;
+  google.protobuf.Timestamp last_modified = 3;
+  string http_headers = 4;
+}
+
+service WebCrawler {
+   rpc crawlSite (WebCrawlRequest) returns (WebCrawlReply);
+   rpc crawlStatus (WebCrawlStatusRequest) returns (WebCrawlStatusReply);
+}
+
+service CrawlPage {
+  rpc crawlPage (CrawlPageRequest) returns (CrawlPageReply);
+}
+
+enum ParserType {
+  TIKA = 0;
+  JSOUP = 1;
+}
+
+message ParserRequest {
+  bytes data = 1;
+  ParserType parser_type = 2;
+  string http_headers = 3;
+}
+
+message ParserReply {
+  string id = 1;
+  string title = 2;
+  string body = 3;
+
+}
+
+service Parser {
+  rpc parse (ParserRequest) returns (ParserReply);
+}
