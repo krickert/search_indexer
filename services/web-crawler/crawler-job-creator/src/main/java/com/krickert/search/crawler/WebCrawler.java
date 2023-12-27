@@ -1,6 +1,7 @@
 package com.krickert.search.crawler;
 
 import com.google.common.collect.Maps;
+import com.google.common.net.InternetDomainName;
 import io.micronaut.core.io.ResourceResolver;
 import io.micronaut.core.io.scan.ClassPathResourceLoader;
 import org.openqa.selenium.WebDriver;
@@ -11,6 +12,7 @@ import org.openqa.selenium.By;
 import jakarta.inject.Singleton;
 
 import java.io.File;
+import java.net.MalformedURLException;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
 
@@ -37,6 +39,7 @@ public class WebCrawler {
         ChromeOptions options = new ChromeOptions();
 
         options.addExtensions(new File(resource.get().getFile()));
+        options.addArguments("--headless=new");
 
         driver = new ChromeDriver(options);
         driver.manage().timeouts().implicitlyWait(8, TimeUnit.SECONDS);
@@ -44,33 +47,53 @@ public class WebCrawler {
     }
 
     public void start(String url) {
-        int CRAWL_DEPTH = 1;
+        int CRAWL_DEPTH = 3;
         visitPage(url, CRAWL_DEPTH);
         driver.quit();
         log.info("Data:\n{}", data);
     }
-
     private void visitPage(String url, int crawlDepth) {
+        try {
+            visitPage(url, crawlDepth, new URL(url));
+        } catch (MalformedURLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    private void visitPage(String url, int crawlDepth, URL startUrl) {
         if (visitedUrls.contains(url) || url == null) {
             return;
         }
+        InternetDomainName expectedDomainName = InternetDomainName.from(startUrl.getHost());
+        final String topDomain = expectedDomainName.topPrivateDomain().toString();
+
 
         visitedUrls.add(url);
         driver.get(url);
 
-        System.out.println("Crawling URL: " + url);
-
-        data.put(url, driver.getPageSource());
+        log.info("Crawling URL: {}", url);
+        String bodyText = driver.findElement(By.tagName("body")).getText();
+        data.put(url, bodyText);
 
         List<WebElement> links = driver.findElements(By.tagName("a"));
 
         for (WebElement link : links) {
             String href = link.getAttribute("href");
-            if (href != null && href.startsWith(url)) {
-                if (crawlDepth != 0) {
-                    visitPage(href, --crawlDepth);
+            if (isSameDomain(href, topDomain)) {
+                if (!visitedUrls.contains(href)) {
+                    visitPage(href, --crawlDepth, startUrl);
                 }
             }
         }
     }
+    public static boolean isSameDomain(String url, String expectedDomain) {
+        try {
+            java.net.URL netUrl = new java.net.URL(url);
+            InternetDomainName domainName = InternetDomainName.from(netUrl.getHost());
+            return domainName.hasPublicSuffix() && domainName.topPrivateDomain().toString().equals(expectedDomain);
+        } catch (java.net.MalformedURLException e) {
+            log.warn("Invalid URL in href",e);
+            return false;
+        }
+    }
+
 }
