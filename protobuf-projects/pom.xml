@@ -17,7 +17,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <jdk.version>17</jdk.version>
         <release.version>17</release.version>
-        <assertj-core.version>3.24.2</assertj-core.version>
+        <assertj-core.version>3.25.1</assertj-core.version>
         <maven.compiler.version>3.12.1</maven.compiler.version>
         <maven.surefire.plugin>3.2.3</maven.surefire.plugin>
         <protobuf.version>3.25.1</protobuf.version>
