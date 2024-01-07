@@ -1,5 +1,6 @@
 package com.krickert.search.crawler;
 
+import com.krickert.search.model.crawler.CrawlPageRequest;
 import jakarta.inject.Inject;
 import jakarta.inject.Singleton;
 
@@ -7,7 +8,6 @@ import jakarta.inject.Singleton;
 public class WebCrawlerManager {
 
     private final WebCrawler webCrawler;
-    private final ConcurrentUnboundedNonRepeatingQueue<CrawlEntry> queue;
 
     @Inject
     public WebCrawlerManager(WebCrawler webCrawler) {
@@ -16,6 +16,9 @@ public class WebCrawlerManager {
     }
 
 
+    public void crawlWebsite(CrawlPageRequest request) {
+        queue.add(new CrawlEntry(request.getUrl(), request.getDepth()));
+    }
 
 
 

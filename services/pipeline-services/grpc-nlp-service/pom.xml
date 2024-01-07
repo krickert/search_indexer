@@ -17,7 +17,7 @@
     <packaging>jar</packaging>
     <jdk.version>17</jdk.version>
     <release.version>17</release.version>
-    <micronaut.version>4.2.1</micronaut.version>
+    <micronaut.version>4.2.2</micronaut.version>
     <exec.mainClass>com.krickert.search.service.nlp.NlpNerApplication</exec.mainClass>
   </properties>
 
@@ -46,11 +46,19 @@
       <artifactId>javax.annotation-api</artifactId>
       <scope>compile</scope>
     </dependency>
+    <!-- https://mvnrepository.com/artifact/ch.qos.logback/logback-classic -->
     <dependency>
       <groupId>ch.qos.logback</groupId>
       <artifactId>logback-classic</artifactId>
-      <scope>runtime</scope>
     </dependency>
+    <!-- https://mvnrepository.com/artifact/ch.qos.logback/logback-core -->
+    <dependency>
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-core</artifactId>
+      <version>1.4.14</version>
+    </dependency>
+
+
     <dependency>
       <groupId>org.yaml</groupId>
       <artifactId>snakeyaml</artifactId>
@@ -133,7 +141,6 @@
       <artifactId>micronaut-crac</artifactId>
       <scope>compile</scope>
     </dependency>
-
   </dependencies>
   <build>
     <plugins>

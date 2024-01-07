@@ -3,31 +3,72 @@ option java_multiple_files = true;
 package com.krickert.search.model.crawler;
 import "google/protobuf/timestamp.proto";
 
-message WebCrawlerConfig {
+
+enum Browser {
+  FIREFOX = 0;
+  CHROME = 1;
+}
+///
+//  Contains all the data needed to start a web crawl.
+//  This is the data that will be saved into the database for crawls and recrawls
+//  This includes include and exclusion info, the start urls, the preferred browser for
+//  crawling,
+//
+message Schedule {
+  string schedule_id = 1;
+  repeated string cron_tabs = 2;
+
+}
+
+message WebCrawlConfig {
   string site_id = 1;
   repeated string start_urls = 2;
-  string crontab = 3;
+  Schedule schedule = 3;
   int32 max_depth = 4;
+  Browser browser = 5;
 }
 
+
+
+message WebCrawlConfigRequest {
+  string web_crawler_config_id = 1;
+  WebCrawlConfig config = 2;
+}
+
+enum WebCrawlConfigStatus {
+  CONFIG_SUCCESS = 0;
+  CONFIG_WARNING = 1;
+  CONFIG_FAILURE = 2;
+}
+message WebCrawlConfigReply {
+  string web_crawler_config_id = 1;
+  WebCrawlConfig config = 2;
+  WebCrawlConfigStatus status = 3;
+  optional string message = 4;
+}
+
+service WebCrawlConfiguration {
+    rpc saveWebCrawlConfig (WebCrawlConfigRequest) returns (WebCrawlReply);
+
+}
 message WebCrawlRequest {
-  WebCrawlerConfig config = 1;
+  string web_crawler_config_id = 1;
 }
 
-enum WebCrawlResult {
-  SUCCESS = 0;
-  FAILURE = 1;
+enum WebCrawlStartResult {
+  WEB_CRAWL_SUCCESS = 0;
+  WEB_CRAWL_FAILURE = 1;
 }
 
 enum WebCrawlStatus {
-  STARTED = 0;
-  STOPPED = 1;
-  ERROR = 2;
+  CRAWL_STARTED = 0;
+  CRAWL_STOPPED = 1;
+  CRAWL_ERROR = 2;
 }
 
 message WebCrawlReply {
   string crawl_id = 1;
-  WebCrawlResult result = 2;
+  WebCrawlStartResult result = 2;
 }
 
 message WebCrawlStatusRequest {
@@ -38,22 +79,24 @@ message WebCrawlStatusReply {
   WebCrawlStatus status = 1;
 }
 
-enum Browser {
-  FIREFOX = 0;
-  CHROME = 1;
-}
-
 message CrawlPageRequest {
   string crawl_id = 1;
   string url = 2;
-  Browser browser = 3;
+  bool block_ads = 3;
+  Browser browser = 4;
+}
+
+message HtmlData {
+  string page_source = 1;
+  string body_text = 2;
 }
 
 message CrawlPageReply {
   bytes page_data = 1;
   google.protobuf.Timestamp creation_date = 2;
   google.protobuf.Timestamp last_modified = 3;
-  string http_headers = 4;
+  repeated string http_response_headers = 4;
+  optional HtmlData html_data = 5;
 }
 
 service WebCrawler {
