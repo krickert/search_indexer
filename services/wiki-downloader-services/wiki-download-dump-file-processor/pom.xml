@@ -10,7 +10,7 @@
   <parent>
     <groupId>io.micronaut.platform</groupId>
     <artifactId>micronaut-parent</artifactId>
-    <version>4.2.2</version>
+    <version>4.2.3</version>
     <relativePath/>
   </parent>
 
@@ -21,7 +21,7 @@
     <micronaut.version>4.2.0</micronaut.version>
     <micronaut.test.resources.enabled>true</micronaut.test.resources.enabled>
     <exec.mainClass>com.krickert.search.download.dump.DownloadRequestProcessor</exec.mainClass>
-    <kafka-streams-protobuf-serde.version>7.5.2</kafka-streams-protobuf-serde.version>
+    <kafka-streams-protobuf-serde.version>7.5.3</kafka-streams-protobuf-serde.version>
   </properties>
 
   <repositories>
