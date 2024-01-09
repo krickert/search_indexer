@@ -11,12 +11,16 @@ public class CrawlEntry {
     public final int depth;
 
 
-    public CrawlEntry(String link) throws MalformedURLException {
+    public CrawlEntry(String link) {
         this(link, 0);
     }
 
-    public CrawlEntry(String link, int depth) throws MalformedURLException {
-        this.url = new URL(link);
+    public CrawlEntry(String link, int depth) {
+        try {
+            this.url = new URL(link);
+        } catch (MalformedURLException e) {
+            throw new IllegalArgumentException(e);
+        }
         this.internetDomainName = InternetDomainName.from(url.getHost());
         this.depth = depth;
     }

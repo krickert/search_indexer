@@ -7,6 +7,7 @@ import jakarta.inject.Singleton;
 @Singleton
 public class WebCrawlerManager {
 
+    private final ConcurrentUnboundedNonRepeatingQueue<CrawlEntry> queue;
     private final WebCrawler webCrawler;
 
     @Inject
@@ -17,7 +18,7 @@ public class WebCrawlerManager {
 
 
     public void crawlWebsite(CrawlPageRequest request) {
-        queue.add(new CrawlEntry(request.getUrl(), request.getDepth()));
+        queue.add(new CrawlEntry(request.getUrl()));
     }
 
 
