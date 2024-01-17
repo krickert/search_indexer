@@ -63,6 +63,7 @@
       <groupId>ch.qos.logback</groupId>
       <artifactId>logback-core</artifactId>
       <version>1.4.14</version>
+      <scope>runtime</scope>
     </dependency>
     <dependency>
       <groupId>org.yaml</groupId>
