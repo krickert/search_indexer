@@ -17,7 +17,6 @@ enum Browser {
 message Schedule {
   string schedule_id = 1;
   repeated string cron_tabs = 2;
-
 }
 
 message WebCrawlConfig {
@@ -40,6 +39,7 @@ enum WebCrawlConfigStatus {
   CONFIG_WARNING = 1;
   CONFIG_FAILURE = 2;
 }
+
 message WebCrawlConfigReply {
   string web_crawler_config_id = 1;
   WebCrawlConfig config = 2;
@@ -69,6 +69,7 @@ enum WebCrawlStatus {
 message WebCrawlReply {
   string crawl_id = 1;
   WebCrawlStartResult result = 2;
+  string web_crawler_config_id = 3;
 }
 
 message WebCrawlStatusRequest {
