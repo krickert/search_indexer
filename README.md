@@ -1,7 +1,11 @@
 # search_indexer
-Welcome to the search indexing project.  I've been working on search technologies for 15 years, and created this project to open source patterns I've seen in the industry that aren't easily done when doing searches.
+Welcome to the search indexing project.  I've been working on search technologies for 15 years, and created this project to release code patterns I've seen in the industry that aren't easily done when testing new search technologies.
 
-So this this project indexes all of wikipedia. Next, it'll index web crawls.
+The biggest problem I've seen with search is indexing - the search portion is about 10% of a project.  Wranging data into the engine is where most of the efforts are drawn.
+
+So if you want to test a new search engine - you need a ton of data that can easily be injested with the document already enhanced, than this is what you'd want.
+
+Right now the project just indexes wikipedia.  I'm working on integrating the tika parser into the pipeline with a web crawler.  This would allow for document enrichment for web crawling.
 
 Whenever I approach a new search project the biggest challenge always ends up being the indexing part and analytics.  Today's modern search engines - both new and enterprise - already solve all the "hard" problems of scaling, speed, and up-to-date top-of-the-line search and relevancy sorting technologies.  However, I have always had a hard time testing new technologies because it's simply hard to get a lot of documents in an index quickly. *Indexing is always the hardest part of search.*  
 
