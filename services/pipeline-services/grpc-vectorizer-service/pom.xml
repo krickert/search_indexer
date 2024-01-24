@@ -10,14 +10,14 @@
   <parent>
     <groupId>io.micronaut.platform</groupId>
     <artifactId>micronaut-parent</artifactId>
-    <version>4.2.3</version>
+    <version>4.2.4</version>
     <relativePath/>
   </parent>
   <properties>
     <packaging>jar</packaging>
     <jdk.version>17</jdk.version>
     <release.version>17</release.version>
-    <micronaut.version>4.2.3</micronaut.version>
+    <micronaut.version>4.2.4</micronaut.version>
     <micronaut.test.resources.enabled>true</micronaut.test.resources.enabled>
     <exec.mainClass>com.krickert.search.service.grpc.Application</exec.mainClass>
   </properties>
@@ -174,13 +174,13 @@
     <dependency>
       <groupId>io.netty</groupId>
       <artifactId>netty-codec</artifactId>
-      <version>4.1.105.Final</version>
+      <version>4.1.106.Final</version>
       <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>io.netty</groupId>
       <artifactId>netty-codec-http2</artifactId>
-      <version>4.1.105.Final</version>
+      <version>4.1.106.Final</version>
       <scope>compile</scope>
     </dependency>
 
