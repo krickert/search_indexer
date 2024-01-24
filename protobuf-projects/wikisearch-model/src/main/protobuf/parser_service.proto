@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.krickert.search.parser.tika";
+option java_outer_classname = "DocumentRequestProto";
+option objc_class_prefix = "HLW";
+
+package com.krickert.search.parser.tika;
+
+message DocumentRequest {
+  bytes content = 1;
+}
+
+message DocumentReply {
+  string title = 1;
+  string body = 2;
+}
+
+service DocumentParser {
+  rpc parse(DocumentRequest) returns (DocumentReply) {}
+}

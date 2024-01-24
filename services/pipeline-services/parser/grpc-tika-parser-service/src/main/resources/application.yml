@@ -1,0 +1,8 @@
+micronaut:
+  application:
+    name: grpc-tika-parser-service
+consul:
+  client:
+    registration:
+      enabled: true
+    defaultZone: ${CONSUL_HOST:localhost}:${CONSUL_PORT:8500}
