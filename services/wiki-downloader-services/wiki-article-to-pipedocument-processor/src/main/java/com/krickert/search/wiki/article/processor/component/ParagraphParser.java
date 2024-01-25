@@ -34,12 +34,13 @@ public class ParagraphParser {
 
             if (isCurrentLineListItem) {
                 if (lastLineWasListItem) {
-                    builder.append("\n").append(line);
+                    builder.append("\n")
+                            .append(line.substring(matcher.start()).replaceAll("\\s+$", ""));
                 } else {
                     if (builder.length() != 0) {
                         builder.append("\n\n");
                     }
-                    builder.append(line.substring(matcher.start()));
+                    builder.append(line.substring(matcher.start()).replaceAll("\\s+$", ""));
                 }
                 lastLineWasListItem = true;
             } else {
@@ -50,9 +51,9 @@ public class ParagraphParser {
                 lastLineWasListItem = false;
             }
         }
+
         return builder;
     }
-
     private static List<String> splitIntoParagraphs(String text) {
         return Arrays.stream(text.split("\\n\\s*\\n"))
                 .filter(paragraph -> !paragraph.isBlank())

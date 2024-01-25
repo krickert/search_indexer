@@ -12,8 +12,12 @@ import java.time.Instant;
 import java.time.ZoneId;
 import java.time.ZoneOffset;
 import java.time.format.DateTimeFormatter;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
+import static com.krickert.search.wiki.article.processor.component.ParagraphParser.splitIntoParagraphsAndRemoveEmpty;
 import static java.time.format.DateTimeFormatter.ISO_INSTANT;
 import static org.apache.commons.lang3.StringUtils.isNotEmpty;
 
@@ -33,7 +37,9 @@ public class PipelineDocumentMapper {
         wikiMetaData.put("date_parsed", Value.newBuilder().setStringValue(parseDateParsed(wikiArticle.getDateParsed())).build());
         if (isNotEmpty(wikiArticle.getText())) {
             pipeDocumentBuilder.setBody(wikiArticle.getText());
+            pipeDocumentBuilder.addAllBodyParagraphs(splitIntoParagraphsAndRemoveEmpty(wikiArticle.getText()));
         }
+
         if (isNotEmpty(wikiArticle.getWikiText())) {
             wikiMetaData.put("wiki_text", Value.newBuilder().setStringValue(wikiArticle.getWikiText()).build());
         }

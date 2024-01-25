@@ -16,19 +16,19 @@ import static java.util.Objects.requireNonNull;
 /**
  * The NlpExtractor class is responsible for extracting named entities from text using NLP (Natural Language Processing).
  * It uses a tokenizer model and a name finder model for this purpose.
- *
+ * <p>
  * The supported service types are specified by the ServiceType enum.
- *
+ * <p>
  * Example usage:
- *
+ * <p>
  * TokenizerModel tokenizerModel = new TokenizerModel(new FileInputStream("en-token.bin"));
  * TokenNameFinderModel finderModel = new TokenNameFinderModel(new FileInputStream("en-ner-person.bin"));
  * NlpExtractor extractor = new NlpExtractor(ServiceType.PERSON, tokenizerModel, finderModel);
- *
+ * <p>
  * String text = "John Doe is a data scientist.";
  * Collection<String> namedEntities = extractor.extract(text);
  * System.out.println(namedEntities);
- *
+ * <p>
  * Output: [John Doe]
  */
 public final class NlpExtractor {

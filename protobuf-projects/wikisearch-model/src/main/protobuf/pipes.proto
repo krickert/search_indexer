@@ -14,4 +14,5 @@ message PipeDocument {
   google.protobuf.Timestamp last_modified = 6;
   string document_type = 7;
   google.protobuf.Struct custom_data = 8;
+  repeated string body_paragraphs = 9;
 }

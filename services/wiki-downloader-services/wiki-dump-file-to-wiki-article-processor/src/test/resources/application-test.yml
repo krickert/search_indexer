@@ -5,3 +5,4 @@ consul:
   client:
     registration:
       enabled: false
+wiki.article.create_dummy_data: false
