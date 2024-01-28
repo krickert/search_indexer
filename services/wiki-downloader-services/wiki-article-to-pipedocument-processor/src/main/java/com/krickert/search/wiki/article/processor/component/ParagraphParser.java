@@ -1,13 +1,12 @@
 package com.krickert.search.wiki.article.processor.component;
 
+import jakarta.validation.constraints.NotNull;
+
 import java.util.Arrays;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
-
-
-import jakarta.validation.constraints.NotNull;
 
 /**
  * The `ParagraphParser` class provides utility methods to parse a text into paragraphs.
@@ -37,14 +36,14 @@ public class ParagraphParser {
                     builder.append("\n")
                             .append(line.substring(matcher.start()).replaceAll("\\s+$", ""));
                 } else {
-                    if (builder.length() != 0) {
+                    if (!builder.isEmpty()) {
                         builder.append("\n\n");
                     }
                     builder.append(line.substring(matcher.start()).replaceAll("\\s+$", ""));
                 }
                 lastLineWasListItem = true;
             } else {
-                if (builder.length() > 0) {
+                if (!builder.isEmpty()) {
                     builder.append("\n\n");
                 }
                 builder.append(line.trim());
@@ -55,8 +54,15 @@ public class ParagraphParser {
         return builder;
     }
     private static List<String> splitIntoParagraphs(String text) {
+        Pattern wordPattern = Pattern.compile("\\b\\w+\\b");
+        Pattern numberPattern = Pattern.compile("^\\d+$"); // matches strings that are purely numeric
+
         return Arrays.stream(text.split("\\n\\s*\\n"))
-                .filter(paragraph -> !paragraph.isBlank())
+                .filter(paragraph -> {
+                    Matcher wordMatcher = wordPattern.matcher(paragraph);
+                    Matcher numberMatcher = numberPattern.matcher(paragraph.trim()); // trim here to prevent leading/trailing spaces from affecting the match
+                    return wordMatcher.find() && !numberMatcher.matches(); // check for presence of word, and absence of purely numeric string
+                })
                 .collect(Collectors.toList());
     }
 }

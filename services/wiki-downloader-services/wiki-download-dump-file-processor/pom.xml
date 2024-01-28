@@ -44,7 +44,6 @@
       <artifactId>micronaut-http-client</artifactId>
       <scope>compile</scope>
     </dependency>
-
     <dependency>
       <groupId>io.micronaut.kafka</groupId>
       <artifactId>micronaut-kafka</artifactId>
@@ -144,14 +143,6 @@
       <artifactId>kafka-streams-protobuf-serde</artifactId>
       <version>${kafka-streams-protobuf-serde.version}</version>
     </dependency>
-
-    <!-- https://mvnrepository.com/artifact/io.micronaut.testresources/micronaut-test-resources-core -->
-    <dependency>
-      <groupId>io.micronaut.testresources</groupId>
-      <artifactId>micronaut-test-resources-kafka</artifactId>
-      <scope>test</scope>
-    </dependency>
-
     <!-- https://mvnrepository.com/artifact/io.grpc/grpc-protobuf -->
     <dependency>
       <groupId>io.grpc</groupId>

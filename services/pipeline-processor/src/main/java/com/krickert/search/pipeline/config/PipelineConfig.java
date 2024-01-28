@@ -1,4 +1,4 @@
-package com.krickert.search.pipeline;
+package com.krickert.search.pipeline.config;
 
 import com.google.common.collect.Maps;
 import io.micronaut.context.annotation.ConfigurationProperties;

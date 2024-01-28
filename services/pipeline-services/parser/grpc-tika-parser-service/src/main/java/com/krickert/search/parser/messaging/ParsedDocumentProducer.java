@@ -1,6 +1,6 @@
-package com.krickert.search.wiki.article.processor.messaging;
+package com.krickert.search.parser.messaging;
 
-import com.krickert.search.model.pipe.PipeDocument;
+import com.krickert.search.parser.tika.ParsedDocument;
 import io.micronaut.configuration.kafka.annotation.KafkaClient;
 import io.micronaut.configuration.kafka.annotation.KafkaKey;
 import io.micronaut.configuration.kafka.annotation.Topic;
@@ -18,7 +18,8 @@ import java.util.UUID;
                 @Property(name = ProducerConfig.BUFFER_MEMORY_CONFIG, value = "322122547"),
                 @Property(name = ProducerConfig.ACKS_CONFIG, value = "0")
         })
-public interface PipeDocumentProducer {
-    @Topic("pipeline-document")
-    void sendPipeDocument(@KafkaKey UUID key, PipeDocument request);
+public interface ParsedDocumentProducer {
+
+    @Topic("parsed-document")
+    void sendParsedDocument(@KafkaKey UUID key, ParsedDocument request);
 }

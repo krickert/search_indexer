@@ -1,8 +1,8 @@
 package com.krickert.search;
 
-import com.krickert.search.pipeline.PipelineClientConfig;
-import com.krickert.search.pipeline.PipelineConfig;
-import com.krickert.search.pipeline.RegisteredPipelines;
+import com.krickert.search.pipeline.config.PipelineClientConfig;
+import com.krickert.search.pipeline.config.PipelineConfig;
+import com.krickert.search.pipeline.config.RegisteredPipelines;
 import io.micronaut.test.extensions.junit5.annotation.MicronautTest;
 import jakarta.inject.Named;
 import org.junit.jupiter.api.Test;

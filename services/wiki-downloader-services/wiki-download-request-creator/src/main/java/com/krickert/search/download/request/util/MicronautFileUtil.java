@@ -14,8 +14,6 @@ import java.nio.charset.Charset;
 import java.util.NoSuchElementException;
 import java.util.Optional;
 
-import java.nio.charset.Charset;
-
 /**
  * Utility class for reading files in Micronaut applications.
  */

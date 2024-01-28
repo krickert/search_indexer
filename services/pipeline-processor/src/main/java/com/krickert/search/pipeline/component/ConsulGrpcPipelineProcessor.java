@@ -1,7 +1,9 @@
-package com.krickert.search.pipeline;
+package com.krickert.search.pipeline.component;
 
-import com.krickert.search.grpc.ConsulGrpcManagedChannelFactory;
 import com.krickert.search.model.pipe.PipeDocument;
+import com.krickert.search.pipeline.config.PipelineConfig;
+import com.krickert.search.pipeline.config.RegisteredPipelines;
+import com.krickert.search.pipeline.grpc.ConsulGrpcManagedChannelFactory;
 import com.krickert.search.service.PipeRequest;
 import com.krickert.search.service.PipeServiceGrpc;
 import io.grpc.ManagedChannel;

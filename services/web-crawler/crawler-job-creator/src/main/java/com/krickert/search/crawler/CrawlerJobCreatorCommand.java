@@ -1,13 +1,9 @@
 package com.krickert.search.crawler;
 
 import io.micronaut.configuration.picocli.PicocliRunner;
-import io.micronaut.context.ApplicationContext;
-
 import jakarta.inject.Inject;
-import picocli.CommandLine;
 import picocli.CommandLine.Command;
 import picocli.CommandLine.Option;
-import picocli.CommandLine.Parameters;
 
 @Command(name = "crawler-job-creator", description = "...",
         mixinStandardHelpOptions = true)
@@ -19,7 +15,7 @@ public class CrawlerJobCreatorCommand implements Runnable {
     @Inject
     WebCrawler crawler;
 
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
         PicocliRunner.run(CrawlerJobCreatorCommand.class, args);
     }
 

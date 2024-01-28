@@ -1,7 +1,10 @@
 package com.krickert.search.parser;
 
 import com.google.protobuf.ByteString;
-import com.krickert.search.parser.tika.DocumentReply;
+import com.krickert.search.parser.component.DocumentParser;
+import com.krickert.search.parser.grpc.DocumentParserServiceImpl;
+import com.krickert.search.parser.tika.ParsedDocument;
+import com.krickert.search.parser.tika.ParsedDocumentReply;
 import org.apache.tika.exception.TikaException;
 import org.junit.jupiter.api.Test;
 import org.xml.sax.SAXException;
@@ -9,11 +12,8 @@ import org.xml.sax.SAXException;
 import java.io.IOException;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class DocumentParserServiceImplUnitTest {
-
-    private final DocumentParserServiceImpl documentParserService = new DocumentParserServiceImpl();
 
     @Test
     public void testParseDocument() throws IOException, TikaException, SAXException {
@@ -29,11 +29,12 @@ public class DocumentParserServiceImplUnitTest {
                 </body>
                 </html>""";
         ByteString byteString = ByteString.copyFromUtf8(html);
-        DocumentReply expectedResponse = DocumentReply.newBuilder()
+        ParsedDocumentReply expectedResponse = ParsedDocumentReply.newBuilder().setDoc(
+        ParsedDocument.newBuilder()
                 .setTitle("HTML Unit Test")
                 .setBody("The content of the document......")
-                .build();
-        DocumentReply actualResponse = DocumentParserServiceImpl.parseDocument(byteString);
+                .build()).build();
+        ParsedDocumentReply actualResponse = DocumentParser.parseDocument(byteString);
         assertEquals(expectedResponse, actualResponse);
     }
 

@@ -8,6 +8,7 @@ import com.krickert.search.model.pipe.PipeDocument;
 import com.krickert.search.model.wiki.DownloadFileRequest;
 import com.krickert.search.model.wiki.DownloadedFile;
 import com.krickert.search.model.wiki.WikiArticle;
+import com.krickert.search.parser.tika.ParsedDocument;
 import org.apache.commons.lang3.StringUtils;
 
 import java.io.FileOutputStream;
@@ -140,6 +141,14 @@ public class ProtobufUtils {
     public static UUID createKey(PipeDocument pipeDocument) {
         return createKey(pipeDocument.getId());
     }
+
+    /**
+     * Creates a UUID key from a given ParsedDocument object.
+     *
+     * @param parsedDocument The ParsedDocument object to generate the key from.
+     * @return The generated UUID key.
+     */
+    public static UUID createKey(ParsedDocument parsedDocument) { return  createKey(parsedDocument.getId());}
 
     /**
      * Creates a ListValue object from a collection of strings.

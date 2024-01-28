@@ -1,4 +1,4 @@
-package com.krickert.search.grpc;
+package com.krickert.search.pipeline.grpc;
 
 import io.grpc.ConnectivityState;
 import io.grpc.ManagedChannel;
@@ -48,6 +48,12 @@ public final class ConsulGrpcManagedChannelFactory implements AutoCloseable {
         this.beanContext = beanContext;
     }
 
+    /**
+     * Retrieves or creates a ManagedChannel from Consul based on the service name.
+     *
+     * @param serviceName The name of the service.
+     * @return The ManagedChannel instance.
+     */
     public ManagedChannel managedChannelFromConsul(String serviceName) {
         Argument<String> argument = Argument.STRING;
         return channels.computeIfAbsent(new ChannelKey(argument, serviceName), channelKey -> {
@@ -93,6 +99,14 @@ public final class ConsulGrpcManagedChannelFactory implements AutoCloseable {
                     Objects.equals(value, clientKey.value);
         }
     }
+    /**
+     * Connects to the given ManagedChannel on startup.
+     *
+     * @param channel The ManagedChannel to be connected.
+     * @param timeout The maximum duration to wait for the connection to be ready.
+     * @return {@code true} if the connection was successfully established within the specified timeout,
+     *         {@code false} otherwise.
+     */
     private boolean connectOnStartup(ManagedChannel channel, Duration timeout) {
         channel.getState(true); // request connection
         final CountDownLatch readyLatch = new CountDownLatch(1);
@@ -105,6 +119,12 @@ public final class ConsulGrpcManagedChannelFactory implements AutoCloseable {
         }
     }
 
+    /**
+     * Waits for the given channel's state to be ready.
+     *
+     * @param channel    The ManagedChannel to wait for.
+     * @param readyLatch The CountDownLatch to countdown when the channel is ready.
+     */
     private void waitForReady(ManagedChannel channel, CountDownLatch readyLatch) {
         final ConnectivityState state = channel.getState(false);
         if (state == ConnectivityState.READY) {

@@ -1,13 +1,15 @@
 package com.krickert.search.wiki.article.processor.component;
 
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+
 import java.util.Arrays;
 import java.util.List;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 /**
  * Test for `ParagraphParser` class.
- *
+ * <p>
  * This class contains tests for `splitIntoParagraphsAndRemoveEmpty` method 
  * of the `ParagraphParser` class. 
  */
@@ -45,7 +47,7 @@ public class ParagraphParserTest {
     @Test
     public void testSplitIntoParagraphsAndRemoveEmptyWithEmptyString() {
         String emptyText = "";
-        List<String> expectedList = Arrays.asList();
+        List<String> expectedList = List.of();
         
         List<String> result = ParagraphParser.splitIntoParagraphsAndRemoveEmpty(emptyText);
         
@@ -71,5 +73,16 @@ public class ParagraphParserTest {
 
         assertEquals(expectedList, result);
     }
+
+    @Test
+    public void testSplitIntoParagraphsAndRemoveEmptyWithEmptyParagraphsHashTagLines() {
+        String textWithEmptyParagraphs = "This is a paragraph.\n\n\nThis is another paragraph.\n%\n^&$#\n\n34131432131241\n#\n#\n\nThis is the last one.";
+        List<String> expectedList = Arrays.asList("This is a paragraph.", "This is another paragraph.", "This is the last one.");
+
+        List<String> result = ParagraphParser.splitIntoParagraphsAndRemoveEmpty(textWithEmptyParagraphs);
+
+        assertEquals(expectedList, result);
+    }
+
 
 }

@@ -56,7 +56,7 @@ public class VectorizerEndpoint extends PipeServiceGrpc.PipeServiceImplBase {
      */
     private PipeDocument.Builder prepareDocument(PipeRequest req) {
         PipeDocument.Builder document = req.getDocument().toBuilder();
-        Map<String, Value> embeddingsToUpdate = createEmbeddings(document);
+        Map<String, Value> embeddingsToUpdate = createEmbeddingsMapForDocument(document);
         document.mergeCustomData(Struct.newBuilder().putAllFields(embeddingsToUpdate).build());
         return document;
     }
@@ -67,11 +67,20 @@ public class VectorizerEndpoint extends PipeServiceGrpc.PipeServiceImplBase {
      * @param document The document for which to create embeddings.
      * @return A map that contains the embeddings update.
      */
-    private Map<String, Value> createEmbeddings(PipeDocument.Builder document) {
-        Map<String, Value> embeddingsToUpdate = new HashMap<>();
-        ListValue values = convertEmbeddingsToListValue(vectorizer.getEmbeddings(document.getBody()));
-        embeddingsToUpdate.put("embeddings", Value.newBuilder().setListValue(values).build());
-        return embeddingsToUpdate;
+    private Map<String, Value> createEmbeddingsMapForDocument(PipeDocument.Builder document) {
+        Map<String, Value> embeddingsMap = new HashMap<>();
+        embeddingsMap.put("embeddings", createEmbedding(document.getBody()));
+        ListValue.Builder paragraphEmbeddings = ListValue.newBuilder();
+        for (int i = 0; i < document.getBodyParagraphsCount(); i++) {
+            paragraphEmbeddings.addValues(createEmbedding(document.getBodyParagraphs(i)));
+        }
+        embeddingsMap.put("paragraphEmbeddings", Value.newBuilder().setListValue(paragraphEmbeddings.build()).build());
+        return embeddingsMap;
+    }
+
+    private Value createEmbedding(String inputText) {
+        ListValue values = convertEmbeddingsToListValue(vectorizer.getEmbeddings(inputText));
+        return Value.newBuilder().setListValue(values).build();
     }
 
     /**

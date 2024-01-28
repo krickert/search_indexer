@@ -1,6 +1,8 @@
 micronaut:
   application:
     name: nlp
+  server:
+    port: 60402
 consul:
   client:
     defaultZone: ${CONSUL_HOST:localhost}:${CONSUL_PORT:8500}
@@ -8,9 +10,11 @@ consul:
       enabled: true
 grpc:
   server:
-    port: 50053
-
-
+    port: 50402
+endpoints:
+  health:
+    enabled: true
+    sensitive: false
 nlp:
   en_tokenizer: "classpath:models/latest/opennlp-en-ud-ewt-tokens-1.0-1.9.3.bin"
   ner_org_model: "classpath:models/1.5/en-ner-organization.bin"

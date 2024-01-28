@@ -1,7 +1,8 @@
 package com.krickert.search.crawler;
 
 import java.util.Collection;
-import java.util.concurrent.*;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentLinkedQueue;
 
 /**
  * This class represents a concurrent, unbounded, non-repeating queue.
@@ -49,7 +50,6 @@ public class ConcurrentUnboundedNonRepeatingQueue<E> {
      * Adds all elements from the given collection to this queue.
      *
      * @param collection The collection containing the elements to be added.
-     * @param <E>        The type of elements in the collection.
      */
     public void addAll(Collection<? extends E> collection) {
         for (E e : collection) {

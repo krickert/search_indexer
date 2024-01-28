@@ -2,38 +2,34 @@ package com.krickert.search.crawler;
 
 import com.google.common.collect.Maps;
 import com.google.common.net.InternetDomainName;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import io.micronaut.core.io.ResourceResolver;
 import io.micronaut.core.io.scan.ClassPathResourceLoader;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.By;
-
 import jakarta.inject.Singleton;
-
-import java.io.File;
-import java.net.MalformedURLException;
-import java.util.*;
-import java.util.concurrent.TimeUnit;
-
-import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.io.File;
+import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.*;
+import java.util.concurrent.TimeUnit;
 @Singleton
 public class WebCrawler {
     private static final Logger log = LoggerFactory.getLogger(WebCrawler.class);
 
     private final WebDriver driver;
-    private final ResourceResolver resourceResolver;
     private Set<String> visitedUrls = new HashSet<>();
 
     private Map<String,String> data = Maps.newConcurrentMap();
 
     public WebCrawler(ResourceResolver resourceResolver) {
-        this.resourceResolver = resourceResolver;
-        ;
+
         Optional<URL> resource = resourceResolver.getLoader(ClassPathResourceLoader.class).get().getResource("ublock_CJPALHDLNBPAFIAMEJDNHCPHJBKEIAGM_1_54_0_0.crx");
         WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();

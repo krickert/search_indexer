@@ -1,9 +1,9 @@
-package com.krickert.search.parser;
+package com.krickert.search.parser.component;
 
 public class TextUtils {
     public static String cleanUpText(String text) {
         StringBuilder output = new StringBuilder();
-        String cleanedString = "";
+        String cleanedString;
         boolean isNewLineFlag = false;  // flag to track new lines
         boolean isSpaceFlag = false;    // flag to track whitespaces
 

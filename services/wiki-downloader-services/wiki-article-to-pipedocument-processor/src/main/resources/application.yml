@@ -4,10 +4,10 @@ micronaut:
   executors:
     consumer:
       type: fixed
-      nThreads: 50
+      nThreads: 10
     producer:
       type: fixed
-      nThreads: 50
+      nThreads: 10
       
 consul:
   client:

@@ -1,4 +1,4 @@
-package com.krickert.search.pipeline;
+package com.krickert.search.pipeline.component;
 
 import com.krickert.search.model.pipe.PipeDocument;
 

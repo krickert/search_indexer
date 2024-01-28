@@ -1,4 +1,4 @@
-package com.krickert.search.pipeline;
+package com.krickert.search.pipeline.config;
 
 import io.micronaut.context.annotation.EachProperty;
 import io.micronaut.context.annotation.Parameter;

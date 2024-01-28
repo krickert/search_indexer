@@ -20,7 +20,7 @@
     <release.version>17</release.version>
     <micronaut.version>4.2.4</micronaut.version>
     <micronaut.test.resources.enabled>true</micronaut.test.resources.enabled>
-    <exec.mainClass>com.krickert.search.PipelineProcessorApplication</exec.mainClass>
+    <exec.mainClass>com.krickert.search.pipeline.PipelineProcessorApplication</exec.mainClass>
     <kafka-streams-protobuf-serde.version>7.5.3</kafka-streams-protobuf-serde.version>
   </properties>
 

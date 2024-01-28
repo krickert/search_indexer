@@ -2,7 +2,6 @@ package com.krickert.search.wiki.dump.file;
 
 import com.google.protobuf.Timestamp;
 import com.krickert.search.model.constants.KafkaProtobufConstants;
-import com.krickert.search.model.test.util.TestDataHelper;
 import com.krickert.search.model.util.ProtobufUtils;
 import com.krickert.search.model.wiki.DownloadedFile;
 import com.krickert.search.model.wiki.ErrorCheck;

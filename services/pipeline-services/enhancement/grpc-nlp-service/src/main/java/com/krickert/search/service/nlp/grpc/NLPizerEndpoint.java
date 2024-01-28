@@ -11,7 +11,6 @@ import com.krickert.search.service.PipeServiceGrpc;
 import com.krickert.search.service.nlp.NLPBeans;
 import com.krickert.search.service.nlp.NlpExtractor;
 import com.krickert.search.service.nlp.ServiceType;
-import com.krickert.search.service.nlp.exceptions.UnsupportedServiceException;
 import io.grpc.stub.StreamObserver;
 import io.micronaut.core.util.CollectionUtils;
 import jakarta.inject.Inject;

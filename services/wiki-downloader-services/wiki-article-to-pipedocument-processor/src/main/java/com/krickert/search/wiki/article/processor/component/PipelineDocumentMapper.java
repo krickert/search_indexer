@@ -12,10 +12,7 @@ import java.time.Instant;
 import java.time.ZoneId;
 import java.time.ZoneOffset;
 import java.time.format.DateTimeFormatter;
-import java.util.Arrays;
-import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 import static com.krickert.search.wiki.article.processor.component.ParagraphParser.splitIntoParagraphsAndRemoveEmpty;
 import static java.time.format.DateTimeFormatter.ISO_INSTANT;

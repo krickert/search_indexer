@@ -3,6 +3,7 @@ package com.krickert.search.pipeline;
 import com.google.common.collect.Lists;
 import com.krickert.search.model.pipe.PipeDocument;
 import com.krickert.search.model.test.util.TestDataHelper;
+import com.krickert.search.pipeline.component.PipelineProcessor;
 import com.krickert.search.service.PipeReply;
 import io.grpc.stub.StreamObserver;
 import io.micronaut.test.extensions.junit5.annotation.MicronautTest;

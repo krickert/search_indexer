@@ -1,4 +1,6 @@
 micronaut:
+  server:
+    port: 60401
   application:
     name: vectorizer
 consul:
@@ -8,4 +10,8 @@ consul:
       enabled: true
 grpc:
   server:
-    port: 50052
+    port: 50401
+endpoints:
+  health:
+    enabled: true
+    sensitive: false
