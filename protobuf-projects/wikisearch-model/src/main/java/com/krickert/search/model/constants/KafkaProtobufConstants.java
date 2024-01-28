@@ -1,5 +1,6 @@
 package com.krickert.search.model.constants;
 
+
 /**
  * This class provides constants related to Kafka Protobuf integration.
  */
@@ -12,8 +13,6 @@ public class KafkaProtobufConstants {
     public static final String SPECIFIC_CLASS_PROPERTY = "specific.protobuf.value.type";
     /**
      * The fully qualified class name for the DownloadFileRequest class in the Wiki module.
-     *
-     * @since version 1.0
      */
     public static final String DOWNLOAD_FILE_REQUEST_CLASS = "com.krickert.search.model.wiki.DownloadFileRequest";
     /**
@@ -30,4 +29,6 @@ public class KafkaProtobufConstants {
      * It is used as a constant.
      */
     public static final String PIPE_DOCUMENT_CLASS = "com.krickert.search.model.pipe.PipeDocument";
+
+    public static final String RAW_DOCUMENT_REQUEST = "com.krickert.search.parser.tika.RawDocumentRequest";
 }

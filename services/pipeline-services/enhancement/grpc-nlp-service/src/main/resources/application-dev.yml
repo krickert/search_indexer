@@ -1,0 +1,6 @@
+micronaut:
+  server:
+    port: 60501
+grpc:
+  server:
+    port: 50501

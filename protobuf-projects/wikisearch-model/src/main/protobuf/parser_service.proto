@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.krickert.search.parser.tika";
+option java_outer_classname = "DocumentRequestProto";
+option objc_class_prefix = "HLW";
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/struct.proto";
+
+
+package com.krickert.search.parser.tika;
+
+message RawDocumentRequest {
+  bytes content = 1;
+}
+
+enum ParsedStatus {
+  SUCCESS = 0;
+  GENERAL_FAILURE = 1;
+  PARSE_FAILURE = 2;
+}
+
+message ParsedDocumentReply {
+  ParsedDocument doc = 1;
+  ParsedStatus status = 2;
+  string message = 3;
+}
+
+service DocumentParser {
+  rpc parse(RawDocumentRequest) returns (ParsedDocumentReply) {}
+}
+
+message ParsedDocument {
+  string id = 1;
+  string title = 2;
+  string body = 3;
+  string parsed_by = 4;
+  google.protobuf.Timestamp creation_date = 5;
+  google.protobuf.Timestamp last_modified = 6;
+  string document_type = 7;
+  google.protobuf.Struct custom_data = 8;
+}

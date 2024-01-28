@@ -1,0 +1,6 @@
+applicationType: default
+defaultPackage: com.krickert.search.crawler.manager
+testFramework: junit
+sourceLanguage: java
+buildTool: maven
+features: [app-name, assertj, awaitility, config-consul, consul, data, data-mongodb, discovery-client, discovery-consul, github-workflow-ci, github-workflow-docker-registry, hamcrest, http-client, http-client-test, java, java-application, jib, jobrunr-jobrunr, junit, junit-platform-suite-engine, kafka, logback, maven, maven-enforcer-plugin, micronaut-aot, micronaut-http-validation, mockito, netty-server, readme, serialization-jackson, shade, testcontainers, yaml, yaml-build]

@@ -1,6 +1,16 @@
 micronaut:
   application:
     name: pipeline-processor
+  server:
+    port: 60400
+  executors:
+    consumer:
+      type: fixed
+      nThreads: 10
+    producer:
+      type: fixed
+      nThreads: 10
+
 consul:
   client:
     registration:
@@ -13,8 +23,30 @@ grpc:
     plaintext: true
     discovery:
       enabled: true
-
+  server:
+    port: 50400
 kafka:
   enabled: true
+  schema.registry.url: http://localhost:8081
+  key:
+    serializer: org.apache.kafka.common.serialization.UUIDSerializer
+    deserializer: org.apache.kafka.common.serialization.UUIDDeserializer
+  value:
+    serializer: io.confluent.kafka.serializers.protobuf.KafkaProtobufSerializer
+    deserializer: io.confluent.kafka.serializers.protobuf.KafkaProtobufDeserializer
 
+
+pipeline-config:
+  client-configs:
+    nlp:
+      type: consul_grpc
+      consul_service: nlp
+    vectorizer:
+      type: consul_grpc
+      consul_service: vectorizer
+  pipeline-processor:
+    search-pipeline:
+      services:
+        - nlp
+        - vectorizer
 

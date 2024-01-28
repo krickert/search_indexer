@@ -19,6 +19,7 @@
     <jdk.version>17</jdk.version>
     <release.version>17</release.version>
     <micronaut.version>4.2.4</micronaut.version>
+    <micronaut.serialization.version>2.5.1</micronaut.serialization.version>
     <micronaut.test.resources.enabled>true</micronaut.test.resources.enabled>
     <exec.mainClass>com.krickert.search.download.dump.DownloadRequestProcessor</exec.mainClass>
     <kafka-streams-protobuf-serde.version>7.5.3</kafka-streams-protobuf-serde.version>
@@ -43,7 +44,6 @@
       <artifactId>micronaut-http-client</artifactId>
       <scope>compile</scope>
     </dependency>
-
     <dependency>
       <groupId>io.micronaut.kafka</groupId>
       <artifactId>micronaut-kafka</artifactId>
@@ -57,6 +57,12 @@
     <dependency>
       <groupId>ch.qos.logback</groupId>
       <artifactId>logback-classic</artifactId>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-core</artifactId>
+      <version>1.4.14</version>
       <scope>runtime</scope>
     </dependency>
     <dependency>
@@ -137,14 +143,6 @@
       <artifactId>kafka-streams-protobuf-serde</artifactId>
       <version>${kafka-streams-protobuf-serde.version}</version>
     </dependency>
-
-    <!-- https://mvnrepository.com/artifact/io.micronaut.testresources/micronaut-test-resources-core -->
-    <dependency>
-      <groupId>io.micronaut.testresources</groupId>
-      <artifactId>micronaut-test-resources-kafka</artifactId>
-      <scope>test</scope>
-    </dependency>
-
     <!-- https://mvnrepository.com/artifact/io.grpc/grpc-protobuf -->
     <dependency>
       <groupId>io.grpc</groupId>

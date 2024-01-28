@@ -28,3 +28,9 @@ kafka-topics --bootstrap-server broker:9092 \
              --create \
              --topic search-document \
              --partitions 10
+
+docker exec broker \
+kafka-topics --bootstrap-server broker:9092 \
+             --create \
+             --topic enhanced-document \
+             --partitions 10

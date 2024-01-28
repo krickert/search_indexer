@@ -69,6 +69,12 @@
       <scope>runtime</scope>
     </dependency>
     <dependency>
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-core</artifactId>
+      <version>1.4.14</version>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
       <groupId>org.yaml</groupId>
       <artifactId>snakeyaml</artifactId>
       <scope>runtime</scope>
@@ -76,6 +82,11 @@
     <dependency>
       <groupId>io.micronaut.testresources</groupId>
       <artifactId>micronaut-test-resources-client</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.testcontainers</groupId>
+      <artifactId>kafka</artifactId>
       <scope>test</scope>
     </dependency>
     <dependency>
@@ -225,6 +236,11 @@
       <groupId>io.grpc</groupId>
       <artifactId>grpc-netty</artifactId>
       <version>1.61.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.testcontainers</groupId>
+      <artifactId>junit-jupiter</artifactId>
+      <scope>test</scope>
     </dependency>
 
   </dependencies>

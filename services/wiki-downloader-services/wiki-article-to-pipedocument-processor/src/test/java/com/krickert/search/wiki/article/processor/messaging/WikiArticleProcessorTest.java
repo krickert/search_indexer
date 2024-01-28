@@ -50,7 +50,7 @@ class WikiArticleProcessorTest {
         await().atMost(30, SECONDS).until(() -> pipeDocuments.size() > 20);
         await().atMost(60, SECONDS).until(() -> pipeDocuments.size() > 100);
         await().atMost(90, SECONDS).until(() -> pipeDocuments.size() >= 367);
-        //uncomment to debug and save the raw pipe documetns
+        //uncomment to debug and save the raw pipe documents
         //ProtobufUtils.saveProtocoBufsToDisk("pipe_document",pipeDocuments,3);
     }
 
@@ -62,7 +62,7 @@ class WikiArticleProcessorTest {
             groupId = "test-wiki-pipe-processor-listener"
     )
     public static class PipeDocumentTestListener {
-        @Topic("pipe-document")
+        @Topic("pipeline-document")
         void receive(PipeDocument request) {
             pipeDocuments.add(request);
         }

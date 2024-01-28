@@ -7,8 +7,8 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>grpc-vectorizer-service</module>
-        <module>grpc-nlp-service</module>
+        <module>enhancement</module>
+        <module>parser</module>
     </modules>
     <artifactId>pipeline-services</artifactId>
     <properties>

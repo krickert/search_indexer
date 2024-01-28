@@ -24,7 +24,6 @@ import static com.krickert.search.model.util.ProtobufUtils.createKey;
         description = "checks the wikipedia page for downloads and adds new files to the queue for download.",
         mixinStandardHelpOptions = true, version = "POS")
 public class SendFileRequestsCommand implements Runnable {
-
     private static final Logger log = LoggerFactory.getLogger(SendFileRequestsCommand.class);
 
     /**

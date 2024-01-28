@@ -1,13 +1,20 @@
 # search_indexer
-Welcome to the search indexing project.  I've been working on search technologies for 15 years, and created this project to open source patterns I've seen in the industry that aren't easily done when doing searches.
+Welcome to the search indexing project.  I've been working on search technologies for 15 years, and created this project to release code patterns I've seen in the industry that aren't easily done when testing new search technologies.
 
-Whenever I approach a new search project the biggest challenge always ends up being the indexing part and analytics.  Today's modern search engines - both new and enterprise - already solve all the "hard" problems of scaling, speed, and up-to-date top-of-the-line search and relevancy sorting technologies.  However, I have always had a hard time testing new technologies because it's simply hard to get a lot of documents in an index quickly.
+The biggest problem I've seen with search is indexing - the search portion is about 10% of a project.  Wranging data into the engine is where most of the efforts are drawn.
+
+So if you want to test a new search engine - you need a ton of data that can easily be injested with the document already enhanced, than this is what you'd want.
+
+Right now the project just indexes wikipedia.  I'm working on integrating the tika parser into the pipeline with a web crawler.  This would allow for document enrichment for web crawling.
+
+Whenever I approach a new search project the biggest challenge always ends up being the indexing part and analytics.  Today's modern search engines - both new and enterprise - already solve all the "hard" problems of scaling, speed, and up-to-date top-of-the-line search and relevancy sorting technologies.  However, I have always had a hard time testing new technologies because it's simply hard to get a lot of documents in an index quickly. *Indexing is always the hardest part of search.*  
 
 That's where this project comes in.  I started this to test semantic search on wikipedia data, but it's since evolved to be a full fledged indexing solution.
 
 As of now, this project allows you to index all of wikipedia [directly from the wiki foundation's dump files](https://dumps.wikimedia.org/enwiki/).
 
-The next iteration will feature a selenium-based web crawler.
+The next iteration will feature a selenium-based web crawler.  This branch crawls using selemium on a chrome browser.  
+
 
 ## Abstract
 This project sets out to:
@@ -34,9 +41,6 @@ The data processing steps from multiple sources which perform the following:
 * Enrichment - Now that the document is plain text, it will be applied to a pipeline which would execute multiple services to enrich the document.
 * Sink - Once the data is fully enriched, it will go into a data sink to output to the desired service such as a search engine, vector store, or a data scientist experiementing with data.
 
-As a PoC, we are first processing the entire set of wikipedia documents.  Once an end-to-end with two search engines is completed, other data types and sources will be added and supported.
-
-
 
 ## Technical architecture
 ### Components used
@@ -45,11 +49,14 @@ As a PoC, we are first processing the entire set of wikipedia documents.  Once a
 * gRPC - the service layer for document enrichment.  Can be any gRPC service in any supported language.
 * Consul - gRPC and REST service registration
 * OpenJDK 17  - Base layer for project
-* Micronaut - Dependency injection layer 
+* Micronaut - Dependency injection layer
+* Selenium - web crawling via web driver
+* Jobrunr - open source job running solution with a micronaut hook
+* mongodb - to store crawl data and temporary data not suited for kafka
 * There's many more, we'll add them here later
 
 ### Data flows
-#### Overall data flow
+#### Overall data flow - wikipedia
 ![cartoon for managers](/docs/arch_diagrams/search_indexer-StreamFlow.drawio.svg)
 
 The above demonstrates the following flow:

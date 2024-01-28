@@ -4,10 +4,10 @@ micronaut:
   executors:
     consumer:
       type: fixed
-      nThreads: 50
+      nThreads: 10
     producer:
       type: fixed
-      nThreads: 50
+      nThreads: 10
 
 
 kafka:
@@ -25,5 +25,5 @@ download:
   threads: 3
   connection-url: https://dumps.wikimedia.org/enwiki/latest/
   max-tries: 3
-  location: /Volumes/BigDataFun/wikidownloads
+  location: /home/krickert/wikidata
 

@@ -1,0 +1,30 @@
+consul:
+  client:
+    defaultZone: ${CONSUL_HOST:localhost}:${CONSUL_PORT:8500}
+    registration:
+      enabled: true
+jobrunr:
+  background-job-server:
+    enabled: true
+  metrics:
+    enabled: true #Micrometer integration - this was true in v5.
+  dashboard:
+    enabled: true
+    port: 8000 #the port on which to start the dashboard
+  database:
+    skip-create: false
+    type: mongodb # if you have multiple supported storage providers available in your application (e.g. an SQL DataSource and Elasticsearch), it allows to specify which database to choose. Valid values are 'sql', 'mongodb', 'redis-lettuce', 'redis-jedis' and 'elasticsearch'.
+kafka:
+  enabled: true
+  schema.registry.url: http://localhost:8081
+  key:
+    serializer: org.apache.kafka.common.serialization.UUIDSerializer
+    deserializer: org.apache.kafka.common.serialization.UUIDDeserializer
+  value:
+    serializer: io.confluent.kafka.serializers.protobuf.KafkaProtobufSerializer
+    deserializer: io.confluent.kafka.serializers.protobuf.KafkaProtobufDeserializer
+  health:
+    enabled: true
+  grpc:
+    server:
+      port: 50100

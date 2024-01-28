@@ -11,6 +11,7 @@ import io.micronaut.configuration.kafka.annotation.KafkaKey;
 import io.micronaut.configuration.kafka.annotation.KafkaListener;
 import io.micronaut.configuration.kafka.annotation.Topic;
 import io.micronaut.context.annotation.Property;
+import io.micronaut.context.annotation.Value;
 import io.micronaut.core.io.ResourceResolver;
 import io.micronaut.core.io.scan.ClassPathResourceLoader;
 import io.micronaut.runtime.EmbeddedApplication;
@@ -38,6 +39,9 @@ class WikiDumpFileProcessorTest {
     DownloadedFileProcessingProducer downloadedFileProcessingProducer;
     @Inject
     EmbeddedApplication<?> application;
+    @Value("${wiki.article.create_dummy_data}")
+    Boolean createDummyData;
+
 
     @BeforeEach
     void clear() {
@@ -61,6 +65,10 @@ class WikiDumpFileProcessorTest {
         this.downloadedFileProcessingProducer.sendFileProcessingRequest(createKey(downloadedFile.getFileName()), downloadedFile);
         await().atMost(100, SECONDS).until(() -> wikiArticles.size() > 100);
         await().atMost(100, SECONDS).until(() -> wikiArticles.size() == 367);
+
+        if (createDummyData) {
+            ProtobufUtils.saveProtocoBufsToDisk("article", wikiArticles, 3);
+        }
     }
 
     @KafkaListener(properties = @Property(name = KafkaProtobufConstants.SPECIFIC_CLASS_PROPERTY, value = KafkaProtobufConstants.WIKIARTICLE_CLASS), groupId = "test-group-wiki-dump")

@@ -19,7 +19,6 @@ import java.util.UUID;
                 @Property(name = ProducerConfig.ACKS_CONFIG, value = "0")
         })
 public interface PipeDocumentProducer {
-
-    @Topic("pipe-document")
+    @Topic("pipeline-document")
     void sendPipeDocument(@KafkaKey UUID key, PipeDocument request);
 }
