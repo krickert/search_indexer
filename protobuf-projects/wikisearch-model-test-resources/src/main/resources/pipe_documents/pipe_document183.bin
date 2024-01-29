@@ -1,126 +1,368 @@
 
-41519Photic zone”VThe photic zone, euphotic zone, epipelagic zone, or sunlight zone is the uppermost layer of a body of water that receives sunlight, allowing phytoplankton to perform photosynthesis. It undergoes a series of physical, chemical, and biological processes that supply nutrients into the upper water column. The photic zone is home to the majority of aquatic life due to the activity (primary production) of the phytoplankton.
+41317	Line code∞BIn telecommunication, a line code is a pattern of voltage, current, or photons used to represent digital data transmitted down a communication channel or written to a storage medium. This repertoire of signals is usually called a constrained code in data storage systems. 
+Some signals are more prone to error than others as the physics of the communication channel or storage medium constrains the repertoire of signals that can be used reliably.
 
-Photosynthesis in photic zone 
+Common line encodings are unipolar, polar, bipolar, and Manchester code.
 
-In the photic zone, the photosynthesis rate exceeds the respiration rate.  This is due to the abundant solar energy which is used as an energy source for photosynthesis by primary producers such as phytoplankton. These phytoplankton grow extremely quickly because of sunlight's heavy influence, enabling it to be produced at a fast rate. In fact, ninety five percent of photosynthesis in the ocean occurs in the photic zone. Therefore, if we go deeper, beyond the photic zone, such as into the compensation point, there is little to no phytoplankton, because of insufficient sunlight. The zone which extends from the base of the euphotic zone to about 200 meters is sometimes called the dysphotic zone.[http://www.britannica.com/EBchecked/topic/457662/photic-zone Photic zone] Encyclop√¶dia Britannica Online. 14 August 2009.
+Transmission and storage 
 
-Life in the photic zone 
+After line coding, the signal is put through a physical communication channel, either a transmission medium or data storage medium.Karl Paulsen. [http://www.tvtechnology.com/media-servers/0150/coding-for-magnetic-storage-mediums/186738 "Coding for Magnetic Storage Mediums"] .2007. The most common physical channels are:
+* the line-coded signal can directly be put on a transmission line, in the form of variations of the voltage or current (often using differential signaling).
+* the line-coded signal (the baseband signal) undergoes further pulse shaping (to reduce its frequency bandwidth) and then is modulated (to shift its frequency) to create an RF signal that can be sent through free space.
+* the line-coded signal can be used to turn on and off a light source in free-space optical communication, most commonly used in an infrared remote control.
+* the line-coded signal can be printed on paper to create a bar code.
+* the line-coded signal can be converted to magnetized spots on a hard drive or tape drive.
+* the line-coded signal can be converted to pits on an optical disc.
 
-Ninety percent of marine life lives in the photic zone, which is approximately two hundred meters deep. This includes phytoplankton (plants), including dinoflagellates, diatoms, cyanobacteria, coccolithophores, and cryptomonads. It also includes zooplankton, the consumers in the photic zone. There are carnivorous meat eaters and herbivorous plant eaters. Next, copepods are the small crustaceans distributed everywhere in the photic zone. Finally, there are nekton (animals that can propel themselves, like fish, squids, and crabs), which are the largest and the most obvious animals in the photic zone, but their quantity is the smallest among all the groups.
+Some of the more common binary line codes include:
 
-The depth of the photic zone depends on the transparency of the water. If the water is very clear, the photic zone can become very deep. If it is very murky, it can be only fifty feet (fifteen meters) deep.
+Each line code has advantages and disadvantages. Line codes are chosen to meet one or more of the following criteria:
+* Minimize transmission hardware
+* Facilitate synchronization
+* Ease error detection and correction
+* Achieve a target spectral density
+* Eliminate a DC component
 
-Nutrients uptake in the photic zone 
+Disparity 
 
-Due to biological uptake, the photic zone has relatively low levels of nutrient concentrations. As a result, phytoplankton doesn't receive enough nutrients when there is high water-column stability. The spatial distribution of organisms can be controlled by a number of factors. Physical factors include: temperature, hydrostatic pressure, turbulent mixing such as the upward turbulent flux of inorganic nitrogen across the nutricline. Chemical factors include oxygen and trace elements.  Biological factors include grazing and migrations. Upwelling carries nutrients from the deep waters into the photic zone, strengthening phytoplankton growth. The remixing and upwelling eventually bring nutrient-rich wastes back into the photic zone. The Ekman transport additionally brings more nutrients to the photic zone. Nutrient pulse frequency affects the phytoplankton competition. Photosynthesis produces more of it. Being the first link in the food chain, what happens to phytoplankton creates a rippling effect for other species. Besides phytoplankton, many other animals also live in this zone and utilize these nutrients. The majority of ocean life occurs in the photic zone, the smallest ocean zone by water volume. The photic zone, although small, has a large impact on those who reside in it.
+Most long-distance communication channels cannot reliably transport a DC component. The DC component is also called the disparity, the bias, or the DC coefficient. The disparity of a bit pattern is the difference in the number of one bits vs the number of zero bits. The running disparity is the running total of the disparity of all previously transmitted bits. The simplest possible line code, unipolar, gives too many errors on such systems, because it has an unbounded DC component.
 
-Photic zone depth 
+Most line codes eliminate the DC component such codes are called DC-balanced, zero-DC, or DC-free. There are three ways of eliminating the DC component:
 
-The depth is, by definition, where radiation is degraded down to 1% of its surface strength. Accordingly, its thickness depends on the extent of light attenuation in the water column. As incoming light at the surface can vary widely, this says little about the net growth of  phytoplankton. Typical euphotic depths vary from only a few centimetres in highly turbid eutrophic lakes, to around 200 meters in the open ocean. It also varies with seasonal changes in turbidity, which can be strongly driven by phytoplankton concentrations, such that the depth of the photic zone often decreases as primary production increases. Moreover, the respiration rate is actually greater than the photosynthesis rate. The reason why phytoplankton production is so important is because it plays a prominent role when interwoven with other food webs.
+* Use a constant-weight code. Each transmitted code word in a constant-weight code is designed such that every code word that contains some positive or negative levels also contains enough of the opposite levels, such that the average level over each code word is zero. Examples of constant-weight codes include Manchester code and Interleaved 2 of 5.
+* Use a paired disparity code. Each code word in a paired disparity code that averages to a negative level is paired with another code word that averages to a positive level. The transmitter keeps track of the running DC buildup, and picks the code word that pushes the DC level back towards zero. The receiver is designed so that either code word of the pair decodes to the same data bits. Examples of paired disparity codes include alternate mark inversion, 8b/10b and 4B3T.
+* Use a scrambler. For example, the scrambler specified in  for 64b/66b encoding.
 
-Light attenuation
+Polarity 
 
-Most of the solar energy reaching the Earth is in the range of visible light, with wavelengths between about 400-700 nm. Each colour of visible light has a unique wavelength, and together they make up white light. The shortest wavelengths are on the violet and ultraviolet end of the spectrum, while the longest wavelengths are at the red and infrared end. In between, the colours of the visible spectrum comprise the familiar ‚ÄúROYGBIV‚Äù; red, orange, yellow, green, blue, indigo, and violet.Webb, Paul (2019) [https://rwu.pressbooks.pub/webboceanography/chapter/6-5-light/ Introduction to Oceanography], chapter 6.5 Light, Rebus Community, Roger Williams University, open textbook.  Material was copied from this source, which is available under a [https://creativecommons.org/licenses/by/4.0/ Creative Commons Attribution 4.0 International License].
+Bipolar line codes have two polarities, are generally implemented as RZ, and have a radix of three since there are three distinct output levels (negative, positive and zero). One of the principle advantages of this type of code is that it can eliminate any DC component. This is important if the signal must pass through a transformer or a long transmission line.
 
-Water is very effective at absorbing incoming light, so the amount of light penetrating the ocean declines rapidly (is attenuated) with depth. At one metre depth only 45% of the solar energy that falls on the ocean surface remains. At 10 metres depth only 16% of the light is still present, and only 1% of the original light is left at 100 metres. No light penetrates beyond 1000 metres.
+Unfortunately, several long-distance communication channels have polarity ambiguity. Polarity-insensitive line codes compensate in these channels.
 
-In addition to overall attenuation, the oceans absorb the different wavelengths of light at different rates. The wavelengths at the extreme ends of the visible spectrum are attenuated faster than those wavelengths in the middle. Longer wavelengths are absorbed first; red is absorbed in the upper 10 metres, orange by about 40 metres, and yellow disappears before 100 metres. Shorter wavelengths penetrate further, with blue and green light reaching the deepest depths.
+There are three ways of providing unambiguous reception of 0 and 1 bits over such channels:
+* Pair each code word with the polarity-inverse of that code word. The receiver is designed so that either code word of the pair decodes to the same data bits. Examples include alternate mark inversion, Differential Manchester encoding, coded mark inversion and Miller encoding.
+* differential coding each symbol relative to the previous symbol. Examples include MLT-3 encoding and NRZI.
+* Invert the whole stream when inverted syncwords are detected
 
-This is why things appear blue underwater. How colours are perceived by the eye depends on the wavelengths of light that are received by the eye. An object appears red to the eye because it reflects red light and absorbs other colours. So the only colour reaching the eye is red. Blue is the only colour of light available at depth underwater, so it is the only colour that can be reflected back to the eye, and everything has a blue tinge under water. A red object at depth will not appear red to us because there is no red light available to reflect off of the object. Objects in water will only appear as their real colours near the surface where all wavelengths of light are still available, or if the other wavelengths of light are provided artificially, such as by illuminating the object with a dive light.
+Run-length limited codes
 
-Water in the open ocean appears clear and blue because it contains much less particulate matter, such as phytoplankton or other suspended particles, and the clearer the water, the deeper the light penetration. Blue light penetrates deeply and is scattered by the water molecules, while all other colours are absorbed; thus the water appears blue. On the other hand, coastal water often appears greenish. Coastal water contains much more suspended silt and algae and microscopic organisms than the open ocean. Many of these organisms, such as phytoplankton, absorb light in the blue and red range through their photosynthetic pigments, leaving green as the dominant wavelength of reflected light. Therefore the higher the phytoplankton concentration in water, the greener it appears. Small silt particles may also absorb blue light, further shifting the colour of water away from blue when there are high concentrations of suspended particles.
+For reliable clock recovery at the receiver, a run-length limitation may be imposed on the generated channel sequence, i.e., the maximum number of consecutive ones or zeros is bounded to a reasonable number. A clock period is recovered by observing transitions in the received sequence, so that a maximum run length guarantees sufficient transitions to assure clock recovery quality.
 
-The ocean can be divided into depth layers depending on the amount of light penetration, as discussed in pelagic zone. The upper 200 metres is referred to as the photic or euphotic zone. This represents the region where enough light can penetrate to support photosynthesis, and it corresponds to the epipelagic zone. From 200 to 1000 metres lies the dysphotic zone, or the twilight zone (corresponding with the mesopelagic zone). There is still some light at these depths, but not enough to support photosynthesis. Below 1000 metres is the aphotic (or midnight) zone, where no light penetrates. This region includes the majority of the ocean volume, which exists in complete darkness.
+RLL codes are defined by four main parameters: m, n, d, k. The first two, m/n, refer to the rate of the code, while the remaining two specify the minimal d and maximal k number of zeroes between consecutive ones. This is used in both telecommunication and storage systems that move a medium past a fixed recording head.
 
-Paleoclimatology
+Specifically, RLL bounds the length of stretches (runs) of repeated bits during which the signal does not change.  If the runs are too long, clock recovery is difficult; if they are too short, the high frequencies might be attenuated by the communications channel.  By modulating the data, RLL reduces the timing uncertainty in decoding the stored data, which would lead to the possible erroneous insertion or removal of bits when reading the data back. This mechanism ensures that the boundaries between bits can always be accurately found (preventing bit slip), while efficiently using the media to reliably store the maximal amount of data in a given space.
 
-Phytoplankton are unicellular microorganisms which form the base of the ocean food chains. They are dominated by diatoms, which grow silicate shells called frustules. When diatoms die their shells can settle on the seafloor and become microfossils. Over time, these microfossils become buried as opal deposits in the marine sediment. Paleoclimatology is the study of past climates. Proxy data is used in order to relate elements collected in modern-day sedimentary samples to climatic and oceanic conditions in the past. Paleoclimate proxies refer to preserved or fossilized physical markers which serve as substitutes for direct meteorological or ocean measurements. An example of proxies is the use of diatom isotope records of Œ¥13C, Œ¥18O, Œ¥30Si (Œ¥13Cdiatom, Œ¥18Odiatom, and Œ¥30Sidiatom). In 2015, Swann and Snelling used these isotope records to document historic changes in the photic zone conditions of the north-west Pacific Ocean, including nutrient supply and the efficiency of the soft-tissue biological pump, from the modern day back to marine isotope stage 5e, which coincides with the last interglacial period. Peaks in opal productivity in the marine isotope stage are associated with the breakdown of the regional halocline stratification and increased nutrient supply to the photic zone.  Material was copied from this source, which is available under a [https://creativecommons.org/licenses/by/3.0/ Creative Commons Attribution 3.0 International License].
+Early disk drives used very simple encoding schemes, such as RLL (0,1) FM code, followed by RLL (1,3) MFM code which were widely used in hard disk drives until the mid-1980s and are still used in digital optical discs such as CD, DVD, MD, Hi-MD and Blu-ray using EFM and EFMPLus codes. Higher density RLL (2,7) and RLL (1,7) codes became the de facto standards for hard disks by the early 1990s.
 
-File:Ocean changes from the last interglacial to the modern day A.png
-File:Ocean changes from the last interglacial to the modern day B.png
+Synchronization 
 
-The initial development of the halocline and stratified water column has been attributed to the onset of major Northern Hemisphere glaciation at 2.73 Ma, which increased the flux of freshwater to the region, via increased monsoonal rainfall and/or glacial meltwater, and sea surface temperatures. The decrease of abyssal water upwelling associated with this may have contributed to the establishment of globally cooler conditions and the expansion of glaciers across the Northern Hemisphere from 2.73 Ma. While the halocline appears to have prevailed through the late Pliocene and early Quaternary glacial‚Äìinterglacial cycles, other studies have shown that the stratification boundary may have broken down in the late Quaternary at glacial terminations and during the early part of interglacials.
+Line coding should make it possible for the receiver to synchronize itself to the phase of the received signal. If the clock recovery is not ideal, then the signal to be decoded will not be sampled at the optimal times. This will increase the probability of error in the received data.
 
-See also
+Biphase line codes require at least one transition per bit time. This makes it easier to synchronize the transceivers and detect errors, however, the baud rate is greater than that of NRZ codes.
 
-* Mesophotic coral reef
-* Electromagnetic absorption by water
-* Epipelagic fish
+Other considerations 
 
-References"7903804*¯©Öõ:ARTICLEBÒ™
-Ì™
-wiki_metadata⁄™*÷™
+A line code will typically reflect technical requirements of the transmission medium, such as optical fiber or shielded twisted pair.  These requirements are unique for each medium, because each one has different behavior related to interference, distortion, capacitance and attenuation.
+
+Common line codes 
+
+* 2B1Q
+* 4B3T
+* 4B5B
+* 6b/8b encoding
+* 8b/10b encoding
+* 64b/66b encoding
+* 128b/130b encoding
+* Alternate mark inversion (AMI)
+* Coded mark inversion (CMI)
+* EFMPlus, used in DVDs
+* Eight-to-fourteen modulation (EFM), used in compact discs
+* Hamming code
+* Hybrid ternary code
+* Manchester code and differential Manchester
+* Mark and space
+* MLT-3 encoding
+* Modified AMI codes: B8ZS, B6ZS, B3ZS, HDB3
+* Modified frequency modulation, Miller encoding and delay encoding
+* Non-return-to-zero (NRZ)
+* Non-return-to-zero, inverted (NRZI)
+* Pulse-position modulation
+* Return-to-zero (RZ)
+* TC-PAM
+
+Optical line codes
+
+* Alternate-Phase Return-to-Zero (APRZ)
+* Carrier-Suppressed Return-to-Zero (CSRZ)
+* Three of Six, Fiber Optical (TS-FO)
+
+See also 
+
+* Physical layer
+* Self-synchronizing code and bit synchronization
+
+References 
+
+* 
+
+External links
+
+* [https://web.archive.org/web/20130418052107/http://www.electronics.dit.ie/staff/amoloney/lecture-9.pdf Line Coding Lecture No. 9] 
+* [http://www.fiberoptics4sale.com/wordpress/line-coding-in-digital-communication/ Line Coding in Digital Communication]
+* [https://www.ac.uma.es/~guille/codsim2.0/ CodSim 2.0: Open source simulator for Digital Data Communications Model at the University of Malaga written in HTML]"10728040*ÏÊ¨ö:ARTICLEB•
+¢
+wiki_metadataê*ç
 
 	namespace 
 #
-	dump_date2022-11-01T17:18:48Z
-,
-date_parsed2023-07-03T23:42:56.208137Z
-Ó©
-	wiki_textﬂ©€©{{Short description|The uppermost layer of a sea water column that is exposed to sunlight}}
-{{aquatic layer topics}}
+	dump_date2022-10-15T22:25:48Z
+/
+date_parsed 2024-01-29T10:34:01.300652439Z
+£~
+	wiki_textï~í~{{short description|Pattern used within a communications system to represent digital data}}
+{{stack|
+[[File:NRZcode.png|thumb|An example of coding a binary signal using rectangular [[pulse-amplitude modulation]] with polar [[non-return-to-zero]] code]]
+[[File:Ami encoding.svg|thumb|An example of [[bipolar encoding]], or AMI.]]
+[[File:Manchester code.svg|thumb|Encoding of 11011000100 in [[Manchester encoding]] ]]
+[[File:Differential_manchester_encoding_Workaround.svg|thumb|An example of [[differential Manchester encoding]]]]
+[[File:Biphase Mark Code.svg|thumb|An example of [[biphase mark code]] ]]
+[[File:MLT3encoding.svg|thumb|An example of [[MLT-3 encoding]]]]
+}}
+{{Modulation techniques}}
 
-The '''photic zone''', '''euphotic zone''', '''epipelagic zone''', or '''sunlight zone''' is the uppermost layer of a [[body of water]] that receives [[sunlight]], allowing [[phytoplankton]] to perform [[photosynthesis]]. It undergoes a series of physical, chemical, and biological processes that supply [[nutrient]]s into the upper [[water column]]. The photic zone is home to the majority of [[Aquatic ecosystem|aquatic life]] due to the activity ([[Marine primary production|primary production]]) of the phytoplankton.
+In [[telecommunication]], a '''line code''' is a pattern of voltage, current, or photons used to represent digital data [[transmission (telecommunications)|transmitted]] down a [[communication channel]] or written to a [[storage medium]]. This repertoire of signals is usually called a '''constrained code''' in data storage systems.<ref>{{Cite journal 
+|journal= IEEE Communications Magazine
+|date=2022
+|title=Innovation in Constrained Codes
+|author=K. Schouhamer Immink
+|author-link=Kees Schouhamer Immink 
+|url=https://www.researchgate.net/publication/362866105
+|access-date=2022-10-05
+}}</ref> 
+Some signals are more prone to error than others as the physics of the communication channel or storage medium constrains the repertoire of signals that can be used reliably.<ref name="optics">{{Cite journal 
+|journal= IEEE Journal on Selected Areas in Communications
+|volume=19
+|date=2001
+|title=A Survey of Codes for Optical Disk Recording
+|author=K. Schouhamer Immink
+|author-link=Kees Schouhamer Immink 
+|url=https://www.researchgate.net/publication/3234561
+|pages=751‚Äì764
+|access-date=2018-02-05
+}}</ref>
 
-== Photosynthesis in photic zone ==
-In the photic zone, the photosynthesis rate exceeds the respiration rate.  This is due to the abundant [[solar energy]] which is used as an energy source for photosynthesis by [[primary producers]] such as phytoplankton. These [[phytoplankton]] grow extremely quickly because of sunlight's heavy influence, enabling it to be produced at a fast rate. In fact, ninety five percent of photosynthesis in the ocean occurs in the photic zone. Therefore, if we go deeper, beyond the photic zone, such as into the [[compensation point]], there is little to no phytoplankton, because of insufficient sunlight.<ref>{{Cite book|title=Evolution of primary producers in the sea|date=2007|publisher=Elsevier Academic Press|others=Falkowski, Paul G., Knoll, Andrew H.|isbn=978-0-08-055051-0|location=Amsterdam|oclc=173661015}}</ref> The zone which extends from the base of the euphotic zone to about 200 meters is sometimes called the dysphotic zone.<ref>[http://www.britannica.com/EBchecked/topic/457662/photic-zone Photic zone] ''Encyclop√¶dia Britannica Online''. 14 August 2009.
+Common line encodings are [[Unipolar encoding|unipolar]], [[Polar encoding|polar]], [[Bipolar encoding|bipolar]], and [[Manchester code]].
+
+== Transmission and storage ==
+After line coding, the signal is put through a physical communication channel, either a [[transmission medium]] or [[data storage medium]].<ref name="paulsen">Karl Paulsen. [http://www.tvtechnology.com/media-servers/0150/coding-for-magnetic-storage-mediums/186738 "Coding for Magnetic Storage Mediums"] {{Webarchive|url=https://web.archive.org/web/20140521215946/http://www.tvtechnology.com/media-servers/0150/coding-for-magnetic-storage-mediums/186738 |date=2014-05-21 }}.2007.</ref><ref>{{citation|author1=Abdullatif Glass |author2=Nidhal Abdulaziz |author3=and Eesa Bastaki |url=http://ro.uow.edu.au/cgi/viewcontent.cgi?article=1285&context=dubaipapers|title=Slope line coding for telecommunication networks|year=2007|page=1537|journal=IEEE International Conference on Signal Processing and Communication|publisher=IEEE|location=Dubai|quote=Line codes ... facilitates the transmission of data over telecommunication and computer networks and its storage in multimedia systems.}}</ref> The most common physical channels are:
+* the line-coded signal can directly be put on a [[transmission line]], in the form of variations of the voltage or current (often using [[differential signaling]]).
+* the line-coded signal (the ''[[baseband]] signal'') undergoes further [[pulse shaping]] (to reduce its frequency bandwidth) and then is [[modulation|modulated]] (to shift its frequency) to create an ''[[RF signal]]'' that can be sent through free space.
+* the line-coded signal can be used to turn on and off a light source in [[free-space optical communication]], most commonly used in an infrared [[remote control]].
+* the line-coded signal can be printed on paper to create a [[bar code]].
+* the line-coded signal can be converted to magnetized spots on a [[hard drive]] or [[tape drive]].
+* the line-coded signal can be converted to pits on an [[optical disc]].
+
+Some of the more common binary line codes include:
+{| class="wikitable"
+|-
+! Signal !! Comments !! 1 state !! 0 state
+|-
+| NRZ‚ÄìL || [[Non-return-to-zero]] level. This is the standard positive logic signal format used in digital circuits.
+| forces a high level
+| forces a low level
+|-
+| NRZ‚ÄìM || Non-return-to-zero mark
+| forces a transition
+| does nothing (keeps sending the previous level)
+|-
+| NRZ‚ÄìS  || Non-return-to-zero space
+| does nothing (keeps sending the previous level)
+| forces a transition
+|-
+| RZ  || Return to zero
+| goes high for half the bit period and returns to low
+| stays low for the entire period
+|-
+| Biphase‚ÄìL  || Manchester. Two consecutive bits of the same type force a transition at the beginning of a bit period.
+| forces a negative transition in the middle of the bit
+| forces a positive transition in the middle of the bit
+|-
+| Biphase‚ÄìM || Variant of Differential Manchester. There is always a transition halfway between the conditioned transitions.
+| forces a transition
+| keeps level constant
+|-
+| Biphase‚ÄìS  || Differential Manchester used in Token Ring. There is always a transition halfway between the conditioned transitions.
+| keeps level constant
+| forces a transition
+|-
+| Differential Manchester (Alternative)|| Need a Clock, always a transition in the middle of the clock period
+| is represented by no transition.
+| is represented by a transition at the beginning of the clock period.
+|-
+| Bipolar || The positive and negative pulses alternate.
+| forces a positive or negative pulse for half the bit period
+| keeps a zero level during bit period
+|}
+
+[[File:Digital signal encoding formats-en.svg|framed|center|An arbitrary bit pattern in various binary line code formats]]
+
+Each line code has advantages and disadvantages. Line codes are chosen to meet one or more of the following criteria:
+* Minimize transmission hardware
+* Facilitate synchronization
+* Ease error detection and correction
+* Achieve a target [[spectral density]]
+* Eliminate a [[DC component]]
+
+== Disparity ==
+Most long-distance communication channels cannot reliably transport a [[DC component]]. The DC component is also called the ''disparity'', the ''bias'', or the [[DC coefficient]]. The disparity of a bit pattern is the difference in the number of one bits vs the number of zero bits. The ''running disparity'' is the [[running total]] of the disparity of all previously transmitted bits.<ref>{{cite document |author=Jens Kr√∂ger |url=https://www.psi.ch/mu3e/ThesesEN/BachelorKroeger.pdf |archive-url=https://ghostarchive.org/archive/20221009/https://www.psi.ch/mu3e/ThesesEN/BachelorKroeger.pdf |archive-date=2022-10-09 |url-status=live |title=Data Transmission at High Rates via Kapton Flexprints for the Mu3e Experiment |date=2014 |page=16}}</ref> The simplest possible line code, [[Unipolar encoding|unipolar]], gives too many errors on such systems, because it has an unbounded DC component.
+
+Most line codes eliminate the DC component{{snd}} such codes are called [[DC-balanced]], zero-DC, or DC-free. There are three ways of eliminating the DC component:
+
+* Use a [[constant-weight code]]. Each transmitted [[code word]] in a constant-weight code is designed such that every code word that contains some positive or negative levels also contains enough of the opposite levels, such that the average level over each code word is zero. Examples of constant-weight codes include [[Manchester code]] and [[Interleaved 2 of 5]].
+* Use a [[paired disparity code]]. Each code word in a paired disparity code that averages to a negative level is paired with another code word that averages to a positive level. The transmitter keeps track of the running DC buildup, and picks the code word that pushes the DC level back towards zero. The receiver is designed so that either code word of the pair decodes to the same data bits. Examples of paired disparity codes include [[alternate mark inversion]], [[8b/10b]] and [[4B3T]].
+* Use a [[scrambler]]. For example, the scrambler specified in {{IETF RFC | 2615}} for [[64b/66b encoding]].
+
+== Polarity ==
+Bipolar line codes have two polarities, are generally implemented as RZ, and have a radix of three since there are three distinct output levels (negative, positive and zero). One of the principle advantages of this type of code is that it can eliminate any DC component. This is important if the signal must pass through a transformer or a long transmission line.
+
+Unfortunately, several long-distance communication channels have polarity ambiguity. Polarity-insensitive line codes compensate in these channels.<ref>
+{{cite patent |inventor=Peter E. K. Chow. |url=https://www.google.com.ar/patents/US4387366 |country=US |number=4387366 |title=Code converter for polarity-insensitive transmission systems |pubdate=1983}}
+</ref><ref>
+{{citation |author=David A. Glanzer |publisher=[[Fieldbus Foundation]] |url=http://www.fieldbus.org/images/stories/enduserresources/technicalreferences/documents/wiringinstallationguide.pdf |archive-url=https://ghostarchive.org/archive/20221009/http://www.fieldbus.org/images/stories/enduserresources/technicalreferences/documents/wiringinstallationguide.pdf |archive-date=2022-10-09 |url-status=live |title=Fieldbus Application Guide ... Wiring and Installation |section=4.7 Polarity |page=10}}
+</ref><ref>
+{{cite book |author1=George C. Clark Jr. |author2=J. Bibb Cain |url=https://books.google.com/books?id=wgzyBwAAQBAJ |title=Error-Correction Coding for Digital Communications |date=2013 |page=255 |isbn=9781489921741 |publisher=Springer Science & Business Media |quote=When PSK data modulation is used, the potential exists for an ambiguity in the polarity of the received channel symbols. This problem can be solved in one of two ways. First ... a so-called ''transparent'' code. ...}}
+</ref><ref>
+{{cite book |author=Prakash C. Gupta |url=https://books.google.com/books?id=Zr1nAgAAQBAJ |title=Data Communications and Computer Networks |date=2013 |page=13 |isbn=9788120348646 |publisher=PHI Learning Pvt. Ltd. |quote=Another benefit of differential encoding is its insensitivity to polarity of the signal. ... If the leads of a twisted pair are accidentally reversed...}}
 </ref>
+There are three ways of providing unambiguous reception of 0 and 1 bits over such channels:
+* Pair each code word with the polarity-inverse of that code word. The receiver is designed so that either code word of the pair decodes to the same data bits. Examples include [[alternate mark inversion]], [[Differential Manchester encoding]], [[coded mark inversion]] and [[Miller encoding]].
+* [[differential coding]] each symbol relative to the previous symbol. Examples include [[MLT-3 encoding]] and [[NRZI]].
+* Invert the whole stream when inverted [[syncword]]s are detected
 
-== Life in the photic zone ==
-[[File:Light penetration zones in the water column.png|thumb|upright=1.1|left| Zones of the water column as defined by the amount of light penetration. The mesopelagic is sometimes referred to as the ''dysphotic zone''.]]
-[[File:Pelagiczone.svg|thumb|upright=0.74|right| Layers of the pelagic zone]]
+==Run-length limited codes==
+For reliable [[clock recovery]] at the receiver, a [[Run-length limited|run-length limitation]] may be imposed on the generated channel sequence, i.e., the maximum number of consecutive ones or zeros is bounded to a reasonable number. A clock period is recovered by observing transitions in the received sequence, so that a maximum run length guarantees sufficient transitions to assure clock recovery quality.
 
-Ninety percent of [[marine life]] lives in the photic zone, which is approximately two hundred meters deep. This includes phytoplankton (plants), including [[dinoflagellate]]s, [[diatom]]s, [[cyanobacteria]], [[coccolithophore]]s, and [[cryptomonad]]s. It also includes [[zooplankton]], the consumers in the photic zone. There are [[Carnivore|carnivorous]] meat eaters and [[herbivorous]] plant eaters. Next, [[copepod]]s are the small [[crustacean]]s distributed everywhere in the photic zone. Finally, there are [[nekton]] (animals that can propel themselves, like fish, squids, and crabs), which are the largest and the most obvious animals in the photic zone, but their quantity is the smallest among all the groups.<ref>{{Cite web|url=https://sciencing.com/trophic-levels-coral-reefs-5523723.html|title=Trophic Levels of Coral Reefs|website=Sciencing|access-date=2019-11-22}}</ref>
+RLL codes are defined by four main parameters: ''m'', ''n'', ''d'', ''k''. The first two, ''m''/''n'', refer to the rate of the code, while the remaining two specify the minimal ''d'' and maximal ''k'' number of zeroes between consecutive ones. This is used in both [[telecommunication]] and storage systems that move a medium past a fixed [[recording head]].<ref>{{Cite journal 
+|journal=Proceedings of the IEEE
+|volume=78 
+|issue=11 
+|date=December 1990 |title=Runlength-Limited Sequences
+|author=Kees Schouhamer Immink
+|author-link=Kees Schouhamer Immink 
+|url=https://www.researchgate.net/publication/2984369
+|pages=1745‚Äì1759
+|quote=A detailed description is furnished of the limiting properties of runlength limited sequences.
+ |doi=10.1109/5.63306}}</ref>
 
-The depth of the photic zone depends on the transparency of the water. If the water is very clear, the photic zone can become very deep. If it is very murky, it can be only fifty feet (fifteen meters) deep.
+Specifically, RLL bounds the length of stretches (runs) of repeated bits during which the signal does not change.  If the runs are too long, clock recovery is difficult; if they are too short, the high frequencies might be attenuated by the communications channel.  By [[Modulation|modulating]] the [[data]], RLL reduces the timing uncertainty in decoding the stored data, which would lead to the possible erroneous insertion or removal of bits when reading the data back. This mechanism ensures that the boundaries between bits can always be accurately found (preventing [[bit slip]]), while efficiently using the media to reliably store the maximal amount of data in a given space.
 
-== Nutrients uptake in the photic zone ==
-Due to biological uptake, the photic zone has relatively low levels of nutrient concentrations. As a result, phytoplankton doesn't receive enough nutrients when there is high water-column stability.<ref>{{Cite book|chapter=Photic zone|work=SpringerReference|publisher=Springer-Verlag|doi=10.1007/springerreference_4643|title=Springer ''Reference''|year=2011}}</ref> The [[spatial distribution]] of organisms can be controlled by a number of factors. Physical factors include: temperature, hydrostatic pressure, turbulent mixing such as the upward [[Turbulence|turbulent flux]] of inorganic nitrogen across the nutricline.<ref>{{Cite journal|last1=Longhurst|first1=Alan R.|last2=Glen Harrison|first2=W.|date=June 1988|title=Vertical nitrogen flux from the oceanic photic zone by diel migrant zooplankton and nekton|journal=Deep Sea Research Part A. Oceanographic Research Papers|volume=35|issue=6|pages=881‚Äì889|doi=10.1016/0198-0149(88)90065-9|bibcode=1988DSRA...35..881L|issn=0198-0149}}</ref> Chemical factors include oxygen and trace elements.  Biological factors include grazing and migrations.<ref>{{Cite journal|last1=Gundersen|first1=K.|last2=Mountain|first2=C. W.|last3=Taylor|first3=Diane|last4=Ohye|first4=R.|last5=Shen|first5=J.|date=July 1972|journal=Limnology and Oceanography|volume=17|issue=4|pages=524‚Äì532|doi=10.4319/lo.1972.17.4.0524|issn=0024-3590|title=Some Chemical and Microbiological Observations in the Pacific Ocean off the Hawaiian Islands1|bibcode=1972LimOc..17..524G|doi-access=free}}</ref> Upwelling carries nutrients from the deep waters into the photic zone, strengthening phytoplankton growth. The remixing and upwelling eventually bring nutrient-rich wastes back into the photic zone. The [[Ekman transport]] additionally brings more nutrients to the photic zone. Nutrient pulse frequency affects the phytoplankton competition. Photosynthesis produces more of it. Being the first link in the food chain, what happens to phytoplankton creates a rippling effect for other species. Besides phytoplankton, many other animals also live in this zone and utilize these nutrients. The majority of ocean life occurs in the photic zone, the smallest ocean zone by water volume. The photic zone, although small, has a large impact on those who reside in it.
+Early disk drives used very simple encoding schemes, such as RLL (0,1) FM code, followed by RLL (1,3) MFM code which were widely used in [[hard disk drive]]s until the mid-1980s and are still used in digital optical discs such as [[CD]], [[DVD]], [[Minidisc|MD]], [[Hi-MD]] and [[Blu-ray]] using [[Eight-to-Fourteen Modulation|EFM]] and [[EFMPLus]] codes.<ref>{{Cite journal 
+|journal=IEEE Transactions on Consumer Electronics
+|volume=CE-41 
+|date=1995
+|title=EFMPlus: The Coding Format of the MultiMedia Compact Disc
+|author=Kees Schouhamer Immink
+|author-link=Kees Schouhamer Immink 
+|url=https://www.researchgate.net/publication/3179483
+|pages=491‚Äì497
+|quote=A high-density alternative to EFM is described.}}</ref> Higher density RLL (2,7) and RLL (1,7) codes became the [[de facto standard]]s for hard disks by the early 1990s.{{citation needed|date=August 2019}}
 
-== Photic zone depth ==
-The depth is, by definition, where radiation is degraded down to 1% of its surface strength.<ref>{{Cite journal|last1=Lee|first1=ZhongPing|last2=Weidemann|first2=Alan|last3=Kindle|first3=John|last4=Arnone|first4=Robert|last5=Carder|first5=Kendall L.|last6=Davis|first6=Curtiss|date=2007|title=Euphotic zone depth: Its derivation and implication to ocean-color remote sensing|journal=Journal of Geophysical Research: Oceans|volume=112|issue=C3|pages=C03009|doi=10.1029/2006JC003802|bibcode=2007JGRC..112.3009L|issn=2156-2202|url=https://scholarcommons.usf.edu/msc_facpub/11}}</ref> Accordingly, its thickness depends on the extent of light [[attenuation]] in the water column. As incoming light at the surface can vary widely, this says little about the net growth of  phytoplankton. Typical euphotic depths vary from only a few centimetres in highly [[turbidity|turbid]] [[eutrophic]] lakes, to around 200 meters in the open [[ocean]]. It also varies with seasonal changes in turbidity, which can be strongly driven by [[phytoplankton]] concentrations, such that the depth of the photic zone often decreases as [[primary production]] increases. Moreover, the [[respiration rate]] is actually greater than the photosynthesis rate. The reason why phytoplankton production is so important is because it plays a prominent role when interwoven with other [[food web]]s.
+== Synchronization ==
+{{main|Clock recovery}}
 
-==Light attenuation==
-[[File:Linear visible spectrum.svg|thumb|upright=2| {{center|Phytoplankton growth is affected by the colour spectrum of light,<br />and in the process called [[photosynthesis]] absorb light<br />in the blue and red range through [[photosynthetic pigment]]s}}]]
-[[File:NOAA Deep Light diagram3.jpg|thumb|upright=1.1|right| Comparison of the depths which different colors of light penetrate open ocean waters and the murkier coastal waters. Water absorbs the warmer long wavelengths colours, like reds and oranges, and scatter the cooler short wavelength colours.<ref>[https://oceanexplorer.noaa.gov/explorations/04deepscope/background/deeplight/media/diagram3.html Ocean Explorer] NOAA. Updated: 26 August 2010.</ref>]]
+Line coding should make it possible for the receiver to synchronize itself to the [[Phase (waves)|phase]] of the received signal. If the clock recovery is not ideal, then the signal to be decoded will not be sampled at the optimal times. This will increase the probability of error in the received data.
 
-Most of the solar energy reaching the Earth is in the range of visible light, with wavelengths between about 400-700 nm. Each colour of visible light has a unique wavelength, and together they make up white light. The shortest wavelengths are on the violet and ultraviolet end of the spectrum, while the longest wavelengths are at the red and infrared end. In between, the colours of the visible spectrum comprise the familiar ‚ÄúROYGBIV‚Äù; red, orange, yellow, green, blue, indigo, and violet.<ref name=Webb2019>Webb, Paul (2019) [https://rwu.pressbooks.pub/webboceanography/chapter/6-5-light/ ''Introduction to Oceanography''], chapter 6.5 Light, Rebus Community, Roger Williams University, open textbook. [[File:CC-BY icon.svg|50px]] Material was copied from this source, which is available under a [https://creativecommons.org/licenses/by/4.0/ Creative Commons Attribution 4.0 International License].</ref>
+Biphase line codes require at least one transition per bit time. This makes it easier to synchronize the transceivers and detect errors, however, the baud rate is greater than that of NRZ codes.
 
-Water is very effective at absorbing incoming light, so the amount of light penetrating the ocean declines rapidly (is attenuated) with depth. At one metre depth only 45% of the solar energy that falls on the ocean surface remains. At 10 metres depth only 16% of the light is still present, and only 1% of the original light is left at 100 metres. No light penetrates beyond 1000 metres.<ref name=Webb2019 />
+== Other considerations ==
+A line code will typically reflect technical requirements of the transmission medium, such as [[optical fiber]] or [[shielded twisted pair]].  These requirements are unique for each medium, because each one has different behavior related to interference, distortion, capacitance and attenuation.<ref>{{Cite book|url=https://books.google.com/books?id=On_Hh23IXDUC&pg=PA284 |title=Network Dictionary |last=Dong |first=Jielin |date=2007 |publisher=Javvin Technologies Inc. |isbn=9781602670006 |language=en |page=284}}</ref>
 
-In addition to overall attenuation, the oceans absorb the different wavelengths of light at different rates. The wavelengths at the extreme ends of the visible spectrum are attenuated faster than those wavelengths in the middle. Longer wavelengths are absorbed first; red is absorbed in the upper 10 metres, orange by about 40 metres, and yellow disappears before 100 metres. Shorter wavelengths penetrate further, with blue and green light reaching the deepest depths.<ref name=Webb2019 />
+== Common line codes ==
+{{Div col|colwidth=30em}}
+* [[2B1Q]]
+* [[4B3T]]
+* [[4B5B]]
+* [[6b/8b encoding]]
+* [[8b/10b encoding]]
+* [[64b/66b encoding]]
+* [[128b/130b encoding]]
+* [[Alternate mark inversion]] (AMI)
+* [[Coded mark inversion]] (CMI)
+* [[EFMPlus]], used in [[DVD]]s
+* [[Eight-to-fourteen modulation]] (EFM), used in [[compact disc]]s
+* [[Hamming code]]
+* [[Hybrid ternary code]]
+* [[Manchester code]] and [[Differential Manchester encoding|differential Manchester]]
+* [[Mark and space]]
+* [[MLT-3 encoding]]
+* [[Modified AMI code]]s: B8ZS, B6ZS, B3ZS, HDB3
+* [[Modified frequency modulation]], Miller encoding and delay encoding
+* [[Non-return-to-zero]] (NRZ)
+* [[Non-return-to-zero, inverted]] (NRZI)
+* [[Pulse-position modulation]]
+* [[Return-to-zero]] (RZ)
+* [[TC-PAM]]
+{{div col end}}
 
-This is why things appear blue underwater. How colours are perceived by the eye depends on the wavelengths of light that are received by the eye. An object appears red to the eye because it reflects red light and absorbs other colours. So the only colour reaching the eye is red. Blue is the only colour of light available at depth underwater, so it is the only colour that can be reflected back to the eye, and everything has a blue tinge under water. A red object at depth will not appear red to us because there is no red light available to reflect off of the object. Objects in water will only appear as their real colours near the surface where all wavelengths of light are still available, or if the other wavelengths of light are provided artificially, such as by illuminating the object with a dive light.<ref name=Webb2019 />
+===Optical line codes===
+* [[Alternate-Phase Return-to-Zero]] (APRZ)
+* [[Carrier-Suppressed Return-to-Zero]] (CSRZ)
+* [[IEEE 1355#Slice: TS-FO-02|Three of Six, Fiber Optical]] (TS-FO)
 
-Water in the [[open ocean]] appears clear and blue because it contains much less [[particulate matter]], such as phytoplankton or other suspended particles, and the clearer the water, the deeper the light penetration. Blue light penetrates deeply and is scattered by the water molecules, while all other colours are absorbed; thus the water appears blue. On the other hand, [[Neritic zone|coastal water]] often appears greenish. Coastal water contains much more suspended [[silt]] and [[algae]] and [[Marine microorganism|microscopic organisms]] than the open ocean. Many of these organisms, such as phytoplankton, absorb light in the blue and red range through their photosynthetic pigments, leaving green as the dominant wavelength of reflected light. Therefore the higher the phytoplankton concentration in water, the greener it appears. Small silt particles may also absorb blue light, further shifting the colour of water away from blue when there are high concentrations of suspended particles.<ref name=Webb2019 />
+== See also ==
+* [[Physical layer]]
+* [[Self-synchronizing code]] and bit synchronization
 
-The ocean can be divided into depth layers depending on the amount of light penetration, as discussed in [[pelagic zone]]. The upper 200 metres is referred to as the photic or euphotic zone. This represents the region where enough light can penetrate to support photosynthesis, and it corresponds to the epipelagic zone. From 200 to 1000 metres lies the dysphotic zone, or the twilight zone (corresponding with the mesopelagic zone). There is still some light at these depths, but not enough to support photosynthesis. Below 1000 metres is the aphotic (or midnight) zone, where no light penetrates. This region includes the majority of the ocean volume, which exists in complete darkness.<ref name=Webb2019 />
+== References ==
+{{reflist}}
+* {{FS1037C MS188}}
 
-==Paleoclimatology==
-[[File:Triceratium morlandii var. morlandii.jpg|thumb| {{center|Intricate silicate (glass) shell, 32-40 million years old, of a [[diatom]] microfossil}}]]
-{{further|diatoms|microfossils}}
+==External links==
+* [https://web.archive.org/web/20130418052107/http://www.electronics.dit.ie/staff/amoloney/lecture-9.pdf Line Coding Lecture No. 9] 
+* [http://www.fiberoptics4sale.com/wordpress/line-coding-in-digital-communication/ Line Coding in Digital Communication]
+* [https://www.ac.uma.es/~guille/codsim2.0/ CodSim 2.0: Open source simulator for Digital Data Communications Model at the University of Malaga written in HTML]
 
-[[Phytoplankton]] are [[unicellular]] [[Marine microorganisms|microorganisms]] which form the base of the [[ocean food chain]]s. They are dominated by [[diatom]]s, which grow silicate shells called [[frustule]]s. When diatoms die their shells can settle on the [[seafloor]] and become [[microfossil]]s. Over time, these microfossils become buried as [[opal]] deposits in the [[marine sediment]]. [[Paleoclimatology]] is the study of past climates. [[Proxy data]] is used in order to relate elements collected in modern-day sedimentary samples to climatic and oceanic conditions in the past. [[Paleoclimate proxies]] refer to preserved or fossilized physical markers which serve as substitutes for direct meteorological or ocean measurements.<ref>{{Cite web|title=What Are "Proxy" Data? {{!}} National Centers for Environmental Information (NCEI) formerly known as National Climatic Data Center (NCDC)|url=https://www.ncdc.noaa.gov/news/what-are-proxy-data|access-date=2020-10-20|website=www.ncdc.noaa.gov}}</ref> An example of proxies is the use of [[diatom]] [[marine isotope stage|isotope records]] of [[Œ¥13C]], [[Œ¥18O]], [[Isotopes of silicon|Œ¥30Si]] (Œ¥13C<sub>diatom</sub>, Œ¥18O<sub>diatom</sub>, and Œ¥30Si<sub>diatom</sub>). In 2015, Swann and Snelling used these isotope records to document historic changes in the photic zone conditions of the north-west [[Pacific Ocean]], including nutrient supply and the efficiency of the soft-tissue [[biological pump]], from the modern day back to [[Marine Isotope Stage 5#Marine Isotope Stage (MIS) 5e|marine isotope stage 5e]], which coincides with the [[Eemian|last interglacial period]]. Peaks in opal productivity in the marine isotope stage are associated with the breakdown of the regional [[Halocline|halocline stratification]] and increased nutrient supply to the photic zone.<ref name=Swann2015>{{cite journal | last1=Swann | first1=G. E. A. | last2=Snelling | first2=A. M. | title=Photic zone changes in the north-west Pacific Ocean from MIS 4‚Äì5e | journal=Climate of the Past | publisher=Copernicus GmbH | volume=11 | issue=1 | date=2015-01-06 | issn=1814-9332 | doi=10.5194/cp-11-15-2015 | pages=15‚Äì25| bibcode=2015CliPa..11...15S }} [[File:CC-BY icon.svg|50px]] Material was copied from this source, which is available under a [https://creativecommons.org/licenses/by/3.0/ Creative Commons Attribution 3.0 International License].</ref>
+{{Bit-encoding}}
 
-<gallery mode=packed style=float:left heights=220px>
-File:Ocean changes from the last interglacial to the modern day A.png
-File:Ocean changes from the last interglacial to the modern day B.png
-</gallery>
-{{clear}}
-
-The initial development of the halocline and [[Stratification (water)|stratified water column]] has been attributed to the onset of major [[W√ºrm glaciation|Northern Hemisphere glaciation]] at 2.73 Ma, which increased the flux of freshwater to the region, via increased monsoonal rainfall and/or glacial meltwater, and sea surface temperatures.<ref>{{cite journal | last1=Sigman | first1=Daniel M. | last2=Jaccard | first2=Samuel L. | last3=Haug | first3=Gerald H. | title=Polar ocean stratification in a cold climate | journal=Nature | publisher=Springer Science and Business Media LLC | volume=428 | issue=6978 | year=2004 | issn=0028-0836 | doi=10.1038/nature02357 | pages=59‚Äì63| pmid=14999278 | bibcode=2004Natur.428...59S | s2cid=4329978 | url=https://gfzpublic.gfz-potsdam.de/pubman/item/item_230448 }}</ref><ref name=Haug2005>{{cite journal | last1=Haug | first1=Gerald H. | last2=Ganopolski | first2=Andrey | last3=Sigman | first3=Daniel M. | last4=Rosell-Mele | first4=Antoni | last5=Swann | first5=George E. A. | last6=Tiedemann | first6=Ralf | last7=Jaccard | first7=Samuel L. | last8=Bollmann | first8=J√∂rg | last9=Maslin | first9=Mark A. | last10=Leng | first10=Melanie J. | last11=Eglinton | first11=Geoffrey | title=North Pacific seasonality and the glaciation of North America 2.7 million years ago | journal=Nature | publisher=Springer Science and Business Media LLC | volume=433 | issue=7028 | year=2005 | issn=0028-0836 | doi=10.1038/nature03332 | pages=821‚Äì825| pmid=15729332 | bibcode=2005Natur.433..821H | s2cid=24116155 | url=https://gfzpublic.gfz-potsdam.de/pubman/item/item_231798 }}</ref><ref>{{cite journal | last1=Swann | first1=George E. A. | last2=Maslin | first2=Mark A. | last3=Leng | first3=Melanie J. | last4=Sloane | first4=Hilary J. | last5=Haug | first5=Gerald H. | title=Diatom Œ¥18O evidence for the development of the modern halocline system in the subarctic northwest Pacific at the onset of major Northern Hemisphere glaciation | journal=Paleoceanography | publisher=American Geophysical Union (AGU) | volume=21 | issue=1 | date=2006-02-24 | issn=0883-8305 | doi=10.1029/2005pa001147 | pages=n/a| bibcode=2006PalOc..21.1009S }}</ref><ref name=Nie2008>{{cite journal | last1=Nie | first1=Junsheng | last2=King | first2=John | last3=Liu | first3=Zhengyu | last4=Clemens | first4=Steve | last5=Prell | first5=Warren | last6=Fang | first6=Xiaomin | title=Surface-water freshening: A cause for the onset of North Pacific stratification from 2.75 Ma onward? | journal=Global and Planetary Change | publisher=Elsevier BV | volume=64 | issue=1‚Äì2 | year=2008 | issn=0921-8181 | doi=10.1016/j.gloplacha.2008.08.003 | pages=49‚Äì52| bibcode=2008GPC....64...49N }}</ref> The decrease of [[abyssal]] water upwelling associated with this may have contributed to the establishment of globally cooler conditions and the expansion of glaciers across the Northern Hemisphere from 2.73 Ma.<ref name=Haug2005 /> While the halocline appears to have prevailed through the [[late Pliocene]] and [[Gelasian|early Quaternary]] [[glacial cycle|glacial‚Äìinterglacial cycles]],<ref>{{cite journal | last=Swann | first=George E.A. | title=Salinity changes in the North West Pacific Ocean during the late Pliocene/early Quaternary from 2.73Ma to 2.52Ma | journal=Earth and Planetary Science Letters | publisher=Elsevier BV | volume=297 | issue=1‚Äì2 | year=2010 | issn=0012-821X | doi=10.1016/j.epsl.2010.06.035 | pages=332‚Äì338| bibcode=2010E&PSL.297..332S | url=http://nora.nerc.ac.uk/id/eprint/11147/1/swann_et_al_2010.pdf |archive-url=https://ghostarchive.org/archive/20221009/http://nora.nerc.ac.uk/id/eprint/11147/1/swann_et_al_2010.pdf |archive-date=2022-10-09 |url-status=live }}</ref> other studies have shown that the stratification boundary may have broken down in the [[late Quaternary]] at glacial terminations and during the early part of interglacials.<ref>{{cite journal | last1=Sarnthein | first1=M. | last2=Gebhardt | first2=H. | last3=Kiefer | first3=T. | last4=Kucera | first4=M. | last5=Cook | first5=M. | last6=Erlenkeuser | first6=H. | title=Mid Holocene origin of the sea-surface salinity low in the subarctic North Pacific | journal=Quaternary Science Reviews | publisher=Elsevier BV | volume=23 | issue=20‚Äì22 | year=2004 | issn=0277-3791 | doi=10.1016/j.quascirev.2004.08.008 | pages=2089‚Äì2099| bibcode=2004QSRv...23.2089S }}</ref><ref>{{cite journal | last1=Jaccard | first1=S.L. | last2=Galbraith | first2=E.D. | last3=Sigman | first3=D.M. | last4=Haug | first4=G.H. | title=A pervasive link between Antarctic ice core and subarctic Pacific sediment records over the past 800kyrs | journal=Quaternary Science Reviews | publisher=Elsevier BV | volume=29 | issue=1‚Äì2 | year=2010 | issn=0277-3791 | doi=10.1016/j.quascirev.2009.10.007 | pages=206‚Äì212| bibcode=2010QSRv...29..206J }}</ref><ref>{{cite journal | last1=Galbraith | first1=Eric D. | last2=Kienast | first2=Markus | last3=Jaccard | first3=Samuel L. | last4=Pedersen | first4=Thomas F. | last5=Brunelle | first5=Brigitte G. | last6=Sigman | first6=Daniel M. | last7=Kiefer | first7=Thorsten | title=Consistent relationship between global climate and surface nitrate utilization in the western subarctic Pacific throughout the last 500 ka | journal=Paleoceanography | publisher=American Geophysical Union (AGU) | volume=23 | issue=2 | date=2008-05-23 | issn=0883-8305 | doi=10.1029/2007pa001518 | pages=n/a| bibcode=2008PalOc..23.2212G | s2cid=4082469 | url=https://archimer.ifremer.fr/doc/00237/34840/ }}</ref><ref>{{cite journal | last1=Brunelle | first1=Brigitte G. | last2=Sigman | first2=Daniel M. | last3=Jaccard | first3=Samuel L. | last4=Keigwin | first4=Lloyd D. | last5=Plessen | first5=Birgit | last6=Schettler | first6=Georg | last7=Cook | first7=Mea S. | last8=Haug | first8=Gerald H. | title=Glacial/interglacial changes in nutrient supply and stratification in the western subarctic North Pacific since the penultimate glacial maximum | journal=Quaternary Science Reviews | publisher=Elsevier BV | volume=29 | issue=19‚Äì20 | year=2010 | issn=0277-3791 | doi=10.1016/j.quascirev.2010.03.010 | pages=2579‚Äì2590| bibcode=2010QSRv...29.2579B }}</ref><ref>{{cite journal | last1=Kohfeld | first1=Karen E. | last2=Chase | first2=Zanna | title=Controls on deglacial changes in biogenic fluxes in the North Pacific Ocean | journal=Quaternary Science Reviews | publisher=Elsevier BV | volume=30 | issue=23‚Äì24 | year=2011 | issn=0277-3791 | doi=10.1016/j.quascirev.2011.08.007 | pages=3350‚Äì3363| bibcode=2011QSRv...30.3350K }}</ref><ref name=Swann2015 />
-
-==See also==
-* [[Mesophotic coral reef]]
-* [[Electromagnetic absorption by water]]
-* [[Epipelagic fish]]
-
-==References==
-{{Reflist}}
-
-{{aquatic ecosystem topics|state=expanded}}
-{{physical oceanography|expanded=none}}
-
-[[Category:Aquatic ecology]]
-[[Category:Oceanographical terminology]]
+[[Category:Line codes|*]]
+[[Category:Physical layer protocols]]
+[[Category:Coding theory]]JèIn telecommunication, a line code is a pattern of voltage, current, or photons used to represent digital data transmitted down a communication channel or written to a storage medium. This repertoire of signals is usually called a constrained code in data storage systems.JÆSome signals are more prone to error than others as the physics of the communication channel or storage medium constrains the repertoire of signals that can be used reliably.JHCommon line encodings are unipolar, polar, bipolar, and Manchester code.JTransmission and storageJæAfter line coding, the signal is put through a physical communication channel, either a transmission medium or data storage medium.Karl Paulsen. .2007. The most common physical channels are:J˛* the line-coded signal can directly be put on a transmission line, in the form of variations of the voltage or current (often using differential signaling).
+* the line-coded signal (the baseband signal) undergoes further pulse shaping (to reduce its frequency bandwidth) and then is modulated (to shift its frequency) to create an RF signal that can be sent through free space.
+* the line-coded signal can be used to turn on and off a light source in free-space optical communication, most commonly used in an infrared remote control.
+* the line-coded signal can be printed on paper to create a bar code.
+* the line-coded signal can be converted to magnetized spots on a hard drive or tape drive.
+* the line-coded signal can be converted to pits on an optical disc.J2Some of the more common binary line codes include:JuEach line code has advantages and disadvantages. Line codes are chosen to meet one or more of the following criteria:J¢* Minimize transmission hardware
+* Facilitate synchronization
+* Ease error detection and correction
+* Achieve a target spectral density
+* Eliminate a DC componentJ	DisparityJÊMost long-distance communication channels cannot reliably transport a DC component. The DC component is also called the disparity, the bias, or the DC coefficient. The disparity of a bit pattern is the difference in the number of one bits vs the number of zero bits. The running disparity is the running total of the disparity of all previously transmitted bits. The simplest possible line code, unipolar, gives too many errors on such systems, because it has an unbounded DC component.JòMost line codes eliminate the DC component such codes are called DC-balanced, zero-DC, or DC-free. There are three ways of eliminating the DC component:Jç* Use a constant-weight code. Each transmitted code word in a constant-weight code is designed such that every code word that contains some positive or negative levels also contains enough of the opposite levels, such that the average level over each code word is zero. Examples of constant-weight codes include Manchester code and Interleaved 2 of 5.
+* Use a paired disparity code. Each code word in a paired disparity code that averages to a negative level is paired with another code word that averages to a positive level. The transmitter keeps track of the running DC buildup, and picks the code word that pushes the DC level back towards zero. The receiver is designed so that either code word of the pair decodes to the same data bits. Examples of paired disparity codes include alternate mark inversion, 8b/10b and 4B3T.
+* Use a scrambler. For example, the scrambler specified in for 64b/66b encoding.JPolarityJÎBipolar line codes have two polarities, are generally implemented as RZ, and have a radix of three since there are three distinct output levels (negative, positive and zero). One of the principle advantages of this type of code is that it can eliminate any DC component. This is important if the signal must pass through a transformer or a long transmission line.JíUnfortunately, several long-distance communication channels have polarity ambiguity. Polarity-insensitive line codes compensate in these channels.J[There are three ways of providing unambiguous reception of 0 and 1 bits over such channels:J¬* Pair each code word with the polarity-inverse of that code word. The receiver is designed so that either code word of the pair decodes to the same data bits. Examples include alternate mark inversion, Differential Manchester encoding, coded mark inversion and Miller encoding.
+* differential coding each symbol relative to the previous symbol. Examples include MLT-3 encoding and NRZI.
+* Invert the whole stream when inverted syncwords are detectedJRun-length limited codesJˇFor reliable clock recovery at the receiver, a run-length limitation may be imposed on the generated channel sequence, i.e., the maximum number of consecutive ones or zeros is bounded to a reasonable number. A clock period is recovered by observing transitions in the received sequence, so that a maximum run length guarantees sufficient transitions to assure clock recovery quality.JøRLL codes are defined by four main parameters: m, n, d, k. The first two, m/n, refer to the rate of the code, while the remaining two specify the minimal d and maximal k number of zeroes between consecutive ones. This is used in both telecommunication and storage systems that move a medium past a fixed recording head.JíSpecifically, RLL bounds the length of stretches (runs) of repeated bits during which the signal does not change. If the runs are too long, clock recovery is difficult; if they are too short, the high frequencies might be attenuated by the communications channel. By modulating the data, RLL reduces the timing uncertainty in decoding the stored data, which would lead to the possible erroneous insertion or removal of bits when reading the data back. This mechanism ensures that the boundaries between bits can always be accurately found (preventing bit slip), while efficiently using the media to reliably store the maximal amount of data in a given space.JãEarly disk drives used very simple encoding schemes, such as RLL (0,1) FM code, followed by RLL (1,3) MFM code which were widely used in hard disk drives until the mid-1980s and are still used in digital optical discs such as CD, DVD, MD, Hi-MD and Blu-ray using EFM and EFMPLus codes. Higher density RLL (2,7) and RLL (1,7) codes became the de facto standards for hard disks by the early 1990s.JSynchronizationJùLine coding should make it possible for the receiver to synchronize itself to the phase of the received signal. If the clock recovery is not ideal, then the signal to be decoded will not be sampled at the optimal times. This will increase the probability of error in the received data.J¬Biphase line codes require at least one transition per bit time. This makes it easier to synchronize the transceivers and detect errors, however, the baud rate is greater than that of NRZ codes.JOther considerationsJûA line code will typically reflect technical requirements of the transmission medium, such as optical fiber or shielded twisted pair. These requirements are unique for each medium, because each one has different behavior related to interference, distortion, capacitance and attenuation.JCommon line codesJ”* 2B1Q
+* 4B3T
+* 4B5B
+* 6b/8b encoding
+* 8b/10b encoding
+* 64b/66b encoding
+* 128b/130b encoding
+* Alternate mark inversion (AMI)
+* Coded mark inversion (CMI)
+* EFMPlus, used in DVDs
+* Eight-to-fourteen modulation (EFM), used in compact discs
+* Hamming code
+* Hybrid ternary code
+* Manchester code and differential Manchester
+* Mark and space
+* MLT-3 encoding
+* Modified AMI codes: B8ZS, B6ZS, B3ZS, HDB3
+* Modified frequency modulation, Miller encoding and delay encoding
+* Non-return-to-zero (NRZ)
+* Non-return-to-zero, inverted (NRZI)
+* Pulse-position modulation
+* Return-to-zero (RZ)
+* TC-PAMJOptical line codesJx* Alternate-Phase Return-to-Zero (APRZ)
+* Carrier-Suppressed Return-to-Zero (CSRZ)
+* Three of Six, Fiber Optical (TS-FO)JSee alsoJB* Physical layer
+* Self-synchronizing code and bit synchronizationJ
+ReferencesJExternal links

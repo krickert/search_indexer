@@ -1,175 +1,405 @@
 
-41641Reflection coefficient¬AIn physics and electrical engineering the reflection coefficient is a parameter that describes how much of a wave is reflected by an impedance discontinuity in the transmission medium.  It is equal to the ratio of the amplitude of the reflected wave to the incident wave, with each expressed as phasors.  For example, it is used in optics to calculate the amount of light that is reflected from a surface with a different index of refraction, such as a glass surface, or in an electrical transmission line to calculate how much of the electromagnetic wave is reflected by an impedance discontinuity. The reflection coefficient is closely related to the transmission coefficient. The reflectance of a system is also sometimes called a "reflection coefficient".
+41586Propagation constant†ZThe propagation constant of a sinusoidal electromagnetic wave is a measure of the change undergone by the amplitude and phase of the wave as it propagates in a given direction. The quantity being measured can be the voltage, the current in a circuit, or a field vector such as electric field strength or flux density. The propagation constant itself measures the change per unit length, but it is otherwise dimensionless. In the context of two-port networks and their cascades, propagation constant measures the change undergone by the source quantity as it propagates from one port to the next.
 
-Different specialties have different applications for the term.
+The propagation constant's value is expressed logarithmically, almost universally to the base e, rather than the more usual base 10 that is used in telecommunications in other situations. The quantity measured, such as voltage, is expressed as a sinusoidal phasor. The phase of the sinusoid varies with distance which results in the propagation constant being a complex number, the imaginary part being caused by the phase change.
 
-Transmission lines 
+Alternative names
 
-In telecommunications and transmission line theory, the reflection coefficient is the ratio of the complex amplitude of the reflected wave to that of the incident wave.  The voltage and current at any point along a transmission line can always be resolved into forward and reflected traveling waves given a specified reference impedance Z0. The reference impedance used is typically the characteristic impedance of a transmission line that's involved, but one can speak of reflection coefficient without  any actual transmission line being present. In terms of the forward and reflected waves determined by the voltage and current, the reflection coefficient is defined as the complex ratio of the voltage of the reflected wave (V^-) to that of the incident wave (V^+). This is typically represented with a \Gamma (capital gamma) and can be written as:
+The term "propagation constant" is somewhat of a misnomer as it usually varies strongly with œâ.  It is probably the most widely used term but there are a large variety of alternative names used by various authors for this quantity.  These include transmission parameter, transmission function, propagation parameter, propagation coefficient and transmission constant.  If the plural is used, it suggests that Œ± and Œ≤ are being referenced separately but collectively as in transmission parameters, propagation parameters, etc.  In transmission line theory, Œ± and Œ≤  are counted among the "secondary coefficients", the term secondary being used to contrast to the primary line coefficients.  The primary coefficients are the physical properties of the line, namely R,C,L and G, from which the secondary coefficients may be derived using the telegrapher's equation.  Note that in the field of transmission lines, the term transmission coefficient has a different meaning despite the similarity of name: it is the companion of the reflection coefficient.
 
-\Gamma = \frac{V^-}{V^+} 
+Definition
 
-It can as well be defined using the currents associated with the reflected and forward waves, but introducing a minus sign to account for the opposite orientations of the two currents:
+The propagation constant, symbol {\gamma}, for a given system is defined by the ratio of the complex amplitude at the source of the wave to the complex amplitude at some distance x, such that,
 
-\Gamma -\frac{I^-}{I^+}  
- \frac{V^-}{V^+} 
+\frac{A_0}{A_x}=e^{\gamma x}
 
-The reflection coefficient may also be established using other field or circuit pairs of quantities whose product defines power resolvable into a forward and reverse wave. For instance, with electromagnetic plane waves, one uses the ratio of the electric fields of the reflected to that of the forward wave (or magnetic fields, again with a minus sign); the ratio of each wave's electric field E to its magnetic field H is again an impedance Z0 (equal to the impedance of free space in a vacuum). Similarly in acoustics one uses the acoustic pressure and velocity respectively.
+Since the propagation constant is a complex quantity we can write:
 
-In the accompanying figure, a signal source with internal impedance Z_S possibly followed by a transmission line of characteristic impedance Z_S is represented by its Th√©venin equivalent, driving the load Z_L. For a real (resistive) source impedance Z_S, if we define \Gamma using the reference impedance Z_0 Z_S then the source's maximum power is delivered to a load Z_L 
- Z_0, in which case \Gamma=0 implying no reflected power. More generally, the squared-magnitude of the reflection coefficient |\Gamma|^2  denotes the proportion of that power that is "reflected" and absorbed by the source, with the power actually delivered to the load being 1-|\Gamma|^2.
+\gamma = \alpha +i \beta \,
+where
+* Œ±, the real part, is called the attenuation constant
+* Œ≤, the imaginary part, is called the phase constant
 
-Anywhere along an intervening (lossless) transmission line of characteristic impedance Z_0, the magnitude of the reflection coefficient |\Gamma| will remain the same (the powers of the forward and reflected waves stay the same) but with a different phase. In the case of a short circuited load (Z_L0), one finds \Gamma
--1 at the load. This implies the reflected wave having a 180¬∞ phase shift (phase reversal) with the voltages of the two waves being opposite at that point and adding to zero (as a short circuit demands).
+That Œ≤ does indeed represent phase can be seen from Euler's formula:
 
-Relation to load impedance 
+e^{i\theta}=\cos{\theta}+i\sin{\theta}\,\!
 
-The reflection coefficient is determined by the load impedance at the end of the transmission line, as well as the characteristic impedance of the line. A load impedance of Z_L terminating a line with a characteristic impedance of Z_0\, will have a reflection coefficient of
+which is a sinusoid which varies in phase as Œ∏ varies but does not vary in amplitude because
 
-  \Gamma ={Z_L-Z_0  \over Z_L+Z_0} .
+\left|e^{i\theta}\right|\sqrt{\cos^2{\theta}+\sin^2{\theta}}
+1
 
-This is the coefficient at the load.  The reflection coefficient can also be measured at other points on the line.  The magnitude of the reflection coefficient in a lossless transmission line is constant along the line (as are the powers in the forward and reflected waves). However its phase will be shifted by an amount dependent on the electrical distance \phi from the load.  If the coefficient is measured at a point L meters from the load, so the electrical distance from the load is \phi = 2\pi L/\lambda radians, the coefficient \Gamma' at that point will be 
+The reason for the use of base e is also now made clear.  The imaginary phase constant, iŒ≤, can be added directly to the attenuation constant, Œ±, to form a single complex number that can be handled in one mathematical operation provided they are to the same base.  Angles measured in radians require base e, so the attenuation is likewise in base e.
 
-\Gamma' =\Gamma e^{-i \, 2 \phi}  
+The propagation constant for conducting lines can be calculated from the primary line coefficients by means of the relationship
 
-Note that the phase of the reflection coefficient is changed by twice the phase length of the attached transmission line. That is to take into account not only the phase delay of the reflected wave, but the phase shift that had first been applied to the forward wave, with the reflection coefficient being the quotient of these. The reflection coefficient so measured,  \Gamma', corresponds to an impedance which is generally dissimilar to Z_L present at the far side of the transmission line.
+\gamma=\sqrt{ZY}
 
-The complex reflection coefficient (in the region | \Gamma| \le 1, corresponding to passive loads) may be displayed graphically using a Smith chart. The Smith chart is a polar plot of \Gamma, therefore the magnitude of \Gamma is given directly by the distance of a point to the center (with the edge of the Smith chart corresponding to |\Gamma|=1). Its evolution along a transmission line is likewise described by a rotation of 2\phi around the chart's center. Using the scales on a Smith chart, the resulting impedance (normalized to Z_0) can directly be read. Before the advent of modern electronic computers, the Smith chart was of particular use as a sort of  analog computer for this purpose.
+where
 
-Standing  wave ratio 
+Z=R+i\omega L\,\!, the series impedance of the line per unit length and,
 
-The standing wave ratio (SWR) is determined solely by the magnitude of the reflection coefficient:
+Y=G+i\omega C\,\!, the shunt admittance of the line per unit length.
 
- SWR =  {1+| \Gamma |   \over 1- | \Gamma | } .
+Plane wave
 
-Along a lossless transmission line of characteristic impedance Z0, the SWR signifies the ratio of the voltage (or current) maxima to minima (or what it would be if the transmission line were long enough to produce them). The above calculation assumes that  \Gamma has been calculated using Z0 as the reference impedance. Since it uses only the magnitude of \Gamma, the SWR intentionally ignores the specific value of the load impedance ZL responsible for it, but only the magnitude of the resulting impedance mismatch. That SWR remains the same wherever measured along a transmission line (looking towards the load) since the addition of a transmission line length to a load Z_L only changes the phase, not magnitude of \Gamma. While having a one-to-one correspondence with reflection coefficient, SWR is the most commonly used figure of merit in describing the mismatch affecting a radio antenna or antenna system. It is most often measured at the transmitter side of a transmission line, but having, as explained, the same value as would be measured at the antenna (load) itself.
+The propagation factor of a plane wave traveling in a linear media in the x direction is given by
+ P 
+ e^{-\gamma x} 
+where
+* \gamma 
+ \alpha + i\beta \sqrt{i \omega \mu (\sigma + i \omega \varepsilon)}\; 
+* x =  distance traveled in the x direction
+* \alpha =  attenuation constant in the units of nepers/meter
+* \beta =  phase constant in the units of radians/meter
+* \omega=  frequency in radians/second
+* \sigma =  conductivity of the media
+* \varepsilon \varepsilon' - i\varepsilon \; 
+ complex permitivity of the media
+* \mu \mu' - i\mu \; 
+ complex permeability of the media
+* i=\sqrt{-1}
+The sign convention is chosen for consistency with propagation in lossy media.  If the attenuation constant is positive, then the wave amplitude decreases as the wave propagates in the x direction.
 
-Seismology 
+Wavelength, phase velocity, and skin depth have simple relationships to the components of the propagation constant:
+ \lambda 
+ \frac {2 \pi} \beta  \qquad  v_p \frac \omega \beta  \qquad   \delta 
+  \frac 1 \alpha  
 
-Reflection coefficient is used in feeder testing for reliability of medium.
+Attenuation constant
 
-Optics and microwaves 
+In telecommunications, the term attenuation constant, also called attenuation parameter or attenuation coefficient, is the attenuation of an electromagnetic wave propagating through a medium per unit distance from the source. It is the real part of the propagation constant and is measured in nepers per metre.  A neper is approximately 8.7¬†dB.  Attenuation constant can be defined by the amplitude ratio
 
-In optics and electromagnetics in general, "reflection coefficient" can refer to either the amplitude reflection coefficient described here, or the reflectance, depending on context. Typically, the reflectance is represented by a capital R, while the amplitude reflection coefficient is represented by a lower-case r. These related concepts are covered by Fresnel equations in classical optics.
+\left|\frac{A_0}{A_x}\right|=e^{\alpha x}
 
-Acoustics 
+The propagation constant per unit length is defined as the natural logarithm of the ratio of the sending end current or voltage to the receiving end current or voltage.
 
-Acousticians use reflection coefficients to understand the effect of different materials on their acoustic environments.
+Conductive lines
+
+The attenuation constant for conductive lines can be calculated from the primary line coefficients as shown above.  For a line meeting the distortionless condition, with a conductance G in the insulator, the attenuation constant is given by
+
+\alpha=\sqrt{RG}\,\!
+
+however, a real line is unlikely to meet this condition without the addition of loading coils and, furthermore, there are some frequency dependent effects operating on the primary "constants" which cause a frequency dependence of the loss.  There are two main components to these losses, the metal loss and the dielectric loss.
+
+The loss of most transmission lines are dominated by the metal loss, which causes a frequency dependency due to finite conductivity of metals, and the skin effect inside a conductor. The skin effect causes R along the conductor to be approximately dependent on frequency according to
+
+R \propto \sqrt{\omega}
+
+Losses in the dielectric depend on the loss tangent (tan¬†Œ¥) of the material divided by the wavelength of the signal. Thus they are directly proportional to the frequency.
+
+\alpha_d={\tan \delta}
+
+Optical fibre
+
+The attenuation constant for a particular propagation mode in an optical fiber is the real part of the axial propagation constant.
+
+Phase constant
+
+In electromagnetic theory, the phase constant, also called phase change constant, parameter or coefficient is the imaginary component of the propagation constant for a plane wave.  It represents the change in phase per unit length along the path travelled by the wave at any instant and is equal to the real part of the angular wavenumber of the wave.  It is represented by the symbol Œ≤ and is measured in units of radians per unit length.
+
+From the definition of (angular) wavenumber for TEM waves in lossless media:
+
+k \frac{2\pi}{\lambda} 
+ \beta
+
+For a transmission line, the Heaviside condition of the telegrapher's equation tells us that the wavenumber must be proportional to frequency for the transmission of the wave to be undistorted in the time domain.  This includes, but is not limited to, the ideal case of a lossless line.  The reason for this condition can be seen by considering that a useful signal is composed of many different wavelengths in the frequency domain.  For there to be no distortion of the waveform, all these waves must travel at the same velocity so that they arrive at the far end of the line at the same time as a group.  Since wave phase velocity is given by
+
+v_p \frac{\lambda}{T} 
+ \frac{f}{\tilde{\nu}} = \frac{\omega}{\beta},
+
+it is proved that Œ≤ is required to be proportional to œâ. In terms of primary coefficients of the line, this yields from the telegrapher's equation for a distortionless line the condition
+
+\beta = \omega \sqrt{LC},
+
+where L and C are, respectively, the inductance and capacitance per unit length of the line. However, practical lines can only be expected to approximately meet this condition over a limited frequency band.
+
+In particular, the phase constant  \beta  is not always equivalent to the wavenumber k. Generally speaking, the following relation
+
+ \beta = k 
+
+is tenable to the TEM wave (transverse electromagnetic wave) which travels in free space or TEM-devices such as the coaxial cable and two parallel wires transmission lines. Nevertheless, it is invalid to the TE wave (transverse electric wave) and TM wave  (transverse magnetic wave). For example, in a hollow waveguide where the TEM wave cannot exist but TE and TM waves can propagate,
+
+k=\frac{\omega}{c} 
+
+\beta=k\sqrt{1-\frac{\omega_c^2}{\omega^2}}
+
+Here  \omega_{c}   is the cutoff frequency. In a rectangular waveguide, the cutoff frequency is
+
+ \omega_{c} = c \sqrt{\left(\frac{n \pi}{a}\right)^2 + \left(\frac{m \pi}{b}\right) ^2}, 
+
+where m,n \ge 0 are the mode numbers for the rectangle's sides of length a and b respectively. For TE modes,  m,n \ge 0 (but  m n 
+ 0 is not allowed), while for TM modes  m,n \ge 1 .
+
+The phase velocity equals
+
+v_p\frac{\omega}{\beta}
+\frac{c}{\sqrt{1-\frac{\omega_\mathrm{c}^2}{\omega^2}}}>c 
+
+The phase constant is also an important concept in quantum mechanics because the momentum   p of a quantum is directly proportional to it, i.e.
+
+ p = \hbar \beta
+
+where  is called the reduced Planck constant (pronounced "h-bar").  It is equal to the Planck constant divided by .
+
+Filters and two-port networks
+
+The term propagation constant or propagation function is applied to filters and other two-port networks used for signal processing.  In these cases, however, the attenuation and phase coefficients are expressed in terms of nepers and radians per network section rather than per unit length.  Some authorsMatthaei et al, p49 make a distinction between per unit length measures (for which "constant" is used) and per section measures (for which "function" is used).
+
+The propagation constant is a useful concept in filter design which invariably uses a cascaded section topology.  In a cascaded topology, the propagation constant, attenuation constant and phase constant of individual sections may be simply added to find the total propagation constant etc.
+
+Cascaded networks
+
+The ratio of output to input voltage for each network is given byMatthaei et al pp51-52
+
+\frac{V_1}{V_2}=\sqrt{\frac{Z_{I1}}{Z_{I2}}}e^{\gamma_1}
+\frac{V_2}{V_3}=\sqrt{\frac{Z_{I2}}{Z_{I3}}}e^{\gamma_2}
+\frac{V_3}{V_4}=\sqrt{\frac{Z_{I3}}{Z_{I4}}}e^{\gamma_3}
+
+The terms \sqrt{\frac{Z_{In}}{Z_{Im}}} are impedance scaling termsMatthaei et al pp37-38 and their use is explained in the image impedance article.
+
+The overall voltage ratio is given by
+
+\frac{V_1}{V_4}\frac{V_1}{V_2}\cdot\frac{V_2}{V_3}\cdot\frac{V_3}{V_4}
+\sqrt{\frac{Z_{I1}}{Z_{I4}}}e^{\gamma_1+\gamma_2+\gamma_3}
+
+Thus for n cascaded sections all having matching impedances facing each other, the overall propagation constant is given by
+
+\gamma_\mathrm{total}=\gamma_1 + \gamma_2 + \gamma_3 + \cdots + \gamma_n
 
 See also
 
-* Microwave
-* Mismatch loss
-* Reflections of signals on conducting lines
-* Scattering parameters
-* Transmission coefficient
-* Target strength
-* Hagen‚ÄìRubens relation
-* Reflection phase change
+The concept of penetration depth is one of many ways to describe the absorption of electromagnetic waves. For the others, and their interrelationships, see the article: Mathematical descriptions of opacity.
+* Propagation speed
+
+Notes
 
 References
 
-*
-* Figure 8-2 and Eqn. 8-1 Pg. 279
+* .
+* Matthaei, Young, Jones Microwave Filters, Impedance-Matching Networks, and Coupling Structures McGraw-Hill 1964.
 
 External links
 
-*[http://www.fourier-series.com/rf-concepts/reflection.html Flash tutorial for understanding reflection] A flash program that shows how a reflected wave is generated, the reflection coefficient and VSWR
-*[https://poynting.herokuapp.com Application for drawing standing wave diagrams including the reflection coefficient, input impedance, SWR, etc.]"
-1118606118*êóÏö:ARTICLEB„T
-‡T
-wiki_metadataŒT*ÀT
+* 
+* 
+*  Free PDF download is available. There is an updated version dated August 6, 2002."
+1117237824*Î˚≈ö:ARTICLEBçÄ
+âÄ
+wiki_metadata˜*Ù
 
 	namespace 
 #
-	dump_date2022-10-27T22:52:00Z
-,
-date_parsed2023-07-03T23:42:57.318926Z
-‰S
-	wiki_text÷S”S{{About|reflections of waves|the use of the term with capillary membrames|Starling equation#Reflection coefficient|intensity ratios|Reflectance}}
+	dump_date2022-10-20T16:57:15Z
+/
+date_parsed 2024-01-29T10:34:04.177651223Z
+ä
+	wiki_text¸~˘~{{Redirect|Transmission parameter|ABCD transmission parameters|two-port network#ABCD-parameters|scattering transfer parameters|scattering parameters#Scattering transfer parameters}}
 
-In [[physics]] and [[electrical engineering]] the '''reflection coefficient''' is a parameter that describes how much of a wave is reflected by an impedance discontinuity in the transmission medium.  It is equal to the ratio of the [[amplitude]] of the reflected wave to the incident wave, with each expressed as [[phasor]]s.  For example, it is used in [[optics]] to calculate the amount of light that is reflected from a surface with a different index of refraction, such as a glass surface, or in an electrical [[transmission line]] to calculate how much of the [[Reflections of signals on conducting lines|electromagnetic wave]] is reflected by an impedance discontinuity. The reflection coefficient is closely related to the ''[[transmission coefficient]]''. The [[reflectance]] of a system is also sometimes called a "reflection coefficient".
+The '''propagation constant''' of a sinusoidal [[electromagnetic wave]] is a measure of the change undergone by the [[amplitude]] and [[phase (waves)|phase]] of the wave as it [[wave propagation|propagates]] in a given direction. The quantity being measured can be the [[voltage]], the [[electric current|current]] in a [[electronic circuit|circuit]], or a field vector such as [[electric field strength]] or [[flux density]]. The propagation constant itself measures the change [[per unit length]], but it is otherwise dimensionless. In the context of [[Two port networks|two-port networks]] and their cascades, '''propagation constant '''measures the change undergone by the source quantity as it propagates from one port to the next.
 
-[[Image:Partial transmittance.gif|right|frame|A wave experiences partial transmittance and partial reflectance when the medium through which it travels suddenly changes.  The reflection coefficient determines the ratio of the reflected wave amplitude to the incident wave amplitude.]]
+The propagation constant's value is expressed [[logarithm]]ically, almost universally to the base ''[[e (mathematical constant)|e]]'', rather than the more usual base 10 that is used in [[telecommunication]]s in other situations. The quantity measured, such as voltage, is expressed as a sinusoidal [[phasor]]. The phase of the sinusoid varies with distance which results in the propagation constant being a [[complex number]], the [[imaginary number|imaginary]] part being caused by the phase change.
 
-Different specialties have different applications for the term.
+==Alternative names==
 
-== Transmission lines ==
-{{See also|Reflections of signals on conducting lines|Signal reflection}}
+The term "propagation constant" is somewhat of a misnomer as it usually varies strongly with ''œâ''.  It is probably the most widely used term but there are a large variety of alternative names used by various authors for this quantity.  These include '''transmission parameter''', '''transmission function''', '''propagation parameter''', '''propagation coefficient''' and '''transmission constant'''.  If the plural is used, it suggests that ''Œ±'' and ''Œ≤'' are being referenced separately but collectively as in '''transmission parameters''', '''propagation parameters''', etc.  In transmission line theory, ''Œ±'' and ''Œ≤''  are counted among the "secondary coefficients", the term ''secondary'' being used to contrast to the ''[[primary line coefficients]]''.  The primary coefficients are the physical properties of the line, namely R,C,L and G, from which the secondary coefficients may be derived using the [[telegrapher's equation]].  Note that in the field of transmission lines, the term [[transmission coefficient]] has a different meaning despite the similarity of name: it is the companion of the [[reflection coefficient]].
 
-In [[telecommunication]]s and [[transmission line]] theory, the reflection coefficient is the [[ratio]] of the [[complex amplitude]] of the reflected wave to that of the incident wave.  The voltage and current at any point along a transmission line can always be resolved into forward and reflected traveling waves given a specified reference impedance ''Z<sub>0</sub>''. The reference impedance used is typically the [[characteristic impedance]] of a transmission line that's involved, but one can speak of reflection coefficient without  any actual transmission line being present. In terms of the forward and reflected waves determined by the voltage and current, the reflection coefficient is defined as the [[complex number|complex]] ratio of the voltage of the reflected wave (<math>V^-</math>) to that of the incident wave (<math>V^+</math>). This is typically represented with a <math>\Gamma</math> (capital [[gamma]]) and can be written as:
+==Definition==
 
-:<math>\Gamma = \frac{V^-}{V^+} </math>
+The propagation constant, symbol <math>{\gamma}</math>, for a given system is defined by the ratio of the [[Phasor|complex amplitude]] at the source of the wave to the complex amplitude at some distance ''x'', such that,
 
-It can as well be defined using the ''currents'' associated with the reflected and forward waves, but introducing a minus sign to account for the opposite orientations of the two currents:
+:<math>\frac{A_0}{A_x}=e^{\gamma x}</math>
 
-:<math>\Gamma = -\frac{I^-}{I^+}  = \frac{V^-}{V^+} </math>
+Since the propagation constant is a complex quantity we can write:
 
-The reflection coefficient may also be established using other field or [[Electronic circuit|circuit]] pairs of quantities whose product defines power resolvable into a forward and reverse wave. For instance, with electromagnetic plane waves, one uses the ratio of the electric fields of the reflected to that of the forward wave (or magnetic fields, again with a minus sign); the ratio of each wave's electric field ''E'' to its magnetic field ''H'' is again an impedance ''Z''<sub>0</sub> (equal to the [[impedance of free space]] in a vacuum). Similarly in [[acoustics]] one uses the acoustic pressure and velocity respectively.
+:<math display="block" qid=Q1434913>\gamma = \alpha +i \beta \,</math>
+where
+* ''Œ±'', the real part, is called the [[#Attenuation constant|attenuation constant]]
+* ''Œ≤'', the imaginary part, is called the [[#Phase constant|phase constant]]
 
-[[Image:Reflection Coefficient Circuit.svg|thumb|right|Simple circuit configuration showing measurement location of reflection coefficient.]]
-In the accompanying figure, a signal source with internal impedance <math>Z_S</math> possibly followed by a transmission line of characteristic impedance <math>Z_S</math> is represented by its [[Th√©venin equivalent]], driving the load <math>Z_L</math>. For a real (resistive) source impedance <math>Z_S</math>, if we define <math>\Gamma</math> using the reference impedance <math>Z_0 = Z_S</math> then the source's [[Impedance matching#Reflection-less matching|maximum power is delivered]] to a load <math>Z_L = Z_0</math>, in which case <math>\Gamma=0</math> implying no reflected power. More generally, the squared-magnitude of the reflection coefficient <math>|\Gamma|^2</math>  denotes the proportion of that power that is "reflected" and absorbed by the source, with the power actually delivered to the load being <math>1-|\Gamma|^2</math>.
+That ''Œ≤'' does indeed represent phase can be seen from [[Euler's formula]]:
 
-Anywhere along an intervening (lossless) transmission line of characteristic impedance <math>Z_0</math>, the magnitude of the reflection coefficient <math>|\Gamma|</math> will remain the same (the powers of the forward and reflected waves stay the same) but with a different phase. In the case of a short circuited load (<math>Z_L=0</math>), one finds <math>\Gamma=-1</math> at the load. This implies the reflected wave having a 180¬∞ phase shift (phase reversal) with the voltages of the two waves being opposite at that point and adding to zero (as a short circuit demands).
+:<math>e^{i\theta}=\cos{\theta}+i\sin{\theta}\,\!</math>
 
-=== Relation to load impedance ===
-The reflection coefficient is determined by the load impedance at the end of the transmission line, as well as the [[characteristic impedance]] of the line. A load impedance of <math>Z_L</math> terminating a line with a characteristic impedance of <math>Z_0\,</math> will have a reflection coefficient of
+which is a sinusoid which varies in phase as ''Œ∏'' varies but does not vary in amplitude because
 
-:<math>  \Gamma ={Z_L-Z_0  \over Z_L+Z_0} .</math>
+:<math>\left|e^{i\theta}\right|=\sqrt{\cos^2{\theta}+\sin^2{\theta}}=1</math>
 
-This is the coefficient at the load.  The reflection coefficient can also be measured at other points on the line.  The ''magnitude'' of the reflection coefficient in a lossless transmission line is constant along the line (as are the powers in the forward and reflected waves). However its ''phase'' will be shifted by an amount dependent on the [[electrical length|electrical distance]] <math>\phi</math> from the load.  If the coefficient is measured at a point <math>L</math> meters from the load, so the [[electrical length|electrical distance]] from the load is <math>\phi = 2\pi L/\lambda</math> radians, the coefficient <math>\Gamma'</math> at that point will be 
+The reason for the use of base ''e'' is also now made clear.  The imaginary phase constant, ''iŒ≤'', can be added directly to the attenuation constant, ''Œ±'', to form a single complex number that can be handled in one mathematical operation provided they are to the same base.  Angles measured in radians require base ''e'', so the attenuation is likewise in base ''e''.
 
-: <math>\Gamma' =\Gamma e^{-i \, 2 \phi}  </math>
+The propagation constant for conducting lines can be calculated from the primary line coefficients by means of the relationship
 
-Note that the phase of the reflection coefficient is changed by ''twice'' the phase length of the attached transmission line. That is to take into account not only the phase delay of the reflected wave, but the phase shift that had first been applied to the forward wave, with the reflection coefficient being the quotient of these. The reflection coefficient so measured,  <math>\Gamma'</math>, corresponds to an impedance which is generally dissimilar to <math>Z_L</math> present at the far side of the transmission line.
+:<math>\gamma=\sqrt{ZY}</math>
 
-The complex reflection coefficient (in the region <math>| \Gamma| \le 1</math>, corresponding to passive loads) may be displayed graphically using a [[Smith chart]]. The Smith chart is a polar plot of <math>\Gamma</math>, therefore the magnitude of <math>\Gamma</math> is given directly by the distance of a point to the center (with the edge of the Smith chart corresponding to <math>|\Gamma|=1</math>). Its evolution along a transmission line is likewise described by a rotation of <math>2\phi</math> around the chart's center. Using the scales on a Smith chart, the resulting impedance (normalized to <math>Z_0</math>) can directly be read. Before the advent of modern electronic computers, the Smith chart was of particular use as a sort of  [[Nomogram|analog computer]] for this purpose.
+where
 
-=== Standing  wave ratio ===
-{{Main|Standing  wave ratio}}
-The [[standing wave ratio]] (SWR) is determined solely by the ''magnitude'' of the reflection coefficient:
+:<math>Z=R+i\omega L\,\!</math>, the series [[Electrical impedance|impedance]] of the line per unit length and,
 
-:<math> SWR =  {1+| \Gamma |   \over 1- | \Gamma | } .</math>
+:<math>Y=G+i\omega C\,\!</math>, the shunt [[admittance]] of the line per unit length.
 
-Along a lossless transmission line of characteristic impedance ''Z''<sub>0</sub>, the SWR signifies the ratio of the voltage (or current) maxima to minima (or what it would be if the transmission line were long enough to produce them). The above calculation assumes that  <math>\Gamma</math> has been calculated using ''Z''<sub>0</sub> as the reference impedance. Since it uses only the ''magnitude'' of <math>\Gamma</math>, the SWR intentionally ignores the specific value of the load impedance ''Z<sub>L</sub>'' responsible for it, but only the magnitude of the resulting [[impedance mismatch]]. That SWR remains the same wherever measured along a transmission line (looking towards the load) since the addition of a transmission line length to a load <math>Z_L</math> only changes the phase, not magnitude of <math>\Gamma</math>. While having a one-to-one correspondence with reflection coefficient, SWR is the most commonly used figure of merit in describing the mismatch affecting a [[radio antenna]] or antenna system. It is most often [[SWR meter|measured]] at the transmitter side of a transmission line, but having, as explained, the same value as would be measured at the antenna (load) itself.
+===Plane wave===
+The propagation factor of a plane wave traveling in a linear media in the x direction is given by
+<math display="block"> P = e^{-\gamma x} </math>
+where
+* <math display="inline">\gamma = \alpha + i\beta = \sqrt{i \omega \mu (\sigma + i \omega \varepsilon)}\; </math><ref name="Jordon&Balman">{{Citation |last1=Jordon|first1= Edward C.|last2=Balman|first2=Keith G. |year= 1968 |title= Electromagnetic Waves and Radiating Systems |edition= 2nd |publisher= Prentice-Hall }}</ref>{{rp|p=126}}
+* <math>x =</math>  distance traveled in the x direction
+* <math>\alpha =</math>  [[attenuation constant]] in the units of [[neper]]s/meter
+* <math>\beta =</math>  [[phase constant]] in the units of [[radian]]s/meter
+* <math>\omega=</math>  frequency in radians/second
+* <math>\sigma =</math>  [[Electrical resistivity and conductivity|conductivity]] of the media
+* <math>\varepsilon = \varepsilon' - i\varepsilon'' \;</math> = [[Permittivity#Complex permittivity|complex permitivity]] of the media
+* <math>\mu = \mu' - i\mu'' \;</math> = [[Permeability (electromagnetism)#Complex permeability|complex permeability]] of the media
+* <math>i=\sqrt{-1}</math>
+The sign convention is chosen for consistency with propagation in lossy media.  If the attenuation constant is positive, then the wave amplitude decreases as the wave propagates in the ''x'' direction.
 
-== Seismology ==
+[[Wavelength]], [[phase velocity]], and [[skin effect|skin depth]] have simple relationships to the components of the propagation constant:
+<math display="block"> \lambda = \frac {2 \pi} \beta  \qquad  v_p = \frac \omega \beta  \qquad   \delta =  \frac 1 \alpha  </math>
 
-{{Main|Reflection seismology}}
-Reflection coefficient is used in feeder testing for reliability of medium.
+==Attenuation constant==
 
-== Optics and microwaves ==
-{{Main|Fresnel equations}}
-In [[optics]] and electromagnetics in general, "reflection coefficient" can refer to either the amplitude reflection coefficient described here, or the [[reflectance]], depending on context. Typically, the reflectance is represented by a capital ''R'', while the amplitude reflection coefficient is represented by a lower-case ''r''. These related concepts are covered by [[Fresnel equations]] in [[Optics#Classical optics|classical optics]].
+In [[telecommunication]]s, the term '''attenuation constant''', also called '''attenuation parameter''' or '''[[attenuation coefficient]]''', is the attenuation of an electromagnetic wave propagating through a [[Transmission medium|medium]] per unit distance from the source. It is the real part of the propagation constant and is measured in [[neper]]s per metre.  A neper is approximately 8.7&nbsp;[[decibel|dB]].  Attenuation constant can be defined by the amplitude ratio
 
-== Acoustics ==
-{{Main|Acoustic wave#Reflection}}
-Acousticians use reflection coefficients to understand the effect of different materials on their acoustic environments.
+:<math>\left|\frac{A_0}{A_x}\right|=e^{\alpha x}</math>
+
+The propagation constant per unit length is defined as the natural logarithm of the ratio of the sending end current or voltage to the receiving end current or voltage.
+
+===Conductive lines===
+
+The attenuation constant for conductive lines can be calculated from the primary line coefficients as shown above.  For a line meeting the [[Heaviside condition|distortionless condition]], with a conductance ''G'' in the insulator, the attenuation constant is given by
+
+:<math>\alpha=\sqrt{RG}\,\!</math>
+
+however, a real line is unlikely to meet this condition without the addition of [[loading coils]] and, furthermore, there are some frequency dependent effects operating on the primary "constants" which cause a frequency dependence of the loss.  There are two main components to these losses, the metal loss and the dielectric loss.
+
+The loss of most transmission lines are dominated by the metal loss, which causes a frequency dependency due to finite conductivity of metals, and the [[skin effect]] inside a conductor. The skin effect causes R along the conductor to be approximately dependent on frequency according to
+
+:<math>R \propto \sqrt{\omega}</math>
+
+Losses in the dielectric depend on the [[loss tangent]] (tan&nbsp;''Œ¥'') of the material divided by the wavelength of the signal. Thus they are directly proportional to the frequency.
+
+:<math>\alpha_d={{\pi}\sqrt{\varepsilon_r}\over{\lambda}}{\tan \delta}</math>
+
+===Optical fibre===
+
+The attenuation constant for a particular [[propagation mode]] in an [[optical fiber]] is the real part of the axial propagation constant.
+
+==Phase constant==
+In [[electromagnetic theory]], the '''phase constant''', also called '''phase change constant''', '''parameter''' or '''coefficient''' is the imaginary component of the propagation constant for a plane wave.  It represents the change in phase per unit length along the path travelled by the wave at any instant and is equal to the [[real part]] of the [[wavenumber#In wave equations|angular wavenumber]] of the wave.  It is represented by the symbol ''Œ≤'' and is measured in units of radians per unit length.
+
+From the definition of (angular) wavenumber for TEM waves in lossless media:
+
+:<math>k = \frac{2\pi}{\lambda} = \beta</math>
+
+For a [[transmission line]], the [[Heaviside condition]] of the [[telegrapher's equation]] tells us that the wavenumber must be proportional to frequency for the transmission of the wave to be undistorted in the [[time domain]].  This includes, but is not limited to, the ideal case of a lossless line.  The reason for this condition can be seen by considering that a useful signal is composed of many different wavelengths in the frequency domain.  For there to be no distortion of the [[waveform]], all these waves must travel at the same velocity so that they arrive at the far end of the line at the same time as a [[group velocity|group]].  Since wave [[phase velocity]] is given by
+
+:<math>v_p = \frac{\lambda}{T} = \frac{f}{\tilde{\nu}} = \frac{\omega}{\beta},</math>
+
+it is proved that ''Œ≤'' is required to be proportional to ''œâ''. In terms of primary coefficients of the line, this yields from the telegrapher's equation for a distortionless line the condition
+
+:<math>\beta = \omega \sqrt{LC},</math>
+
+where ''L'' and ''C'' are, respectively, the inductance and capacitance per unit length of the line. However, practical lines can only be expected to approximately meet this condition over a limited frequency band.
+
+In particular, the phase constant <math> \beta </math> is not always equivalent to the [[wavenumber]] <math>k</math>. Generally speaking, the following relation
+
+:<math> \beta = k </math>
+
+is tenable to the [[Transverse mode|TEM]] wave (transverse electromagnetic wave) which travels in free space or TEM-devices such as the [[coaxial cable]] and [[Twin-lead|two parallel wires transmission lines]]. Nevertheless, it is invalid to the [[Transverse mode|TE]] wave (transverse electric wave) and [[Transverse mode|TM]] wave  (transverse magnetic wave). For example,<ref>{{cite book |first=David |last=Pozar |author-link=David M. Pozar |year=2012 |title=Microwave Engineering |edition=4th |publisher=John Wiley &Sons |isbn=978-0-470-63155-3 |pages=62‚Äì164 }}</ref> in a hollow [[waveguide]] where the TEM wave cannot exist but TE and TM waves can propagate,
+
+:<math>k=\frac{\omega}{c} </math>
+
+:<math>\beta=k\sqrt{1-\frac{\omega_c^2}{\omega^2}}</math>
+
+Here <math> \omega_{c} </math>  is the [[cutoff frequency]]. In a rectangular waveguide, the cutoff frequency is
+
+:<math> \omega_{c} = c \sqrt{\left(\frac{n \pi}{a}\right)^2 + \left(\frac{m \pi}{b}\right) ^2}, </math>
+
+where <math>m,n \ge 0</math> are the mode numbers for the rectangle's sides of length <math>a</math> and <math>b</math> respectively. For TE modes, <math> m,n \ge 0</math> (but <math> m = n = 0</math> is not allowed), while for TM modes <math> m,n \ge 1 </math>.
+
+The phase velocity equals
+
+:<math>v_p=\frac{\omega}{\beta}=\frac{c}{\sqrt{1-\frac{\omega_\mathrm{c}^2}{\omega^2}}}>c </math>
+
+The phase constant is also an important concept in [[quantum mechanics]] because the [[momentum]]  <math> p</math> of a [[quantum]] is directly proportional to it,<ref>{{cite journal|author=Wang,Z.Y.|title=Generalized momentum equation of quantum mechanics|journal=[[Optical and Quantum Electronics]]|volume=48|pages=1‚Äì9|date=2016|doi=10.1007/s11082-015-0261-8|issue=2|s2cid=124732329}}</ref><ref>{{cite arXiv | author= Tremblay,R., Doyon,N., Beaudoin-Bertrand,J. | title = TE-TM Electromagnetic modes and states in quantum physics |eprint =1611.01472 | year = 2016 | class = quant-ph }}</ref> i.e.
+
+:<math> p = \hbar \beta</math>
+
+where {{math|''ƒß''}} is called the [[reduced Planck constant]] (pronounced "h-bar").  It is equal to the [[Planck constant]] divided by {{math|2''œÄ''}}.
+
+==Filters and two-port networks==
+The term propagation constant or propagation function is applied to [[Electronic filters|filters]] and other [[two-port network]]s used for [[signal processing]].  In these cases, however, the attenuation and phase coefficients are expressed in terms of nepers and radians per [[Electronic filter topology#Passive topologies|network section]] rather than per unit length.  Some authors<ref>Matthaei et al, p49</ref> make a distinction between per unit length measures (for which "constant" is used) and per section measures (for which "function" is used).
+
+The propagation constant is a useful concept in filter design which invariably uses a cascaded section [[Electronic filter topology|topology]].  In a cascaded topology, the propagation constant, attenuation constant and phase constant of individual sections may be simply added to find the total propagation constant etc.
+
+===Cascaded networks===
+[[Image:Adding propagation constant of filters.svg|center|thumb|750px|Three networks with arbitrary propagation constants and impedances connected in cascade.  The ''Z<sub>i</sub>'' terms represent [[image impedance]] and it is assumed that connections are between matching image impedances.]]
+
+The ratio of output to input voltage for each network is given by<ref>Matthaei et al pp51-52</ref>
+
+:<math>\frac{V_1}{V_2}=\sqrt{\frac{Z_{I1}}{Z_{I2}}}e^{\gamma_1}</math>
+:<math>\frac{V_2}{V_3}=\sqrt{\frac{Z_{I2}}{Z_{I3}}}e^{\gamma_2}</math>
+:<math>\frac{V_3}{V_4}=\sqrt{\frac{Z_{I3}}{Z_{I4}}}e^{\gamma_3}</math>
+
+The terms <math>\sqrt{\frac{Z_{In}}{Z_{Im}}}</math> are impedance scaling terms<ref>Matthaei et al pp37-38</ref> and their use is explained in the [[Image impedance#Transfer function|image impedance]] article.
+
+The overall voltage ratio is given by
+
+:<math>\frac{V_1}{V_4}=\frac{V_1}{V_2}\cdot\frac{V_2}{V_3}\cdot\frac{V_3}{V_4}=\sqrt{\frac{Z_{I1}}{Z_{I4}}}e^{\gamma_1+\gamma_2+\gamma_3}</math>
+
+Thus for ''n'' cascaded sections all having matching impedances facing each other, the overall propagation constant is given by
+
+:<math>\gamma_\mathrm{total}=\gamma_1 + \gamma_2 + \gamma_3 + \cdots + \gamma_n</math>
 
 ==See also==
-* [[Microwave]]
-* [[Mismatch loss]]
-* [[Reflections of signals on conducting lines]]
-* [[Scattering parameters]]
-* [[Transmission coefficient]]
-* [[Target strength]]
-* [[Hagen‚ÄìRubens relation]]
-* [[Reflection phase change]]
+The concept of penetration depth is one of many ways to describe the absorption of electromagnetic waves. For the others, and their interrelationships, see the article: [[Mathematical descriptions of opacity]].
+* [[Propagation speed]]
+
+==Notes==
+{{reflist}}
 
 ==References==
-*{{FS1037C MS188}}
-*{{cite book | last = Bogatin | first = Eric |  title = Signal Integrity - Simplified |  year = 2004 | publisher = Pearson Education, Inc. | location = Upper Saddle River, New Jersey | isbn = 0-13-066946-6}} Figure 8-2 and Eqn. 8-1 Pg. 279
+{{refbegin}}
+* {{FS1037C}}.
+* Matthaei, Young, Jones ''Microwave Filters, Impedance-Matching Networks, and Coupling Structures'' McGraw-Hill 1964.
+
+{{refend}}
 
 ==External links==
-{{Commons category|Smith charts}}
-*[http://www.fourier-series.com/rf-concepts/reflection.html Flash tutorial for understanding reflection] A flash program that shows how a reflected wave is generated, the reflection coefficient and VSWR
-*[https://poynting.herokuapp.com Application for drawing standing wave diagrams including the reflection coefficient, input impedance, SWR, etc.]
+* {{Cite web|title =Propagation constant|publisher =Microwave Encyclopedia|year =2011|url =http://www.microwaves101.com/encyclopedia/propagation.cfm|format =Online|access-date =February 2, 2011|archive-url =https://web.archive.org/web/20140714170516/http://www.microwaves101.com/ENCYCLOPEDIA/propagation.cfm|archive-date =July 14, 2014|url-status =dead}}
+* {{Cite web| last =Paschotta| first =Dr. R√ºdiger| title =Propagation Constant
+  | publisher =Encyclopedia of Laser Physics and Technology| year = 2011
+  | url =http://www.rp-photonics.com/propagation_constant.html
+  | format =Online| access-date =2 February 2011}}
+* {{Cite journal
+  | last =Janezic
+  | first = Michael D.
+  |author2=Jeffrey A. Jargon
+   | title = Complex Permittivity determination from Propagation Constant measurements
+  | journal =[[IEEE Microwave and Guided Wave Letters]]
+  | volume = 9
+  | issue = 2
+  | pages = 76‚Äì78
+  | date =February 1999
+  | url =http://www.eeel.nist.gov/dylan_papers/MGWL99.pdf
+  | doi = 10.1109/75.755052
+  | access-date =2 February 2011}} Free PDF download is available. There is an updated version dated August 6, 2002.
 
-{{Authority control}}
-
-[[Category:Geometrical optics]]
-[[Category:Electronic engineering]]
-[[Category:Physical optics]]
-[[Category:Seismology measurement]]
+[[Category:Filter theory]]
+[[Category:Physical quantities]]
 [[Category:Telecommunication theory]]
-[[Category:Dimensionless numbers]]
+[[Category:Electromagnetism]]
+[[Category:Electromagnetic radiation]]
+[[Category:Analog circuits]]
+[[Category:Image impedance filters]]J”The propagation constant of a sinusoidal electromagnetic wave is a measure of the change undergone by the amplitude and phase of the wave as it propagates in a given direction. The quantity being measured can be the voltage, the current in a circuit, or a field vector such as electric field strength or flux density. The propagation constant itself measures the change per unit length, but it is otherwise dimensionless. In the context of two-port networks and their cascades, propagation constant measures the change undergone by the source quantity as it propagates from one port to the next.JÆThe propagation constant's value is expressed logarithmically, almost universally to the base e, rather than the more usual base 10 that is used in telecommunications in other situations. The quantity measured, such as voltage, is expressed as a sinusoidal phasor. The phase of the sinusoid varies with distance which results in the propagation constant being a complex number, the imaginary part being caused by the phase change.JAlternative namesJòThe term "propagation constant" is somewhat of a misnomer as it usually varies strongly with œâ. It is probably the most widely used term but there are a large variety of alternative names used by various authors for this quantity. These include transmission parameter, transmission function, propagation parameter, propagation coefficient and transmission constant. If the plural is used, it suggests that Œ± and Œ≤ are being referenced separately but collectively as in transmission parameters, propagation parameters, etc. In transmission line theory, Œ± and Œ≤ are counted among the "secondary coefficients", the term secondary being used to contrast to the primary line coefficients. The primary coefficients are the physical properties of the line, namely R,C,L and G, from which the secondary coefficients may be derived using the telegrapher's equation. Note that in the field of transmission lines, the term transmission coefficient has a different meaning despite the similarity of name: it is the companion of the reflection coefficient.J
+DefinitionJ¿The propagation constant, symbol {\gamma}, for a given system is defined by the ratio of the complex amplitude at the source of the wave to the complex amplitude at some distance x, such that,J\frac{A_0}{A_x}=e^{\gamma x}JBSince the propagation constant is a complex quantity we can write:J\gamma = \alpha +i \beta \,JwhereJn* Œ±, the real part, is called the attenuation constant
+* Œ≤, the imaginary part, is called the phase constantJEThat Œ≤ does indeed represent phase can be seen from Euler's formula:J*e^{i\theta}=\cos{\theta}+i\sin{\theta}\,\!J]which is a sinusoid which varies in phase as Œ∏ varies but does not vary in amplitude becauseJ<\left|e^{i\theta}\right|\sqrt{\cos^2{\theta}+\sin^2{\theta}}J›The reason for the use of base e is also now made clear. The imaginary phase constant, iŒ≤, can be added directly to the attenuation constant, Œ±, to form a single complex number that can be handled in one mathematical operation provided they are to the same base. Angles measured in radians require base e, so the attenuation is likewise in base e.JThe propagation constant for conducting lines can be calculated from the primary line coefficients by means of the relationshipJ\gamma=\sqrt{ZY}JwhereJHZ=R+i\omega L\,\!, the series impedance of the line per unit length and,JDY=G+i\omega C\,\!, the shunt admittance of the line per unit length.J
+Plane waveJaThe propagation factor of a plane wave traveling in a linear media in the x direction is given byJPJe^{-\gamma x}JwhereJ* \gammaJE\alpha + i\beta \sqrt{i \omega \mu (\sigma + i \omega \varepsilon)}\;Jñ* x = distance traveled in the x direction
+* \alpha = attenuation constant in the units of nepers/meter
+* \beta = phase constant in the units of radians/meter
+* \omega= frequency in radians/second
+* \sigma = conductivity of the media
+* \varepsilon \varepsilon' - i\varepsilon \;J complex permitivity of the mediaJ* \mu \mu' - i\mu \;J!complex permeability of the mediaJ* i=\sqrt{-1}JƒThe sign convention is chosen for consistency with propagation in lossy media. If the attenuation constant is positive, then the wave amplitude decreases as the wave propagates in the x direction.JsWavelength, phase velocity, and skin depth have simple relationships to the components of the propagation constant:J\lambdaJ?\frac {2 \pi} \beta \qquad v_p \frac \omega \beta \qquad \deltaJ\frac 1 \alphaJAttenuation constantJìIn telecommunications, the term attenuation constant, also called attenuation parameter or attenuation coefficient, is the attenuation of an electromagnetic wave propagating through a medium per unit distance from the source. It is the real part of the propagation constant and is measured in nepers per metre. A neper is approximately 8.7¬†dB. Attenuation constant can be defined by the amplitude ratioJ)\left|\frac{A_0}{A_x}\right|=e^{\alpha x}J®The propagation constant per unit length is defined as the natural logarithm of the ratio of the sending end current or voltage to the receiving end current or voltage.JConductive linesJÔThe attenuation constant for conductive lines can be calculated from the primary line coefficients as shown above. For a line meeting the distortionless condition, with a conductance G in the insulator, the attenuation constant is given byJ\alpha=\sqrt{RG}\,\!J∆however, a real line is unlikely to meet this condition without the addition of loading coils and, furthermore, there are some frequency dependent effects operating on the primary "constants" which cause a frequency dependence of the loss. There are two main components to these losses, the metal loss and the dielectric loss.JõThe loss of most transmission lines are dominated by the metal loss, which causes a frequency dependency due to finite conductivity of metals, and the skin effect inside a conductor. The skin effect causes R along the conductor to be approximately dependent on frequency according toJR \propto \sqrt{\omega}J¨Losses in the dielectric depend on the loss tangent (tan¬†Œ¥) of the material divided by the wavelength of the signal. Thus they are directly proportional to the frequency.J\alpha_d={\tan \delta}JOptical fibreJÇThe attenuation constant for a particular propagation mode in an optical fiber is the real part of the axial propagation constant.JPhase constantJ∂In electromagnetic theory, the phase constant, also called phase change constant, parameter or coefficient is the imaginary component of the propagation constant for a plane wave. It represents the change in phase per unit length along the path travelled by the wave at any instant and is equal to the real part of the angular wavenumber of the wave. It is represented by the symbol Œ≤ and is measured in units of radians per unit length.JLFrom the definition of (angular) wavenumber for TEM waves in lossless media:Jk \frac{2\pi}{\lambda}J\betaJÄFor a transmission line, the Heaviside condition of the telegrapher's equation tells us that the wavenumber must be proportional to frequency for the transmission of the wave to be undistorted in the time domain. This includes, but is not limited to, the ideal case of a lossless line. The reason for this condition can be seen by considering that a useful signal is composed of many different wavelengths in the frequency domain. For there to be no distortion of the waveform, all these waves must travel at the same velocity so that they arrive at the far end of the line at the same time as a group. Since wave phase velocity is given byJv_p \frac{\lambda}{T}J-\frac{f}{\tilde{\nu}} = \frac{\omega}{\beta},Jºit is proved that Œ≤ is required to be proportional to œâ. In terms of primary coefficients of the line, this yields from the telegrapher's equation for a distortionless line the conditionJ\beta = \omega \sqrt{LC},JŒwhere L and C are, respectively, the inductance and capacitance per unit length of the line. However, practical lines can only be expected to approximately meet this condition over a limited frequency band.JÄIn particular, the phase constant \beta is not always equivalent to the wavenumber k. Generally speaking, the following relationJ	\beta = kJÄis tenable to the TEM wave (transverse electromagnetic wave) which travels in free space or TEM-devices such as the coaxial cable and two parallel wires transmission lines. Nevertheless, it is invalid to the TE wave (transverse electric wave) and TM wave (transverse magnetic wave). For example, in a hollow waveguide where the TEM wave cannot exist but TE and TM waves can propagate,Jk=\frac{\omega}{c}J+\beta=k\sqrt{1-\frac{\omega_c^2}{\omega^2}}J\Here \omega_{c} is the cutoff frequency. In a rectangular waveguide, the cutoff frequency isJW\omega_{c} = c \sqrt{\left(\frac{n \pi}{a}\right)^2 + \left(\frac{m \pi}{b}\right) ^2},Jwhere m,n \ge 0 are the mode numbers for the rectangle's sides of length a and b respectively. For TE modes, m,n \ge 0 (but m nJ10 is not allowed), while for TM modes m,n \ge 1 .JThe phase velocity equalsJv_p\frac{\omega}{\beta}J9\frac{c}{\sqrt{1-\frac{\omega_\mathrm{c}^2}{\omega^2}}}>cJçThe phase constant is also an important concept in quantum mechanics because the momentum p of a quantum is directly proportional to it, i.e.Jp = \hbar \betaJqwhere is called the reduced Planck constant (pronounced "h-bar"). It is equal to the Planck constant divided by .JFilters and two-port networksJÕThe term propagation constant or propagation function is applied to filters and other two-port networks used for signal processing. In these cases, however, the attenuation and phase coefficients are expressed in terms of nepers and radians per network section rather than per unit length. Some authorsMatthaei et al, p49 make a distinction between per unit length measures (for which "constant" is used) and per section measures (for which "function" is used).J°The propagation constant is a useful concept in filter design which invariably uses a cascaded section topology. In a cascaded topology, the propagation constant, attenuation constant and phase constant of individual sections may be simply added to find the total propagation constant etc.JCascaded networksJWThe ratio of output to input voltage for each network is given byMatthaei et al pp51-52J8\frac{V_1}{V_2}=\sqrt{\frac{Z_{I1}}{Z_{I2}}}e^{\gamma_1}J8\frac{V_2}{V_3}=\sqrt{\frac{Z_{I2}}{Z_{I3}}}e^{\gamma_2}J8\frac{V_3}{V_4}=\sqrt{\frac{Z_{I3}}{Z_{I4}}}e^{\gamma_3}JìThe terms \sqrt{\frac{Z_{In}}{Z_{Im}}} are impedance scaling termsMatthaei et al pp37-38 and their use is explained in the image impedance article.J%The overall voltage ratio is given byJF\frac{V_1}{V_4}\frac{V_1}{V_2}\cdot\frac{V_2}{V_3}\cdot\frac{V_3}{V_4}J:\sqrt{\frac{Z_{I1}}{Z_{I4}}}e^{\gamma_1+\gamma_2+\gamma_3}J{Thus for n cascaded sections all having matching impedances facing each other, the overall propagation constant is given byJH\gamma_\mathrm{total}=\gamma_1 + \gamma_2 + \gamma_3 + \cdots + \gamma_nJSee alsoJŒThe concept of penetration depth is one of many ways to describe the absorption of electromagnetic waves. For the others, and their interrelationships, see the article: Mathematical descriptions of opacity.J* Propagation speedJNotesJ
+ReferencesJv* .
+* Matthaei, Young, Jones Microwave Filters, Impedance-Matching Networks, and Coupling Structures McGraw-Hill 1964.JExternal linksJW*
+*
+* Free PDF download is available. There is an updated version dated August 6, 2002.
