@@ -66,7 +66,7 @@ public class ParagraphParserTest {
 
     @Test
     public void testSplitIntoParagraphsAndRemoveEmptyWithNoEmptyParagraphsAndRomanNumberLists() {
-        String text = "This is a paragraph.\nThis is another paragraph.\n\ti. This is the third paragraph\n\tii. Which should be part of the above paragraph.     \n\tiii. Which is part of this paragraph again.\n\t\t1. Subtab a\n\t\t2. Subtab b\n\tiv. Element 4 and end of list       \n\n\n\n   This is a new paragraph though so it should be another element.";
+        String text = "This is a paragraph.\nThis is another paragraph.\n\ti. This is the third paragraph\n\tii. Which should be          part of the above paragraph.     \n\tiii. Which is part of this paragraph again.\n\t\t1. Subtab a\n\t\t2. Subtab b\n\tiv. Element 4 and end of list       \n\n\n\n   This is a new paragraph though so it should be another element.";
         List<String> expectedList = Arrays.asList("This is a paragraph.", "This is another paragraph.", "\ti. This is the third paragraph\n\tii. Which should be part of the above paragraph.\n\tiii. Which is part of this paragraph again.\n\t\t1. Subtab a\n\t\t2. Subtab b\n\tiv. Element 4 and end of list","This is a new paragraph though so it should be another element.");
 
         List<String> result = ParagraphParser.splitIntoParagraphsAndRemoveEmpty(text);
@@ -77,6 +77,16 @@ public class ParagraphParserTest {
     @Test
     public void testSplitIntoParagraphsAndRemoveEmptyWithEmptyParagraphsHashTagLines() {
         String textWithEmptyParagraphs = "This is a paragraph.\n\n\nThis is another paragraph.\n%\n^&$#\n\n34131432131241\n#\n#\n\nThis is the last one.";
+        List<String> expectedList = Arrays.asList("This is a paragraph.", "This is another paragraph.", "This is the last one.");
+
+        List<String> result = ParagraphParser.splitIntoParagraphsAndRemoveEmpty(textWithEmptyParagraphs);
+
+        assertEquals(expectedList, result);
+    }
+
+    @Test
+    public void testSplitIntoParagraphsAndRemoveEmptyWithEmptyParagraphsHashTagLinesAndLinks() {
+        String textWithEmptyParagraphs = "This is a [https://cnn.com | cnn homepage] paragraph.\n\n\nThis is another          paragraph.\n%\n^&$#\n\n34131432131241\n#\n#\n\nThis is the last one.";
         List<String> expectedList = Arrays.asList("This is a paragraph.", "This is another paragraph.", "This is the last one.");
 
         List<String> result = ParagraphParser.splitIntoParagraphsAndRemoveEmpty(textWithEmptyParagraphs);

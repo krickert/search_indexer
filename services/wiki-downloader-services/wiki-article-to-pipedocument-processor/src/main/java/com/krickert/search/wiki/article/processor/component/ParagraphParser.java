@@ -18,7 +18,10 @@ public class ParagraphParser {
 
     public static List<String> splitIntoParagraphsAndRemoveEmpty(@NotNull String text) {
         StringBuilder builder = processLines(text);
-        return splitIntoParagraphs(builder.toString());
+        String processedText = removeHttpSubstrings(builder.toString()); // HTTP substrings removed here
+        return splitIntoParagraphs(processedText).stream()
+                .map(ParagraphParser::cleanWhiteSpace) // cleanWhiteSpace() method applied here
+                .collect(Collectors.toList());
     }
 
     private static StringBuilder processLines(@NotNull String text) {
@@ -64,5 +67,50 @@ public class ParagraphParser {
                     return wordMatcher.find() && !numberMatcher.matches(); // check for presence of word, and absence of purely numeric string
                 })
                 .collect(Collectors.toList());
+    }
+    private static String removeHttpSubstrings(String text) {
+        StringBuilder output = new StringBuilder();
+        int start = 0;
+        while (true) {
+            int httpIndex = text.indexOf("[http", start);
+            if (httpIndex == -1) {
+                output.append(text.substring(start));
+                break;
+            }
+            int closingBracketIndex = text.indexOf(']', httpIndex);
+            if (closingBracketIndex == -1) {
+                output.append(text.substring(start));
+                break;
+            }
+            output.append(text.substring(start, httpIndex));
+            start = closingBracketIndex + 1;
+        }
+        return output.toString();
+    }
+
+    private static String cleanWhiteSpace(String text) {
+        if (text.contains("\n")) {
+            // Process list lines separately
+            return Arrays.stream(text.split("\n"))
+                    .map(line -> line.replaceAll("(?<=\\S)\\s+", " ")) // replace whitespaces that are not leading the line
+                    .collect(Collectors.joining("\n"));
+        }
+
+        StringBuilder output = new StringBuilder();
+        boolean isLastCharacterSpace = false;
+
+        for (char c : text.toCharArray()) {
+            boolean isCurrentCharacterSpace = Character.isWhitespace(c);
+
+            if (isLastCharacterSpace && isCurrentCharacterSpace) {
+                // Ignore this space
+                continue;
+            }
+
+            output.append(c);
+            isLastCharacterSpace = isCurrentCharacterSpace;
+        }
+
+        return output.toString();
     }
 }
