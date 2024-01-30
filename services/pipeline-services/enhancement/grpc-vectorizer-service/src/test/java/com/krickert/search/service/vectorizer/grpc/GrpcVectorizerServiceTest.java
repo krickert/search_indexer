@@ -100,7 +100,10 @@ class GrpcVectorizerServiceTest {
 
         await().atMost(10, SECONDS).until(() -> finishedDocs.size() > 1);
         await().atMost(20, SECONDS).until(() -> finishedDocs.size() > 10);
-        await().atMost(80, SECONDS).until(() -> finishedDocs.size() == 367);
+        //my machine works fine.  Git hub seems to take forever.  This was once 80 seconds.
+        //"works on my local" they say.  "Trump will never win the election" they said.
+        //lies, blantant lies.
+        await().atMost(300, SECONDS).until(() -> finishedDocs.size() == 367);
     }
 
 }
