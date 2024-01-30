@@ -3,4 +3,5 @@ kafka:
   schema.registry.url: mock://localhost:8081
 
 pipe.document.create_dummy_data: false
-wikipedia.parse-only-articles: true
+wikipedia:
+  parse-only-articles: false
