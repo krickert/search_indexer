@@ -5,3 +5,9 @@ consul:
 grpc:
   server:
     port: ${random.port}
+micronaut:
+  server:
+    port: ${random.port}
+endpoints:
+  health:
+    enabled: false

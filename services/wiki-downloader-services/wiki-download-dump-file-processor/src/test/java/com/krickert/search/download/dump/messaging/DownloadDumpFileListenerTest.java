@@ -31,7 +31,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.awaitility.Awaitility.await;
 
 @MicronautTest
-class DownloadDumpFileListenerTest {
+class DownloadDumpFileListenerTest extends AbstractKafkaTest {
     private static final Logger log = LoggerFactory.getLogger(DownloadDumpFileListenerTest.class);
     static final ConcurrentLinkedQueue<DownloadedFile> results = new ConcurrentLinkedQueue<>();
 

@@ -2,3 +2,12 @@ consul:
   client:
     registration:
       enabled: false
+endpoints:
+  health:
+    enabled: false
+grpc:
+  server:
+    port: ${random.port}
+micronaut:
+  server:
+    port: ${random.port}
