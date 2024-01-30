@@ -12,6 +12,7 @@ import io.micronaut.configuration.kafka.annotation.Topic;
 import io.micronaut.context.annotation.Property;
 import io.micronaut.test.extensions.junit5.annotation.MicronautTest;
 import jakarta.inject.Inject;
+import org.apache.kafka.clients.producer.ProducerConfig;
 import org.junit.Ignore;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
@@ -32,7 +33,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.awaitility.Awaitility.await;
 
 @MicronautTest
-class DownloadDumpFileListenerTest extends AbstractKafkaTest {
+class DownloadDumpFileListenerTest {
     private static final Logger log = LoggerFactory.getLogger(DownloadDumpFileListenerTest.class);
     static final ConcurrentLinkedQueue<DownloadedFile> results = new ConcurrentLinkedQueue<>();
 
@@ -55,7 +56,7 @@ class DownloadDumpFileListenerTest extends AbstractKafkaTest {
         results.clear();
     }
 
-    //@Test
+    @Test
     void receive() {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         System.setOut(new PrintStream(baos));
@@ -91,7 +92,14 @@ class DownloadDumpFileListenerTest extends AbstractKafkaTest {
         });
     }
 
-    @KafkaClient
+    @KafkaClient(properties = {
+            @Property(name = ProducerConfig.COMPRESSION_TYPE_CONFIG, value = "lz4"),
+            @Property(name = ProducerConfig.LINGER_MS_CONFIG, value = "5"),
+            @Property(name = ProducerConfig.MAX_REQUEST_SIZE_CONFIG, value = "2073741824"),
+            @Property(name = ProducerConfig.BATCH_SIZE_CONFIG, value = "200000"),
+            @Property(name = ProducerConfig.BUFFER_MEMORY_CONFIG, value = "322122547"),
+            @Property(name = ProducerConfig.ACKS_CONFIG, value = "0")
+    })
     public interface DownloadRequestProducer {
         @Topic("download-request")
         void sendDownloadRequest(@KafkaKey UUID key, DownloadFileRequest request);

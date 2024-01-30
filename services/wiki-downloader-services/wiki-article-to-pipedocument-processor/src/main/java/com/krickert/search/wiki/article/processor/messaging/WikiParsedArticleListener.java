@@ -20,7 +20,7 @@ import java.util.UUID;
 import static com.krickert.search.model.util.ProtobufUtils.createKey;
 
 
-@KafkaListener(offsetReset = OffsetReset.EARLIEST, threads = 8,
+@KafkaListener(threads = 8,
         properties = @Property(name = KafkaProtobufConstants.SPECIFIC_CLASS_PROPERTY,
                 value = KafkaProtobufConstants.WIKIARTICLE_CLASS))
 @Prototype
