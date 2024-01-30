@@ -37,3 +37,5 @@ wikipedia:
   prefix-url: https://dumps.wikimedia.org/enwiki/
   fresh-copy: true
   parse-only-articles: true               #avoid redirects or other garbage
+  add-wiki-text: false
+  paragraph-strategy: section

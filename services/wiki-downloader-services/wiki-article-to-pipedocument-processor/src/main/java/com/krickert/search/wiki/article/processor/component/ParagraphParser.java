@@ -1,5 +1,6 @@
 package com.krickert.search.wiki.article.processor.component;
 
+import com.google.common.collect.Lists;
 import jakarta.validation.constraints.NotNull;
 
 import java.util.Arrays;
@@ -15,6 +16,36 @@ import java.util.stream.Collectors;
 public class ParagraphParser {
     private final static Pattern LIST_PATTERN =
             Pattern.compile("^(\\t*((\\d+|\\b[a-z]\\b|\\b[A-Z]\\b|[ivxlcdm]+|[IVXLCDM]+)[.)]|[-*]))");
+
+    /**
+     * Splits the given text into sections based on the provided title.
+     *
+     * @param text  the input text to be split into sections
+     * @param title the title to be used for each section
+     * @return a list of sections, where each section starts with the title followed by the section content
+     */
+    public static List<String> splitIntoSections(@NotNull String text, @NotNull String title) {
+        List<String> paragraphs = splitIntoParagraphsAndRemoveEmpty(text);
+        List<String> sections = Lists.newArrayList();
+        String sectionName = "summary";//first part of the section lists are always summaries
+        String currentSection = "";//planceholder
+        for (String paragraph : paragraphs) {
+            if (paragraph.contains("\n")) {
+                // only lists contain newlines
+                sections.add(title + " " + sectionName + " " +  currentSection);
+                currentSection = paragraph;
+            } else if (paragraph.contains(".")) {
+                currentSection +=  " " +  paragraph;
+            } else {
+                sections.add(title + " " + sectionName + currentSection);
+                //no newline and no period - new section
+                sectionName = paragraph;
+                currentSection = "";
+            }
+        }
+        sections.add(title + " " + sectionName + currentSection);
+        return sections;
+    }
 
     public static List<String> splitIntoParagraphsAndRemoveEmpty(@NotNull String text) {
         StringBuilder builder = processLines(text);
@@ -112,5 +143,9 @@ public class ParagraphParser {
         }
 
         return output.toString();
+    }
+
+    public enum ParagraphStrategy {
+        PARAGRAPH, SECTION;
     }
 }

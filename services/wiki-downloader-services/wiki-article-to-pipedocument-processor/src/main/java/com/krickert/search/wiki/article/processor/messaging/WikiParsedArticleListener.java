@@ -3,6 +3,7 @@ package com.krickert.search.wiki.article.processor.messaging;
 import com.krickert.search.model.constants.KafkaProtobufConstants;
 import com.krickert.search.model.wiki.WikiArticle;
 import com.krickert.search.model.wiki.WikiType;
+import com.krickert.search.wiki.article.processor.component.ParagraphParser;
 import com.krickert.search.wiki.article.processor.component.PipelineDocumentMapper;
 import io.micronaut.configuration.kafka.annotation.KafkaKey;
 import io.micronaut.configuration.kafka.annotation.KafkaListener;
@@ -28,14 +29,15 @@ public class WikiParsedArticleListener {
     private static final Logger log = LoggerFactory.getLogger(WikiParsedArticleListener.class);
     private final PipeDocumentProducer pipeDocumentProducer;
     private final PipelineDocumentMapper pipeDocumentMapper;
-
-    private final Boolean parseOnlyArticles;
+    private final boolean isParseOnlyArticles;
 
     @Inject
-    public WikiParsedArticleListener(PipeDocumentProducer pipeDocumentProducer, @Value("${wikipedia.parse-only-articles}") Boolean parseOnlyArticles) {
+    public WikiParsedArticleListener(PipeDocumentProducer pipeDocumentProducer,
+                                     PipelineDocumentMapper pipeDocumentMapper,
+                                     @Value("${wikipedia.parse-only-articles}") boolean isParseOnlyArticles) {
         this.pipeDocumentProducer = pipeDocumentProducer;
-        this.pipeDocumentMapper = new PipelineDocumentMapper();
-        this.parseOnlyArticles = parseOnlyArticles;
+        this.pipeDocumentMapper = pipeDocumentMapper;
+        this.isParseOnlyArticles = isParseOnlyArticles;
     }
 
 
@@ -47,7 +49,7 @@ public class WikiParsedArticleListener {
                         String topic,
                         long timestamp) {
         log.debug("Got the request {} with key {}", request, key);
-        if (parseOnlyArticles && request.getWikiType() != WikiType.ARTICLE) {
+        if (isParseOnlyArticles && request.getWikiType() != WikiType.ARTICLE) {
             log.info("Not sending {} with title {} because articles are only being processed.", request.getWikiType(), request.getTitle());
             return;
         }

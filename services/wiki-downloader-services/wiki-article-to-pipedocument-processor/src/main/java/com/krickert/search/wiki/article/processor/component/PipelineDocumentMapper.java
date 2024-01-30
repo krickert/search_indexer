@@ -6,6 +6,7 @@ import com.google.protobuf.Timestamp;
 import com.google.protobuf.Value;
 import com.krickert.search.model.pipe.PipeDocument;
 import com.krickert.search.model.wiki.WikiArticle;
+import jakarta.inject.Inject;
 import jakarta.inject.Singleton;
 
 import java.time.Instant;
@@ -15,11 +16,21 @@ import java.time.format.DateTimeFormatter;
 import java.util.Map;
 
 import static com.krickert.search.wiki.article.processor.component.ParagraphParser.splitIntoParagraphsAndRemoveEmpty;
+import static com.krickert.search.wiki.article.processor.component.ParagraphParser.splitIntoSections;
 import static java.time.format.DateTimeFormatter.ISO_INSTANT;
 import static org.apache.commons.lang3.StringUtils.isNotEmpty;
 
 @Singleton
 public class PipelineDocumentMapper {
+
+    private final boolean isAddWikiText;
+    private final ParagraphParser.ParagraphStrategy paragraphStrategy;
+
+    public PipelineDocumentMapper(@io.micronaut.context.annotation.Value("${wikipedia.add-wiki-text}") boolean isAddWikiText,
+                                  @io.micronaut.context.annotation.Value("${wikipedia.paragraph-strategy}")ParagraphParser.ParagraphStrategy paragraphStrategy) {
+        this.isAddWikiText = isAddWikiText;
+        this.paragraphStrategy = paragraphStrategy;
+    }
 
     public PipeDocument mapWikiArticleToPipeDocument(WikiArticle wikiArticle) {
         PipeDocument.Builder pipeDocumentBuilder = PipeDocument.newBuilder();
@@ -34,10 +45,14 @@ public class PipelineDocumentMapper {
         wikiMetaData.put("date_parsed", Value.newBuilder().setStringValue(parseDateParsed(wikiArticle.getDateParsed())).build());
         if (isNotEmpty(wikiArticle.getText())) {
             pipeDocumentBuilder.setBody(wikiArticle.getText());
-            pipeDocumentBuilder.addAllBodyParagraphs(splitIntoParagraphsAndRemoveEmpty(wikiArticle.getText()));
+            if (paragraphStrategy == ParagraphParser.ParagraphStrategy.PARAGRAPH) {
+                pipeDocumentBuilder.addAllBodyParagraphs(splitIntoParagraphsAndRemoveEmpty(wikiArticle.getText()));
+            } else if (paragraphStrategy == ParagraphParser.ParagraphStrategy.SECTION) {
+                pipeDocumentBuilder.addAllBodyParagraphs(splitIntoSections(wikiArticle.getText(),wikiArticle.getTitle()));
+            }
         }
 
-        if (isNotEmpty(wikiArticle.getWikiText())) {
+        if (isAddWikiText && isNotEmpty(wikiArticle.getWikiText())) {
             wikiMetaData.put("wiki_text", Value.newBuilder().setStringValue(wikiArticle.getWikiText()).build());
         }
         Struct wikiData = Struct.newBuilder().putAllFields(wikiMetaData).build();

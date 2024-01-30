@@ -47,6 +47,5 @@ pipeline-config:
   pipeline-processor:
     search-pipeline:
       services:
-        - nlp
         - vectorizer
 

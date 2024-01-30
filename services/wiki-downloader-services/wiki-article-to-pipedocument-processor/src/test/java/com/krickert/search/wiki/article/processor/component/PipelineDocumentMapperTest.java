@@ -20,10 +20,13 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 @MicronautTest
 class PipelineDocumentMapperTest {
     private static final Logger log = LoggerFactory.getLogger(PipelineDocumentMapperTest.class);
-    PipelineDocumentMapper mock = new PipelineDocumentMapper();
+    PipelineDocumentMapper mock = new PipelineDocumentMapper(true, ParagraphParser.ParagraphStrategy.PARAGRAPH);
 
     @Value("${pipe.document.create_dummy_data}")
     boolean createDummyData;
+
+    @Value("${wiki.add-wiki-text|")
+    boolean isAddWikiText;
 
     @Test
     void testDateConversion() {
@@ -39,7 +42,7 @@ class PipelineDocumentMapperTest {
         assertThat(articles).isNotNull()
                 .hasSize(367);
         Collection<PipeDocument> mapperDocuments = Lists.newArrayList();
-        PipelineDocumentMapper mapper = new PipelineDocumentMapper();
+        PipelineDocumentMapper mapper = new PipelineDocumentMapper(true, ParagraphParser.ParagraphStrategy.PARAGRAPH);
         articles.forEach((article) -> mapperDocuments.add(mapper.mapWikiArticleToPipeDocument(article)));
         assertThat(mapperDocuments).isNotEmpty()
                 .hasSize(367);

@@ -5,3 +5,5 @@ kafka:
 pipe.document.create_dummy_data: false
 wikipedia:
   parse-only-articles: false
+  add-wiki-text: true
+  paragraph-strategy: section # can choose paragraph or section
