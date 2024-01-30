@@ -20,6 +20,8 @@ import jakarta.inject.Inject;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.net.URL;
 import java.util.Optional;
@@ -33,6 +35,8 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @MicronautTest
 class WikiDumpFileProcessorTest {
+
+    private static final Logger log = LoggerFactory.getLogger(WikiDumpFileProcessorTest.class);
 
     private static final ConcurrentLinkedQueue<WikiArticle> wikiArticles = new ConcurrentLinkedQueue<>();
     @Inject
@@ -75,6 +79,7 @@ class WikiDumpFileProcessorTest {
     public static class DownloadRequestTestListener {
         @Topic("wiki-parsed-article")
         void receive(WikiArticle request, String topic, @KafkaKey String key) {
+            log.info("Received WikiArticle: {}: {}", wikiArticles.size() + 1, request.getTitle());
             assertNotNull(topic);
             assertNotNull(key);
             wikiArticles.add(request);

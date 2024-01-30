@@ -3,7 +3,9 @@ package com.krickert.search;
 import com.krickert.search.pipeline.config.PipelineClientConfig;
 import com.krickert.search.pipeline.config.PipelineConfig;
 import com.krickert.search.pipeline.config.RegisteredPipelines;
+import io.micronaut.context.annotation.Value;
 import io.micronaut.test.extensions.junit5.annotation.MicronautTest;
+import jakarta.inject.Inject;
 import jakarta.inject.Named;
 import org.junit.jupiter.api.Test;
 
@@ -13,6 +15,9 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @MicronautTest
 public class PipelineClientConfigTest {
+
+    @Value("${grpc.server.port}")
+    String grpcServerPort;
 
     @Test
     void testPipelineConfig(PipelineConfig pipelineConfig) {
@@ -30,7 +35,7 @@ public class PipelineClientConfigTest {
         assertEquals("vectorizer", vectorizer.getName());
         assertEquals(PipelineClientConfig.GRPC_TYPE.SERVER_GRPC, nlp2.getType());
         assertEquals("nlp2", nlp2.getName());
-        assertEquals(Integer.valueOf("50051"), nlp2.getPort());
+        assertEquals(Integer.valueOf(grpcServerPort), nlp2.getPort());
         assertEquals("localhost", nlp2.getHost());
     }
 

@@ -3,6 +3,7 @@ package com.krickert.search.wiki.dump.file.messaging;
 import com.krickert.search.model.constants.KafkaProtobufConstants;
 import com.krickert.search.model.wiki.DownloadedFile;
 import com.krickert.search.wiki.dump.file.component.WikiArticleFilter;
+import com.krickert.search.wiki.dump.file.component.WikiDumpFileProcessor;
 import info.bliki.wiki.dump.WikiXMLParser;
 import io.micronaut.configuration.kafka.annotation.KafkaListener;
 import io.micronaut.configuration.kafka.annotation.OffsetReset;
@@ -26,11 +27,11 @@ import java.io.IOException;
 public class WikiDumpFileListener {
     private static final Logger log = LoggerFactory.getLogger(WikiDumpFileListener.class);
 
-    final WikiArticleFilter wikiArticleFilter;
+    final WikiDumpFileProcessor wikiDumpFileProcessor;
 
     @Inject
-    public WikiDumpFileListener(WikiArticleFilter wikiArticleFilter) {
-        this.wikiArticleFilter = wikiArticleFilter;
+    public WikiDumpFileListener(WikiDumpFileProcessor wikiDumpFileProcessor) {
+        this.wikiDumpFileProcessor = wikiDumpFileProcessor;
     }
 
 
@@ -44,12 +45,8 @@ public class WikiDumpFileListener {
         log.info("this {} was sent {} ago from partition {} from the {} topic at {}",
                 request.getFullFilePath(), offset, partition, topic, timestamp);
 
-        final WikiXMLParser parser;
-        try {
-            parser = new WikiXMLParser(new File(request.getFullFilePath()), wikiArticleFilter);
-            parser.parse();
-        } catch (IOException | SAXException e) {
-            log.error("Problem with parsing file {}.  Error returned: {}", request, ExceptionUtils.getStackTrace(e));
-        }
+        wikiDumpFileProcessor.process(request);
     }
+
+
 }

@@ -32,7 +32,7 @@ public class ClientTest {
         @Override
         public void onNext(PipeReply value) {
             replies.add(value);
-            log.info(value.toString());
+            log.info(value.getDocument().getTitle());
         }
 
         @Override
@@ -54,7 +54,7 @@ public class ClientTest {
         Collection<PipeDocument> pipeDocuments = TestDataHelper.getFewHunderedPipeDocuments();
         for (PipeDocument document : pipeDocuments ) {
             PipeDocument reply = pipelineProcessor.process(document, "test-pipeline");
-            log.info(reply.toString());
+            log.info(reply.getTitle());
         }
     }
 }

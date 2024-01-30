@@ -58,7 +58,6 @@
     <dependency>
       <groupId>io.micronaut</groupId>
       <artifactId>micronaut-runtime</artifactId>
-      <version>4.3.1</version>
       <scope>compile</scope>
     </dependency>
     <dependency>

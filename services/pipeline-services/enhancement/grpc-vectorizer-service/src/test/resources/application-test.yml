@@ -8,6 +8,9 @@ grpc:
 micronaut:
   server:
     port: ${random.port}
+  health:
+    monitor:
+      enabled: false
 endpoints:
   health:
     enabled: false
