@@ -13,7 +13,13 @@ import java.util.List;
 @Singleton
 public class WikiURLExtractor {
 
-    private static Link generateUrlEntry(String wikiCleanedText) {
+    /**
+     * Generates a URL entry based on the given wiki cleaned text.
+     *
+     * @param wikiCleanedText the wiki cleaned text containing the URL entry
+     * @return the generated Link object representing the URL entry, or null if the entry is empty or invalid
+     */
+    protected static Link generateUrlEntry(String wikiCleanedText) {
         String[] entries = StringUtils.split(wikiCleanedText, " ", 2);
         if (ArrayUtils.isEmpty(entries)) {
             return null;

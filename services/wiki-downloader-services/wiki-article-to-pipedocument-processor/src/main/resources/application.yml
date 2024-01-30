@@ -36,3 +36,4 @@ wikipedia:
   download-name: "${wikipedia.download-location}/wikiList.md5"
   prefix-url: https://dumps.wikimedia.org/enwiki/
   fresh-copy: true
+  parse-only-articles: true               #avoid redirects or other garbage

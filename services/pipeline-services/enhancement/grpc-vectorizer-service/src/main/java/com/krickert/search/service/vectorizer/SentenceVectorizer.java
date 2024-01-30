@@ -64,11 +64,10 @@ public class SentenceVectorizer implements Vectorizer {
      */
     @Override
     public float[] embeddings(String text) {
-        log.info("vectorizing {}", text);
+        log.debug("vectorizing {}", text);
         try (Predictor<String, float[]> predictor = model.newPredictor()) {
             float[] response = predictor.predict(text);
             log.debug("Text input [{}] returned embeddings [{}]", text, response);
-            log.info("completed");
             return response;
         } catch (TranslateException e) {
             throw new RuntimeException(e);

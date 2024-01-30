@@ -25,4 +25,5 @@ kafka:
     serializer: io.confluent.kafka.serializers.protobuf.KafkaProtobufSerializer
     deserializer: io.confluent.kafka.serializers.protobuf.KafkaProtobufDeserializer
 
-
+wikipedia:
+  send-only-articles: true

@@ -97,7 +97,10 @@ class GrpcVectorizerServiceTest {
             endpoint2.send(request, streamObserver);
 
         }
-        await().atMost(100, SECONDS).until(() -> finishedDocs.size() == 367);
+
+        await().atMost(10, SECONDS).until(() -> finishedDocs.size() > 1);
+        await().atMost(20, SECONDS).until(() -> finishedDocs.size() > 10);
+        await().atMost(80, SECONDS).until(() -> finishedDocs.size() == 367);
     }
 
 }
