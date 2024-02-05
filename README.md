@@ -269,18 +269,18 @@ Once I get the above completed, which should take a few months, I'd like to intr
 
 Open for any suggestions.
 
-h1. Platform Dependent Notes
+# Platform Dependent Notes
 
 
 I'm building this as a linux build, but often code on OSX and Windoze.  Therefore, you can expect this software to likely work on a linux box running on an intel chipset.
 
 Since the pytorch library is platform-dependent, there are a number of things that we had to wrangle to get this to work right between the various platforms.  Even then, I can't promise this would work natively out-of-the-box unless you're using my docker images.
 
-h2. Windows Notes
+## Windows Notes
 when coding on Windoze, I use the WSL2 library.  I wouldn't recommend doing this to anyone at this time becuase the grpc services take advantage of GPUs, and I'm not sure if the windoze machines can do that.  Regardless, it should work and run on a windows machine.  If you cna't get it to run, send me a note or open up an issue and I'll be glad to fix it ASAP.
 
 
-h2. Linux
+## Linux
 I have an nvidia 2070 RTX, and I installed the following libraries on my ubuntu server:
 * Docker
 * JDK 17 (JDK 21 doesn't seem to work due to an incompatibility with Mockito at this time)
@@ -292,7 +292,7 @@ The build is working on the autobuild for github, but I cannot promise full comp
 
 Protocol buffers should work OOTB without installing.  Maven handles downloading the native executable.
 
-h3. OSX
+## OSX
 
 build works on OSX, but I'd recommend running on native linux instead.  It seems to be at least 50% faster on a linux machine.
 
@@ -304,3 +304,22 @@ That being said, if you have:
 All running on OSX, I suspect this should work.
 
 I'm attempting to put the non-CPU intensive services onto a swarm of raspberry pis in my office.  So I'll likely make both ARM64 and AMD64 docker images.  However, I'm going to start with intel images for now.
+
+
+# Tools used - outside support
+
+## WikiMedia foundation
+
+WikiMedia makes this project go a lot easier.  They have been a great partner to show me all about how they do their own parsing as well as just be open about how they do their own architecture internally.  Plese support them!
+
+## IntelliJ IDEA
+Special shout out to JetBrains for including a free IntelliJ IDEA Ultimate license to develop this software.  
+
+![IntelliJ IDEA Logo](/docs/intellij_logo.png)
+
+
+## YourKit profiler
+
+THe people at YourKit provided us with their profiler.  I can't say enough good things about this profiler.  It's amazing at finding errors in your code that you would've never known exists.  Great for large data processing like this.
+
+![YourKit Logo](/docs/yourkit_logo.png)
