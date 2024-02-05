@@ -163,20 +163,21 @@
     <!-- for GPU acceleration but made jar 1.6G -->
     <!-- If running this on an x86 machine, it's good to turn this on if you have an nvidia GPU -->
     <!-- keeping this for now.  Will need to see how to integrate it in the container later -->
-    <!--dependency>
+    <!-- https://mvnrepository.com/artifact/ai.djl.pytorch/pytorch-native-cu121 -->
+    <dependency>
       <groupId>ai.djl.pytorch</groupId>
-      <artifactId>pytorch-native-cu118</artifactId>
-      <classifier>linux-x86_64</classifier>
-      <version>2.0.1</version>
+      <artifactId>pytorch-native-cu121</artifactId>
+      <version>2.1.1</version>
       <scope>runtime</scope>
-    </dependency-->
+    </dependency>
     <!-- https://mvnrepository.com/artifact/ai.djl.pytorch/pytorch-jni -->
-    <!-- dependency>
+    <dependency>
       <groupId>ai.djl.pytorch</groupId>
       <artifactId>pytorch-jni</artifactId>
-      <version>2.0.1-0.25.0</version>
+      <version>2.1.1-0.26.0</version>
       <scope>runtime</scope>
-    </dependency-->
+    </dependency>
+
     <dependency>
       <groupId>io.netty</groupId>
       <artifactId>netty-codec</artifactId>

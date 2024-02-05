@@ -4,10 +4,13 @@ micronaut:
   executors:
     consumer:
       type: fixed
-      nThreads: 10
+      nThreads: 1
     producer:
       type: fixed
-      nThreads: 10
+      nThreads: 30
+  task:
+    scheduled:
+      enabled: true
       
 consul:
   client:
@@ -27,3 +30,6 @@ kafka:
 
 wikipedia:
   send-only-articles: true
+  max-file-concurrency: 4 #number of files you would like to process at the same time.
+                          #There is only one thread, so it will process them in sequence but
+                          #since it is a very long running job, this is done async

@@ -8,6 +8,7 @@ import com.krickert.search.service.PipeRequest;
 import com.krickert.search.service.PipeServiceGrpc;
 import com.krickert.search.service.vectorizer.grpc.VectorizerEndpoint;
 import io.grpc.ManagedChannel;
+import io.micronaut.context.annotation.Prototype;
 import io.micronaut.context.annotation.Requires;
 import io.micronaut.context.env.Environment;
 import jakarta.inject.Singleton;
@@ -17,7 +18,7 @@ import jakarta.inject.Singleton;
  * object by sending it to one or more services defined in the PipelineConfig. The class uses a ConsulGrpcManagedChannelFactory
  * to create managed channels for communicating with the services through Consul grpc services registerd with the Grpc PipeService interface.
  */
-@Singleton
+@Prototype
 @Requires(notEnv = Environment.TEST)
 public class ConsulGrpcPipelineProcessor implements PipelineProcessor {
 

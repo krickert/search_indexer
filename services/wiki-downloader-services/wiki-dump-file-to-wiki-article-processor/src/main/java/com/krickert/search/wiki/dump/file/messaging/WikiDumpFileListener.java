@@ -10,6 +10,7 @@ import io.micronaut.configuration.kafka.annotation.OffsetReset;
 import io.micronaut.configuration.kafka.annotation.Topic;
 import io.micronaut.context.annotation.Property;
 import io.micronaut.context.annotation.Prototype;
+import io.micronaut.messaging.Acknowledgement;
 import jakarta.inject.Inject;
 import org.apache.commons.lang3.exception.ExceptionUtils;
 import org.slf4j.Logger;
@@ -19,7 +20,7 @@ import org.xml.sax.SAXException;
 import java.io.File;
 import java.io.IOException;
 
-@KafkaListener(offsetReset = OffsetReset.EARLIEST, threads = 8,
+@KafkaListener(offsetReset = OffsetReset.EARLIEST,
         properties = @Property(name = KafkaProtobufConstants.SPECIFIC_CLASS_PROPERTY,
                 value = KafkaProtobufConstants.DOWNLOADED_FILE_CLASS),
         groupId = "dump-file-processor")
@@ -40,12 +41,15 @@ public class WikiDumpFileListener {
                         long offset,
                         int partition,
                         String topic,
-                        long timestamp) {
+                        long timestamp,
+                        Acknowledgement ack) {
         log.debug("Got the request {} ", request);
         log.info("this {} was sent {} ago from partition {} from the {} topic at {}",
                 request.getFullFilePath(), offset, partition, topic, timestamp);
+        ack.ack();
+        wikiDumpFileProcessor.processJob(request);
 
-        wikiDumpFileProcessor.process(request);
+        //TODO: re-send the request if the processing fails more than 2x?  Might need to change the model to handle this situation
     }
 
 
