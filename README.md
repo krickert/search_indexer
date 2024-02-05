@@ -320,6 +320,6 @@ Special shout out to JetBrains for including a free IntelliJ IDEA Ultimate licen
 
 ## YourKit profiler
 
-The people at [YourKit](https://www.yourkit.com).rovided us with their profiler.  I can't say enough good things about this profiler.  It's amazing at finding errors in your code that you would've never known exists.  Great for large data processing like this.
+The people at [YourKit](https://www.yourkit.com) provided us with their profiler.  I can't say enough good things about this profiler.  It's amazing at finding errors in your code that you would've never known exists.  Great for large data processing like this.
 
 ![YourKit Logo](/docs/yourkit_logo.png)
