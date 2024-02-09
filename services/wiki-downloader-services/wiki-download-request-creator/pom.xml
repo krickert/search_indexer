@@ -20,7 +20,7 @@
         <micronaut.version>4.2.4</micronaut.version>
         <micronaut.test.resources.enabled>true</micronaut.test.resources.enabled>
         <exec.mainClass>com.krickert.search.download.request.SendFileRequestsCommand</exec.mainClass>
-        <kafka-streams-protobuf-serde.version>7.5.3</kafka-streams-protobuf-serde.version>
+        <kafka-streams-protobuf-serde.version>7.6.0</kafka-streams-protobuf-serde.version>
     </properties>
 
     <repositories>
