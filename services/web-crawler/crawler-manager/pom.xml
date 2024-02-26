@@ -10,7 +10,7 @@
   <parent>
     <groupId>io.micronaut.platform</groupId>
     <artifactId>micronaut-parent</artifactId>
-    <version>4.2.4</version>
+    <version>4.3.3</version>
     <relativePath/>
   </parent>
   <properties>
@@ -23,7 +23,7 @@
     <jib.docker.image>${project.artifactId}</jib.docker.image>
     <jib.docker.tag>${project.version}</jib.docker.tag>
     <micronaut.runtime>netty</micronaut.runtime>
-    <jobrunr.version>6.3.4</jobrunr.version>
+    <jobrunr.version>6.3.5</jobrunr.version>
     <exec.mainClass>com.krickert.search.crawler.manager.Application</exec.mainClass>
   </properties>
 
@@ -78,7 +78,7 @@
     <dependency>
       <groupId>io.micronaut</groupId>
       <artifactId>micronaut-management</artifactId>
-      <version>4.3.1</version>
+      <version>4.3.8</version>
     </dependency>
     <dependency>
       <groupId>ch.qos.logback</groupId>
@@ -88,7 +88,7 @@
     <dependency>
       <groupId>ch.qos.logback</groupId>
       <artifactId>logback-core</artifactId>
-      <version>1.4.14</version>
+      <version>1.5.0</version>
       <scope>runtime</scope>
     </dependency>
     <dependency>
@@ -165,7 +165,7 @@
     <dependency>
       <groupId>org.apache.commons</groupId>
       <artifactId>commons-compress</artifactId>
-      <version>1.25.0</version>
+      <version>1.26.0</version>
       <scope>test</scope>
     </dependency>
     <dependency>

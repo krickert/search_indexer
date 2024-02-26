@@ -10,7 +10,7 @@
   <parent>
     <groupId>io.micronaut.platform</groupId>
     <artifactId>micronaut-parent</artifactId>
-    <version>4.2.4</version>
+    <version>4.3.3</version>
     <relativePath/>
   </parent>
   <properties>
@@ -68,7 +68,7 @@
     <dependency>
       <groupId>ch.qos.logback</groupId>
       <artifactId>logback-core</artifactId>
-      <version>1.4.14</version>
+      <version>1.5.0</version>
       <scope>runtime</scope>
     </dependency>
     <dependency>
@@ -91,7 +91,7 @@
     <dependency>
       <groupId>org.apache.commons</groupId>
       <artifactId>commons-compress</artifactId>
-      <version>1.25.0</version>
+      <version>1.26.0</version>
     </dependency>
     <dependency>
       <groupId>ai.djl.pytorch</groupId>
@@ -180,13 +180,13 @@
     <dependency>
       <groupId>io.netty</groupId>
       <artifactId>netty-codec</artifactId>
-      <version>4.1.106.Final</version>
+      <version>4.1.107.Final</version>
       <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>io.netty</groupId>
       <artifactId>netty-codec-http2</artifactId>
-      <version>4.1.106.Final</version>
+      <version>4.1.107.Final</version>
       <scope>compile</scope>
     </dependency>
 
