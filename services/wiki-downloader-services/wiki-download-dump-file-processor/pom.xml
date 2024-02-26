@@ -143,6 +143,11 @@
       <artifactId>kafka-streams-protobuf-serde</artifactId>
       <version>${kafka-streams-protobuf-serde.version}</version>
     </dependency>
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-compress</artifactId>
+      <version>1.26.0</version>
+    </dependency>
     <!-- https://mvnrepository.com/artifact/io.grpc/grpc-protobuf -->
     <dependency>
       <groupId>io.grpc</groupId>
@@ -190,7 +195,6 @@
             <path>
               <groupId>io.micronaut.serde</groupId>
               <artifactId>micronaut-serde-processor</artifactId>
-              <version>${micronaut.serialization.version}</version>
               <exclusions>
                 <exclusion>
                   <groupId>io.micronaut</groupId>
