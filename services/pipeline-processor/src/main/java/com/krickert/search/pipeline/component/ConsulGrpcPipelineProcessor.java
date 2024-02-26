@@ -46,13 +46,14 @@ public class ConsulGrpcPipelineProcessor implements PipelineProcessor {
      */
     @Override
     public PipeDocument process(PipeDocument pipeDocument, String pipeline) {
-//        RegisteredPipelines registeredPipelines = pipelineConfig.getRegisteredPipelines().get(pipeline);
-//
-//        for (String service : registeredPipelines.getServices()) {
-//            pipeDocument = sendDocumentToService(service, pipeDocument);
-//        }
 
-        return vectorizerEndpoint.prepareDocument(pipeDocument).build();
+        RegisteredPipelines registeredPipelines = pipelineConfig.getRegisteredPipelines().get(pipeline);
+
+        for (String service : registeredPipelines.getServices()) {
+            pipeDocument = sendDocumentToService(service, pipeDocument);
+        }
+
+        return pipeDocument;
     }
 
     /**
