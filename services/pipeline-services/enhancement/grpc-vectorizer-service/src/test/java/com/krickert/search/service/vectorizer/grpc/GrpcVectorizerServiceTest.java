@@ -13,6 +13,7 @@ import io.grpc.stub.StreamObserver;
 import io.micronaut.runtime.EmbeddedApplication;
 import io.micronaut.test.extensions.junit5.annotation.MicronautTest;
 import jakarta.inject.Inject;
+import org.apache.commons.lang3.StringUtils;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
@@ -52,8 +53,8 @@ class GrpcVectorizerServiceTest {
         @Override
         public void onNext(PipeReply reply) {
             try {
-                log.info("RESPONSE, returning embeddings: {}", JsonFormat.printer().print(
-                        reply.getDocument().getCustomData()));
+                log.info("RESPONSE, returning embeddings: {}", StringUtils.left(JsonFormat.printer().print(
+                        reply.getDocument().getCustomData()), 150));
                 finishedDocs.put(reply.getDocument().getId(), reply.getDocument());
             } catch (InvalidProtocolBufferException e) {
                 throw new RuntimeException(e);
