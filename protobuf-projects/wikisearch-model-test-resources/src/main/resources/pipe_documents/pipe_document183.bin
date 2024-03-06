@@ -1,368 +1,348 @@
 
-41317	Line code∞BIn telecommunication, a line code is a pattern of voltage, current, or photons used to represent digital data transmitted down a communication channel or written to a storage medium. This repertoire of signals is usually called a constrained code in data storage systems. 
-Some signals are more prone to error than others as the physics of the communication channel or storage medium constrains the repertoire of signals that can be used reliably.
+41544John McLoughlin∏ÇJohn McLoughlin, baptized Jean-Baptiste McLoughlin, (October 19, 1784 ‚Äì September 3, 1857) was a French-Canadian, later American, Chief Factor and Superintendent of the Columbia District of the Hudson's Bay Company at Fort Vancouver from 1824 to 1845. He was later known as the "Father of Oregon" for his role in assisting the American cause in the Oregon Country. In the late 1840s, his general store in Oregon City was famous as the last stop on the Oregon Trail.
 
-Common line encodings are unipolar, polar, bipolar, and Manchester code.
+Early days
 
-Transmission and storage 
+McLoughlin was born in October 1784 in Rivi√®re-du-Loup, Quebec, and was of Scottish and French Canadian descent. He lived with his great uncle, Colonel William Fraser, for a while as a child. Though baptized Roman Catholic, he was raised Anglican. In his later life, he returned to the Roman Catholic faith.
 
-After line coding, the signal is put through a physical communication channel, either a transmission medium or data storage medium.Karl Paulsen. [http://www.tvtechnology.com/media-servers/0150/coding-for-magnetic-storage-mediums/186738 "Coding for Magnetic Storage Mediums"] .2007. The most common physical channels are:
-* the line-coded signal can directly be put on a transmission line, in the form of variations of the voltage or current (often using differential signaling).
-* the line-coded signal (the baseband signal) undergoes further pulse shaping (to reduce its frequency bandwidth) and then is modulated (to shift its frequency) to create an RF signal that can be sent through free space.
-* the line-coded signal can be used to turn on and off a light source in free-space optical communication, most commonly used in an infrared remote control.
-* the line-coded signal can be printed on paper to create a bar code.
-* the line-coded signal can be converted to magnetized spots on a hard drive or tape drive.
-* the line-coded signal can be converted to pits on an optical disc.
+In 1798, he began to study medicine under Sir James Fisher of Quebec. McLoughlin was granted a license to practice medicine in Lower Canada (now Quebec) in 1803. He evidently completed his course, as he is widely referred to as "Dr. John McLoughlin".
 
-Some of the more common binary line codes include:
+North West Company
 
-Each line code has advantages and disadvantages. Line codes are chosen to meet one or more of the following criteria:
-* Minimize transmission hardware
-* Facilitate synchronization
-* Ease error detection and correction
-* Achieve a target spectral density
-* Eliminate a DC component
+McLoughlin was hired as a physician at Fort William, the inland headquarters and a fur trade post of the North West Company on Lake Superior. There he became a trader and mastered several Indian languages. In 1814, he became a partner in the company.
 
-Disparity 
+In 1816 McLoughlin was charged with complicity in the massacre at the Red River Colony after the Battle of Seven Oaks. He and all the other parties from the North West Company were exonerated. The Hudson's Bay Company was found culpable by the appointed Royal Commissioner at its trial on October¬†30, 1818, and in the later prosecutions by Lord Selkirk and the successful counter-suits.; ; 
 
-Most long-distance communication channels cannot reliably transport a DC component. The DC component is also called the disparity, the bias, or the DC coefficient. The disparity of a bit pattern is the difference in the number of one bits vs the number of zero bits. The running disparity is the running total of the disparity of all previously transmitted bits. The simplest possible line code, unipolar, gives too many errors on such systems, because it has an unbounded DC component.
+McLoughlin was instrumental in the negotiations leading to the North West Company's 1821 merger with the Hudson's Bay Company. He was promoted to head the Lac la Pluie district temporarily shortly after the merger.
 
-Most line codes eliminate the DC component such codes are called DC-balanced, zero-DC, or DC-free. There are three ways of eliminating the DC component:
+Hudson's Bay Company
 
-* Use a constant-weight code. Each transmitted code word in a constant-weight code is designed such that every code word that contains some positive or negative levels also contains enough of the opposite levels, such that the average level over each code word is zero. Examples of constant-weight codes include Manchester code and Interleaved 2 of 5.
-* Use a paired disparity code. Each code word in a paired disparity code that averages to a negative level is paired with another code word that averages to a positive level. The transmitter keeps track of the running DC buildup, and picks the code word that pushes the DC level back towards zero. The receiver is designed so that either code word of the pair decodes to the same data bits. Examples of paired disparity codes include alternate mark inversion, 8b/10b and 4B3T.
-* Use a scrambler. For example, the scrambler specified in  for 64b/66b encoding.
+In 1824, the Hudson's Bay Company appointed McLoughlin, already a Chief Factor, as Superintendent of the Columbia Department (roughly parallel to what Americans know as the Oregon Country), and Peter Skene Ogden was appointed to assist him.  At the time, the region was under joint occupation of both the United States and Britain pursuant to the Treaty of 1818. Upon his arrival, McLoughlin determined that the headquarters of the company at Fort Astoria (now Astoria, Oregon), at the mouth of the Columbia River, was unfit.  The York Factory Express trade route had evolved from an earlier express brigade used by the North West Company between Fort George, founded in 1811 by John Jacob Astor's American Fur Company) at the mouth of the Columbia River, to Fort William on Lake Superior.
 
-Polarity 
+In the 1821 merger with the North West Company, the Hudson's Bay Company gained control of North West Company trading posts west of the Rocky Mountains. They established headquarters at Fort George (formerly Astoria). George Simpson, Governor of Hudson's Bay Company, visited the Columbia District in 1824‚Äì25, journeying from York Factory. He investigated a quicker route than previously used, following the Saskatchewan River and crossing the mountains at Athabasca Pass. This route was thereafter followed by the York Factory Express brigades.
 
-Bipolar line codes have two polarities, are generally implemented as RZ, and have a radix of three since there are three distinct output levels (negative, positive and zero). One of the principle advantages of this type of code is that it can eliminate any DC component. This is important if the signal must pass through a transformer or a long transmission line.
+Fort Vancouver
 
-Unfortunately, several long-distance communication channels have polarity ambiguity. Polarity-insensitive line codes compensate in these channels.
+McLoughlin built Fort Vancouver as a replacement for Fort George, on the north side of the Columbia River, a few miles upstream from the confluence of the Columbia and  Willamette Rivers.  The site was chosen by Sir George Simpson. The post was opened for business on March 19, 1825. From his Columbia Department headquarters in Fort Vancouver, McLoughlin supervised trade and kept peace with the Indians, inaugurated salmon and timber trade with Mexican-controlled California and Hawaii, and supplied Russian America with produce.
 
-There are three ways of providing unambiguous reception of 0 and 1 bits over such channels:
-* Pair each code word with the polarity-inverse of that code word. The receiver is designed so that either code word of the pair decodes to the same data bits. Examples include alternate mark inversion, Differential Manchester encoding, coded mark inversion and Miller encoding.
-* differential coding each symbol relative to the previous symbol. Examples include MLT-3 encoding and NRZI.
-* Invert the whole stream when inverted syncwords are detected
+Fort Vancouver became the center of activity in the Pacific Northwest. Every year ships would come from London to drop off supplies and trade goods in exchange for the furs. It was the nexus for the fur trade on the Pacific Coast; its influence reached from the Rocky Mountains to the Hawaiian Islands, and from Russian Alaska into Mexican-controlled California. From Fort Vancouver, at its pinnacle, McLoughlin watched over 34 outposts, 24 ports, six ships, and 600 employees. Under McLoughlin's management, the Columbia Department remained highly profitable, in part due to the ongoing high demand for beaver hats in Europe. John McLoughlin was worried Fort Vancouver would be attacked and plundered of its heavy stock of supplies, due to its proximity to the Willamette Valley, in which there was already an American settlement of some size.
 
-Run-length limited codes
+York Factory Express
 
-For reliable clock recovery at the receiver, a run-length limitation may be imposed on the generated channel sequence, i.e., the maximum number of consecutive ones or zeros is bounded to a reasonable number. A clock period is recovered by observing transitions in the received sequence, so that a maximum run length guarantees sufficient transitions to assure clock recovery quality.
+By 1825 there were usually two brigades from opposite ends of the route, (Fort Vancouver in the Columbia District on the lower Columbia River and the other from York Factory on Hudson Bay), that set out in spring and passed each other in the middle of the continent. Each brigade consisted of about forty to seventy-five men and two to five specially made boats that travelled at breakneck speed (for the time). These brigades often needed help from Indians, who would help the men portage around falls and unnavigable rapids; in return, the Indians were paid with trade goods. An 1839 report cites the travel time as three months and ten days‚Äîalmost 26 miles (40¬†km) per day on average. The brigades used boat, horseback, and backpacks to bring the supplies in and furs out to the forts and trading posts along the route.
 
-RLL codes are defined by four main parameters: m, n, d, k. The first two, m/n, refer to the rate of the code, while the remaining two specify the minimal d and maximal k number of zeroes between consecutive ones. This is used in both telecommunication and storage systems that move a medium past a fixed recording head.
+Puget Sound Agricultural Company
 
-Specifically, RLL bounds the length of stretches (runs) of repeated bits during which the signal does not change.  If the runs are too long, clock recovery is difficult; if they are too short, the high frequencies might be attenuated by the communications channel.  By modulating the data, RLL reduces the timing uncertainty in decoding the stored data, which would lead to the possible erroneous insertion or removal of bits when reading the data back. This mechanism ensures that the boundaries between bits can always be accurately found (preventing bit slip), while efficiently using the media to reliably store the maximal amount of data in a given space.
+The Hudson Bay Company officially discouraged settlement because it interfered with the lucrative fur trade. Two developments in the late 1830s made a reappraisal of Hudson's Bay Company operations in the Columbia Department necessary. Apprehensions about American antagonism rose due to U.S. Senator Lewis F. Linn, who in 1838 called for a naval force to be dispatched to the Columbia River, although the measure never passed. Favorable relations with the Russian-American Company (RAC) were established with the signing of the RAC-HBC Agreement in 1839.
 
-Early disk drives used very simple encoding schemes, such as RLL (0,1) FM code, followed by RLL (1,3) MFM code which were widely used in hard disk drives until the mid-1980s and are still used in digital optical discs such as CD, DVD, MD, Hi-MD and Blu-ray using EFM and EFMPLus codes. Higher density RLL (2,7) and RLL (1,7) codes became the de facto standards for hard disks by the early 1990s.
+To meet the new commercial obligations and to support British claims in the Oregon Question, the Hudson's Bay Company formally incorporated the Puget Sound Agricultural Company (PSAC) subsidiary in 1840. The new venture, while nominally independent, was administratively included within the Columbia Department. McLoughlin criticized the idea of a fur trading monopoly maintaining agricultural operations, as he felt independent farmers would be efficient. Nonetheless, he was appointed as the PSAC supervisor.
 
-Synchronization 
+The fertile plains near the Cowlitz River were selected as a suitable location for Cowlitz Farm, the principal PSAC farm. Fort Nisqually was also assigned to the PSAC, where numerous livestock herds were maintained. Several locations were considered for potential farmers, including among the French-Canadian and M√©tis farmers of the Willamette Valley, Scotland, and the Red River colony.
 
-Line coding should make it possible for the receiver to synchronize itself to the phase of the received signal. If the clock recovery is not ideal, then the signal to be decoded will not be sampled at the optimal times. This will increase the probability of error in the received data.
+In November 1839 Sir George Simpson instructed Duncan Finlayson to begin promoting the PSAC among the Red River colonists. James Sinclair was appointed by Duncan Finlayson to guide the mostly M√©tis settler families to Fort Vancouver. In June 1841, the party left Fort Garry with 23 families consisting of 121 people. When they arrived at Fort Vancouver, they numbered 21 families of 116 people. Fourteen families were relocated to Fort Nisqually, while the remaining seven families were sent to Fort Cowlitz.
 
-Biphase line codes require at least one transition per bit time. This makes it easier to synchronize the transceivers and detect errors, however, the baud rate is greater than that of NRZ codes.
+Japanese shipwreck
 
-Other considerations 
+When three Japanese sailors, among them Otokichi, were shipwrecked on the Olympic Peninsula in 1834, McLoughlin thought they might present an opportunity to open trade with Japan. He sent the three men to London on the Eagle to try to convince the Crown of his plan. They reached London in 1835, probably the first Japanese to do so since the 16th century Christopher and Cosmas. When the British Government did not show interest, the castaways were sent to Macau so that they could be returned to Japan. Even that was not possible, as Japan did not allow any outside ships to enter its waters.
 
-A line code will typically reflect technical requirements of the transmission medium, such as optical fiber or shielded twisted pair.  These requirements are unique for each medium, because each one has different behavior related to interference, distortion, capacitance and attenuation.
+Relations with American settlers
 
-Common line codes 
+In 1821, with the merger of HBC and the North West Company, the British Parliament imposed the laws of Upper Canada on British subjects in Rupert‚Äôs Land and the Columbia District, and gave the authority to enforce those laws to the newly reconfigured Hudson's Bay Company. McLoughlin, as Superintendent of Fort Vancouver, applied the law to British subjects, kept peace with the natives and sought to maintain law and order over American settlers as well.
 
-* 2B1Q
-* 4B3T
-* 4B5B
-* 6b/8b encoding
-* 8b/10b encoding
-* 64b/66b encoding
-* 128b/130b encoding
-* Alternate mark inversion (AMI)
-* Coded mark inversion (CMI)
-* EFMPlus, used in DVDs
-* Eight-to-fourteen modulation (EFM), used in compact discs
-* Hamming code
-* Hybrid ternary code
-* Manchester code and differential Manchester
-* Mark and space
-* MLT-3 encoding
-* Modified AMI codes: B8ZS, B6ZS, B3ZS, HDB3
-* Modified frequency modulation, Miller encoding and delay encoding
-* Non-return-to-zero (NRZ)
-* Non-return-to-zero, inverted (NRZI)
-* Pulse-position modulation
-* Return-to-zero (RZ)
-* TC-PAM
+In August 1828, McLoughlin was in charge at Fort Vancouver when American explorer Jedediah Smith, John Turner, Arthur Black, and Richard Leland arrived, the only survivors of the massacre of fifteen members of his exploring party by Umpqua people, who lived to the south in Oregon. McLoughlin sent a party headed by Alexander Roderick McLeod to recover Smith‚Äôs property.
 
-Optical line codes
+In the early 1840s, with the arrival of the first wagon trains via the Oregon Trail, McLoughlin disobeyed company orders and extended substantial aid to the American settlers. Relations between Britain and the United States had become very strained, and many expected war to break out any time. McLoughlin's aid probably prevented an armed attack on his outpost by the numerous American settlers. The settlers understood that his motives were not purely altruistic, and some resented the assistance, working against him for the rest of his life.
 
-* Alternate-Phase Return-to-Zero (APRZ)
-* Carrier-Suppressed Return-to-Zero (CSRZ)
-* Three of Six, Fiber Optical (TS-FO)
+Pressure over the Pacific Northwest
 
-See also 
+As tensions mounted in the Oregon boundary dispute; Simpson, realizing that border might ultimately be as far north as the 49th parallel, ordered McLoughlin to relocate their regional headquarters to Vancouver Island. McLoughlin, in turn, directed James Douglas to construct Fort Camosun (now Victoria, British Columbia, Canada) in 1843. But McLoughlin, whose life was increasingly connected to the Willamette River Valley, refused to move there.
 
-* Physical layer
-* Self-synchronizing code and bit synchronization
+McLoughlin was involved with the debate over the future of the Oregon Country. He advocated an independent nation that would be free of the United States during debates at the Oregon Lyceum in 1842 through his lawyer. This view won support at first and a resolution adopted but was later moved away from in favor of a resolution by George Abernethy of the Methodist Mission to wait on forming an independent country.
 
-References 
+In 1843, American settlers established their own government, called the Provisional Government of Oregon. A legislative committee drafted a code of laws known as the Organic Law. It included the creation of an executive committee of three, a judiciary, militia, land laws, and four counties. There was vagueness and confusion over the nature of the 1843 Organic Law, in particular, whether it was constitutional or statutory. In 1844, a new legislative committee decided to consider it statutory. The 1845 Organic Law made additional changes, including allowing the participation of British subjects in the government. Although the Oregon Treaty of 1846 settled the boundaries of US jurisdiction upon all lands south of the 49th parallel, the Provisional Government continued to function until 1849, when the first governor of Oregon Territory arrived.
 
+Personal life
+
+McLoughlin's appearance, 6 foot 4¬†inches (193¬†cm) tall with long, prematurely white hair, brought him respect; but he was also generally known for his fair treatment of the people with whom he dealt, whether they were British subjects, U.S. citizens, or of indigenous origin  (notwithstanding for example, his asymmetric use of force against the S'Klallam tribe after an earlier raid--an HBC ship under his command fired its cannons into an unrelated village near Port Townsend in the early morning, killing twenty-seven people and leveling the village. ) . At the time, the wives of many Hudson's Bay field employees were indigenous, including McLoughlin's wife Marguerite; who was Metis, the daughter of an aboriginal woman and one of the original partners of the North West Company, Jean-√âtienne Waddens. She was the widow of Alexander McKay, a trader killed in the Tonquin incident. Her son Thomas became McLoughlin's stepson.Corning, Howard M. (1989) Dictionary of Oregon History. Binfords & Mort Publishing. p. 161.
+
+John McLoughlin lost one son to a violent death. John McLoughlin, Jr. had been appointed the second Clerk in Charge at Fort Stikine, only to die in April 1842 at the hands of one of the fort employees, Urbain Heroux, who was charged with his murder but acquitted for lack of evidence, which added to the grievances John Sr. held against the company.
+
+Later life in the Oregon Territory
+
+After resigning from the Hudson's Bay Company in 1846, McLoughlin moved his family south to Oregon City in the Willamette Valley. The Oregon Treaty had been ratified by that time, and the region, now known as the Oregon Territory, was part of the United States. The valley was the destination of choice for settlers streaming in over the Oregon Trail. At his Oregon City store, he sold food and farming tools to settlers.
+
+In 1847, McLoughlin was given the Knighthood of St. Gregory, bestowed on him by Pope Gregory XVI. He became a U.S. citizen in 1849. McLoughlin's opponents succeeded in inserting a clause forfeiting his land claim in the Donation Land Claim Act of 1850 by Samuel R. Thurston. Although it was never enforced, it embittered the elderly McLoughlin. He served as mayor of Oregon City in 1851, winning 44 of 66 votes. He died of natural causes in 1857. His grave is now located beside his home overlooking downtown Oregon City.
+
+Legacy
+
+McLoughlin is featured on the 1925 Fort Vancouver Centennial half dollar designed by Laura Gardin Fraser.
+
+In 1953, the state of Oregon donated to the National Statuary Hall Collection a bronze statue of McLoughlin, which is currently displayed at the Capitol Visitor Center. The title "Father of Oregon" was officially bestowed on him by the Oregon Legislative Assembly in 1957, on the centennial of his death. Many landmarks in Oregon are named after him, including:
+* Mount McLoughlin
+* The John McLoughlin Bridge
+* McLoughlin Boulevard, the street name of Oregon Route 99E between Oregon City and Portland
+* Numerous schools
+
+McLoughlin's former residence in Oregon City, now known as the McLoughlin House, is today a museum; it is part of the Fort Vancouver National Historic Site.
+
+See also
+
+* John McLoughlin by Alexander Phimister Proctor
+*James Douglas
+*Jason Lee
+*Marcus Whitman
+*Narcissa Whitman
+*Willamette Cattle Company
+
+Citations
+
+Bibliography
+
+* 
+* 
+* 
+
+Further reading
+
+* 
+* Alberta Brooks Fogdall, [http://worldcatlibraries.org/wcpa/oclc/4004010?pageframe&url
+http%3A%2F%2Fwww.loc.gov%2Fcatdir%2Ftoc%2Ffy0604%2F78017170.html&title&linktype
+digitalObject&detail= Royal Family of the Columbia Dr. John McLoughlin and His Family]. Fairfield, WA: Ye Galleon Press, 1978.
+* Eloise McLoughlin and Daniel Harvey, Life of John McLoughlin Governor of the Hudson's Bay Company Possessions on the Pacific Slope, at Fort Vancouver. 1878.
+* Eva Emery Dye, McLoughlin and Old Oregon A Chronicle. Chicago: A.C. McClurg, 1900.
+* A.S. Marquis, Dr. John McLoughlin (The Great White Eagle). Toronto, ON: Ryerson Press, 1929.
+* 
+* John Minto, What I Know of Dr. McLoughlin and How I Know It. Oregon Historical Quarterly, 1911.
+* Richard Gill Montgomery, The White-Headed Eagle, John McLoughlin, Builder of an Empire. New York: Macmillan, 1934.
+* E. E. Rich, ed. [http://champlainsociety.utpjournals.press/doi/book/10.3138/9781442618381 The Letters of John McLoughlin from Fort Vancouver to the Governor and Committee, 1825-44]. Toronto: Champlain Society Publications, 1941.
+* Dorothy N. Morrison, Outpost: John McLoughlin and the Far Northwest. Portland: Oregon Historical Society, 2005.
 * 
 
 External links
 
-* [https://web.archive.org/web/20130418052107/http://www.electronics.dit.ie/staff/amoloney/lecture-9.pdf Line Coding Lecture No. 9] 
-* [http://www.fiberoptics4sale.com/wordpress/line-coding-in-digital-communication/ Line Coding in Digital Communication]
-* [https://www.ac.uma.es/~guille/codsim2.0/ CodSim 2.0: Open source simulator for Digital Data Communications Model at the University of Malaga written in HTML]"10728040*ÏÊ¨ö:ARTICLEB•
-¢
-wiki_metadataê*ç
+*[https://www.oregonencyclopedia.org/articles/mcloughlin_john/ John McLoughlin (1784-1857)]
+*[http://www.nps.gov/fova/ Fort Vancouver National Historic Site]
+*[http://www.nps.gov/mcho/ McLoughlin House National Historic Site]
+*[https://web.archive.org/web/20050226054806/http://www.aoc.gov/cc/art/nsh/mcloughlin.cfm NSHC biography of John McLoughlin]
+*[https://web.archive.org/web/20041221151540/http://www.secstate.wa.gov/history/publications_detail.aspx?p=4 Dr. John McLoughlin: the father of Oregon] by Frederick Van Voorhies Holman
+*
+*The Letters of John McLoughlin from Fort Vancouver to the Governor and Committee: 1825-46 [http://link.library.utoronto.ca/champlain/search_results.cfm?langeng&query
+John%20AND%20McLoughlin&searchtypeAuthor&limit
+All Home | The Champlain Society]"40452436*Ö¯ö:ARTICLEB·Ã
+›Ã
+wiki_metadata Ã*∆Ã
 
 	namespace 
 #
-	dump_date2022-10-15T22:25:48Z
+	dump_date2022-10-28T20:31:01Z
 /
-date_parsed 2024-01-29T10:34:01.300652439Z
-£~
-	wiki_textï~í~{{short description|Pattern used within a communications system to represent digital data}}
-{{stack|
-[[File:NRZcode.png|thumb|An example of coding a binary signal using rectangular [[pulse-amplitude modulation]] with polar [[non-return-to-zero]] code]]
-[[File:Ami encoding.svg|thumb|An example of [[bipolar encoding]], or AMI.]]
-[[File:Manchester code.svg|thumb|Encoding of 11011000100 in [[Manchester encoding]] ]]
-[[File:Differential_manchester_encoding_Workaround.svg|thumb|An example of [[differential Manchester encoding]]]]
-[[File:Biphase Mark Code.svg|thumb|An example of [[biphase mark code]] ]]
-[[File:MLT3encoding.svg|thumb|An example of [[MLT-3 encoding]]]]
+date_parsed 2024-03-05T12:45:57.777749673Z
+€À
+	wiki_textÃÀ»À{{Use mdy dates|date=October 2022}}
+{{short description|American politician (1784‚Äì1857)}}
+
+{{other people}}
+{{More footnotes needed|date=June 2015}}
+
+{{Infobox person
+| name               = John McLoughlin
+| image              = File:Dr. John McLaughlin (3641697488).jpg
+| image_size         = 200px
+| caption            = Digital photograph made from a [[lantern slide]] of Dr. John McLaughlin
+| birth_name         = Jean-Baptiste McLoughlin
+| birth_date         = {{Birth date|1784|10|19|mf=y}}
+| birth_place        = [[Rivi√®re-du-Loup]], [[Province of Quebec (1763‚Äì91)|Quebec]]
+| death_date         = {{death date and age|1857|09|3|1784|10|19}}
+| death_place        = [[Oregon City, Oregon|Oregon City, Oregon Territory]]
+| death_cause        = 
+| known_for          = [[Fort Vancouver]] and [[Fort William, Ontario]]
+| employer           = [[Hudson's Bay Company]] and [[North West Company]]
+| title              = [[Factor (agent)|Chief Factor]]
+| successor          = [[James Douglas (governor)|James Douglas]]
+| spouse             = Marguerite McLoughlin, (married Nov 1842)
 }}
-{{Modulation techniques}}
+'''John McLoughlin''', baptized '''Jean-Baptiste McLoughlin''', (October 19, 1784 &ndash; September 3, 1857) was a French-Canadian, later American, [[Factor (agent)|Chief Factor]] and Superintendent of the [[Columbia District]] of the [[Hudson's Bay Company]] at [[Fort Vancouver]] from 1824 to 1845. He was later known as the "Father of Oregon" for his role in assisting the American cause in the [[Oregon Country]]. In the late 1840s, his general store in [[Oregon City, Oregon|Oregon City]] was famous as the last stop on the [[Oregon Trail]].
 
-In [[telecommunication]], a '''line code''' is a pattern of voltage, current, or photons used to represent digital data [[transmission (telecommunications)|transmitted]] down a [[communication channel]] or written to a [[storage medium]]. This repertoire of signals is usually called a '''constrained code''' in data storage systems.<ref>{{Cite journal 
-|journal= IEEE Communications Magazine
-|date=2022
-|title=Innovation in Constrained Codes
-|author=K. Schouhamer Immink
-|author-link=Kees Schouhamer Immink 
-|url=https://www.researchgate.net/publication/362866105
-|access-date=2022-10-05
-}}</ref> 
-Some signals are more prone to error than others as the physics of the communication channel or storage medium constrains the repertoire of signals that can be used reliably.<ref name="optics">{{Cite journal 
-|journal= IEEE Journal on Selected Areas in Communications
-|volume=19
-|date=2001
-|title=A Survey of Codes for Optical Disk Recording
-|author=K. Schouhamer Immink
-|author-link=Kees Schouhamer Immink 
-|url=https://www.researchgate.net/publication/3234561
-|pages=751‚Äì764
-|access-date=2018-02-05
-}}</ref>
+==Early days==
+McLoughlin was born in October 1784 in [[Rivi√®re-du-Loup]], [[Province of Quebec (1763‚Äì91)|Quebec]],{{sfn|Lamb|1985}} and was of Scottish and French Canadian descent. He lived with his great uncle, Colonel William Fraser, for a while as a child.<ref>{{cite journal|jstor=20613754|language=en|title=John McLoughlin, Reluctant Fur Trader|journal=Oregon Historical Quarterly|volume=81|issue=4|pages=377‚Äì389|last1=Morrison|first1=Dorothy|last2=Morrison|first2=Jean|year=1980}}</ref> Though baptized [[Roman Catholic Church|Roman Catholic]], he was raised [[Anglican]]. In his later life, he returned to the Roman Catholic faith.
 
-Common line encodings are [[Unipolar encoding|unipolar]], [[Polar encoding|polar]], [[Bipolar encoding|bipolar]], and [[Manchester code]].
+In 1798, he began to study medicine under Sir [[James Fisher (physician)|James Fisher]] of Quebec.{{sfn|Lamb|1985}} McLoughlin was granted a license to practice medicine in [[Lower Canada]] (now Quebec) in 1803.{{sfn|Lamb|1985}} He evidently completed his course, as he is widely referred to as "Dr. John McLoughlin".
 
-== Transmission and storage ==
-After line coding, the signal is put through a physical communication channel, either a [[transmission medium]] or [[data storage medium]].<ref name="paulsen">Karl Paulsen. [http://www.tvtechnology.com/media-servers/0150/coding-for-magnetic-storage-mediums/186738 "Coding for Magnetic Storage Mediums"] {{Webarchive|url=https://web.archive.org/web/20140521215946/http://www.tvtechnology.com/media-servers/0150/coding-for-magnetic-storage-mediums/186738 |date=2014-05-21 }}.2007.</ref><ref>{{citation|author1=Abdullatif Glass |author2=Nidhal Abdulaziz |author3=and Eesa Bastaki |url=http://ro.uow.edu.au/cgi/viewcontent.cgi?article=1285&context=dubaipapers|title=Slope line coding for telecommunication networks|year=2007|page=1537|journal=IEEE International Conference on Signal Processing and Communication|publisher=IEEE|location=Dubai|quote=Line codes ... facilitates the transmission of data over telecommunication and computer networks and its storage in multimedia systems.}}</ref> The most common physical channels are:
-* the line-coded signal can directly be put on a [[transmission line]], in the form of variations of the voltage or current (often using [[differential signaling]]).
-* the line-coded signal (the ''[[baseband]] signal'') undergoes further [[pulse shaping]] (to reduce its frequency bandwidth) and then is [[modulation|modulated]] (to shift its frequency) to create an ''[[RF signal]]'' that can be sent through free space.
-* the line-coded signal can be used to turn on and off a light source in [[free-space optical communication]], most commonly used in an infrared [[remote control]].
-* the line-coded signal can be printed on paper to create a [[bar code]].
-* the line-coded signal can be converted to magnetized spots on a [[hard drive]] or [[tape drive]].
-* the line-coded signal can be converted to pits on an [[optical disc]].
+==North West Company==
+McLoughlin was hired as a physician at [[Fort William, Ontario#History|Fort William]], the inland headquarters and a fur trade post of the [[North West Company]] on [[Lake Superior]].{{when|date=June 2022}} There he became a trader and mastered several [[Native Americans in the United States|Indian]] languages. In 1814, he became a partner in the company.
 
-Some of the more common binary line codes include:
-{| class="wikitable"
-|-
-! Signal !! Comments !! 1 state !! 0 state
-|-
-| NRZ‚ÄìL || [[Non-return-to-zero]] level. This is the standard positive logic signal format used in digital circuits.
-| forces a high level
-| forces a low level
-|-
-| NRZ‚ÄìM || Non-return-to-zero mark
-| forces a transition
-| does nothing (keeps sending the previous level)
-|-
-| NRZ‚ÄìS  || Non-return-to-zero space
-| does nothing (keeps sending the previous level)
-| forces a transition
-|-
-| RZ  || Return to zero
-| goes high for half the bit period and returns to low
-| stays low for the entire period
-|-
-| Biphase‚ÄìL  || Manchester. Two consecutive bits of the same type force a transition at the beginning of a bit period.
-| forces a negative transition in the middle of the bit
-| forces a positive transition in the middle of the bit
-|-
-| Biphase‚ÄìM || Variant of Differential Manchester. There is always a transition halfway between the conditioned transitions.
-| forces a transition
-| keeps level constant
-|-
-| Biphase‚ÄìS  || Differential Manchester used in Token Ring. There is always a transition halfway between the conditioned transitions.
-| keeps level constant
-| forces a transition
-|-
-| Differential Manchester (Alternative)|| Need a Clock, always a transition in the middle of the clock period
-| is represented by no transition.
-| is represented by a transition at the beginning of the clock period.
-|-
-| Bipolar || The positive and negative pulses alternate.
-| forces a positive or negative pulse for half the bit period
-| keeps a zero level during bit period
-|}
+In 1816 McLoughlin was charged with complicity in the massacre at the [[Red River Colony]] after the [[Battle of Seven Oaks (1816)|Battle of Seven Oaks]]. He and all the other parties from the North West Company were exonerated. The [[Hudson's Bay Company]] was found culpable by the appointed Royal Commissioner at its trial on October&nbsp;30, 1818, and in the later prosecutions by Lord Selkirk and the successful counter-suits.{{sfn|Lamb|1985}}<ref>{{cite book |title=Encyclopedia Canadiana |volume=6 |publisher=Grolier Limited |year=1970 |location=Toronto, ON |pages=292‚Äì293}}; {{DFHD|962|Grant, Cuthbert National Historic Person|January 9, 2015}}; {{cite DCB |first=George |last=Woodcock |title=Grant, Cuthbert |volume=8 |access-date=January 12, 2014 |url=http://www.biographi.ca/en/bio/grant_cuthbert_1854_8E.html }}</ref>
 
-[[File:Digital signal encoding formats-en.svg|framed|center|An arbitrary bit pattern in various binary line code formats]]
+McLoughlin was instrumental in the negotiations leading to the North West Company's 1821 merger with the Hudson's Bay Company. He was promoted to head the [[Rainy Lake|Lac la Pluie district]] temporarily shortly after the merger.
 
-Each line code has advantages and disadvantages. Line codes are chosen to meet one or more of the following criteria:
-* Minimize transmission hardware
-* Facilitate synchronization
-* Ease error detection and correction
-* Achieve a target [[spectral density]]
-* Eliminate a [[DC component]]
+==Hudson's Bay Company==
+{{main|Columbia Department|Hudson's Bay Company}}
+[[Image:John McLoughlin - Project Gutenberg etext 20110.jpg|thumb|upright|John McLoughlin]]
+[[Image:Mcloughlin.jpg|thumb|John McLoughlin, [[National Statuary Hall Collection]], statue]]
 
-== Disparity ==
-Most long-distance communication channels cannot reliably transport a [[DC component]]. The DC component is also called the ''disparity'', the ''bias'', or the [[DC coefficient]]. The disparity of a bit pattern is the difference in the number of one bits vs the number of zero bits. The ''running disparity'' is the [[running total]] of the disparity of all previously transmitted bits.<ref>{{cite document |author=Jens Kr√∂ger |url=https://www.psi.ch/mu3e/ThesesEN/BachelorKroeger.pdf |archive-url=https://ghostarchive.org/archive/20221009/https://www.psi.ch/mu3e/ThesesEN/BachelorKroeger.pdf |archive-date=2022-10-09 |url-status=live |title=Data Transmission at High Rates via Kapton Flexprints for the Mu3e Experiment |date=2014 |page=16}}</ref> The simplest possible line code, [[Unipolar encoding|unipolar]], gives too many errors on such systems, because it has an unbounded DC component.
+In 1824, the Hudson's Bay Company appointed McLoughlin, already a [[Chief Factor]], as Superintendent of the [[Columbia Department]] (roughly parallel to what Americans know as the [[Oregon boundary dispute|Oregon Country]]), and [[Peter Skene Ogden]] was appointed to assist him.  At the time, the region was under joint occupation of both the United States and Britain pursuant to the [[Treaty of 1818]]. Upon his arrival, McLoughlin determined that the headquarters of the company at [[Fort Astoria]] (now [[Astoria, Oregon|Astoria]], [[Oregon]]), at the mouth of the [[Columbia River]], was unfit.  The [[York Factory Express]] trade route had evolved from an earlier express brigade used by the [[North West Company]] between [[Fort Astoria|Fort George]], founded in 1811 by [[John Jacob Astor]]'s [[American Fur Company]]) at the mouth of the [[Columbia River]], to [[Fort William, Ontario|Fort William]] on [[Lake Superior]].
 
-Most line codes eliminate the DC component{{snd}} such codes are called [[DC-balanced]], zero-DC, or DC-free. There are three ways of eliminating the DC component:
+In the 1821 merger with the North West Company, the Hudson's Bay Company gained control of North West Company trading posts west of the Rocky Mountains. They established headquarters at Fort George (formerly Astoria).<ref>{{cite encyclopedia|title=Red River Settlement|url=http://www.infoplease.com/ce6/history/A0841356.html|encyclopedia=The Columbia Electronic Encyclopedia, 6th ed.|year=2007|publisher=[[Columbia University Press]]|access-date=February 19, 2009|archive-date=January 7, 2009|archive-url=https://web.archive.org/web/20090107031734/http://www.infoplease.com/ce6/history/A0841356.html|url-status=live}}</ref> [[George Simpson (administrator)|George Simpson]], Governor of Hudson's Bay Company, visited the Columbia District in 1824‚Äì25, journeying from York Factory. He investigated a quicker route than previously used, following the [[Saskatchewan River]] and crossing the mountains at [[Athabasca Pass]]. This route was thereafter followed by the [[York Factory Express]] brigades.
 
-* Use a [[constant-weight code]]. Each transmitted [[code word]] in a constant-weight code is designed such that every code word that contains some positive or negative levels also contains enough of the opposite levels, such that the average level over each code word is zero. Examples of constant-weight codes include [[Manchester code]] and [[Interleaved 2 of 5]].
-* Use a [[paired disparity code]]. Each code word in a paired disparity code that averages to a negative level is paired with another code word that averages to a positive level. The transmitter keeps track of the running DC buildup, and picks the code word that pushes the DC level back towards zero. The receiver is designed so that either code word of the pair decodes to the same data bits. Examples of paired disparity codes include [[alternate mark inversion]], [[8b/10b]] and [[4B3T]].
-* Use a [[scrambler]]. For example, the scrambler specified in {{IETF RFC | 2615}} for [[64b/66b encoding]].
+===Fort Vancouver===
+{{main|Fort Vancouver}}
 
-== Polarity ==
-Bipolar line codes have two polarities, are generally implemented as RZ, and have a radix of three since there are three distinct output levels (negative, positive and zero). One of the principle advantages of this type of code is that it can eliminate any DC component. This is important if the signal must pass through a transformer or a long transmission line.
+McLoughlin built [[Fort Vancouver]] as a replacement for Fort George, on the north side of the [[Columbia River]], a few miles upstream from the confluence of the Columbia and  [[Willamette River]]s.  The site was chosen by Sir [[George Simpson (administrator)|George Simpson]]. The post was opened for business on March 19, 1825. From his [[Columbia Department]] headquarters in Fort Vancouver, McLoughlin supervised trade and kept peace with the Indians, inaugurated salmon and timber trade with Mexican-controlled California and [[Hawaii]], and supplied [[Russian America]] with produce.
 
-Unfortunately, several long-distance communication channels have polarity ambiguity. Polarity-insensitive line codes compensate in these channels.<ref>
-{{cite patent |inventor=Peter E. K. Chow. |url=https://www.google.com.ar/patents/US4387366 |country=US |number=4387366 |title=Code converter for polarity-insensitive transmission systems |pubdate=1983}}
-</ref><ref>
-{{citation |author=David A. Glanzer |publisher=[[Fieldbus Foundation]] |url=http://www.fieldbus.org/images/stories/enduserresources/technicalreferences/documents/wiringinstallationguide.pdf |archive-url=https://ghostarchive.org/archive/20221009/http://www.fieldbus.org/images/stories/enduserresources/technicalreferences/documents/wiringinstallationguide.pdf |archive-date=2022-10-09 |url-status=live |title=Fieldbus Application Guide ... Wiring and Installation |section=4.7 Polarity |page=10}}
-</ref><ref>
-{{cite book |author1=George C. Clark Jr. |author2=J. Bibb Cain |url=https://books.google.com/books?id=wgzyBwAAQBAJ |title=Error-Correction Coding for Digital Communications |date=2013 |page=255 |isbn=9781489921741 |publisher=Springer Science & Business Media |quote=When PSK data modulation is used, the potential exists for an ambiguity in the polarity of the received channel symbols. This problem can be solved in one of two ways. First ... a so-called ''transparent'' code. ...}}
-</ref><ref>
-{{cite book |author=Prakash C. Gupta |url=https://books.google.com/books?id=Zr1nAgAAQBAJ |title=Data Communications and Computer Networks |date=2013 |page=13 |isbn=9788120348646 |publisher=PHI Learning Pvt. Ltd. |quote=Another benefit of differential encoding is its insensitivity to polarity of the signal. ... If the leads of a twisted pair are accidentally reversed...}}
-</ref>
-There are three ways of providing unambiguous reception of 0 and 1 bits over such channels:
-* Pair each code word with the polarity-inverse of that code word. The receiver is designed so that either code word of the pair decodes to the same data bits. Examples include [[alternate mark inversion]], [[Differential Manchester encoding]], [[coded mark inversion]] and [[Miller encoding]].
-* [[differential coding]] each symbol relative to the previous symbol. Examples include [[MLT-3 encoding]] and [[NRZI]].
-* Invert the whole stream when inverted [[syncword]]s are detected
+Fort Vancouver became the center of activity in the Pacific Northwest. Every year ships would come from London to drop off supplies and trade goods in exchange for the furs. It was the nexus for the [[fur trade]] on the Pacific Coast; its influence reached from the [[Rocky Mountains]] to the [[Hawaiian Islands]], and from Russian Alaska into Mexican-controlled [[California]]. From Fort Vancouver, at its pinnacle, McLoughlin watched over 34 outposts, 24 ports, six ships, and 600 employees. Under McLoughlin's management, the Columbia Department remained highly profitable, in part due to the ongoing high demand for [[beaver]] hats in Europe. John McLoughlin was worried Fort Vancouver would be attacked and plundered of its heavy stock of supplies, due to its proximity to the [[Willamette Valley]], in which there was already an American settlement of some size.<ref>{{cite book |editor1-last=Rich |editor1-first=E.E. |title=The Letters of John McLoughlin from Fort Vancouver to the Governor and Committee. Third Series, 1844‚Äì46 (HBC Series) |date=1944 |publisher=The Publications of the Champlain Society |page=18 |doi=10.3138/9781442618381 |isbn=978-1-4426-1838-1 }}</ref>
 
-==Run-length limited codes==
-For reliable [[clock recovery]] at the receiver, a [[Run-length limited|run-length limitation]] may be imposed on the generated channel sequence, i.e., the maximum number of consecutive ones or zeros is bounded to a reasonable number. A clock period is recovered by observing transitions in the received sequence, so that a maximum run length guarantees sufficient transitions to assure clock recovery quality.
+===York Factory Express===
+{{main|York Factory Express}}
 
-RLL codes are defined by four main parameters: ''m'', ''n'', ''d'', ''k''. The first two, ''m''/''n'', refer to the rate of the code, while the remaining two specify the minimal ''d'' and maximal ''k'' number of zeroes between consecutive ones. This is used in both [[telecommunication]] and storage systems that move a medium past a fixed [[recording head]].<ref>{{Cite journal 
-|journal=Proceedings of the IEEE
-|volume=78 
-|issue=11 
-|date=December 1990 |title=Runlength-Limited Sequences
-|author=Kees Schouhamer Immink
-|author-link=Kees Schouhamer Immink 
-|url=https://www.researchgate.net/publication/2984369
-|pages=1745‚Äì1759
-|quote=A detailed description is furnished of the limiting properties of runlength limited sequences.
- |doi=10.1109/5.63306}}</ref>
+By 1825 there were usually two brigades from opposite ends of the route, ([[Fort Vancouver]] in the [[Columbia District]] on the lower [[Columbia River]] and the other from [[York Factory]] on [[Hudson Bay]]), that set out in spring and passed each other in the middle of the continent. Each brigade consisted of about forty to seventy-five men and two to five specially made boats that travelled at breakneck speed (for the time). These brigades often needed help from Indians, who would help the men portage around falls and unnavigable rapids; in return, the Indians were paid with trade goods. An 1839 report cites the travel time as three months and ten days‚Äîalmost 26 miles (40&nbsp;km) per day on average. The brigades used boat, horseback, and backpacks to bring the supplies in and furs out to the forts and trading posts along the route.
 
-Specifically, RLL bounds the length of stretches (runs) of repeated bits during which the signal does not change.  If the runs are too long, clock recovery is difficult; if they are too short, the high frequencies might be attenuated by the communications channel.  By [[Modulation|modulating]] the [[data]], RLL reduces the timing uncertainty in decoding the stored data, which would lead to the possible erroneous insertion or removal of bits when reading the data back. This mechanism ensures that the boundaries between bits can always be accurately found (preventing [[bit slip]]), while efficiently using the media to reliably store the maximal amount of data in a given space.
+===Puget Sound Agricultural Company===
+{{main|Puget Sound Agricultural Company}}
 
-Early disk drives used very simple encoding schemes, such as RLL (0,1) FM code, followed by RLL (1,3) MFM code which were widely used in [[hard disk drive]]s until the mid-1980s and are still used in digital optical discs such as [[CD]], [[DVD]], [[Minidisc|MD]], [[Hi-MD]] and [[Blu-ray]] using [[Eight-to-Fourteen Modulation|EFM]] and [[EFMPLus]] codes.<ref>{{Cite journal 
-|journal=IEEE Transactions on Consumer Electronics
-|volume=CE-41 
-|date=1995
-|title=EFMPlus: The Coding Format of the MultiMedia Compact Disc
-|author=Kees Schouhamer Immink
-|author-link=Kees Schouhamer Immink 
-|url=https://www.researchgate.net/publication/3179483
-|pages=491‚Äì497
-|quote=A high-density alternative to EFM is described.}}</ref> Higher density RLL (2,7) and RLL (1,7) codes became the [[de facto standard]]s for hard disks by the early 1990s.{{citation needed|date=August 2019}}
+The Hudson Bay Company officially discouraged settlement because it interfered with the lucrative fur trade. Two developments in the late 1830s made a reappraisal of Hudson's Bay Company operations in the Columbia Department necessary. Apprehensions about American antagonism rose due to [[U.S. Senator]] [[Lewis F. Linn]], who in 1838 called for a naval force to be dispatched to the Columbia River, although the measure never passed. Favorable relations with the [[Russian-American Company]] (RAC) were established with the signing of the [[RAC-HBC Agreement]] in 1839.
 
-== Synchronization ==
-{{main|Clock recovery}}
+To meet the new commercial obligations and to support British claims in the Oregon Question, the Hudson's Bay Company formally incorporated the [[Puget Sound Agricultural Company]] (PSAC) subsidiary in 1840. The new venture, while nominally independent, was administratively included within the Columbia Department. McLoughlin criticized the idea of a fur trading [[monopoly]] maintaining agricultural operations, as he felt independent farmers would be efficient.{{sfn|Galbraith|1954|p=241}} Nonetheless, he was appointed as the PSAC supervisor.
 
-Line coding should make it possible for the receiver to synchronize itself to the [[Phase (waves)|phase]] of the received signal. If the clock recovery is not ideal, then the signal to be decoded will not be sampled at the optimal times. This will increase the probability of error in the received data.
+The fertile plains near the [[Cowlitz River]] were selected as a suitable location for [[Cowlitz Farm]], the principal PSAC farm. [[Fort Nisqually]] was also assigned to the PSAC, where numerous livestock herds were maintained. Several locations were considered for potential farmers, including among the French-Canadian and M√©tis farmers of the Willamette Valley,{{sfn|Galbraith|1954|p=247}} [[Scotland]],{{sfn|Galbraith|1954|p=249}} and the [[Red River colony]].{{sfn|Galbraith|1954|p=252}}
 
-Biphase line codes require at least one transition per bit time. This makes it easier to synchronize the transceivers and detect errors, however, the baud rate is greater than that of NRZ codes.
+In November 1839 Sir [[George Simpson (administrator)|George Simpson]] instructed [[Duncan Finlayson (fur trader)|Duncan Finlayson]] to begin promoting the PSAC among the Red River colonists.{{sfn|Galbraith|1954|p=252}} James Sinclair was appointed by [[Duncan Finlayson (fur trader)|Duncan Finlayson]] to guide the mostly M√©tis settler families to Fort Vancouver.{{sfn|Galbraith|1954|p=254}} In June 1841, the party left [[Fort Garry]] with 23 families consisting of 121 people.{{sfn|Simpson|1847|p=62}} When they arrived at Fort Vancouver, they numbered 21 families of 116 people.{{sfn|Galbraith|1954|p=254}} Fourteen families were relocated to [[Fort Nisqually]], while the remaining seven families were sent to [[Fort Cowlitz]].{{sfn|Galbraith|1954|pp=254-255}}
 
-== Other considerations ==
-A line code will typically reflect technical requirements of the transmission medium, such as [[optical fiber]] or [[shielded twisted pair]].  These requirements are unique for each medium, because each one has different behavior related to interference, distortion, capacitance and attenuation.<ref>{{Cite book|url=https://books.google.com/books?id=On_Hh23IXDUC&pg=PA284 |title=Network Dictionary |last=Dong |first=Jielin |date=2007 |publisher=Javvin Technologies Inc. |isbn=9781602670006 |language=en |page=284}}</ref>
+===Japanese shipwreck===
+{{main|Otokichi}}
 
-== Common line codes ==
-{{Div col|colwidth=30em}}
-* [[2B1Q]]
-* [[4B3T]]
-* [[4B5B]]
-* [[6b/8b encoding]]
-* [[8b/10b encoding]]
-* [[64b/66b encoding]]
-* [[128b/130b encoding]]
-* [[Alternate mark inversion]] (AMI)
-* [[Coded mark inversion]] (CMI)
-* [[EFMPlus]], used in [[DVD]]s
-* [[Eight-to-fourteen modulation]] (EFM), used in [[compact disc]]s
-* [[Hamming code]]
-* [[Hybrid ternary code]]
-* [[Manchester code]] and [[Differential Manchester encoding|differential Manchester]]
-* [[Mark and space]]
-* [[MLT-3 encoding]]
-* [[Modified AMI code]]s: B8ZS, B6ZS, B3ZS, HDB3
-* [[Modified frequency modulation]], Miller encoding and delay encoding
-* [[Non-return-to-zero]] (NRZ)
-* [[Non-return-to-zero, inverted]] (NRZI)
-* [[Pulse-position modulation]]
-* [[Return-to-zero]] (RZ)
-* [[TC-PAM]]
-{{div col end}}
+When three Japanese sailors, among them [[Otokichi]], were shipwrecked on the [[Olympic Peninsula]] in 1834, McLoughlin thought they might present an opportunity to open trade with [[Japan]]. He sent the three men to [[London]] on the ''Eagle'' to try to convince the Crown of his plan.<ref>{{cite web|last=Brook|first=Marisa|title=Otokichi's Long Trip Home|url=http://www.damninteresting.com/otokichis-long-trip-home/|work=www.damninteresting.com|access-date=September 9, 2013|archive-url=https://web.archive.org/web/20130915135050/http://www.damninteresting.com/otokichis-long-trip-home/|archive-date=September 15, 2013|url-status=dead}}</ref> They reached London in 1835, probably the first Japanese to do so since the 16th century [[Christopher and Cosmas]]. When the British Government did not show interest, the castaways were sent to [[Macau]] so that they could be returned to Japan. Even that was not possible, as Japan did not allow any outside ships to enter its waters.
 
-===Optical line codes===
-* [[Alternate-Phase Return-to-Zero]] (APRZ)
-* [[Carrier-Suppressed Return-to-Zero]] (CSRZ)
-* [[IEEE 1355#Slice: TS-FO-02|Three of Six, Fiber Optical]] (TS-FO)
+==Relations with American settlers==
+{{one source|section|date=June 2015}}
+In 1821, with the merger of HBC and the [[North West Company]], the British Parliament imposed the laws of [[Upper Canada]] on British subjects in [[Rupert‚Äôs Land]] and the Columbia District, and gave the authority to enforce those laws to the newly reconfigured [[Hudson's Bay Company]].<ref>{{cite book |author-last=Brown |author-first=Stephen R. |title=The Company: The Rise and Fall of the Hudson's Bay Empire |date=2020 |publisher=Doubleday Canada |page=ebook loc. 327 }}</ref> McLoughlin, as Superintendent of [[Fort Vancouver]], applied the law to British subjects, kept peace with the natives and sought to maintain law and order over American settlers as well.
 
-== See also ==
-* [[Physical layer]]
-* [[Self-synchronizing code]] and bit synchronization
+In August 1828, McLoughlin was in charge at Fort Vancouver when American explorer [[Jedediah Smith]], [[John Turner (fur trapper)|John Turner]], Arthur Black, and Richard Leland arrived, the only survivors of the [[Jedediah Smith#Trip to the Oregon Country|massacre of fifteen members of his exploring party]] by [[Umpqua people]], who lived to the south in Oregon. McLoughlin sent a party headed by Alexander Roderick McLeod to recover Smith‚Äôs property.<ref>{{cite book |author-last=Morgan |author-first=Dale L. |title=Jedediah Smith and the Opening of the West |date=1953 |publisher=University of Nebraska Press |page=ebook loc. 4239, 4392}}</ref>
 
-== References ==
-{{reflist}}
-* {{FS1037C MS188}}
+In the early 1840s, with the arrival of the first [[wagon train]]s via the [[Oregon Trail]], McLoughlin disobeyed company orders and extended substantial aid to the American settlers. Relations between Britain and the United States had become very strained, and many expected war to break out any time. McLoughlin's aid probably prevented an armed attack on his outpost by the numerous American settlers. The settlers understood that his motives were not purely altruistic, and some resented the assistance, working against him for the rest of his life.
+
+===Pressure over the Pacific Northwest===
+As tensions mounted in the [[Oregon boundary dispute]]; Simpson, realizing that border might ultimately be as far north as the [[49th parallel north|49th parallel]], ordered McLoughlin to relocate their regional headquarters to [[Vancouver Island]]. McLoughlin, in turn, directed [[James Douglas (Governor)|James Douglas]] to construct [[Fort Camosun]] (now [[Victoria, British Columbia|Victoria]], [[British Columbia]], Canada) in 1843. But McLoughlin, whose life was increasingly connected to the [[Willamette River]] Valley, refused to move there.
+
+McLoughlin was involved with the debate over the future of the [[Oregon Country]].<ref name="LOC">{{cite web|last=Hines|first=Joseph Wilkinson|title=CHAPTER VIII. The Provisional Government.|work=Touching incidents in the life and labors of a pioneer on the Pacific coast since 1853|publisher=[[Library of Congress]]|url=http://memory.loc.gov/cgi-bin/query/r?ammem/calbk:@field(DOCID+@lit(calbk056div10))|access-date=February 11, 2007|archive-date=February 10, 2010|archive-url=https://web.archive.org/web/20100210074101/http://memory.loc.gov/cgi-bin/query/r?ammem%2Fcalbk%3A%40field%28DOCID+%40lit%28calbk056div10%29%29|url-status=live}}</ref> He advocated an independent nation that would be free of the United States during debates at the [[Oregon Lyceum]] in 1842 through his lawyer.<ref name="LOC"/> This view won support at first and a resolution adopted but was later moved away from in favor of a resolution by [[George Abernethy]] of the [[Methodist Mission]] to wait on forming an independent country.<ref name="LOC"/>
+
+In 1843, American settlers established their own government, called the [[Provisional Government of Oregon]]. A legislative committee drafted a code of laws known as the [[Organic Law]]. It included the creation of an executive committee of three, a judiciary, militia, land laws, and four counties. There was vagueness and confusion over the nature of the 1843 Organic Law, in particular, whether it was constitutional or statutory. In 1844, a new legislative committee decided to consider it statutory. The 1845 Organic Law made additional changes, including allowing the participation of British subjects in the government. Although the [[Oregon Treaty]] of 1846 settled the boundaries of US jurisdiction upon all lands south of the 49th parallel, the Provisional Government continued to function until 1849, when the first governor of Oregon Territory arrived.
+
+==Personal life==
+McLoughlin's appearance, 6 foot 4&nbsp;inches (193&nbsp;cm) tall with long, prematurely white hair, brought him respect; but he was also generally known for his fair treatment of the people with whom he dealt, whether they were British subjects, U.S. citizens, or of indigenous origin {{citation needed|date=April 2022}} (notwithstanding for example, his asymmetric use of force against the [[S'Klallam]] tribe after an earlier raid--an HBC ship under his command fired its cannons into an unrelated village near [[Port Townsend]] in the early morning, killing twenty-seven people and leveling the village. <ref>{{cite book |last=Buerge |first=David |author-link=David Buerge |date=2017 |title=Chief Seattle and the Town That Took His Name }}</ref>) . At the time, the wives of many Hudson's Bay field employees were indigenous, including McLoughlin's wife Marguerite; who was [[Metis (Canada)|Metis]], the daughter of an aboriginal woman and one of the original partners of the North West Company, [[Jean-√âtienne Waddens]]. She was the widow of [[Alexander MacKay (fur trader)|Alexander McKay]], a trader killed in the ''[[Tonquin (1807)|Tonquin]]'' incident. Her son [[Thomas McKay (fur trader)|Thomas]] became McLoughlin's stepson.<ref name=Oregon>Corning, Howard M. (1989) ''Dictionary of Oregon History''. [[Binfords & Mort]] Publishing. p. 161.</ref>
+
+John McLoughlin lost one son to a violent death. [[John McLoughlin, Jr.]] had been appointed the second Clerk in Charge at [[Fort Stikine]], only to die in April 1842 at the hands of one of the fort employees, [[Urbain Heroux]], who was charged with his murder but acquitted for lack of evidence, which added to the grievances John Sr. held against the company.
+
+==Later life in the Oregon Territory==
+After resigning from the Hudson's Bay Company in 1846, McLoughlin moved his family south to [[Oregon City, Oregon|Oregon City]] in the [[Willamette Valley]]. The [[Oregon Treaty]] had been ratified by that time, and the region, now known as the [[Oregon Territory]], was part of the United States. The valley was the destination of choice for settlers streaming in over the [[Oregon Trail]]. At his Oregon City store, he sold food and farming tools to settlers.
+
+In 1847, McLoughlin was given the [[Knighthood of St. Gregory]], bestowed on him by [[Pope Gregory XVI]]. He became a U.S. citizen in 1849. McLoughlin's opponents succeeded in inserting a clause forfeiting his land claim in the [[Donation Land Claim Act of 1850]] by [[Samuel Thurston|Samuel R. Thurston]]. Although it was never enforced, it embittered the elderly McLoughlin. He served as mayor of Oregon City in 1851, winning 44 of 66 votes. He died of natural causes in 1857. His grave is now located beside his home overlooking downtown Oregon City.<ref>{{cite book|title=The Good Rain|last=Egan|first=Timothy|publisher=Vintage Departures|page=184|year=1990}}</ref>
+
+==Legacy==
+McLoughlin is featured on the 1925 [[Fort Vancouver Centennial half dollar]] designed by [[Laura Gardin Fraser]].
+
+In 1953, the state of Oregon donated to the [[National Statuary Hall Collection]] a bronze statue of McLoughlin, which is currently displayed at the [[United States Capitol Visitor Center|Capitol Visitor Center]]. The title "Father of Oregon" was officially bestowed on him by the [[Oregon Legislative Assembly]] in 1957, on the centennial of his death. Many landmarks in Oregon are named after him, including:
+* [[Mount McLoughlin]]
+* The [[John McLoughlin Bridge]]
+* McLoughlin Boulevard, the street name of [[Oregon Route 99E]] between Oregon City and [[Portland, Oregon|Portland]]
+* Numerous schools
+
+McLoughlin's former residence in Oregon City, now known as the [[Fort Vancouver National Historic Site#McLoughlin House site|McLoughlin House]], is today a museum; it is part of the [[Fort Vancouver National Historic Site]].
+
+==See also==
+{{wikisource|Catholic Encyclopedia (1913)/John McLoughlin}}
+{{commons category}}
+* [[John McLoughlin (Proctor)|''John McLoughlin'']] by [[Alexander Phimister Proctor]]
+*[[James Douglas (Governor)|James Douglas]]
+*[[Jason Lee (missionary)|Jason Lee]]
+*[[Marcus Whitman]]
+*[[Narcissa Whitman]]
+*[[Willamette Cattle Company]]
+
+==Citations==
+{{Reflist}}
+
+==Bibliography==
+{{refbegin}}
+
+* {{Cite journal |last=Galbraith |first=John S. |author-link=John Semple Galbraith |date=September 1954 |title=The Early History of the Puget's Sound Agricultural Company, 1838-43 |journal=Oregon Historical Quarterly |publisher=Oregon Historical Society |volume=55 |pages=234‚Äì259 |jstor=20612147 |number=3}}
+* {{Cite DCB |last=Lamb |first=W. Kaye |author-link=W. Kaye Lamb |title=McLoughlin, John |volume=VIII  |year=1985 |url=http://www.biographi.ca/fr/bio/mcloughlin_john_8F.html}}
+* {{Citation |last=Simpson |first=George |title=An Overland Journey Round the World, during the Years 1841 and 1842. |year=1847 |place=Philadelphia |publisher=Lea and Blanchard |author-link=George Simpson (HBC administrator)}}
+
+{{refend}}
+
+==Further reading==
+
+* {{Citation |title=Letters of Dr. John McLoughlin, Written at Fort Vancouver 1829-1832 |year=1948 |editor-last=Barker |editor-first=Burt Brown |place=Portland, OR |publisher=Binfords & Mort}}
+* Alberta Brooks Fogdall, ''[http://worldcatlibraries.org/wcpa/oclc/4004010?page=frame&url=http%3A%2F%2Fwww.loc.gov%2Fcatdir%2Ftoc%2Ffy0604%2F78017170.html&title=&linktype=digitalObject&detail= Royal Family of the Columbia Dr. John McLoughlin and His Family]{{Dead link|date=July 2020 |bot=InternetArchiveBot |fix-attempted=yes }}''. Fairfield, WA: Ye Galleon Press, 1978.
+* Eloise McLoughlin and Daniel Harvey, ''Life of John McLoughlin Governor of the Hudson's Bay Company Possessions on the Pacific Slope, at Fort Vancouver''. 1878.
+* [[Eva Emery Dye]], ''McLoughlin and Old Oregon A Chronicle''. Chicago: A.C. McClurg, 1900.
+* A.S. Marquis, ''Dr. John McLoughlin (The Great White Eagle).'' Toronto, ON: Ryerson Press, 1929.
+* {{Citation |last=Lamb |first=W. Kaye |title=John McLoughlin |url=http://www.thecanadianencyclopedia.ca/en/article/john-mcloughlin/ |year=2016b |publisher=[[The Canadian Encyclopedia]] |access-date=June 27, 2016 |author-link=W. Kaye Lamb}}
+* [[John Minto]], [[wikisource:en:What I Know of Dr. McLoughlin and How I Know It|What I Know of Dr. McLoughlin and How I Know It]]. ''Oregon Historical Quarterly'', 1911.
+* Richard Gill Montgomery, ''The White-Headed Eagle, John McLoughlin, Builder of an Empire''. New York: Macmillan, 1934.
+* E. E. Rich, ed. ''[http://champlainsociety.utpjournals.press/doi/book/10.3138/9781442618381 The Letters of John McLoughlin from Fort Vancouver to the Governor and Committee, 1825-44]{{Dead link|date=July 2020 |bot=InternetArchiveBot |fix-attempted=yes }}.'' Toronto: [[Champlain Society]] Publications, 1941.
+* Dorothy N. Morrison, ''Outpost: John McLoughlin and the Far Northwest''. Portland: Oregon Historical Society, 2005.
+* {{Citation |title=John McLoughlin's Business Correspondence, 1847-48 |year=1973 |editor-last=Sampson |editor-first=William R. |place=Seattle |publisher=[[University of Washington Press]]}}
 
 ==External links==
-* [https://web.archive.org/web/20130418052107/http://www.electronics.dit.ie/staff/amoloney/lecture-9.pdf Line Coding Lecture No. 9] 
-* [http://www.fiberoptics4sale.com/wordpress/line-coding-in-digital-communication/ Line Coding in Digital Communication]
-* [https://www.ac.uma.es/~guille/codsim2.0/ CodSim 2.0: Open source simulator for Digital Data Communications Model at the University of Malaga written in HTML]
+*[https://www.oregonencyclopedia.org/articles/mcloughlin_john/ John McLoughlin (1784-1857)]
+*[http://www.nps.gov/fova/ Fort Vancouver National Historic Site]
+*[http://www.nps.gov/mcho/ McLoughlin House National Historic Site]
+*[https://web.archive.org/web/20050226054806/http://www.aoc.gov/cc/art/nsh/mcloughlin.cfm NSHC biography of John McLoughlin]
+*[https://web.archive.org/web/20041221151540/http://www.secstate.wa.gov/history/publications_detail.aspx?p=4 ''Dr. John McLoughlin: the father of Oregon''] by [[Frederick Van Voorhies Holman]]
+*{{CathEncy|wstitle=John McLoughlin}}
+*''The Letters of John McLoughlin from Fort Vancouver to the Governor and Committee: 1825-46'' [http://link.library.utoronto.ca/champlain/search_results.cfm?lang=eng&query=John%20AND%20McLoughlin&searchtype=Author&limit=All Home | The Champlain Society]{{dead link|date=December 2017 |bot=InternetArchiveBot |fix-attempted=yes }}
 
-{{Bit-encoding}}
+{{Columbia Department}}
+{{Oregon Pioneer History}}
+{{Authority control}}
 
-[[Category:Line codes|*]]
-[[Category:Physical layer protocols]]
-[[Category:Coding theory]]JèIn telecommunication, a line code is a pattern of voltage, current, or photons used to represent digital data transmitted down a communication channel or written to a storage medium. This repertoire of signals is usually called a constrained code in data storage systems.JÆSome signals are more prone to error than others as the physics of the communication channel or storage medium constrains the repertoire of signals that can be used reliably.JHCommon line encodings are unipolar, polar, bipolar, and Manchester code.JTransmission and storageJæAfter line coding, the signal is put through a physical communication channel, either a transmission medium or data storage medium.Karl Paulsen. .2007. The most common physical channels are:J˛* the line-coded signal can directly be put on a transmission line, in the form of variations of the voltage or current (often using differential signaling).
-* the line-coded signal (the baseband signal) undergoes further pulse shaping (to reduce its frequency bandwidth) and then is modulated (to shift its frequency) to create an RF signal that can be sent through free space.
-* the line-coded signal can be used to turn on and off a light source in free-space optical communication, most commonly used in an infrared remote control.
-* the line-coded signal can be printed on paper to create a bar code.
-* the line-coded signal can be converted to magnetized spots on a hard drive or tape drive.
-* the line-coded signal can be converted to pits on an optical disc.J2Some of the more common binary line codes include:JuEach line code has advantages and disadvantages. Line codes are chosen to meet one or more of the following criteria:J¢* Minimize transmission hardware
-* Facilitate synchronization
-* Ease error detection and correction
-* Achieve a target spectral density
-* Eliminate a DC componentJ	DisparityJÊMost long-distance communication channels cannot reliably transport a DC component. The DC component is also called the disparity, the bias, or the DC coefficient. The disparity of a bit pattern is the difference in the number of one bits vs the number of zero bits. The running disparity is the running total of the disparity of all previously transmitted bits. The simplest possible line code, unipolar, gives too many errors on such systems, because it has an unbounded DC component.JòMost line codes eliminate the DC component such codes are called DC-balanced, zero-DC, or DC-free. There are three ways of eliminating the DC component:Jç* Use a constant-weight code. Each transmitted code word in a constant-weight code is designed such that every code word that contains some positive or negative levels also contains enough of the opposite levels, such that the average level over each code word is zero. Examples of constant-weight codes include Manchester code and Interleaved 2 of 5.
-* Use a paired disparity code. Each code word in a paired disparity code that averages to a negative level is paired with another code word that averages to a positive level. The transmitter keeps track of the running DC buildup, and picks the code word that pushes the DC level back towards zero. The receiver is designed so that either code word of the pair decodes to the same data bits. Examples of paired disparity codes include alternate mark inversion, 8b/10b and 4B3T.
-* Use a scrambler. For example, the scrambler specified in for 64b/66b encoding.JPolarityJÎBipolar line codes have two polarities, are generally implemented as RZ, and have a radix of three since there are three distinct output levels (negative, positive and zero). One of the principle advantages of this type of code is that it can eliminate any DC component. This is important if the signal must pass through a transformer or a long transmission line.JíUnfortunately, several long-distance communication channels have polarity ambiguity. Polarity-insensitive line codes compensate in these channels.J[There are three ways of providing unambiguous reception of 0 and 1 bits over such channels:J¬* Pair each code word with the polarity-inverse of that code word. The receiver is designed so that either code word of the pair decodes to the same data bits. Examples include alternate mark inversion, Differential Manchester encoding, coded mark inversion and Miller encoding.
-* differential coding each symbol relative to the previous symbol. Examples include MLT-3 encoding and NRZI.
-* Invert the whole stream when inverted syncwords are detectedJRun-length limited codesJˇFor reliable clock recovery at the receiver, a run-length limitation may be imposed on the generated channel sequence, i.e., the maximum number of consecutive ones or zeros is bounded to a reasonable number. A clock period is recovered by observing transitions in the received sequence, so that a maximum run length guarantees sufficient transitions to assure clock recovery quality.JøRLL codes are defined by four main parameters: m, n, d, k. The first two, m/n, refer to the rate of the code, while the remaining two specify the minimal d and maximal k number of zeroes between consecutive ones. This is used in both telecommunication and storage systems that move a medium past a fixed recording head.JíSpecifically, RLL bounds the length of stretches (runs) of repeated bits during which the signal does not change. If the runs are too long, clock recovery is difficult; if they are too short, the high frequencies might be attenuated by the communications channel. By modulating the data, RLL reduces the timing uncertainty in decoding the stored data, which would lead to the possible erroneous insertion or removal of bits when reading the data back. This mechanism ensures that the boundaries between bits can always be accurately found (preventing bit slip), while efficiently using the media to reliably store the maximal amount of data in a given space.JãEarly disk drives used very simple encoding schemes, such as RLL (0,1) FM code, followed by RLL (1,3) MFM code which were widely used in hard disk drives until the mid-1980s and are still used in digital optical discs such as CD, DVD, MD, Hi-MD and Blu-ray using EFM and EFMPLus codes. Higher density RLL (2,7) and RLL (1,7) codes became the de facto standards for hard disks by the early 1990s.JSynchronizationJùLine coding should make it possible for the receiver to synchronize itself to the phase of the received signal. If the clock recovery is not ideal, then the signal to be decoded will not be sampled at the optimal times. This will increase the probability of error in the received data.J¬Biphase line codes require at least one transition per bit time. This makes it easier to synchronize the transceivers and detect errors, however, the baud rate is greater than that of NRZ codes.JOther considerationsJûA line code will typically reflect technical requirements of the transmission medium, such as optical fiber or shielded twisted pair. These requirements are unique for each medium, because each one has different behavior related to interference, distortion, capacitance and attenuation.JCommon line codesJ”* 2B1Q
-* 4B3T
-* 4B5B
-* 6b/8b encoding
-* 8b/10b encoding
-* 64b/66b encoding
-* 128b/130b encoding
-* Alternate mark inversion (AMI)
-* Coded mark inversion (CMI)
-* EFMPlus, used in DVDs
-* Eight-to-fourteen modulation (EFM), used in compact discs
-* Hamming code
-* Hybrid ternary code
-* Manchester code and differential Manchester
-* Mark and space
-* MLT-3 encoding
-* Modified AMI codes: B8ZS, B6ZS, B3ZS, HDB3
-* Modified frequency modulation, Miller encoding and delay encoding
-* Non-return-to-zero (NRZ)
-* Non-return-to-zero, inverted (NRZI)
-* Pulse-position modulation
-* Return-to-zero (RZ)
-* TC-PAMJOptical line codesJx* Alternate-Phase Return-to-Zero (APRZ)
-* Carrier-Suppressed Return-to-Zero (CSRZ)
-* Three of Six, Fiber Optical (TS-FO)JSee alsoJB* Physical layer
-* Self-synchronizing code and bit synchronizationJ
-ReferencesJExternal links
+{{DEFAULTSORT:McLoughlin, John}}
+[[Category:Canadian fur traders]]
+[[Category:Chief factors]]
+[[Category:People from Oregon City, Oregon]]
+[[Category:Oregon Trail]]
+[[Category:People of North-Western Territory]]
+[[Category:Pre-Confederation Quebec people]]
+[[Category:Canadian people of Anglo-Irish descent]]
+[[Category:French Quebecers]]
+[[Category:1784 births]]
+[[Category:1857 deaths]]
+[[Category:Death in Oregon]]
+[[Category:American people of Irish descent]]
+[[Category:Mayors of places in Oregon]]
+[[Category:Hudson's Bay Company people]]
+[[Category:People from Rivi√®re-du-Loup]]
+[[Category:Oregon pioneers]]
+[[Category:Persons of National Historic Significance (Canada)]]
+[[Category:Canadian Roman Catholics]]
+[[Category:Symbols of Oregon]]
+[[Category:19th-century American politicians]]
+[[Category:People of pre-statehood Washington (state)]]
+[[Category:Pre-Confederation Canadian emigrants to the United States]]
+[[Category:Knights Commander of the Order of St Gregory the Great]]
+[[Category:Naturalized citizens of the United States]]J”John McLoughlin, baptized Jean-Baptiste McLoughlin, (October 19, 1784 ‚Äì September 3, 1857) was a French-Canadian, later American, Chief Factor and Superintendent of the Columbia District of the Hudson's Bay Company at Fort Vancouver from 1824 to 1845. He was later known as the "Father of Oregon" for his role in assisting the American cause in the Oregon Country. In the late 1840s, his general store in Oregon City was famous as the last stop on the Oregon Trail.J
+Early daysJ¥McLoughlin was born in October 1784 in Rivi√®re-du-Loup, Quebec, and was of Scottish and French Canadian descent. He lived with his great uncle, Colonel William Fraser, for a while as a child. Though baptized Roman Catholic, he was raised Anglican. In his later life, he returned to the Roman Catholic faith.J˙In 1798, he began to study medicine under Sir James Fisher of Quebec. McLoughlin was granted a license to practice medicine in Lower Canada (now Quebec) in 1803. He evidently completed his course, as he is widely referred to as "Dr. John McLoughlin".JNorth West CompanyJ˙McLoughlin was hired as a physician at Fort William, the inland headquarters and a fur trade post of the North West Company on Lake Superior. There he became a trader and mastered several Indian languages. In 1814, he became a partner in the company.JÜIn 1816 McLoughlin was charged with complicity in the massacre at the Red River Colony after the Battle of Seven Oaks. He and all the other parties from the North West Company were exonerated. The Hudson's Bay Company was found culpable by the appointed Royal Commissioner at its trial on October¬†30, 1818, and in the later prosecutions by Lord Selkirk and the successful counter-suits.; ;J÷McLoughlin was instrumental in the negotiations leading to the North West Company's 1821 merger with the Hudson's Bay Company. He was promoted to head the Lac la Pluie district temporarily shortly after the merger.JHudson's Bay CompanyJìIn 1824, the Hudson's Bay Company appointed McLoughlin, already a Chief Factor, as Superintendent of the Columbia Department (roughly parallel to what Americans know as the Oregon Country), and Peter Skene Ogden was appointed to assist him. At the time, the region was under joint occupation of both the United States and Britain pursuant to the Treaty of 1818. Upon his arrival, McLoughlin determined that the headquarters of the company at Fort Astoria (now Astoria, Oregon), at the mouth of the Columbia River, was unfit. The York Factory Express trade route had evolved from an earlier express brigade used by the North West Company between Fort George, founded in 1811 by John Jacob Astor's American Fur Company) at the mouth of the Columbia River, to Fort William on Lake Superior.J£In the 1821 merger with the North West Company, the Hudson's Bay Company gained control of North West Company trading posts west of the Rocky Mountains. They established headquarters at Fort George (formerly Astoria). George Simpson, Governor of Hudson's Bay Company, visited the Columbia District in 1824‚Äì25, journeying from York Factory. He investigated a quicker route than previously used, following the Saskatchewan River and crossing the mountains at Athabasca Pass. This route was thereafter followed by the York Factory Express brigades.JFort VancouverJëMcLoughlin built Fort Vancouver as a replacement for Fort George, on the north side of the Columbia River, a few miles upstream from the confluence of the Columbia and Willamette Rivers. The site was chosen by Sir George Simpson. The post was opened for business on March 19, 1825. From his Columbia Department headquarters in Fort Vancouver, McLoughlin supervised trade and kept peace with the Indians, inaugurated salmon and timber trade with Mexican-controlled California and Hawaii, and supplied Russian America with produce.JÃFort Vancouver became the center of activity in the Pacific Northwest. Every year ships would come from London to drop off supplies and trade goods in exchange for the furs. It was the nexus for the fur trade on the Pacific Coast; its influence reached from the Rocky Mountains to the Hawaiian Islands, and from Russian Alaska into Mexican-controlled California. From Fort Vancouver, at its pinnacle, McLoughlin watched over 34 outposts, 24 ports, six ships, and 600 employees. Under McLoughlin's management, the Columbia Department remained highly profitable, in part due to the ongoing high demand for beaver hats in Europe. John McLoughlin was worried Fort Vancouver would be attacked and plundered of its heavy stock of supplies, due to its proximity to the Willamette Valley, in which there was already an American settlement of some size.JYork Factory ExpressJπBy 1825 there were usually two brigades from opposite ends of the route, (Fort Vancouver in the Columbia District on the lower Columbia River and the other from York Factory on Hudson Bay), that set out in spring and passed each other in the middle of the continent. Each brigade consisted of about forty to seventy-five men and two to five specially made boats that travelled at breakneck speed (for the time). These brigades often needed help from Indians, who would help the men portage around falls and unnavigable rapids; in return, the Indians were paid with trade goods. An 1839 report cites the travel time as three months and ten days‚Äîalmost 26 miles (40¬†km) per day on average. The brigades used boat, horseback, and backpacks to bring the supplies in and furs out to the forts and trading posts along the route.J Puget Sound Agricultural CompanyJ´The Hudson Bay Company officially discouraged settlement because it interfered with the lucrative fur trade. Two developments in the late 1830s made a reappraisal of Hudson's Bay Company operations in the Columbia Department necessary. Apprehensions about American antagonism rose due to U.S. Senator Lewis F. Linn, who in 1838 called for a naval force to be dispatched to the Columbia River, although the measure never passed. Favorable relations with the Russian-American Company (RAC) were established with the signing of the RAC-HBC Agreement in 1839.J˛To meet the new commercial obligations and to support British claims in the Oregon Question, the Hudson's Bay Company formally incorporated the Puget Sound Agricultural Company (PSAC) subsidiary in 1840. The new venture, while nominally independent, was administratively included within the Columbia Department. McLoughlin criticized the idea of a fur trading monopoly maintaining agricultural operations, as he felt independent farmers would be efficient. Nonetheless, he was appointed as the PSAC supervisor.JÖThe fertile plains near the Cowlitz River were selected as a suitable location for Cowlitz Farm, the principal PSAC farm. Fort Nisqually was also assigned to the PSAC, where numerous livestock herds were maintained. Several locations were considered for potential farmers, including among the French-Canadian and M√©tis farmers of the Willamette Valley, Scotland, and the Red River colony.J˝In November 1839 Sir George Simpson instructed Duncan Finlayson to begin promoting the PSAC among the Red River colonists. James Sinclair was appointed by Duncan Finlayson to guide the mostly M√©tis settler families to Fort Vancouver. In June 1841, the party left Fort Garry with 23 families consisting of 121 people. When they arrived at Fort Vancouver, they numbered 21 families of 116 people. Fourteen families were relocated to Fort Nisqually, while the remaining seven families were sent to Fort Cowlitz.JJapanese shipwreckJ“When three Japanese sailors, among them Otokichi, were shipwrecked on the Olympic Peninsula in 1834, McLoughlin thought they might present an opportunity to open trade with Japan. He sent the three men to London on the Eagle to try to convince the Crown of his plan. They reached London in 1835, probably the first Japanese to do so since the 16th century Christopher and Cosmas. When the British Government did not show interest, the castaways were sent to Macau so that they could be returned to Japan. Even that was not possible, as Japan did not allow any outside ships to enter its waters.J Relations with American settlersJ…In 1821, with the merger of HBC and the North West Company, the British Parliament imposed the laws of Upper Canada on British subjects in Rupert‚Äôs Land and the Columbia District, and gave the authority to enforce those laws to the newly reconfigured Hudson's Bay Company. McLoughlin, as Superintendent of Fort Vancouver, applied the law to British subjects, kept peace with the natives and sought to maintain law and order over American settlers as well.JÙIn August 1828, McLoughlin was in charge at Fort Vancouver when American explorer Jedediah Smith, John Turner, Arthur Black, and Richard Leland arrived, the only survivors of the massacre of fifteen members of his exploring party by Umpqua people, who lived to the south in Oregon. McLoughlin sent a party headed by Alexander Roderick McLeod to recover Smith‚Äôs property.J°In the early 1840s, with the arrival of the first wagon trains via the Oregon Trail, McLoughlin disobeyed company orders and extended substantial aid to the American settlers. Relations between Britain and the United States had become very strained, and many expected war to break out any time. McLoughlin's aid probably prevented an armed attack on his outpost by the numerous American settlers. The settlers understood that his motives were not purely altruistic, and some resented the assistance, working against him for the rest of his life.J#Pressure over the Pacific NorthwestJæAs tensions mounted in the Oregon boundary dispute; Simpson, realizing that border might ultimately be as far north as the 49th parallel, ordered McLoughlin to relocate their regional headquarters to Vancouver Island. McLoughlin, in turn, directed James Douglas to construct Fort Camosun (now Victoria, British Columbia, Canada) in 1843. But McLoughlin, whose life was increasingly connected to the Willamette River Valley, refused to move there.J†McLoughlin was involved with the debate over the future of the Oregon Country. He advocated an independent nation that would be free of the United States during debates at the Oregon Lyceum in 1842 through his lawyer. This view won support at first and a resolution adopted but was later moved away from in favor of a resolution by George Abernethy of the Methodist Mission to wait on forming an independent country.J‘In 1843, American settlers established their own government, called the Provisional Government of Oregon. A legislative committee drafted a code of laws known as the Organic Law. It included the creation of an executive committee of three, a judiciary, militia, land laws, and four counties. There was vagueness and confusion over the nature of the 1843 Organic Law, in particular, whether it was constitutional or statutory. In 1844, a new legislative committee decided to consider it statutory. The 1845 Organic Law made additional changes, including allowing the participation of British subjects in the government. Although the Oregon Treaty of 1846 settled the boundaries of US jurisdiction upon all lands south of the 49th parallel, the Provisional Government continued to function until 1849, when the first governor of Oregon Territory arrived.JPersonal lifeJˇMcLoughlin's appearance, 6 foot 4¬†inches (193¬†cm) tall with long, prematurely white hair, brought him respect; but he was also generally known for his fair treatment of the people with whom he dealt, whether they were British subjects, U.S. citizens, or of indigenous origin (notwithstanding for example, his asymmetric use of force against the S'Klallam tribe after an earlier raid--an HBC ship under his command fired its cannons into an unrelated village near Port Townsend in the early morning, killing twenty-seven people and leveling the village. ) . At the time, the wives of many Hudson's Bay field employees were indigenous, including McLoughlin's wife Marguerite; who was Metis, the daughter of an aboriginal woman and one of the original partners of the North West Company, Jean-√âtienne Waddens. She was the widow of Alexander McKay, a trader killed in the Tonquin incident. Her son Thomas became McLoughlin's stepson.Corning, Howard M. (1989) Dictionary of Oregon History. Binfords & Mort Publishing. p. 161.J›John McLoughlin lost one son to a violent death. John McLoughlin, Jr. had been appointed the second Clerk in Charge at Fort Stikine, only to die in April 1842 at the hands of one of the fort employees, Urbain Heroux, who was charged with his murder but acquitted for lack of evidence, which added to the grievances John Sr. held against the company.J"Later life in the Oregon TerritoryJ•After resigning from the Hudson's Bay Company in 1846, McLoughlin moved his family south to Oregon City in the Willamette Valley. The Oregon Treaty had been ratified by that time, and the region, now known as the Oregon Territory, was part of the United States. The valley was the destination of choice for settlers streaming in over the Oregon Trail. At his Oregon City store, he sold food and farming tools to settlers.JâIn 1847, McLoughlin was given the Knighthood of St. Gregory, bestowed on him by Pope Gregory XVI. He became a U.S. citizen in 1849. McLoughlin's opponents succeeded in inserting a clause forfeiting his land claim in the Donation Land Claim Act of 1850 by Samuel R. Thurston. Although it was never enforced, it embittered the elderly McLoughlin. He served as mayor of Oregon City in 1851, winning 44 of 66 votes. He died of natural causes in 1857. His grave is now located beside his home overlooking downtown Oregon City.JLegacyJiMcLoughlin is featured on the 1925 Fort Vancouver Centennial half dollar designed by Laura Gardin Fraser.JÈIn 1953, the state of Oregon donated to the National Statuary Hall Collection a bronze statue of McLoughlin, which is currently displayed at the Capitol Visitor Center. The title "Father of Oregon" was officially bestowed on him by the Oregon Legislative Assembly in 1957, on the centennial of his death. Many landmarks in Oregon are named after him, including:Jü* Mount McLoughlin
+* The John McLoughlin Bridge
+* McLoughlin Boulevard, the street name of Oregon Route 99E between Oregon City and Portland
+* Numerous schoolsJúMcLoughlin's former residence in Oregon City, now known as the McLoughlin House, is today a museum; it is part of the Fort Vancouver National Historic Site.JSee alsoJá* John McLoughlin by Alexander Phimister Proctor
+*James Douglas
+*Jason Lee
+*Marcus Whitman
+*Narcissa Whitman
+*Willamette Cattle CompanyJ	CitationsJBibliographyJFurther readingJD*
+* Alberta Brooks Fogdall, . Fairfield, WA: Ye Galleon Press, 1978.J‚* Eloise McLoughlin and Daniel Harvey, Life of John McLoughlin Governor of the Hudson's Bay Company Possessions on the Pacific Slope, at Fort Vancouver. 1878.
+* Eva Emery Dye, McLoughlin and Old Oregon A Chronicle. Chicago: A.C. McClurg, 1900.
+* A.S. Marquis, Dr. John McLoughlin (The Great White Eagle). Toronto, ON: Ryerson Press, 1929.
+*
+* John Minto, What I Know of Dr. McLoughlin and How I Know It. Oregon Historical Quarterly, 1911.
+* Richard Gill Montgomery, The White-Headed Eagle, John McLoughlin, Builder of an Empire. New York: Macmillan, 1934.
+* E. E. Rich, ed. . Toronto: Champlain Society Publications, 1941.
+* Dorothy N. Morrison, Outpost: John McLoughlin and the Far Northwest. Portland: Oregon Historical Society, 2005.
+*JExternal linksJà*
+*
+*
+*
+* by Frederick Van Voorhies Holman
+*
+*The Letters of John McLoughlin from Fort Vancouver to the Governor and Committee: 1825-46 

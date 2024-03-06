@@ -84,7 +84,7 @@
                         <outputTarget>
                             <type>grpc-java</type>
                             <outputDirectory>${project.build.directory}/generated-sources</outputDirectory>
-                            <pluginArtifact>io.grpc:protoc-gen-grpc-java:1.60.1</pluginArtifact>
+                            <pluginArtifact>io.grpc:protoc-gen-grpc-java:1.62.2</pluginArtifact>
                         </outputTarget>
                     </outputTargets>
                 </configuration>
