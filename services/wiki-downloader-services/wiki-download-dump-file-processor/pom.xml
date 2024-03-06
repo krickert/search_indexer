@@ -195,6 +195,7 @@
             <path>
               <groupId>io.micronaut.serde</groupId>
               <artifactId>micronaut-serde-processor</artifactId>
+              <version>${micronaut.serialization.version}</version>
               <exclusions>
                 <exclusion>
                   <groupId>io.micronaut</groupId>
@@ -205,7 +206,7 @@
           </annotationProcessorPaths>
           <compilerArgs>
             <arg>-Amicronaut.processing.group=com.krickert.search.download.dump</arg>
-            <arg>-Amicronaut.processing.module=wiki-download-dump-file-processorr</arg>
+            <arg>-Amicronaut.processing.module=wiki-download-dump-file-processor</arg>
           </compilerArgs>
         </configuration>
       </plugin>
