@@ -52,13 +52,7 @@ class GrpcVectorizerServiceTest {
     StreamObserver<PipeReply> streamObserver = new StreamObserver<>() {
         @Override
         public void onNext(PipeReply reply) {
-            try {
-                log.info("RESPONSE, returning embeddings: {}", StringUtils.left(JsonFormat.printer().print(
-                        reply.getDocument().getCustomData()), 150));
-                finishedDocs.put(reply.getDocument().getId(), reply.getDocument());
-            } catch (InvalidProtocolBufferException e) {
-                throw new RuntimeException(e);
-            }
+            finishedDocs.put(reply.getDocument().getId(), reply.getDocument());
         }
 
         @Override
