@@ -185,7 +185,7 @@
     <dependency>
       <groupId>org.apache.commons</groupId>
       <artifactId>commons-compress</artifactId>
-      <version>1.26.0</version>
+      <version>1.26.1</version>
     </dependency>
     <!-- https://mvnrepository.com/artifact/info.bliki.wiki/bliki-core -->
     <dependency>
