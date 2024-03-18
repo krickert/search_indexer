@@ -17,7 +17,7 @@
         <jdk.version>17</jdk.version>
         <release.version>17</release.version>
         <assertj-core.version>3.25.3</assertj-core.version>
-        <maven.compiler.version>3.12.1</maven.compiler.version>
+        <maven.compiler.version>3.13.0</maven.compiler.version>
         <maven.surefire.plugin>3.2.5</maven.surefire.plugin>
         <protobuf.version>3.25.3</protobuf.version>
         <grpc.version>1.61.1</grpc.version>
