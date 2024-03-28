@@ -78,7 +78,7 @@
     <dependency>
       <groupId>io.micronaut</groupId>
       <artifactId>micronaut-management</artifactId>
-      <version>4.3.11</version>
+      <version>4.3.13</version>
     </dependency>
     <dependency>
       <groupId>ch.qos.logback</groupId>
