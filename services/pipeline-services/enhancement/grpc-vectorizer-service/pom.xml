@@ -85,7 +85,7 @@
     <dependency>
       <groupId>ai.djl.huggingface</groupId>
       <artifactId>tokenizers</artifactId>
-      <version>0.26.0</version>
+      <version>0.27.0</version>
     </dependency>
     <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-compress -->
     <dependency>
