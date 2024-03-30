@@ -10,7 +10,7 @@
   <parent>
     <groupId>io.micronaut.platform</groupId>
     <artifactId>micronaut-parent</artifactId>
-    <version>4.3.6</version>
+    <version>4.3.7</version>
     <relativePath/>
   </parent>
   <properties>
@@ -85,7 +85,7 @@
     <dependency>
       <groupId>ai.djl.huggingface</groupId>
       <artifactId>tokenizers</artifactId>
-      <version>0.26.0</version>
+      <version>0.27.0</version>
     </dependency>
     <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-compress -->
     <dependency>
@@ -96,7 +96,7 @@
     <dependency>
       <groupId>ai.djl.pytorch</groupId>
       <artifactId>pytorch-model-zoo</artifactId>
-      <version>0.26.0</version>
+      <version>0.27.0</version>
     </dependency>
     <dependency>
       <groupId>com.krickert.search</groupId>
