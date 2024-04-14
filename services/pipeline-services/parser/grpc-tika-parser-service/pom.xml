@@ -10,14 +10,14 @@
   <parent>
     <groupId>io.micronaut.platform</groupId>
     <artifactId>micronaut-parent</artifactId>
-    <version>4.3.7</version>
+    <version>4.3.8</version>
     <relativePath/>
   </parent>
   <properties>
     <packaging>jar</packaging>
     <jdk.version>17</jdk.version>
     <release.version>17</release.version>
-    <micronaut.version>4.3.7</micronaut.version>
+    <micronaut.version>4.3.8</micronaut.version>
     <micronaut.test.resources.enabled>true</micronaut.test.resources.enabled>
     <exec.mainClass>com.krickert.search.parser.TikaServerGrpcApplication</exec.mainClass>
     <kafka-streams-protobuf-serde.version>7.6.0</kafka-streams-protobuf-serde.version>
@@ -74,11 +74,6 @@
     <dependency>
       <groupId>io.micronaut.grpc</groupId>
       <artifactId>micronaut-grpc-runtime</artifactId>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>io.micronaut.kafka</groupId>
-      <artifactId>micronaut-kafka</artifactId>
       <scope>compile</scope>
     </dependency>
     <dependency>
@@ -194,6 +189,11 @@
           <artifactId>log4j-api</artifactId>
         </exclusion>
       </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.james</groupId>
+      <artifactId>apache-mime4j-core</artifactId>
+      <version>0.8.10</version>
     </dependency>
     <dependency>
       <groupId>com.krickert.search</groupId>
