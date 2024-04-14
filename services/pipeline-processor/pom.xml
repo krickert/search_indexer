@@ -20,7 +20,7 @@
         <micronaut.version>4.3.8</micronaut.version>
         <micronaut.test.resources.enabled>true</micronaut.test.resources.enabled>
         <exec.mainClass>com.krickert.search.pipeline.PipelineProcessorApplication</exec.mainClass>
-        <kafka-streams-protobuf-serde.version>7.6.0</kafka-streams-protobuf-serde.version>
+        <kafka-streams-protobuf-serde.version>7.6.1</kafka-streams-protobuf-serde.version>
     </properties>
 
     <repositories>
@@ -69,7 +69,7 @@
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-core</artifactId>
-            <version>1.5.3</version>
+            <version>1.5.5</version>
             <scope>runtime</scope>
         </dependency>
         <dependency>
@@ -166,7 +166,7 @@
         <dependency>
             <groupId>io.grpc</groupId>
             <artifactId>grpc-netty</artifactId>
-            <version>1.62.2</version>
+            <version>1.63.0</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/io.confluent/kafka-streams-protobuf-serde -->
         <dependency>
