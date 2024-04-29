@@ -10,7 +10,7 @@
   <parent>
     <groupId>io.micronaut.platform</groupId>
     <artifactId>micronaut-parent</artifactId>
-    <version>4.2.4</version>
+    <version>4.4.1</version>
     <relativePath/>
   </parent>
 
@@ -18,11 +18,11 @@
     <packaging>jar</packaging>
     <jdk.version>17</jdk.version>
     <release.version>17</release.version>
-    <micronaut.version>4.2.4</micronaut.version>
-    <micronaut.serialization.version>2.7.1</micronaut.serialization.version>
+    <micronaut.version>4.3.8</micronaut.version>
+    <micronaut.serialization.version>2.9.0</micronaut.serialization.version>
     <micronaut.test.resources.enabled>true</micronaut.test.resources.enabled>
     <exec.mainClass>com.krickert.search.download.dump.DownloadRequestProcessor</exec.mainClass>
-    <kafka-streams-protobuf-serde.version>7.5.3</kafka-streams-protobuf-serde.version>
+    <kafka-streams-protobuf-serde.version>7.6.1</kafka-streams-protobuf-serde.version>
   </properties>
 
   <repositories>
@@ -52,7 +52,10 @@
     <dependency>
       <groupId>io.micronaut.serde</groupId>
       <artifactId>micronaut-serde-jackson</artifactId>
-      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.micronaut</groupId>
+      <artifactId>micronaut-jackson-databind</artifactId>
     </dependency>
     <dependency>
       <groupId>ch.qos.logback</groupId>
@@ -62,7 +65,7 @@
     <dependency>
       <groupId>ch.qos.logback</groupId>
       <artifactId>logback-core</artifactId>
-      <version>1.4.14</version>
+      <version>1.5.6</version>
       <scope>runtime</scope>
     </dependency>
     <dependency>
@@ -88,7 +91,7 @@
     <dependency>
       <groupId>org.awaitility</groupId>
       <artifactId>awaitility</artifactId>
-      <version>4.2.0</version>
+      <version>4.2.1</version>
       <scope>test</scope>
     </dependency>
     <dependency>
@@ -115,7 +118,7 @@
     <dependency>
       <groupId>commons-io</groupId>
       <artifactId>commons-io</artifactId>
-      <version>2.15.1</version>
+      <version>2.16.1</version>
     </dependency>
     <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
     <dependency>
@@ -143,6 +146,11 @@
       <artifactId>kafka-streams-protobuf-serde</artifactId>
       <version>${kafka-streams-protobuf-serde.version}</version>
     </dependency>
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-compress</artifactId>
+      <version>1.26.1</version>
+    </dependency>
     <!-- https://mvnrepository.com/artifact/io.grpc/grpc-protobuf -->
     <dependency>
       <groupId>io.grpc</groupId>
@@ -158,7 +166,7 @@
     <dependency>
       <groupId>commons-codec</groupId>
       <artifactId>commons-codec</artifactId>
-      <version>1.16.0</version>
+      <version>1.16.1</version>
     </dependency>
       <dependency>
           <groupId>org.testcontainers</groupId>
@@ -201,7 +209,7 @@
           </annotationProcessorPaths>
           <compilerArgs>
             <arg>-Amicronaut.processing.group=com.krickert.search.download.dump</arg>
-            <arg>-Amicronaut.processing.module=wiki-download-dump-file-processorr</arg>
+            <arg>-Amicronaut.processing.module=wiki-download-dump-file-processor</arg>
           </compilerArgs>
         </configuration>
       </plugin>

@@ -10,17 +10,17 @@
   <parent>
     <groupId>io.micronaut.platform</groupId>
     <artifactId>micronaut-parent</artifactId>
-    <version>4.2.4</version>
+    <version>4.3.8</version>
     <relativePath/>
   </parent>
   <properties>
     <packaging>jar</packaging>
     <jdk.version>17</jdk.version>
     <release.version>17</release.version>
-    <micronaut.version>4.2.4</micronaut.version>
+    <micronaut.version>4.3.8</micronaut.version>
     <micronaut.test.resources.enabled>true</micronaut.test.resources.enabled>
     <exec.mainClass>com.krickert.search.parser.TikaServerGrpcApplication</exec.mainClass>
-    <kafka-streams-protobuf-serde.version>7.5.3</kafka-streams-protobuf-serde.version>
+    <kafka-streams-protobuf-serde.version>7.6.1</kafka-streams-protobuf-serde.version>
   </properties>
 
   <repositories>
@@ -77,11 +77,6 @@
       <scope>compile</scope>
     </dependency>
     <dependency>
-      <groupId>io.micronaut.kafka</groupId>
-      <artifactId>micronaut-kafka</artifactId>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
       <groupId>io.micronaut.serde</groupId>
       <artifactId>micronaut-serde-jackson</artifactId>
       <scope>compile</scope>
@@ -99,7 +94,7 @@
     <dependency>
       <groupId>ch.qos.logback</groupId>
       <artifactId>logback-core</artifactId>
-      <version>1.4.14</version>
+      <version>1.5.6</version>
       <scope>runtime</scope>
     </dependency>
     <dependency>
@@ -125,7 +120,7 @@
     <dependency>
       <groupId>org.awaitility</groupId>
       <artifactId>awaitility</artifactId>
-      <version>4.2.0</version>
+      <version>4.2.1</version>
       <scope>test</scope>
     </dependency>
     <dependency>
@@ -166,7 +161,7 @@
     <dependency>
       <groupId>org.apache.commons</groupId>
       <artifactId>commons-compress</artifactId>
-      <version>1.25.0</version>
+      <version>1.26.1</version>
       <scope>test</scope>
     </dependency>
 
@@ -194,6 +189,11 @@
           <artifactId>log4j-api</artifactId>
         </exclusion>
       </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.james</groupId>
+      <artifactId>apache-mime4j-core</artifactId>
+      <version>0.8.11</version>
     </dependency>
     <dependency>
       <groupId>com.krickert.search</groupId>

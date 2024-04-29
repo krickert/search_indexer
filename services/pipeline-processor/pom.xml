@@ -10,17 +10,17 @@
     <parent>
         <groupId>io.micronaut.platform</groupId>
         <artifactId>micronaut-parent</artifactId>
-        <version>4.2.4</version>
+        <version>4.3.8</version>
         <relativePath/>
     </parent>
     <properties>
         <packaging>jar</packaging>
         <jdk.version>17</jdk.version>
         <release.version>17</release.version>
-        <micronaut.version>4.2.4</micronaut.version>
+        <micronaut.version>4.3.8</micronaut.version>
         <micronaut.test.resources.enabled>true</micronaut.test.resources.enabled>
         <exec.mainClass>com.krickert.search.pipeline.PipelineProcessorApplication</exec.mainClass>
-        <kafka-streams-protobuf-serde.version>7.5.3</kafka-streams-protobuf-serde.version>
+        <kafka-streams-protobuf-serde.version>7.6.1</kafka-streams-protobuf-serde.version>
     </properties>
 
     <repositories>
@@ -90,7 +90,7 @@
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-core</artifactId>
-            <version>1.4.14</version>
+            <version>1.5.6</version>
             <scope>runtime</scope>
         </dependency>
         <dependency>
@@ -112,7 +112,7 @@
         <dependency>
             <groupId>org.awaitility</groupId>
             <artifactId>awaitility</artifactId>
-            <version>4.2.0</version>
+            <version>4.2.1</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -140,7 +140,7 @@
         <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
-            <version>33.0.0-jre</version>
+            <version>33.1.0-jre</version>
         </dependency>
 
         <dependency>
@@ -187,7 +187,7 @@
         <dependency>
             <groupId>io.grpc</groupId>
             <artifactId>grpc-netty</artifactId>
-            <version>1.61.0</version>
+            <version>1.63.0</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/io.confluent/kafka-streams-protobuf-serde -->
         <dependency>
@@ -196,6 +196,11 @@
             <version>${kafka-streams-protobuf-serde.version}</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-compress</artifactId>
+            <version>1.26.1</version>
+        </dependency>
 
     </dependencies>
     <build>

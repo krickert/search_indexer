@@ -6,7 +6,6 @@ import com.krickert.search.pipeline.config.RegisteredPipelines;
 import com.krickert.search.pipeline.grpc.ConsulGrpcManagedChannelFactory;
 import com.krickert.search.service.PipeRequest;
 import com.krickert.search.service.PipeServiceGrpc;
-import com.krickert.search.service.vectorizer.grpc.VectorizerEndpoint;
 import io.grpc.ManagedChannel;
 import io.micronaut.context.annotation.Prototype;
 import io.micronaut.context.annotation.Requires;
@@ -25,17 +24,14 @@ public class ConsulGrpcPipelineProcessor implements PipelineProcessor {
     private final PipelineConfig pipelineConfig;
     private final ConsulGrpcManagedChannelFactory consulGrpcManagedChannelFactory;
 
-    private final VectorizerEndpoint vectorizerEndpoint;
-
     /**
      * ConsulGrpcPipelineProcessor is a class that implements the PipelineProcessor interface. It processes a PipeDocument
      * object by sending it to one or more services defined in the PipelineConfig. The class uses a ConsulGrpcManagedChannelFactory
      * to create managed channels for communicating with the services through Consul grpc services registered with the Grpc PipeService interface.
      */
-    public ConsulGrpcPipelineProcessor(PipelineConfig pipelineConfig, ConsulGrpcManagedChannelFactory consulGrpcManagedChannelFactory, VectorizerEndpoint vectorizerEndpoint) {
+    public ConsulGrpcPipelineProcessor(PipelineConfig pipelineConfig, ConsulGrpcManagedChannelFactory consulGrpcManagedChannelFactory) {
         this.pipelineConfig = pipelineConfig;
         this.consulGrpcManagedChannelFactory = consulGrpcManagedChannelFactory;
-        this.vectorizerEndpoint = vectorizerEndpoint;
     }
 
     /**
@@ -47,13 +43,14 @@ public class ConsulGrpcPipelineProcessor implements PipelineProcessor {
      */
     @Override
     public PipeDocument process(PipeDocument pipeDocument, String pipeline) {
-//        RegisteredPipelines registeredPipelines = pipelineConfig.getRegisteredPipelines().get(pipeline);
-//
-//        for (String service : registeredPipelines.getServices()) {
-//            pipeDocument = sendDocumentToService(service, pipeDocument);
-//        }
 
-        return vectorizerEndpoint.prepareDocument(pipeDocument).build();
+        RegisteredPipelines registeredPipelines = pipelineConfig.getRegisteredPipelines().get(pipeline);
+
+        for (String service : registeredPipelines.getServices()) {
+            pipeDocument = sendDocumentToService(service, pipeDocument);
+        }
+
+        return pipeDocument;
     }
 
     /**

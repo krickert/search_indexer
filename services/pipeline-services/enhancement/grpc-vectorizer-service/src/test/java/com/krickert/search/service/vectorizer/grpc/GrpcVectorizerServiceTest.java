@@ -13,6 +13,7 @@ import io.grpc.stub.StreamObserver;
 import io.micronaut.runtime.EmbeddedApplication;
 import io.micronaut.test.extensions.junit5.annotation.MicronautTest;
 import jakarta.inject.Inject;
+import org.apache.commons.lang3.StringUtils;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
@@ -51,13 +52,7 @@ class GrpcVectorizerServiceTest {
     StreamObserver<PipeReply> streamObserver = new StreamObserver<>() {
         @Override
         public void onNext(PipeReply reply) {
-            try {
-                log.debug("RESPONSE, returning embeddings: {}", JsonFormat.printer().print(
-                        reply.getDocument().getCustomData()));
-                finishedDocs.put(reply.getDocument().getId(), reply.getDocument());
-            } catch (InvalidProtocolBufferException e) {
-                throw new RuntimeException(e);
-            }
+            finishedDocs.put(reply.getDocument().getId(), reply.getDocument());
         }
 
         @Override
@@ -97,13 +92,15 @@ class GrpcVectorizerServiceTest {
             endpoint2.send(request, streamObserver);
 
         }
-
-        await().atMost(10, SECONDS).until(() -> finishedDocs.size() > 1);
-        await().atMost(20, SECONDS).until(() -> finishedDocs.size() > 10);
+        log.info("waiting up to 15 seconds for at least 1 document to be added..");
+        await().atMost(15, SECONDS).until(() -> finishedDocs.size() > 1);
+        log.info("waiting up to 25 seconds for at least 10 docs to be added..");
+        await().atMost(25, SECONDS).until(() -> finishedDocs.size() > 10);
         //my machine works fine.  Git hub seems to take forever.  This was once 80 seconds.
         //"works on my local" they say.  "Trump will never win the election" they said.
         //lies, blantant lies.
-        await().atMost(300, SECONDS).until(() -> finishedDocs.size() == 367);
+        log.info("waiting for 500 seconds max for all 367 documents to be processed..");
+        await().atMost(500, SECONDS).until(() -> finishedDocs.size() == 367);
     }
 
 }

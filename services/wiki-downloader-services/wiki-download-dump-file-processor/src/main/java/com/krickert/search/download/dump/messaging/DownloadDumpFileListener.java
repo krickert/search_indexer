@@ -30,7 +30,7 @@ import static com.krickert.search.model.util.ProtobufUtils.now;
         properties = @Property(name = KafkaProtobufConstants.SPECIFIC_CLASS_PROPERTY,
                 value = KafkaProtobufConstants.DOWNLOAD_FILE_REQUEST_CLASS))
 @Prototype
-public class DownloadDumpFileListener {
+public class  DownloadDumpFileListener {
     private static final Logger log = LoggerFactory.getLogger(DownloadDumpFileListener.class);
 
     final String downloadLocation;

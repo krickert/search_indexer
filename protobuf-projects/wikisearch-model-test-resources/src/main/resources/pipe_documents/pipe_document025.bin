@@ -1,1044 +1,405 @@
 
-41548Phase-locked loopê±A phase-locked loop or phase lock loop (PLL) is a control system that generates an output signal whose phase is related to the phase of an input signal.  There are several different types; the simplest is an electronic circuit consisting of a variable frequency oscillator and a phase detector in a feedback loop.  The oscillator's frequency and phase are controlled proportionally by an applied voltage, hence the term voltage-controlled oscillator (VCO).
-The oscillator generates a periodic signal of a specific frequency, and the phase detector compares the phase of that signal with the phase of the input periodic signal, to adjust the oscillator to keep the phases matched.
+41586Propagation constant†ZThe propagation constant of a sinusoidal electromagnetic wave is a measure of the change undergone by the amplitude and phase of the wave as it propagates in a given direction. The quantity being measured can be the voltage, the current in a circuit, or a field vector such as electric field strength or flux density. The propagation constant itself measures the change per unit length, but it is otherwise dimensionless. In the context of two-port networks and their cascades, propagation constant measures the change undergone by the source quantity as it propagates from one port to the next.
 
-Keeping the input and output phase in lockstep also implies keeping the input and output frequencies the same. Consequently, in addition to synchronizing signals, a phase-locked loop can track an input frequency, or it can generate a frequency that is a multiple of the input frequency.  These properties are used for computer clock synchronization, demodulation, and frequency synthesis.
+The propagation constant's value is expressed logarithmically, almost universally to the base e, rather than the more usual base 10 that is used in telecommunications in other situations. The quantity measured, such as voltage, is expressed as a sinusoidal phasor. The phase of the sinusoid varies with distance which results in the propagation constant being a complex number, the imaginary part being caused by the phase change.
 
-Phase-locked loops are widely employed in radio, telecommunications, computers and other electronic applications. They can be used to demodulate a signal, recover a signal from a noisy communication channel, generate a stable frequency at multiples of an input frequency (frequency synthesis), or distribute precisely timed clock pulses in digital logic circuits such as microprocessors. Since a single integrated circuit can now provide a complete phase-locked-loop building block, the technique is widely used in modern electronic devices, with output frequencies from a fraction of a hertz up to many gigahertz.
+Alternative names
 
-History
+The term "propagation constant" is somewhat of a misnomer as it usually varies strongly with œâ.  It is probably the most widely used term but there are a large variety of alternative names used by various authors for this quantity.  These include transmission parameter, transmission function, propagation parameter, propagation coefficient and transmission constant.  If the plural is used, it suggests that Œ± and Œ≤ are being referenced separately but collectively as in transmission parameters, propagation parameters, etc.  In transmission line theory, Œ± and Œ≤  are counted among the "secondary coefficients", the term secondary being used to contrast to the primary line coefficients.  The primary coefficients are the physical properties of the line, namely R,C,L and G, from which the secondary coefficients may be derived using the telegrapher's equation.  Note that in the field of transmission lines, the term transmission coefficient has a different meaning despite the similarity of name: it is the companion of the reflection coefficient.
 
-Spontaneous synchronization of weakly coupled pendulum clocks was noted by the Dutch physicist Christiaan Huygens as early as 1673.Christiaan Huygens, Horologium Oscillatorium ‚Ä¶ (Paris, France:  F. Muguet, 1673),  [https://archive.org/details/bub_gb_SOjZR1P1eE8C/page/n37 pages 18‚Äì19.]  From page 18:  " ‚Ä¶ illudque accidit memoratu dignum, ‚Ä¶ brevi tempore reduceret." ( ‚Ä¶ and it is worth mentioning, since with two clocks constructed in this form and which we suspend in like manner, truly the cross beam is assigned two fulcrums [i.e., two pendulum clocks were suspended from the same wooden beam]; the motions of the pendulums thus share the opposite swings between the two [clocks], since the two clocks at no time move even a small distance, and the sound of both can be heard clearly together always: for if the innermost part [of one of the clocks] is disturbed with a little help, it will have been restored in a short time by the clocks themselves.)  English translation provided by Ian Bruce's translation of [http://www.17centurymaths.com/contents/huygens/horologiumpart1.pdf Horologium Oscillatorium ‚Ä¶ ], pages 16‚Äì17.  Around the turn of the 19th century, Lord Rayleigh observed synchronization of weakly coupled organ pipes and tuning forks.See:
-*  Lord Rayleigh, The Theory of Sound (London, England:  Macmillan, 1896), vol. 2.  The synchronization of organ pipes in opposed phase is mentioned in ¬ß322c, [https://archive.org/details/theorysound05raylgoog/page/n239 pages 221‚Äì222.]
-*  Lord Rayleigh (1907) "Acoustical notes ‚Äî VII," Philosophical Magazine, 6th series, 13 :  316‚Äì333.  See "Tuning-forks with slight mutual influence," [https://books.google.com/books?idvVjKOdktZhsC&pg
-PA322#vonepage&q&f
-false pages 322‚Äì323.]  In 1919, W. H. Eccles and J. H. Vincent found that two electronic oscillators that had been tuned to oscillate at slightly different frequencies but that were coupled to a resonant circuit would soon oscillate at the same frequency.See:
-*  Vincent (1919) "On some experiments in which two neighbouring maintained oscillatory circuits affect a resonating circuit," Proceedings of the Physical Society of London, 32, pt. 2, 84‚Äì91.
-*  W. H. Eccles and J. H. Vincent, British Patent Specifications, 163 :  462 (17 Feb. 1920).  Automatic synchronization of electronic oscillators was described in 1923 by Edward Victor Appleton.E. V. Appleton (1923) "The automatic synchronization of triode oscillators," Proceedings of the Cambridge Philosophical Society, 21 (Part III): 231‚Äì248.  Available on-line at:  [https://archive.org/stream/proceedingscambr21camb#page/231/mode/2up Internet Archive].
+Definition
 
-In 1925, David Robertson, first professor of electrical engineering at the University¬†of Bristol, introduced phase locking in his clock design to control the striking of the bell Great George in the new Wills Memorial  Building.¬† Robertson‚Äôs clock incorporated an electro-mechanical device that could vary the rate of oscillation of the pendulum, and derived correction signals from a circuit that compared the pendulum phase with that of an incoming telegraph pulse from Greenwich Observatory every morning at 10:00 GMT.¬† Apart from including equivalents of every element of a modern electronic PLL, Robertson‚Äôs system was notable in that its phase detector was a relay logic implementation of the phase/frequency detector not seen in electronic circuits until the 1970s.¬† 
+The propagation constant, symbol {\gamma}, for a given system is defined by the ratio of the complex amplitude at the source of the wave to the complex amplitude at some distance x, such that,
 
-Robertson‚Äôs work predated research towards what was later named the phase-lock loop in 1932, when British researchers developed an alternative to Edwin Armstrong's superheterodyne receiver, the Homodyne or direct-conversion receiver. In the homodyne or synchrodyne system, a local oscillator was tuned to the desired input frequency and multiplied with the input signal. The resulting output signal included the original modulation information.  The intent was to develop an alternative receiver circuit that required fewer tuned circuits than the superheterodyne receiver.  Since the local oscillator would rapidly drift in frequency, an automatic correction signal was applied to the oscillator, maintaining it in the same phase and frequency of the desired signal. The technique was described in 1932, in a paper by Henri de Bellescize, in the French journal L'Onde √âlectrique.Henri de Bellescize, "La r√©ception synchrone," L'Onde √âlectrique (later: Revue de l'Electricit√© et de l'Electronique), vol. 11, pages 230‚Äì240 (June 1932).See also:  French patent no. 635,451 (filed: 6 October 1931; issued: 29 September 1932); and U.S. patent [http://patimg1.uspto.gov/.piw?Docid01990428&homeurl
-http%3A%2F%2Fpatft.uspto.gov%2Fnetacgi%2Fnph-Parser%3FSect1%3DPTO2%2526Sect2%3DHITOFF%2526p%3D1%2526u%3D%25252Fnetahtml%25252FPTO%25252Fsearch-bool.html%2526r%3D1%2526f%3DG%2526l%3D50%2526co1%3DAND%2526d%3DPALL%2526s1%3D1,990,428.PN.%2526OS%3DPN%2F1,990,428%2526RS%3DPN%2F1,990,428&PageNum&Rtype
-&SectionNum&idkey
-NONE&Input=View+first+page "Synchronizing system,"] no. 1,990,428 (filed: 29 September 1932; issued: 5 February 1935).[http://www.uoguelph.ca/~antoon/gadgets/pll/pll.html Notes for a University of Guelph course describing the PLL and early history, including an IC PLL tutorial] 
+\frac{A_0}{A_x}=e^{\gamma x}
 
-In analog television receivers since at least the late 1930s, phase-locked-loop horizontal and vertical sweep circuits are locked to synchronization pulses in the broadcast signal.
+Since the propagation constant is a complex quantity we can write:
 
-In 1969, Signetics introduced a line of low-cost monolithic integrated circuits like the NE565, that were complete phase-locked loop systems on a chip,A. B. Grebene, H. R. Camenzind, "Phase Locking As A New Approach For Tuned Integrated Circuits", ISSCC Digest of Technical Papers, pp. 100‚Äì101, Feb. 1969. and applications for the technique multiplied. A few years later, RCA introduced the "CD4046" CMOS Micropower Phase-Locked Loop, which also became a popular integrated circuit building block.
+\gamma = \alpha +i \beta \,
+where
+* Œ±, the real part, is called the attenuation constant
+* Œ≤, the imaginary part, is called the phase constant
 
-Structure and function
+That Œ≤ does indeed represent phase can be seen from Euler's formula:
 
-Phase-locked loop mechanisms may be implemented as either analog or digital circuits. Both implementations use the same basic structure.
+e^{i\theta}=\cos{\theta}+i\sin{\theta}\,\!
 
-Analog PLL circuits include four basic elements:
-* Phase detector
-* Low-pass filter
-* Voltage controlled oscillator
-* Feedback path, which may include a frequency divider
+which is a sinusoid which varies in phase as Œ∏ varies but does not vary in amplitude because
 
-Variations
+\left|e^{i\theta}\right|\sqrt{\cos^2{\theta}+\sin^2{\theta}}
+1
 
-There are several variations of PLLs.  Some terms that are used are "analog phase-locked loop" (APLL), also referred to as a 
-linear phase-locked loop" (LPLL), "digital phase-locked loop" (DPLL), "all digital phase-locked loop" (ADPLL), and "software phase-locked loop" (SPLL).
+The reason for the use of base e is also now made clear.  The imaginary phase constant, iŒ≤, can be added directly to the attenuation constant, Œ±, to form a single complex number that can be handled in one mathematical operation provided they are to the same base.  Angles measured in radians require base e, so the attenuation is likewise in base e.
 
-; Analog or linear PLL (APLL):Phase detector is an analog multiplier. Loop filter is active or passive. Uses a voltage-controlled oscillator (VCO). APLL is said to be a type II if its loop filter has transfer function with exactly one pole at the origin (see also Egan's conjecture on the pull-in range of type II APLL).
-; Digital PLL (DPLL): An analog PLL with a digital phase detector (such as XOR, edge-trigger JK, phase frequency detector). May have digital divider in the loop.
-; All digital PLL (ADPLL): Phase detector, filter and oscillator are digital. Uses a numerically controlled oscillator (NCO).
-; Software PLL (SPLL): Functional blocks are implemented by software rather than specialized hardware.
-; Charge-pump PLL (CP-PLL):CP-PLL is a modification of phase-locked loops with phase-frequency detector and square waveform signals. See also Gardner's conjecture on CP-PLL.
+The propagation constant for conducting lines can be calculated from the primary line coefficients by means of the relationship
 
-Performance parameters
+\gamma=\sqrt{ZY}
 
-*Type and order.
-*Frequency ranges: hold-in range (tracking range), pull-in range (capture range, acquisition range), lock-in range. See also Gardner's problem on the lock-in range, Egan's conjecture on the pull-in range of type II APLL.
-*Loop bandwidth: Defining the speed of the control loop.
-*Transient response: Like overshoot and settling time to a certain accuracy (like 50 ppm).
-*Steady-state errors: Like remaining phase or timing error.
-*Output spectrum purity: Like sidebands generated from a certain VCO tuning voltage ripple.
-*Phase-noise: Defined by noise energy in a certain frequency band (like 10¬†kHz offset from carrier). Highly dependent on VCO phase-noise, PLL bandwidth, etc.
-*General parameters: Such as power consumption, supply voltage range, output amplitude, etc.
+where
 
-Applications
+Z=R+i\omega L\,\!, the series impedance of the line per unit length and,
 
-Phase-locked loops are widely used for synchronization purposes; in space communications for coherent demodulation and threshold extension, bit synchronization, and symbol synchronization. Phase-locked loops can also be used to demodulate frequency-modulated signals.  In radio transmitters, a PLL is used to synthesize new frequencies which are a multiple of a reference frequency, with the same stability as the reference frequency.
+Y=G+i\omega C\,\!, the shunt admittance of the line per unit length.
 
-Other applications include:
-* Demodulation of frequency modulation (FM): If PLL is locked to an FM signal, the VCO tracks the instantaneous frequency of the input signal. The filtered error voltage which controls the VCO and maintains lock with the input signal is demodulated FM output. The VCO transfer characteristics determine the linearity of the demodulated out. Since the VCO used in an integrated-circuit PLL is highly linear, it is possible to realize highly linear FM demodulators. 
-* Demodulation of frequency-shift keying (FSK): In digital data communication and computer peripherals, binary data is transmitted by means of a carrier frequency which is shifted between two preset frequencies.
-* Recovery of small signals that otherwise would be lost in noise (lock-in amplifier to track the reference frequency)
-* Recovery of clock timing information from a data stream such as from a disk drive
-* Clock multipliers in microprocessors that allow internal processor elements to run faster than external connections, while maintaining precise timing relationships
-* Demodulation of modems and other tone signals for telecommunications and remote control.
-* DSP of video signals; Phase-locked loops are also used to synchronize phase and frequency to the input analog video signal so it can be sampled and digitally processed
-* Atomic force microscopy in frequency modulation mode, to detect changes of the cantilever resonance frequency due to tip‚Äìsurface interactions
-* DC motor drive
+Plane wave
 
-Clock recovery
+The propagation factor of a plane wave traveling in a linear media in the x direction is given by
+ P 
+ e^{-\gamma x} 
+where
+* \gamma 
+ \alpha + i\beta \sqrt{i \omega \mu (\sigma + i \omega \varepsilon)}\; 
+* x =  distance traveled in the x direction
+* \alpha =  attenuation constant in the units of nepers/meter
+* \beta =  phase constant in the units of radians/meter
+* \omega=  frequency in radians/second
+* \sigma =  conductivity of the media
+* \varepsilon \varepsilon' - i\varepsilon \; 
+ complex permitivity of the media
+* \mu \mu' - i\mu \; 
+ complex permeability of the media
+* i=\sqrt{-1}
+The sign convention is chosen for consistency with propagation in lossy media.  If the attenuation constant is positive, then the wave amplitude decreases as the wave propagates in the x direction.
 
-Some data streams, especially high-speed serial data streams (such as the raw stream of data from the magnetic head of a disk drive), are sent without an accompanying clock.  The receiver generates a clock from an approximate frequency reference, and then phase-aligns to the transitions in the data stream with a PLL. This process is referred to as clock recovery.  For this scheme to work, the data stream must have a transition frequently enough to correct any drift in the PLL's oscillator. Typically, some sort of line code, such as 8b/10b encoding, is used to put a hard upper bound on the maximum time between transitions.
+Wavelength, phase velocity, and skin depth have simple relationships to the components of the propagation constant:
+ \lambda 
+ \frac {2 \pi} \beta  \qquad  v_p \frac \omega \beta  \qquad   \delta 
+  \frac 1 \alpha  
 
-Deskewing
+Attenuation constant
 
-If a clock is sent in parallel with data, that clock can be used to sample the data.  Because the clock must be received and amplified before it can drive the flip-flops which sample the data, there will be a finite, and process-, temperature-, and voltage-dependent delay between the detected clock edge and the received data window.  This delay limits the frequency at which data can be sent.  One way of eliminating this delay is to include a deskew PLL on the receive side, so that the clock at each data flip-flop is phase-matched to the received clock. In that type of application, a special form of a PLL called a delay-locked loop (DLL) is frequently used.
+In telecommunications, the term attenuation constant, also called attenuation parameter or attenuation coefficient, is the attenuation of an electromagnetic wave propagating through a medium per unit distance from the source. It is the real part of the propagation constant and is measured in nepers per metre.  A neper is approximately 8.7¬†dB.  Attenuation constant can be defined by the amplitude ratio
 
-Clock generation
+\left|\frac{A_0}{A_x}\right|=e^{\alpha x}
 
-Many electronic systems include processors of various sorts that operate at hundreds of megahertz.  Typically, the clocks supplied to these processors come from clock generator PLLs, which multiply a lower-frequency reference clock (usually 50 or 100¬†MHz) up to the operating frequency of the processor.  The multiplication factor can be quite large in cases where the operating frequency is multiple gigahertz and the reference crystal is just tens or hundreds of megahertz.
+The propagation constant per unit length is defined as the natural logarithm of the ratio of the sending end current or voltage to the receiving end current or voltage.
 
-Spread spectrum
+Conductive lines
 
-All electronic systems emit some unwanted radio frequency energy.  Various regulatory agencies (such as the FCC in the United States) put limits on the emitted energy and any interference caused by it.  The emitted noise generally appears at sharp spectral peaks (usually at the operating frequency of the device, and a few harmonics).  A system designer can use a spread-spectrum PLL to reduce interference with high-Q receivers by spreading the energy over a larger portion of the spectrum.  For example, by changing the operating frequency up and down by a small amount (about 1%), a device running at hundreds of megahertz can spread its interference evenly over a few megahertz of spectrum, which drastically reduces the amount of noise seen on broadcast FM radio channels, which have a bandwidth of several tens of kilohertz.
+The attenuation constant for conductive lines can be calculated from the primary line coefficients as shown above.  For a line meeting the distortionless condition, with a conductance G in the insulator, the attenuation constant is given by
 
-Clock distribution
+\alpha=\sqrt{RG}\,\!
 
-Typically, the reference clock enters the chip and drives a phase locked loop (PLL), which then drives the system's clock distribution. The clock distribution is usually balanced so that the clock arrives at every endpoint simultaneously. One of those endpoints is the PLL's feedback input.  The function of the PLL is to compare the distributed clock to the incoming reference clock, and vary the phase and frequency of its output until the reference and feedback clocks are phase and frequency matched.
+however, a real line is unlikely to meet this condition without the addition of loading coils and, furthermore, there are some frequency dependent effects operating on the primary "constants" which cause a frequency dependence of the loss.  There are two main components to these losses, the metal loss and the dielectric loss.
 
-PLLs are ubiquitous‚Äîthey tune clocks in systems several feet across, as well as clocks in small portions of individual chips. Sometimes the reference clock may not actually be a pure clock at all, but rather a data stream with enough transitions that the PLL is able to recover a regular clock from that stream. Sometimes the reference clock is the same frequency as the clock driven through the clock distribution, other times the distributed clock may be some rational multiple of the reference.
+The loss of most transmission lines are dominated by the metal loss, which causes a frequency dependency due to finite conductivity of metals, and the skin effect inside a conductor. The skin effect causes R along the conductor to be approximately dependent on frequency according to
 
-AM detection
+R \propto \sqrt{\omega}
 
-A PLL may be used to synchronously demodulate amplitude modulated (AM) signals. The PLL recovers the phase and frequency of the incoming AM signal's carrier. The recovered phase at the VCO differs from the carrier's by 90¬∞, so it is shifted in phase to match, and then fed to a multiplier. The output of the multiplier contains both the sum and the difference frequency signals, and the demodulated output is obtained by low-pass filtering. Since the PLL responds only to the carrier frequencies which are very close to the VCO output, a PLL AM detector exhibits a high degree of selectivity and noise immunity which is not possible with conventional peak type AM demodulators. However, the loop may lose lock where AM signals have 100% modulation depth.
+Losses in the dielectric depend on the loss tangent (tan¬†Œ¥) of the material divided by the wavelength of the signal. Thus they are directly proportional to the frequency.
 
-Jitter and noise reduction
+\alpha_d={\tan \delta}
 
-One desirable property of all PLLs is that the reference and feedback clock edges be brought into very close alignment. The average difference in time between the phases of the two signals when the PLL has achieved lock is called the static phase offset (also called the steady-state phase error). The variance between these phases is called tracking jitter. Ideally, the static phase offset should be zero, and the tracking jitter should be as low as possible.
+Optical fibre
 
-Phase noise is another type of jitter observed in PLLs, and is caused by the oscillator itself and by elements used in the oscillator's frequency control circuit.  Some technologies are known to perform better than others in this regard.  The best digital PLLs are constructed with emitter-coupled logic (ECL) elements, at the expense of high power consumption. To keep phase noise low in PLL circuits, it is best to avoid saturating logic families such as transistor-transistor logic (TTL) or CMOS.
+The attenuation constant for a particular propagation mode in an optical fiber is the real part of the axial propagation constant.
 
-Another desirable property of all PLLs is that the phase and frequency of the generated clock be unaffected by rapid changes in the voltages of the power and ground supply lines, as well as the voltage of the substrate on which the PLL circuits are fabricated. This is called substrate and supply noise rejection. The higher the noise rejection, the better.
+Phase constant
 
-To further improve the phase noise of the output, an injection locked oscillator can be employed following the VCO in the PLL.
+In electromagnetic theory, the phase constant, also called phase change constant, parameter or coefficient is the imaginary component of the propagation constant for a plane wave.  It represents the change in phase per unit length along the path travelled by the wave at any instant and is equal to the real part of the angular wavenumber of the wave.  It is represented by the symbol Œ≤ and is measured in units of radians per unit length.
 
-Frequency synthesis
+From the definition of (angular) wavenumber for TEM waves in lossless media:
 
-In digital wireless communication systems (GSM, CDMA etc.), PLLs are used to provide the local oscillator up-conversion during transmission and down-conversion during reception. In most cellular handsets this function has been largely integrated into a single integrated circuit to reduce the cost and size of the handset. However, due to the high performance required of base station terminals, the transmission and reception circuits are built with discrete components to achieve the levels of performance required. GSM local oscillator modules are typically built with a frequency synthesizer integrated circuit and discrete resonator VCOs.
+k \frac{2\pi}{\lambda} 
+ \beta
 
-Block diagram
+For a transmission line, the Heaviside condition of the telegrapher's equation tells us that the wavenumber must be proportional to frequency for the transmission of the wave to be undistorted in the time domain.  This includes, but is not limited to, the ideal case of a lossless line.  The reason for this condition can be seen by considering that a useful signal is composed of many different wavelengths in the frequency domain.  For there to be no distortion of the waveform, all these waves must travel at the same velocity so that they arrive at the far end of the line at the same time as a group.  Since wave phase velocity is given by
 
-The block diagram shown in the figure shows an input signal, FI, which is used to generate an output, FO. The input signal is often called the reference signal (also abbreviated FREF).
+v_p \frac{\lambda}{T} 
+ \frac{f}{\tilde{\nu}} = \frac{\omega}{\beta},
 
-At the input, a phase detector (shown as the Phase frequency detector and Charge pump blocks in the figure) compares two input signals, producing an error signal which is proportional to their phase difference. The error signal is then low-pass filtered and used to drive a VCO which creates an output phase. The output is fed through an optional divider back to the input of the system, producing a negative feedback loop. If the output phase drifts, the error signal will increase, driving the VCO phase in the opposite direction so as to reduce the error. Thus the output phase is locked to the phase of the input.
+it is proved that Œ≤ is required to be proportional to œâ. In terms of primary coefficients of the line, this yields from the telegrapher's equation for a distortionless line the condition
 
-Analog phase locked loops are generally built with an analog phase detector, low-pass filter and VCO placed in a negative feedback configuration. A digital phase locked loop uses a digital phase detector; it may also have a divider in the feedback path or in the reference path, or both, in order to make the PLL's output signal frequency a rational multiple of the reference frequency.  A non-integer multiple of the reference frequency can also be created by replacing the simple divide-by-N counter in the feedback path with a programmable pulse swallowing counter.  This technique is usually referred to as a fractional-N synthesizer or fractional-N PLL.
+\beta = \omega \sqrt{LC},
 
-The oscillator generates a periodic output signal. Assume that initially the oscillator is at nearly the same frequency as the reference signal. If the phase from the oscillator falls behind that of the reference, the phase detector changes the control voltage of the oscillator so that it speeds up.  Likewise, if the phase creeps ahead of the reference, the phase detector changes the control voltage to slow down the oscillator.  Since initially the oscillator may be far from the reference frequency, practical phase detectors may also respond to frequency differences, so as to increase the lock-in range of allowable inputs. Depending on the application, either the output of the controlled oscillator, or the control signal to the oscillator, provides the useful output of the PLL system.
+where L and C are, respectively, the inductance and capacitance per unit length of the line. However, practical lines can only be expected to approximately meet this condition over a limited frequency band.
 
-Elements
+In particular, the phase constant  \beta  is not always equivalent to the wavenumber k. Generally speaking, the following relation
 
-Phase detector
+ \beta = k 
 
-A phase detector (PD) generates a voltage, which represents the phase difference between two signals. In a PLL, the two inputs of the phase detector are the reference input and the feedback from the VCO.  The PD output voltage is used to control the VCO such that the phase difference between the two inputs is held constant, making it a negative feedback system.
+is tenable to the TEM wave (transverse electromagnetic wave) which travels in free space or TEM-devices such as the coaxial cable and two parallel wires transmission lines. Nevertheless, it is invalid to the TE wave (transverse electric wave) and TM wave  (transverse magnetic wave). For example, in a hollow waveguide where the TEM wave cannot exist but TE and TM waves can propagate,
 
-Different types of phase detectors have different performance characteristics.
+k=\frac{\omega}{c} 
 
-For instance, the frequency mixer produces harmonics that adds complexity in applications where spectral purity of the VCO signal is important.  The resulting unwanted (spurious) sidebands, also called "reference spurs" can dominate the filter requirements and reduce the capture range well below or increase the lock time beyond the requirements.  In these applications the more complex digital phase detectors are used which do not have as severe a reference spur component on their output. Also, when in lock, the steady-state phase difference at the inputs using this type of phase detector is near 90 degrees.
+\beta=k\sqrt{1-\frac{\omega_c^2}{\omega^2}}
 
-In PLL applications it is frequently required to know when the loop is out of lock.  The more complex digital phase-frequency detectors usually have an output that allows a reliable indication of an out of lock condition.
+Here  \omega_{c}   is the cutoff frequency. In a rectangular waveguide, the cutoff frequency is
 
-An XOR gate is often used for digital PLLs as an effective yet simple phase detector. It can also be used in an analog sense with only slight modification to the circuitry.
+ \omega_{c} = c \sqrt{\left(\frac{n \pi}{a}\right)^2 + \left(\frac{m \pi}{b}\right) ^2}, 
 
-Filter
+where m,n \ge 0 are the mode numbers for the rectangle's sides of length a and b respectively. For TE modes,  m,n \ge 0 (but  m n 
+ 0 is not allowed), while for TM modes  m,n \ge 1 .
 
-The block commonly called the PLL loop filter (usually a low-pass filter) generally has two distinct functions.
+The phase velocity equals
 
-The primary function is to determine loop dynamics, also called stability.  This is how the loop responds to disturbances, such as changes in the reference frequency, changes of the feedback divider, or at startup.  Common considerations are the range over which the loop can achieve lock (pull-in range, lock range or capture range), how fast the loop achieves lock (lock time, lock-up time or settling time) and damping behavior.  Depending on the application, this may require one or more of the following: a simple proportion (gain or attenuation), an integral (low-pass filter) and/or derivative (high-pass filter).  Loop parameters commonly examined for this are the loop's gain margin and phase margin.  Common concepts in control theory including the PID controller are used to design this function.
+v_p\frac{\omega}{\beta}
+\frac{c}{\sqrt{1-\frac{\omega_\mathrm{c}^2}{\omega^2}}}>c 
 
-The second common consideration is limiting the amount of reference frequency energy (ripple) appearing at the phase detector output that is then applied to the VCO control input.  This frequency modulates the VCO and produces FM sidebands commonly called "reference spurs".
+The phase constant is also an important concept in quantum mechanics because the momentum   p of a quantum is directly proportional to it, i.e.
 
-The design of this block can be dominated by either of these considerations, or can be a complex process juggling the interactions of the two. Typical trade-offs are increasing the bandwidth usually degrades the stability or too much damping for better stability will reduce the speed and increase settling time. Often also the phase-noise is affected.
+ p = \hbar \beta
 
-Oscillator
+where  is called the reduced Planck constant (pronounced "h-bar").  It is equal to the Planck constant divided by .
 
-All phase-locked loops employ an oscillator element with variable frequency capability. This can be an analog VCO either driven by analog circuitry in the case of an APLL or driven digitally through the use of a digital-to-analog converter as is the case for some DPLL designs. Pure digital oscillators such as a numerically controlled oscillator are used in ADPLLs.
+Filters and two-port networks
 
-Feedback path and optional divider
+The term propagation constant or propagation function is applied to filters and other two-port networks used for signal processing.  In these cases, however, the attenuation and phase coefficients are expressed in terms of nepers and radians per network section rather than per unit length.  Some authorsMatthaei et al, p49 make a distinction between per unit length measures (for which "constant" is used) and per section measures (for which "function" is used).
 
-PLLs may include a divider between the oscillator and the feedback input to the phase detector to produce a frequency synthesizer.  A programmable divider is particularly useful in radio transmitter applications, since a large number of transmit frequencies can be produced from a single stable, accurate, but expensive, quartz crystal‚Äìcontrolled reference oscillator.
+The propagation constant is a useful concept in filter design which invariably uses a cascaded section topology.  In a cascaded topology, the propagation constant, attenuation constant and phase constant of individual sections may be simply added to find the total propagation constant etc.
 
-Some PLLs also include a divider between the reference clock and the reference input to the phase detector.  If the divider in the feedback path divides by N and the reference input divider divides by M, it allows the PLL to multiply the reference frequency by N/M.  It might seem simpler to just feed the PLL a lower frequency, but in some cases the reference frequency may be constrained by other issues, and then the reference divider is useful.
+Cascaded networks
 
-Frequency multiplication can also be attained by locking the VCO output to the Nth harmonic of the reference signal. Instead of a simple phase detector, the design uses a harmonic mixer (sampling mixer). The harmonic mixer turns the reference signal into an impulse train that is rich in harmonics. The VCO output is coarse tuned to be close to one of those harmonics. Consequently, the desired harmonic mixer output (representing the difference between the N harmonic and the VCO output) falls within the loop filter passband.
+The ratio of output to input voltage for each network is given byMatthaei et al pp51-52
 
-It should also be noted that the feedback is not limited to a frequency divider. This element can be other elements such as a frequency multiplier, or a mixer. The multiplier will make the VCO output a sub-multiple (rather than a multiple) of the reference frequency. A mixer can translate the VCO frequency by a fixed offset. It may also be a combination of these. An example being a divider following a mixer; this allows the divider to operate at a much lower frequency than the VCO without a loss in loop gain.
+\frac{V_1}{V_2}=\sqrt{\frac{Z_{I1}}{Z_{I2}}}e^{\gamma_1}
+\frac{V_2}{V_3}=\sqrt{\frac{Z_{I2}}{Z_{I3}}}e^{\gamma_2}
+\frac{V_3}{V_4}=\sqrt{\frac{Z_{I3}}{Z_{I4}}}e^{\gamma_3}
 
-Modeling
+The terms \sqrt{\frac{Z_{In}}{Z_{Im}}} are impedance scaling termsMatthaei et al pp37-38 and their use is explained in the image impedance article.
 
-Time domain model of APLL
+The overall voltage ratio is given by
 
-The equations governing a phase-locked loop with an analog multiplier as the phase detector and linear filter may be derived as follows. Let the input to the phase detector be f_1(\theta_1(t)) and the output of the VCO is f_2(\theta_2(t)) with phases \theta_1(t) and \theta_2(t). The functions f_1(\theta)  and f_2(\theta) describe waveforms of signals. Then the output of the phase detector \varphi(t) is given by
+\frac{V_1}{V_4}\frac{V_1}{V_2}\cdot\frac{V_2}{V_3}\cdot\frac{V_3}{V_4}
+\sqrt{\frac{Z_{I1}}{Z_{I4}}}e^{\gamma_1+\gamma_2+\gamma_3}
 
-\varphi(t) = f_1(\theta_1(t)) f_2(\theta_2(t))
+Thus for n cascaded sections all having matching impedances facing each other, the overall propagation constant is given by
 
-The VCO frequency is usually taken as a function of the VCO input
-g(t) as
-\dot\theta_2(t) \omega_2(t) 
-
-\omega_\text{free} + g_v g(t)\,
-where g_v is the sensitivity of the VCO and is
-expressed in Hz / V;
-\omega_\text{free} is a free-running frequency of VCO.
-
-The loop filter can be described by a system of linear differential equations
-
-\begin{array}{rcl}
-   \dot x & = & Ax + b \varphi(t), \\
-   g(t) & = & c^{*}x,
-\end{array}
-\quad
-x(0) = x_0,
-
-where \varphi(t) is an input of the filter,
-g(t) is an output of the filter, A is
-n-by-n matrix,
-x \in \mathbb{C}^n,\quad b \in \mathbb{R}^n, \quad c \in
-\mathbb{C}^n, \quad. x_0 \in \mathbb{C}^n represents an initial state of
-the filter. The star symbol is a conjugate transpose.
-
-Hence the following system describes PLL
-\begin{array}{rcl}
- \dot x &= &Ax + b f_1(\theta_1(t)) f_2(\theta_2(t)),\\
- \dot \theta_2 &= & \omega_\text{free} + g_v (c^{*}x) \\
-\end{array}
-\quad
-x(0) x_0, \quad \theta_2(0) 
- \theta_0.
-
-where \theta_0 is an initial phase shift.
-
-Phase domain model of APLL
-
-Consider the input of PLL f_1(\theta_1(t)) and VCO output
-f_2(\theta_2(t)) are high frequency signals.
-Then for any
-piecewise differentiable 2\pi-periodic functions
-f_1(\theta) and f_2(\theta) there is a function
-\varphi(\theta) such that the output G(t) of Filter
-\begin{array}{rcl}
- \dot x &= &Ax + b \varphi(\theta_1(t) - \theta_2(t)), \\
- G(t) &= &c^{*}x,
-\end{array}
-\quad
-x(0) = x_0,
-
-in phase domain is asymptotically equal (the difference G(t)- g(t) is small with respect to the frequencies) to the output of the Filter in time domain model. 
-
- 
-Here function \varphi(\theta) is a phase detector characteristic.
-
-Denote by \theta_{\Delta}(t) the phase difference
-\theta_{\Delta} = \theta_1(t) - \theta_2(t).
-Then the following dynamical system describes PLL behavior
-
-\begin{array}{rcl}
- \dot x &= &Ax + b \varphi(\theta_{\Delta}),\\
- \dot \theta_{\Delta} &= & \omega_{\Delta} - g_v (c^{*}x). \\
-\end{array}
-\quad
-x(0) x_0, \quad \theta_{\Delta}(0) 
- \theta_{1}(0) - \theta_2(0).
-
-Here \omega_{\Delta} = \omega_1 - \omega_\text{free}; \omega_1 is the frequency of a reference oscillator (we assume that \omega_\text{free} is constant).
-
-Example
-
-Consider sinusoidal signals
-
-f_1(\theta_1(t)) = A_1 \sin(\theta_1(t)), \quad f_2(\theta_2(t))
-= A_2\cos(\theta_2(t))
-
-and a simple one-pole RC circuit as a filter. The time-domain model takes the form
-
-\begin{align}
- \dot x &= -\frac{1}{RC}x + \frac{1}{RC}
-A_1A_2\sin(\theta_1(t)) \cos(\theta_2(t)),\\[6pt]
- \dot \theta_2 &= \omega_\text{free} + g_v (c^{*}x)
-\end{align}
-
-PD characteristics for this signals is equalA. J. Viterbi, Principles of Coherent Communication, McGraw-Hill, New York, 1966 to
-
- \varphi(\theta_1 - \theta_2) = \frac{A_1 A_2}{2}\sin(\theta_1 - \theta_2)
-
-Hence the phase domain model takes the form
-
-\begin{align}
- \dot x &= -\frac{1}{RC}x + \frac{1}{RC}\frac{A_1 A_2}{2}\sin(\theta_{\Delta}),\\[6pt]
- \dot \theta_{\Delta} &= \omega_{\Delta} - g_v (c^{*}x).
-\end{align}
-
-This system of equations is equivalent to the equation of mathematical pendulum
-
-\begin{align}
-x & \frac{\dot\theta_2 - \omega_2}{g_v c^*} 
- \frac{\omega_1 - \dot\theta_{\Delta} - \omega_2}{g_v c^*},\\[6pt]
-\dot x & = \frac{\ddot\theta_2}{g_v c^*},\\[6pt]
-\theta_1 & = \omega_1 t + \Psi,\\[6pt]
-\theta_{\Delta} & = \theta_1 -\theta_2,\\[6pt]
-\dot\theta_{\Delta} & \dot\theta_1 - \dot\theta_2 
- \omega_1 - \dot\theta_2,\\[6pt]
-& \frac{1}{g_v c^*}\ddot\theta_{\Delta} - \frac{1}{g_v c^* RC}\dot\theta_{\Delta} - \frac{A_1A_2}{2RC}\sin\theta_{\Delta} = \frac{\omega_2 - \omega_1}{g_v c^* RC}.
-\end{align}
-
-Linearized phase domain model
-
-Phase locked loops can also be analyzed as control systems by applying the Laplace transform. The loop response can be written as
-
-\frac{\theta_o}{\theta_i} = \frac{K_p K_v F(s)} {s + K_p K_v F(s)}
-
-Where
-* \theta_o is the output phase in radians
-* \theta_i is the input phase in radians
-* K_p is the phase detector gain in volts per radian
-* K_v is the VCO gain in radians per volt-second
-* F(s) is the loop filter transfer function (dimensionless)
-
-The loop characteristics can be controlled by inserting different types of loop filters. The simplest filter is a one-pole RC circuit. The loop transfer function in this case is
-
-F(s) = \frac{1}{1 + s R C}
-
-The loop response becomes:
-
-\frac{\theta_o}{\theta_i} = \frac{\frac{K_p K_v}{R C}}{s^2 + \frac{s}{R C} + \frac{K_p K_v}{R C}}
-
-This is the form of a classic harmonic oscillator. The denominator can be related to that of a second order system:
-
-s^2 + 2 s \zeta \omega_n + \omega_n^2
-
-where \zeta is the damping factor and \omega_n is the natural frequency of the loop.
-
-For the one-pole RC filter,
-
-\omega_n = \sqrt{\frac{K_p K_v}{R C}}
-\zeta = \frac{1}{2 \sqrt{K_p K_v R C}}
-
-The loop natural frequency is a measure of the response time of the loop, and the damping factor is a measure of the overshoot and ringing. Ideally, the natural frequency should be high and the damping factor should be near 0.707 (critical damping). With a single pole filter, it is not possible to control the loop frequency and damping factor independently. For the case of critical damping,
-
-R C = \frac{1}{2 K_p K_v}
-\omega_c = K_p K_v \sqrt{2}
-
-A slightly more effective filter, the lag-lead filter includes one pole and one zero. This can be realized with two resistors and one capacitor. The transfer function for this filter is
-
-F(s) = \frac{1+s C R_2}{1+s C (R_1+R_2)}
-
-This filter has two time constants
-
-\tau_1 = C (R_1 + R_2)
-\tau_2 = C R_2
-
-Substituting above yields the following natural frequency and damping factor
-
-\omega_n = \sqrt{\frac{K_p K_v}{\tau_1}}
-\zeta = \frac{1}{2 \omega_n \tau_1} + \frac{\omega_n \tau_2}{2}
-
-The loop filter components can be calculated independently for a given natural frequency and damping factor
-
-\tau_1 = \frac{K_p K_v}{\omega_n^2}
-\tau_2 = \frac{2 \zeta}{\omega_n} - \frac{1}{K_p K_v}
-
-Real world loop filter design can be much more complex e.g. using higher order filters to reduce various types or source of phase noise. (See the D Banerjee ref below)
-
-Implementing a digital phase-locked loop in software
-
-Digital phase locked loops can be implemented in hardware, using integrated circuits such as a CMOS 4046.   However, with microcontrollers becoming faster, it may make sense to implement a phase locked loop in software for applications that do not require locking onto signals in the MHz range or faster, such as precisely controlling motor speeds.  Software implementation has several advantages including easy customization of the feedback loop including changing the multiplication or division ratio between the signal being tracked and the output oscillator.  Furthermore, a software implementation is useful to understand and experiment with.  As an example of a phase-locked loop implemented using a phase frequency detector is presented in MATLAB, as this type of phase detector is robust and easy to implement.
-
-% This example is written in MATLAB
-
-% Initialize variables
-vcofreq = zeros(1, numiterations);
-ervec = zeros(1, numiterations);
-% Keep track of last states of reference, signal, and error signal
-qsig 0; qref 
- 0; lref 0; lsig 
- 0; lersig = 0;
-phs = 0;
-freq = 0;
-
-% Loop filter constants (proportional and derivative)
-% Currently powers of two to facilitate multiplication by shifts
-prop = 1 / 128;
-deriv = 64;
-
-for it = 1:numiterations
-    % Simulate a local oscillator using a 16-bit counter
-    phs = mod(phs + floor(freq / 2 ^ 16), 2 ^ 16);
-    ref = phs 
-
-In this example, an array tracksig is assumed to contain a reference signal to be tracked.  The oscillator is implemented by a counter, with the most significant bit of the counter indicating the on/off status of the oscillator.  This code simulates the two D-type flip-flops that comprise a phase-frequency comparator.  When either the reference or signal has a positive edge, the corresponding flip-flop switches high.  Once both reference and signal is high, both flip-flops are reset.  Which flip-flop is high determines at that instant whether the reference or signal leads the other.  The error signal is the difference between these two flip-flop values.  The pole-zero filter is implemented by adding the error signal and its derivative to the filtered error signal.  This in turn is integrated to find the oscillator frequency.
-
-In practice, one would likely insert other operations into the feedback of this phase-locked loop.  For example, if the phase locked loop were to implement a frequency multiplier, the oscillator signal could be divided in frequency before it is compared to the reference signal.
-
-Practical analogies
-
-Automobile race analogy
-
-As an analogy of a PLL, consider a race between two cars.  One represents the input frequency, the other the PLL's output voltage-controlled oscillator (VCO) frequency.  Each lap corresponds to a complete cycle. The number of laps per hour (a speed) corresponds to the frequency. The separation of the cars (a distance) corresponds to the phase difference between the two oscillating signals.
-
-During most of the race, each car is on its own and free to pass the other and lap the other. This is analogous to the PLL in an unlocked state.
-
-However, if there is an accident, a yellow caution flag is raised.  This means neither of the race cars is permitted to overtake and pass the other car.  The two race cars represent the input and output frequency of the PLL in a locked state.  Each driver will measure the phase difference (a fraction of the distance around the lap) between themselves and the other race car.  If the hind driver is too far away, they will increase their speed to close the gap. If they are too close to the other car, the driver will slow down. The result is that both race cars will circle the track in lockstep with a fixed phase difference (or constant distance) between them.  Since neither car is allowed to lap the other, the cars make the same number of laps in a given time period.  Therefore the frequency of the two signals is the same.
-
-Clock analogy
-
-Phase can be proportional to time, so a phase difference can be a time difference. Clocks are, with varying degrees of accuracy, phase-locked (time-locked) to a leader clock.
-
-Left on its own, each clock will mark time at slightly different rates. A wall clock, for example, might be fast by a few seconds per hour compared to the reference clock at NIST. Over time, that time difference would become substantial.
-
-To keep the wall clock in sync with the reference clock, each week the owner compares the time on their wall clock to a more accurate clock (a phase comparison), and resets their clock. Left alone, the wall clock will continue to diverge from the reference clock at the same few seconds per hour rate.
-
-Some clocks have a timing adjustment (a fast-slow control). When the owner compared their wall clock's time to the reference time, they noticed that their clock was too fast. Consequently, the owner could turn the timing adjust a small amount to make the clock run a little slower (frequency). If things work out right, their clock will be more accurate than before. Over a series of weekly adjustments, the wall clock's notion of a second would agree with the reference time (locked both in frequency and phase within the wall clock's stability).
-
-An early electromechanical version of a  phase-locked loop was used in 1921 in the Shortt-Synchronome clock.
+\gamma_\mathrm{total}=\gamma_1 + \gamma_2 + \gamma_3 + \cdots + \gamma_n
 
 See also
 
-* Frequency-locked loop
-* Charge-pump phase-locked loop
-* Carrier recovery
-* Circle map ‚Äì A simple mathematical model of the phase-locked loop showing both mode-locking and chaotic behavior.
-* Costas loop
-* Delay-locked loop (DLL)
-* Direct conversion receiver
-* Direct digital synthesizer
-* Kalman filter
-* PLL multibit
-* Shortt‚ÄìSynchronome clock ‚Äì Slave pendulum phase-locked to master (ca 1921)
+The concept of penetration depth is one of many ways to describe the absorption of electromagnetic waves. For the others, and their interrelationships, see the article: Mathematical descriptions of opacity.
+* Propagation speed
 
 Notes
 
 References
 
-Further reading
-
-*.
-*
-*
-*
-*. (provides useful Matlab scripts for simulation)
-*. (provides useful Matlab scripts for simulation)
-*
-*. (FM Demodulation)
-*
-*. An article on designing a standard PLL IC for Bluetooth applications.
-*
+* .
+* Matthaei, Young, Jones Microwave Filters, Impedance-Matching Networks, and Coupling Structures McGraw-Hill 1964.
 
 External links
 
-* [https://www.electronics-notes.com/articles/radio/pll-phase-locked-loop/tutorial-primer-basics.php Phase locked loop primer] ‚Äì Includes embedded video
-* [http://www.excelunusual.com/preview-2/ Excel Unusual hosts an animated PLL model] and the tutorials [http://www.excelunusual.com/a-phase-locked-loop-pll-model-video-preview/ to code such a model]."42425010*ºïçö:ARTICLEB¿ñ
-ºñ
-wiki_metadata©ñ*•ñ
+* 
+* 
+*  Free PDF download is available. There is an updated version dated August 6, 2002."
+1117237824*Î˚≈ö:ARTICLEBçÄ
+âÄ
+wiki_metadata˜*Ù
 
 	namespace 
 #
-	dump_date2022-10-09T22:27:08Z
+	dump_date2022-10-20T16:57:15Z
 /
-date_parsed 2024-01-29T10:34:03.695479215Z
-∫ï
-	wiki_text´ïßï{{Inline citations|date=June 2022}}{{Short description|Electronic control system}}
-{{Redirect|PLL|other uses|PLL (disambiguation)}}
-[[File:Phase locked loop.svg|thumb|Simplest analog phase locked loop]]
-
-A '''phase-locked loop''' or '''phase lock loop''' ('''PLL''') is a [[control system]] that generates an output [[Signal (electrical engineering)|signal]] whose [[phase (waves)|phase]] is related to the phase of an input signal.  There are several different types; the simplest is an [[electronic circuit]] consisting of a [[variable frequency oscillator]] and a [[phase detector]] in a [[feedback loop]].  The oscillator's frequency and phase are controlled proportionally by an applied voltage, hence the term [[voltage-controlled oscillator]] (VCO).
-The oscillator generates a periodic signal of a specific frequency, and the phase detector compares the phase of that signal with the phase of the input periodic signal, to adjust the oscillator to keep the phases matched.
+date_parsed 2024-03-05T12:45:58.435987174Z
+ä
+	wiki_text¸~˘~{{Redirect|Transmission parameter|ABCD transmission parameters|two-port network#ABCD-parameters|scattering transfer parameters|scattering parameters#Scattering transfer parameters}}
 
-Keeping the input and output phase in lockstep also implies keeping the input and output frequencies the same. Consequently, in addition to synchronizing signals, a phase-locked loop can track an input frequency, or it can generate a frequency that is a multiple of the input frequency.  These properties are used for computer clock synchronization, [[demodulation]], and [[frequency synthesis]].
+The '''propagation constant''' of a sinusoidal [[electromagnetic wave]] is a measure of the change undergone by the [[amplitude]] and [[phase (waves)|phase]] of the wave as it [[wave propagation|propagates]] in a given direction. The quantity being measured can be the [[voltage]], the [[electric current|current]] in a [[electronic circuit|circuit]], or a field vector such as [[electric field strength]] or [[flux density]]. The propagation constant itself measures the change [[per unit length]], but it is otherwise dimensionless. In the context of [[Two port networks|two-port networks]] and their cascades, '''propagation constant '''measures the change undergone by the source quantity as it propagates from one port to the next.
 
-Phase-locked loops are widely employed in [[radio]], [[telecommunications]], [[computer]]s and other electronic applications. They can be used to [[demodulation|demodulate]] a signal, recover a signal from a noisy communication channel, generate a stable frequency at multiples of an input frequency ([[frequency synthesis]]), or distribute precisely timed clock pulses in digital logic circuits such as [[microprocessor]]s. Since a single [[integrated circuit]] can now provide a complete phase-locked-loop building block, the technique is widely used in modern electronic devices, with output frequencies from a fraction of a hertz up to many gigahertz.
+The propagation constant's value is expressed [[logarithm]]ically, almost universally to the base ''[[e (mathematical constant)|e]]'', rather than the more usual base 10 that is used in [[telecommunication]]s in other situations. The quantity measured, such as voltage, is expressed as a sinusoidal [[phasor]]. The phase of the sinusoid varies with distance which results in the propagation constant being a [[complex number]], the [[imaginary number|imaginary]] part being caused by the phase change.
 
-==History==
-Spontaneous synchronization of weakly coupled [[pendulum clock]]s was noted by the Dutch physicist [[Christiaan Huygens]] as early as 1673.<ref>Christiaan Huygens, ''Horologium Oscillatorium'' ‚Ä¶ (Paris, France:  F. Muguet, 1673),  [https://archive.org/details/bub_gb_SOjZR1P1eE8C/page/n37 pages 18‚Äì19.]  From page 18:  ''" ‚Ä¶ illudque accidit memoratu dignum, ‚Ä¶ brevi tempore reduceret."'' ( ‚Ä¶ and it is worth mentioning, since with two clocks constructed in this form and which we suspend in like manner, truly the cross beam is assigned two fulcrums [i.e., two pendulum clocks were suspended from the same wooden beam]; the motions of the pendulums thus share the opposite swings between the two [clocks], since the two clocks at no time move even a small distance, and the sound of both can be heard clearly together always: for if the innermost part [of one of the clocks] is disturbed with a little help, it will have been restored in a short time by the clocks themselves.)  English translation provided by Ian Bruce's translation of [http://www.17centurymaths.com/contents/huygens/horologiumpart1.pdf ''Horologium Oscillatorium'' ‚Ä¶ ], pages 16‚Äì17.</ref>  Around the turn of the 19th century, [[John William Strutt, 3rd Baron Rayleigh|Lord Rayleigh]] observed synchronization of weakly coupled organ pipes and tuning forks.<ref>See:
-*  Lord Rayleigh, ''The Theory of Sound'' (London, England:  Macmillan, 1896), vol. 2.  The synchronization of organ pipes in opposed phase is mentioned in ¬ß322c, [https://archive.org/details/theorysound05raylgoog/page/n239 pages 221‚Äì222.]
-*  Lord Rayleigh (1907) "Acoustical notes ‚Äî VII," ''Philosophical Magazine'', 6th series, '''13''' :  316‚Äì333.  See "Tuning-forks with slight mutual influence," [https://books.google.com/books?id=vVjKOdktZhsC&pg=PA322#v=onepage&q&f=false pages 322‚Äì323.]</ref>  In 1919, [[William Eccles (physicist)|W. H. Eccles]] and J. H. Vincent found that two electronic oscillators that had been tuned to oscillate at slightly different frequencies but that were coupled to a resonant circuit would soon oscillate at the same frequency.<ref>See:
-*  Vincent (1919) "On some experiments in which two neighbouring maintained oscillatory circuits affect a resonating circuit," ''Proceedings of the Physical Society of London'', '''32''', pt. 2, 84‚Äì91.
-*  W. H. Eccles and J. H. Vincent, ''British Patent Specifications'', '''163''' :  462 (17 Feb. 1920).</ref>  Automatic synchronization of electronic oscillators was described in 1923 by [[Edward Victor Appleton]].<ref>E. V. Appleton (1923) "The automatic synchronization of triode oscillators," ''Proceedings of the Cambridge Philosophical Society'', '''21''' (Part III): 231‚Äì248.  Available on-line at:  [https://archive.org/stream/proceedingscambr21camb#page/231/mode/2up Internet Archive].</ref>
+==Alternative names==
 
-In 1925, David Robertson, first professor of electrical engineering at the [[University¬†of Bristol]], introduced phase locking in his clock design to control the striking of the bell Great George in the new Wills Memorial  Building.¬† Robertson‚Äôs clock incorporated an electro-mechanical device that could vary the rate of oscillation of the pendulum, and derived correction signals from a circuit that compared the pendulum phase with that of an incoming telegraph pulse from Greenwich Observatory every morning at 10:00 GMT.¬† Apart from including equivalents of every element of a modern electronic PLL, Robertson‚Äôs system was notable in that its phase detector was a relay logic implementation of the phase/frequency detector not seen in electronic circuits until the 1970s.¬† 
+The term "propagation constant" is somewhat of a misnomer as it usually varies strongly with ''œâ''.  It is probably the most widely used term but there are a large variety of alternative names used by various authors for this quantity.  These include '''transmission parameter''', '''transmission function''', '''propagation parameter''', '''propagation coefficient''' and '''transmission constant'''.  If the plural is used, it suggests that ''Œ±'' and ''Œ≤'' are being referenced separately but collectively as in '''transmission parameters''', '''propagation parameters''', etc.  In transmission line theory, ''Œ±'' and ''Œ≤''  are counted among the "secondary coefficients", the term ''secondary'' being used to contrast to the ''[[primary line coefficients]]''.  The primary coefficients are the physical properties of the line, namely R,C,L and G, from which the secondary coefficients may be derived using the [[telegrapher's equation]].  Note that in the field of transmission lines, the term [[transmission coefficient]] has a different meaning despite the similarity of name: it is the companion of the [[reflection coefficient]].
 
-Robertson‚Äôs work predated research towards what was later named the phase-lock loop in 1932, when British researchers developed an alternative to [[Edwin Armstrong]]'s [[superheterodyne receiver]], the [[Homodyne detection|Homodyne]] or [[direct-conversion receiver]]. In the homodyne or synchrodyne system, a [[local oscillator]] was tuned to the desired input frequency and multiplied with the input signal. The resulting output signal included the original modulation information.  The intent was to develop an alternative receiver circuit that required fewer tuned circuits than the superheterodyne receiver.  Since the local oscillator would rapidly drift in frequency, an automatic correction signal was applied to the oscillator, maintaining it in the same phase and frequency of the desired signal. The technique was described in 1932, in a paper by Henri de Bellescize, in the French journal ''L'Onde √âlectrique''.<ref>Henri de Bellescize, "La r√©ception synchrone," ''L'Onde √âlectrique'' (later: ''Revue de l'Electricit√© et de l'Electronique''), vol. 11, pages 230‚Äì240 (June 1932).</ref><ref>See also:  French patent no. 635,451 (filed: 6 October 1931; issued: 29 September 1932); and U.S. patent [http://patimg1.uspto.gov/.piw?Docid=01990428&homeurl=http%3A%2F%2Fpatft.uspto.gov%2Fnetacgi%2Fnph-Parser%3FSect1%3DPTO2%2526Sect2%3DHITOFF%2526p%3D1%2526u%3D%25252Fnetahtml%25252FPTO%25252Fsearch-bool.html%2526r%3D1%2526f%3DG%2526l%3D50%2526co1%3DAND%2526d%3DPALL%2526s1%3D1,990,428.PN.%2526OS%3DPN%2F1,990,428%2526RS%3DPN%2F1,990,428&PageNum=&Rtype=&SectionNum=&idkey=NONE&Input=View+first+page "Synchronizing system,"] no. 1,990,428 (filed: 29 September 1932; issued: 5 February 1935).</ref><ref>[http://www.uoguelph.ca/~antoon/gadgets/pll/pll.html Notes for a University of Guelph course describing the PLL and early history, including an IC PLL tutorial] {{webarchive|url=https://web.archive.org/web/20090224002345/http://www.uoguelph.ca/~antoon/gadgets/pll/pll.html |date=2009-02-24 }}</ref>
+==Definition==
 
-In analog television receivers since at least the late 1930s, phase-locked-loop horizontal and vertical sweep circuits are locked to synchronization pulses in the broadcast signal.<ref>{{cite web|url=http://www.sxlist.com/techref/io/video/ntsc.htm |title=National Television Systems Committee Video Display Signal IO |publisher=Sxlist.com |access-date=2010-10-14}}</ref>
-[[File:Auerswald COMander Basic - Mainboard - On Semiconductor HC4046A-3027.jpg|thumb|[[ON Semiconductor]] HC4046A]]
+The propagation constant, symbol <math>{\gamma}</math>, for a given system is defined by the ratio of the [[Phasor|complex amplitude]] at the source of the wave to the complex amplitude at some distance ''x'', such that,
 
-In 1969, [[Signetics]] introduced a line of low-cost monolithic [[integrated circuits]] like the NE565, that were complete phase-locked loop systems on a chip,<ref>A. B. Grebene, H. R. Camenzind, "Phase Locking As A New Approach For Tuned Integrated Circuits", ISSCC Digest of Technical Papers, pp. 100‚Äì101, Feb. 1969.</ref> and applications for the technique multiplied. A few years later, RCA introduced the "[[List of 4000 series integrated circuits|CD4046]]" [[CMOS]] Micropower Phase-Locked Loop, which also became a popular integrated circuit building block.
+:<math>\frac{A_0}{A_x}=e^{\gamma x}</math>
 
-==Structure and function==
-Phase-locked loop mechanisms may be implemented as either analog or digital circuits. Both implementations use the same basic structure.
-<!--Incomplete block diagram is misleading. Removing until it can be fixed. See [[Talk:Phase-locked loop#Figure_needs_work.2C_I_think]]. [[File:SimplePLL.svg|right|thumb|Block diagram of a PLL (without filter or phase detector, both essential to the operation)]]-->
-Analog PLL circuits include four basic elements:
-* [[Phase detector]]
-* [[Low-pass filter]]
-* [[Voltage controlled oscillator]]
-* [[Feedback]] path, which may include a [[frequency divider]]
+Since the propagation constant is a complex quantity we can write:
 
-===Variations===
-There are several variations of PLLs.  Some terms that are used are "analog phase-locked loop" (APLL), also referred to as a 
-linear phase-locked loop" (LPLL), "digital phase-locked loop" (DPLL), "all digital phase-locked loop" (ADPLL), and "software phase-locked loop" (SPLL).<ref name="Best 2007">{{cite book |author=Roland E. Best |title=Phase Locked Loops 6/e : Design, Simulation, and Applications: Design, Simulation, and Applications |edition= |publisher=McGraw Hill Professional |year=2007 |isbn=978-0-07-149375-8}}</ref>
+:<math display="block" qid=Q1434913>\gamma = \alpha +i \beta \,</math>
+where
+* ''Œ±'', the real part, is called the [[#Attenuation constant|attenuation constant]]
+* ''Œ≤'', the imaginary part, is called the [[#Phase constant|phase constant]]
 
-; Analog or linear PLL (APLL):Phase detector is an analog multiplier. Loop filter is active or passive. Uses a [[voltage-controlled oscillator]] (VCO). APLL is said to be a ''type II'' if its loop filter has transfer function with exactly one pole at the origin (see also [[William_F._Egan|Egan's conjecture on the pull-in range of type II APLL]]).
-; Digital PLL (DPLL): An analog PLL with a digital phase detector (such as XOR, edge-trigger JK, phase frequency detector). May have digital divider in the loop.
-; All digital PLL (ADPLL): Phase detector, filter and oscillator are digital. Uses a [[numerically controlled oscillator]] (NCO).
-; Software PLL (SPLL): Functional blocks are implemented by software rather than specialized hardware.
-; [[Charge-pump_phase-locked_loop|Charge-pump PLL (CP-PLL)]]:CP-PLL is a modification of phase-locked loops with phase-frequency detector and square waveform signals. See also [[Floyd_M._Gardner#Gardner's_conjecture_on_charge-pump_phase-locked_loops|Gardner's conjecture on CP-PLL]].
+That ''Œ≤'' does indeed represent phase can be seen from [[Euler's formula]]:
 
-===Performance parameters===
-{{main|Phase-locked loop ranges}}
-*Type and order.
-*[[Pll ranges|Frequency ranges]]: hold-in range (tracking range), pull-in range (capture range, acquisition range), lock-in range.<ref name=Leonov2015>{{cite journal | last1=Leonov | first1=G. A. | last2=Kuznetsov | first2=N. V. | last3=Yuldashev | first3=M. V. | last4=Yuldashev | first4=R. V. | title=Hold-in, pull-in, and lock-in ranges of PLL circuits: rigorous mathematical definitions and limitations of classical theory. | journal=IEEE Transactions on Circuits and Systems I: Regular Papers | publisher=IEEE | volume=62 | issue=10 | pages=2454‚Äì2464 | doi=10.1109/TCSI.2015.2476295 |arxiv=1505.04262 | year=2015 | s2cid=12292968 }}</ref> See also [[Floyd_M._Gardner#Gardner's_problem_on_the_lock-in_range|Gardner's problem on the lock-in range]], [[William_F._Egan#Egan's_conjecture_on_the_pull-in_range_of_type_II_APLL|Egan's conjecture on the pull-in range of type II APLL]].
-*Loop bandwidth: Defining the speed of the control loop.
-*Transient response: Like overshoot and settling time to a certain accuracy (like 50 ppm).
-*Steady-state errors: Like remaining phase or timing error.
-*Output spectrum purity: Like sidebands generated from a certain VCO tuning voltage ripple.
-*Phase-noise: Defined by noise energy in a certain frequency band (like 10&nbsp;kHz offset from carrier). Highly dependent on VCO phase-noise, PLL bandwidth, etc.
-*General parameters: Such as power consumption, supply voltage range, output amplitude, etc.
+:<math>e^{i\theta}=\cos{\theta}+i\sin{\theta}\,\!</math>
 
-==Applications==
-Phase-locked loops are widely used for [[synchronization]] purposes; in space [[telecommunication|communications]] for [[coherent demodulation]] and [[threshold extension]], [[bit synchronization]], and symbol synchronization. Phase-locked loops can also be used to [[demodulate]] [[frequency modulation|frequency-modulated]] signals.  In radio transmitters, a PLL is used to synthesize new frequencies which are a multiple of a reference frequency, with the same stability as the reference frequency.
+which is a sinusoid which varies in phase as ''Œ∏'' varies but does not vary in amplitude because
 
-Other applications include:
-* [[Demodulation]] of [[frequency modulation]] (FM): If PLL is locked to an FM signal, the VCO tracks the instantaneous frequency of the input signal. The filtered error voltage which controls the VCO and maintains lock with the input signal is demodulated FM output. The VCO transfer characteristics determine the linearity of the demodulated out. Since the VCO used in an integrated-circuit PLL is highly linear, it is possible to realize highly linear FM demodulators. 
-* Demodulation of [[frequency-shift keying]] (FSK): In digital data communication and computer peripherals, binary data is transmitted by means of a carrier frequency which is shifted between two preset frequencies.
-* Recovery of small signals that otherwise would be lost in noise ([[lock-in amplifier]] to track the reference frequency)
-* Recovery of clock timing information from a data stream such as from a [[disk drive]]
-* [[CPU multiplier|Clock multipliers]] in [[microprocessors]] that allow internal processor elements to run faster than external connections, while maintaining precise timing relationships
-* Demodulation of [[modem]]s and other tone signals for [[telecommunications]] and [[remote control]].
-* [[Digital signal processing|DSP]] of [[video]] signals; Phase-locked loops are also used to synchronize phase and frequency to the input [[analog video]] signal so it can be [[sample (signal)|sampled]] and digitally processed
-* [[Atomic force microscopy]] in [[Non-contact atomic force microscopy#Frequency modulation|frequency modulation]] mode, to detect changes of the cantilever resonance frequency due to tip‚Äìsurface interactions
-* [[DC motor]] [[motor controller|drive]]
+:<math>\left|e^{i\theta}\right|=\sqrt{\cos^2{\theta}+\sin^2{\theta}}=1</math>
 
-===Clock recovery===
-Some data streams, especially high-speed serial data streams (such as the raw stream of data from the magnetic head of a disk drive), are sent without an accompanying clock.  The receiver generates a clock from an approximate frequency reference, and then phase-aligns to the transitions in the data stream with a PLL. This process is referred to as [[clock recovery]].  For this scheme to work, the data stream must have a transition frequently enough to correct any drift in the PLL's oscillator. Typically, some sort of [[line code]], such as [[8b/10b encoding]], is used to put a hard upper bound on the maximum time between transitions.
+The reason for the use of base ''e'' is also now made clear.  The imaginary phase constant, ''iŒ≤'', can be added directly to the attenuation constant, ''Œ±'', to form a single complex number that can be handled in one mathematical operation provided they are to the same base.  Angles measured in radians require base ''e'', so the attenuation is likewise in base ''e''.
 
-===Deskewing===
-If a clock is sent in parallel with data, that clock can be used to sample the data.  Because the clock must be received and amplified before it can drive the flip-flops which sample the data, there will be a finite, and process-, temperature-, and voltage-dependent delay between the detected clock edge and the received data window.  This delay limits the frequency at which data can be sent.  One way of eliminating this delay is to include a deskew PLL on the receive side, so that the clock at each data flip-flop is phase-matched to the received clock. In that type of application, a special form of a PLL called a [[delay-locked loop]] (DLL) is frequently used.<ref>{{cite web |url         = http://www-vlsi.stanford.edu/papers/mh_micro_98.pdf |author1     = M Horowitz |author2     = C. Yang |author3     = S. Sidiropoulos |title       = High-speed electrical signaling: overview and limitations |publisher   = IEEE Micro |date        = 1998-01-01 |url-status     = dead |archive-url  = https://web.archive.org/web/20060221015031/http://www-vlsi.stanford.edu/papers/mh_micro_98.pdf |archive-date = 2006-02-21}}</ref>
+The propagation constant for conducting lines can be calculated from the primary line coefficients by means of the relationship
 
-===Clock generation===
-Many electronic systems include processors of various sorts that operate at hundreds of megahertz.  Typically, the clocks supplied to these processors come from clock generator PLLs, which multiply a lower-frequency reference clock (usually 50 or 100&nbsp;MHz) up to the operating frequency of the processor.  The multiplication factor can be quite large in cases where the operating frequency is multiple gigahertz and the reference crystal is just tens or hundreds of megahertz.
+:<math>\gamma=\sqrt{ZY}</math>
 
-===Spread spectrum===
-All electronic systems emit some unwanted radio frequency energy.  Various regulatory agencies (such as the [[Federal Communications Commission|FCC]] in the United States) put limits on the emitted energy and any interference caused by it.  The emitted noise generally appears at sharp spectral peaks (usually at the operating frequency of the device, and a few harmonics).  A system designer can use a spread-spectrum PLL to reduce interference with high-Q receivers by spreading the energy over a larger portion of the spectrum.  For example, by changing the operating frequency up and down by a small amount (about 1%), a device running at hundreds of megahertz can spread its interference evenly over a few megahertz of spectrum, which drastically reduces the amount of noise seen on broadcast [[FM broadcasting|FM radio]] channels, which have a bandwidth of several tens of kilohertz.
+where
 
-===Clock distribution===
-[[File:PLL usage.svg|center]]
-Typically, the reference clock enters the chip and drives a phase locked loop ('''PLL'''), which then drives the system's clock distribution. The clock distribution is usually balanced so that the clock arrives at every endpoint simultaneously. One of those endpoints is the PLL's feedback input.  The function of the PLL is to compare the distributed clock to the incoming reference clock, and vary the phase and frequency of its output until the reference and feedback clocks are phase and frequency matched.
+:<math>Z=R+i\omega L\,\!</math>, the series [[Electrical impedance|impedance]] of the line per unit length and,
 
-PLLs are ubiquitous‚Äîthey tune clocks in systems several feet across, as well as clocks in small portions of individual chips. Sometimes the reference clock may not actually be a pure clock at all, but rather a data stream with enough transitions that the PLL is able to recover a regular clock from that stream. Sometimes the reference clock is the same frequency as the clock driven through the clock distribution, other times the distributed clock may be some rational multiple of the reference.
+:<math>Y=G+i\omega C\,\!</math>, the shunt [[admittance]] of the line per unit length.
 
-===AM detection===
-A PLL may be used to synchronously demodulate amplitude modulated (AM) signals. The PLL recovers the phase and frequency of the incoming AM signal's carrier. The recovered phase at the VCO differs from the carrier's by 90¬∞, so it is shifted in phase to match, and then fed to a multiplier. The output of the multiplier contains both the sum and the difference frequency signals, and the demodulated output is obtained by [[low-pass filtering]]. Since the PLL responds only to the carrier frequencies which are very close to the VCO output, a PLL AM detector exhibits a high degree of selectivity and noise immunity which is not possible with conventional peak type AM demodulators. However, the loop may lose lock where AM signals have 100% modulation depth.<ref>{{citation |first=Robert |last=Dixon |title=Radio Receiver Design |publisher=CRC Press |date=1998 |isbn=0824701615 |page=215}}</ref>
+===Plane wave===
+The propagation factor of a plane wave traveling in a linear media in the x direction is given by
+<math display="block"> P = e^{-\gamma x} </math>
+where
+* <math display="inline">\gamma = \alpha + i\beta = \sqrt{i \omega \mu (\sigma + i \omega \varepsilon)}\; </math><ref name="Jordon&Balman">{{Citation |last1=Jordon|first1= Edward C.|last2=Balman|first2=Keith G. |year= 1968 |title= Electromagnetic Waves and Radiating Systems |edition= 2nd |publisher= Prentice-Hall }}</ref>{{rp|p=126}}
+* <math>x =</math>  distance traveled in the x direction
+* <math>\alpha =</math>  [[attenuation constant]] in the units of [[neper]]s/meter
+* <math>\beta =</math>  [[phase constant]] in the units of [[radian]]s/meter
+* <math>\omega=</math>  frequency in radians/second
+* <math>\sigma =</math>  [[Electrical resistivity and conductivity|conductivity]] of the media
+* <math>\varepsilon = \varepsilon' - i\varepsilon'' \;</math> = [[Permittivity#Complex permittivity|complex permitivity]] of the media
+* <math>\mu = \mu' - i\mu'' \;</math> = [[Permeability (electromagnetism)#Complex permeability|complex permeability]] of the media
+* <math>i=\sqrt{-1}</math>
+The sign convention is chosen for consistency with propagation in lossy media.  If the attenuation constant is positive, then the wave amplitude decreases as the wave propagates in the ''x'' direction.
 
-===Jitter and noise reduction===
-One desirable property of all PLLs is that the reference and feedback clock edges be brought into very close alignment. The average difference in time between the phases of the two signals when the PLL has achieved lock is called the '''static phase offset''' (also called the '''steady-state phase error'''). The variance between these phases is called '''tracking [[jitter]]'''. Ideally, the static phase offset should be zero, and the tracking jitter should be as low as possible.{{Dubious|date=September 2010}}<!-- If phase variance between input and output is 0, no jitter attenuation is possible. -->
+[[Wavelength]], [[phase velocity]], and [[skin effect|skin depth]] have simple relationships to the components of the propagation constant:
+<math display="block"> \lambda = \frac {2 \pi} \beta  \qquad  v_p = \frac \omega \beta  \qquad   \delta =  \frac 1 \alpha  </math>
 
-[[Phase noise]] is another type of jitter observed in PLLs, and is caused by the oscillator itself and by elements used in the oscillator's frequency control circuit.  Some technologies are known to perform better than others in this regard.  The best digital PLLs are constructed with emitter-coupled logic ([[Emitter coupled logic|ECL]]) elements, at the expense of high power consumption. To keep phase noise low in PLL circuits, it is best to avoid saturating logic families such as transistor-transistor logic ([[transistor-transistor logic|TTL]]) or [[CMOS]].<ref>{{Cite book|last1=Basab Bijoy Purkayastha|title=A Digital Phase Locked Loop based Signal and Symbol Recovery System for Wireless Channel|last2=Kandarpa Kumar Sarma|publisher=Springer (India) Pvt. Ltd. (Part of Springer Scinece+Business Media)|year=2015|isbn=978-81-322-2040-4|location=India|pages=5}}</ref>
+==Attenuation constant==
 
-Another desirable property of all PLLs is that the phase and frequency of the generated clock be unaffected by rapid changes in the voltages of the power and ground supply lines, as well as the voltage of the substrate on which the PLL circuits are fabricated. This is called substrate and [[Power supply rejection ratio|supply noise rejection]]. The higher the noise rejection, the better.
+In [[telecommunication]]s, the term '''attenuation constant''', also called '''attenuation parameter''' or '''[[attenuation coefficient]]''', is the attenuation of an electromagnetic wave propagating through a [[Transmission medium|medium]] per unit distance from the source. It is the real part of the propagation constant and is measured in [[neper]]s per metre.  A neper is approximately 8.7&nbsp;[[decibel|dB]].  Attenuation constant can be defined by the amplitude ratio
 
-To further improve the phase noise of the output, an [[injection locked oscillator]] can be employed following the VCO in the PLL.
+:<math>\left|\frac{A_0}{A_x}\right|=e^{\alpha x}</math>
 
-===Frequency synthesis===
-In digital wireless communication systems (GSM, CDMA etc.), PLLs are used to provide the local oscillator up-conversion during transmission and [[Digital down converter|down-conversion]] during reception. In most cellular handsets this function has been largely integrated into a single integrated circuit to reduce the cost and size of the handset. However, due to the high performance required of base station terminals, the transmission and reception circuits are built with discrete components to achieve the levels of performance required. GSM local oscillator modules are typically built with a [[frequency synthesizer]] integrated circuit and discrete resonator VCOs.{{Citation needed|date=May 2010}}
+The propagation constant per unit length is defined as the natural logarithm of the ratio of the sending end current or voltage to the receiving end current or voltage.
 
-==Block diagram==
-[[File:PLL generic inline optional N.svg|center|thumb|1050x1050px|[[Block diagram]] of a phase-locked loop]]
-The block diagram shown in the figure shows an input signal, ''F''<sub>''I''</sub>, which is used to generate an output, ''F''<sub>''O''</sub>. The input signal is often called the ''reference signal'' (also abbreviated ''F''<sub>''REF''</sub>).<ref>{{cite journal |last1=Collins |first1=Ian |date=July 2018 |title=Phase-Locked Loop (PLL) Fundamentals |url=https://www.analog.com/en/analog-dialogue/articles/phase-locked-loop-pll-fundamentals.html |journal=Analog Dialogue |volume=52 |archive-url=https://web.archive.org/web/20180714000017/https://www.analog.com/en/analog-dialogue/articles/phase-locked-loop-pll-fundamentals.html |archive-date=2022-01-03}}</ref>
+===Conductive lines===
 
-At the input, a phase detector (shown as the [[Phase_detector#Phase_frequency_detector|Phase frequency detector]] and [[Charge pump]] blocks in the figure) compares two input signals, producing an error signal which is proportional to their phase difference. The error signal is then low-pass filtered and used to drive a VCO which creates an output phase. The output is fed through an optional divider back to the input of the system, producing a [[negative feedback loop]]. If the output phase drifts, the error signal will increase, driving the VCO phase in the opposite direction so as to reduce the error. Thus the output phase is locked to the phase of the input.
+The attenuation constant for conductive lines can be calculated from the primary line coefficients as shown above.  For a line meeting the [[Heaviside condition|distortionless condition]], with a conductance ''G'' in the insulator, the attenuation constant is given by
 
-Analog phase locked loops are generally built with an analog phase detector, low-pass filter and VCO placed in a [[negative feedback]] configuration. A digital phase locked loop uses a digital phase detector; it may also have a divider in the feedback path or in the reference path, or both, in order to make the PLL's output signal frequency a [[Rational number|rational]] multiple of the reference frequency.  A non-integer multiple of the reference frequency can also be created by replacing the simple divide-by-''N'' counter in the feedback path with a programmable [[pulse swallowing counter]].  This technique is usually referred to as a [[fractional-N synthesizer]] or fractional-N PLL.{{dubious|date=December 2010}}<!-- doesn't fractional-N also adjust the phase at the phase detector. otherwise there's a error signal. -->
+:<math>\alpha=\sqrt{RG}\,\!</math>
 
-The oscillator generates a periodic output signal. Assume that initially the oscillator is at nearly the same frequency as the reference signal. If the phase from the oscillator falls behind that of the reference, the phase detector changes the control voltage of the oscillator so that it speeds up.  Likewise, if the phase creeps ahead of the reference, the phase detector changes the control voltage to slow down the oscillator.  Since initially the oscillator may be far from the reference frequency, practical phase detectors may also respond to frequency differences, so as to increase the lock-in range of allowable inputs. Depending on the application, either the output of the controlled oscillator, or the control signal to the oscillator, provides the useful output of the PLL system.{{citation needed|date=October 2017}}
+however, a real line is unlikely to meet this condition without the addition of [[loading coils]] and, furthermore, there are some frequency dependent effects operating on the primary "constants" which cause a frequency dependence of the loss.  There are two main components to these losses, the metal loss and the dielectric loss.
 
-==Elements==
-
-===Phase detector===
-{{Main|phase detector}}
-A phase detector (PD) generates a voltage, which represents the phase difference between two signals. In a PLL, the two inputs of the phase detector are the reference input and the feedback from the VCO.  The PD output voltage is used to control the VCO such that the phase difference between the two inputs is held constant, making it a negative feedback system.
-<ref>{{Cite book|last1=Basab Bijoy Purkayastha|title=A Digital Phase Locked Loop based Signal and Symbol Recovery System for Wireless Channel|last2=Kandarpa Kumar Sarma|publisher=Springer (India) Pvt. Ltd. (Part of Springer Scinece+Business Media)|year=2015|isbn=978-81-322-2040-4|location=India|pages=94}}</ref>
-
-Different types of phase detectors have different performance characteristics.
-
-For instance, the [[frequency mixer]] produces harmonics that adds complexity in applications where spectral purity of the VCO signal is important.  The resulting unwanted (spurious) sidebands, also called "[[reference spurs]]" can dominate the filter requirements and reduce the capture range well below or increase the lock time beyond the requirements.  In these applications the more complex digital phase detectors are used which do not have as severe a reference spur component on their output. Also, when in lock, the steady-state phase difference at the inputs using this type of phase detector is near 90 degrees.{{citation needed|date=August 2018}}
-
-In PLL applications it is frequently required to know when the loop is out of lock.  The more complex digital phase-frequency detectors usually have an output that allows a reliable indication of an out of lock condition.
-
-An [[XOR gate]] is often used for digital PLLs as an effective yet simple phase detector. It can also be used in an analog sense with only slight modification to the circuitry.
-
-===Filter===
-The block commonly called the PLL loop filter (usually a low-pass filter) generally has two distinct functions.
-
-The primary function is to determine loop dynamics, also called [[Nyquist stability criterion|stability]].  This is how the loop responds to disturbances, such as changes in the reference frequency, changes of the feedback divider, or at startup.  Common considerations are the range over which the loop can achieve lock (pull-in range, lock range or capture range), how fast the loop achieves lock (lock time, lock-up time or [[settling time]]) and [[Damping factor|damping]] behavior.  Depending on the application, this may require one or more of the following: a simple proportion (gain or attenuation), an [[integral]] (low-pass filter) and/or [[derivative]] ([[high-pass filter]]).  Loop parameters commonly examined for this are the loop's [[gain margin]] and [[phase margin]].  Common concepts in [[control theory]] including the [[PID controller]] are used to design this function.
-
-The second common consideration is limiting the amount of reference frequency energy (ripple) appearing at the phase detector output that is then applied to the VCO control input.  This frequency modulates the VCO and produces FM sidebands commonly called "reference spurs".
-
-The design of this block can be dominated by either of these considerations, or can be a complex process juggling the interactions of the two. Typical trade-offs are increasing the bandwidth usually degrades the stability or too much damping for better stability will reduce the speed and increase settling time. Often also the phase-noise is affected.
-
-===Oscillator===
-{{Main|Electronic oscillator}}
-All phase-locked loops employ an oscillator element with variable frequency capability. This can be an analog VCO either driven by analog circuitry in the case of an APLL or driven digitally through the use of a [[digital-to-analog converter]] as is the case for some DPLL designs. Pure digital oscillators such as a numerically controlled oscillator are used in ADPLLs.{{citation needed|date=October 2017}}
-
-===Feedback path and optional divider===
-{{More citations needed|section|date=June 2022}}[[File:Divide 4.svg|thumb|An example digital divider (by 4) for use in the feedback path of a multiplying PLL]]
-PLLs may include a divider between the oscillator and the feedback input to the phase detector to produce a [[frequency synthesizer]].  A programmable divider is particularly useful in radio transmitter applications, since a large number of transmit frequencies can be produced from a single stable, accurate, but expensive, [[crystal oscillator|quartz crystal‚Äìcontrolled reference oscillator]].
-
-Some PLLs also include a divider between the reference clock and the reference input to the phase detector.  If the divider in the feedback path divides by <math>N</math> and the reference input divider divides by <math>M</math>, it allows the PLL to multiply the reference frequency by <math>N/M</math>.  It might seem simpler to just feed the PLL a lower frequency, but in some cases the reference frequency may be constrained by other issues, and then the reference divider is useful.
-
-Frequency multiplication can also be attained by locking the VCO output to the ''N''th harmonic of the reference signal. Instead of a simple phase detector, the design uses a harmonic mixer (sampling mixer). The harmonic mixer turns the reference signal into an impulse train that is rich in harmonics.{{Efn|Typically, the reference sinewave drives a [[step recovery diode]] circuit to make this impulse train. The resulting impulse train drives a sample gate.}} The VCO output is coarse tuned to be close to one of those harmonics. Consequently, the desired harmonic mixer output (representing the difference between the ''N'' harmonic and the VCO output) falls within the loop filter passband.<!-- HP had a harmonic mixer and synchronizer that turned its microwave sweep generators into PLLs. -->
-
-It should also be noted that the feedback is not limited to a frequency divider. This element can be other elements such as a frequency multiplier, or a mixer. The multiplier will make the VCO output a sub-multiple (rather than a multiple) of the reference frequency. A mixer can translate the VCO frequency by a fixed offset. It may also be a combination of these. An example being a divider following a mixer; this allows the divider to operate at a much lower frequency than the VCO without a loss in loop gain.
-
-==Modeling==
-
-===Time domain model of APLL===
-The equations governing a phase-locked loop with an analog multiplier as the phase detector and linear filter may be derived as follows. Let the input to the phase detector be <math>f_1(\theta_1(t))</math> and the output of the VCO is <math>f_2(\theta_2(t))</math> with phases <math>\theta_1(t)</math> and <math>\theta_2(t)</math>. The functions <math>f_1(\theta) </math> and <math>f_2(\theta)</math> describe [[waveforms]] of signals. Then the output of the phase detector <math>\varphi(t)</math> is given by
-
-:<math>\varphi(t) = f_1(\theta_1(t)) f_2(\theta_2(t))</math>
-
-The VCO frequency is usually taken as a function of the VCO input
-<math>g(t)</math> as
-:<math>\dot\theta_2(t) = \omega_2(t) =
-\omega_\text{free} + g_v g(t)\,</math>
-where <math>g_v</math> is the ''sensitivity'' of the VCO and is
-expressed in Hz / V;
-<math>\omega_\text{free}</math> is a free-running frequency of VCO.
-
-The loop filter can be described by a system of linear differential equations
-:<math>
-\begin{array}{rcl}
-   \dot x & = & Ax + b \varphi(t), \\
-   g(t) & = & c^{*}x,
-\end{array}
-\quad
-x(0) = x_0,
-</math>
-
-where <math>\varphi(t)</math> is an input of the filter,
-<math>g(t)</math> is an output of the filter, <math>A</math> is
-<math>n</math>-by-<math>n</math> matrix,
-<math>x \in \mathbb{C}^n,\quad b \in \mathbb{R}^n, \quad c \in
-\mathbb{C}^n, \quad</math>. <math>x_0 \in \mathbb{C}^n</math> represents an initial state of
-the filter. The star symbol is a [[conjugate transpose]].
-
-Hence the following system describes PLL
-:<math>\begin{array}{rcl}
- \dot x &= &Ax + b f_1(\theta_1(t)) f_2(\theta_2(t)),\\
- \dot \theta_2 &= & \omega_\text{free} + g_v (c^{*}x) \\
-\end{array}
-\quad
-x(0) = x_0, \quad \theta_2(0) = \theta_0.
-</math>
-where <math>\theta_0</math> is an initial phase shift.
-
-===Phase domain model of APLL===
-Consider the input of PLL <math>f_1(\theta_1(t))</math> and VCO output
-<math>f_2(\theta_2(t))</math> are high frequency signals.
-Then for any
-piecewise differentiable <math>2\pi</math>-periodic functions
-<math>f_1(\theta)</math> and <math>f_2(\theta)</math> there is a function
-<math>\varphi(\theta)</math> such that the output <math>G(t)</math> of Filter
-:<math>\begin{array}{rcl}
- \dot x &= &Ax + b \varphi(\theta_1(t) - \theta_2(t)), \\
- G(t) &= &c^{*}x,
-\end{array}
-\quad
-x(0) = x_0,
-</math>
-in phase domain is asymptotically equal (the difference <math>G(t)- g(t)</math> is small with respect to the frequencies) to the output of the Filter in time domain model. 
-<ref>{{cite journal
- | author = G. A. Leonov, N. V. Kuznetsov, M. V. Yuldashev, R. V. Yuldashev
- | year = 2012
- | title = Analytical method for computation of phase-detector characteristic
- | journal = IEEE Transactions on Circuits and Systems II: Express Briefs
- | volume = 59
- | issue = 10
- | pages = 633‚Äì637
- |url=http://www.math.spbu.ru/user/nk/PDF/2012-IEEE-TCAS-Phase-detector-characteristic-computation-PLL.pdf |archive-url=https://ghostarchive.org/archive/20221009/http://www.math.spbu.ru/user/nk/PDF/2012-IEEE-TCAS-Phase-detector-characteristic-computation-PLL.pdf |archive-date=2022-10-09 |url-status=live
-| last2 = Kuznetsov
- | last3 = Yuldashev
- | last4 = Yuldashev
- | doi = 10.1109/TCSII.2012.2213362
- | s2cid = 2405056
- }}</ref>
-<ref>{{cite journal
- | author = N.V. Kuznetsov, G.A. Leonov, M.V. Yuldashev, R.V. Yuldashev
- | year = 2011
- | title = Analytical methods for computation of phase-detector characteristics and PLL design
- | journal = ISSCS 2011 ‚Äì International Symposium on Signals, Circuits and Systems, Proceedings
- | pages = 7‚Äì10
- | doi = 10.1109/ISSCS.2011.5978639| last2 = Leonov
- | last3 = Yuldashev
- | last4 = Yuldashev
- | isbn = 978-1-61284-944-7
- | s2cid = 30208667
- | url = https://zenodo.org/record/889367
- }}</ref> 
-Here function <math>\varphi(\theta)</math> is a [[phase detector characteristic]].
+The loss of most transmission lines are dominated by the metal loss, which causes a frequency dependency due to finite conductivity of metals, and the [[skin effect]] inside a conductor. The skin effect causes R along the conductor to be approximately dependent on frequency according to
 
-Denote by <math>\theta_{\Delta}(t)</math> the phase difference
-:<math>\theta_{\Delta} = \theta_1(t) - \theta_2(t).</math>
-Then the following [[dynamical system]] describes PLL behavior
+:<math>R \propto \sqrt{\omega}</math>
 
-:<math>\begin{array}{rcl}
- \dot x &= &Ax + b \varphi(\theta_{\Delta}),\\
- \dot \theta_{\Delta} &= & \omega_{\Delta} - g_v (c^{*}x). \\
-\end{array}
-\quad
-x(0) = x_0, \quad \theta_{\Delta}(0) = \theta_{1}(0) - \theta_2(0).
-</math>
+Losses in the dielectric depend on the [[loss tangent]] (tan&nbsp;''Œ¥'') of the material divided by the wavelength of the signal. Thus they are directly proportional to the frequency.
 
-Here <math>\omega_{\Delta} = \omega_1 - \omega_\text{free}</math>; <math>\omega_1</math> is the frequency of a reference oscillator (we assume that <math>\omega_\text{free}</math> is constant).
+:<math>\alpha_d={{\pi}\sqrt{\varepsilon_r}\over{\lambda}}{\tan \delta}</math>
 
-====Example====
-Consider sinusoidal signals
+===Optical fibre===
 
-:<math>f_1(\theta_1(t)) = A_1 \sin(\theta_1(t)), \quad f_2(\theta_2(t))
-= A_2\cos(\theta_2(t))</math>
+The attenuation constant for a particular [[propagation mode]] in an [[optical fiber]] is the real part of the axial propagation constant.
 
-and a simple one-pole [[RC circuit]] as a filter. The time-domain model takes the form
+==Phase constant==
+In [[electromagnetic theory]], the '''phase constant''', also called '''phase change constant''', '''parameter''' or '''coefficient''' is the imaginary component of the propagation constant for a plane wave.  It represents the change in phase per unit length along the path travelled by the wave at any instant and is equal to the [[real part]] of the [[wavenumber#In wave equations|angular wavenumber]] of the wave.  It is represented by the symbol ''Œ≤'' and is measured in units of radians per unit length.
 
-:<math>\begin{align}
- \dot x &= -\frac{1}{RC}x + \frac{1}{RC}
-A_1A_2\sin(\theta_1(t)) \cos(\theta_2(t)),\\[6pt]
- \dot \theta_2 &= \omega_\text{free} + g_v (c^{*}x)
-\end{align}
-</math>
+From the definition of (angular) wavenumber for TEM waves in lossless media:
 
-PD characteristics for this signals is equal<ref>A. J. Viterbi, ''Principles of Coherent Communication'', McGraw-Hill, New York, 1966</ref> to
+:<math>k = \frac{2\pi}{\lambda} = \beta</math>
 
-:<math>
- \varphi(\theta_1 - \theta_2) = \frac{A_1 A_2}{2}\sin(\theta_1 - \theta_2)
-</math>
+For a [[transmission line]], the [[Heaviside condition]] of the [[telegrapher's equation]] tells us that the wavenumber must be proportional to frequency for the transmission of the wave to be undistorted in the [[time domain]].  This includes, but is not limited to, the ideal case of a lossless line.  The reason for this condition can be seen by considering that a useful signal is composed of many different wavelengths in the frequency domain.  For there to be no distortion of the [[waveform]], all these waves must travel at the same velocity so that they arrive at the far end of the line at the same time as a [[group velocity|group]].  Since wave [[phase velocity]] is given by
 
-Hence the phase domain model takes the form
+:<math>v_p = \frac{\lambda}{T} = \frac{f}{\tilde{\nu}} = \frac{\omega}{\beta},</math>
 
-:<math>\begin{align}
- \dot x &= -\frac{1}{RC}x + \frac{1}{RC}\frac{A_1 A_2}{2}\sin(\theta_{\Delta}),\\[6pt]
- \dot \theta_{\Delta} &= \omega_{\Delta} - g_v (c^{*}x).
-\end{align}
-</math>
-
-This system of equations is equivalent to the equation of mathematical pendulum
-
-:<math>
-\begin{align}
-x & = \frac{\dot\theta_2 - \omega_2}{g_v c^*} = \frac{\omega_1 - \dot\theta_{\Delta} - \omega_2}{g_v c^*},\\[6pt]
-\dot x & = \frac{\ddot\theta_2}{g_v c^*},\\[6pt]
-\theta_1 & = \omega_1 t + \Psi,\\[6pt]
-\theta_{\Delta} & = \theta_1 -\theta_2,\\[6pt]
-\dot\theta_{\Delta} & = \dot\theta_1 - \dot\theta_2 = \omega_1 - \dot\theta_2,\\[6pt]
-& \frac{1}{g_v c^*}\ddot\theta_{\Delta} - \frac{1}{g_v c^* RC}\dot\theta_{\Delta} - \frac{A_1A_2}{2RC}\sin\theta_{\Delta} = \frac{\omega_2 - \omega_1}{g_v c^* RC}.
-\end{align}
-</math>
-
-===Linearized phase domain model===
-Phase locked loops can also be analyzed as control systems by applying the [[Laplace transform]]. The loop response can be written as
-
-:<math>\frac{\theta_o}{\theta_i} = \frac{K_p K_v F(s)} {s + K_p K_v F(s)}</math>
-
-Where
-* <math>\theta_o</math> is the output phase in [[radian]]s
-* <math>\theta_i</math> is the input phase in radians
-* <math>K_p</math> is the phase detector gain in [[volt]]s per radian
-* <math>K_v</math> is the VCO gain in radians per volt-[[second]]
-* <math>F(s)</math> is the loop filter transfer function (dimensionless)
-
-The loop characteristics can be controlled by inserting different types of loop filters. The simplest filter is a one-pole [[RC circuit]]. The loop transfer function in this case is
-
-:<math>F(s) = \frac{1}{1 + s R C}</math>
-
-The loop response becomes:
-
-:<math>\frac{\theta_o}{\theta_i} = \frac{\frac{K_p K_v}{R C}}{s^2 + \frac{s}{R C} + \frac{K_p K_v}{R C}}</math>
-
-This is the form of a classic [[harmonic oscillator]]. The denominator can be related to that of a second order system:
-
-:<math>s^2 + 2 s \zeta \omega_n + \omega_n^2</math>
-
-where <math>\zeta</math> is the damping factor and <math>\omega_n</math> is the natural frequency of the loop.
-
-For the one-pole RC filter,
+it is proved that ''Œ≤'' is required to be proportional to ''œâ''. In terms of primary coefficients of the line, this yields from the telegrapher's equation for a distortionless line the condition
 
-:<math>\omega_n = \sqrt{\frac{K_p K_v}{R C}}</math>
-:<math>\zeta = \frac{1}{2 \sqrt{K_p K_v R C}}</math>
+:<math>\beta = \omega \sqrt{LC},</math>
 
-The loop natural frequency is a measure of the response time of the loop, and the damping factor is a measure of the overshoot and ringing. Ideally, the natural frequency should be high and the damping factor should be near 0.707 (critical damping). With a single pole filter, it is not possible to control the loop frequency and damping factor independently. For the case of critical damping,
+where ''L'' and ''C'' are, respectively, the inductance and capacitance per unit length of the line. However, practical lines can only be expected to approximately meet this condition over a limited frequency band.
 
-:<math>R C = \frac{1}{2 K_p K_v}</math>
-:<math>\omega_c = K_p K_v \sqrt{2}</math>
+In particular, the phase constant <math> \beta </math> is not always equivalent to the [[wavenumber]] <math>k</math>. Generally speaking, the following relation
 
-A slightly more effective filter, the lag-lead filter includes one pole and one zero. This can be realized with two resistors and one capacitor. The transfer function for this filter is
+:<math> \beta = k </math>
 
-:<math>F(s) = \frac{1+s C R_2}{1+s C (R_1+R_2)}</math>
+is tenable to the [[Transverse mode|TEM]] wave (transverse electromagnetic wave) which travels in free space or TEM-devices such as the [[coaxial cable]] and [[Twin-lead|two parallel wires transmission lines]]. Nevertheless, it is invalid to the [[Transverse mode|TE]] wave (transverse electric wave) and [[Transverse mode|TM]] wave  (transverse magnetic wave). For example,<ref>{{cite book |first=David |last=Pozar |author-link=David M. Pozar |year=2012 |title=Microwave Engineering |edition=4th |publisher=John Wiley &Sons |isbn=978-0-470-63155-3 |pages=62‚Äì164 }}</ref> in a hollow [[waveguide]] where the TEM wave cannot exist but TE and TM waves can propagate,
 
-This filter has two time constants
+:<math>k=\frac{\omega}{c} </math>
 
-:<math>\tau_1 = C (R_1 + R_2)</math>
-:<math>\tau_2 = C R_2</math>
+:<math>\beta=k\sqrt{1-\frac{\omega_c^2}{\omega^2}}</math>
 
-Substituting above yields the following natural frequency and damping factor
+Here <math> \omega_{c} </math>  is the [[cutoff frequency]]. In a rectangular waveguide, the cutoff frequency is
 
-:<math>\omega_n = \sqrt{\frac{K_p K_v}{\tau_1}}</math>
-:<math>\zeta = \frac{1}{2 \omega_n \tau_1} + \frac{\omega_n \tau_2}{2}</math>
+:<math> \omega_{c} = c \sqrt{\left(\frac{n \pi}{a}\right)^2 + \left(\frac{m \pi}{b}\right) ^2}, </math>
 
-The loop filter components can be calculated independently for a given natural frequency and damping factor
+where <math>m,n \ge 0</math> are the mode numbers for the rectangle's sides of length <math>a</math> and <math>b</math> respectively. For TE modes, <math> m,n \ge 0</math> (but <math> m = n = 0</math> is not allowed), while for TM modes <math> m,n \ge 1 </math>.
 
-:<math>\tau_1 = \frac{K_p K_v}{\omega_n^2}</math>
-:<math>\tau_2 = \frac{2 \zeta}{\omega_n} - \frac{1}{K_p K_v}</math>
+The phase velocity equals
 
-Real world loop filter design can be much more complex e.g. using higher order filters to reduce various types or source of phase noise. (See the D Banerjee ref below)
+:<math>v_p=\frac{\omega}{\beta}=\frac{c}{\sqrt{1-\frac{\omega_\mathrm{c}^2}{\omega^2}}}>c </math>
 
-===Implementing a digital phase-locked loop in software===
-Digital phase locked loops can be implemented in hardware, using integrated circuits such as a CMOS 4046.   However, with microcontrollers becoming faster, it may make sense to implement a phase locked loop in software for applications that do not require locking onto signals in the MHz range or faster, such as precisely controlling motor speeds.  Software implementation has several advantages including easy customization of the feedback loop including changing the multiplication or division ratio between the signal being tracked and the output oscillator.  Furthermore, a software implementation is useful to understand and experiment with.  As an example of a phase-locked loop implemented using a [[phase frequency detector]] is presented in MATLAB, as this type of phase detector is robust and easy to implement.
+The phase constant is also an important concept in [[quantum mechanics]] because the [[momentum]]  <math> p</math> of a [[quantum]] is directly proportional to it,<ref>{{cite journal|author=Wang,Z.Y.|title=Generalized momentum equation of quantum mechanics|journal=[[Optical and Quantum Electronics]]|volume=48|pages=1‚Äì9|date=2016|doi=10.1007/s11082-015-0261-8|issue=2|s2cid=124732329}}</ref><ref>{{cite arXiv | author= Tremblay,R., Doyon,N., Beaudoin-Bertrand,J. | title = TE-TM Electromagnetic modes and states in quantum physics |eprint =1611.01472 | year = 2016 | class = quant-ph }}</ref> i.e.
 
-<syntaxhighlight lang="matlab">
-% This example is written in MATLAB
+:<math> p = \hbar \beta</math>
 
-% Initialize variables
-vcofreq = zeros(1, numiterations);
-ervec = zeros(1, numiterations);
-% Keep track of last states of reference, signal, and error signal
-qsig = 0; qref = 0; lref = 0; lsig = 0; lersig = 0;
-phs = 0;
-freq = 0;
+where {{math|''ƒß''}} is called the [[reduced Planck constant]] (pronounced "h-bar").  It is equal to the [[Planck constant]] divided by {{math|2''œÄ''}}.
 
-% Loop filter constants (proportional and derivative)
-% Currently powers of two to facilitate multiplication by shifts
-prop = 1 / 128;
-deriv = 64;
+==Filters and two-port networks==
+The term propagation constant or propagation function is applied to [[Electronic filters|filters]] and other [[two-port network]]s used for [[signal processing]].  In these cases, however, the attenuation and phase coefficients are expressed in terms of nepers and radians per [[Electronic filter topology#Passive topologies|network section]] rather than per unit length.  Some authors<ref>Matthaei et al, p49</ref> make a distinction between per unit length measures (for which "constant" is used) and per section measures (for which "function" is used).
 
-for it = 1:numiterations
-    % Simulate a local oscillator using a 16-bit counter
-    phs = mod(phs + floor(freq / 2 ^ 16), 2 ^ 16);
-    ref = phs < 32768;
-    % Get the next digital value (0 or 1) of the signal to track
-    sig = tracksig(it);
-    % Implement the phase-frequency detector
-    rst = ~ (qsig & qref); % Reset the "flip-flop" of the phase-frequency
-    % detector when both signal and reference are high
-    qsig = (qsig | (sig & ~ lsig)) & rst; % Trigger signal flip-flop and leading edge of signal
-    qref = (qref | (ref & ~ lref)) & rst; % Trigger reference flip-flop on leading edge of reference
-    lref = ref; lsig = sig; % Store these values for next iteration (for edge detection)
-    ersig = qref - qsig; % Compute the error signal (whether frequency should increase or decrease)
-    % Error signal is given by one or the other flip flop signal
-    % Implement a pole-zero filter by proportional and derivative input to frequency
-    filtered_ersig = ersig + (ersig - lersig) * deriv;
-    % Keep error signal for proportional output
-    lersig = ersig;
-    % Integrate VCO frequency using the error signal
-    freq = freq - 2 ^ 16 * filtered_ersig * prop;
-    % Frequency is tracked as a fixed-point binary fraction
-    % Store the current VCO frequency
-    vcofreq(1, it) = freq / 2 ^ 16;
-    % Store the error signal to show whether signal or reference is higher frequency
-    ervec(1, it) = ersig;
-end
-</syntaxhighlight>
+The propagation constant is a useful concept in filter design which invariably uses a cascaded section [[Electronic filter topology|topology]].  In a cascaded topology, the propagation constant, attenuation constant and phase constant of individual sections may be simply added to find the total propagation constant etc.
 
-In this example, an array <code>tracksig</code> is assumed to contain a reference signal to be tracked.  The oscillator is implemented by a counter, with the most significant bit of the counter indicating the on/off status of the oscillator.  This code simulates the two D-type [[Flip-flop (electronics)|flip-flops]] that comprise a phase-frequency comparator.  When either the reference or signal has a positive edge, the corresponding flip-flop switches high.  Once both reference and signal is high, both flip-flops are reset.  Which flip-flop is high determines at that instant whether the reference or signal leads the other.  The error signal is the difference between these two flip-flop values.  The pole-zero filter is implemented by adding the error signal and its derivative to the filtered error signal.  This in turn is integrated to find the oscillator frequency.
+===Cascaded networks===
+[[Image:Adding propagation constant of filters.svg|center|thumb|750px|Three networks with arbitrary propagation constants and impedances connected in cascade.  The ''Z<sub>i</sub>'' terms represent [[image impedance]] and it is assumed that connections are between matching image impedances.]]
 
-In practice, one would likely insert other operations into the feedback of this phase-locked loop.  For example, if the phase locked loop were to implement a frequency multiplier, the oscillator signal could be divided in frequency before it is compared to the reference signal.
+The ratio of output to input voltage for each network is given by<ref>Matthaei et al pp51-52</ref>
 
-==Practical analogies==
+:<math>\frac{V_1}{V_2}=\sqrt{\frac{Z_{I1}}{Z_{I2}}}e^{\gamma_1}</math>
+:<math>\frac{V_2}{V_3}=\sqrt{\frac{Z_{I2}}{Z_{I3}}}e^{\gamma_2}</math>
+:<math>\frac{V_3}{V_4}=\sqrt{\frac{Z_{I3}}{Z_{I4}}}e^{\gamma_3}</math>
 
-===Automobile race analogy===
-As an analogy of a PLL, consider a race between two cars.  One represents the input frequency, the other the PLL's output [[voltage-controlled oscillator]] (VCO) frequency.  Each lap corresponds to a complete cycle. The number of laps per hour (a speed) corresponds to the frequency. The separation of the cars (a distance) corresponds to the phase difference between the two oscillating signals.
+The terms <math>\sqrt{\frac{Z_{In}}{Z_{Im}}}</math> are impedance scaling terms<ref>Matthaei et al pp37-38</ref> and their use is explained in the [[Image impedance#Transfer function|image impedance]] article.
 
-During most of the race, each car is on its own and free to pass the other and lap the other. This is analogous to the PLL in an unlocked state.
+The overall voltage ratio is given by
 
-However, if there is an accident, a [[Racing flags#Yellow flag|yellow caution flag]] is raised.  This means neither of the race cars is permitted to overtake and pass the other car.  The two race cars represent the input and output frequency of the PLL in a locked state.  Each driver will measure the phase difference (a fraction of the distance around the lap) between themselves and the other race car.  If the hind driver is too far away, they will increase their speed to close the gap. If they are too close to the other car, the driver will slow down. The result is that both race cars will circle the track in lockstep with a fixed phase difference (or constant distance) between them.  Since neither car is allowed to lap the other, the cars make the same number of laps in a given time period.  Therefore the frequency of the two signals is the same.
+:<math>\frac{V_1}{V_4}=\frac{V_1}{V_2}\cdot\frac{V_2}{V_3}\cdot\frac{V_3}{V_4}=\sqrt{\frac{Z_{I1}}{Z_{I4}}}e^{\gamma_1+\gamma_2+\gamma_3}</math>
 
-===Clock analogy===
-Phase can be proportional to time,{{Efn|If the frequency is constant and the initial phase is zero, then the phase of a sinusoid is proportional to time.}} so a phase difference can be a time difference. Clocks are, with varying degrees of accuracy, phase-locked (time-locked) to a leader clock.
+Thus for ''n'' cascaded sections all having matching impedances facing each other, the overall propagation constant is given by
 
-Left on its own, each clock will mark time at slightly different rates. A wall clock, for example, might be fast by a few seconds per hour compared to the reference clock at [[National Institute of Standards and Technology|NIST]]. Over time, that time difference would become substantial.
-
-To keep the wall clock in sync with the reference clock, each week the owner compares the time on their wall clock to a more accurate clock (a phase comparison), and resets their clock. Left alone, the wall clock will continue to diverge from the reference clock at the same few seconds per hour rate.
-
-Some clocks have a timing adjustment (a fast-slow control). When the owner compared their wall clock's time to the reference time, they noticed that their clock was too fast. Consequently, the owner could turn the timing adjust a small amount to make the clock run a little slower (frequency). If things work out right, their clock will be more accurate than before. Over a series of weekly adjustments, the wall clock's notion of a second would agree with the reference time (locked both in frequency and phase within the wall clock's stability).
-
-An early [[electromechanical]] version of a  phase-locked loop was used in 1921 in the [[Shortt-Synchronome clock]].
+:<math>\gamma_\mathrm{total}=\gamma_1 + \gamma_2 + \gamma_3 + \cdots + \gamma_n</math>
 
 ==See also==
-* [[Frequency-locked loop]]
-* [[Charge-pump phase-locked loop]]
-* [[Carrier recovery]]
-* [[Circle map]] ‚Äì A simple mathematical model of the phase-locked loop showing both mode-locking and chaotic behavior.
-* [[Costas loop]]
-* [[Delay-locked loop]] (DLL)
-* [[Direct conversion receiver]]
-* [[Direct digital synthesizer]]
-* [[Kalman filter]]
-* [[PLL multibit]]
-* [[Shortt‚ÄìSynchronome clock]] ‚Äì Slave pendulum phase-locked to master (ca 1921)
+The concept of penetration depth is one of many ways to describe the absorption of electromagnetic waves. For the others, and their interrelationships, see the article: [[Mathematical descriptions of opacity]].
+* [[Propagation speed]]
 
 ==Notes==
-{{Notelist}}
+{{reflist}}
 
 ==References==
-{{Reflist|30em}}
+{{refbegin}}
+* {{FS1037C}}.
+* Matthaei, Young, Jones ''Microwave Filters, Impedance-Matching Networks, and Coupling Structures'' McGraw-Hill 1964.
 
-==Further reading==
-{{Commons category|Phase-locked loops}}
-*{{Citation
- |first= Dean
- |last= Banerjee
- |url= http://www.ti.com/tool/pll_book
- |title= PLL Performance, Simulation and Design Handbook
- |edition= 4th
- |year= 2006
- |publisher= [[National Semiconductor]]
- |ref= none
- |access-date= 2012-12-04
- |archive-url= https://web.archive.org/web/20120902032009/http://www.ti.com/tool/pll_book
- |archive-date= 2012-09-02
- |url-status= dead
- }}.
-*{{Citation
- |first= R. E.
- |last= Best
- |title= Phase-locked Loops: Design, Simulation and Applications
- |publisher= McGraw-Hill
- |year= 2003
- |isbn= 0-07-141201-8
- |ref=none}}
-*{{Citation
- |first= Henri
- |last= de Bellescize
- |title= La r√©ception Synchrone
- |journal= L'Onde Electrique
- |volume= 11
- |pages=230‚Äì240
- |date= June 1932
- |ref=none}}
-*{{Citation
- |first= Richard C.
- |last= Dorf
- |title= The Electrical Engineering Handbook
- |publisher= CRC Press
- |location= Boca Raton
- |year= 1993
- |bibcode= 1993eeh..book.....D
- |isbn= 0-8493-0185-8
- |ref=none}}
-*{{Citation
- |first= William F.
- |last=Egan
- |author-link=William F. Egan (electrical_engineer)
- |title= Phase-Lock Basics
- |publisher= John Wiley & Sons
- |year= 1998
- |ref=none}}. (provides useful Matlab scripts for simulation)
-*{{Citation
- |first= William F.
- |last= Egan
- |author-link=William F. Egan (electrical_engineer)
- |title= Frequency Synthesis by Phase Lock
- |edition= 2nd
- |publisher= John Wiley and Sons
- |year= 2000
- |ref=none}}. (provides useful Matlab scripts for simulation)
-*{{Citation
- |first= Floyd M.
- |last= Gardner
- |author-link= Floyd M. Gardner
- |title= Phaselock Techniques
- |edition= 3rd
- |publisher= Wiley-Interscience
- |year= 2005
- |isbn= 978-0-471-43063-6 |ref=none}}
-*{{Citation
- |first1= J.
- |last1= Klapper
- |first2= J. T.
- |last2= Frankle
- |title= Phase-Locked and Frequency-Feedback Systems
- |publisher= Academic Press
- |year= 1972
- |ref=none}}. (FM Demodulation)
-*{{Citation
- |title= Predicting the Phase Noise and Jitter of PLL-Based Frequency Synthesizers
- |edition= 4g
- |first= Ken
- |last= Kundert
- |date= August 2006
- |publisher= Designer's Guide Consulting, Inc.
- |url= http://www.designers-guide.org/Analysis/PLLnoise+jitter.pdf
- |ref=none}}
-*{{Citation
- |first= Mingliang
- |last= Liu
- |title= Build a 1.5-V 2.4-GHz CMOS PLL
- |date= February 21, 2006
- |publisher= Wireless Net Design Line
- |url= http://www.wirelessnetdesignline.com/howto/180205535
- |ref= none
- |archive-url= https://web.archive.org/web/20100701082915/http://www.wirelessnetdesignline.com/howto/180205535
- |archive-date= July 1, 2010
- |url-status= dead
- }}. An article on designing a standard PLL IC for Bluetooth applications.
-*{{Citation
- |first= Dan H.
- |last= Wolaver
- |title= Phase-Locked Loop Circuit Design
- |publisher= Prentice Hall
- |year= 1991
- |isbn= 0-13-662743-9
- |ref=none}}
+{{refend}}
 
 ==External links==
-* [https://www.electronics-notes.com/articles/radio/pll-phase-locked-loop/tutorial-primer-basics.php Phase locked loop primer] ‚Äì Includes embedded video
-* [http://www.excelunusual.com/preview-2/ Excel Unusual hosts an animated PLL model] and the tutorials [http://www.excelunusual.com/a-phase-locked-loop-pll-model-video-preview/ to code such a model].
-{{Authority control}}
+* {{Cite web|title =Propagation constant|publisher =Microwave Encyclopedia|year =2011|url =http://www.microwaves101.com/encyclopedia/propagation.cfm|format =Online|access-date =February 2, 2011|archive-url =https://web.archive.org/web/20140714170516/http://www.microwaves101.com/ENCYCLOPEDIA/propagation.cfm|archive-date =July 14, 2014|url-status =dead}}
+* {{Cite web| last =Paschotta| first =Dr. R√ºdiger| title =Propagation Constant
+  | publisher =Encyclopedia of Laser Physics and Technology| year = 2011
+  | url =http://www.rp-photonics.com/propagation_constant.html
+  | format =Online| access-date =2 February 2011}}
+* {{Cite journal
+  | last =Janezic
+  | first = Michael D.
+  |author2=Jeffrey A. Jargon
+   | title = Complex Permittivity determination from Propagation Constant measurements
+  | journal =[[IEEE Microwave and Guided Wave Letters]]
+  | volume = 9
+  | issue = 2
+  | pages = 76‚Äì78
+  | date =February 1999
+  | url =http://www.eeel.nist.gov/dylan_papers/MGWL99.pdf
+  | doi = 10.1109/75.755052
+  | access-date =2 February 2011}} Free PDF download is available. There is an updated version dated August 6, 2002.
 
-[[Category:Articles with example MATLAB/Octave code]]
-[[Category:Communication circuits]]
-[[Category:Electronic design]]
-[[Category:Electronic oscillators]]
-[[Category:Radio electronics]]J∆A phase-locked loop or phase lock loop (PLL) is a control system that generates an output signal whose phase is related to the phase of an input signal. There are several different types; the simplest is an electronic circuit consisting of a variable frequency oscillator and a phase detector in a feedback loop. The oscillator's frequency and phase are controlled proportionally by an applied voltage, hence the term voltage-controlled oscillator (VCO).JﬁThe oscillator generates a periodic signal of a specific frequency, and the phase detector compares the phase of that signal with the phase of the input periodic signal, to adjust the oscillator to keep the phases matched.JÉKeeping the input and output phase in lockstep also implies keeping the input and output frequencies the same. Consequently, in addition to synchronizing signals, a phase-locked loop can track an input frequency, or it can generate a frequency that is a multiple of the input frequency. These properties are used for computer clock synchronization, demodulation, and frequency synthesis.JÊPhase-locked loops are widely employed in radio, telecommunications, computers and other electronic applications. They can be used to demodulate a signal, recover a signal from a noisy communication channel, generate a stable frequency at multiples of an input frequency (frequency synthesis), or distribute precisely timed clock pulses in digital logic circuits such as microprocessors. Since a single integrated circuit can now provide a complete phase-locked-loop building block, the technique is widely used in modern electronic devices, with output frequencies from a fraction of a hertz up to many gigahertz.JHistoryJ≈Spontaneous synchronization of weakly coupled pendulum clocks was noted by the Dutch physicist Christiaan Huygens as early as 1673.Christiaan Huygens, Horologium Oscillatorium ‚Ä¶ (Paris, France: F. Muguet, 1673), From page 18: " ‚Ä¶ illudque accidit memoratu dignum, ‚Ä¶ brevi tempore reduceret." ( ‚Ä¶ and it is worth mentioning, since with two clocks constructed in this form and which we suspend in like manner, truly the cross beam is assigned two fulcrums [i.e., two pendulum clocks were suspended from the same wooden beam]; the motions of the pendulums thus share the opposite swings between the two [clocks], since the two clocks at no time move even a small distance, and the sound of both can be heard clearly together always: for if the innermost part [of one of the clocks] is disturbed with a little help, it will have been restored in a short time by the clocks themselves.) English translation provided by Ian Bruce's translation of , pages 16‚Äì17. Around the turn of the 19th century, Lord Rayleigh observed synchronization of weakly coupled organ pipes and tuning forks.See:J¢* Lord Rayleigh, The Theory of Sound (London, England: Macmillan, 1896), vol. 2. The synchronization of organ pipes in opposed phase is mentioned in ¬ß322c, 
-* Lord Rayleigh (1907) "Acoustical notes ‚Äî VII," Philosophical Magazine, 6th series, 13 : 316‚Äì333. See "Tuning-forks with slight mutual influence," In 1919, W. H. Eccles and J. H. Vincent found that two electronic oscillators that had been tuned to oscillate at slightly different frequencies but that were coupled to a resonant circuit would soon oscillate at the same frequency.See:J≤* Vincent (1919) "On some experiments in which two neighbouring maintained oscillatory circuits affect a resonating circuit," Proceedings of the Physical Society of London, 32, pt. 2, 84‚Äì91.
-* W. H. Eccles and J. H. Vincent, British Patent Specifications, 163 : 462 (17 Feb. 1920). Automatic synchronization of electronic oscillators was described in 1923 by Edward Victor Appleton.E. V. Appleton (1923) "The automatic synchronization of triode oscillators," Proceedings of the Cambridge Philosophical Society, 21 (Part III): 231‚Äì248. Available on-line at: .JåIn 1925, David Robertson, first professor of electrical engineering at the University¬†of Bristol, introduced phase locking in his clock design to control the striking of the bell Great George in the new Wills Memorial Building.¬† Robertson‚Äôs clock incorporated an electro-mechanical device that could vary the rate of oscillation of the pendulum, and derived correction signals from a circuit that compared the pendulum phase with that of an incoming telegraph pulse from Greenwich Observatory every morning at 10:00 GMT.¬† Apart from including equivalents of every element of a modern electronic PLL, Robertson‚Äôs system was notable in that its phase detector was a relay logic implementation of the phase/frequency detector not seen in electronic circuits until the 1970s.¬†J∫	Robertson‚Äôs work predated research towards what was later named the phase-lock loop in 1932, when British researchers developed an alternative to Edwin Armstrong's superheterodyne receiver, the Homodyne or direct-conversion receiver. In the homodyne or synchrodyne system, a local oscillator was tuned to the desired input frequency and multiplied with the input signal. The resulting output signal included the original modulation information. The intent was to develop an alternative receiver circuit that required fewer tuned circuits than the superheterodyne receiver. Since the local oscillator would rapidly drift in frequency, an automatic correction signal was applied to the oscillator, maintaining it in the same phase and frequency of the desired signal. The technique was described in 1932, in a paper by Henri de Bellescize, in the French journal L'Onde √âlectrique.Henri de Bellescize, "La r√©ception synchrone," L'Onde √âlectrique (later: Revue de l'Electricit√© et de l'Electronique), vol. 11, pages 230‚Äì240 (June 1932).See also: French patent no. 635,451 (filed: 6 October 1931; issued: 29 September 1932); and U.S. patent no. 1,990,428 (filed: 29 September 1932; issued: 5 February 1935).J¥In analog television receivers since at least the late 1930s, phase-locked-loop horizontal and vertical sweep circuits are locked to synchronization pulses in the broadcast signal.JÛIn 1969, Signetics introduced a line of low-cost monolithic integrated circuits like the NE565, that were complete phase-locked loop systems on a chip,A. B. Grebene, H. R. Camenzind, "Phase Locking As A New Approach For Tuned Integrated Circuits", ISSCC Digest of Technical Papers, pp. 100‚Äì101, Feb. 1969. and applications for the technique multiplied. A few years later, RCA introduced the "CD4046" CMOS Micropower Phase-Locked Loop, which also became a popular integrated circuit building block.JStructure and functionJàPhase-locked loop mechanisms may be implemented as either analog or digital circuits. Both implementations use the same basic structure.J0Analog PLL circuits include four basic elements:Jy* Phase detector
-* Low-pass filter
-* Voltage controlled oscillator
-* Feedback path, which may include a frequency dividerJ
-VariationsJ{There are several variations of PLLs. Some terms that are used are "analog phase-locked loop" (APLL), also referred to as aJólinear phase-locked loop" (LPLL), "digital phase-locked loop" (DPLL), "all digital phase-locked loop" (ADPLL), and "software phase-locked loop" (SPLL).J¿; Analog or linear PLL (APLL):Phase detector is an analog multiplier. Loop filter is active or passive. Uses a voltage-controlled oscillator (VCO). APLL is said to be a type II if its loop filter has transfer function with exactly one pole at the origin (see also Egan's conjecture on the pull-in range of type II APLL).J°; Digital PLL (DPLL): An analog PLL with a digital phase detector (such as XOR, edge-trigger JK, phase frequency detector). May have digital divider in the loop.J}; All digital PLL (ADPLL): Phase detector, filter and oscillator are digital. Uses a numerically controlled oscillator (NCO).Jf; Software PLL (SPLL): Functional blocks are implemented by software rather than specialized hardware.J≠; Charge-pump PLL (CP-PLL):CP-PLL is a modification of phase-locked loops with phase-frequency detector and square waveform signals. See also Gardner's conjecture on CP-PLL.JPerformance parametersJï*Type and order.
-*Frequency ranges: hold-in range (tracking range), pull-in range (capture range, acquisition range), lock-in range. See also Gardner's problem on the lock-in range, Egan's conjecture on the pull-in range of type II APLL.
-*Loop bandwidth: Defining the speed of the control loop.
-*Transient response: Like overshoot and settling time to a certain accuracy (like 50 ppm).
-*Steady-state errors: Like remaining phase or timing error.
-*Output spectrum purity: Like sidebands generated from a certain VCO tuning voltage ripple.
-*Phase-noise: Defined by noise energy in a certain frequency band (like 10¬†kHz offset from carrier). Highly dependent on VCO phase-noise, PLL bandwidth, etc.
-*General parameters: Such as power consumption, supply voltage range, output amplitude, etc.JApplicationsJ±Phase-locked loops are widely used for synchronization purposes; in space communications for coherent demodulation and threshold extension, bit synchronization, and symbol synchronization. Phase-locked loops can also be used to demodulate frequency-modulated signals. In radio transmitters, a PLL is used to synthesize new frequencies which are a multiple of a reference frequency, with the same stability as the reference frequency.JOther applications include:Jº* Demodulation of frequency modulation (FM): If PLL is locked to an FM signal, the VCO tracks the instantaneous frequency of the input signal. The filtered error voltage which controls the VCO and maintains lock with the input signal is demodulated FM output. The VCO transfer characteristics determine the linearity of the demodulated out. Since the VCO used in an integrated-circuit PLL is highly linear, it is possible to realize highly linear FM demodulators.
-* Demodulation of frequency-shift keying (FSK): In digital data communication and computer peripherals, binary data is transmitted by means of a carrier frequency which is shifted between two preset frequencies.
-* Recovery of small signals that otherwise would be lost in noise (lock-in amplifier to track the reference frequency)
-* Recovery of clock timing information from a data stream such as from a disk drive
-* Clock multipliers in microprocessors that allow internal processor elements to run faster than external connections, while maintaining precise timing relationships
-* Demodulation of modems and other tone signals for telecommunications and remote control.
-* DSP of video signals; Phase-locked loops are also used to synchronize phase and frequency to the input analog video signal so it can be sampled and digitally processed
-* Atomic force microscopy in frequency modulation mode, to detect changes of the cantilever resonance frequency due to tip‚Äìsurface interactions
-* DC motor driveJClock recoveryJÛSome data streams, especially high-speed serial data streams (such as the raw stream of data from the magnetic head of a disk drive), are sent without an accompanying clock. The receiver generates a clock from an approximate frequency reference, and then phase-aligns to the transitions in the data stream with a PLL. This process is referred to as clock recovery. For this scheme to work, the data stream must have a transition frequently enough to correct any drift in the PLL's oscillator. Typically, some sort of line code, such as 8b/10b encoding, is used to put a hard upper bound on the maximum time between transitions.J	DeskewingJïIf a clock is sent in parallel with data, that clock can be used to sample the data. Because the clock must be received and amplified before it can drive the flip-flops which sample the data, there will be a finite, and process-, temperature-, and voltage-dependent delay between the detected clock edge and the received data window. This delay limits the frequency at which data can be sent. One way of eliminating this delay is to include a deskew PLL on the receive side, so that the clock at each data flip-flop is phase-matched to the received clock. In that type of application, a special form of a PLL called a delay-locked loop (DLL) is frequently used.JClock generationJ⁄Many electronic systems include processors of various sorts that operate at hundreds of megahertz. Typically, the clocks supplied to these processors come from clock generator PLLs, which multiply a lower-frequency reference clock (usually 50 or 100¬†MHz) up to the operating frequency of the processor. The multiplication factor can be quite large in cases where the operating frequency is multiple gigahertz and the reference crystal is just tens or hundreds of megahertz.JSpread spectrumJªAll electronic systems emit some unwanted radio frequency energy. Various regulatory agencies (such as the FCC in the United States) put limits on the emitted energy and any interference caused by it. The emitted noise generally appears at sharp spectral peaks (usually at the operating frequency of the device, and a few harmonics). A system designer can use a spread-spectrum PLL to reduce interference with high-Q receivers by spreading the energy over a larger portion of the spectrum. For example, by changing the operating frequency up and down by a small amount (about 1%), a device running at hundreds of megahertz can spread its interference evenly over a few megahertz of spectrum, which drastically reduces the amount of noise seen on broadcast FM radio channels, which have a bandwidth of several tens of kilohertz.JClock distributionJ˜Typically, the reference clock enters the chip and drives a phase locked loop (PLL), which then drives the system's clock distribution. The clock distribution is usually balanced so that the clock arrives at every endpoint simultaneously. One of those endpoints is the PLL's feedback input. The function of the PLL is to compare the distributed clock to the incoming reference clock, and vary the phase and frequency of its output until the reference and feedback clocks are phase and frequency matched.JÛPLLs are ubiquitous‚Äîthey tune clocks in systems several feet across, as well as clocks in small portions of individual chips. Sometimes the reference clock may not actually be a pure clock at all, but rather a data stream with enough transitions that the PLL is able to recover a regular clock from that stream. Sometimes the reference clock is the same frequency as the clock driven through the clock distribution, other times the distributed clock may be some rational multiple of the reference.JAM detectionJÛA PLL may be used to synchronously demodulate amplitude modulated (AM) signals. The PLL recovers the phase and frequency of the incoming AM signal's carrier. The recovered phase at the VCO differs from the carrier's by 90¬∞, so it is shifted in phase to match, and then fed to a multiplier. The output of the multiplier contains both the sum and the difference frequency signals, and the demodulated output is obtained by low-pass filtering. Since the PLL responds only to the carrier frequencies which are very close to the VCO output, a PLL AM detector exhibits a high degree of selectivity and noise immunity which is not possible with conventional peak type AM demodulators. However, the loop may lose lock where AM signals have 100% modulation depth.JJitter and noise reductionJÕOne desirable property of all PLLs is that the reference and feedback clock edges be brought into very close alignment. The average difference in time between the phases of the two signals when the PLL has achieved lock is called the static phase offset (also called the steady-state phase error). The variance between these phases is called tracking jitter. Ideally, the static phase offset should be zero, and the tracking jitter should be as low as possible.JÒPhase noise is another type of jitter observed in PLLs, and is caused by the oscillator itself and by elements used in the oscillator's frequency control circuit. Some technologies are known to perform better than others in this regard. The best digital PLLs are constructed with emitter-coupled logic (ECL) elements, at the expense of high power consumption. To keep phase noise low in PLL circuits, it is best to avoid saturating logic families such as transistor-transistor logic (TTL) or CMOS.JÂAnother desirable property of all PLLs is that the phase and frequency of the generated clock be unaffected by rapid changes in the voltages of the power and ground supply lines, as well as the voltage of the substrate on which the PLL circuits are fabricated. This is called substrate and supply noise rejection. The higher the noise rejection, the better.J~To further improve the phase noise of the output, an injection locked oscillator can be employed following the VCO in the PLL.JFrequency synthesisJÉIn digital wireless communication systems (GSM, CDMA etc.), PLLs are used to provide the local oscillator up-conversion during transmission and down-conversion during reception. In most cellular handsets this function has been largely integrated into a single integrated circuit to reduce the cost and size of the handset. However, due to the high performance required of base station terminals, the transmission and reception circuits are built with discrete components to achieve the levels of performance required. GSM local oscillator modules are typically built with a frequency synthesizer integrated circuit and discrete resonator VCOs.JBlock diagramJ∏The block diagram shown in the figure shows an input signal, FI, which is used to generate an output, FO. The input signal is often called the reference signal (also abbreviated FREF).JÈAt the input, a phase detector (shown as the Phase frequency detector and Charge pump blocks in the figure) compares two input signals, producing an error signal which is proportional to their phase difference. The error signal is then low-pass filtered and used to drive a VCO which creates an output phase. The output is fed through an optional divider back to the input of the system, producing a negative feedback loop. If the output phase drifts, the error signal will increase, driving the VCO phase in the opposite direction so as to reduce the error. Thus the output phase is locked to the phase of the input.JêAnalog phase locked loops are generally built with an analog phase detector, low-pass filter and VCO placed in a negative feedback configuration. A digital phase locked loop uses a digital phase detector; it may also have a divider in the feedback path or in the reference path, or both, in order to make the PLL's output signal frequency a rational multiple of the reference frequency. A non-integer multiple of the reference frequency can also be created by replacing the simple divide-by-N counter in the feedback path with a programmable pulse swallowing counter. This technique is usually referred to as a fractional-N synthesizer or fractional-N PLL.JôThe oscillator generates a periodic output signal. Assume that initially the oscillator is at nearly the same frequency as the reference signal. If the phase from the oscillator falls behind that of the reference, the phase detector changes the control voltage of the oscillator so that it speeds up. Likewise, if the phase creeps ahead of the reference, the phase detector changes the control voltage to slow down the oscillator. Since initially the oscillator may be far from the reference frequency, practical phase detectors may also respond to frequency differences, so as to increase the lock-in range of allowable inputs. Depending on the application, either the output of the controlled oscillator, or the control signal to the oscillator, provides the useful output of the PLL system.JElementsJPhase detectorJÍA phase detector (PD) generates a voltage, which represents the phase difference between two signals. In a PLL, the two inputs of the phase detector are the reference input and the feedback from the VCO. The PD output voltage is used to control the VCO such that the phase difference between the two inputs is held constant, making it a negative feedback system.JNDifferent types of phase detectors have different performance characteristics.J‰For instance, the frequency mixer produces harmonics that adds complexity in applications where spectral purity of the VCO signal is important. The resulting unwanted (spurious) sidebands, also called "reference spurs" can dominate the filter requirements and reduce the capture range well below or increase the lock time beyond the requirements. In these applications the more complex digital phase detectors are used which do not have as severe a reference spur component on their output. Also, when in lock, the steady-state phase difference at the inputs using this type of phase detector is near 90 degrees.J‹In PLL applications it is frequently required to know when the loop is out of lock. The more complex digital phase-frequency detectors usually have an output that allows a reliable indication of an out of lock condition.J¨An XOR gate is often used for digital PLLs as an effective yet simple phase detector. It can also be used in an analog sense with only slight modification to the circuitry.JFilterJoThe block commonly called the PLL loop filter (usually a low-pass filter) generally has two distinct functions.J¢The primary function is to determine loop dynamics, also called stability. This is how the loop responds to disturbances, such as changes in the reference frequency, changes of the feedback divider, or at startup. Common considerations are the range over which the loop can achieve lock (pull-in range, lock range or capture range), how fast the loop achieves lock (lock time, lock-up time or settling time) and damping behavior. Depending on the application, this may require one or more of the following: a simple proportion (gain or attenuation), an integral (low-pass filter) and/or derivative (high-pass filter). Loop parameters commonly examined for this are the loop's gain margin and phase margin. Common concepts in control theory including the PID controller are used to design this function.JëThe second common consideration is limiting the amount of reference frequency energy (ripple) appearing at the phase detector output that is then applied to the VCO control input. This frequency modulates the VCO and produces FM sidebands commonly called "reference spurs".J‡The design of this block can be dominated by either of these considerations, or can be a complex process juggling the interactions of the two. Typical trade-offs are increasing the bandwidth usually degrades the stability or too much damping for better stability will reduce the speed and increase settling time. Often also the phase-noise is affected.J
-OscillatorJÓAll phase-locked loops employ an oscillator element with variable frequency capability. This can be an analog VCO either driven by analog circuitry in the case of an APLL or driven digitally through the use of a digital-to-analog converter as is the case for some DPLL designs. Pure digital oscillators such as a numerically controlled oscillator are used in ADPLLs.J"Feedback path and optional dividerJÒPLLs may include a divider between the oscillator and the feedback input to the phase detector to produce a frequency synthesizer. A programmable divider is particularly useful in radio transmitter applications, since a large number of transmit frequencies can be produced from a single stable, accurate, but expensive, quartz crystal‚Äìcontrolled reference oscillator.JæSome PLLs also include a divider between the reference clock and the reference input to the phase detector. If the divider in the feedback path divides by N and the reference input divider divides by M, it allows the PLL to multiply the reference frequency by N/M. It might seem simpler to just feed the PLL a lower frequency, but in some cases the reference frequency may be constrained by other issues, and then the reference divider is useful.JèFrequency multiplication can also be attained by locking the VCO output to the Nth harmonic of the reference signal. Instead of a simple phase detector, the design uses a harmonic mixer (sampling mixer). The harmonic mixer turns the reference signal into an impulse train that is rich in harmonics. The VCO output is coarse tuned to be close to one of those harmonics. Consequently, the desired harmonic mixer output (representing the difference between the N harmonic and the VCO output) falls within the loop filter passband.JÇIt should also be noted that the feedback is not limited to a frequency divider. This element can be other elements such as a frequency multiplier, or a mixer. The multiplier will make the VCO output a sub-multiple (rather than a multiple) of the reference frequency. A mixer can translate the VCO frequency by a fixed offset. It may also be a combination of these. An example being a divider following a mixer; this allows the divider to operate at a much lower frequency than the VCO without a loss in loop gain.JModelingJTime domain model of APLLJùThe equations governing a phase-locked loop with an analog multiplier as the phase detector and linear filter may be derived as follows. Let the input to the phase detector be f_1(\theta_1(t)) and the output of the VCO is f_2(\theta_2(t)) with phases \theta_1(t) and \theta_2(t). The functions f_1(\theta) and f_2(\theta) describe waveforms of signals. Then the output of the phase detector \varphi(t) is given byJ.\varphi(t) = f_1(\theta_1(t)) f_2(\theta_2(t))JAThe VCO frequency is usually taken as a function of the VCO inputJg(t) asJ\dot\theta_2(t) \omega_2(t)J\omega_\text{free} + g_v g(t)\,J.where g_v is the sensitivity of the VCO and isJexpressed in Hz / V;J6\omega_\text{free} is a free-running frequency of VCO.JMThe loop filter can be described by a system of linear differential equationsJ\begin{array}{rcl}J"\dot x & = & Ax + b \varphi(t), \\Jg(t) & = & c^{*}x,J\end{array}J\quadJx(0) = x_0,J+where \varphi(t) is an input of the filter,J%g(t) is an output of the filter, A isJn-by-n matrix,J8x \in \mathbb{C}^n,\quad b \in \mathbb{R}^n, \quad c \inJH\mathbb{C}^n, \quad. x_0 \in \mathbb{C}^n represents an initial state ofJ5the filter. The star symbol is a conjugate transpose.J(Hence the following system describes PLLJ\begin{array}{rcl}J6\dot x &= &Ax + b f_1(\theta_1(t)) f_2(\theta_2(t)),\\J7\dot \theta_2 &= & \omega_\text{free} + g_v (c^{*}x) \\J\end{array}J\quadJx(0) x_0, \quad \theta_2(0)J	\theta_0.J)where \theta_0 is an initial phase shift.JPhase domain model of APLLJ9Consider the input of PLL f_1(\theta_1(t)) and VCO outputJ,f_2(\theta_2(t)) are high frequency signals.JThen for anyJ0piecewise differentiable 2\pi-periodic functionsJ/f_1(\theta) and f_2(\theta) there is a functionJ3\varphi(\theta) such that the output G(t) of FilterJ\begin{array}{rcl}J8\dot x &= &Ax + b \varphi(\theta_1(t) - \theta_2(t)), \\JG(t) &= &c^{*}x,J\end{array}J\quadJx(0) = x_0,Jûin phase domain is asymptotically equal (the difference G(t)- g(t) is small with respect to the frequencies) to the output of the Filter in time domain model.JAHere function \varphi(\theta) is a phase detector characteristic.J1Denote by \theta_{\Delta}(t) the phase differenceJ,\theta_{\Delta} = \theta_1(t) - \theta_2(t).J:Then the following dynamical system describes PLL behaviorJ\begin{array}{rcl}J-\dot x &= &Ax + b \varphi(\theta_{\Delta}),\\J<\dot \theta_{\Delta} &= & \omega_{\Delta} - g_v (c^{*}x). \\J\end{array}J\quadJ"x(0) x_0, \quad \theta_{\Delta}(0)J\theta_{1}(0) - \theta_2(0).JöHere \omega_{\Delta} = \omega_1 - \omega_\text{free}; \omega_1 is the frequency of a reference oscillator (we assume that \omega_\text{free} is constant).JExampleJConsider sinusoidal signalsJ@f_1(\theta_1(t)) = A_1 \sin(\theta_1(t)), \quad f_2(\theta_2(t))J= A_2\cos(\theta_2(t))JRand a simple one-pole RC circuit as a filter. The time-domain model takes the formJ\begin{align}J'\dot x &= -\frac{1}{RC}x + \frac{1}{RC}J1A_1A_2\sin(\theta_1(t)) \cos(\theta_2(t)),\\[6pt]J2\dot \theta_2 &= \omega_\text{free} + g_v (c^{*}x)J\end{align}JPD characteristics for this signals is equalA. J. Viterbi, Principles of Coherent Communication, McGraw-Hill, New York, 1966 toJI\varphi(\theta_1 - \theta_2) = \frac{A_1 A_2}{2}\sin(\theta_1 - \theta_2)J+Hence the phase domain model takes the formJ\begin{align}JU\dot x &= -\frac{1}{RC}x + \frac{1}{RC}\frac{A_1 A_2}{2}\sin(\theta_{\Delta}),\\[6pt]J7\dot \theta_{\Delta} &= \omega_{\Delta} - g_v (c^{*}x).J\end{align}JOThis system of equations is equivalent to the equation of mathematical pendulumJ\begin{align}J+x & \frac{\dot\theta_2 - \omega_2}{g_v c^*}JA\frac{\omega_1 - \dot\theta_{\Delta} - \omega_2}{g_v c^*},\\[6pt]J0\dot x & = \frac{\ddot\theta_2}{g_v c^*},\\[6pt]J&\theta_1 & = \omega_1 t + \Psi,\\[6pt]J.\theta_{\Delta} & = \theta_1 -\theta_2,\\[6pt]J1\dot\theta_{\Delta} & \dot\theta_1 - \dot\theta_2J\omega_1 - \dot\theta_2,\\[6pt]J£& \frac{1}{g_v c^*}\ddot\theta_{\Delta} - \frac{1}{g_v c^* RC}\dot\theta_{\Delta} - \frac{A_1A_2}{2RC}\sin\theta_{\Delta} = \frac{\omega_2 - \omega_1}{g_v c^* RC}.J\end{align}JLinearized phase domain modelJÅPhase locked loops can also be analyzed as control systems by applying the Laplace transform. The loop response can be written asJB\frac{\theta_o}{\theta_i} = \frac{K_p K_v F(s)} {s + K_p K_v F(s)}JWhereJÙ* \theta_o is the output phase in radians
-* \theta_i is the input phase in radians
-* K_p is the phase detector gain in volts per radian
-* K_v is the VCO gain in radians per volt-second
-* F(s) is the loop filter transfer function (dimensionless)J±The loop characteristics can be controlled by inserting different types of loop filters. The simplest filter is a one-pole RC circuit. The loop transfer function in this case isJF(s) = \frac{1}{1 + s R C}JThe loop response becomes:Ja\frac{\theta_o}{\theta_i} = \frac{\frac{K_p K_v}{R C}}{s^2 + \frac{s}{R C} + \frac{K_p K_v}{R C}}JsThis is the form of a classic harmonic oscillator. The denominator can be related to that of a second order system:J%s^2 + 2 s \zeta \omega_n + \omega_n^2JTwhere \zeta is the damping factor and \omega_n is the natural frequency of the loop.JFor the one-pole RC filter,J%\omega_n = \sqrt{\frac{K_p K_v}{R C}}J&\zeta = \frac{1}{2 \sqrt{K_p K_v R C}}JâThe loop natural frequency is a measure of the response time of the loop, and the damping factor is a measure of the overshoot and ringing. Ideally, the natural frequency should be high and the damping factor should be near 0.707 (critical damping). With a single pole filter, it is not possible to control the loop frequency and damping factor independently. For the case of critical damping,JR C = \frac{1}{2 K_p K_v}J\omega_c = K_p K_v \sqrt{2}JπA slightly more effective filter, the lag-lead filter includes one pole and one zero. This can be realized with two resistors and one capacitor. The transfer function for this filter isJ(F(s) = \frac{1+s C R_2}{1+s C (R_1+R_2)}J"This filter has two time constantsJ\tau_1 = C (R_1 + R_2)J\tau_2 = C R_2JLSubstituting above yields the following natural frequency and damping factorJ(\omega_n = \sqrt{\frac{K_p K_v}{\tau_1}}J?\zeta = \frac{1}{2 \omega_n \tau_1} + \frac{\omega_n \tau_2}{2}JkThe loop filter components can be calculated independently for a given natural frequency and damping factorJ#\tau_1 = \frac{K_p K_v}{\omega_n^2}J5\tau_2 = \frac{2 \zeta}{\omega_n} - \frac{1}{K_p K_v}JßReal world loop filter design can be much more complex e.g. using higher order filters to reduce various types or source of phase noise. (See the D Banerjee ref below)J4Implementing a digital phase-locked loop in softwareJ≠Digital phase locked loops can be implemented in hardware, using integrated circuits such as a CMOS 4046. However, with microcontrollers becoming faster, it may make sense to implement a phase locked loop in software for applications that do not require locking onto signals in the MHz range or faster, such as precisely controlling motor speeds. Software implementation has several advantages including easy customization of the feedback loop including changing the multiplication or division ratio between the signal being tracked and the output oscillator. Furthermore, a software implementation is useful to understand and experiment with. As an example of a phase-locked loop implemented using a phase frequency detector is presented in MATLAB, as this type of phase detector is robust and easy to implement.J#% This example is written in MATLABJ% Initialize variablesJ"vcofreq = zeros(1, numiterations);J ervec = zeros(1, numiterations);JB% Keep track of last states of reference, signal, and error signalJqsig 0; qrefJ0; lref 0; lsigJ0; lersig = 0;Jphs = 0;J	freq = 0;J5% Loop filter constants (proportional and derivative)J@% Currently powers of two to facilitate multiplication by shiftsJprop = 1 / 128;Jderiv = 64;Jfor it = 1:numiterationsJ4% Simulate a local oscillator using a 16-bit counterJ.phs = mod(phs + floor(freq / 2 ^ 16), 2 ^ 16);J	ref = phsJºIn this example, an array tracksig is assumed to contain a reference signal to be tracked. The oscillator is implemented by a counter, with the most significant bit of the counter indicating the on/off status of the oscillator. This code simulates the two D-type flip-flops that comprise a phase-frequency comparator. When either the reference or signal has a positive edge, the corresponding flip-flop switches high. Once both reference and signal is high, both flip-flops are reset. Which flip-flop is high determines at that instant whether the reference or signal leads the other. The error signal is the difference between these two flip-flop values. The pole-zero filter is implemented by adding the error signal and its derivative to the filtered error signal. This in turn is integrated to find the oscillator frequency.JïIn practice, one would likely insert other operations into the feedback of this phase-locked loop. For example, if the phase locked loop were to implement a frequency multiplier, the oscillator signal could be divided in frequency before it is compared to the reference signal.JPractical analogiesJAutomobile race analogyJÜAs an analogy of a PLL, consider a race between two cars. One represents the input frequency, the other the PLL's output voltage-controlled oscillator (VCO) frequency. Each lap corresponds to a complete cycle. The number of laps per hour (a speed) corresponds to the frequency. The separation of the cars (a distance) corresponds to the phase difference between the two oscillating signals.JêDuring most of the race, each car is on its own and free to pass the other and lap the other. This is analogous to the PLL in an unlocked state.JπHowever, if there is an accident, a yellow caution flag is raised. This means neither of the race cars is permitted to overtake and pass the other car. The two race cars represent the input and output frequency of the PLL in a locked state. Each driver will measure the phase difference (a fraction of the distance around the lap) between themselves and the other race car. If the hind driver is too far away, they will increase their speed to close the gap. If they are too close to the other car, the driver will slow down. The result is that both race cars will circle the track in lockstep with a fixed phase difference (or constant distance) between them. Since neither car is allowed to lap the other, the cars make the same number of laps in a given time period. Therefore the frequency of the two signals is the same.JClock analogyJÆPhase can be proportional to time, so a phase difference can be a time difference. Clocks are, with varying degrees of accuracy, phase-locked (time-locked) to a leader clock.JÌLeft on its own, each clock will mark time at slightly different rates. A wall clock, for example, might be fast by a few seconds per hour compared to the reference clock at NIST. Over time, that time difference would become substantial.J≠To keep the wall clock in sync with the reference clock, each week the owner compares the time on their wall clock to a more accurate clock (a phase comparison), and resets their clock. Left alone, the wall clock will continue to diverge from the reference clock at the same few seconds per hour rate.J£Some clocks have a timing adjustment (a fast-slow control). When the owner compared their wall clock's time to the reference time, they noticed that their clock was too fast. Consequently, the owner could turn the timing adjust a small amount to make the clock run a little slower (frequency). If things work out right, their clock will be more accurate than before. Over a series of weekly adjustments, the wall clock's notion of a second would agree with the reference time (locked both in frequency and phase within the wall clock's stability).JkAn early electromechanical version of a phase-locked loop was used in 1921 in the Shortt-Synchronome clock.JSee alsoJí* Frequency-locked loop
-* Charge-pump phase-locked loop
-* Carrier recovery
-* Circle map ‚Äì A simple mathematical model of the phase-locked loop showing both mode-locking and chaotic behavior.
-* Costas loop
-* Delay-locked loop (DLL)
-* Direct conversion receiver
-* Direct digital synthesizer
-* Kalman filter
-* PLL multibit
-* Shortt‚ÄìSynchronome clock ‚Äì Slave pendulum phase-locked to master (ca 1921)JNotesJ
-ReferencesJFurther readingJ“*.
+[[Category:Filter theory]]
+[[Category:Physical quantities]]
+[[Category:Telecommunication theory]]
+[[Category:Electromagnetism]]
+[[Category:Electromagnetic radiation]]
+[[Category:Analog circuits]]
+[[Category:Image impedance filters]]J”The propagation constant of a sinusoidal electromagnetic wave is a measure of the change undergone by the amplitude and phase of the wave as it propagates in a given direction. The quantity being measured can be the voltage, the current in a circuit, or a field vector such as electric field strength or flux density. The propagation constant itself measures the change per unit length, but it is otherwise dimensionless. In the context of two-port networks and their cascades, propagation constant measures the change undergone by the source quantity as it propagates from one port to the next.JÆThe propagation constant's value is expressed logarithmically, almost universally to the base e, rather than the more usual base 10 that is used in telecommunications in other situations. The quantity measured, such as voltage, is expressed as a sinusoidal phasor. The phase of the sinusoid varies with distance which results in the propagation constant being a complex number, the imaginary part being caused by the phase change.JAlternative namesJòThe term "propagation constant" is somewhat of a misnomer as it usually varies strongly with œâ. It is probably the most widely used term but there are a large variety of alternative names used by various authors for this quantity. These include transmission parameter, transmission function, propagation parameter, propagation coefficient and transmission constant. If the plural is used, it suggests that Œ± and Œ≤ are being referenced separately but collectively as in transmission parameters, propagation parameters, etc. In transmission line theory, Œ± and Œ≤ are counted among the "secondary coefficients", the term secondary being used to contrast to the primary line coefficients. The primary coefficients are the physical properties of the line, namely R,C,L and G, from which the secondary coefficients may be derived using the telegrapher's equation. Note that in the field of transmission lines, the term transmission coefficient has a different meaning despite the similarity of name: it is the companion of the reflection coefficient.J
+DefinitionJ¿The propagation constant, symbol {\gamma}, for a given system is defined by the ratio of the complex amplitude at the source of the wave to the complex amplitude at some distance x, such that,J\frac{A_0}{A_x}=e^{\gamma x}JBSince the propagation constant is a complex quantity we can write:J\gamma = \alpha +i \beta \,JwhereJn* Œ±, the real part, is called the attenuation constant
+* Œ≤, the imaginary part, is called the phase constantJEThat Œ≤ does indeed represent phase can be seen from Euler's formula:J*e^{i\theta}=\cos{\theta}+i\sin{\theta}\,\!J]which is a sinusoid which varies in phase as Œ∏ varies but does not vary in amplitude becauseJ<\left|e^{i\theta}\right|\sqrt{\cos^2{\theta}+\sin^2{\theta}}J›The reason for the use of base e is also now made clear. The imaginary phase constant, iŒ≤, can be added directly to the attenuation constant, Œ±, to form a single complex number that can be handled in one mathematical operation provided they are to the same base. Angles measured in radians require base e, so the attenuation is likewise in base e.JThe propagation constant for conducting lines can be calculated from the primary line coefficients by means of the relationshipJ\gamma=\sqrt{ZY}JwhereJHZ=R+i\omega L\,\!, the series impedance of the line per unit length and,JDY=G+i\omega C\,\!, the shunt admittance of the line per unit length.J
+Plane waveJaThe propagation factor of a plane wave traveling in a linear media in the x direction is given byJPJe^{-\gamma x}JwhereJ* \gammaJE\alpha + i\beta \sqrt{i \omega \mu (\sigma + i \omega \varepsilon)}\;Jñ* x = distance traveled in the x direction
+* \alpha = attenuation constant in the units of nepers/meter
+* \beta = phase constant in the units of radians/meter
+* \omega= frequency in radians/second
+* \sigma = conductivity of the media
+* \varepsilon \varepsilon' - i\varepsilon \;J complex permitivity of the mediaJ* \mu \mu' - i\mu \;J!complex permeability of the mediaJ* i=\sqrt{-1}JƒThe sign convention is chosen for consistency with propagation in lossy media. If the attenuation constant is positive, then the wave amplitude decreases as the wave propagates in the x direction.JsWavelength, phase velocity, and skin depth have simple relationships to the components of the propagation constant:J\lambdaJ?\frac {2 \pi} \beta \qquad v_p \frac \omega \beta \qquad \deltaJ\frac 1 \alphaJAttenuation constantJìIn telecommunications, the term attenuation constant, also called attenuation parameter or attenuation coefficient, is the attenuation of an electromagnetic wave propagating through a medium per unit distance from the source. It is the real part of the propagation constant and is measured in nepers per metre. A neper is approximately 8.7¬†dB. Attenuation constant can be defined by the amplitude ratioJ)\left|\frac{A_0}{A_x}\right|=e^{\alpha x}J®The propagation constant per unit length is defined as the natural logarithm of the ratio of the sending end current or voltage to the receiving end current or voltage.JConductive linesJÔThe attenuation constant for conductive lines can be calculated from the primary line coefficients as shown above. For a line meeting the distortionless condition, with a conductance G in the insulator, the attenuation constant is given byJ\alpha=\sqrt{RG}\,\!J∆however, a real line is unlikely to meet this condition without the addition of loading coils and, furthermore, there are some frequency dependent effects operating on the primary "constants" which cause a frequency dependence of the loss. There are two main components to these losses, the metal loss and the dielectric loss.JõThe loss of most transmission lines are dominated by the metal loss, which causes a frequency dependency due to finite conductivity of metals, and the skin effect inside a conductor. The skin effect causes R along the conductor to be approximately dependent on frequency according toJR \propto \sqrt{\omega}J¨Losses in the dielectric depend on the loss tangent (tan¬†Œ¥) of the material divided by the wavelength of the signal. Thus they are directly proportional to the frequency.J\alpha_d={\tan \delta}JOptical fibreJÇThe attenuation constant for a particular propagation mode in an optical fiber is the real part of the axial propagation constant.JPhase constantJ∂In electromagnetic theory, the phase constant, also called phase change constant, parameter or coefficient is the imaginary component of the propagation constant for a plane wave. It represents the change in phase per unit length along the path travelled by the wave at any instant and is equal to the real part of the angular wavenumber of the wave. It is represented by the symbol Œ≤ and is measured in units of radians per unit length.JLFrom the definition of (angular) wavenumber for TEM waves in lossless media:Jk \frac{2\pi}{\lambda}J\betaJÄFor a transmission line, the Heaviside condition of the telegrapher's equation tells us that the wavenumber must be proportional to frequency for the transmission of the wave to be undistorted in the time domain. This includes, but is not limited to, the ideal case of a lossless line. The reason for this condition can be seen by considering that a useful signal is composed of many different wavelengths in the frequency domain. For there to be no distortion of the waveform, all these waves must travel at the same velocity so that they arrive at the far end of the line at the same time as a group. Since wave phase velocity is given byJv_p \frac{\lambda}{T}J-\frac{f}{\tilde{\nu}} = \frac{\omega}{\beta},Jºit is proved that Œ≤ is required to be proportional to œâ. In terms of primary coefficients of the line, this yields from the telegrapher's equation for a distortionless line the conditionJ\beta = \omega \sqrt{LC},JŒwhere L and C are, respectively, the inductance and capacitance per unit length of the line. However, practical lines can only be expected to approximately meet this condition over a limited frequency band.JÄIn particular, the phase constant \beta is not always equivalent to the wavenumber k. Generally speaking, the following relationJ	\beta = kJÄis tenable to the TEM wave (transverse electromagnetic wave) which travels in free space or TEM-devices such as the coaxial cable and two parallel wires transmission lines. Nevertheless, it is invalid to the TE wave (transverse electric wave) and TM wave (transverse magnetic wave). For example, in a hollow waveguide where the TEM wave cannot exist but TE and TM waves can propagate,Jk=\frac{\omega}{c}J+\beta=k\sqrt{1-\frac{\omega_c^2}{\omega^2}}J\Here \omega_{c} is the cutoff frequency. In a rectangular waveguide, the cutoff frequency isJW\omega_{c} = c \sqrt{\left(\frac{n \pi}{a}\right)^2 + \left(\frac{m \pi}{b}\right) ^2},Jwhere m,n \ge 0 are the mode numbers for the rectangle's sides of length a and b respectively. For TE modes, m,n \ge 0 (but m nJ10 is not allowed), while for TM modes m,n \ge 1 .JThe phase velocity equalsJv_p\frac{\omega}{\beta}J9\frac{c}{\sqrt{1-\frac{\omega_\mathrm{c}^2}{\omega^2}}}>cJçThe phase constant is also an important concept in quantum mechanics because the momentum p of a quantum is directly proportional to it, i.e.Jp = \hbar \betaJqwhere is called the reduced Planck constant (pronounced "h-bar"). It is equal to the Planck constant divided by .JFilters and two-port networksJÕThe term propagation constant or propagation function is applied to filters and other two-port networks used for signal processing. In these cases, however, the attenuation and phase coefficients are expressed in terms of nepers and radians per network section rather than per unit length. Some authorsMatthaei et al, p49 make a distinction between per unit length measures (for which "constant" is used) and per section measures (for which "function" is used).J°The propagation constant is a useful concept in filter design which invariably uses a cascaded section topology. In a cascaded topology, the propagation constant, attenuation constant and phase constant of individual sections may be simply added to find the total propagation constant etc.JCascaded networksJWThe ratio of output to input voltage for each network is given byMatthaei et al pp51-52J8\frac{V_1}{V_2}=\sqrt{\frac{Z_{I1}}{Z_{I2}}}e^{\gamma_1}J8\frac{V_2}{V_3}=\sqrt{\frac{Z_{I2}}{Z_{I3}}}e^{\gamma_2}J8\frac{V_3}{V_4}=\sqrt{\frac{Z_{I3}}{Z_{I4}}}e^{\gamma_3}JìThe terms \sqrt{\frac{Z_{In}}{Z_{Im}}} are impedance scaling termsMatthaei et al pp37-38 and their use is explained in the image impedance article.J%The overall voltage ratio is given byJF\frac{V_1}{V_4}\frac{V_1}{V_2}\cdot\frac{V_2}{V_3}\cdot\frac{V_3}{V_4}J:\sqrt{\frac{Z_{I1}}{Z_{I4}}}e^{\gamma_1+\gamma_2+\gamma_3}J{Thus for n cascaded sections all having matching impedances facing each other, the overall propagation constant is given byJH\gamma_\mathrm{total}=\gamma_1 + \gamma_2 + \gamma_3 + \cdots + \gamma_nJSee alsoJŒThe concept of penetration depth is one of many ways to describe the absorption of electromagnetic waves. For the others, and their interrelationships, see the article: Mathematical descriptions of opacity.J* Propagation speedJNotesJ
+ReferencesJv* .
+* Matthaei, Young, Jones Microwave Filters, Impedance-Matching Networks, and Coupling Structures McGraw-Hill 1964.JExternal linksJW*
 *
-*
-*
-*. (provides useful Matlab scripts for simulation)
-*. (provides useful Matlab scripts for simulation)
-*
-*. (FM Demodulation)
-*
-*. An article on designing a standard PLL IC for Bluetooth applications.
-*JExternal linksJ3* ‚Äì Includes embedded video
-* and the tutorials .
+* Free PDF download is available. There is an updated version dated August 6, 2002.
