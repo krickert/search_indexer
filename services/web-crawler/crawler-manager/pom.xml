@@ -23,7 +23,7 @@
     <jib.docker.image>${project.artifactId}</jib.docker.image>
     <jib.docker.tag>${project.version}</jib.docker.tag>
     <micronaut.runtime>netty</micronaut.runtime>
-    <jobrunr.version>7.1.1</jobrunr.version>
+    <jobrunr.version>7.1.2</jobrunr.version>
     <exec.mainClass>com.krickert.search.crawler.manager.Application</exec.mainClass>
   </properties>
 
