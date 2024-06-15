@@ -18,7 +18,7 @@
         <release.version>17</release.version>
         <assertj-core.version>3.26.0</assertj-core.version>
         <maven.compiler.version>3.13.0</maven.compiler.version>
-        <maven.surefire.plugin>3.2.5</maven.surefire.plugin>
+        <maven.surefire.plugin>3.3.0</maven.surefire.plugin>
         <protobuf.version>3.25.3</protobuf.version>
         <grpc.version>1.64.0</grpc.version>
         <junit-jupiter-engine.version>5.10.2</junit-jupiter-engine.version>
