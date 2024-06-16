@@ -2,9 +2,9 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>com.krickert.search.service.grpc</groupId>
-  <artifactId>grpc-nlp-service</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  <groupId>com.krickert.search.indexer</groupId>
+  <artifactId>solr-semantic-importer</artifactId>
+  <version>0.1</version>
   <packaging>${packaging}</packaging>
 
   <parent>
@@ -18,7 +18,7 @@
     <jdk.version>17</jdk.version>
     <release.version>17</release.version>
     <micronaut.version>4.5.0</micronaut.version>
-    <exec.mainClass>com.krickert.search.service.nlp.NlpNerApplication</exec.mainClass>
+    <exec.mainClass>com.krickert.search.indexer.SolrSemanticImporterCommand</exec.mainClass>
   </properties>
 
   <repositories>
@@ -30,23 +30,13 @@
 
   <dependencies>
     <dependency>
-      <groupId>io.micronaut</groupId>
-      <artifactId>micronaut-http-client</artifactId>
+      <groupId>info.picocli</groupId>
+      <artifactId>picocli</artifactId>
       <scope>compile</scope>
     </dependency>
     <dependency>
-      <groupId>io.micronaut</groupId>
-      <artifactId>micronaut-http-server-netty</artifactId>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>io.micronaut</groupId>
-      <artifactId>micronaut-management</artifactId>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>io.micronaut.grpc</groupId>
-      <artifactId>micronaut-grpc-runtime</artifactId>
+      <groupId>io.micronaut.picocli</groupId>
+      <artifactId>micronaut-picocli</artifactId>
       <scope>compile</scope>
     </dependency>
     <dependency>
@@ -55,20 +45,8 @@
       <scope>compile</scope>
     </dependency>
     <dependency>
-      <groupId>io.micronaut.discovery</groupId>
-      <artifactId>micronaut-discovery-client</artifactId>
-      <scope>compile</scope>
-    </dependency>
-    <!-- https://mvnrepository.com/artifact/ch.qos.logback/logback-classic -->
-    <dependency>
       <groupId>ch.qos.logback</groupId>
       <artifactId>logback-classic</artifactId>
-    </dependency>
-    <!-- https://mvnrepository.com/artifact/ch.qos.logback/logback-core -->
-    <dependency>
-      <groupId>ch.qos.logback</groupId>
-      <artifactId>logback-core</artifactId>
-      <version>1.5.6</version>
       <scope>runtime</scope>
     </dependency>
     <dependency>
@@ -77,28 +55,8 @@
       <scope>runtime</scope>
     </dependency>
     <dependency>
-      <groupId>io.micronaut.testresources</groupId>
-      <artifactId>micronaut-test-resources-client</artifactId>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.opennlp</groupId>
-      <artifactId>opennlp-tools</artifactId>
-      <version>2.3.3</version>
-    </dependency>
-    <dependency>
-      <groupId>com.krickert.search</groupId>
-      <artifactId>wikisearch-model</artifactId>
-      <version>1.0-SNAPSHOT</version>
-    </dependency>
-    <dependency>
       <groupId>io.micronaut.test</groupId>
       <artifactId>micronaut-test-junit5</artifactId>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.assertj</groupId>
-      <artifactId>assertj-core</artifactId>
       <scope>test</scope>
     </dependency>
     <dependency>
@@ -118,11 +76,6 @@
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>org.mockito</groupId>
-      <artifactId>mockito-core</artifactId>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
       <groupId>org.testcontainers</groupId>
       <artifactId>junit-jupiter</artifactId>
       <scope>test</scope>
@@ -139,25 +92,39 @@
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>org.testcontainers</groupId>
-      <artifactId>consul</artifactId>
-      <scope>test</scope>
+      <groupId>org.apache.solr</groupId>
+      <artifactId>solr-solrj</artifactId>
+      <version>9.6.1</version>
     </dependency>
     <dependency>
-      <groupId>com.google.protobuf</groupId>
-      <artifactId>protobuf-java-util</artifactId>
-      <scope>test</scope>
+      <groupId>commons-codec</groupId>
+      <artifactId>commons-codec</artifactId>
+      <version>1.17.0</version>
     </dependency>
     <dependency>
-      <groupId>com.krickert.search</groupId>
-      <artifactId>wikisearch-model-test-resources</artifactId>
-      <version>1.0-SNAPSHOT</version>
-      <scope>test</scope>
+      <groupId>edu.stanford.nlp</groupId>
+      <artifactId>stanford-corenlp</artifactId>
+      <version>4.5.7</version>
     </dependency>
     <dependency>
-      <groupId>io.micronaut.crac</groupId>
-      <artifactId>micronaut-crac</artifactId>
+      <groupId>edu.stanford.nlp</groupId>
+      <artifactId>stanford-corenlp</artifactId>
+      <version>4.5.7</version>
+      <classifier>models</classifier>
+    </dependency>
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-databind</artifactId>
+      <version>2.17.1</version>
+    </dependency>
+    <dependency>
+      <groupId>io.micronaut</groupId>
+      <artifactId>micronaut-http-client</artifactId>
       <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava</artifactId>
     </dependency>
   </dependencies>
   <build>
@@ -179,6 +146,11 @@
 
           <annotationProcessorPaths combine.children="append">
             <path>
+              <groupId>info.picocli</groupId>
+              <artifactId>picocli-codegen</artifactId>
+              <version>${picocli.version}</version>
+            </path>
+            <path>
               <groupId>io.micronaut.serde</groupId>
               <artifactId>micronaut-serde-processor</artifactId>
               <version>${micronaut.serialization.version}</version>
@@ -191,8 +163,8 @@
             </path>
           </annotationProcessorPaths>
           <compilerArgs>
-            <arg>-Amicronaut.processing.group=com.krickert.search.service.grpc</arg>
-            <arg>-Amicronaut.processing.module=grpc-nlp-service</arg>
+            <arg>-Amicronaut.processing.group=com.krickert.search.indexer</arg>
+            <arg>-Amicronaut.processing.module=solr-semantic-importer</arg>
           </compilerArgs>
         </configuration>
       </plugin>
