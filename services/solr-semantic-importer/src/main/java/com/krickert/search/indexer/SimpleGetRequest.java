@@ -3,11 +3,14 @@ package com.krickert.search.indexer;
 import io.micronaut.http.HttpRequest;
 import io.micronaut.http.client.HttpClient;
 import io.micronaut.http.client.netty.DefaultHttpClient;
+import jakarta.inject.Singleton;
 
 import java.net.URI;
 import java.net.URISyntaxException;
 
+@Singleton
 public class SimpleGetRequest {
+
     public String getResponseAsString(String url)  {
         final URI uri;
         try {
@@ -17,15 +20,9 @@ public class SimpleGetRequest {
         }
         HttpClient client = new DefaultHttpClient(uri);
 
-        String response = client.toBlocking().retrieve(HttpRequest.GET("/"));
+        String response = client.toBlocking().retrieve(HttpRequest.GET(uri));
         client.close();
         return response;
     }
 
-    public static void main(String[] args) {
-        SimpleGetRequest check = new SimpleGetRequest();
-        String url = "http://example.com";
-        String response = check.getResponseAsString(url);
-        System.out.println(response);
-    }
 }

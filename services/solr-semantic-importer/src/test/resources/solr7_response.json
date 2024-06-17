@@ -1,0 +1,31 @@
+{
+  "responseHeader": {
+    "status": 0,
+    "QTime": 1,
+    "params": {
+      "q": "example",
+      "indent": "true",
+      "wt": "json"
+    }
+  },
+  "response": {
+    "numFound": 2,
+    "start": 0,
+    "docs": [
+      {
+        "id": "1",
+        "name": "Example product 1",
+        "price": 10.5,
+        "category": "Books",
+        "_version_": 1666113769164939264
+      },
+      {
+        "id": "2",
+        "name": "Example product 2",
+        "price": 20.0,
+        "category": "Electronics",
+        "_version_": 1666113769216880640
+      }
+    ]
+  }
+}
