@@ -15,16 +15,16 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
     <build>
-        <plugins>
+        <!--plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.2.5</version>
                 <configuration>
-                    <forkCount>0</forkCount>
+                    <forkCount>10</forkCount>
                 </configuration>
             </plugin>
-        </plugins>
+        </plugins-->
     </build>
     <modules>
         <module>protobuf-projects</module>
