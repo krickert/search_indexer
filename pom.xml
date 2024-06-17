@@ -14,7 +14,18 @@
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.2.5</version>
+                <configuration>
+                    <forkCount>0</forkCount>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
     <modules>
         <module>protobuf-projects</module>
         <module>services</module>

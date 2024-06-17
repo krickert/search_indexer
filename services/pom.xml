@@ -12,6 +12,7 @@
         <module>pipeline-services</module>
         <module>pipeline-processor</module>
         <module>web-crawler</module>
+        <module>solr-semantic-importer</module>
     </modules>
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
