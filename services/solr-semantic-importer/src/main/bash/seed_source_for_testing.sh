@@ -1,4 +1,6 @@
 #!/bin/bash
+docker run --name my_solr7 -d -p 8983:8983 solr:7.7.3 bash -c "solr start -f -c"
+docker run --name my_solr9 -d -p 8984:8983 solr:9.6.1 bash -c "solr start -f -c"
 
 BASE_URL="http://localhost:8983/solr/products_source/update"
 HEADER="Content-Type: application/json"
