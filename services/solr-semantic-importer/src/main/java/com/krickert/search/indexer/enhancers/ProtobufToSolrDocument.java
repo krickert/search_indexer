@@ -15,7 +15,7 @@ public class ProtobufToSolrDocument {
 
     public SolrInputDocument convertProtobufToSolrDocument(Message protobuf) {
         try {
-            log.info(JsonFormat.printer().print(protobuf));
+            log.debug(JsonFormat.printer().print(protobuf));
         } catch (InvalidProtocolBufferException e) {
             throw new RuntimeException(e);
         }
