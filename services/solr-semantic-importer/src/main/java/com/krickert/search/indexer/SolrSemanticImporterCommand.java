@@ -18,6 +18,9 @@ public class SolrSemanticImporterCommand implements Runnable {
     @Option(names = {"-v", "--verbose"}, description = "...")
     boolean verbose;
 
+    @Option(names = {"-e", "--enabled"}, description = "skip the indexing and exit")
+    boolean enabled = false;
+
     @Inject
     SemanticIndexer semanticIndexer;
 
@@ -31,9 +34,11 @@ public class SolrSemanticImporterCommand implements Runnable {
             System.out.println("Hi!");
         }
         try {
-            semanticIndexer.indexSolrDocs(5);
-            System.out.println("Done!");
-            System.exit(0);
+            if (enabled) {
+                semanticIndexer.indexSolrDocs(5);
+                System.out.println("Done!");
+                System.exit(0);
+            }
         } catch (IOException e) {
             throw new RuntimeException(e);
         } catch (InterruptedException e) {
