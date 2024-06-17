@@ -1,4 +1,4 @@
-package com.krickert.search.indexer;
+package com.krickert.search.indexer.enhancers;
 
 import edu.stanford.nlp.coref.CorefCoreAnnotations;
 import edu.stanford.nlp.coref.data.CorefChain;
