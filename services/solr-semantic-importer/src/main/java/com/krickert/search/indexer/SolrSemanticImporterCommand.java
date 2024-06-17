@@ -1,13 +1,10 @@
 package com.krickert.search.indexer;
 
 import io.micronaut.configuration.picocli.PicocliRunner;
-import io.micronaut.context.ApplicationContext;
 
 import jakarta.inject.Inject;
-import picocli.CommandLine;
 import picocli.CommandLine.Command;
 import picocli.CommandLine.Option;
-import picocli.CommandLine.Parameters;
 
 import java.io.IOException;
 
@@ -35,7 +32,7 @@ public class SolrSemanticImporterCommand implements Runnable {
         }
         try {
             if (enabled) {
-                semanticIndexer.indexSolrDocs(5);
+                semanticIndexer.exportSolrDocsFromExternalSolrCollection(5);
                 System.out.println("Done!");
                 System.exit(0);
             }

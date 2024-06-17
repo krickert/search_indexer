@@ -1,12 +1,16 @@
 package com.krickert.search.indexer;
 
+import com.google.protobuf.Descriptors;
+import com.google.protobuf.DynamicMessage;
+import com.google.protobuf.Message;
+import com.krickert.search.indexer.enhancers.ProtobufToSolrDocument;
+import com.krickert.search.model.pipe.PipeDocument;
 import io.micronaut.context.annotation.Value;
 import jakarta.inject.Inject;
 import jakarta.inject.Singleton;
 import org.apache.solr.client.solrj.SolrClient;
 import org.apache.solr.client.solrj.SolrServerException;
 import org.apache.solr.client.solrj.impl.Http2SolrClient;
-import org.apache.solr.common.SolrDocument;
 import org.apache.solr.common.SolrInputDocument;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,33 +18,63 @@ import org.slf4j.LoggerFactory;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Singleton
 public class SemanticIndexer {
     private static final Logger log = LoggerFactory.getLogger(SemanticIndexer.class);
 
+    private final ProtobufToSolrDocument protobufToSolrDocument;
     private final HttpSolrSelectClient httpSolrSelectClient;
     private final JsonToSolrDoc jsonToSolrDoc;
     private final String solrDestinationUrl;
     private final String solrDestinationCollection;
 
     @Inject
-    public SemanticIndexer(HttpSolrSelectClient httpSolrSelectClient, JsonToSolrDoc jsonToSolrDoc,
+    public SemanticIndexer(ProtobufToSolrDocument protobufToSolrDocument, HttpSolrSelectClient httpSolrSelectClient, JsonToSolrDoc jsonToSolrDoc,
                            @Value("${indexer.solr_destination_url}") String solrDestinationUrl,
                            @Value("${indexer.solr_destination_collection}") String solrDestinationCollection) {
+        this.protobufToSolrDocument = protobufToSolrDocument;
         this.httpSolrSelectClient = httpSolrSelectClient;
         this.jsonToSolrDoc = jsonToSolrDoc;
         this.solrDestinationUrl = solrDestinationUrl;
         this.solrDestinationCollection = solrDestinationCollection;
     }
 
-    public void indexSolrDocs(Integer paginationSize) throws IOException, InterruptedException {
+    public List<Message> convertDescriptorsToMessages(Collection<PipeDocument> descriptors) {
+        List<Message> messages = new ArrayList<>();
+
+        for (PipeDocument descriptor : descriptors) {
+            DynamicMessage message = DynamicMessage.newBuilder(descriptor).build();
+            messages.add(message);
+        }
+
+        return messages;
+    }
+
+    public void exportProtobufToSolr(Collection<Message> protos) {
+        List<SolrInputDocument> solrDocuments = protos.stream()
+                .map(protobufToSolrDocument::convertProtobufToSolrDocument)
+                .collect(Collectors.toList());
+
+        try (SolrClient solrClient = createSolr9Client()) {
+            try {
+                solrClient.add(solrDestinationCollection, solrDocuments);
+                solrClient.commit(solrDestinationCollection);
+            } catch (SolrServerException | IOException e) {
+                log.error("Commit solr failed for collection {}", solrDestinationCollection, e);
+            }
+        } catch (IOException e) {
+            log.error("Couldn't insert {}", protos, e);
+        }
+    }
+
+    public void exportSolrDocsFromExternalSolrCollection(Integer paginationSize) throws IOException, InterruptedException {
         SolrClient solrClient = createSolr9Client();
         if (paginationSize == null || paginationSize <= 0) {
             throw new IllegalArgumentException("paginationSize must be greater than 0");
         }
-        Collection<SolrInputDocument> docs = new ArrayList<>();
-        boolean notFinished = false;
         int currentPage = 0;
         long totalExpected = -1;
         long numOfPagesExpected = -1;

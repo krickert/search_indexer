@@ -1,7 +1,6 @@
 package com.krickert.search.indexer.enhancers;
 import com.google.protobuf.*;
 import com.google.protobuf.util.JsonFormat;
-import com.google.protobuf.util.Timestamps;
 import jakarta.inject.Singleton;
 import org.apache.solr.common.SolrInputDocument;
 import org.slf4j.Logger;
