@@ -38,7 +38,26 @@ public class ProtobufToSolrDocument {
                     long milliseconds = timestamp.getSeconds() * 1000L + timestamp.getNanos() / 1000000;
                     java.util.Date javaDate = new java.util.Date(milliseconds);
                     solrDoc.addField(fieldName, javaDate);
-                } else {
+                } else if (entry.getValue() instanceof com.google.protobuf.Duration duration) {
+                    // Convert protobuf Duration to java.time.Duration
+                    java.time.Duration javaDuration = java.time.Duration.ofSeconds(duration.getSeconds(), duration.getNanos());
+                    solrDoc.addField(fieldName, javaDuration.toString());
+                } else if (entry.getValue() instanceof com.google.protobuf.BytesValue bytesValue) {
+                    // Convert protobuf BytesValue to String
+                    String byteString = bytesValue.getValue().toStringUtf8();
+                    solrDoc.addField(fieldName, byteString);
+                } else if (entry.getValue() instanceof com.google.protobuf.FloatValue floatValue) {
+                    // Convert protobuf FloatValue to a Java float
+                    float javaFloat = floatValue.getValue();
+                    solrDoc.addField(fieldName, javaFloat);
+                } else if (entry.getValue() instanceof com.google.protobuf.Empty) {
+                    // No actual data to add, but we can acknowledge its existence.
+                    solrDoc.addField(fieldName, "__EMPTY__");
+                } else if (entry.getValue() instanceof com.google.protobuf.FieldMask fieldMask) {
+                    // Convert paths in FieldMask to a comma-separated string
+                    String paths = String.join(", ", fieldMask.getPathsList());
+                    solrDoc.addField(fieldName, paths);
+                } else  {
                     addFieldsToSolrDoc((Message) entry.getValue(), solrDoc, fieldName);
                 }
             } else if (entry.getKey().isMapField()) {
