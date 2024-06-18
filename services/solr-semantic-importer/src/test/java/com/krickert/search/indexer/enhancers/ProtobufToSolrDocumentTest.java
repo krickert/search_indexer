@@ -56,6 +56,7 @@ public class ProtobufToSolrDocumentTest {
                 .map(unit::convertProtobufToSolrDocument)
                 .toList();
         solrDocuments.forEach(System.out::println);
+        assertEquals(pipeDocumentCollection.size(), solrDocuments.size());
     }
 
     @Test
@@ -64,7 +65,7 @@ public class ProtobufToSolrDocumentTest {
         try (SolrClient solrClient = createSolr9Client()) {
             try {
                 QueryResponse response = solrClient.query(testCollection, new SolrQuery("*:*"));
-                assertEquals(367, response.getResults().getNumFound());
+                assertEquals(TestDataHelper.getFewHunderedPipeDocuments().size(), response.getResults().getNumFound());
             } catch (SolrServerException | IOException e) {
                 fail(e);
             }
