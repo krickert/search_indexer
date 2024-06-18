@@ -32,16 +32,22 @@ public class ProtobufToSolrDocument {
             if (entry.getValue() instanceof Message) {
                 if (entry.getValue() instanceof Struct) {
                     extractFieldsFromStruct((Struct) entry.getValue(), solrDoc, fieldName);
+                } else if (entry.getValue() instanceof Timestamp timestamp) {
+                    // Handle Timestamp fields
+                    // Convert to java.util.Date then add to solrDoc
+                    long milliseconds = timestamp.getSeconds() * 1000L + timestamp.getNanos() / 1000000;
+                    java.util.Date javaDate = new java.util.Date(milliseconds);
+                    solrDoc.addField(fieldName, javaDate);
                 } else {
                     addFieldsToSolrDoc((Message) entry.getValue(), solrDoc, fieldName);
                 }
             } else if (entry.getKey().isMapField()) {
-                Map<Object, Object> mapValue = (Map<Object, Object>) entry.getValue();
+                @SuppressWarnings("unchecked") Map<Object, Object> mapValue = (Map<Object, Object>) entry.getValue();
                 for (Map.Entry<Object, Object> mapEntry : mapValue.entrySet()) {
                     solrDoc.addField(fieldName + "_" + mapEntry.getKey(), mapEntry.getValue());
                 }
             } else if (entry.getKey().isRepeated()) {
-                List<Object> listValue = (List<Object>) entry.getValue();
+                @SuppressWarnings("unchecked") List<Object> listValue = (List<Object>) entry.getValue();
                 for (Object item : listValue) {
                     solrDoc.addField(fieldName, item);
                 }

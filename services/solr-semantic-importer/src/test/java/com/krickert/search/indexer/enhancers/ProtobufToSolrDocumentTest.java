@@ -1,8 +1,5 @@
 package com.krickert.search.indexer.enhancers;
 
-import com.google.common.collect.Lists;
-import com.google.protobuf.Message;
-import com.krickert.search.indexer.HttpSolrSelectClientImpl;
 import com.krickert.search.indexer.JsonToSolrDoc;
 import com.krickert.search.indexer.SemanticIndexer;
 import com.krickert.search.model.pipe.PipeDocument;
@@ -23,9 +20,9 @@ import org.testcontainers.containers.SolrContainer;
 import org.testcontainers.utility.DockerImageName;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
-import java.util.stream.Collectors;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.fail;
@@ -46,8 +43,9 @@ public class ProtobufToSolrDocumentTest {
         final DockerImageName solrImage = DockerImageName.parse("solr:9.6.1");
         this.container9 = createContainer(solrImage);
 
-        SolrClient solrClient = createSolr9Client();
-        solrClient.request(CollectionAdminRequest.createCollection(testCollection, "_default",1, 1));
+        try (SolrClient solrClient = createSolr9Client()) {
+            solrClient.request(CollectionAdminRequest.createCollection(testCollection, "_default", 1, 1));
+        }
         String solrDestinationUrl = "http://" + container9.getHost() + ":" + container9.getSolrPort() + "/solr";
         this.semanticIndexer = new SemanticIndexer(unit, new MockSolrSelectClient(), new JsonToSolrDoc(), solrDestinationUrl, "test_collection");
     }
@@ -56,20 +54,22 @@ public class ProtobufToSolrDocumentTest {
     void testConversionOfPipeDocuments() {
         List<SolrInputDocument> solrDocuments = pipeDocumentCollection.stream()
                 .map(unit::convertProtobufToSolrDocument)
-                .collect(Collectors.toList());
+                .toList();
         solrDocuments.forEach(System.out::println);
     }
 
     @Test
     void testInsertProtobufToSolrDocument() {
-        semanticIndexer.exportProtobufToSolr(TestDataHelper.getFewHunderedPipeDocuments().stream().collect(Collectors.toList()));
-        SolrClient solrClient = createSolr9Client();
-        try {
-            QueryResponse response = solrClient.query(testCollection, new SolrQuery("*:*"));
-            assertEquals(367, response.getResults().getNumFound());
-        } catch (SolrServerException e) {
-            fail(e);
+        semanticIndexer.exportProtobufToSolr(new ArrayList<>(TestDataHelper.getFewHunderedPipeDocuments()));
+        try (SolrClient solrClient = createSolr9Client()) {
+            try {
+                QueryResponse response = solrClient.query(testCollection, new SolrQuery("*:*"));
+                assertEquals(367, response.getResults().getNumFound());
+            } catch (SolrServerException | IOException e) {
+                fail(e);
+            }
         } catch (IOException e) {
+            log.error("IOException while exporting protobuf to Solr", e);
             fail(e);
         }
     }
