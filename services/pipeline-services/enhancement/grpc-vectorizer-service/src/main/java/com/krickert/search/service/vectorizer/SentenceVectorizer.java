@@ -8,6 +8,7 @@ import ai.djl.repository.zoo.ModelNotFoundException;
 import ai.djl.repository.zoo.ZooModel;
 import ai.djl.translate.TranslateException;
 import com.google.common.collect.Lists;
+import io.micronaut.context.annotation.Value;
 import jakarta.inject.Singleton;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -27,7 +28,7 @@ import java.util.List;
 public class SentenceVectorizer implements Vectorizer {
 
     private static final Logger log = LoggerFactory.getLogger(SentenceVectorizer.class);
-    private static final String MODEL_URL = "djl://ai.djl.huggingface.pytorch/sentence-transformers/all-MiniLM-L12-v2";
+    private final String modelUrl;
 
     final Criteria<String, float[]> criteria;
     final ZooModel<String, float[]> model;
@@ -36,7 +37,8 @@ public class SentenceVectorizer implements Vectorizer {
      * The Vectorizer class is responsible for converting text inputs into vector embeddings
      * using a pre-trained model.
      */
-    public SentenceVectorizer() throws ModelNotFoundException, MalformedModelException, IOException {
+    public SentenceVectorizer(@Value("${vectorizer.model.url}") String modelUrl) throws ModelNotFoundException, MalformedModelException, IOException {
+        this.modelUrl = modelUrl;
         this.criteria = makeCriteria();
         this.model = this.criteria.loadModel();
     }
@@ -48,7 +50,7 @@ public class SentenceVectorizer implements Vectorizer {
     private Criteria<String, float[]> makeCriteria() {
         return Criteria.builder()
                 .setTypes(String.class, float[].class)
-                .optModelUrls(MODEL_URL)
+                .optModelUrls(modelUrl)
                 .optEngine("PyTorch")
                 .optTranslatorFactory(new TextEmbeddingTranslatorFactory())
                 .build();

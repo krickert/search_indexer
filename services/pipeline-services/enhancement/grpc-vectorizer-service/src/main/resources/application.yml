@@ -3,11 +3,6 @@ micronaut:
     port: 60401
   application:
     name: vectorizer
-consul:
-  client:
-    defaultZone: ${CONSUL_HOST:localhost}:${CONSUL_PORT:8500}
-    registration:
-      enabled: true
 grpc:
   server:
     port: 50401
@@ -15,3 +10,6 @@ endpoints:
   health:
     enabled: true
     sensitive: false
+vectorizer:
+  model:
+    url: "djl://ai.djl.huggingface.pytorch/sentence-transformers/all-MiniLM-L12-v2"
