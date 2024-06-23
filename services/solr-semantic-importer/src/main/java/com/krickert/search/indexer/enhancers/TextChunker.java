@@ -50,7 +50,7 @@ public class TextChunker {
     }
 
     public static void main(String[] args) {
-        List<String> chunks = chunkText(mainText, 300, 2);
+        List<String> chunks = chunkText(mainText, 300, 30);
         chunks.forEach(System.out::println);
     }
 

@@ -6,7 +6,7 @@ import edu.stanford.nlp.util.CoreMap;
 
 import java.util.*;
 
-public class CoreNLPChunker {
+public class CoreNLPChunkerV1 {
     public static void main(String[] args) {
         // Creating a StanfordCoreNLP object and perfroming Natural language processing steps.
         Properties props = new Properties();
