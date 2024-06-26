@@ -1,0 +1,23 @@
+syntax = "proto3";
+import "pipes.proto";
+import "enhanced_doc.proto";
+
+option java_multiple_files = true;
+option java_package = "com.krickert.search.service";
+option java_outer_classname = "VectorDoc";
+option objc_class_prefix = "HLW";
+
+package com.krickert.search;
+
+service VectorDocService {
+  rpc send (VectorRequest) returns (VectorReply) {}
+}
+
+message VectorRequest {
+  com.krickert.search.model.pipe.PipeDocument document = 1;
+}
+
+message VectorReply {
+  com.krickert.search.model.enhanced.EnhancedDocument document = 1;
+}
+
