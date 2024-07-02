@@ -7,8 +7,9 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>grpc-vectorizer-service</module>
-        <module>grpc-nlp-service</module>
+        <module>vectorizer</module>
+        <module>nlp</module>
+        <module>chunker</module>
     </modules>
     <artifactId>enhancement</artifactId>
     <properties>

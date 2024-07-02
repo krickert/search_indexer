@@ -1,0 +1,31 @@
+micronaut:
+  application:
+    name: nlp
+  server:
+    port: 60402
+  health:
+    monitor:
+      enabled: false
+consul:
+  client:
+    defaultZone: ${CONSUL_HOST:localhost}:${CONSUL_PORT:8500}
+    registration:
+      enabled: false
+grpc:
+  server:
+    port: 50402
+endpoints:
+  health:
+    enabled: true
+    sensitive: false
+nlp:
+  en_tokenizer: "classpath:models/latest/opennlp-en-ud-ewt-tokens-1.0-1.9.3.bin"
+  ner_org_model: "classpath:models/1.5/en-ner-organization.bin"
+  ner_person_model: "classpath:models/1.5/en-ner-person.bin"
+  ner_location_model: "classpath:models/1.5/en-ner-location.bin"
+  ner_date_model: "classpath:models/1.5/en-ner-date.bin"
+  services_enabled:
+    - "organization"
+    - "person"
+    - "location"
+    - "date"
