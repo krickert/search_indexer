@@ -5,7 +5,7 @@ import "google/protobuf/timestamp.proto";
 import "google/protobuf/struct.proto";
 import "pipes.proto";
 
-message VectorEmbedding {
+message SementicEmbedding {
   string chunk_id = 1;
   string chunk = 2;
   repeated float embedding = 3;
@@ -14,8 +14,7 @@ message VectorEmbedding {
 message SemanticDocument {
   string id = 1;
   google.protobuf.Timestamp creation_date = 3;
-  VectorEmbedding titleEmbedding = 4;
-  repeated VectorEmbedding chunks = 5;
+  SementicEmbedding titleEmbedding = 4;
+  repeated SementicEmbedding chunks = 5;
   com.krickert.search.model.pipe.PipeDocument doc = 6;
-
 }
