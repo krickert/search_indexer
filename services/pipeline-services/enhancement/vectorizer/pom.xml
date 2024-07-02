@@ -2,8 +2,8 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.krickert.search.service</groupId>
-    <artifactId>pipeline-processor</artifactId>
+    <groupId>com.krickert.search.service.grpc</groupId>
+    <artifactId>vectorizer</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>${packaging}</packaging>
 
@@ -19,25 +19,14 @@
         <release.version>17</release.version>
         <micronaut.version>4.5.0</micronaut.version>
         <micronaut.test.resources.enabled>true</micronaut.test.resources.enabled>
-        <exec.mainClass>com.krickert.search.pipeline.PipelineProcessorApplication</exec.mainClass>
-        <kafka-streams-protobuf-serde.version>7.6.1</kafka-streams-protobuf-serde.version>
+        <exec.mainClass>com.krickert.search.service.grpc.VactorizerApplication</exec.mainClass>
     </properties>
 
     <repositories>
         <repository>
-            <id>sonatype-snapshots</id>
-            <url>https://s01.oss.sonatype.org/content/repositories/snapshots/</url>
-        </repository>
-        <repository>
             <id>central</id>
             <url>https://repo.maven.apache.org/maven2</url>
         </repository>
-        <!-- other maven repositories the project -->
-        <repository>
-            <id>confluent</id>
-            <url>https://packages.confluent.io/maven/</url>
-        </repository>
-
     </repositories>
 
     <dependencies>
@@ -57,8 +46,18 @@
             <scope>compile</scope>
         </dependency>
         <dependency>
-            <groupId>io.micronaut.kafka</groupId>
-            <artifactId>micronaut-kafka</artifactId>
+            <groupId>io.micronaut.grpc</groupId>
+            <artifactId>micronaut-grpc-runtime</artifactId>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.micronaut.serde</groupId>
+            <artifactId>micronaut-serde-jackson</artifactId>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.micronaut.discovery</groupId>
+            <artifactId>micronaut-discovery-client</artifactId>
             <scope>compile</scope>
         </dependency>
         <dependency>
@@ -77,7 +76,56 @@
             <artifactId>snakeyaml</artifactId>
             <scope>runtime</scope>
         </dependency>
-
+        <dependency>
+            <groupId>io.micronaut.testresources</groupId>
+            <artifactId>micronaut-test-resources-client</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/ai.djl.huggingface/tokenizers -->
+        <dependency>
+            <groupId>ai.djl.huggingface</groupId>
+            <artifactId>tokenizers</artifactId>
+            <version>0.28.0</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-compress -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-compress</artifactId>
+            <version>1.26.2</version>
+        </dependency>
+        <dependency>
+            <groupId>ai.djl.pytorch</groupId>
+            <artifactId>pytorch-model-zoo</artifactId>
+            <version>0.28.0</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/ai.djl.pytorch/pytorch-native-cpu -->
+        <dependency>
+            <groupId>ai.djl.pytorch</groupId>
+            <artifactId>pytorch-native-cpu</artifactId>
+            <version>2.3.0</version>
+        </dependency>
+        <!-- for GPU acceleration but made jar 1.6G -->
+        <!-- If running this on an x86 machine, it's good to turn this on if you have an nvidia GPU -->
+        <!-- keeping this for now.  Will need to see how to integrate it in the container later -->
+        <!--dependency>
+          <groupId>ai.djl.pytorch</groupId>
+          <artifactId>pytorch-native-cu119</artifactId>
+          <classifier>linux-x86_64</classifier>
+          <version>2.3.0</version>
+          <scope>runtime</scope>
+        </dependency-->
+        <!-- https://mvnrepository.com/artifact/ai.djl.pytorch/pytorch-jni -->
+        <!-- dependency>
+          <groupId>ai.djl.pytorch</groupId>
+          <artifactId>pytorch-jni</artifactId>
+          <version>2.0.1-0.25.0</version>
+          <scope>runtime</scope>
+        </dependency-->
+        <dependency>
+            <groupId>com.krickert.search</groupId>
+            <artifactId>wikisearch-model</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
         <dependency>
             <groupId>io.micronaut.test</groupId>
             <artifactId>micronaut-test-junit5</artifactId>
@@ -95,11 +143,6 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>org.hamcrest</groupId>
-            <artifactId>hamcrest</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
             <scope>test</scope>
@@ -114,18 +157,25 @@
             <artifactId>mockito-core</artifactId>
             <scope>test</scope>
         </dependency>
-        <!-- NON Micronaut -->
-        <!-- https://mvnrepository.com/artifact/com.google.guava/guava -->
         <dependency>
-            <groupId>com.google.guava</groupId>
-            <artifactId>guava</artifactId>
-            <version>33.2.1-jre</version>
+            <groupId>org.testcontainers</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <scope>test</scope>
         </dependency>
-
         <dependency>
-            <groupId>com.krickert.search</groupId>
-            <artifactId>wikisearch-model</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <groupId>org.testcontainers</groupId>
+            <artifactId>testcontainers</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.testcontainers</groupId>
+            <artifactId>consul</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.google.protobuf</groupId>
+            <artifactId>protobuf-java-util</artifactId>
+            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>com.krickert.search</groupId>
@@ -134,52 +184,33 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>com.google.protobuf</groupId>
-            <artifactId>protobuf-java-util</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>io.micronaut.grpc</groupId>
-            <artifactId>micronaut-grpc-runtime</artifactId>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-codec</artifactId>
+            <version>4.1.111.Final</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
-            <groupId>io.micronaut.serde</groupId>
-            <artifactId>micronaut-serde-jackson</artifactId>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-codec-http2</artifactId>
+            <version>4.1.111.Final</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
-            <groupId>io.micronaut.discovery</groupId>
-            <artifactId>micronaut-discovery-client</artifactId>
-            <scope>runtime</scope>
-        </dependency>
-        <dependency>
-            <groupId>javax.annotation</groupId>
-            <artifactId>javax.annotation-api</artifactId>
+            <groupId>io.micronaut.validation</groupId>
+            <artifactId>micronaut-validation</artifactId>
             <scope>compile</scope>
         </dependency>
         <dependency>
-            <groupId>io.micronaut.testresources</groupId>
-            <artifactId>micronaut-test-resources-client</artifactId>
-            <scope>test</scope>
+            <groupId>jakarta.validation</groupId>
+            <artifactId>jakarta.validation-api</artifactId>
+            <scope>compile</scope>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/io.grpc/grpc-netty -->
         <dependency>
-            <groupId>io.grpc</groupId>
-            <artifactId>grpc-netty</artifactId>
-            <version>1.65.0</version>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/io.confluent/kafka-streams-protobuf-serde -->
-        <dependency>
-            <groupId>io.confluent</groupId>
-            <artifactId>kafka-streams-protobuf-serde</artifactId>
-            <version>${kafka-streams-protobuf-serde.version}</version>
+            <groupId>io.micronaut.openapi</groupId>
+            <artifactId>micronaut-openapi-annotations</artifactId>
+            <scope>provided</scope>
         </dependency>
 
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-compress</artifactId>
-            <version>1.26.2</version>
-        </dependency>
 
     </dependencies>
     <build>
@@ -188,7 +219,6 @@
                 <groupId>io.micronaut.maven</groupId>
                 <artifactId>micronaut-maven-plugin</artifactId>
                 <configuration>
-                    <shared>true</shared>
                 </configuration>
             </plugin>
             <plugin>
@@ -216,9 +246,18 @@
                         </path>
                     </annotationProcessorPaths>
                     <compilerArgs>
-                        <arg>-Amicronaut.processing.group=com.krickert.search.service</arg>
-                        <arg>-Amicronaut.processing.module=pipeline-processor</arg>
+                        <arg>-Amicronaut.processing.group=com.krickert.search.grpc.vectorizer</arg>
+                        <arg>-Amicronaut.processing.module=grpc-vectorizer-service</arg>
                     </compilerArgs>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>com.google.cloud.tools</groupId>
+                <artifactId>jib-maven-plugin</artifactId>
+                <configuration>
+                    <to>
+                        <image>docker.io/krickert/${project.name}:${project.version}</image>
+                    </to>
                 </configuration>
             </plugin>
         </plugins>

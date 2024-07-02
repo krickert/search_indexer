@@ -1,0 +1,27 @@
+endpoints:
+  health:
+    enabled: false
+    discovery-client:
+      enabled: false
+grpc:
+  server:
+    port: ${random.port}
+micronaut:
+  server:
+    port: ${random.port}
+  health:
+    monitor:
+      enabled: false
+consul:
+  client:
+    config:
+      enabled: false
+    pool:
+      enabled: false
+    discovery:
+      enabled: false
+    registration:
+      enabled: false
+      check:
+        enabled: false
+    defaultZone: ""
