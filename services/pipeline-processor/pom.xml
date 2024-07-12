@@ -166,7 +166,7 @@
         <dependency>
             <groupId>io.grpc</groupId>
             <artifactId>grpc-netty</artifactId>
-            <version>1.65.0</version>
+            <version>1.65.1</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/io.confluent/kafka-streams-protobuf-serde -->
         <dependency>
