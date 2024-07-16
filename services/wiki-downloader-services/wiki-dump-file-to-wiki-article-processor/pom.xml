@@ -21,7 +21,7 @@
     <micronaut.version>4.3.8</micronaut.version>
     <micronaut.test.resources.enabled>true</micronaut.test.resources.enabled>
     <exec.mainClass>com.krickert.search.pipeline.PipelineProcessorApplication</exec.mainClass>
-    <kafka-streams-protobuf-serde.version>7.6.1</kafka-streams-protobuf-serde.version>
+    <kafka-streams-protobuf-serde.version>7.6.2</kafka-streams-protobuf-serde.version>
   </properties>
 
   <repositories>
