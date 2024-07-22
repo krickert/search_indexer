@@ -8,6 +8,11 @@ micronaut:
       swagger:
         paths: classpath:META-INF/swagger
         mapping: /swagger/**
+consul:
+  client:
+    defaultZone: ${CONSUL_HOST:localhost}:${CONSUL_PORT:8500}
+    registration:
+      enabled: false
 
 grpc:
   server:

@@ -29,5 +29,6 @@
     <modules>
         <module>protobuf-projects</module>
         <module>services</module>
+        <module>integration-tests</module>
     </modules>
 </project>

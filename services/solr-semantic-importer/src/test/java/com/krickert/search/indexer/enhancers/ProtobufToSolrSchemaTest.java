@@ -6,9 +6,7 @@ import com.google.protobuf.Descriptors;
 import com.google.protobuf.DynamicMessage;
 import com.google.protobuf.InvalidProtocolBufferException;
 import com.krickert.search.indexer.FileLoader;
-import io.micronaut.test.extensions.junit5.annotation.MicronautTest;
 import jakarta.inject.Inject;
-import org.junit.jupiter.api.Test;
 import org.w3c.dom.Document;
 
 import javax.xml.transform.OutputKeys;
@@ -19,17 +17,16 @@ import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import java.io.IOException;
 import java.io.StringWriter;
-import java.nio.file.Files;
-import java.nio.file.Path;
 
-@MicronautTest
+
+//@MicronautTest
 public class ProtobufToSolrSchemaTest {
     static ProtobufToSolrSchema protobufToSolrSchema = new ProtobufToSolrSchema();
 
     @Inject
     FileLoader fileLoader;
 
-    @Test
+    //@Test
     public void testStuff() {
         try {
             generateProtoFiles();

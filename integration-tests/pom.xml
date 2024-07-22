@@ -2,9 +2,9 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>com.krickert.search.indexer</groupId>
-  <artifactId>solr-semantic-importer</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  <groupId>com.krickert.search.chunker</groupId>
+  <artifactId>integration-tests</artifactId>
+  <version>0.1</version>
   <packaging>${packaging}</packaging>
 
   <parent>
@@ -18,7 +18,11 @@
     <jdk.version>17</jdk.version>
     <release.version>17</release.version>
     <micronaut.version>4.5.0</micronaut.version>
-    <exec.mainClass>com.krickert.search.indexer.SolrSemanticImporterCommand</exec.mainClass>
+    <micronaut.test.resources.enabled>true</micronaut.test.resources.enabled>
+    <micronaut.aot.enabled>false</micronaut.aot.enabled>
+    <micronaut.aot.packageName>com.krickert.search.chunker.aot.generated</micronaut.aot.packageName>
+    <micronaut.runtime>netty</micronaut.runtime>
+    <exec.mainClass>com.krickert.search.chunker.Application</exec.mainClass>
   </properties>
 
   <repositories>
@@ -30,13 +34,8 @@
 
   <dependencies>
     <dependency>
-      <groupId>info.picocli</groupId>
-      <artifactId>picocli</artifactId>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>io.micronaut.picocli</groupId>
-      <artifactId>micronaut-picocli</artifactId>
+      <groupId>io.micronaut</groupId>
+      <artifactId>micronaut-http-server-netty</artifactId>
       <scope>compile</scope>
     </dependency>
     <dependency>
@@ -55,6 +54,16 @@
       <scope>runtime</scope>
     </dependency>
     <dependency>
+      <groupId>io.micronaut.testresources</groupId>
+      <artifactId>micronaut-test-resources-client</artifactId>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.micronaut</groupId>
+      <artifactId>micronaut-http-client</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
       <groupId>io.micronaut.test</groupId>
       <artifactId>micronaut-test-junit5</artifactId>
       <scope>test</scope>
@@ -63,6 +72,11 @@
       <groupId>org.awaitility</groupId>
       <artifactId>awaitility</artifactId>
       <version>4.2.1</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.hamcrest</groupId>
+      <artifactId>hamcrest</artifactId>
       <scope>test</scope>
     </dependency>
     <dependency>
@@ -76,6 +90,16 @@
       <scope>test</scope>
     </dependency>
     <dependency>
+      <groupId>org.junit.platform</groupId>
+      <artifactId>junit-platform-suite-engine</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.mockito</groupId>
+      <artifactId>mockito-core</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
       <groupId>org.testcontainers</groupId>
       <artifactId>junit-jupiter</artifactId>
       <scope>test</scope>
@@ -86,73 +110,8 @@
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>org.apache.commons</groupId>
-      <artifactId>commons-compress</artifactId>
-      <version>1.26.2</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
       <groupId>org.testcontainers</groupId>
-      <artifactId>solr</artifactId>
-      <version>1.19.8</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.solr</groupId>
-      <artifactId>solr-solrj</artifactId>
-      <version>9.6.1</version>
-    </dependency>
-    <!-- https://mvnrepository.com/artifact/com.github.os72/protobuf-dynamic -->
-    <dependency>
-      <groupId>com.github.os72</groupId>
-      <artifactId>protobuf-dynamic</artifactId>
-      <version>1.0.1</version>
-    </dependency>
-
-    <dependency>
-      <groupId>commons-codec</groupId>
-      <artifactId>commons-codec</artifactId>
-      <version>1.17.0</version>
-    </dependency>
-    <dependency>
-      <groupId>edu.stanford.nlp</groupId>
-      <artifactId>stanford-corenlp</artifactId>
-      <version>4.5.7</version>
-    </dependency>
-    <dependency>
-      <groupId>edu.stanford.nlp</groupId>
-      <artifactId>stanford-corenlp</artifactId>
-      <version>4.5.7</version>
-      <classifier>models</classifier>
-    </dependency>
-    <dependency>
-      <groupId>com.fasterxml.jackson.core</groupId>
-      <artifactId>jackson-databind</artifactId>
-      <version>2.17.2</version>
-    </dependency>
-    <dependency>
-      <groupId>io.micronaut</groupId>
-      <artifactId>micronaut-http-client</artifactId>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>com.google.guava</groupId>
-      <artifactId>guava</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>com.google.protobuf</groupId>
-      <artifactId>protobuf-java-util</artifactId>
-      <version>${protobuf.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>com.krickert.search</groupId>
-      <artifactId>wikisearch-model</artifactId>
-      <version>1.0-SNAPSHOT</version>
-    </dependency>
-    <dependency>
-      <groupId>com.krickert.search</groupId>
-      <artifactId>wikisearch-model-test-resources</artifactId>
-      <version>1.0-SNAPSHOT</version>
+      <artifactId>consul</artifactId>
       <scope>test</scope>
     </dependency>
   </dependencies>
@@ -161,6 +120,9 @@
       <plugin>
         <groupId>io.micronaut.maven</groupId>
         <artifactId>micronaut-maven-plugin</artifactId>
+        <configuration>
+          <configFile>aot-${packaging}.properties</configFile>
+        </configuration>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -175,9 +137,9 @@
 
           <annotationProcessorPaths combine.children="append">
             <path>
-              <groupId>info.picocli</groupId>
-              <artifactId>picocli-codegen</artifactId>
-              <version>${picocli.version}</version>
+              <groupId>io.micronaut</groupId>
+              <artifactId>micronaut-http-validation</artifactId>
+              <version>${micronaut.core.version}</version>
             </path>
             <path>
               <groupId>io.micronaut.serde</groupId>
@@ -192,8 +154,8 @@
             </path>
           </annotationProcessorPaths>
           <compilerArgs>
-            <arg>-Amicronaut.processing.group=com.krickert.search.indexer</arg>
-            <arg>-Amicronaut.processing.module=solr-semantic-importer</arg>
+            <arg>-Amicronaut.processing.group=com.krickert.search.chunker</arg>
+            <arg>-Amicronaut.processing.module=integration-tests</arg>
           </compilerArgs>
         </configuration>
       </plugin>
