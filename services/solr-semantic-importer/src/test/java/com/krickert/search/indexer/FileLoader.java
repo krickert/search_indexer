@@ -32,4 +32,17 @@ public class FileLoader {
             throw new FileNotFoundException(resourceName);
         }
     }
+
+    public byte[] loadResourceBytes(String resourceName) throws IOException {
+        Optional<InputStream> file = resourceLoader.getResourceAsStream(resourceName);
+        if (file.isPresent()) {
+            try (InputStream is = file.get()) {
+                return IOUtils.toByteArray(is);
+            } catch (Exception e) {
+                throw new IOException(e);
+            }
+        } else {
+            throw new FileNotFoundException(resourceName);
+        }
+    }
 }
