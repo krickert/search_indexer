@@ -138,7 +138,7 @@
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-codec</artifactId>
-            <version>4.1.111.Final</version>
+            <version>4.1.112.Final</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
