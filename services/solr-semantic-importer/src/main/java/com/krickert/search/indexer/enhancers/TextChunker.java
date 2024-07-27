@@ -3,7 +3,7 @@ package com.krickert.search.indexer.enhancers;
 import java.util.*;
 import java.lang.Math;
 
-public class TextChunker {
+public class TextChunker implements Chunker {
     
     public static List<String> chunkText(String text, int overlap) {
         return chunkText(text, 300, overlap);
@@ -49,10 +49,6 @@ public class TextChunker {
         return chunks;
     }
 
-    public static void main(String[] args) {
-        List<String> chunks = chunkText(mainText, 300, 30);
-        chunks.forEach(System.out::println);
-    }
 
     public static String mainText =
             "New York, often called New York City[b] or simply NYC, is the most populous city in the United States, located at the southern tip of New York State on one of the world's largest natural harbors. The city comprises five boroughs, each of which is coextensive with a respective county. New York is a global center of finance[11] and commerce, culture and technology,[12] entertainment and media, academics and scientific output,[13] and the arts and fashion, and, as home to the headquarters of the United Nations, is an important center for international diplomacy.[14][15][16][17][18] New York City is the center of the world's principal metropolitan economy.[19]\n" +
@@ -79,4 +75,9 @@ public class TextChunker {
                     "In 1609, the English explorer Henry Hudson rediscovered New York Harbor while searching for the Northwest Passage to the Orient for the Dutch East India Company.[41] He proceeded to sail up what the Dutch called North River (now the Hudson River), named first by Hudson as the Mauritius after Maurice, Prince of Orange.[42]\n" +
                     "\n" +
                     "Hudson claimed the region for the Dutch East India Company. In 1614, the area between Cape Cod and Delaware Bay was claimed by the Netherlands and called Nieuw-Nederland ('New Netherland'). The first non–Native American inhabitant of what became New York City was Juan Rodriguez, a merchant from Santo Domingo who arrived in Manhattan during the winter of 1613–14, trapping for pelts and trading with the local population as a representative of the Dutch colonists.[43][44]";
+
+    @Override
+    public List<String> chunk(String text) {
+        return chunkText(text,300, 30);
+    }
 }

@@ -17,6 +17,29 @@ import java.util.Map;
 public class JsonToSolrDoc {
     ObjectMapper mapper = new ObjectMapper();
 
+    public Collection<String> parseSolrDocumentsToJSON(String jsonString) {
+        Map<String, Object> map;
+        try {
+            map = mapper.readValue(jsonString, new TypeReference<>() {});
+        } catch (JsonProcessingException e) {
+            throw new RuntimeException(e);
+        }
+        Map<String, Object> response = (Map<String, Object>)map.get("response");
+        List<Map<String, Object>> docs = (List<Map<String, Object>>)response.get("docs");
+
+        List<String> jsonDocuments = new ArrayList<>();
+        for (Map<String, Object> doc : docs) {
+            try {
+                doc.remove("_version_");
+                jsonDocuments.add(mapper.writeValueAsString(doc));
+            } catch (JsonProcessingException e) {
+                throw new RuntimeException(e);
+            }
+        }
+
+        return jsonDocuments;
+    }
+
     public HttpSolrSelectResponse parseSolrDocuments(String jsonString) {
         Map<String, Object> map;
         try {

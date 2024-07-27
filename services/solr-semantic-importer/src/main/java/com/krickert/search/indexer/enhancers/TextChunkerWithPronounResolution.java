@@ -48,12 +48,4 @@ public class TextChunkerWithPronounResolution {
         return chunks;
     }
 
-    public static void main(String[] args) {
-        String text = "John is a teacher. He works at a school. He teaches English over there.";
-        TextChunkerWithPronounResolution chunker = new TextChunkerWithPronounResolution();
-        List<String> chunks = chunker.generateChunks(text);
-        for (String chunk : chunks) {
-            System.out.println(chunk);
-        }
-    }
 }

@@ -11,12 +11,14 @@ import edu.stanford.nlp.pipeline.Annotation;
 import edu.stanford.nlp.pipeline.StanfordCoreNLP;
 import edu.stanford.nlp.util.CoreMap;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Properties;
 
-public class DocumentProcessor {
-    public static void main(String[] args) {
+public class PronounResolutionChunker implements Chunker {
+    public List<String> chunk(String text) {
+        List<String> chunks = new ArrayList<>();
         // Initiate StanfordCoreNLP with annotation processors
         Properties props = new Properties();
         props.setProperty("annotators", "tokenize,ssplit,pos,lemma,ner,parse,coref");
@@ -42,6 +44,7 @@ public class DocumentProcessor {
                 String word = token.get(TextAnnotation.class);
                 String pos = token.get(PartOfSpeechAnnotation.class);
                 System.out.println(word + "/" + pos);
+                chunks.add(word + "/" + pos);
             }
             System.out.println();
         }
@@ -55,5 +58,6 @@ public class DocumentProcessor {
             // Print the reference (resolved pronoun) and its corresponding mention (the source)
             System.out.println("Reference:" + chain.getRepresentativeMention() + ", Mention: " + chain.getMentionMap());
         }
+        return chunks;
     }
 }

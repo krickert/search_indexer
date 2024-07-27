@@ -30,7 +30,9 @@ import java.util.stream.Collectors;
  * ```
  */
 @Singleton
-public class OverlapChunker {
+public class OverlapChunker implements Chunker {
+
+
 
     /**
      * Splits the given text into chunks, where each chunk is separated by newlines.
@@ -106,4 +108,8 @@ public class OverlapChunker {
                 .collect(Collectors.toList());
     }
 
+    @Override
+    public List<String> chunk(String text) {
+        return chunkText(text, 300, 30);
+    }
 }

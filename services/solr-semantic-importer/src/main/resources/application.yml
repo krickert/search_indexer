@@ -3,6 +3,13 @@ micronaut:
     name: solr-semantic-importer
 
 indexer:
+  source:
+    solr_version: 7.7.3
+    solr_collection: source_collection
+    seed_data:
+      enabled: false
+      seed_json_file: sample_solr_result.json
+
   solr_source_url: http://localhost:8983/solr
   solr_source_collection: products_source
   solr_destination_url: http://localhost:8984/solr

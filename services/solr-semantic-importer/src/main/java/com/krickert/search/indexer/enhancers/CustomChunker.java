@@ -5,7 +5,7 @@ import edu.stanford.nlp.util.CoreMap;
 import edu.stanford.nlp.ling.CoreAnnotations;
 import java.util.*;
 
-public class CustomChunker {
+public class CustomChunker implements Chunker {
     StanfordCoreNLP pipeline;
     int chunkSize;
 
@@ -16,7 +16,7 @@ public class CustomChunker {
         this.chunkSize = chunkSize;
     }
 
-    public List<String> generateChunks(String text) {
+    public List<String> chunk(String text) {
         List<String> chunks = new ArrayList<>();
         Annotation document = new Annotation(text);
         this.pipeline.annotate(document);
@@ -37,12 +37,4 @@ public class CustomChunker {
         return chunks;
     }
 
-    public static void main(String args[]) {
-        String text = TextChunker.mainText;
-        CustomChunker chunker = new CustomChunker(300);
-        List<String> chunks = chunker.generateChunks(text);
-        for(String chunk: chunks) {
-            System.out.println(chunk);
-        }
-    }
 }
