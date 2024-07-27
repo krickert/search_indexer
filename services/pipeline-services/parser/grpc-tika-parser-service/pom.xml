@@ -20,7 +20,9 @@
     <micronaut.version>4.3.8</micronaut.version>
     <micronaut.test.resources.enabled>true</micronaut.test.resources.enabled>
     <exec.mainClass>com.krickert.search.parser.TikaServerGrpcApplication</exec.mainClass>
-    <kafka-streams-protobuf-serde.version>7.6.2</kafka-streams-protobuf-serde.version>
+    <kafka-streams-protobuf-serde.version>7.7.0</kafka-streams-protobuf-serde.version>
+    <maven.compiler.source>17</maven.compiler.source>
+    <maven.compiler.target>17</maven.compiler.target>
   </properties>
 
   <repositories>

@@ -18,10 +18,12 @@
     <packaging>jar</packaging>
     <jdk.version>17</jdk.version>
     <release.version>17</release.version>
-    <micronaut.version>4.3.8</micronaut.version>
+    <micronaut.version>4.5.1</micronaut.version>
     <micronaut.test.resources.enabled>true</micronaut.test.resources.enabled>
     <exec.mainClass>com.krickert.search.WikiArticleProcessorApplication</exec.mainClass>
     <kafka-streams-protobuf-serde.version>7.7.0</kafka-streams-protobuf-serde.version>
+    <maven.compiler.source>17</maven.compiler.source>
+    <maven.compiler.target>17</maven.compiler.target>
   </properties>
 
   <repositories>

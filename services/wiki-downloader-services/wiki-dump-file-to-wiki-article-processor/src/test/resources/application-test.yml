@@ -5,6 +5,6 @@ consul:
   client:
     registration:
       enabled: false
-wiki.article.create_dummy_data: false
+wiki.article.create_dummy_data: true
 wikipedia:
   send-only-articles: false
