@@ -23,10 +23,11 @@ The point of this project is to have a fully open source solution to download wi
 ### deploy docker containers
 `./mvnw -Dpackaging=docker deploy`
 ### Start micronaut test housing
+If you're in intellij, and the unit tests are not starting right - run this
 `./mvnw mn:start-testresources-service`
 
 I'm only putting this in here because whenever I try to run micronaut tests in my jetbrains IDE, it doesn't seem to start right.  Running this makes my tests runnable in IntelliJ
-
+=
 ## Dependent services
 The following open source projects are needed for this to work end-to-end:
 * Solr 9.6

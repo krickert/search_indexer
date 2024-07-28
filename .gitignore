@@ -46,3 +46,5 @@ build/
 gradle
 
 *.log
+
+*.dump
