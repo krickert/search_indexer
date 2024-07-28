@@ -1,8 +1,69 @@
 # RAG engine powered by wikipedia data
-This project is made to provde a full fledged search engine and RAG for all of wikipedia data.  It's your portable genius and FULLY open source - no amazon bill and can run on your laptop if it can handle the load.
+This project is made to provide a full fledged search engine and RAG for all of wikipedia data.  It's your portable genius and FULLY 
+open source - no amazon bill and can run on your laptop if it can handle the load.
 
 If you want to help with this, let me know.
 
+# Why build this Wiki RAG
+* Gain hands-on experience as to how to build an enterprise pipeline.
+* Wiki data is well structured and curated as accurate, so it makes a great input to augment and test large language models in your system.
+* You can try multiple search engines fast and evaluate their impact on a final output
+
+# I want a RAG fast, why not just [Bedrock](https://aws.amazon.com/bedrock/) or [Google Vertex](https://cloud.google.com/vertex-ai?hl=en)?
+## This might not be a bad idea
+This is a great point, and there are a lot of solutions that work well for these products - especially if your organization allows the 
+use of a 3rd party internet LLM like Gemini.  There are a lot of situations where this is a far better solution - but you have to know 
+what you're looking at before you decide which is the better approach. 
+## This wiki indexer will teach you the fine line of those complexities 
+By learning RAG with this project you will understand the components that work within it.  It will teach you which 
+features to look for when selecting a RAG solution - a task that can take at least months of research.
+## Off the shelf solution discussion
+### 3rd party solutions are expensive to test, and may not be a good solution anyway
+While solutions offered by Amazon, Google, Microsoft, and other tech giants can be great for getting a chatbot up and running quickly, they might not be the best fit for certain enterprise-scale applications. 
+
+Here are a few reasons why:
+* __Customization__: In-house, self-built solutions can be tailored exactly to the needs of the enterprise. This level of customization might not be possible with off-the-shelf solutions.
+* __Ownership and Control__: With a self-built solution, you have full control over your data, and how it is stored and processed. This can 
+  be important for compliance with certain regulations.
+* __Scaling and Performance__: While big tech companies offer decent scalability, there might be specific performance considerations within an enterprise that can be better addressed with a custom solution.
+* __Cost__: While using a managed solution can reduce upfront costs, the ongoing costs can increase significantly with increasing usage. In 
+  the long run, an in-house solution can cost less.
+
+### When can a 3rd party solution work?
+That being said, turnkey solutions are constantly evolving, and they can still be a good choice for many organizations, depending on 
+their specific needs and resources. 
+
+It also comes down to the level of expertise and resources available within an organization to develop, maintain, and scale a custom 
+solution.
+
+In conclusion, it's all about finding the right balance between the specific needs of your organization, the advantages of turnkey solutions, and the resources available for a custom-built solution. 
+
+A feasible approach could be to start with a turnkey solution to understand the requirements and constraints, and then gradually move to a custom solution as needs grow and become more specific.
+
+But this project gets your hands dirty on day 1 - you get a large corpus of semi-structured curated factual data gigabytes in size.  
+
+It'll help answer if you're biting off more than you can chew.  
+
+# Things this project does that will be part of a book
+
+1. **Understanding of RAG**: You would gain a solid understanding of RAG (Retrieval-Augmented Generation) engines, which are crucial 
+for modern AI applications. 
+2. **Big Data Processing**: Through the Kafka pipeline and data loading process, learn about handling big data and the challenges associated with it. 
+3. **Microservices Architecture**: The use of Docker containers illustrate the advantages and design principles of a microservices architecture. 
+4. **Distributed System Scaling**: Exploring how this and similar architectures can run on a single laptop or scale to a much larger 
+   infrastructure.  You would be exposed to concepts of distributed systems and scaling. 
+5. **Deployment and Orchestration**: Exploring Docker.io and the use of Docker-compose files would equip readers to handle application deployment and orchestration. 
+6. **End-to-End Testing**: Given the project's integration with Testcontainers, readers would learn the importance of and methods for comprehensive end-to-end testing.
+7. **Knowledge in Different Cloud Platforms**: They would gain knowledge about the offerings of Amazon, Google, and Microsoft, making it 
+   easier to make informed decisions about cloud services. 
+8. **Building a Custom Solution vs. Using Turnkey Solutions**: The readers would learn about the trade-offs between custom models and turnkey solutions, like those offered by big tech companies. 
+9. **Hands-On Experimentation**: The project would provide a concrete, real-world application to experiment with, complementing the theoretical learning. 
+10. **Navigating Project Obstacles**: Lessons drawn from this project can contain wisdom about dealing with non-technical challenges of 
+    software projects, like convincing stakeholders and managing varying levels of technical literacy.
+
+
+
+# Technical steps this project does now
 What this project does:
 1. Grabs data
     1. Downloads wiki dumps from wikimedia.org
@@ -60,7 +121,8 @@ This project sets out to:
 
 Most of my career has been in analytics or search technologies.  When working under these umbrellas, I don't spend much time testing the software as I do getting data into the new software.  This can include hours of time parsing files, crawling sites, writing SQL calls, etc.  
 
-Fast forward to 2023, there is a large set of many data sources publicly available to perfrom the above tasks.  So this software is set to do exactly that: take public well-known data and parse it for consuming on other apps.
+Fast forward to 2024, there is a large set of many data sources publicly available to perform the above tasks.  So this software is set to 
+do exactly that: take public well-known data and parse it for consuming on other apps.
 
 ## Overview
 This project is made to be an OOTB enterprise data pipeline for processing data from multiple 
