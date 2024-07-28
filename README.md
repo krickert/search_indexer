@@ -1,5 +1,38 @@
-# search_indexer
-Welcome to the search indexing project.  I've been working on search technologies for 15 years, and created this project to release code patterns I've seen in the industry that aren't easily done when testing new search technologies.
+# RAG engine powered by wikipedia data
+This project is made to provde a full fledged search engine and RAG for all of wikipedia data.  It's your portable genius and FULLY open source - no amazon bill and can run on your laptop if it can handle the load.
+
+If you want to help with this, let me know.
+
+What this project does:
+1. Grabs data
+    1. Downloads wiki dumps from wikimedia.org
+    1. Parses said files parallel using a kafka set of topics
+    1. Serializes data into a protocol buffer format
+5. Parses
+    1. Turns the wiki text into pain text for processing
+    1. Chunks the data
+8. Enhances
+    1. Creates vectors for said data (with a custom hugging face model downloading by the DJL library created by Amazon)
+    1. Performs an NLP Named Entity Recognition on any field for further processing within the wiki text
+    1. Provide a custom pipeline for any other steps in between
+12. Searches
+    1. Saves said data into a search engine for a semantic search engine (Solr supported, little work to use OpenSearch)
+12. Queries
+    1. Performs vector queries on search engine
+
+TODO
+1. Use query results for context into a RAG (complete)
+2. Create interfaces for RAG Prompt and output (complete)
+3. Write 2-3 implementations of prompt (not started)
+4. Write a front end (not started, using swagger-ui)
+5. Utilize a job runner (in progress)
+6. Create a web crawler (in progress)
+7. Integrate open source web analytics solution to the front end (in progress)
+
+
+Welcome to the Wiki RAG project.  Please note that this project is not part of the wikimedia foundation, but they've been great at helping me get this framework to where it is now.
+
+I've been working on search technologies for 15 years, and created this project to release code patterns I've seen in the industry that aren't easily done when testing new search technologies.
 
 The biggest problem I've seen with search is indexing - the search portion is about 10% of a project.  Wranging data into the engine is where most of the efforts are drawn.
 
