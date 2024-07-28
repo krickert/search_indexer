@@ -22,7 +22,7 @@
         <micronaut.aot.packageName>com.krickert.search.chunker.aot.generated</micronaut.aot.packageName>
         <micronaut.test.resources.enabled>true</micronaut.test.resources.enabled>
         <micronaut.runtime>netty</micronaut.runtime>
-        <exec.mainClass>com.krickert.search.chunker.Application</exec.mainClass>
+        <exec.mainClass>com.krickert.search.chunker.ChunkerMain</exec.mainClass>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
     </properties>
