@@ -5,20 +5,20 @@ If you want to help with this, let me know.
 
 What this project does:
 1. Grabs data
-   2.Downloads wiki dumps from wikimedia.org
-   3. Parses said files parallel using a kafka set of topics
-   4. Serializes data into a protocol buffer format
+    1. Downloads wiki dumps from wikimedia.org
+    1. Parses said files parallel using a kafka set of topics
+    1. Serializes data into a protocol buffer format
 5. Parses
-   6. Turns the wiki text into pain text for processing
-   7. Chunks the data
+    1. Turns the wiki text into pain text for processing
+    1. Chunks the data
 8. Enhances
-   9. Creates vectors for said data (with a custom hugging face model downloading by the DJL library created by Amazon)
-   9. Performs an NLP Named Entity Recognition on any field for further processing within the wiki text
-   10. Provide a custom pipeline for any other steps in between
-11. Searches
-   11. Saves said data into a search engine for a semantic search engine (Solr supported, little work to use OpenSearch)
+    1. Creates vectors for said data (with a custom hugging face model downloading by the DJL library created by Amazon)
+    1. Performs an NLP Named Entity Recognition on any field for further processing within the wiki text
+    1. Provide a custom pipeline for any other steps in between
+12. Searches
+    1. Saves said data into a search engine for a semantic search engine (Solr supported, little work to use OpenSearch)
 12. Queries
-   13. Performs vector queries on search engine
+    1. Performs vector queries on search engine
 
 TODO
 1. Use query results for context into a RAG (complete)
