@@ -10,14 +10,14 @@
   <parent>
     <groupId>io.micronaut.platform</groupId>
     <artifactId>micronaut-parent</artifactId>
-    <version>4.5.0</version>
+    <version>4.5.1</version>
     <relativePath/>
   </parent>
   <properties>
     <packaging>jar</packaging>
     <jdk.version>17</jdk.version>
     <release.version>17</release.version>
-    <micronaut.version>4.3.8</micronaut.version>
+    <micronaut.version>4.5.1</micronaut.version>
     <micronaut.aot.enabled>false</micronaut.aot.enabled>
     <micronaut.aot.packageName>com.krickert.search.crawler.manager.aot.generated</micronaut.aot.packageName>
     <jib.docker.image>${project.artifactId}</jib.docker.image>
@@ -25,6 +25,8 @@
     <micronaut.runtime>netty</micronaut.runtime>
     <jobrunr.version>7.2.2</jobrunr.version>
     <exec.mainClass>com.krickert.search.crawler.manager.Application</exec.mainClass>
+    <maven.compiler.source>17</maven.compiler.source>
+    <maven.compiler.target>17</maven.compiler.target>
   </properties>
 
   <repositories>

@@ -10,16 +10,18 @@
     <parent>
         <groupId>io.micronaut.platform</groupId>
         <artifactId>micronaut-parent</artifactId>
-        <version>4.5.0</version>
+        <version>4.5.1</version>
         <relativePath/>
     </parent>
     <properties>
         <packaging>jar</packaging>
         <jdk.version>17</jdk.version>
         <release.version>17</release.version>
-        <micronaut.version>4.5.0</micronaut.version>
+        <micronaut.version>4.5.1</micronaut.version>
         <micronaut.test.resources.enabled>true</micronaut.test.resources.enabled>
         <exec.mainClass>com.krickert.search.service.grpc.VactorizerApplication</exec.mainClass>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
     </properties>
 
     <repositories>
@@ -85,7 +87,7 @@
         <dependency>
             <groupId>ai.djl.huggingface</groupId>
             <artifactId>tokenizers</artifactId>
-            <version>0.28.0</version>
+            <version>0.29.0</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-compress -->
         <dependency>
@@ -96,13 +98,13 @@
         <dependency>
             <groupId>ai.djl.pytorch</groupId>
             <artifactId>pytorch-model-zoo</artifactId>
-            <version>0.28.0</version>
+            <version>0.29.0</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/ai.djl.pytorch/pytorch-native-cpu -->
         <dependency>
             <groupId>ai.djl.pytorch</groupId>
             <artifactId>pytorch-native-cpu</artifactId>
-            <version>2.3.0</version>
+            <version>2.3.1</version>
         </dependency>
         <!-- for GPU acceleration but made jar 1.6G -->
         <!-- If running this on an x86 machine, it's good to turn this on if you have an nvidia GPU -->
@@ -186,13 +188,13 @@
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-codec</artifactId>
-            <version>4.1.111.Final</version>
+            <version>4.1.112.Final</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-codec-http2</artifactId>
-            <version>4.1.111.Final</version>
+            <version>4.1.112.Final</version>
             <scope>compile</scope>
         </dependency>
         <dependency>

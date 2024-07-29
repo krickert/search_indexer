@@ -10,17 +10,19 @@
     <parent>
         <groupId>io.micronaut.platform</groupId>
         <artifactId>micronaut-parent</artifactId>
-        <version>4.5.0</version>
+        <version>4.5.1</version>
         <relativePath/>
     </parent>
     <properties>
         <packaging>jar</packaging>
         <jdk.version>17</jdk.version>
         <release.version>17</release.version>
-        <micronaut.version>4.5.0</micronaut.version>
+        <micronaut.version>4.5.1</micronaut.version>
         <micronaut.test.resources.enabled>true</micronaut.test.resources.enabled>
         <exec.mainClass>com.krickert.search.pipeline.PipelineProcessorApplication</exec.mainClass>
-        <kafka-streams-protobuf-serde.version>7.6.2</kafka-streams-protobuf-serde.version>
+        <kafka-streams-protobuf-serde.version>7.7.0</kafka-streams-protobuf-serde.version>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
     </properties>
 
     <repositories>
