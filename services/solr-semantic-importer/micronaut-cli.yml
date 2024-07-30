@@ -1,0 +1,6 @@
+applicationType: cli
+defaultPackage: com.krickert.search.indexer
+testFramework: junit
+sourceLanguage: java
+buildTool: maven
+features: [app-name, awaitility, http-client-test, java, junit, logback, maven, maven-enforcer-plugin, picocli, picocli-java-application, picocli-junit, readme, serialization-jackson, shade, testcontainers, yaml, yaml-build]

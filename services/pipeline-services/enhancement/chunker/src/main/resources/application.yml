@@ -1,0 +1,26 @@
+micronaut:
+  router:
+    static-resources:
+      swagger:
+        paths: classpath:META-INF/swagger
+        mapping: /swagger/**
+      swagger-ui:
+        paths: classpath:META-INF/swagger/views/swagger-ui
+        mapping: /swagger-ui/**
+  application:
+    name: chunker
+  server:
+    port: 60403
+consul:
+  client:
+    defaultZone: ${CONSUL_HOST:localhost}:${CONSUL_PORT:8500}
+    registration:
+      enabled: true
+grpc:
+  server:
+    port: 50403
+endpoints:
+  health:
+    enabled: true
+    sensitive: false
+

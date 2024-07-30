@@ -1,0 +1,12 @@
+This is a quick readme to document how I was able to finally compile the confluent version of kafka.
+
+The goal here is to ultimately compile against the latest version of protobuf.
+
+* install build tools
+maven
+gradle
+scala
+
+
+git clone
+./gradlewAll publishToMavenLocal

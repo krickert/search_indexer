@@ -1,0 +1,32 @@
+{
+  "responseHeader": {
+    "zkConnected": true,
+    "status": 0,
+    "QTime": 26,
+    "params": {
+      "q": "*:*",
+      "indent": "true",
+      "q.op": "OR",
+      "useParams": ""
+    }
+  },
+  "response": {
+    "numFound": 2,
+    "start": 0,
+    "numFoundExact": true,
+    "docs": [
+      {
+        "id": "1",
+        "name": "Example product 1",
+        "price": 10.5,
+        "category": "Books"
+      },
+      {
+        "id": "2",
+        "name": "Example product 2",
+        "price": 20.0,
+        "category": "Electronics"
+      }
+    ]
+  }
+}

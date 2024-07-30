@@ -10,7 +10,7 @@
   <parent>
     <groupId>io.micronaut.platform</groupId>
     <artifactId>micronaut-parent</artifactId>
-    <version>4.4.1</version>
+    <version>4.5.1</version>
     <relativePath/>
   </parent>
 
@@ -18,10 +18,12 @@
     <packaging>jar</packaging>
     <jdk.version>17</jdk.version>
     <release.version>17</release.version>
-    <micronaut.version>4.3.8</micronaut.version>
+    <micronaut.version>4.5.1</micronaut.version>
     <micronaut.test.resources.enabled>true</micronaut.test.resources.enabled>
     <exec.mainClass>com.krickert.search.WikiArticleProcessorApplication</exec.mainClass>
-    <kafka-streams-protobuf-serde.version>7.6.1</kafka-streams-protobuf-serde.version>
+    <kafka-streams-protobuf-serde.version>7.7.0</kafka-streams-protobuf-serde.version>
+    <maven.compiler.source>17</maven.compiler.source>
+    <maven.compiler.target>17</maven.compiler.target>
   </properties>
 
   <repositories>
@@ -135,7 +137,7 @@
     <dependency>
       <groupId>org.apache.commons</groupId>
       <artifactId>commons-lang3</artifactId>
-      <version>3.14.0</version>
+      <version>3.15.0</version>
     </dependency>
     <dependency>
       <groupId>info.picocli</groupId>
@@ -184,13 +186,13 @@
     <dependency>
       <groupId>commons-codec</groupId>
       <artifactId>commons-codec</artifactId>
-      <version>1.16.1</version>
+      <version>1.17.1</version>
     </dependency>
     <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-compress -->
     <dependency>
       <groupId>org.apache.commons</groupId>
       <artifactId>commons-compress</artifactId>
-      <version>1.26.1</version>
+      <version>1.26.2</version>
     </dependency>
     <!-- https://mvnrepository.com/artifact/info.bliki.wiki/bliki-core -->
     <dependency>
@@ -235,7 +237,7 @@
     <dependency>
       <groupId>io.grpc</groupId>
       <artifactId>grpc-netty</artifactId>
-      <version>1.63.0</version>
+      <version>1.65.1</version>
     </dependency>
     <dependency>
       <groupId>org.testcontainers</groupId>
@@ -281,6 +283,15 @@
             <arg>-Amicronaut.processing.group=com.krickert.search.services.kafka</arg>
             <arg>-Amicronaut.processing.module=wiki-article-to-pipedocument-processor</arg>
           </compilerArgs>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>com.google.cloud.tools</groupId>
+        <artifactId>jib-maven-plugin</artifactId>
+        <configuration>
+          <to>
+            <image>docker.io/krickert/${project.name}:${project.version}</image>
+          </to>
         </configuration>
       </plugin>
     </plugins>

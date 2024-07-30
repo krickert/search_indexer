@@ -1,0 +1,35 @@
+version: "3.8"
+
+services:
+  kafka-bitnami:
+    image: bitnami/kafka
+    hostname: kafka
+    ports:
+      - "9092:9092"
+      - "29092:29092"
+    environment:
+
+      KAFKA_CFG_PROCESS_ROLES: controller,broker
+      KAFKA_CFG_NODE_ID: kafka-kraft-bitnami
+      # Disable Zookeeper and enable KRaft
+      KAFKA_CFG_ENABLE_ZOOKEEPER: false
+      KAFKA_KRAFT_METADATA_OVERRIDE: true  # Not strictly necessary for recent versions
+      # Define listeners and advertised listeners
+      KAFKA_LISTENERS: PLAINTEXT://:9092,PLAINTEXT_INTERNAL://:29092
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:9092,PLAINTEXT_INTERNAL://kafka:29092
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_INTERNAL:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT_INTERNAL
+      # Set broker ID (adjust if running multiple brokers)
+      KAFKA_BROKER_ID: 1
+
+  kafka-ui-bitnami:
+    image: provectuslabs/kafka-ui:latest
+    ports:
+      - "8080:8080"
+    depends_on:
+      - kafka-bitnami
+    environment:
+      KAFKA_CONNECT: kafka:9092
+
+volumes:
+  kafka-data:
