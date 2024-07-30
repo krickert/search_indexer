@@ -24,4 +24,5 @@ endpoints:
   health:
     enabled: true
     sensitive: false
-
+    discovery-client:
+      enabled: false

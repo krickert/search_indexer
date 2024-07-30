@@ -1,4 +1,4 @@
-package com.krickert.search.service.vectorizer;
+package com.krickert.search.vectorizer;
 
 import ai.djl.MalformedModelException;
 import ai.djl.huggingface.translator.TextEmbeddingTranslatorFactory;
@@ -8,8 +8,8 @@ import ai.djl.repository.zoo.ModelNotFoundException;
 import ai.djl.repository.zoo.ZooModel;
 import ai.djl.translate.TranslateException;
 import com.google.common.collect.Lists;
+import io.micronaut.context.annotation.Prototype;
 import io.micronaut.context.annotation.Value;
-import jakarta.inject.Singleton;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -24,7 +24,7 @@ import java.util.List;
  * The Vectorizer class is responsible for converting text inputs into vector embeddings
  * using a pre-trained model.
  */
-@Singleton
+@Prototype
 public class SentenceVectorizer implements Vectorizer {
 
     private static final Logger log = LoggerFactory.getLogger(SentenceVectorizer.class);

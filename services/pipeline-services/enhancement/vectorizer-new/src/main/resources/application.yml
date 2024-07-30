@@ -1,13 +1,16 @@
 micronaut:
-  server:
-    port: 60401
-  application:
-    name: vectorizer
   router:
     static-resources:
       swagger:
         paths: classpath:META-INF/swagger
         mapping: /swagger/**
+      swagger-ui:
+        paths: classpath:META-INF/swagger/views/swagger-ui
+        mapping: /swagger-ui/**
+  server:
+    port: 60401
+  application:
+    name: vectorizer
 consul:
   client:
     defaultZone: ${CONSUL_HOST:localhost}:${CONSUL_PORT:8500}
@@ -21,6 +24,8 @@ endpoints:
   health:
     enabled: true
     sensitive: false
+    discovery-client:
+      enabled: false
 vectorizer:
   model:
     #you can download the model from the djl projeect: https://github.com/deepjavalibrary/djl/tree/master/extensions/tokenizers/src/main/python/djl_converter

@@ -1,4 +1,4 @@
-package com.krickert.search.service.vectorizer;
+package com.krickert.search.vectorizer;
 
 public record StringBodyRequest(String text) {
 }

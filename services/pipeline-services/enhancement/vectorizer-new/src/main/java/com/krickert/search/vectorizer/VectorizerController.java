@@ -1,4 +1,4 @@
-package com.krickert.search.service.vectorizer;
+package com.krickert.search.vectorizer;
 
 import io.micronaut.http.MediaType;
 import io.micronaut.http.annotation.Body;
