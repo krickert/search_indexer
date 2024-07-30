@@ -1,0 +1,6 @@
+applicationType: messaging
+defaultPackage: com.krickert.search.indexer.solr
+testFramework: junit
+sourceLanguage: java
+buildTool: maven
+features: [ app-name, assertj, awaitility, hamcrest, http-client-test, java, java-application, jib, junit, junit-platform-suite-engine, kafka, logback, maven, maven-enforcer-plugin, mockito, readme, serialization-jackson, shade, test-resources, testcontainers, yaml, yaml-build ]

@@ -1,0 +1,16 @@
+consul:
+  client:
+    registration:
+      enabled: false
+grpc:
+  server:
+    port: ${random.port}
+micronaut:
+  server:
+    port: ${random.port}
+  health:
+    monitor:
+      enabled: false
+endpoints:
+  health:
+    enabled: false

@@ -18,6 +18,7 @@ import org.slf4j.LoggerFactory;
 
 import java.util.Collection;
 import java.util.Map;
+import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
@@ -70,7 +71,7 @@ class GrpcEmbeddingsServiceTest {
         // Override OnError ...
     };
 
-    private final Collection<EmbeddingsVectorsReply> finishedEmbeddingsVectorsReply = Lists.newArrayList();
+    private final Collection<EmbeddingsVectorsReply> finishedEmbeddingsVectorsReply = new ConcurrentLinkedQueue<>();
     StreamObserver<EmbeddingsVectorsReply> streamEmbeddingsVectorsReplyObserver = new StreamObserver<>() {
         @Override
         public void onNext(EmbeddingsVectorsReply reply) {
@@ -84,7 +85,7 @@ class GrpcEmbeddingsServiceTest {
 
         @Override
         public void onCompleted() {
-            log.info("Finished");
+            log.info("Finished finishedEmbeddingsVectorsReply size: {}", finishedEmbeddingsVectorsReply.size());
         }
 
         // Override OnError ...
@@ -93,6 +94,7 @@ class GrpcEmbeddingsServiceTest {
 
     @Test
     void testEmbeddingsVectorServerEndpoint() {
+        log.info("Starting embeddings vector server");
         Collection<String> documentBodies = TestDataHelper.getFewHunderedPipeDocuments().stream().map(PipeDocument::getBody).toList();
         for (String text : documentBodies) {
             EmbeddingsVectorRequest request = EmbeddingsVectorRequest.newBuilder()
@@ -101,13 +103,14 @@ class GrpcEmbeddingsServiceTest {
             assertNotNull(reply);
             assertTrue(reply.getEmbeddingsList().size() > 100);
         }
+        log.info("Finished embeddings vector server");
     }
 
-    @Ignore
     @Test
     void testEmbeddingsVectorAsyncEndpoint() {
         //TODO latest changes broke this test
 
+        log.info("Starting embeddings vector async endpoint");
         Collection<String> titles = TestDataHelper.getFewHunderedPipeDocuments().stream().map(PipeDocument::getTitle).toList();
         for (String title : titles) {
             EmbeddingsVectorRequest request = EmbeddingsVectorRequest.newBuilder()

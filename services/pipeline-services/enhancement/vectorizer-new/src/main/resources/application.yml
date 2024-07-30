@@ -1,0 +1,35 @@
+micronaut:
+  router:
+    static-resources:
+      swagger:
+        paths: classpath:META-INF/swagger
+        mapping: /swagger/**
+      swagger-ui:
+        paths: classpath:META-INF/swagger/views/swagger-ui
+        mapping: /swagger-ui/**
+  server:
+    port: 60401
+  application:
+    name: vectorizer
+consul:
+  client:
+    defaultZone: ${CONSUL_HOST:localhost}:${CONSUL_PORT:8500}
+    registration:
+      enabled: false
+
+grpc:
+  server:
+    port: 50401
+endpoints:
+  health:
+    enabled: true
+    sensitive: false
+    discovery-client:
+      enabled: false
+vectorizer:
+  model:
+    #you can download the model from the djl projeect: https://github.com/deepjavalibrary/djl/tree/master/extensions/tokenizers/src/main/python/djl_converter
+    #then run  python3 ./model_zoo_importer.py -m all-MiniLN-L6-v2
+    #be sure to install the requirements from that directory in the project.  https://github.com/deepjavalibrary/djl/tree/master/extensions/tokenizers/src/main/python/djl_converter
+    #url: "file:/Users/krickert/models/all-MiniLM-L6-v2.zip"
+    url: "djl://ai.djl.huggingface.pytorch/sentence-transformers/all-MiniLM-L12-v2"
