@@ -2,6 +2,7 @@ package com.krickert.search.wiki.dump.file.component;
 
 import com.krickert.search.model.wiki.Link;
 import com.krickert.search.wiki.dump.file.component.WikiURLExtractor;
+import io.micronaut.test.extensions.junit5.annotation.MicronautTest;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -11,6 +12,7 @@ import java.util.List;
  * This class includes tests for the WikiURLExtractor.
  * It contains a test for the 'parseUrlEntries' method.
  */
+@MicronautTest
 public class WikiURLExtractorUnitTest {
 
     /**

@@ -4,10 +4,10 @@ micronaut:
   executors:
     consumer:
       type: fixed
-      nThreads: 10
+      nThreads: 40
     producer:
       type: fixed
-      nThreads: 10
+      nThreads: 40
       
 consul:
   client:
@@ -18,6 +18,11 @@ consul:
 kafka:
   enabled: true
   schema.registry.url: http://localhost:8081
+  consumers:
+    wiki-parsed-article:
+      max:
+        poll:
+          records: 1000
   key:
     serializer: org.apache.kafka.common.serialization.UUIDSerializer
     deserializer: org.apache.kafka.common.serialization.UUIDDeserializer
@@ -30,6 +35,7 @@ download:
   threads: 3
   connection-url: https://dumps.wikimedia.org/enwiki/latest/
   max-tries: 3
+
 wikipedia:
   md5-url: https://dumps.wikimedia.org/enwiki/latest/
   download-location: /Volumes/BigDataFun/wikidownloads
@@ -39,3 +45,10 @@ wikipedia:
   parse-only-articles: true               #avoid redirects or other garbage
   add-wiki-text: false
   paragraph-strategy: section
+
+pipeline:
+  queue:
+    capacity: 100000
+    core-pool-size: 1
+    poll-time-seconds: 4
+    delay-in-seconds: 2

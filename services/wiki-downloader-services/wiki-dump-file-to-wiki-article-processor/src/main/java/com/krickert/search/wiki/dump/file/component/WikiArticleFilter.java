@@ -34,14 +34,16 @@ public class WikiArticleFilter implements IArticleFilter {
     final WikiMarkupCleaner cleaner;
     final WikiURLExtractor urlExtractor;
     final Boolean articlesOnly;
+    final WikiDumpFileCounter counter;
 
 
     @Inject
-    public WikiArticleFilter(WikiArticleProducer producer, WikiMarkupCleaner cleaner, WikiURLExtractor urlExtractor, @Value("${wikipedia.send-only-articles}") Boolean articlesOnly) {
+    public WikiArticleFilter(WikiArticleProducer producer, WikiMarkupCleaner cleaner, WikiURLExtractor urlExtractor, @Value("${wikipedia.send-only-articles}") Boolean articlesOnly, WikiDumpFileCounter counter) {
         this.producer = checkNotNull(producer);
         this.cleaner = checkNotNull(cleaner);
         this.urlExtractor = checkNotNull(urlExtractor);
-        this.articlesOnly = articlesOnly;
+        this.articlesOnly = checkNotNull(articlesOnly);
+        this.counter = checkNotNull(counter);
     }
 
     private static boolean notNull(Object o) {
@@ -62,11 +64,13 @@ public class WikiArticleFilter implements IArticleFilter {
     public void process(WikiArticle article, Siteinfo siteinfo) {
         if (articlesOnly && findWikiCategory(article.getTitle(), article.getText()) != WikiType.ARTICLE) {
             log.info("Only sending articles.  Skipping {}:{}", article.getId(), article.getTitle());
+            counter.incrementDocumentSkip();
             return;
         }
         log.info("Sending {}:{}", article.getId(), article.getTitle());
         com.krickert.search.model.wiki.WikiArticle protoArticle = createWikiArticleProto(article, siteinfo);
         producer.sendParsedArticleProcessingRequest(createKey(protoArticle.getId()), protoArticle);
+        counter.incrementDocumentCount();
     }
 
     /**

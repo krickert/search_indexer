@@ -34,7 +34,7 @@ public class DownloadMd5WikiFileServiceImpl implements DownloadMd5WikiFileServic
     /**
      * Represents the name of the file to be downloaded from Wikipedia.
      */
-    public static final String DOWNLOAD_WIKI_FILENAME = "enwiki-latest-md5sums.txt";
+    public static final String DOWNLOAD_WIKI_FILENAME = "enwiki-20240120-md5sums.txt";
 
     /**
      * Represents the name of the wiki file for downloading.

@@ -42,7 +42,7 @@ public class VectorizerPipelineEndpoint extends PipeServiceGrpc.PipeServiceImplB
      */
     @Override
     public void send(PipeRequest req, StreamObserver<PipeReply> responseObserver) {
-        PipeDocument.Builder document = prepareDocument(req);
+        PipeDocument.Builder document = prepareDocument(req.getDocument());
         PipeReply reply = prepareReply(document);
         sendReply(responseObserver, reply);
     }
@@ -53,8 +53,8 @@ public class VectorizerPipelineEndpoint extends PipeServiceGrpc.PipeServiceImplB
      * @param req The request for sending the document.
      * @return The prepared document.
      */
-    private PipeDocument.Builder prepareDocument(PipeRequest req) {
-        PipeDocument.Builder document = req.getDocument().toBuilder();
+    public PipeDocument.Builder prepareDocument(PipeDocument req) {
+        PipeDocument.Builder document = req.toBuilder();
         Map<String, Value> embeddingsToUpdate = createEmbeddingsMapForDocument(document);
         document.mergeCustomData(Struct.newBuilder().putAllFields(embeddingsToUpdate).build());
         return document;

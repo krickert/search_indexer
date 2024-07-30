@@ -2,14 +2,14 @@ micronaut:
   application:
     name: pipeline-processor
   server:
-    port: 60400
+    port: 60421
   executors:
     consumer:
       type: fixed
-      nThreads: 10
+      nThreads: 100
     producer:
       type: fixed
-      nThreads: 10
+      nThreads: 100
 
 consul:
   client:
@@ -24,7 +24,7 @@ grpc:
     discovery:
       enabled: true
   server:
-    port: 50400
+    port: 50421
 kafka:
   enabled: true
   schema.registry.url: http://localhost:8081
@@ -34,6 +34,7 @@ kafka:
   value:
     serializer: io.confluent.kafka.serializers.protobuf.KafkaProtobufSerializer
     deserializer: io.confluent.kafka.serializers.protobuf.KafkaProtobufDeserializer
+
 
 
 pipeline-config:

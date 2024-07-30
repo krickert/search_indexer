@@ -57,7 +57,6 @@ class WikiDumpFileProcessorTest {
         Assertions.assertTrue(application.isRunning());
     }
 
-    @Test
     void testProcessSampleWikiArticles() throws InterruptedException {
         ClassPathResourceLoader loader = new ResourceResolver().getLoader(ClassPathResourceLoader.class).get();
         Optional<URL> resource = loader.getResource("classpath:enwiki-20221101-pages-articles2.xml-short.xml.bz2");

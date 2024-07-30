@@ -21,7 +21,7 @@ import java.util.UUID;
 import static com.krickert.search.model.util.ProtobufUtils.createKey;
 
 
-@KafkaListener(threads = 8,
+@KafkaListener(threads = 8,offsetReset = OffsetReset.EARLIEST, groupId = "wiki-to-pipe-listener",
         properties = @Property(name = KafkaProtobufConstants.SPECIFIC_CLASS_PROPERTY,
                 value = KafkaProtobufConstants.WIKIARTICLE_CLASS))
 @Prototype

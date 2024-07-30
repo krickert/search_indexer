@@ -1,0 +1,30 @@
+micronaut:
+  application:
+    name: solr-indexer
+  server:
+    port: 60405
+  executors:
+    consumer:
+      type: fixed
+      nThreads: 30
+    producer:
+      type: fixed
+      nThreads: 30
+
+kafka:
+  enabled: true
+  schema.registry.url: http://localhost:8081
+  key:
+    serializer: org.apache.kafka.common.serialization.UUIDSerializer
+    deserializer: org.apache.kafka.common.serialization.UUIDDeserializer
+  value:
+    serializer: io.confluent.kafka.serializers.protobuf.KafkaProtobufSerializer
+    deserializer: io.confluent.kafka.serializers.protobuf.KafkaProtobufDeserializer
+solr:
+  host: localhost
+  port: 8983
+  create-config: false
+  index-docs: true
+  reset-index: false
+  min-words-for-paragraph: 12
+  max-retries: 2

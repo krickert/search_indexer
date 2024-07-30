@@ -4,10 +4,10 @@ micronaut:
   executors:
     consumer:
       type: fixed
-      nThreads: 10
+      nThreads: 20
     producer:
       type: fixed
-      nThreads: 10
+      nThreads: 20
 
 
 kafka:
