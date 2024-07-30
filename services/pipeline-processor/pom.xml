@@ -61,7 +61,7 @@
 
         <dependency>
             <groupId>com.krickert.search.service.grpc</groupId>
-            <artifactId>grpc-vectorizer-service</artifactId>
+            <artifactId>vectorizer</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
