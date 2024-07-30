@@ -7,15 +7,16 @@ micronaut:
       swagger-ui:
         paths: classpath:META-INF/swagger/views/swagger-ui
         mapping: /swagger-ui/**
-  application:
-    name: chunker
   server:
     port: 60403
+  application:
+    name: chunker
 consul:
   client:
     defaultZone: ${CONSUL_HOST:localhost}:${CONSUL_PORT:8500}
     registration:
-      enabled: true
+      enabled: false
+
 grpc:
   server:
     port: 50403

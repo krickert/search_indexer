@@ -1,6 +1,8 @@
 package com.krickert.search.service.vectorizer;
 
 import io.micronaut.runtime.Micronaut;
+import io.swagger.v3.oas.annotations.OpenAPIDefinition;
+import io.swagger.v3.oas.annotations.info.Info;
 
 /**
  * The Application class is responsible for running the Micronaut application.
@@ -15,6 +17,12 @@ import io.micronaut.runtime.Micronaut;
  * Requirements:
  * - Micronaut framework must be installed in the project dependencies.
  */
+@OpenAPIDefinition(
+        info = @Info(
+                title = "vectorizer",
+                version = "0.0"
+        )
+)
 public class VectorizerApplication {
 
     /**

@@ -246,6 +246,15 @@
                                 </exclusion>
                             </exclusions>
                         </path>
+                        <path>
+                            <groupId>io.micronaut.openapi</groupId>
+                            <artifactId>micronaut-openapi</artifactId>
+                        </path>
+                        <dependency>
+                            <groupId>io.micronaut.openapi</groupId>
+                            <artifactId>micronaut-openapi-annotations</artifactId>
+                            <scope>compile</scope>
+                        </dependency>
                     </annotationProcessorPaths>
                     <compilerArgs>
                         <arg>-Amicronaut.processing.group=com.krickert.search.grpc.vectorizer</arg>

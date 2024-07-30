@@ -30,14 +30,6 @@ message EmbeddingsVectorsReply {
   repeated EmbeddingsVectorReply embeddings = 1;
 }
 
-service ChunkService {
-  rpc chunk (ChunkRequest) returns (ChunkReply) {}
-}
-
-service SemanticDocService {
-  rpc embedDocument (SemanticRequest) returns (SemanticReply) {}
-}
-
 message ChunkOptions {
   int32 length = 1;
   int32 overlap = 2;
@@ -50,6 +42,14 @@ message ChunkRequest {
 
 message ChunkReply {
   repeated string chunks = 1;
+}
+
+service ChunkService {
+  rpc chunk (ChunkRequest) returns (ChunkReply) {}
+}
+
+service SemanticDocService {
+  rpc embedDocument (SemanticRequest) returns (SemanticReply) {}
 }
 
 message SemanticRequest {
