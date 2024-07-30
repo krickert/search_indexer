@@ -2,7 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.krickert.search.service.grpc</groupId>
+    <groupId>com.krickert.search.vectorizer</groupId>
     <artifactId>vectorizer</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>${packaging}</packaging>
@@ -18,8 +18,11 @@
         <jdk.version>17</jdk.version>
         <release.version>17</release.version>
         <micronaut.version>4.5.1</micronaut.version>
+        <micronaut.aot.enabled>false</micronaut.aot.enabled>
+        <micronaut.aot.packageName>com.krickert.search.vectorizer.aot.generated</micronaut.aot.packageName>
         <micronaut.test.resources.enabled>true</micronaut.test.resources.enabled>
-        <exec.mainClass>com.krickert.search.service.grpc.VactorizerApplication</exec.mainClass>
+        <micronaut.runtime>netty</micronaut.runtime>
+        <exec.mainClass>com.krickert.search.vectorizer.vectorizer.VectorizerApplication</exec.mainClass>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
     </properties>
@@ -57,11 +60,11 @@
             <artifactId>micronaut-serde-jackson</artifactId>
             <scope>compile</scope>
         </dependency>
-        <dependency>
+        <!--dependency>
             <groupId>io.micronaut.discovery</groupId>
             <artifactId>micronaut-discovery-client</artifactId>
             <scope>compile</scope>
-        </dependency>
+        </dependency-->
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
@@ -83,46 +86,12 @@
             <artifactId>micronaut-test-resources-client</artifactId>
             <scope>test</scope>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/ai.djl.huggingface/tokenizers -->
-        <dependency>
-            <groupId>ai.djl.huggingface</groupId>
-            <artifactId>tokenizers</artifactId>
-            <version>0.29.0</version>
-        </dependency>
         <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-compress -->
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-compress</artifactId>
             <version>1.26.2</version>
         </dependency>
-        <dependency>
-            <groupId>ai.djl.pytorch</groupId>
-            <artifactId>pytorch-model-zoo</artifactId>
-            <version>0.29.0</version>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/ai.djl.pytorch/pytorch-native-cpu -->
-        <dependency>
-            <groupId>ai.djl.pytorch</groupId>
-            <artifactId>pytorch-native-cpu</artifactId>
-            <version>2.3.1</version>
-        </dependency>
-        <!-- for GPU acceleration but made jar 1.6G -->
-        <!-- If running this on an x86 machine, it's good to turn this on if you have an nvidia GPU -->
-        <!-- keeping this for now.  Will need to see how to integrate it in the container later -->
-        <!--dependency>
-          <groupId>ai.djl.pytorch</groupId>
-          <artifactId>pytorch-native-cu119</artifactId>
-          <classifier>linux-x86_64</classifier>
-          <version>2.3.0</version>
-          <scope>runtime</scope>
-        </dependency-->
-        <!-- https://mvnrepository.com/artifact/ai.djl.pytorch/pytorch-jni -->
-        <!--dependency>
-          <groupId>ai.djl.pytorch</groupId>
-          <artifactId>pytorch-jni</artifactId>
-          <version>2.3.0-0.28.0</version>
-          <scope>runtime</scope>
-        </dependency-->
         <dependency>
             <groupId>com.krickert.search</groupId>
             <artifactId>wikisearch-model</artifactId>
@@ -212,8 +181,46 @@
             <artifactId>micronaut-openapi-annotations</artifactId>
             <scope>provided</scope>
         </dependency>
-
-
+        <!-- https://mvnrepository.com/artifact/ai.djl.huggingface/tokenizers -->
+        <dependency>
+            <groupId>ai.djl.huggingface</groupId>
+            <artifactId>tokenizers</artifactId>
+            <version>0.29.0</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-compress -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-compress</artifactId>
+            <version>1.26.2</version>
+        </dependency>
+        <dependency>
+            <groupId>ai.djl.pytorch</groupId>
+            <artifactId>pytorch-model-zoo</artifactId>
+            <version>0.29.0</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/ai.djl.pytorch/pytorch-native-cpu -->
+        <dependency>
+            <groupId>ai.djl.pytorch</groupId>
+            <artifactId>pytorch-native-cpu</artifactId>
+            <version>2.3.1</version>
+        </dependency>
+        <!-- for GPU acceleration but made jar 1.6G -->
+        <!-- If running this on an x86 machine, it's good to turn this on if you have an nvidia GPU -->
+        <!-- keeping this for now.  Will need to see how to integrate it in the container later -->
+        <!--dependency>
+          <groupId>ai.djl.pytorch</groupId>
+          <artifactId>pytorch-native-cu119</artifactId>
+          <classifier>linux-x86_64</classifier>
+          <version>2.3.0</version>
+          <scope>runtime</scope>
+        </dependency-->
+        <!-- https://mvnrepository.com/artifact/ai.djl.pytorch/pytorch-jni -->
+        <!--dependency>
+          <groupId>ai.djl.pytorch</groupId>
+          <artifactId>pytorch-jni</artifactId>
+          <version>2.3.0-0.28.0</version>
+          <scope>runtime</scope>
+        </dependency-->
     </dependencies>
     <build>
         <plugins>
@@ -221,6 +228,8 @@
                 <groupId>io.micronaut.maven</groupId>
                 <artifactId>micronaut-maven-plugin</artifactId>
                 <configuration>
+                    <shared>true</shared>
+                    <configFile>aot-${packaging}.properties</configFile>
                 </configuration>
             </plugin>
             <plugin>
@@ -236,9 +245,14 @@
 
                     <annotationProcessorPaths combine.children="append">
                         <path>
-                            <groupId>io.micronaut.serde</groupId>
-                            <artifactId>micronaut-serde-processor</artifactId>
-                            <version>${micronaut.serialization.version}</version>
+                            <groupId>io.micronaut</groupId>
+                            <artifactId>micronaut-http-validation</artifactId>
+                            <version>${micronaut.core.version}</version>
+                        </path>
+                        <path>
+                            <groupId>io.micronaut.openapi</groupId>
+                            <artifactId>micronaut-openapi</artifactId>
+                            <version>${micronaut.openapi.version}</version>
                             <exclusions>
                                 <exclusion>
                                     <groupId>io.micronaut</groupId>
@@ -248,18 +262,9 @@
                         </path>
                     </annotationProcessorPaths>
                     <compilerArgs>
-                        <arg>-Amicronaut.processing.group=com.krickert.search.grpc.vectorizer</arg>
-                        <arg>-Amicronaut.processing.module=grpc-vectorizer-service</arg>
+                        <arg>-Amicronaut.processing.group=com.krickert.search.vectorizer</arg>
+                        <arg>-Amicronaut.processing.module=vectorizer</arg>
                     </compilerArgs>
-                </configuration>
-	</plugin>
-            <plugin>
-                <groupId>com.google.cloud.tools</groupId>
-                <artifactId>jib-maven-plugin</artifactId>
-                <configuration>
-                    <to>
-                        <image>docker.io/krickert/${project.name}:${project.version}</image>
-                    </to>
                 </configuration>
             </plugin>
         </plugins>

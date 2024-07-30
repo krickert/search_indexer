@@ -1,6 +1,6 @@
-applicationType: grpc
-defaultPackage: com.krickert.search.grpc.vectorizer
+applicationType: default
+defaultPackage: com.krickert.search.vector
 testFramework: junit
 sourceLanguage: java
 buildTool: maven
-features: [app-name, assertj, awaitility, cache-caffeine, consul, discovery-client, discovery-consul, discovery-core, grpc, http-client-test, java, java-application, junit, logback, maven, maven-enforcer-plugin, mockito, readme, serialization-jackson, shade, test-resources, testcontainers, yaml, yaml-build]
+features: [ app-name, assertj, awaitility, config-consul, consul, http-client-test, jackson-databind, java, java-application, jib, junit, junit-platform-suite-engine, kafka, kafka-streams, logback, maven, maven-enforcer-plugin, micronaut-aot, micronaut-http-validation, mockito, netty-server, openapi, readme, shade, static-resources, swagger-ui, test-resources, testcontainers, yaml, yaml-build ]
