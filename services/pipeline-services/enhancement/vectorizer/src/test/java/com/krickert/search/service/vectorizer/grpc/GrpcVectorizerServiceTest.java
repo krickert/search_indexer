@@ -1,4 +1,4 @@
-package vectorizer.grpc;
+package com.krickert.search.service.vectorizer.grpc;
 
 import com.google.common.collect.Maps;
 import com.google.protobuf.Value;

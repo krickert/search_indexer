@@ -1,4 +1,4 @@
-package vectorizer.grpc;
+package com.krickert.search.service.vectorizer.grpc;
 
 import com.krickert.search.service.EmbeddingServiceGrpc;
 import com.krickert.search.service.PipeServiceGrpc;

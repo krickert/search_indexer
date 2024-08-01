@@ -1,4 +1,4 @@
-package vectorizer;
+package com.krickert.search.service.vectorizer;
 
 import com.krickert.search.vectorizer.SentenceVectorizer;
 import io.micronaut.test.extensions.junit5.annotation.MicronautTest;

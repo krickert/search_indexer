@@ -1,4 +1,4 @@
-package vectorizer.consul;
+package com.krickert.search.service.vectorizer.consul;
 
 import io.micronaut.context.ApplicationContext;
 import io.micronaut.context.annotation.Property;

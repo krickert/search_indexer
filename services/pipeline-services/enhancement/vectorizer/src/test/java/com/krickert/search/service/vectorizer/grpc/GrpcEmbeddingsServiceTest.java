@@ -1,4 +1,4 @@
-package vectorizer.grpc;
+package com.krickert.search.service.vectorizer.grpc;
 
 import com.krickert.search.model.pipe.PipeDocument;
 import com.krickert.search.model.test.util.TestDataHelper;
@@ -91,17 +91,21 @@ class GrpcEmbeddingsServiceTest {
 
     @Test
     void testEmbeddingsVectorServerEndpoint() {
-        Collection<String> documentBodies = TestDataHelper.getFewHunderedPipeDocuments().stream().map(PipeDocument::getBody).toList();
-        for (String text : documentBodies) {
-            EmbeddingsVectorRequest request = EmbeddingsVectorRequest.newBuilder()
-                    .setText(text).build();
-            EmbeddingsVectorReply reply = endpoint.createEmbeddingsVector(request);
-            assertNotNull(reply);
-            assertTrue(reply.getEmbeddingsList().size() > 100);
+        try {
+            Collection<String> documentBodies = TestDataHelper.getFewHunderedPipeDocuments().stream().map(PipeDocument::getBody).toList();
+            for (String text : documentBodies) {
+                EmbeddingsVectorRequest request = EmbeddingsVectorRequest.newBuilder()
+                        .setText(text).build();
+                EmbeddingsVectorReply reply = endpoint.createEmbeddingsVector(request);
+                assertNotNull(reply);
+                assertTrue(reply.getEmbeddingsList().size() > 100);
+            }
+        } catch(Exception e) {
+            log.error("Error occurred while creating embedding vector: ", e);
+            throw new RuntimeException(e);
         }
     }
 
-    @Ignore
     @Test
     void testEmbeddingsVectorAsyncEndpoint() {
         //TODO latest changes broke this test
