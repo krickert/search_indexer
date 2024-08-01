@@ -1,7 +1,7 @@
 package com.krickert.search.indexer.solr;
 
 import com.google.common.collect.Lists;
-import com.krickert.search.service.vectorizer.Vectorizer;
+import com.krickert.search.vectorizer.Vectorizer;
 import jakarta.inject.Singleton;
 import org.apache.solr.client.solrj.SolrClient;
 import org.apache.solr.client.solrj.SolrQuery;
