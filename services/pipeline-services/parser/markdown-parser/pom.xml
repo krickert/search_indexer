@@ -3,7 +3,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.krickert.search.parser</groupId>
-  <artifactId>markdown</artifactId>
+  <artifactId>markdown-parser</artifactId>
   <version>0.1</version>
   <packaging>${packaging}</packaging>
 
@@ -22,7 +22,7 @@
     <micronaut.aot.packageName>com.krickert.search.parser.aot.generated</micronaut.aot.packageName>
     <micronaut.runtime>netty</micronaut.runtime>
     <micronaut.test.resources.enabled>true</micronaut.test.resources.enabled>
-    <exec.mainClass>com.krickert.search.parser.Application</exec.mainClass>
+    <exec.mainClass>com.krickert.search.parser.MarkdownParserApplication</exec.mainClass>
   </properties>
 
   <repositories>
@@ -139,17 +139,28 @@
       <artifactId>testcontainers</artifactId>
       <scope>test</scope>
     </dependency>
-    <!-- https://mvnrepository.com/artifact/com.vladsch.flexmark/flexmark-all -->
-    <dependency>
-      <groupId>com.vladsch.flexmark</groupId>
-      <artifactId>flexmark-all</artifactId>
-      <version>0.64.8</version>
-    </dependency>
+<!--    &lt;!&ndash; https://mvnrepository.com/artifact/com.vladsch.flexmark/flexmark-all &ndash;&gt;-->
+<!--    <dependency>-->
+<!--      <groupId>com.vladsch.flexmark</groupId>-->
+<!--      <artifactId>flexmark-all</artifactId>-->
+<!--      <version>0.64.8</version>-->
+<!--    </dependency>-->
     <dependency>
       <groupId>com.vladsch.flexmark</groupId>
       <artifactId>flexmark-ext-yaml-front-matter</artifactId>
       <version>0.64.8</version>
     </dependency>
+    <!-- https://mvnrepository.com/artifact/org.commonmark/commonmark -->
+    <dependency>
+      <groupId>org.commonmark</groupId>
+      <artifactId>commonmark</artifactId>
+      <version>0.22.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.yaml</groupId>
+      <artifactId>snakeyaml</artifactId>
+    </dependency>
+
     <dependency>
       <groupId>io.micronaut.validation</groupId>
       <artifactId>micronaut-validation</artifactId>

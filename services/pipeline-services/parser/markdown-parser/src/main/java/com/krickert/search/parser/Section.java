@@ -4,4 +4,4 @@ import io.micronaut.serde.annotation.Serdeable;
 
 @Serdeable
 public record Section (
-     String type, String body, int headingIndentation){};
+     String type, String body, int headingIndentation){}

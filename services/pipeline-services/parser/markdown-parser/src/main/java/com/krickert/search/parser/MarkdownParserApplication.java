@@ -14,7 +14,7 @@ import io.swagger.v3.oas.annotations.info.*;
             version = "0.0"
     )
 )
-public class Application {
+public class MarkdownParserApplication {
 
     @ContextConfigurer
     public static class Configurer implements ApplicationContextConfigurer {
@@ -24,6 +24,6 @@ public class Application {
         }
     }
     public static void main(String[] args) {
-        Micronaut.run(Application.class, args);
+        Micronaut.run(MarkdownParserApplication.class, args);
     }
 }
