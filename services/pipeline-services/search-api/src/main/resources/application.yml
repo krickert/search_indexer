@@ -17,7 +17,7 @@ micronaut:
       naming:
         strategy: KEBAB_CASE
   server:
-    port: 8080
+    port: 60410
 
 solr:
   host: http://localhost:8983/solr

@@ -8,7 +8,7 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>grpc-tika-parser-service</module>
-        <module>markdown</module>
+        <module>markdown-parser</module>
     </modules>
     <artifactId>parser</artifactId>
     <properties>
