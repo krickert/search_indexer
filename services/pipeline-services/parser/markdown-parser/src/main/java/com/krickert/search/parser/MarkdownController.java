@@ -26,7 +26,7 @@ public class MarkdownController {
         @ExecuteOn(TaskExecutors.IO)
         public HttpResponse<List<Section>> markdownFile(StreamingFileUpload file) {
 
-        List<Section> sections = null;
+        final List<Section> sections;
         try {
             sections = markdownService.parseMarkdown(file.asInputStream());
         } catch (IOException e) {

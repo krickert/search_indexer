@@ -139,17 +139,18 @@
       <artifactId>testcontainers</artifactId>
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-compress</artifactId>
+      <version>1.26.2</version>
+      <scope>test</scope>
+    </dependency>
 <!--    &lt;!&ndash; https://mvnrepository.com/artifact/com.vladsch.flexmark/flexmark-all &ndash;&gt;-->
 <!--    <dependency>-->
 <!--      <groupId>com.vladsch.flexmark</groupId>-->
 <!--      <artifactId>flexmark-all</artifactId>-->
 <!--      <version>0.64.8</version>-->
 <!--    </dependency>-->
-    <dependency>
-      <groupId>com.vladsch.flexmark</groupId>
-      <artifactId>flexmark-ext-yaml-front-matter</artifactId>
-      <version>0.64.8</version>
-    </dependency>
     <!-- https://mvnrepository.com/artifact/org.commonmark/commonmark -->
     <dependency>
       <groupId>org.commonmark</groupId>
