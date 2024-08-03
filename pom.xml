@@ -8,17 +8,24 @@
     <artifactId>search-pom</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
-    <parent>
-        <groupId>io.micronaut.platform</groupId>
-        <artifactId>micronaut-parent</artifactId>
-        <version>4.5.1</version>
-        <relativePath/>
-    </parent>
+
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+    <build>
+        <!--plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.2.5</version>
+                <configuration>
+                    <forkCount>10</forkCount>
+                </configuration>
+            </plugin>
+        </plugins-->
+    </build>
     <modules>
         <module>protobuf-projects</module>
         <module>services</module>

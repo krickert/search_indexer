@@ -64,38 +64,45 @@
                 </configuration>
             </plugin>
             <plugin>
-                <groupId>com.github.os72</groupId>
-                <artifactId>protoc-jar-maven-plugin</artifactId>
-                <version>${protoc-jar-maven-plugin.version}</version>
-                <configuration>
-                    <protocArtifact>com.google.protobuf:protoc:${protobuf.version}</protocArtifact>
-                    <addProtoSources>all</addProtoSources>
-                    <includeMavenTypes>direct</includeMavenTypes>
-                    <includeImports>true</includeImports>
-                    <inputDirectories>
-                        <include>src/main/protobuf</include>
-                    </inputDirectories>
-                    <outputTargets>
-                        <outputTarget>
-                            <type>java</type>
-                            <outputDirectory>${project.build.directory}/generated-sources</outputDirectory>
-                        </outputTarget>
-                        <outputTarget>
-                            <type>grpc-java</type>
-                            <outputDirectory>${project.build.directory}/generated-sources</outputDirectory>
-                            <pluginArtifact>io.grpc:protoc-gen-grpc-java:${grpc.version}</pluginArtifact>
-                        </outputTarget>
-                    </outputTargets>
-                </configuration>
+                <groupId>kr.motd.maven</groupId>
+                <artifactId>os-maven-plugin</artifactId>
+                <version>1.7.1</version>
                 <executions>
                     <execution>
-                        <phase>generate-sources</phase>
+                        <phase>initialize</phase>
                         <goals>
-                            <goal>run</goal>
+                            <goal>detect</goal>
                         </goals>
                     </execution>
                 </executions>
             </plugin>
+            <plugin>
+                <groupId>org.xolstice.maven.plugins</groupId>
+                <artifactId>protobuf-maven-plugin</artifactId>
+                <version>0.6.1</version>
+                <configuration>
+                    <protocArtifact>com.google.protobuf:protoc:${protobuf.version}:exe:${os.detected.classifier}</protocArtifact>
+                    <pluginId>grpc-java</pluginId>
+                    <pluginArtifact>io.grpc:protoc-gen-grpc-java:${grpc.version}:exe:${os.detected.classifier}</pluginArtifact>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>compile</id>
+                        <goals>
+                            <goal>compile</goal>
+                            <goal>compile-custom</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>test-compile</id>
+                        <goals>
+                            <goal>test-compile</goal>
+                            <goal>test-compile-custom</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
