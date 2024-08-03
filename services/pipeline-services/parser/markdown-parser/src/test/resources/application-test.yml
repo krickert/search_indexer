@@ -8,3 +8,5 @@ micronaut:
         enabled: false
       discovery:
         enabled: false
+  kafka:
+    enabled: false

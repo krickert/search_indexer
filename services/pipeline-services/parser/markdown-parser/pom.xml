@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.krickert.search.parser</groupId>
   <artifactId>markdown-parser</artifactId>
-  <version>0.1</version>
+  <version>1.0-SNAPSHOT</version>
   <packaging>${packaging}</packaging>
 
   <parent>
@@ -51,11 +51,6 @@
     <dependency>
       <groupId>io.micronaut.kafka</groupId>
       <artifactId>micronaut-kafka</artifactId>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>io.micronaut.kafka</groupId>
-      <artifactId>micronaut-kafka-streams</artifactId>
       <scope>compile</scope>
     </dependency>
     <dependency>
