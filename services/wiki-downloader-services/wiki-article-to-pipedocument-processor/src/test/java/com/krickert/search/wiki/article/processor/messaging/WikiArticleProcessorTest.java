@@ -4,6 +4,8 @@ import com.krickert.search.model.constants.KafkaProtobufConstants;
 import com.krickert.search.model.pipe.PipeDocument;
 import com.krickert.search.model.test.util.TestDataHelper;
 import io.micronaut.configuration.kafka.annotation.KafkaListener;
+import io.micronaut.configuration.kafka.annotation.OffsetReset;
+import io.micronaut.configuration.kafka.annotation.OffsetStrategy;
 import io.micronaut.configuration.kafka.annotation.Topic;
 import io.micronaut.context.annotation.Property;
 import io.micronaut.runtime.EmbeddedApplication;
@@ -13,6 +15,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.Locale;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
 import static com.krickert.search.model.util.ProtobufUtils.createKey;
@@ -59,7 +62,9 @@ class WikiArticleProcessorTest {
             properties =
             @Property(name = KafkaProtobufConstants.SPECIFIC_CLASS_PROPERTY,
                     value = KafkaProtobufConstants.PIPE_DOCUMENT_CLASS),
-            groupId = "test-wiki-pipe-processor-listener"
+            groupId = "test-wiki-pipe-processor-listener",
+            offsetStrategy = OffsetStrategy.ASYNC,
+            offsetReset = OffsetReset.LATEST
     )
     public static class PipeDocumentTestListener {
         @Topic("pipeline-document")
