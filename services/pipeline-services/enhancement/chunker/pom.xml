@@ -169,7 +169,17 @@
             <artifactId>micronaut-openapi-annotations</artifactId>
             <scope>provided</scope>
         </dependency>
-
+        <dependency>
+            <groupId>edu.stanford.nlp</groupId>
+            <artifactId>stanford-corenlp</artifactId>
+            <version>4.5.7</version>
+        </dependency>
+        <dependency>
+            <groupId>edu.stanford.nlp</groupId>
+            <artifactId>stanford-corenlp</artifactId>
+            <version>4.5.7</version>
+            <classifier>models</classifier>
+        </dependency>
     </dependencies>
     <build>
         <plugins>

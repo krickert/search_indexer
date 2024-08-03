@@ -1,12 +1,13 @@
-package com.krickert.search.indexer.enhancers;
+package com.krickert.search.chunker.enhancers;
 
-import edu.stanford.nlp.ling.*;
+import edu.stanford.nlp.ling.HasWord;
+import edu.stanford.nlp.ling.Label;
+import edu.stanford.nlp.ling.Word;
 import edu.stanford.nlp.parser.lexparser.LexicalizedParser;
 import edu.stanford.nlp.process.DocumentPreprocessor;
-import edu.stanford.nlp.trees.*;
+import edu.stanford.nlp.trees.Tree;
 import jakarta.inject.Singleton;
 
-import java.io.FileReader;
 import java.io.Reader;
 import java.io.StringReader;
 import java.util.ArrayList;

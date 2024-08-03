@@ -1,4 +1,4 @@
-package com.krickert.search.indexer.enhancers;
+package com.krickert.search.chunker.enhancers;
 
 import edu.stanford.nlp.ling.CoreAnnotations;
 import edu.stanford.nlp.ling.CoreLabel;

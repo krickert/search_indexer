@@ -1,4 +1,5 @@
-package com.krickert.search.indexer.enhancers;
+package com.krickert.search.chunker.enhancers;
+
 import edu.stanford.nlp.coref.CorefCoreAnnotations;
 import edu.stanford.nlp.coref.data.CorefChain;
 import edu.stanford.nlp.ling.CoreAnnotations;
@@ -6,7 +7,10 @@ import edu.stanford.nlp.pipeline.Annotation;
 import edu.stanford.nlp.pipeline.StanfordCoreNLP;
 import edu.stanford.nlp.util.CoreMap;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.Properties;
 
 public class TextChunkerWithPronounResolution {
     private StanfordCoreNLP pipeline;

@@ -18,6 +18,7 @@ micronaut:
         strategy: KEBAB_CASE
   server:
     port: 60410
+    max-request-size: 268435456
 
   consul:
     client:
@@ -25,3 +26,7 @@ micronaut:
         enabled: false
       discovery:
         enabled: false
+grpc:
+  clients:
+    default:
+      max-message-size: 16777216

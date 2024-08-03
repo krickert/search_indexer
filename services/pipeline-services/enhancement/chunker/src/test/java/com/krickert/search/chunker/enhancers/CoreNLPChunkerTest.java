@@ -1,6 +1,5 @@
-package com.krickert.search.indexer.enhancers;
+package com.krickert.search.chunker.enhancers;
 
-import com.krickert.search.indexer.FileLoader;
 import io.micronaut.test.extensions.junit5.annotation.MicronautTest;
 import jakarta.inject.Inject;
 import org.junit.jupiter.api.Test;

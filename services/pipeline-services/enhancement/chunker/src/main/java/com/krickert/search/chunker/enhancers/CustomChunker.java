@@ -1,9 +1,13 @@
-package com.krickert.search.indexer.enhancers;
+package com.krickert.search.chunker.enhancers;
 
-import edu.stanford.nlp.pipeline.*;
-import edu.stanford.nlp.util.CoreMap;
 import edu.stanford.nlp.ling.CoreAnnotations;
-import java.util.*;
+import edu.stanford.nlp.pipeline.Annotation;
+import edu.stanford.nlp.pipeline.StanfordCoreNLP;
+import edu.stanford.nlp.util.CoreMap;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Properties;
 
 public class CustomChunker implements Chunker {
     StanfordCoreNLP pipeline;

@@ -1,7 +1,7 @@
-package com.krickert.search.indexer.enhancers;
+package com.krickert.search.chunker.enhancers;
 
-import java.util.*;
-import java.lang.Math;
+import java.util.ArrayList;
+import java.util.List;
 
 public class TextChunker implements Chunker {
     

@@ -4,6 +4,7 @@ import com.krickert.search.model.pipe.PipeDocument;
 import com.krickert.search.model.test.util.TestDataHelper;
 import com.krickert.search.service.*;
 import io.grpc.stub.StreamObserver;
+import io.micronaut.core.util.StringUtils;
 import io.micronaut.runtime.EmbeddedApplication;
 import io.micronaut.test.extensions.junit5.annotation.MicronautTest;
 import jakarta.inject.Inject;
@@ -82,14 +83,12 @@ class GrpcChunkerServiceTest {
     @Test
     void testChunkAsyncEndpoint() {
         errorCount.set(0);
-        Collection<String> bodies = TestDataHelper.getFewHunderedPipeDocuments().stream().map(PipeDocument::getBody).toList();
-        for (String body : bodies) {
-            ChunkRequest request = ChunkRequest.newBuilder()
-                    .setText(body).setOptions(
-                            ChunkOptions.newBuilder().setLength(50).setOverlap(3).build())
-                    .build();
-            endpoint2.chunk(request, streamEmbeddingsVectorReplyObserver);
-
+        for (String body : getDocumentBodies()) {
+            if (StringUtils.isEmpty(body)) {
+                log.info("Expecting 2 bodies to be empty.  This is the {} one", errorCount.incrementAndGet());
+            } else {
+                endpoint2.chunk(createChunkRequest(body), streamEmbeddingsVectorReplyObserver);
+            }
         }
         log.info("waiting up to 15 seconds for at least 1 document to be added..");
         await().atMost(15, SECONDS).until(() -> finishedEmbeddingsVectorReply.size() > 1);
@@ -100,6 +99,17 @@ class GrpcChunkerServiceTest {
         //lies, blantant lies.
         log.info("waiting for 500 seconds max for all 365 documents to be processed..");
         await().atMost(50, SECONDS).until(() -> (finishedEmbeddingsVectorReply.size() + errorCount.get()) == 367);
+    }
+
+    private Collection<String> getDocumentBodies() {
+        return TestDataHelper.getFewHunderedPipeDocuments().stream().map(PipeDocument::getBody).toList();
+    }
+
+    private ChunkRequest createChunkRequest(String body) {
+        return ChunkRequest.newBuilder()
+                .setText(body)
+                .setOptions(ChunkOptions.newBuilder().setLength(50).setOverlap(3).build())
+                .build();
     }
 
 }
