@@ -48,14 +48,14 @@
         <dependency>
             <groupId>ai.djl.pytorch</groupId>
             <artifactId>pytorch-native-cu121</artifactId>
-            <version>2.1.1</version>
+            <version>2.3.1</version>
             <scope>runtime</scope>
         </dependency>
         <!-- https://mvnrepository.com/artifact/ai.djl.pytorch/pytorch-jni -->
         <dependency>
             <groupId>ai.djl.pytorch</groupId>
             <artifactId>pytorch-jni</artifactId>
-            <version>2.1.1-0.26.0</version>
+            <version>2.3.1-0.29.0</version>
             <scope>runtime</scope>
         </dependency>
 
