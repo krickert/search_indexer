@@ -18,6 +18,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.Collection;
+import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import static java.util.concurrent.TimeUnit.SECONDS;
@@ -92,15 +93,24 @@ class GrpcEmbeddingsServiceTest {
     @Test
     void testEmbeddingsVectorServerEndpoint() {
         try {
-            Collection<String> documentBodies = TestDataHelper.getFewHunderedPipeDocuments().stream().map(PipeDocument::getBody).toList();
-            for (String text : documentBodies) {
+            // get the bodies of the documents in form of a list
+            List<String> documentBodies = TestDataHelper.getFewHunderedPipeDocuments().stream().map(PipeDocument::getBody).toList();
+
+            // process the document bodies in parallel
+            documentBodies.parallelStream().forEach(text -> {
                 EmbeddingsVectorRequest request = EmbeddingsVectorRequest.newBuilder()
                         .setText(text).build();
-                EmbeddingsVectorReply reply = endpoint.createEmbeddingsVector(request);
-                assertNotNull(reply);
-                assertTrue(reply.getEmbeddingsList().size() > 100);
-            }
-        } catch(Exception e) {
+                EmbeddingsVectorReply reply;
+                try {
+                    reply = endpoint.createEmbeddingsVector(request);
+                    assertNotNull(reply);
+                    assertTrue(reply.getEmbeddingsList().size() > 100);
+                } catch (Exception e) {
+                    throw new RuntimeException("Error occurred while creating embedding vector: ", e);
+                }
+            });
+
+        } catch (Exception e) {
             log.error("Error occurred while creating embedding vector: ", e);
             throw new RuntimeException(e);
         }
@@ -108,8 +118,6 @@ class GrpcEmbeddingsServiceTest {
 
     @Test
     void testEmbeddingsVectorAsyncEndpoint() {
-        //TODO latest changes broke this test
-
         Collection<String> titles = TestDataHelper.getFewHunderedPipeDocuments().stream().map(PipeDocument::getTitle).toList();
         for (String title : titles) {
             EmbeddingsVectorRequest request = EmbeddingsVectorRequest.newBuilder()
