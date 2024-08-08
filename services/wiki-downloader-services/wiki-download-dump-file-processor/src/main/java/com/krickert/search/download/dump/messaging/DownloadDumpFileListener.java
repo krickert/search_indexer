@@ -12,6 +12,7 @@ import io.micronaut.context.annotation.Property;
 import io.micronaut.context.annotation.Prototype;
 import io.micronaut.context.annotation.Value;
 import jakarta.inject.Inject;
+import jakarta.inject.Singleton;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -29,8 +30,8 @@ import static com.krickert.search.model.util.ProtobufUtils.now;
         groupId = "download-request-listener",
         properties = @Property(name = KafkaProtobufConstants.SPECIFIC_CLASS_PROPERTY,
                 value = KafkaProtobufConstants.DOWNLOAD_FILE_REQUEST_CLASS))
-@Prototype
-public class  DownloadDumpFileListener {
+@Singleton
+public class DownloadDumpFileListener {
     private static final Logger log = LoggerFactory.getLogger(DownloadDumpFileListener.class);
 
     final String downloadLocation;

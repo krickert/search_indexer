@@ -148,6 +148,19 @@
       <version>1.0-SNAPSHOT</version>
       <scope>test</scope>
     </dependency>
+      <dependency>
+          <groupId>jakarta.validation</groupId>
+          <artifactId>jakarta.validation-api</artifactId>
+      </dependency>
+    <dependency>
+      <groupId>io.micronaut</groupId>
+      <artifactId>micronaut-inject</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.micronaut</groupId>
+      <artifactId>micronaut-runtime</artifactId>
+    </dependency>
+
   </dependencies>
   <build>
     <plugins>

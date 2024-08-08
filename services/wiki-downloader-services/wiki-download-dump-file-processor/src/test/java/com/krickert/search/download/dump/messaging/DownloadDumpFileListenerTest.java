@@ -33,7 +33,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.awaitility.Awaitility.await;
 
 @MicronautTest
-class DownloadDumpFileListenerTest {
+public class DownloadDumpFileListenerTest {
     private static final Logger log = LoggerFactory.getLogger(DownloadDumpFileListenerTest.class);
     static final ConcurrentLinkedQueue<DownloadedFile> results = new ConcurrentLinkedQueue<>();
 
@@ -50,6 +50,8 @@ class DownloadDumpFileListenerTest {
     DownloadDumpFileListener downloadDumpFileListener;
     @Inject
     DownloadRequestProducer downloadRequestProducer;
+    @Inject
+    DownloadedFileTestListener downloadedFileTestListener;
 
     @AfterEach
     void afterEach() {
@@ -71,7 +73,7 @@ class DownloadDumpFileListenerTest {
         downloadRequestProducer.sendDownloadRequest(createKey(request2), request2);
         log.info("sending request {} ", request3);
         downloadRequestProducer.sendDownloadRequest(createKey(request3), request3);
-        await().atMost(30, SECONDS).until(() -> results.size() == 3);
+        await().atMost(30, SECONDS).until(() -> downloadedFileTestListener.getSize() == 3);
 
         assertThat(baos.toString())
                 .contains("******SENDING TO PROCESS: someFile1.txt")
@@ -116,6 +118,10 @@ class DownloadDumpFileListenerTest {
         void receive(DownloadedFile result) {
             log.info("Got result {} ", result);
             results.add(result);
+        }
+
+        public Integer getSize() {
+            return results.size();
         }
 
     }
