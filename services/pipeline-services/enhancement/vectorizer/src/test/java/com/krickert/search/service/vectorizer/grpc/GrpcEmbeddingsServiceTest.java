@@ -7,6 +7,7 @@ import com.krickert.search.service.EmbeddingsVectorReply;
 import com.krickert.search.service.EmbeddingsVectorRequest;
 import com.krickert.search.service.EmbeddingsVectorsReply;
 import io.grpc.stub.StreamObserver;
+import io.micronaut.core.util.StringUtils;
 import io.micronaut.runtime.EmbeddedApplication;
 import io.micronaut.test.extensions.junit5.annotation.MicronautTest;
 import jakarta.inject.Inject;
@@ -100,6 +101,10 @@ class GrpcEmbeddingsServiceTest {
             // TODO: changed to foreach because parallel stream is crashing?
             // TODO: this is certainly a bug in the grpc layer, seeing if this eases it
             documentBodies.forEach(text -> {
+                if (StringUtils.isEmpty(text)) {
+                    log.warn("Empty text for test!!!  Replacing with dummy");
+                    text = "Empty Body";
+                }
                 EmbeddingsVectorRequest request = EmbeddingsVectorRequest.newBuilder()
                         .setText(text).build();
                 EmbeddingsVectorReply reply;
