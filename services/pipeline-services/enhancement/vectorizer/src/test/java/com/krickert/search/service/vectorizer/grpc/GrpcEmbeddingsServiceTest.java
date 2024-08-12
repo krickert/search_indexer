@@ -97,7 +97,9 @@ class GrpcEmbeddingsServiceTest {
             List<String> documentBodies = TestDataHelper.getFewHunderedPipeDocuments().stream().map(PipeDocument::getBody).toList();
 
             // process the document bodies in parallel
-            documentBodies.parallelStream().forEach(text -> {
+            // TODO: changed to foreach because parallel stream is crashing?
+            // TODO: this is certainly a bug in the grpc layer, seeing if this eases it
+            documentBodies.forEach(text -> {
                 EmbeddingsVectorRequest request = EmbeddingsVectorRequest.newBuilder()
                         .setText(text).build();
                 EmbeddingsVectorReply reply;
