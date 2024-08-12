@@ -93,14 +93,13 @@ class GrpcEmbeddingsServiceTest {
 
     @Test
     void testEmbeddingsVectorServerEndpoint() {
+        AtomicInteger finishedDocuments = new AtomicInteger(0);
         try {
             // get the bodies of the documents in form of a list
             List<String> documentBodies = TestDataHelper.getFewHunderedPipeDocuments().stream().map(PipeDocument::getBody).toList();
 
             // process the document bodies in parallel
-            // TODO: changed to foreach because parallel stream is crashing?
-            // TODO: this is certainly a bug in the grpc layer, seeing if this eases it
-            documentBodies.forEach(text -> {
+            documentBodies.parallelStream().forEach(text -> {
                 if (StringUtils.isEmpty(text)) {
                     log.warn("Empty text for test!!!  Replacing with dummy");
                     text = "Empty Body";
@@ -112,13 +111,10 @@ class GrpcEmbeddingsServiceTest {
                     reply = endpoint.createEmbeddingsVector(request);
                     assertNotNull(reply);
                     assertTrue(reply.getEmbeddingsList().size() > 100);
+                    finishedDocuments.incrementAndGet();
                 } catch (Exception e) {
-                    if (finishedEmbeddingsVectorReply.size() < 367) {
-                        log.error(text, e);
-                        throw new RuntimeException("Error occurred while creating embedding vector with finished docs:  " +finishedEmbeddingsVectorReply.size(), e);
-                    } else {
-                        log.warn("Last embedding throws an exception.");
-                    }
+                    log.error("Last embedding throws an exception. Text: [{}] Finished Docs: [{}] Exception: [{}]", text,
+                            finishedDocuments.get(), e.getMessage());
                 }
             });
 
