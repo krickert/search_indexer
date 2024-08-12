@@ -100,12 +100,15 @@ class GrpcEmbeddingsServiceTest {
 
             // process the document bodies in parallel
             documentBodies.parallelStream().forEach(text -> {
+                final String textToSend;
                 if (StringUtils.isEmpty(text)) {
                     log.warn("Empty text for test!!!  Replacing with dummy");
-                    text = "Empty Body";
+                    textToSend = "Empty Body";
+                } else {
+                    textToSend = text;
                 }
                 EmbeddingsVectorRequest request = EmbeddingsVectorRequest.newBuilder()
-                        .setText(text).build();
+                        .setText(textToSend).build();
                 EmbeddingsVectorReply reply;
                 try {
                     reply = endpoint.createEmbeddingsVector(request);
