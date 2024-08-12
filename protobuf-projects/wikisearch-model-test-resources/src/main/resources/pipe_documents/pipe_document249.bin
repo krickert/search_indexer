@@ -1,368 +1,164 @@
 
-41317	Line code∞BIn telecommunication, a line code is a pattern of voltage, current, or photons used to represent digital data transmitted down a communication channel or written to a storage medium. This repertoire of signals is usually called a constrained code in data storage systems. 
-Some signals are more prone to error than others as the physics of the communication channel or storage medium constrains the repertoire of signals that can be used reliably.
+41287Intersymbol interference¨AIn telecommunication, intersymbol interference (ISI) is a form of distortion of a signal in which one symbol interferes with subsequent symbols. This is an unwanted phenomenon as the previous symbols have a similar effect as noise, thus making the communication less reliable. The spreading of the pulse beyond its allotted time interval causes it to interfere with neighboring pulses. ISI is usually caused by multipath propagation or the inherent linear or non-linear frequency response of a communication channel causing successive symbols to blur together.
 
-Common line encodings are unipolar, polar, bipolar, and Manchester code.
+The presence of ISI in the system introduces errors in the decision device at the receiver output. Therefore, in the design of the transmitting and receiving filters, the objective is to minimize the effects of ISI, and thereby deliver the digital data to its destination with the smallest error rate possible.
 
-Transmission and storage 
+Ways to alleviate intersymbol interference include adaptive equalization and error correcting codes.Digital Communications by Simon Haykin, McMaster University
 
-After line coding, the signal is put through a physical communication channel, either a transmission medium or data storage medium.Karl Paulsen. [http://www.tvtechnology.com/media-servers/0150/coding-for-magnetic-storage-mediums/186738 "Coding for Magnetic Storage Mediums"] .2007. The most common physical channels are:
-* the line-coded signal can directly be put on a transmission line, in the form of variations of the voltage or current (often using differential signaling).
-* the line-coded signal (the baseband signal) undergoes further pulse shaping (to reduce its frequency bandwidth) and then is modulated (to shift its frequency) to create an RF signal that can be sent through free space.
-* the line-coded signal can be used to turn on and off a light source in free-space optical communication, most commonly used in an infrared remote control.
-* the line-coded signal can be printed on paper to create a bar code.
-* the line-coded signal can be converted to magnetized spots on a hard drive or tape drive.
-* the line-coded signal can be converted to pits on an optical disc.
+Causes 
 
-Some of the more common binary line codes include:
+Multipath propagation 
 
-Each line code has advantages and disadvantages. Line codes are chosen to meet one or more of the following criteria:
-* Minimize transmission hardware
-* Facilitate synchronization
-* Ease error detection and correction
-* Achieve a target spectral density
-* Eliminate a DC component
+One of the causes of intersymbol interference is multipath propagation in which a wireless signal from a transmitter reaches the receiver via multiple paths. The causes of this include reflection (for instance, the signal may bounce off buildings), refraction (such as through the foliage of a tree) and atmospheric effects such as atmospheric ducting and ionospheric reflection. Since the various paths can be of different lengths, this results in the different versions of the signal arriving at the receiver at different times. These delays mean that part or all of a given symbol will be spread into the subsequent symbols, thereby interfering with the correct detection of those symbols. Additionally, the various paths often distort the amplitude and/or phase of the signal, thereby causing further interference with the received signal.
 
-Disparity 
+Bandlimited channels 
 
-Most long-distance communication channels cannot reliably transport a DC component. The DC component is also called the disparity, the bias, or the DC coefficient. The disparity of a bit pattern is the difference in the number of one bits vs the number of zero bits. The running disparity is the running total of the disparity of all previously transmitted bits. The simplest possible line code, unipolar, gives too many errors on such systems, because it has an unbounded DC component.
+Another cause of intersymbol interference is the transmission of a signal through a bandlimited channel, i.e., one where the frequency response is zero above a certain frequency (the cutoff frequency). Passing a signal through such a channel results in the removal of frequency components above this cutoff frequency. In addition, components of the frequency below the cutoff frequency may also be attenuated by the channel.
 
-Most line codes eliminate the DC component such codes are called DC-balanced, zero-DC, or DC-free. There are three ways of eliminating the DC component:
+This filtering of the transmitted signal affects the shape of the pulse that arrives at the receiver. The effects of filtering a rectangular pulse not only change the shape of the pulse within the first symbol period, but it is also spread out over the subsequent symbol periods. When a message is transmitted through such a channel, the spread pulse of each individual symbol will interfere with following symbols.
 
-* Use a constant-weight code. Each transmitted code word in a constant-weight code is designed such that every code word that contains some positive or negative levels also contains enough of the opposite levels, such that the average level over each code word is zero. Examples of constant-weight codes include Manchester code and Interleaved 2 of 5.
-* Use a paired disparity code. Each code word in a paired disparity code that averages to a negative level is paired with another code word that averages to a positive level. The transmitter keeps track of the running DC buildup, and picks the code word that pushes the DC level back towards zero. The receiver is designed so that either code word of the pair decodes to the same data bits. Examples of paired disparity codes include alternate mark inversion, 8b/10b and 4B3T.
-* Use a scrambler. For example, the scrambler specified in  for 64b/66b encoding.
+Bandlimited channels are present in both wired and wireless communications. The limitation is often imposed by the desire to operate multiple independent signals through the same area/cable; due to this, each system is typically allocated a piece of the total bandwidth available. For wireless systems, they may be allocated a slice of the electromagnetic spectrum to transmit in (for example, FM radio is often broadcast in the 87.5‚Äì108¬†MHz range). This allocation is usually administered by a government agency; in the case of the United States this is the Federal Communications Commission (FCC). In a wired system, such as an optical fiber cable, the allocation will be decided by the owner of the cable.
 
-Polarity 
+The bandlimiting can also be due to the physical properties of the medium - for instance, the cable being used in a wired system may have a cutoff frequency above which practically none of the transmitted signal will propagate.
 
-Bipolar line codes have two polarities, are generally implemented as RZ, and have a radix of three since there are three distinct output levels (negative, positive and zero). One of the principle advantages of this type of code is that it can eliminate any DC component. This is important if the signal must pass through a transformer or a long transmission line.
+Communication systems that transmit data over bandlimited channels usually implement pulse shaping to avoid interference caused by the bandwidth limitation. If the channel frequency response is flat and the shaping filter has a finite bandwidth, it is possible to communicate with no ISI at all. Often the channel response is not known beforehand, and an adaptive equalizer is used to compensate the frequency response.
 
-Unfortunately, several long-distance communication channels have polarity ambiguity. Polarity-insensitive line codes compensate in these channels.
+Effects on eye patterns 
 
-There are three ways of providing unambiguous reception of 0 and 1 bits over such channels:
-* Pair each code word with the polarity-inverse of that code word. The receiver is designed so that either code word of the pair decodes to the same data bits. Examples include alternate mark inversion, Differential Manchester encoding, coded mark inversion and Miller encoding.
-* differential coding each symbol relative to the previous symbol. Examples include MLT-3 encoding and NRZI.
-* Invert the whole stream when inverted syncwords are detected
+One way to study ISI in a PCM or data transmission system experimentally is to apply the received wave to the vertical deflection plates of an oscilloscope and to apply a sawtooth wave at the transmitted symbol rate R (R = 1/T) to the horizontal deflection plates. The resulting display is called an eye pattern because of its resemblance to the human eye for binary waves. The interior region of the eye pattern is called the eye opening. An eye pattern provides a great deal of information about the performance of the pertinent system.
+# The width of the eye opening defines the time interval over which the received wave can be sampled without error from ISI. It is apparent that the preferred time for sampling is the instant of time at which the eye is open widest.
+# The sensitivity of the system to timing error is determined by the rate of closure of the eye as the sampling time is varied.
+# The height of the eye opening, at a specified sampling time, defines the margin over noise.
 
-Run-length limited codes
+An eye pattern, which overlays many samples of a signal, can give a graphical representation of the
+signal characteristics. The first image below is the eye pattern for a binary phase-shift keying (PSK) system in which a one is represented by an amplitude of ‚àí1 and a zero by an amplitude of +1. The current sampling time is at the center of the image and the previous and next sampling times are at the edges of the image. The various transitions from one sampling time to another (such as one-to-zero, one-to-one and so forth) can clearly be seen on the diagram.
 
-For reliable clock recovery at the receiver, a run-length limitation may be imposed on the generated channel sequence, i.e., the maximum number of consecutive ones or zeros is bounded to a reasonable number. A clock period is recovered by observing transitions in the received sequence, so that a maximum run length guarantees sufficient transitions to assure clock recovery quality.
+The noise margin - the amount of noise required to cause the receiver to get an error - is given by the distance between the signal and the zero amplitude point at the sampling time; in other words, the further from zero at the sampling time the signal is the better. For the signal to be correctly interpreted, it must be sampled somewhere between the two points where the zero-to-one and one-to-zero transitions cross. Again, the further apart these points are the better, as this means the signal will be less sensitive to errors in the timing of the samples at the receiver.
 
-RLL codes are defined by four main parameters: m, n, d, k. The first two, m/n, refer to the rate of the code, while the remaining two specify the minimal d and maximal k number of zeroes between consecutive ones. This is used in both telecommunication and storage systems that move a medium past a fixed recording head.
+The effects of ISI are shown in the second image which is an eye pattern of the same system when operating over a multipath channel. The effects of receiving delayed and distorted versions of the signal can be seen in the loss of definition of the signal transitions. It also reduces both the noise margin and the window in which the signal can be sampled, which shows that the performance of the system will be worse (i.e. it will have a greater bit error ratio).
 
-Specifically, RLL bounds the length of stretches (runs) of repeated bits during which the signal does not change.  If the runs are too long, clock recovery is difficult; if they are too short, the high frequencies might be attenuated by the communications channel.  By modulating the data, RLL reduces the timing uncertainty in decoding the stored data, which would lead to the possible erroneous insertion or removal of bits when reading the data back. This mechanism ensures that the boundaries between bits can always be accurately found (preventing bit slip), while efficiently using the media to reliably store the maximal amount of data in a given space.
+Image:Binary PSK eye diagram.svg|The eye diagram of a binary PSK system
+Image:Multipath system eye diagram.svg|The eye diagram of the same system with multipath effects added
 
-Early disk drives used very simple encoding schemes, such as RLL (0,1) FM code, followed by RLL (1,3) MFM code which were widely used in hard disk drives until the mid-1980s and are still used in digital optical discs such as CD, DVD, MD, Hi-MD and Blu-ray using EFM and EFMPLus codes. Higher density RLL (2,7) and RLL (1,7) codes became the de facto standards for hard disks by the early 1990s.
+Countering ISI 
 
-Synchronization 
+There are several techniques in telecommunication and data storage that try to work around the problem of intersymbol interference.
 
-Line coding should make it possible for the receiver to synchronize itself to the phase of the received signal. If the clock recovery is not ideal, then the signal to be decoded will not be sampled at the optimal times. This will increase the probability of error in the received data.
+* Design systems such that the impulse response is short enough that very little energy from one symbol smears into the next symbol.
 
-Biphase line codes require at least one transition per bit time. This makes it easier to synchronize the transceivers and detect errors, however, the baud rate is greater than that of NRZ codes.
+* Separate symbols in time with guard periods.
+* Apply an equalizer at the receiver, that, broadly speaking, attempts to undo the effect of the channel by applying an inverse filter.
+* Apply a sequence detector at the receiver, that attempts to estimate the sequence of transmitted symbols using the Viterbi algorithm.
 
-Other considerations 
+Intentional intersymbol interference 
 
-A line code will typically reflect technical requirements of the transmission medium, such as optical fiber or shielded twisted pair.  These requirements are unique for each medium, because each one has different behavior related to interference, distortion, capacitance and attenuation.
-
-Common line codes 
-
-* 2B1Q
-* 4B3T
-* 4B5B
-* 6b/8b encoding
-* 8b/10b encoding
-* 64b/66b encoding
-* 128b/130b encoding
-* Alternate mark inversion (AMI)
-* Coded mark inversion (CMI)
-* EFMPlus, used in DVDs
-* Eight-to-fourteen modulation (EFM), used in compact discs
-* Hamming code
-* Hybrid ternary code
-* Manchester code and differential Manchester
-* Mark and space
-* MLT-3 encoding
-* Modified AMI codes: B8ZS, B6ZS, B3ZS, HDB3
-* Modified frequency modulation, Miller encoding and delay encoding
-* Non-return-to-zero (NRZ)
-* Non-return-to-zero, inverted (NRZI)
-* Pulse-position modulation
-* Return-to-zero (RZ)
-* TC-PAM
-
-Optical line codes
-
-* Alternate-Phase Return-to-Zero (APRZ)
-* Carrier-Suppressed Return-to-Zero (CSRZ)
-* Three of Six, Fiber Optical (TS-FO)
+Coded modulation systems also exist that intentionally build a controlled amount of ISI into the system at the transmitter side, known as faster-than-Nyquist signaling. Such a design trades a computational complexity penalty at the receiver against a Shannon capacity gain of the overall transceiver system.Faster than Nyquist Signaling, by J.B. Anderson, F. Rusek, and V. Owall, Proceedings of the IEEE, Aug. 2013
 
 See also 
 
-* Physical layer
-* Self-synchronizing code and bit synchronization
+* Nyquist ISI criterion
 
 References 
 
+Further reading 
+
+* 
 * 
 
-External links
+External links 
 
-* [https://web.archive.org/web/20130418052107/http://www.electronics.dit.ie/staff/amoloney/lecture-9.pdf Line Coding Lecture No. 9] 
-* [http://www.fiberoptics4sale.com/wordpress/line-coding-in-digital-communication/ Line Coding in Digital Communication]
-* [https://www.ac.uma.es/~guille/codsim2.0/ CodSim 2.0: Open source simulator for Digital Data Communications Model at the University of Malaga written in HTML]"10728040*ÏÊ¨ö:ARTICLEB¢
-ü
-wiki_metadataç*ä
+* [http://www.its.bldrdoc.gov/fs-1037/dir-019/_2849.htm Definition of ISI] from Federal Standard 1037C
+* [https://web.archive.org/web/20040929015825/http://dar.ju.edu.jo/mansour/723/Lectures/pages/Intersymbol%20interference.htm Intersymbol interference concept]"43351275*∞ÿîö:ARTICLEB‘O
+—O
+wiki_metadataøO*ºO
 
 	namespace 
 #
-	dump_date2022-10-15T22:25:48Z
+	dump_date2022-10-11T08:41:20Z
 ,
-date_parsed2024-08-01T02:56:09.026091Z
-£~
-	wiki_textï~í~{{short description|Pattern used within a communications system to represent digital data}}
-{{stack|
-[[File:NRZcode.png|thumb|An example of coding a binary signal using rectangular [[pulse-amplitude modulation]] with polar [[non-return-to-zero]] code]]
-[[File:Ami encoding.svg|thumb|An example of [[bipolar encoding]], or AMI.]]
-[[File:Manchester code.svg|thumb|Encoding of 11011000100 in [[Manchester encoding]] ]]
-[[File:Differential_manchester_encoding_Workaround.svg|thumb|An example of [[differential Manchester encoding]]]]
-[[File:Biphase Mark Code.svg|thumb|An example of [[biphase mark code]] ]]
-[[File:MLT3encoding.svg|thumb|An example of [[MLT-3 encoding]]]]
-}}
-{{Modulation techniques}}
+date_parsed2024-08-01T02:56:08.827756Z
+’N
+	wiki_text«NƒN{{short description|Form of distortion affecting communication reliability}}
+{{Refimprove|date=August 2015}}
+{{Use American English|date=September 2022}} 
 
-In [[telecommunication]], a '''line code''' is a pattern of voltage, current, or photons used to represent digital data [[transmission (telecommunications)|transmitted]] down a [[communication channel]] or written to a [[storage medium]]. This repertoire of signals is usually called a '''constrained code''' in data storage systems.<ref>{{Cite journal 
-|journal= IEEE Communications Magazine
-|date=2022
-|title=Innovation in Constrained Codes
-|author=K. Schouhamer Immink
-|author-link=Kees Schouhamer Immink 
-|url=https://www.researchgate.net/publication/362866105
-|access-date=2022-10-05
-}}</ref> 
-Some signals are more prone to error than others as the physics of the communication channel or storage medium constrains the repertoire of signals that can be used reliably.<ref name="optics">{{Cite journal 
-|journal= IEEE Journal on Selected Areas in Communications
-|volume=19
-|date=2001
-|title=A Survey of Codes for Optical Disk Recording
-|author=K. Schouhamer Immink
-|author-link=Kees Schouhamer Immink 
-|url=https://www.researchgate.net/publication/3234561
-|pages=751‚Äì764
-|access-date=2018-02-05
-}}</ref>
+In [[telecommunication]], '''intersymbol interference''' ('''ISI''') is a form of [[distortion]] of a [[signal]] in which one [[symbol (data)|symbol]] interferes with subsequent symbols. This is an unwanted phenomenon as the previous symbols have a similar effect as [[Noise (electronics)|noise]], thus making the communication less reliable. The spreading of the pulse beyond its allotted time interval causes it to interfere with neighboring pulses.<ref>{{cite book|last1=Lathi|first1=B.P.|title=Modern Digital and Analog Communication Systems|last2=Ding|first2=Zhi|date=2009|publisher=Oxford University Press, Inc|year=|isbn=9780195331455|edition=Fourth|location=|page=95|pages=}}</ref> ISI is usually caused by multipath propagation or the inherent linear or non-linear frequency response of a [[communication channel]] causing successive symbols to blur together.
 
-Common line encodings are [[Unipolar encoding|unipolar]], [[Polar encoding|polar]], [[Bipolar encoding|bipolar]], and [[Manchester code]].
+The presence of ISI in the system introduces errors in the decision device at the receiver output. Therefore, in the design of the transmitting and receiving filters, the objective is to minimize the effects of ISI, and thereby deliver the digital data to its destination with the smallest error rate possible.
 
-== Transmission and storage ==
-After line coding, the signal is put through a physical communication channel, either a [[transmission medium]] or [[data storage medium]].<ref name="paulsen">Karl Paulsen. [http://www.tvtechnology.com/media-servers/0150/coding-for-magnetic-storage-mediums/186738 "Coding for Magnetic Storage Mediums"] {{Webarchive|url=https://web.archive.org/web/20140521215946/http://www.tvtechnology.com/media-servers/0150/coding-for-magnetic-storage-mediums/186738 |date=2014-05-21 }}.2007.</ref><ref>{{citation|author1=Abdullatif Glass |author2=Nidhal Abdulaziz |author3=and Eesa Bastaki |url=http://ro.uow.edu.au/cgi/viewcontent.cgi?article=1285&context=dubaipapers|title=Slope line coding for telecommunication networks|year=2007|page=1537|journal=IEEE International Conference on Signal Processing and Communication|publisher=IEEE|location=Dubai|quote=Line codes ... facilitates the transmission of data over telecommunication and computer networks and its storage in multimedia systems.}}</ref> The most common physical channels are:
-* the line-coded signal can directly be put on a [[transmission line]], in the form of variations of the voltage or current (often using [[differential signaling]]).
-* the line-coded signal (the ''[[baseband]] signal'') undergoes further [[pulse shaping]] (to reduce its frequency bandwidth) and then is [[modulation|modulated]] (to shift its frequency) to create an ''[[RF signal]]'' that can be sent through free space.
-* the line-coded signal can be used to turn on and off a light source in [[free-space optical communication]], most commonly used in an infrared [[remote control]].
-* the line-coded signal can be printed on paper to create a [[bar code]].
-* the line-coded signal can be converted to magnetized spots on a [[hard drive]] or [[tape drive]].
-* the line-coded signal can be converted to pits on an [[optical disc]].
+Ways to alleviate intersymbol interference include [[adaptive equalization]] and [[error correcting codes]].<ref>Digital Communications by Simon Haykin, McMaster University</ref>
 
-Some of the more common binary line codes include:
-{| class="wikitable"
-|-
-! Signal !! Comments !! 1 state !! 0 state
-|-
-| NRZ‚ÄìL || [[Non-return-to-zero]] level. This is the standard positive logic signal format used in digital circuits.
-| forces a high level
-| forces a low level
-|-
-| NRZ‚ÄìM || Non-return-to-zero mark
-| forces a transition
-| does nothing (keeps sending the previous level)
-|-
-| NRZ‚ÄìS  || Non-return-to-zero space
-| does nothing (keeps sending the previous level)
-| forces a transition
-|-
-| RZ  || Return to zero
-| goes high for half the bit period and returns to low
-| stays low for the entire period
-|-
-| Biphase‚ÄìL  || Manchester. Two consecutive bits of the same type force a transition at the beginning of a bit period.
-| forces a negative transition in the middle of the bit
-| forces a positive transition in the middle of the bit
-|-
-| Biphase‚ÄìM || Variant of Differential Manchester. There is always a transition halfway between the conditioned transitions.
-| forces a transition
-| keeps level constant
-|-
-| Biphase‚ÄìS  || Differential Manchester used in Token Ring. There is always a transition halfway between the conditioned transitions.
-| keeps level constant
-| forces a transition
-|-
-| Differential Manchester (Alternative)|| Need a Clock, always a transition in the middle of the clock period
-| is represented by no transition.
-| is represented by a transition at the beginning of the clock period.
-|-
-| Bipolar || The positive and negative pulses alternate.
-| forces a positive or negative pulse for half the bit period
-| keeps a zero level during bit period
-|}
+== Causes ==
 
-[[File:Digital signal encoding formats-en.svg|framed|center|An arbitrary bit pattern in various binary line code formats]]
+=== Multipath propagation ===
+{{Main|Multipath propagation}}
+One of the causes of intersymbol interference is [[multipath propagation]] in which a wireless signal from a transmitter reaches the receiver via multiple paths. The causes of this include [[reflection (physics)|reflection]] (for instance, the signal may bounce off buildings), [[refraction]] (such as through the [[leaf|foliage]] of a tree) and atmospheric effects such as [[atmospheric ducting]] and [[ionospheric reflection]]. Since the various paths can be of different lengths, this results in the different versions of the signal arriving at the receiver at different times. These delays mean that part or all of a given symbol will be spread into the subsequent symbols, thereby interfering with the correct detection of those symbols. Additionally, the various paths often distort the [[amplitude]] and/or [[phase (waves)|phase]] of the signal, thereby causing further interference with the received signal.
 
-Each line code has advantages and disadvantages. Line codes are chosen to meet one or more of the following criteria:
-* Minimize transmission hardware
-* Facilitate synchronization
-* Ease error detection and correction
-* Achieve a target [[spectral density]]
-* Eliminate a [[DC component]]
+=== Bandlimited channels ===
 
-== Disparity ==
-Most long-distance communication channels cannot reliably transport a [[DC component]]. The DC component is also called the ''disparity'', the ''bias'', or the [[DC coefficient]]. The disparity of a bit pattern is the difference in the number of one bits vs the number of zero bits. The ''running disparity'' is the [[running total]] of the disparity of all previously transmitted bits.<ref>{{cite document |author=Jens Kr√∂ger |url=https://www.psi.ch/mu3e/ThesesEN/BachelorKroeger.pdf |archive-url=https://ghostarchive.org/archive/20221009/https://www.psi.ch/mu3e/ThesesEN/BachelorKroeger.pdf |archive-date=2022-10-09 |url-status=live |title=Data Transmission at High Rates via Kapton Flexprints for the Mu3e Experiment |date=2014 |page=16}}</ref> The simplest possible line code, [[Unipolar encoding|unipolar]], gives too many errors on such systems, because it has an unbounded DC component.
+Another cause of intersymbol interference is the transmission of a signal through a [[bandlimited]] channel, i.e., one where the [[frequency response]] is zero above a certain frequency (the cutoff frequency). Passing a signal through such a channel results in the removal of frequency components above this cutoff frequency. In addition, components of the frequency below the cutoff frequency may also be attenuated by the channel.
 
-Most line codes eliminate the DC component{{snd}} such codes are called [[DC-balanced]], zero-DC, or DC-free. There are three ways of eliminating the DC component:
+This [[Filter (signal processing)|filtering]] of the transmitted signal affects the shape of the pulse that arrives at the receiver. The effects of filtering a rectangular pulse not only change the shape of the pulse within the first symbol period, but it is also spread out over the subsequent symbol periods. When a message is transmitted through such a channel, the spread pulse of each individual symbol will interfere with following symbols.
 
-* Use a [[constant-weight code]]. Each transmitted [[code word]] in a constant-weight code is designed such that every code word that contains some positive or negative levels also contains enough of the opposite levels, such that the average level over each code word is zero. Examples of constant-weight codes include [[Manchester code]] and [[Interleaved 2 of 5]].
-* Use a [[paired disparity code]]. Each code word in a paired disparity code that averages to a negative level is paired with another code word that averages to a positive level. The transmitter keeps track of the running DC buildup, and picks the code word that pushes the DC level back towards zero. The receiver is designed so that either code word of the pair decodes to the same data bits. Examples of paired disparity codes include [[alternate mark inversion]], [[8b/10b]] and [[4B3T]].
-* Use a [[scrambler]]. For example, the scrambler specified in {{IETF RFC | 2615}} for [[64b/66b encoding]].
+Bandlimited channels are present in both wired and wireless communications. The limitation is often imposed by the desire to operate multiple independent signals through the same area/cable; due to this, each system is typically allocated a piece of the total [[Bandwidth (signal processing)|bandwidth]] available. For wireless systems, they may be allocated a slice of the [[electromagnetic spectrum]] to transmit in (for example, [[FM broadcasting|FM radio]] is often broadcast in the 87.5‚Äì108&nbsp;[[MHz]] range). This allocation is usually administered by a [[government agency]]; in the case of the United States this is the [[Federal Communications Commission]] (FCC). In a wired system, such as an [[optical fiber cable]], the allocation will be decided by the owner of the cable.
 
-== Polarity ==
-Bipolar line codes have two polarities, are generally implemented as RZ, and have a radix of three since there are three distinct output levels (negative, positive and zero). One of the principle advantages of this type of code is that it can eliminate any DC component. This is important if the signal must pass through a transformer or a long transmission line.
+The bandlimiting can also be due to the physical properties of the medium - for instance, the cable being used in a wired system may have a cutoff frequency above which practically none of the transmitted signal will propagate.
 
-Unfortunately, several long-distance communication channels have polarity ambiguity. Polarity-insensitive line codes compensate in these channels.<ref>
-{{cite patent |inventor=Peter E. K. Chow. |url=https://www.google.com.ar/patents/US4387366 |country=US |number=4387366 |title=Code converter for polarity-insensitive transmission systems |pubdate=1983}}
-</ref><ref>
-{{citation |author=David A. Glanzer |publisher=[[Fieldbus Foundation]] |url=http://www.fieldbus.org/images/stories/enduserresources/technicalreferences/documents/wiringinstallationguide.pdf |archive-url=https://ghostarchive.org/archive/20221009/http://www.fieldbus.org/images/stories/enduserresources/technicalreferences/documents/wiringinstallationguide.pdf |archive-date=2022-10-09 |url-status=live |title=Fieldbus Application Guide ... Wiring and Installation |section=4.7 Polarity |page=10}}
-</ref><ref>
-{{cite book |author1=George C. Clark Jr. |author2=J. Bibb Cain |url=https://books.google.com/books?id=wgzyBwAAQBAJ |title=Error-Correction Coding for Digital Communications |date=2013 |page=255 |isbn=9781489921741 |publisher=Springer Science & Business Media |quote=When PSK data modulation is used, the potential exists for an ambiguity in the polarity of the received channel symbols. This problem can be solved in one of two ways. First ... a so-called ''transparent'' code. ...}}
-</ref><ref>
-{{cite book |author=Prakash C. Gupta |url=https://books.google.com/books?id=Zr1nAgAAQBAJ |title=Data Communications and Computer Networks |date=2013 |page=13 |isbn=9788120348646 |publisher=PHI Learning Pvt. Ltd. |quote=Another benefit of differential encoding is its insensitivity to polarity of the signal. ... If the leads of a twisted pair are accidentally reversed...}}
-</ref>
-There are three ways of providing unambiguous reception of 0 and 1 bits over such channels:
-* Pair each code word with the polarity-inverse of that code word. The receiver is designed so that either code word of the pair decodes to the same data bits. Examples include [[alternate mark inversion]], [[Differential Manchester encoding]], [[coded mark inversion]] and [[Miller encoding]].
-* [[differential coding]] each symbol relative to the previous symbol. Examples include [[MLT-3 encoding]] and [[NRZI]].
-* Invert the whole stream when inverted [[syncword]]s are detected
+Communication systems that transmit data over bandlimited channels usually implement [[pulse shaping]] to avoid interference caused by the bandwidth limitation. If the channel frequency response is flat and the shaping filter has a finite bandwidth, it is possible to communicate with no ISI at all. Often the channel response is not known beforehand, and an [[adaptive equalizer]] is used to compensate the frequency response.
 
-==Run-length limited codes==
-For reliable [[clock recovery]] at the receiver, a [[Run-length limited|run-length limitation]] may be imposed on the generated channel sequence, i.e., the maximum number of consecutive ones or zeros is bounded to a reasonable number. A clock period is recovered by observing transitions in the received sequence, so that a maximum run length guarantees sufficient transitions to assure clock recovery quality.
+== Effects on eye patterns ==
+{{details|topic=eye patterns|Eye pattern}}
 
-RLL codes are defined by four main parameters: ''m'', ''n'', ''d'', ''k''. The first two, ''m''/''n'', refer to the rate of the code, while the remaining two specify the minimal ''d'' and maximal ''k'' number of zeroes between consecutive ones. This is used in both [[telecommunication]] and storage systems that move a medium past a fixed [[recording head]].<ref>{{Cite journal 
-|journal=Proceedings of the IEEE
-|volume=78 
-|issue=11 
-|date=December 1990 |title=Runlength-Limited Sequences
-|author=Kees Schouhamer Immink
-|author-link=Kees Schouhamer Immink 
-|url=https://www.researchgate.net/publication/2984369
-|pages=1745‚Äì1759
-|quote=A detailed description is furnished of the limiting properties of runlength limited sequences.
- |doi=10.1109/5.63306}}</ref>
+One way to study ISI in a [[Pulse-code modulation|PCM]] or data transmission system experimentally is to apply the received wave to the vertical deflection plates of an oscilloscope and to apply a sawtooth wave at the transmitted symbol rate R (R = 1/T) to the horizontal deflection plates. The resulting display is called an eye pattern because of its resemblance to the human eye for binary waves. The interior region of the eye pattern is called the eye opening. An eye pattern provides a great deal of information about the performance of the pertinent system.
+# The width of the eye opening defines the time interval over which the received wave can be sampled without error from ISI. It is apparent that the preferred time for sampling is the instant of time at which the eye is open widest.
+# The sensitivity of the system to timing error is determined by the rate of closure of the eye as the sampling time is varied.
+# The height of the eye opening, at a specified sampling time, defines the margin over noise.
 
-Specifically, RLL bounds the length of stretches (runs) of repeated bits during which the signal does not change.  If the runs are too long, clock recovery is difficult; if they are too short, the high frequencies might be attenuated by the communications channel.  By [[Modulation|modulating]] the [[data]], RLL reduces the timing uncertainty in decoding the stored data, which would lead to the possible erroneous insertion or removal of bits when reading the data back. This mechanism ensures that the boundaries between bits can always be accurately found (preventing [[bit slip]]), while efficiently using the media to reliably store the maximal amount of data in a given space.
+An eye pattern, which overlays many samples of a signal, can give a graphical representation of the
+signal characteristics. The first image below is the eye pattern for a binary [[phase-shift keying]] (PSK) system in which a one is represented by an amplitude of ‚àí1 and a zero by an amplitude of +1. The current sampling time is at the center of the image and the previous and next sampling times are at the edges of the image. The various transitions from one sampling time to another (such as one-to-zero, one-to-one and so forth) can clearly be seen on the diagram.
 
-Early disk drives used very simple encoding schemes, such as RLL (0,1) FM code, followed by RLL (1,3) MFM code which were widely used in [[hard disk drive]]s until the mid-1980s and are still used in digital optical discs such as [[CD]], [[DVD]], [[Minidisc|MD]], [[Hi-MD]] and [[Blu-ray]] using [[Eight-to-Fourteen Modulation|EFM]] and [[EFMPLus]] codes.<ref>{{Cite journal 
-|journal=IEEE Transactions on Consumer Electronics
-|volume=CE-41 
-|date=1995
-|title=EFMPlus: The Coding Format of the MultiMedia Compact Disc
-|author=Kees Schouhamer Immink
-|author-link=Kees Schouhamer Immink 
-|url=https://www.researchgate.net/publication/3179483
-|pages=491‚Äì497
-|quote=A high-density alternative to EFM is described.}}</ref> Higher density RLL (2,7) and RLL (1,7) codes became the [[de facto standard]]s for hard disks by the early 1990s.{{citation needed|date=August 2019}}
+The [[noise margin]] - the amount of noise required to cause the receiver to get an error - is given by the distance between the signal and the zero amplitude point at the sampling time; in other words, the further from zero at the sampling time the signal is the better. For the signal to be correctly interpreted, it must be sampled somewhere between the two points where the zero-to-one and one-to-zero transitions cross. Again, the further apart these points are the better, as this means the signal will be less sensitive to errors in the timing of the samples at the receiver.
 
-== Synchronization ==
-{{main|Clock recovery}}
+The effects of ISI are shown in the second image which is an eye pattern of the same system when operating over a multipath channel. The effects of receiving delayed and distorted versions of the signal can be seen in the loss of definition of the signal transitions. It also reduces both the noise margin and the window in which the signal can be sampled, which shows that the performance of the system will be worse (i.e. it will have a greater [[bit error ratio]]).
 
-Line coding should make it possible for the receiver to synchronize itself to the [[Phase (waves)|phase]] of the received signal. If the clock recovery is not ideal, then the signal to be decoded will not be sampled at the optimal times. This will increase the probability of error in the received data.
+<gallery class="center" style="text-align: center;">
+Image:Binary PSK eye diagram.svg|The eye diagram of a binary PSK system
+Image:Multipath system eye diagram.svg|The eye diagram of the same system with multipath effects added
+</gallery>
 
-Biphase line codes require at least one transition per bit time. This makes it easier to synchronize the transceivers and detect errors, however, the baud rate is greater than that of NRZ codes.
+== Countering ISI ==
 
-== Other considerations ==
-A line code will typically reflect technical requirements of the transmission medium, such as [[optical fiber]] or [[shielded twisted pair]].  These requirements are unique for each medium, because each one has different behavior related to interference, distortion, capacitance and attenuation.<ref>{{Cite book|url=https://books.google.com/books?id=On_Hh23IXDUC&pg=PA284 |title=Network Dictionary |last=Dong |first=Jielin |date=2007 |publisher=Javvin Technologies Inc. |isbn=9781602670006 |language=en |page=284}}</ref>
+There are several techniques in [[telecommunication]] and data storage that try to work around the problem of intersymbol interference.
 
-== Common line codes ==
-{{Div col|colwidth=30em}}
-* [[2B1Q]]
-* [[4B3T]]
-* [[4B5B]]
-* [[6b/8b encoding]]
-* [[8b/10b encoding]]
-* [[64b/66b encoding]]
-* [[128b/130b encoding]]
-* [[Alternate mark inversion]] (AMI)
-* [[Coded mark inversion]] (CMI)
-* [[EFMPlus]], used in [[DVD]]s
-* [[Eight-to-fourteen modulation]] (EFM), used in [[compact disc]]s
-* [[Hamming code]]
-* [[Hybrid ternary code]]
-* [[Manchester code]] and [[Differential Manchester encoding|differential Manchester]]
-* [[Mark and space]]
-* [[MLT-3 encoding]]
-* [[Modified AMI code]]s: B8ZS, B6ZS, B3ZS, HDB3
-* [[Modified frequency modulation]], Miller encoding and delay encoding
-* [[Non-return-to-zero]] (NRZ)
-* [[Non-return-to-zero, inverted]] (NRZI)
-* [[Pulse-position modulation]]
-* [[Return-to-zero]] (RZ)
-* [[TC-PAM]]
-{{div col end}}
+* Design systems such that the impulse response is short enough that very little energy from one symbol smears into the next symbol.
+[[File:Raised-cosine-ISI.svg|thumb|500px|Consecutive raised-cosine impulses, demonstrating zero-ISI property]]
+* Separate symbols in time with [[guard period]]s.
+* Apply an [[Equalizer (communications)|equalizer]] at the receiver, that, broadly speaking, attempts to undo the effect of the channel by applying an inverse filter.
+* Apply a [[Maximum likelihood sequence estimation|sequence detector]] at the receiver, that attempts to estimate the sequence of transmitted symbols using the [[Viterbi algorithm]].
 
-===Optical line codes===
-* [[Alternate-Phase Return-to-Zero]] (APRZ)
-* [[Carrier-Suppressed Return-to-Zero]] (CSRZ)
-* [[IEEE 1355#Slice: TS-FO-02|Three of Six, Fiber Optical]] (TS-FO)
+== Intentional intersymbol interference ==
+Coded modulation systems also exist that intentionally build a controlled amount of ISI into the system at the transmitter side, known as [[faster-than-Nyquist signaling]]. Such a design trades a computational complexity penalty at the receiver against a Shannon capacity gain of the overall transceiver system.<ref>Faster than Nyquist Signaling, by J.B. Anderson, F. Rusek, and V. Owall, Proceedings of the IEEE, Aug. 2013</ref>
 
 == See also ==
-* [[Physical layer]]
-* [[Self-synchronizing code]] and bit synchronization
+* [[Nyquist ISI criterion]]
 
 == References ==
-{{reflist}}
-* {{FS1037C MS188}}
 
-==External links==
-* [https://web.archive.org/web/20130418052107/http://www.electronics.dit.ie/staff/amoloney/lecture-9.pdf Line Coding Lecture No. 9] 
-* [http://www.fiberoptics4sale.com/wordpress/line-coding-in-digital-communication/ Line Coding in Digital Communication]
-* [https://www.ac.uma.es/~guille/codsim2.0/ CodSim 2.0: Open source simulator for Digital Data Communications Model at the University of Malaga written in HTML]
+{{Reflist}}
 
-{{Bit-encoding}}
+== Further reading ==
 
-[[Category:Line codes|*]]
-[[Category:Physical layer protocols]]
-[[Category:Coding theory]]JèIn telecommunication, a line code is a pattern of voltage, current, or photons used to represent digital data transmitted down a communication channel or written to a storage medium. This repertoire of signals is usually called a constrained code in data storage systems.JÆSome signals are more prone to error than others as the physics of the communication channel or storage medium constrains the repertoire of signals that can be used reliably.JHCommon line encodings are unipolar, polar, bipolar, and Manchester code.JTransmission and storageJæAfter line coding, the signal is put through a physical communication channel, either a transmission medium or data storage medium.Karl Paulsen. .2007. The most common physical channels are:J˛* the line-coded signal can directly be put on a transmission line, in the form of variations of the voltage or current (often using differential signaling).
-* the line-coded signal (the baseband signal) undergoes further pulse shaping (to reduce its frequency bandwidth) and then is modulated (to shift its frequency) to create an RF signal that can be sent through free space.
-* the line-coded signal can be used to turn on and off a light source in free-space optical communication, most commonly used in an infrared remote control.
-* the line-coded signal can be printed on paper to create a bar code.
-* the line-coded signal can be converted to magnetized spots on a hard drive or tape drive.
-* the line-coded signal can be converted to pits on an optical disc.J2Some of the more common binary line codes include:JuEach line code has advantages and disadvantages. Line codes are chosen to meet one or more of the following criteria:J¢* Minimize transmission hardware
-* Facilitate synchronization
-* Ease error detection and correction
-* Achieve a target spectral density
-* Eliminate a DC componentJ	DisparityJÊMost long-distance communication channels cannot reliably transport a DC component. The DC component is also called the disparity, the bias, or the DC coefficient. The disparity of a bit pattern is the difference in the number of one bits vs the number of zero bits. The running disparity is the running total of the disparity of all previously transmitted bits. The simplest possible line code, unipolar, gives too many errors on such systems, because it has an unbounded DC component.JòMost line codes eliminate the DC component such codes are called DC-balanced, zero-DC, or DC-free. There are three ways of eliminating the DC component:Jç* Use a constant-weight code. Each transmitted code word in a constant-weight code is designed such that every code word that contains some positive or negative levels also contains enough of the opposite levels, such that the average level over each code word is zero. Examples of constant-weight codes include Manchester code and Interleaved 2 of 5.
-* Use a paired disparity code. Each code word in a paired disparity code that averages to a negative level is paired with another code word that averages to a positive level. The transmitter keeps track of the running DC buildup, and picks the code word that pushes the DC level back towards zero. The receiver is designed so that either code word of the pair decodes to the same data bits. Examples of paired disparity codes include alternate mark inversion, 8b/10b and 4B3T.
-* Use a scrambler. For example, the scrambler specified in for 64b/66b encoding.JPolarityJÎBipolar line codes have two polarities, are generally implemented as RZ, and have a radix of three since there are three distinct output levels (negative, positive and zero). One of the principle advantages of this type of code is that it can eliminate any DC component. This is important if the signal must pass through a transformer or a long transmission line.JíUnfortunately, several long-distance communication channels have polarity ambiguity. Polarity-insensitive line codes compensate in these channels.J[There are three ways of providing unambiguous reception of 0 and 1 bits over such channels:J¬* Pair each code word with the polarity-inverse of that code word. The receiver is designed so that either code word of the pair decodes to the same data bits. Examples include alternate mark inversion, Differential Manchester encoding, coded mark inversion and Miller encoding.
-* differential coding each symbol relative to the previous symbol. Examples include MLT-3 encoding and NRZI.
-* Invert the whole stream when inverted syncwords are detectedJRun-length limited codesJˇFor reliable clock recovery at the receiver, a run-length limitation may be imposed on the generated channel sequence, i.e., the maximum number of consecutive ones or zeros is bounded to a reasonable number. A clock period is recovered by observing transitions in the received sequence, so that a maximum run length guarantees sufficient transitions to assure clock recovery quality.JøRLL codes are defined by four main parameters: m, n, d, k. The first two, m/n, refer to the rate of the code, while the remaining two specify the minimal d and maximal k number of zeroes between consecutive ones. This is used in both telecommunication and storage systems that move a medium past a fixed recording head.JíSpecifically, RLL bounds the length of stretches (runs) of repeated bits during which the signal does not change. If the runs are too long, clock recovery is difficult; if they are too short, the high frequencies might be attenuated by the communications channel. By modulating the data, RLL reduces the timing uncertainty in decoding the stored data, which would lead to the possible erroneous insertion or removal of bits when reading the data back. This mechanism ensures that the boundaries between bits can always be accurately found (preventing bit slip), while efficiently using the media to reliably store the maximal amount of data in a given space.JãEarly disk drives used very simple encoding schemes, such as RLL (0,1) FM code, followed by RLL (1,3) MFM code which were widely used in hard disk drives until the mid-1980s and are still used in digital optical discs such as CD, DVD, MD, Hi-MD and Blu-ray using EFM and EFMPLus codes. Higher density RLL (2,7) and RLL (1,7) codes became the de facto standards for hard disks by the early 1990s.JSynchronizationJùLine coding should make it possible for the receiver to synchronize itself to the phase of the received signal. If the clock recovery is not ideal, then the signal to be decoded will not be sampled at the optimal times. This will increase the probability of error in the received data.J¬Biphase line codes require at least one transition per bit time. This makes it easier to synchronize the transceivers and detect errors, however, the baud rate is greater than that of NRZ codes.JOther considerationsJûA line code will typically reflect technical requirements of the transmission medium, such as optical fiber or shielded twisted pair. These requirements are unique for each medium, because each one has different behavior related to interference, distortion, capacitance and attenuation.JCommon line codesJ”* 2B1Q
-* 4B3T
-* 4B5B
-* 6b/8b encoding
-* 8b/10b encoding
-* 64b/66b encoding
-* 128b/130b encoding
-* Alternate mark inversion (AMI)
-* Coded mark inversion (CMI)
-* EFMPlus, used in DVDs
-* Eight-to-fourteen modulation (EFM), used in compact discs
-* Hamming code
-* Hybrid ternary code
-* Manchester code and differential Manchester
-* Mark and space
-* MLT-3 encoding
-* Modified AMI codes: B8ZS, B6ZS, B3ZS, HDB3
-* Modified frequency modulation, Miller encoding and delay encoding
-* Non-return-to-zero (NRZ)
-* Non-return-to-zero, inverted (NRZI)
-* Pulse-position modulation
-* Return-to-zero (RZ)
-* TC-PAMJOptical line codesJx* Alternate-Phase Return-to-Zero (APRZ)
-* Carrier-Suppressed Return-to-Zero (CSRZ)
-* Three of Six, Fiber Optical (TS-FO)JSee alsoJB* Physical layer
-* Self-synchronizing code and bit synchronizationJ
-ReferencesJExternal links
+* {{cite book|title=Digital Systems Engineering|url=https://archive.org/details/digitalsystemsen00dall|url-access=limited|author=William J. Dally and John W. Poulton|pages=[https://archive.org/details/digitalsystemsen00dall/page/n303 280]&ndash;285|publisher=Cambridge University Press|year=1998|isbn=9780521592925}}
+* {{cite book|title=Digital Television|author=Herv√© Benoit|pages=90&ndash;91|publisher=Focal Press|year=2002|isbn=9780240516950}}
+
+== External links ==
+* [http://www.its.bldrdoc.gov/fs-1037/dir-019/_2849.htm Definition of ISI] from [[Federal Standard 1037C]]
+* [https://web.archive.org/web/20040929015825/http://dar.ju.edu.jo/mansour/723/Lectures/pages/Intersymbol%20interference.htm Intersymbol interference concept]
+
+[[Category:Telecommunication theory]]
+[[Category:Wireless networking]]
+[[Category:Television terminology]]J∞In telecommunication, intersymbol interference (ISI) is a form of distortion of a signal in which one symbol interferes with subsequent symbols. This is an unwanted phenomenon as the previous symbols have a similar effect as noise, thus making the communication less reliable. The spreading of the pulse beyond its allotted time interval causes it to interfere with neighboring pulses. ISI is usually caused by multipath propagation or the inherent linear or non-linear frequency response of a communication channel causing successive symbols to blur together.J∂The presence of ISI in the system introduces errors in the decision device at the receiver output. Therefore, in the design of the transmitting and receiving filters, the objective is to minimize the effects of ISI, and thereby deliver the digital data to its destination with the smallest error rate possible.JüWays to alleviate intersymbol interference include adaptive equalization and error correcting codes.Digital Communications by Simon Haykin, McMaster UniversityJCausesJMultipath propagationJÀOne of the causes of intersymbol interference is multipath propagation in which a wireless signal from a transmitter reaches the receiver via multiple paths. The causes of this include reflection (for instance, the signal may bounce off buildings), refraction (such as through the foliage of a tree) and atmospheric effects such as atmospheric ducting and ionospheric reflection. Since the various paths can be of different lengths, this results in the different versions of the signal arriving at the receiver at different times. These delays mean that part or all of a given symbol will be spread into the subsequent symbols, thereby interfering with the correct detection of those symbols. Additionally, the various paths often distort the amplitude and/or phase of the signal, thereby causing further interference with the received signal.JBandlimited channelsJ®Another cause of intersymbol interference is the transmission of a signal through a bandlimited channel, i.e., one where the frequency response is zero above a certain frequency (the cutoff frequency). Passing a signal through such a channel results in the removal of frequency components above this cutoff frequency. In addition, components of the frequency below the cutoff frequency may also be attenuated by the channel.JüThis filtering of the transmitted signal affects the shape of the pulse that arrives at the receiver. The effects of filtering a rectangular pulse not only change the shape of the pulse within the first symbol period, but it is also spread out over the subsequent symbol periods. When a message is transmitted through such a channel, the spread pulse of each individual symbol will interfere with following symbols.J«Bandlimited channels are present in both wired and wireless communications. The limitation is often imposed by the desire to operate multiple independent signals through the same area/cable; due to this, each system is typically allocated a piece of the total bandwidth available. For wireless systems, they may be allocated a slice of the electromagnetic spectrum to transmit in (for example, FM radio is often broadcast in the 87.5‚Äì108¬†MHz range). This allocation is usually administered by a government agency; in the case of the United States this is the Federal Communications Commission (FCC). In a wired system, such as an optical fiber cable, the allocation will be decided by the owner of the cable.J„The bandlimiting can also be due to the physical properties of the medium - for instance, the cable being used in a wired system may have a cutoff frequency above which practically none of the transmitted signal will propagate.J£Communication systems that transmit data over bandlimited channels usually implement pulse shaping to avoid interference caused by the bandwidth limitation. If the channel frequency response is flat and the shaping filter has a finite bandwidth, it is possible to communicate with no ISI at all. Often the channel response is not known beforehand, and an adaptive equalizer is used to compensate the frequency response.JEffects on eye patternsJöOne way to study ISI in a PCM or data transmission system experimentally is to apply the received wave to the vertical deflection plates of an oscilloscope and to apply a sawtooth wave at the transmitted symbol rate R (R = 1/T) to the horizontal deflection plates. The resulting display is called an eye pattern because of its resemblance to the human eye for binary waves. The interior region of the eye pattern is called the eye opening. An eye pattern provides a great deal of information about the performance of the pertinent system.JË# The width of the eye opening defines the time interval over which the received wave can be sampled without error from ISI. It is apparent that the preferred time for sampling is the instant of time at which the eye is open widest.J# The sensitivity of the system to timing error is determined by the rate of closure of the eye as the sampling time is varied.J]# The height of the eye opening, at a specified sampling time, defines the margin over noise.JcAn eye pattern, which overlays many samples of a signal, can give a graphical representation of theJ“signal characteristics. The first image below is the eye pattern for a binary phase-shift keying (PSK) system in which a one is represented by an amplitude of ‚àí1 and a zero by an amplitude of +1. The current sampling time is at the center of the image and the previous and next sampling times are at the edges of the image. The various transitions from one sampling time to another (such as one-to-zero, one-to-one and so forth) can clearly be seen on the diagram.J¬The noise margin - the amount of noise required to cause the receiver to get an error - is given by the distance between the signal and the zero amplitude point at the sampling time; in other words, the further from zero at the sampling time the signal is the better. For the signal to be correctly interpreted, it must be sampled somewhere between the two points where the zero-to-one and one-to-zero transitions cross. Again, the further apart these points are the better, as this means the signal will be less sensitive to errors in the timing of the samples at the receiver.J–The effects of ISI are shown in the second image which is an eye pattern of the same system when operating over a multipath channel. The effects of receiving delayed and distorted versions of the signal can be seen in the loss of definition of the signal transitions. It also reduces both the noise margin and the window in which the signal can be sampled, which shows that the performance of the system will be worse (i.e. it will have a greater bit error ratio).JGImage:Binary PSK eye diagram.svg|The eye diagram of a binary PSK systemJfImage:Multipath system eye diagram.svg|The eye diagram of the same system with multipath effects addedJCountering ISIJÉThere are several techniques in telecommunication and data storage that try to work around the problem of intersymbol interference.JÑ* Design systems such that the impulse response is short enough that very little energy from one symbol smears into the next symbol.Jæ* Separate symbols in time with guard periods.
+* Apply an equalizer at the receiver, that, broadly speaking, attempts to undo the effect of the channel by applying an inverse filter.
+* Apply a sequence detector at the receiver, that attempts to estimate the sequence of transmitted symbols using the Viterbi algorithm.J$Intentional intersymbol interferenceJûCoded modulation systems also exist that intentionally build a controlled amount of ISI into the system at the transmitter side, known as faster-than-Nyquist signaling. Such a design trades a computational complexity penalty at the receiver against a Shannon capacity gain of the overall transceiver system.Faster than Nyquist Signaling, by J.B. Anderson, F. Rusek, and V. Owall, Proceedings of the IEEE, Aug. 2013JSee alsoJ* Nyquist ISI criterionJ
+ReferencesJFurther readingJExternal linksJ * from Federal Standard 1037C
+* 
