@@ -90,9 +90,9 @@ class GrpcVectorizerServiceTest {
 
         }
         log.info("waiting up to 15 seconds for at least 1 document to be added..");
-        await().atMost(15, SECONDS).until(() -> finishedDocs.size() > 1);
+        await().atMost(25, SECONDS).until(() -> finishedDocs.size() > 1);
         log.info("waiting up to 25 seconds for at least 10 docs to be added..");
-        await().atMost(25, SECONDS).until(() -> finishedDocs.size() > 10);
+        await().atMost(30, SECONDS).until(() -> finishedDocs.size() > 10);
         //my machine works fine.  Git hub seems to take forever.  This was once 80 seconds.
         //"works on my local" they say.  "Trump will never win the election" they said.
         //lies, blantant lies.

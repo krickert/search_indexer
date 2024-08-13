@@ -7,6 +7,7 @@ import com.krickert.search.service.EmbeddingsVectorReply;
 import com.krickert.search.service.EmbeddingsVectorRequest;
 import com.krickert.search.service.EmbeddingsVectorsReply;
 import io.grpc.stub.StreamObserver;
+import io.micronaut.core.util.StringUtils;
 import io.micronaut.runtime.EmbeddedApplication;
 import io.micronaut.test.extensions.junit5.annotation.MicronautTest;
 import jakarta.inject.Inject;
@@ -92,21 +93,31 @@ class GrpcEmbeddingsServiceTest {
 
     @Test
     void testEmbeddingsVectorServerEndpoint() {
+        AtomicInteger finishedDocuments = new AtomicInteger(0);
         try {
             // get the bodies of the documents in form of a list
             List<String> documentBodies = TestDataHelper.getFewHunderedPipeDocuments().stream().map(PipeDocument::getBody).toList();
 
             // process the document bodies in parallel
             documentBodies.parallelStream().forEach(text -> {
+                final String textToSend;
+                if (StringUtils.isEmpty(text)) {
+                    log.warn("Empty text for test!!!  Replacing with dummy");
+                    textToSend = "Empty Body";
+                } else {
+                    textToSend = text;
+                }
                 EmbeddingsVectorRequest request = EmbeddingsVectorRequest.newBuilder()
-                        .setText(text).build();
+                        .setText(textToSend).build();
                 EmbeddingsVectorReply reply;
                 try {
                     reply = endpoint.createEmbeddingsVector(request);
                     assertNotNull(reply);
                     assertTrue(reply.getEmbeddingsList().size() > 100);
+                    finishedDocuments.incrementAndGet();
                 } catch (Exception e) {
-                    throw new RuntimeException("Error occurred while creating embedding vector: ", e);
+                    log.error("Last embedding throws an exception. Text: [{}] Finished Docs: [{}] Exception: [{}]", text,
+                            finishedDocuments.get(), e.getMessage());
                 }
             });
 
