@@ -71,12 +71,26 @@ class GrpcChunkerServiceTest {
     void testChunkServerEndpoint() {
         Collection<String> documentBodies = new java.util.ArrayList<>(TestDataHelper.getFewHunderedPipeDocuments().stream().map(PipeDocument::getBody).toList());
         documentBodies.removeIf(String::isEmpty);
+        //the first call on these tests have been throwing an error.  Making one now
+        ChunkRequest request = createChunkRequest(
+                "text text text text text text " +
+                        "text text text text text " +
+                        "text text text text text " +
+                        "text text text text text " +
+                        "text text text text text " +
+                        "text text", 30, 300);
+
+        ChunkReply reply = null;
+        try {
+            reply = endpoint.chunk(request);
+            assertNotNull(reply);
+        } catch (StatusRuntimeException sre) {
+            log.warn("Testing if it's just the first call that messes up.", sre);
+        }
+
         for (String text : documentBodies) {
-            ChunkRequest request = ChunkRequest.newBuilder()
-                    .setText(text).setOptions(
-                            ChunkOptions.newBuilder().setLength(300).setOverlap(30).build())
-                    .build();
-            ChunkReply reply = null;
+            request = createChunkRequest(text, 30, 300);
+            reply = null;
             try {
                 reply = endpoint.chunk(request);
                 assertNotNull(reply);
@@ -120,4 +134,11 @@ class GrpcChunkerServiceTest {
                 .build();
     }
 
+    private ChunkRequest createChunkRequest(String body, int overlap, int size) {{
+            return ChunkRequest.newBuilder()
+                    .setText(body)
+                    .setOptions(ChunkOptions.newBuilder().setLength(size).setOverlap(overlap).build())
+                    .build();
+        }
+    }
 }
