@@ -17,7 +17,7 @@
     <packaging>jar</packaging>
     <jdk.version>17</jdk.version>
     <release.version>17</release.version>
-    <micronaut.version>4.3.8</micronaut.version>
+    <micronaut.version>4.5.1</micronaut.version>
     <micronaut.test.resources.enabled>true</micronaut.test.resources.enabled>
     <exec.mainClass>com.krickert.search.parser.TikaServerGrpcApplication</exec.mainClass>
     <kafka-streams-protobuf-serde.version>7.7.0</kafka-streams-protobuf-serde.version>
@@ -39,8 +39,19 @@
       <id>confluent</id>
       <url>https://packages.confluent.io/maven/</url>
     </repository>
+    <repository>
+      <id>github</id>
+      <name>GitHub krickert Apache Maven Packages</name>
+      <url>https://maven.pkg.github.com/krickert/rag-models</url>
+    </repository>
   </repositories>
-
+  <distributionManagement>
+    <repository>
+      <id>github</id>
+      <name>GitHub krickert Apache Maven Packages</name>
+      <url>https://maven.pkg.github.com/krickert/rag-models</url>
+    </repository>
+  </distributionManagement>
   <dependencies>
     <!-- https://mvnrepository.com/artifact/io.confluent/kafka-streams-protobuf-serde -->
     <dependency>

@@ -39,7 +39,19 @@
             <id>confluent</id>
             <url>https://packages.confluent.io/maven/</url>
         </repository>
+        <repository>
+            <id>github</id>
+            <name>GitHub krickert Apache Maven Packages</name>
+            <url>https://maven.pkg.github.com/krickert/rag-models</url>
+        </repository>
     </repositories>
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>GitHub krickert Apache Maven Packages</name>
+            <url>https://maven.pkg.github.com/krickert/rag-models</url>
+        </repository>
+    </distributionManagement>
     <dependencies>
         <!-- for GPU acceleration but made jar 1.6G -->
         <!-- If running this on an x86 machine, it's good to turn this on if you have an nvidia GPU -->
