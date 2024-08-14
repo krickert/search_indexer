@@ -1,27 +1,0 @@
-
-41590Protocol-control informationüIn telecommunication, the term protocol-control information or PCI has the following meanings:
-
-#  The queries and replies among communications equipment to determine the respective capabilities of each end of the communications link. 
-#  For layered systems, information exchanged between entities of a given layer, via the service provided by the next lower layer, to coordinate their joint operation.
-
-References"ƒ
-In [[telecommunication]], the term '''protocol-control information''' or PCI has the following meanings:<ref>{{cite web|title=CCITT X.200 ‚Äì Information technology ‚Äì Reference Model of Open Systems Interconnection for CCITT Applications|date=1988|publisher=International Telecommunication Union (ITU)|url=https://www.itu.int/rec/dologin_pub.asp?lang=e&id=T-REC-X.200-198811-S!!PDF-E&type=items}}</ref><ref>{{cite book|author-last1=Boait|author-first1=P.|author-last2=Neville|author-first2=G.|author-last3=Norris|author-first3=R.|author-last4=Pickman|author-first4=M.|author-last5=Walmsley|author-first5=J.|editor-last1=Tolhurst|editor-first1=M.|chapter=Definition of OSI Terms|chapter-url=https://link.springer.com/content/pdf/bbm%3A978-1-349-10306-5%2F1.pdf |archive-url=https://ghostarchive.org/archive/20221009/https://link.springer.com/content/pdf/bbm%3A978-1-349-10306-5%2F1.pdf |archive-date=2022-10-09 |url-status=live|title=Open Systems Interconnection|date=1988|series=Macmillan Computer Science Series|publisher=Palgrave|location=London|isbn=978-0-333-46803-6|doi=10.1007/978-1-349-10306-5}}</ref><ref>{{cite web|title=ITU-T X.260 {{!}} ISO/IEC 14765 ‚Äì Information technology ‚Äì Framework for protocol identification and encapsulation|date=1996|publisher=International Telecommunication Union (ITU)|url=https://handle.itu.int/11.1002/1000/3293}}</ref><ref>{{cite web|title=Federal Standard 1037C ‚Äì Telecommunications: Glossary of Telecommunication Terms|publisher=General Services Administration ‚Äì Information Technology Service|date=1996|url=https://www.its.bldrdoc.gov/fs-1037/fs-1037c.htm}}</ref>
-
-#  The queries and replies among [[communication]]s equipment to determine the respective capabilities of each end of the communications [[data link|link]]. 
-#  For layered systems, [[information]] exchanged between entities of a given layer, via the service provided by the next lower layer, to coordinate their joint [[Business operations|operation]].
-
-==References==
-{{Reflist|33em}}
-
-[[Category:OSI model| ]]
-[[Category:Reference models]]
-[[Category:Telecommunications standards]]
-[[Category:ISO standards]]
-[[Category:ITU-T recommendations]]
-[[Category:ITU-T X Series Recommendations]]
-
-{{FS1037C}}
-
-
-{{telecom-stub}}:2022-10-09T22:28:10ZB42425010JZ
-	Wikipedia'https://en.wikipedia.org/wiki/Main_PageMediaWiki 1.40.0-wmf.8"first-letterbÀÚ´µ‡‡¨nj˙ïçö

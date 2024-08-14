@@ -1,27 +1,0 @@
-
-41636Reference circuit¸A reference circuit is a hypothetical electric circuit of specified equivalent length and configuration, and having a defined transmission characteristic or characteristics, used primarily as a reference for measuring the performance of other, i.e., real, circuits or as a guide for planning and engineering of circuits and networks.  
-
-Normally, several types of reference circuits are defined, with different configurations, because communications are required over a wide range of distances. Another type of reference circuit shows how to configure integrated circuits into function blocks, which Analog Devices provides for electrical design engineers.  Analog Devices' Circuits from the Lab reference circuits are fully tested and come with the schematics, evaluation boards, and device drivers necessary for system integration.  A group of related reference circuits is also called a reference system.
-
-References
-
-*
-
-See also
-
-* netlist 
-* SPICE"ù{{short description|Hypothetical electric circuit}}
-
-A '''reference circuit''' is a hypothetical [[electric circuit]] of specified equivalent length and [[computer configuration|configuration]], and having a defined [[transmission characteristic]] or characteristics, used primarily as a reference for measuring the performance of other, ''i.e.,'' real, circuits or as a guide for planning and engineering of circuits and networks.  
-
-Normally, several types of reference circuits are defined, with different configurations, because [[Telecommunication|communications]] are required over a wide range of distances. Another type of reference circuit shows how to configure integrated circuits into function blocks, which Analog Devices provides for electrical design engineers.  Analog Devices' Circuits from the Lab reference circuits are fully tested and come with the schematics, evaluation boards, and device drivers necessary for system integration.  A group of related reference circuits is also called a ''[[reference system]]''.
-
-==References==
-*{{FS1037C MS188}}
-
-==See also==
-* [[netlist]] 
-* [[SPICE]]
-
-[[Category:Electronic circuits]]:2020-07-24T02:07:44ZB651076JZ
-	Wikipedia'https://en.wikipedia.org/wiki/Main_PageMediaWiki 1.40.0-wmf.8"first-letterbËò«µÈÿÂïjð„éø

@@ -1,25 +1,0 @@
-
-41605Pulse durationÝIn signal processing and telecommunication, pulse duration is the interval between the time, during the first transition, that the amplitude of the pulse reaches a specified fraction (level) of its final amplitude, and the time the pulse amplitude drops, on the last transition, to the same level.
-
-The interval between the 50% points of the final amplitude is usually used to determine or define pulse duration, and this is understood to be the case unless otherwise specified. Other fractions of the final amplitude, e.g., 90% or 1/e, may also be used, as may the root mean square (rms) value of the pulse amplitude.
-
-In radar, the pulse duration is the time the radar's transmitter is energized during each cycle.
-
-References
-
-*
-*"¥	[[Image:Pulse duration example picture 50perc.svg|right|thumb|300px|Pulse duration using 50% peak amplitude.]]
-[[File:Pulse_duration_measurement_of_a_DECT_phone.jpg|thumb|300px|DECT phone pulduration measurement (100Â Hz / 10Â mS) on channel 8]]
-In [[signal processing]] and [[telecommunication]], '''pulse duration''' is the interval between the [[time]], during the first transition, that the [[pulse amplitude|amplitude]] of the [[Pulse (signal processing)|pulse]] reaches a specified fraction (level) of its final amplitude, and the time the pulse amplitude drops, on the last transition, to the same level.
-
-The interval between the 50% points of the final amplitude is usually used to determine or define pulse duration, and this is understood to be the case unless otherwise specified. Other fractions of the final amplitude, e.g., 90% or 1/[[e (mathematical constant)|e]], may also be used, as may the [[root mean square]] (rms) value of the pulse [[amplitude]].
-
-In [[radar]], the pulse duration is the time the radar's transmitter is energized during each cycle.
-
-==References==
-*{{FS1037C MS188}}
-*{{DODDIC}}
-
-[[Category:Signal processing]]
-[[Category:Telecommunication theory]]:2019-04-02T08:46:47ZB11308236JZ
-	Wikipedia'https://en.wikipedia.org/wiki/Main_PageMediaWiki 1.40.0-wmf.8"first-letterbËò«µà Þœj÷ÂŒå

@@ -1,26 +1,0 @@
-
-41596Psophometric voltageóPsophometric voltage is a circuit noise voltage measured with a psophometer that includes a CCIF-1951 weighting network. 
-
-"Psophometric voltage" should not be confused with "psophometric emf," i.e., the emf in a generator or line with 600 Î© internal resistance. For practical purposes, the psophometric emf is twice the corresponding psophometric voltage. 
-
-Psophometric voltage readings, V, in millivolts, are commonly converted to dBm(psoph) by dBm(psoph) = 20 log10VÂ â€“Â 57.78.
-
-References
-
-*"´[[File:Ccit 1951.jpg|thumb|The weighing curve of the CCIF 1951<ref name=":0">{{Cite web|url=http://realfield.com/anm/history/|title=The History of Low-Level Audio Background Noise Measurement|website=realfield.com|language=en-au|access-date=2018-09-14}}</ref>]]
-'''Psophometric voltage''' is a [[Electronic circuit|circuit]] noise [[voltage]] measured with a [[psophometer]] that includes a CCIF-1951<ref name=":0" /> [[weighting filter|weighting network]]. 
-
-''"Psophometric voltage"'' should not be confused with ''"psophometric emf," i.e.'', the emf in a generator or [[line (electrical engineering)|line]] with 600 Î© internal resistance. For practical purposes, the psophometric emf is twice the corresponding psophometric voltage. 
-
-Psophometric voltage readings, ''V'', in millivolts, are commonly converted to [[dBm]](psoph) by dBm(psoph) = 20 log<sub>10</sub>''V''&nbsp;â€“&nbsp;57.78.
-
-==References==
-*{{FS1037C}}
-
-[[Category:Electrical parameters]]
-[[Category:Noise (electronics)]]
-[[Category:Telecommunications engineering]]
-
-{{electronics-stub}}
-{{telecomm-stub}}:2018-09-14T14:51:58ZB34318618JZ
-	Wikipedia'https://en.wikipedia.org/wiki/Main_PageMediaWiki 1.40.0-wmf.8"first-letterbËò«µ ô¥ƒjŽ–ïÜ

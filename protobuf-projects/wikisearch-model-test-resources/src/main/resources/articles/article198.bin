@@ -1,15 +1,0 @@
-
-41463Optical power margin≥In an optical communications link, the optical power margin is the difference between the optical power that is launched by a given transmitter into the fiber, less transmission losses from all causes, and the minimum optical power that is required by the receiver for a specified level of performance. An optical power margin is typically measured using a calibrated light source and an optical power meter.
-
-The optical power margin is usually expressed in decibels (dB). At least several dB of optical power margin should be included in the optical power budget. The amount of optical power launched into a given fiber by a given transmitter depends on the nature of its active optical source (LED or laser diode) and the type of fiber, including such parameters as core diameter and numerical aperture. 
-
-References"˚{{Short description|Difference in an optical communications link}}
-In an [[optical communications]] [[data link|link]], the '''optical power margin''' is the difference between the optical [[Power (physics)|power]] that is launched by a given transmitter into the fiber, less transmission losses from all causes, and the minimum optical power that is required by the receiver for a specified level of performance. An optical power margin is typically measured using a calibrated [[light source]] and an [[optical power meter]].
-
-The optical power margin is usually expressed in [[decibel]]s (dB). At least several dB of optical power margin should be included in the [[optical power budget]]. The amount of optical power launched into a given fiber by a given transmitter depends on the nature of its active [[optical source]] ([[LED]] or [[laser diode]]) and the type of fiber, including such parameters as [[core diameter]] and [[numerical aperture]]. 
-
-==References==
-{{FS1037C}}
-
-[[Category:Optical communications]]:2022-02-06T09:09:50ZB42522270JZ
-	Wikipedia'https://en.wikipedia.org/wiki/Main_PageMediaWiki 1.40.0-wmf.8"first-letterb Ú´µ–¢√-jﬁ†˛è

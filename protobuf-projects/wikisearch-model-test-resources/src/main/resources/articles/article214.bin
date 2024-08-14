@@ -1,36 +1,0 @@
-
-41482Paired disparity codeÕIn telecommunication, a paired disparity code is a line code in which at least one of the data characters is represented by two codewords of opposite disparity that are used in sequence so as to minimize the total disparity of a longer sequence of digits.
-
-A particular codeword of any line code can either have no disparity (the average weight of the codeword is zero), negative disparity (the average weight of the codeword is negative), or positive disparity (the average weight of the codeword is positive).
-
-In a paired disparity code, every codeword that averages to a negative level (negative disparity) is paired with some other codeword that averages to a positive level (positive disparity).
-
-In a system that uses a paired disparity code, the transmitter must keep track of the running DC buildup the running disparity and always pick the codeword that pushes the DC level back towards zero. The receiver is designed so that either codeword of the pair decodes to the same data bits.
-
-Most line codes use either a paired disparity code or a constant-weight code.
-
-The simplest paired disparity code is alternate mark inversion signal. Other paired disparity codes include 8b/10b, 8B12B, the modified AMI codes, coded mark inversion, and 4B3T.
-
-The digits may be represented by disparate physical quantities, such as two different frequencies, phases, voltage levels, magnetic polarities, or electrical polarities, each one of the pair representing a 0 or a 1.
-
-References
-
-*"ÖIn [[telecommunication]], a '''paired disparity code''' is a [[line code]] in which at least one of the data characters is represented by two codewords of opposite [[wiktionary:disparity|disparity]] that are used in [[sequence]] so as to minimize the total disparity of a longer sequence of digits.
-
-A particular codeword of any line code can either have no disparity (the average weight of the codeword is zero), negative disparity (the average weight of the codeword is negative), or positive disparity (the average weight of the codeword is positive).
-
-In a paired disparity code, every codeword that averages to a negative level (negative disparity) is paired with some other codeword that averages to a positive level (positive disparity).
-
-In a system that uses a paired disparity code, the transmitter must keep track of the running DC buildup{{snd}} the [[running disparity]]{{snd}} and always pick the codeword that pushes the DC level back towards zero. The receiver is designed so that either codeword of the pair decodes to the same data bits.
-
-Most line codes use either a paired disparity code or a [[constant-weight code]].
-
-The simplest paired disparity code is [[Alternate Mark Inversion|alternate mark inversion signal]]. Other paired disparity codes include [[8b/10b]], [[IEEE 1355#Slice:HS-SE-10|8B12B]], the [[modified AMI code]]s, [[coded mark inversion]], and [[4B3T]].
-
-The digits may be represented by disparate physical quantities, such as two different frequencies, phases, voltage levels, magnetic polarities, or electrical polarities, each one of the pair representing a 0 or a 1.
-
-==References==
-*{{FS1037C MS188}}
-
-[[Category:Line codes]]:2022-02-04T23:43:02ZB10363JZ
-	Wikipedia'https://en.wikipedia.org/wiki/Main_PageMediaWiki 1.40.0-wmf.8"first-letterb Ú´µ»ôëdjÜÙˆè

@@ -53,7 +53,7 @@
         </plugins-->
     </build>
     <modules>
-        <module>protobuf-projects</module>
+        <module>rag-models</module>
         <module>services</module>
         <module>integration-tests</module>
     </modules>

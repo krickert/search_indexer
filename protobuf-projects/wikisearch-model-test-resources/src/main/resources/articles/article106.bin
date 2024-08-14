@@ -1,28 +1,0 @@
-
-41355Master station¥In telecommunication, a master station is a station that controls or coordinates the activities of other stations in the system.
-
-Examples:
-*In a data network, the control station may designate a master station to ensure data transfer to one or more slave stations.Federal Standard 1037C Such a master station controls one or more data links of the data communications network at any given instant. The assignment of master status to a given station is temporary and is controlled by the control station according to the procedures set forth in the operational protocol. Master status is normally conferred upon a station so that it may transmit a message, but a station need not have a message to send to be designated the master station.
-* In navigation systems using precise time dissemination, the master station is a station that has the clock that is used to synchronize the clocks of subordinate stations.
-* In basic mode link control, the master station is a data station that has accepted an invitation to ensure a data transfer to one or more slave stations.  At a given instant, there can be only one master station on a data link.
-
-Operation modes
-
-In data transmission, a master station can be set to not wait for a reply from a slave station after transmitting each message or transmission block. In this case the station is said to be in "continuous operation".Federal Standard 1037C, entry for "Continuous operation".
-
-References"ŽIn [[telecommunication]], a '''master station''' is a station that controls or coordinates the activities of other stations in the system.
-
-Examples:
-*In a [[data network]], the control station may designate a master station to ensure [[data transfer]] to one or more slave stations.<ref name=FS1037C>[[Federal Standard 1037C]]</ref> Such a master station controls one or more [[data link]]s of the data [[communications network]] at any given instant. The assignment of master status to a given station is temporary and is controlled by the control station according to the procedures set forth in the operational [[Communications protocol|protocol]]. Master status is normally conferred upon a station so that it may transmit a [[message]], but a station need not have a [[message]] to send to be designated the master station.
-* In navigation systems using precise [[time dissemination]], the master station is a station that has the [[clock]] that is used to synchronize the clocks of subordinate stations.<ref name=FS1037C/>
-* In [[basic mode link control]], the master station is a data station that has accepted an invitation to ensure a [[data transfer]] to one or more slave stations.<ref name=FS1037C/>  At a given instant, there can be only one master station on a data link.
-
-==Operation modes==
-In data transmission, a master station can be set to not wait for a reply from a slave station after transmitting each message or [[transmission block]]. In this case the station is said to be in "continuous operation".<ref>Federal Standard 1037C, entry for "Continuous operation".</ref>
-
-==References==
-<references/>
-{{FS1037C}}
-
-[[Category:Telecommunications systems]]:2016-02-10T22:46:05ZB14508071JZ
-	Wikipedia'https://en.wikipedia.org/wiki/Main_PageMediaWiki 1.40.0-wmf.8"first-letterbÉò«µøß¸…j­ûîµ

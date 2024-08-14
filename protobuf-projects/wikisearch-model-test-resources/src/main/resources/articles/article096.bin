@@ -1,36 +1,0 @@
-
-41345	Main lobe®In a radio antenna's radiation pattern, the main lobe, or main beam, is the lobe containing the higher power. This is the lobe that exhibits the greater field strength.
-
-The radiation pattern of most antennas shows a pattern of "lobes" at various angles, directions where the radiated signal strength reaches a maximum, separated by "nulls", angles at which the radiation falls to zero.  In a directional antenna in which the objective is to emit the radio waves in one direction, the lobe in that direction is designed to have higher field strength than the others, so on a graph of the radiation pattern it appears biggest; this is the main lobe.  The other lobes are called "sidelobes", and usually represent unwanted radiation in undesired directions.  The sidelobe in the opposite direction from the main lobe is called the "backlobe". 
-
-The radiation pattern referred to above is usually the horizontal radiation pattern, which is plotted as a function of azimuth about the antenna, although the vertical radiation pattern may also have a main lobe.   The beamwidth of the antenna is the width of the main lobe, usually specified by the half power beam width (HPBW),  the angle encompassed between the points on the side of the lobe where the power has fallen to half (-3 dB) of its maximum value.
-
-The concepts of main lobe and sidelobes also apply to acoustics and optics, and are used to describe the radiation pattern of optical systems like telescopes, and acoustic transducers like microphones and loudspeakers.
-
-See also
-
-*Side lobe
-*Beamwidth
-*Software defined antenna"€[[File:Sidelobes en.svg|thumb|A 'polar' antenna radiation diagram. The radial distance from the center represents signal strength.]]
-[[File:Phased array radiation pattern.gif|thumb|384x384px|Electronic scanning of a main lobe of a phased array. There are higher-order main lobes when scan is performed wide range.]]
-{{Antennas|sources/regions}}
-
-In a [[antenna (electronics)|radio antenna's]] [[radiation pattern]], the '''main lobe''', or '''main beam,''' is the [[Side lobe|lobe]] containing the higher [[Power (physics)|power]]. This is the lobe that exhibits the greater [[field strength]].
-
-The radiation pattern of most antennas shows a pattern of "''lobes''" at various angles, directions where the radiated signal strength reaches a maximum, separated by "''[[null (radio)|null]]s''", angles at which the radiation falls to zero.  In a [[directional antenna]] in which the objective is to emit the radio waves in one direction, the lobe in that direction is designed to have higher field strength than the others, so on a graph of the radiation pattern it appears biggest; this is the main lobe.  The other lobes are called "''[[sidelobe]]s''", and usually represent unwanted radiation in undesired directions.  The sidelobe in the opposite direction from the main lobe is called the "''backlobe''". 
-
-The radiation pattern referred to above is usually the horizontal radiation pattern, which is plotted as a function of [[azimuth]] about the antenna, although the vertical radiation pattern may also have a main lobe.   The [[beamwidth]] of the antenna is the width of the main lobe, usually specified by the ''[[half power beam width]]'' (HPBW),  the angle encompassed between the points on the side of the lobe where the power has fallen to half (-3 [[decibel|dB]]) of its maximum value.
-
-The concepts of main lobe and sidelobes also apply to [[acoustics]] and [[optics]], and are used to describe the radiation pattern of optical systems like [[telescope]]s, and acoustic transducers like [[microphone]]s and [[loudspeaker]]s.
-
-==See also==
-*[[Side lobe]]
-*[[Beamwidth]]
-*[[Software defined antenna]]
-
-{{FS1037C MS188}}
-
-[[Category:Antennas]]
-
-{{electronics-stub}}:2018-05-29T04:57:14ZB27062596JZ
-	Wikipedia'https://en.wikipedia.org/wiki/Main_PageMediaWiki 1.40.0-wmf.8"first-letterbÉò«µÀ›§fjª»³Ø

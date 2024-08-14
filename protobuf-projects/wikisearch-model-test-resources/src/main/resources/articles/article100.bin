@@ -1,24 +1,0 @@
-
-41349Managed objectπIn telecommunication, the term managed object has the following meanings: 
-
-1.  In a network, an abstract representation of network resources that are managed. With "representation", we mean not only the actual device that is managed, but also the device driver, that communicates with the device. An example of a printer as a managed object is the window that shows information about the printer, such as the location, printer status, printing progress, paper choice, and printing margins. 
-
-The database, where all managed objects are stored, is called Management Information Base. In contrast with a CI, a managed object is "dynamic" and communicates with other network resources that are managed. 
-
-Note:  A managed object may represent a physical entity, a network service, or an abstraction of a resource that exists independently of its use in management.
-
-2.  In telecommunications management, a resource within the telecommunications environment that may be managed through the use of operation,  administration, maintenance, and provisioning (OAMP) application protocols."∫
-In [[telecommunication]], the term '''managed object''' has the following meanings: 
-
-'''1.'''  In a [[telecommunications network|network]], an abstract representation of network resources that are managed. With "representation", we mean not only the actual device that is managed, but also the [[device driver]], that communicates with the device. An example of a printer as a managed object is the [[Window (computing)|window]] that shows information about the printer, such as the location, printer status, printing progress, paper choice, and printing margins. 
-
-The database, where all managed objects are stored, is called [[Management Information Base]]. In contrast with a [[Carrier interferometry|CI]], a managed object is "dynamic" and communicates with other network resources that are managed. 
-
-''Note:''  A managed object may represent a physical entity, a network service, or an abstraction of a resource that exists independently of its use in management.
-
-'''2.'''  In telecommunications management, a resource within the telecommunications environment that may be managed through the use of [[Business operations|operation]], [[administration (business)| administration]], [[repair and maintenance|maintenance]], and [[provisioning]] ([[OAMP]]) application protocols. 
-
-{{FS1037C MS188}}
-
-[[Category:Network management]]:2017-09-11T08:51:34ZB	800057459JZ
-	Wikipedia'https://en.wikipedia.org/wiki/Main_PageMediaWiki 1.40.0-wmf.8"first-letterb…Ú´µ–ôÒrjñùŸÕ
