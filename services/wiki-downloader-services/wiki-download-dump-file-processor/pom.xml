@@ -19,7 +19,7 @@
         <jdk.version>17</jdk.version>
         <release.version>17</release.version>
         <micronaut.version>4.5.1</micronaut.version>
-        <micronaut.serialization.version>2.10.2</micronaut.serialization.version>
+        <micronaut.serialization.version>2.11.0</micronaut.serialization.version>
         <micronaut.test.resources.enabled>true</micronaut.test.resources.enabled>
         <exec.mainClass>com.krickert.search.download.dump.DownloadRequestProcessor</exec.mainClass>
         <kafka-streams-protobuf-serde.version>7.7.0</kafka-streams-protobuf-serde.version>
