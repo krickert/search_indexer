@@ -16,8 +16,8 @@ public class HttpSolrSelectClientImpl implements HttpSolrSelectClient {
 
     @Inject
     public HttpSolrSelectClientImpl(SimpleGetRequest simpleGetRequest,
-                                    @Value("${indexer.solr_source_url}") String solrHost,
-                                    @Value("${indexer.solr_source_collection}") String solrCollection) {
+                                    @Value("${indexer.source.solr-connection.url}") String solrHost,
+                                    @Value("${indexer.source.solr-collection}") String solrCollection) {
         this.simpleGetRequest = checkNotNull(simpleGetRequest, "get request failed to load");
         this.solrHost = checkNotNull(solrHost, "solr host is needed");
         this.solrCollection = checkNotNull(solrCollection, "solr collection is needed");

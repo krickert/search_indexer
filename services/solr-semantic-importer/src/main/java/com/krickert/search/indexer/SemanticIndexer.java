@@ -33,8 +33,8 @@ public class SemanticIndexer {
 
     @Inject
     public SemanticIndexer(ProtobufToSolrDocument protobufToSolrDocument, HttpSolrSelectClient httpSolrSelectClient, JsonToSolrDoc jsonToSolrDoc,
-                           @Value("${indexer.solr_destination_url}") String solrDestinationUrl,
-                           @Value("${indexer.solr_destination_collection}") String solrDestinationCollection) {
+                           @Value("${indexer.destination.solr-connection.url}") String solrDestinationUrl,
+                           @Value("${indexer.destination.solr-collection}") String solrDestinationCollection) {
         this.protobufToSolrDocument = protobufToSolrDocument;
         this.httpSolrSelectClient = httpSolrSelectClient;
         this.jsonToSolrDoc = jsonToSolrDoc;
