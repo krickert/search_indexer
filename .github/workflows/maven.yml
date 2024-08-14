@@ -16,11 +16,6 @@ jobs:
         with:
           submodules: true
 
-      - name: Setup SSH
-        uses: webfactory/ssh-agent@v0.5.3
-        with:
-          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
-
       - name: Set up JDK 17 and authenticate with Maven
         uses: actions/setup-java@v3
         with:
