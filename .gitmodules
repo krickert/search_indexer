@@ -10,3 +10,6 @@
 [submodule "services/pipeline-services/enhancement/nlp-ner"]
 	path = services/pipeline-services/enhancement/nlp-ner
 	url = git@github.com:krickert/nlp-ner.git
+[submodule "services/pipeline-processor"]
+	path = services/pipeline-processor
+	url = git@github.com:krickert/pipeline-processor.git
