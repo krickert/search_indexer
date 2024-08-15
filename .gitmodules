@@ -13,3 +13,6 @@
 [submodule "services/pipeline-processor"]
 	path = services/pipeline-processor
 	url = git@github.com:krickert/pipeline-processor.git
+[submodule "services/pipeline-services/parser/markdown-parser"]
+	path = services/pipeline-services/parser/markdown-parser
+	url = git@github.com:krickert/markdown-parser.git
