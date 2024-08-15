@@ -16,3 +16,6 @@
 [submodule "services/pipeline-services/parser/markdown-parser"]
 	path = services/pipeline-services/parser/markdown-parser
 	url = git@github.com:krickert/markdown-parser.git
+[submodule "services/pipeline-services/parser/tika-parser"]
+	path = services/pipeline-services/parser/tika-parser
+	url = git@github.com:krickert/tika-parser.git
