@@ -19,3 +19,6 @@
 [submodule "services/pipeline-services/parser/tika-parser"]
 	path = services/pipeline-services/parser/tika-parser
 	url = git@github.com:krickert/tika-parser.git
+[submodule "services/search-api"]
+	path = services/search-api
+	url = git@github.com:krickert/search-api.git
