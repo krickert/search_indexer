@@ -13,7 +13,7 @@
     </parent>
     <modules>
         <module>vectorizer</module>
-        <module>nlp</module>
+        <module>nlp-ner</module>
         <module>chunker</module>
     </modules>
     <artifactId>enhancement</artifactId>

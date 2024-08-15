@@ -15,7 +15,6 @@
     <modules>
         <module>enhancement</module>
         <module>parser</module>
-        <module>search-api</module>
     </modules>
     <artifactId>pipeline-services</artifactId>
     <properties>

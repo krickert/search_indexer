@@ -1,0 +1,24 @@
+[submodule "rag-models"]
+        path = rag-models
+        url = git@github.com:krickert/rag-models.git 
+[submodule "services/pipeline-services/enhancement/vectorizer"]
+	path = services/pipeline-services/enhancement/vectorizer
+	url = git@github.com:krickert/vectorizer.git
+[submodule "services/pipeline-services/enhancement/chunker"]
+	path = services/pipeline-services/enhancement/chunker
+	url = git@github.com:krickert/chunker.git
+[submodule "services/pipeline-services/enhancement/nlp-ner"]
+	path = services/pipeline-services/enhancement/nlp-ner
+	url = git@github.com:krickert/nlp-ner.git
+[submodule "services/pipeline-processor"]
+	path = services/pipeline-processor
+	url = git@github.com:krickert/pipeline-processor.git
+[submodule "services/pipeline-services/parser/markdown-parser"]
+	path = services/pipeline-services/parser/markdown-parser
+	url = git@github.com:krickert/markdown-parser.git
+[submodule "services/pipeline-services/parser/tika-parser"]
+	path = services/pipeline-services/parser/tika-parser
+	url = git@github.com:krickert/tika-parser.git
+[submodule "services/search-api"]
+	path = services/search-api
+	url = git@github.com:krickert/search-api.git

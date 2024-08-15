@@ -1,6 +1,0 @@
-applicationType: default
-defaultPackage: com.krickert.search.indexer.solr
-testFramework: junit
-sourceLanguage: java
-buildTool: maven
-features: [app-name, http-client-test, java, java-application, junit, logback, maven, maven-enforcer-plugin, micronaut-aot, micronaut-http-validation, netty-server, openapi, properties, reactor, readme, serialization-jackson, shade, swagger-ui]
