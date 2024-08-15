@@ -1,5 +1,7 @@
 package com.krickert.search.indexer;
 
+import com.krickert.search.indexer.config.IndexerConfiguration;
+import com.krickert.search.indexer.config.VectorConfig;
 import io.micronaut.context.ApplicationContext;
 import io.micronaut.test.extensions.junit5.annotation.MicronautTest;
 import jakarta.inject.Inject;
@@ -17,7 +19,7 @@ public class IndexerConfigurationTest {
     IndexerConfiguration config;
 
     @Inject
-    Map<String,VectorConfig> vectorConfig;
+    Map<String, VectorConfig> vectorConfig;
 
     @BeforeAll
     static void setup() {
@@ -51,10 +53,9 @@ public class IndexerConfigurationTest {
         assertNotNull(config.getDestination().getSolrConnection().getAuthentication());
         assertTrue(config.getDestination().getSolrConnection().getAuthentication().isEnabled());
         assertEquals("jwt", config.getDestination().getSolrConnection().getAuthentication().getType());
-        assertEquals("sample-secret", config.getDestination().getSolrConnection().getAuthentication().getSecret());
-        assertEquals("your-issuer", config.getDestination().getSolrConnection().getAuthentication().getIssuer());
-        assertEquals("your-subject", config.getDestination().getSolrConnection().getAuthentication().getSubject());
-
+        assertEquals("my-client-secret", config.getDestination().getSolrConnection().getAuthentication().getClientSecret());
+        assertEquals("my-client-id", config.getDestination().getSolrConnection().getAuthentication().getClientId());
+        assertEquals("https://my-token-url.com/oauth2/some-token/v1/token", config.getDestination().getSolrConnection().getAuthentication().getTokenUrl());
     }
 
     @Test

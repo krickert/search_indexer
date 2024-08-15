@@ -2,8 +2,3 @@ micronaut:
   application:
     name: solr-semantic-importer
 
-  solr_source_url:
-  solr_source_collection: products_source
-  solr_destination_url: http://localhost:8984/solr
-  solr_destination_collection: products_destination
-  enabled: true

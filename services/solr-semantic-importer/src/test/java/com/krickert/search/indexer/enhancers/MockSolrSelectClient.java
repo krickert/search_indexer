@@ -1,6 +1,6 @@
 package com.krickert.search.indexer.enhancers;
 
-import com.krickert.search.indexer.HttpSolrSelectClient;
+import com.krickert.search.indexer.solr.HttpSolrSelectClient;
 
 import java.io.IOException;
 

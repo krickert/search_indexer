@@ -1,5 +1,6 @@
-package com.krickert.search.indexer;
+package com.krickert.search.indexer.solr;
 
+import com.krickert.search.indexer.SimpleGetRequest;
 import io.micronaut.context.annotation.Value;
 import jakarta.inject.Inject;
 import jakarta.inject.Singleton;

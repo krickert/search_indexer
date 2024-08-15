@@ -1,5 +1,8 @@
 package com.krickert.search.indexer;
 
+import com.krickert.search.indexer.solr.HttpSolrSelectClient;
+import com.krickert.search.indexer.solr.HttpSolrSelectClientImpl;
+import com.krickert.search.indexer.solr.JsonToSolrDoc;
 import io.micronaut.core.io.ResourceLoader;
 import io.micronaut.core.io.ResourceResolver;
 import io.micronaut.test.extensions.junit5.annotation.MicronautTest;

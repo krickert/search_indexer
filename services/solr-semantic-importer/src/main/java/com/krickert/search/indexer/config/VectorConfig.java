@@ -1,4 +1,4 @@
-package com.krickert.search.indexer;
+package com.krickert.search.indexer.config;
 
 import io.micronaut.context.annotation.EachProperty;
 import io.micronaut.core.annotation.Introspected;

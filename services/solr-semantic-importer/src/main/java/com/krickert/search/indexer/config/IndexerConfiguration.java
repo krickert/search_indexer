@@ -1,7 +1,6 @@
-package com.krickert.search.indexer;
+package com.krickert.search.indexer.config;
 
 import io.micronaut.context.annotation.ConfigurationProperties;
-import io.micronaut.context.annotation.EachProperty;
 import io.micronaut.core.annotation.Introspected;
 import jakarta.inject.Singleton;
 
@@ -198,9 +197,9 @@ public class IndexerConfiguration {
 
                 private boolean enabled;
                 private String type;
-                private String secret;
-                private String issuer;
-                private String subject;
+                private String clientSecret;
+                private String clientId;
+                private String tokenUrl;
 
                 public boolean isEnabled() {
                     return enabled;
@@ -218,28 +217,28 @@ public class IndexerConfiguration {
                     this.type = type;
                 }
 
-                public String getSecret() {
-                    return secret;
+                public String getClientSecret() {
+                    return clientSecret;
                 }
 
-                public void setSecret(String secret) {
-                    this.secret = secret;
+                public void setClientSecret(String clientSecret) {
+                    this.clientSecret = clientSecret;
                 }
 
-                public String getIssuer() {
-                    return issuer;
+                public String getClientId() {
+                    return clientId;
                 }
 
-                public void setIssuer(String issuer) {
-                    this.issuer = issuer;
+                public void setClientId(String clientId) {
+                    this.clientId = clientId;
                 }
 
-                public String getSubject() {
-                    return subject;
+                public String getTokenUrl() {
+                    return tokenUrl;
                 }
 
-                public void setSubject(String subject) {
-                    this.subject = subject;
+                public void setTokenUrl(String tokenUrl) {
+                    this.tokenUrl = tokenUrl;
                 }
             }
         }

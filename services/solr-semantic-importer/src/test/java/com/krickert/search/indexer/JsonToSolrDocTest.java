@@ -1,6 +1,7 @@
 package com.krickert.search.indexer;
 
-import org.apache.solr.common.SolrDocument;
+import com.krickert.search.indexer.solr.HttpSolrSelectResponse;
+import com.krickert.search.indexer.solr.JsonToSolrDoc;
 import org.apache.solr.common.SolrInputDocument;
 import org.junit.jupiter.api.Test;
 

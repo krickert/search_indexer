@@ -1,9 +1,11 @@
 package com.krickert.search.indexer;
 
-import com.google.protobuf.Descriptors;
 import com.google.protobuf.DynamicMessage;
 import com.google.protobuf.Message;
 import com.krickert.search.indexer.enhancers.ProtobufToSolrDocument;
+import com.krickert.search.indexer.solr.HttpSolrSelectClient;
+import com.krickert.search.indexer.solr.HttpSolrSelectResponse;
+import com.krickert.search.indexer.solr.JsonToSolrDoc;
 import com.krickert.search.model.pipe.PipeDocument;
 import io.micronaut.context.annotation.Value;
 import jakarta.inject.Inject;

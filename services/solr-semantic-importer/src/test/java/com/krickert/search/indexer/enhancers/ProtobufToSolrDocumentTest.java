@@ -1,6 +1,6 @@
 package com.krickert.search.indexer.enhancers;
 
-import com.krickert.search.indexer.JsonToSolrDoc;
+import com.krickert.search.indexer.solr.JsonToSolrDoc;
 import com.krickert.search.indexer.SemanticIndexer;
 import com.krickert.search.model.pipe.PipeDocument;
 import com.krickert.search.model.test.util.TestDataHelper;
