@@ -1,32 +1,0 @@
-
-41376Mode volumeóIn fiber optics, mode volume is the number of bound modes that an optical fiber is capable of supporting.  
-
-The mode volume M is approximately given by V^2 \over 2 and {V^2 \over 2} \left({g \over g+2}\right), respectively for step-index and power-law index profile fibers, where g is the profile parameter, and V is the normalized frequency, which must be greater than 5 for this approximation to be valid.
-
-See also
-
-*Equilibrium mode distribution
-*Mode scrambler
-*Mandrel wrapping
-
-References
-
-*"­{{short description|Number of bound modes that an optical fiber is capable of supporting}}
-In [[fiber optics]], '''mode volume''' is the number of bound [[Transverse mode|modes]] that an [[optical fiber]] is capable of supporting.  
-
-The mode volume ''M'' is approximately given by <math>V^2 \over 2</math> and <math>{V^2 \over 2} \left({g \over g+2}\right)</math>, respectively for [[step-index profile|step-index]] and [[power-law index profile]] fibers, where ''g'' is the profile parameter, and ''V'' is the [[normalized frequency (fiber optics)|normalized frequency]], ''which must be greater than 5 for this approximation to be valid''.
-
-==See also==
-*[[Equilibrium mode distribution]]
-*[[Mode scrambler]]
-*[[Mandrel wrapping]]
-
-==References==
-*{{FS1037C MS188}}
-
-[[Category:Fiber optics]]
-
-
-{{optics-stub}}:2021-04-23T04:58:21ZB
-1019408815JZ
-	Wikipedia'https://en.wikipedia.org/wiki/Main_PageMediaWiki 1.40.0-wmf.8"first-letterbÉò«µÈý¸»jí§‰„

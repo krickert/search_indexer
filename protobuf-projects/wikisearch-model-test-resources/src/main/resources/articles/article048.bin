@@ -1,29 +1,0 @@
-
-41292Isochronous burst transmissionŒ	Isochronous burst transmission is a method of  transmission.  In a data network where the information-bearer channel rate is higher than the input data signaling rate, transmission is performed by interrupting, at controlled intervals, the data stream being transmitted.
-
-Note 1: Burst transmission in isochronous form enables communication between data terminal equipment (DTE) and data networks that operate at dissimilar data signaling rates, such as when the information-bearer channel rate is higher than the DTE output data signaling rate.
-
-Note 2:  The binary digits are transferred at the information-bearer channel rate. The data transfer is interrupted at intervals in order to produce the required average data signaling rate.
-
-Note 3:  The interruption is always for an integral number of unit intervals.
-
-Note 4:  Isochronous burst transmission has particular application where envelopes are being transferred between data circuit terminating equipment (DCE) and only the bytes contained within the envelopes are being transferred between the DCE and the DTE. Synonyms: burst isochronous (deprecated), interrupted isochronous transmission.
-
-References"£{{Short description|Method of transmitting data at a lower rate than the bearer signalling rate}}
-{{One source|date=October 2019}}
-'''Isochronous burst transmission''' is a method of  transmission.  In a [[data]] [[telecommunications network|network]] where the [[information-bearer channel]] rate is higher than the input [[data signaling rate]], [[transmission (telecommunications)|transmission]] is performed by <nowiki>interrupting</nowiki>, at controlled intervals, the [[data stream]] being transmitted.
-
-''Note 1:'' [[Burst transmission]] in [[isochronous]] form enables communication between [[data terminal equipment]] (DTE) and data networks that operate at dissimilar data signaling rates, such as when the information-bearer channel rate is higher than the DTE output data signaling rate.
-
-''Note 2:''  The [[binary code|binary]] digits are transferred at the information-bearer channel rate. The [[data transfer]] is interrupted at intervals in order to produce the required average data signaling rate.
-
-''Note 3:''  The interruption is always for an integral number of unit intervals.
-
-''Note 4:''  Isochronous burst transmission has particular application where envelopes are being transferred between [[data circuit terminating equipment]] (DCE) and only the bytes contained within the envelopes are being transferred between the DCE and the DTE. ''Synonyms'': '''burst isochronous''' ''(deprecated)'', '''interrupted isochronous transmission.'''<ref>{{Cite web|url=https://www.its.bldrdoc.gov/fs-1037/fs-1037c.htm|title=Federal Standard 1037C: Glossary of Telecommunications Terms}}</ref>
-
-==References==
-{{Reflist}}
-{{FS1037C MS188}}
-
-[[Category:Quantized radio modulation modes]]:2021-11-18T02:45:55ZB7903804JZ
-	Wikipedia'https://en.wikipedia.org/wiki/Main_PageMediaWiki 1.40.0-wmf.8"first-letterbÈò«µèöæœjãüÖŒ

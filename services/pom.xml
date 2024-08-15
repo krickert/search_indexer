@@ -29,5 +29,17 @@
             <id>confluent</id>
             <url>https://packages.confluent.io/maven/</url>
         </repository>
+        <repository>
+            <id>github</id>
+            <name>GitHub krickert Apache Maven Packages</name>
+            <url>https://maven.pkg.github.com/krickert/rag-models</url>
+        </repository>
     </repositories>
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>GitHub krickert Apache Maven Packages</name>
+            <url>https://maven.pkg.github.com/krickert/rag-models</url>
+        </repository>
+    </distributionManagement>
 </project>

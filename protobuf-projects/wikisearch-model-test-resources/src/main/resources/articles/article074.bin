@@ -1,18 +1,0 @@
-
-41320
-Link level²For computer networking, Link level: In the hierarchical structure of a primary or secondary station, the conceptual level of control or data processing logic that controls the data link. 
-
-Note: Link-level functions provide an interface between the station high-level logic and the data link. Link-level functions include (a) transmit bit injection and receive bit extraction, (b) address and control field interpretation, (c) command response generation, transmission and interpretation, and (d) frame check sequence computation and interpretation.
-
-References"ÀFor [[Computer network|computer networking]], '''Link level''': In the hierarchical structure of a primary or secondary station, the conceptual level of control or [[data processing]] logic that controls the [[data link]]. 
-
-''Note:'' Link-level functions provide an [[wiktionary:interface|interface]] between the station high-level logic and the data link. Link-level functions include (a) transmit [[bit]] injection and receive bit extraction, (b) [[Network address|address]] and [[control field]] interpretation, (c) [[Command (computing)|command]] response generation, [[transmission (telecommunications)|transmission]] and interpretation, and (d) [[frame (telecommunications)|frame]] [[cheque|check]] [[sequence]] computation and interpretation.
-
-==References==
-{{FS1037C}}
-
-[[Category:Computer networking]]
-
-
-{{telecomm-stub}}:2022-03-11T18:19:54ZB39166520JZ
-	Wikipedia'https://en.wikipedia.org/wiki/Main_PageMediaWiki 1.40.0-wmf.8"first-letterbÉò«µðð¥jÊ¥®‘

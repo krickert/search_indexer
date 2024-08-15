@@ -1,23 +1,0 @@
-
-41403Net gain (telecommunications)äIn telecommunications, net gain is the overall gain of a transmission circuit. Net gain is measured by applying a test signal at an appropriate power level at the input port of a circuit and measuring the power delivered at the output port. The net gain in dB is calculated by taking 10 times the common logarithm of the ratio of the output power to the input power.
-
-The net gain expressed in dB may be positive or negative.  If the net gain expressed in dB is negative, it is also called the net loss.  If the net gain is expressed as a ratio, and the ratio is less than unity, a net loss is indicated.
-
-The test signal must be chosen so that its power level is within the usual operating range of the circuit being tested.
-
-References
-
-*"¤In [[telecommunications]], '''net gain''' is the overall [[Gain (electronics)|gain]] of a [[transmission (telecommunications)|transmission]] [[Telecommunication circuit|circuit]]. Net gain is measured by applying a test [[Signalling (telecommunication)|signal]] at an appropriate [[Power (physics)|power]] level at the input [[Computer port (hardware)|port]] of a circuit and measuring the power delivered at the output port. The net gain in [[decibel|dB]] is calculated by taking 10 times the [[common logarithm]] of the ratio of the output power to the input power.
-
-The net gain expressed in dB may be positive or negative.  If the net gain expressed in dB is negative, it is also called the '''net loss'''.  If the net gain is expressed as a ratio, and the ratio is less than unity, a net loss is indicated.
-
-The test signal must be chosen so that its power level is within the usual operating range of the circuit being tested.
-
-==References==
-*{{FS1037C MS188}}
-
-[[Category:Electrical parameters]]
-[[Category:Telecommunication theory]]
-
-{{telecomm-stub}}:2015-08-31T20:27:01ZB2175JZ
-	Wikipedia'https://en.wikipedia.org/wiki/Main_PageMediaWiki 1.40.0-wmf.8"first-letterbÉò«µØßÈ•j•ñ’¯
