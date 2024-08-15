@@ -1,8 +1,0 @@
-consul:
-  client:
-    defaultZone: "${CONSUL_HOST:localhost}:${CONSUL_PORT:8500}"
-micronaut:
-  application:
-    name: markdown
-  config-client:
-    enabled: true
