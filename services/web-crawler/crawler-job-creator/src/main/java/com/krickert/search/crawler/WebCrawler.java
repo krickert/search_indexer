@@ -17,6 +17,7 @@ import org.slf4j.LoggerFactory;
 import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.time.Duration;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
 @Singleton
@@ -38,8 +39,8 @@ public class WebCrawler {
         options.addArguments("--headless=new");
 
         driver = new ChromeDriver(options);
-        driver.manage().timeouts().implicitlyWait(8, TimeUnit.SECONDS);
-        driver.manage().timeouts().setScriptTimeout(3, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+        driver.manage().timeouts().scriptTimeout(Duration.ofSeconds(3));
     }
 
     public void start(String url) {
