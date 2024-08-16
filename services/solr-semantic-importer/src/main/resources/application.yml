@@ -1,4 +1,0 @@
-micronaut:
-  application:
-    name: solr-semantic-importer
-
