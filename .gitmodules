@@ -25,3 +25,6 @@
 [submodule "services/solr-semantic-importer"]
 	path = services/solr-semantic-importer
 	url = git@github.com:krickert/solr-sematic-importer.git
+[submodule "services/web-crawler/crawler-job-creator"]
+	path = services/web-crawler/crawler-job-creator
+	url = git@github.com:krickert/crawler-job-creator.git
