@@ -5,6 +5,7 @@ import io.micronaut.core.annotation.Introspected;
 import jakarta.inject.Singleton;
 
 import java.util.Map;
+import java.util.Objects;
 
 @Singleton
 @ConfigurationProperties("indexer")
@@ -199,10 +200,20 @@ public class IndexerConfiguration {
                 private String type;
                 private String clientSecret;
                 private String clientId;
-                private String tokenUrl;
+                private String issuer;
+                private String issuerAuthId;
+
 
                 public boolean isEnabled() {
                     return enabled;
+                }
+
+                public String getIssuerAuthId() {
+                    return issuerAuthId;
+                }
+
+                public void setIssuerAuthId(String issuerAuthId) {
+                    this.issuerAuthId = issuerAuthId;
                 }
 
                 public void setEnabled(boolean enabled) {
@@ -233,12 +244,12 @@ public class IndexerConfiguration {
                     this.clientId = clientId;
                 }
 
-                public String getTokenUrl() {
-                    return tokenUrl;
+                public String getIssuer() {
+                    return issuer;
                 }
 
-                public void setTokenUrl(String tokenUrl) {
-                    this.tokenUrl = tokenUrl;
+                public void setIssuer(String issuer) {
+                    this.issuer = issuer;
                 }
             }
         }

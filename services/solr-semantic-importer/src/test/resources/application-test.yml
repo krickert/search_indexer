@@ -20,8 +20,10 @@ indexer:
       authentication:
         enabled: true
         type: jwt
-        secret: sample-secret
-        issuer: your-issuer
+        client-secret: my-client-secret
+        client-id: my-client-id
+        issuer: https://my-token-url.com/oauth2/some-token/v1/token
+        issuerAuthId: issuer-auth-id
         subject: your-subject
 vector-config:
   title:

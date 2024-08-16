@@ -55,7 +55,9 @@ public class IndexerConfigurationTest {
         assertEquals("jwt", config.getDestination().getSolrConnection().getAuthentication().getType());
         assertEquals("my-client-secret", config.getDestination().getSolrConnection().getAuthentication().getClientSecret());
         assertEquals("my-client-id", config.getDestination().getSolrConnection().getAuthentication().getClientId());
-        assertEquals("https://my-token-url.com/oauth2/some-token/v1/token", config.getDestination().getSolrConnection().getAuthentication().getTokenUrl());
+        assertEquals("https://my-token-url.com/oauth2/some-token/v1/token", config.getDestination().getSolrConnection().getAuthentication().getIssuer());
+        assertEquals("issuer-auth-id", config.getDestination().getSolrConnection().getAuthentication().getIssuerAuthId());
+
     }
 
     @Test
