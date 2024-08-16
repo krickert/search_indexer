@@ -28,3 +28,6 @@
 [submodule "services/web-crawler/crawler-job-creator"]
 	path = services/web-crawler/crawler-job-creator
 	url = git@github.com:krickert/crawler-job-creator.git
+[submodule "services/web-crawler/crawler-manager"]
+	path = services/web-crawler/crawler-manager
+	url = git@github.com:krickert/crawler-manager.git

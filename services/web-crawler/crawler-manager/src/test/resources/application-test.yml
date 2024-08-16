@@ -1,9 +1,0 @@
-consul:
-  client:
-    registration:
-      enabled: false
-    discovery:
-      enabled: false
-grpc:
-  server:
-    port: ${random.port}
