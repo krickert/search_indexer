@@ -32,4 +32,4 @@ jobs:
         env:
           GITHUB_ACTOR: ${{ github.actor }}
           GITHUB_TOKEN: ${{ secrets.GH_PAT }}
-        run: mvn -B package deploy --file pom.xml -DskipTests=true
+        run: mvn -B compile --file pom.xml -DskipTests=true
