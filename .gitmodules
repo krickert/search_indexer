@@ -31,3 +31,15 @@
 [submodule "services/web-crawler/crawler-manager"]
 	path = services/web-crawler/crawler-manager
 	url = git@github.com:krickert/crawler-manager.git
+[submodule "services/wiki-downloader-services/wiki-download-request-creator"]
+	path = services/wiki-downloader-services/wiki-download-request-creator
+	url = git@github.com:krickert/wiki-download-request-creator.git
+[submodule "services/wiki-downloader-services/wiki-download-dump-file-processor"]
+	path = services/wiki-downloader-services/wiki-download-dump-file-processor
+	url = git@github.com:krickert/wiki-download-dump-file-processor.git
+[submodule "services/wiki-downloader-services/wiki-dump-file-to-wiki-article-processor"]
+	path = services/wiki-downloader-services/wiki-dump-file-to-wiki-article-processor
+	url = git@github.com:krickert/wiki-dump-file-to-wiki-article-processor.git
+[submodule "services/wiki-downloader-services/wiki-article-to-pipedocument-processor"]
+	path = services/wiki-downloader-services/wiki-article-to-pipedocument-processor
+	url = git@github.com:krickert/wiki-article-to-pipedocument-processor.git
