@@ -1,0 +1,7 @@
+vectorizer-test:
+  grpc-test-port: ${random.port}
+  rest-test-port: ${random.port}
+  docker.image.name: krickert/vectorizer:1.0-SNAPSHOT
+# application-test.yml
+test:
+  property: "test-value"
