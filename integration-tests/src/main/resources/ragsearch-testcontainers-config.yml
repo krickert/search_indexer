@@ -1,9 +1,6 @@
-micronaut:
-  application:
-    name: integration-tests
 container-image:
   vectorizer:
-    image-name: krickert/vectorizer:1.0-SNAPSHOT
+    name: krickert/vectorizer:1.0-SNAPSHOT
     ports:
       grpc:
         internal: 50401
@@ -12,7 +9,7 @@ container-image:
         internal: 60401
         mapped: ${random.port}
   chunker:
-    image-name: krickert/chunker:1.0-SNAPSHOT
+    name: krickert/vectorizer:1.0-SNAPSHOT
     ports:
       grpc:
         internal: 50403
