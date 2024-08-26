@@ -42,3 +42,35 @@ Wikimedia will only allow up to 3 concurrent connections when downloading the du
 For now, if a download fails, it will send the request to a failure topic.
 
 
+## Downloading local models via python on ubuntu
+The vectorizer by default goes out to the internet to download models.  To make tests a lot faster, we have embedded a small model to the project.
+
+To download a file locally, you need the djl project:
+git clone https://github.com/deepjavalibrary/djl.git
+Online instructions in case this gets out-of-date
+https://github.com/deepjavalibrary/djl/tree/master/extensions/tokenizers
+
+```shell
+# install release version of djl-converter
+pip install https://publish.djl.ai/djl_converter/djl_converter-0.30.0-py3-none-any.whl
+
+# install from djl master branch
+pip install "git+https://github.com/deepjavalibrary/djl.git#subdirectory=extensions/tokenizers/src/main/python"
+
+# install djl-convert from local djl repo
+git clone https://github.com/deepjavalibrary/djl.git
+cd djl/extensions/tokenizers/src/main/python
+python3 -m pip install -e .
+
+# install optimum if you want to convert to OnnxRuntime
+pip install optimum
+
+# convert a single model to TorchScript, Onnxruntime or Rust
+djl-convert --help
+
+# import models as DJL Model Zoo
+djl-import --help
+```
+
+
+
