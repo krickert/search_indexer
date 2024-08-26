@@ -73,4 +73,148 @@ djl-import --help
 ```
 
 
+# Configuring solr to work with okta
+
+I created a developer account and went through the motions of setting up JWT authentication on solr 9
+
+So I'm documenting this now.
+
+So here's how to do this from scratch:
+
+1) Download solr
+2) Start solr in cloud mode
+
+```shell
+curl -L -k https://www.apache.org/dyn/closer.lua/solr/solr/9.6.1/solr-9.6.1-src.tgz?action=download
+tar zxvf solr-9.6.1.tgz
+cd solr-9.6.1.tgz
+```
+
+3) To turn on the JWT configuration you need to edit the solr.in.sh
+   SOLR_MODULES=jwt-auth
+   SOLR_OPTS="$SOLR_OPTS -Dsolr.auth.jwt.allowOutboundHttp=true"
+
+Add these lines at the bottom.
+
+Note: for now we are just setting up okta authentication - if you already have SSL setup, do NOT do the -Dsolr.auth.jwt.allowOutboundHttp=true... it's just for developing...
+
+4) Configure your okta application:
+   1. Login to Okta Dashboard:
+      1. Go to **https://{your-okta-app}.okta.com/** and log in with your admin credentials.
+   2. Navigate to Authorization Server:
+      1. Go to Security > API.
+      2. Click on Authorization Servers.
+      3. Select the default authorization server or the one you are using (e.g., default).
+   3. Add Custom Scope:
+      1. Go to the Scopes tab.
+      2. Click on Add Scope.
+      3. Enter the details for the custom scope:
+         ```  
+         Name: solr
+         Display Name: Solr Access
+         Description: Access to Solr
+         ```
+      4. Click **Save**
+4) Create `security.xml` and upload it to solr.  here's my sample that worked:
+   ```json
+
+    {
+      "authentication": {
+        "class": "solr.JWTAuthPlugin",
+        "wellKnownUrl": "https://{myoktaserver}/oauth2/default/.well-known/openid-configuration",
+        "clientId": "{myclientid}",
+        "redirectUris": "http://{mysolr_host}:8983/solr/",
+        "blockUnknown": "true",
+        "scope": ["openid", "solr"]
+      },
+      "authorization": {
+        "class": "solr.RuleBasedAuthorizationPlugin",
+        "user-role": {
+          "admin": ["admin"]
+        },
+        "permissions": [
+          {
+            "name": "security-edit",
+            "role": "admin"
+          },
+          {
+            "name": "read",
+            "role": "admin"
+          },
+          {
+            "name": "write",
+            "role": "admin"
+          }
+        ]
+      }
+    }
+
+   ```
+
+6. Upload the security.xml file to solr
+   ```shell
+   solr zk cp file:security.json zk:/security.json -z localhost:9983
+   ```
+7. restart solr
+
+... YMMV ... this took me while to figure out.
+
+Now the solr9 documentation claims that solrj is not compatible with this.  However, I'm working on code to change that.
+
+# Setting up SSL
+
+I always have to look up how to do this so I figured I'd just share a nifty script
+
+```shell
+#!/bin/bash
+
+# Variables
+KEY_FILE="./certs/solr_csr/server.key"
+CERT_FILE="./certs/pem/rokkon_com.txt"
+CA_BUNDLE_FILE="./certs/pem/CA Bundle.txt"
+P12_OUTPUT_FILE="solr-cert.p12"
+P12_PASSWORD="changeit"
+
+# Check if the necessary files exist
+if [ ! -f "$KEY_FILE" ]; then
+    echo "Private key file not found: $KEY_FILE"
+    exit 1
+fi
+
+if [ ! -f "$CERT_FILE" ]; then
+    echo "Certificate file not found: $CERT_FILE"
+    exit 1
+fi
+
+if [ ! -f "$CA_BUNDLE_FILE" ]; then
+    echo "CA Bundle file not found: $CA_BUNDLE_FILE"
+    exit 1
+fi
+
+# Combine the certificate and the CA bundle into a single file
+COMBINED_CERT="combined-cert.pem"
+cat "$CERT_FILE" "$CA_BUNDLE_FILE" > "$COMBINED_CERT"
+
+# Generate the PKCS12 file using OpenSSL
+openssl pkcs12 -export -in "$COMBINED_CERT" -inkey "$KEY_FILE" -out "$P12_OUTPUT_FILE" -name "solr" -password pass:"$P12_PASSWORD"
+
+# Verify if the PKCS12 file has been created
+if [ -f "$P12_OUTPUT_FILE" ]; then
+    echo "PKCS12 file created successfully: $P12_OUTPUT_FILE"
+else
+    echo "Failed to create PKCS12 file"
+fi
+
+# Clean up the combined certificate file
+rm "$COMBINED_CERT"
+
+keytool -importkeystore -deststorepass changeit -destkeypass changeit -destkeystore solr.keystore.jks -srckeystore solr-cert.p12 -srcstoretype PKCS12
+
+```
+
+` ./server/scripts/cloud-scripts/zkcli.sh -zkhost localhost:9983 -cmd clusterprop -name urlScheme -val https`
+
+This is the command to turn on https
+
+Next we have to configure everything right....
 
