@@ -1,6 +1,0 @@
-applicationType: default
-defaultPackage: com.krickert.search.chunker
-testFramework: junit
-sourceLanguage: java
-buildTool: maven
-features: [app-name, awaitility, hamcrest, http-client-test, java, java-application, junit, junit-platform-suite-engine, logback, maven, maven-enforcer-plugin, micronaut-aot, micronaut-http-validation, mockito, netty-server, readme, serialization-jackson, shade, static-resources, test-resources, testcontainers, yaml, yaml-build]

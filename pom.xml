@@ -55,6 +55,5 @@
     <modules>
         <module>rag-models</module>
         <module>services</module>
-        <module>integration-tests</module>
     </modules>
 </project>
